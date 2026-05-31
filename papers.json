@@ -26,15 +26,15 @@
     ],
     "score": 103,
     "infographic": {
-      "key_insight": "IGA-ODIL replaces neural-network PINN parameterizations with smooth B-spline bases and robust residual minimization, making PDE training faster, sparser, and better conditioned.",
-      "engineering_relevance": "The method offers a practical route to faster forward and inverse PDE solvers for engineering simulation, especially where PINNs are too slow or unstable.",
+      "key_insight": "IGA-ODIL replaces neural-network PINN parameterizations with smooth B-spline bases, enabling sparse Gauss-Newton optimization and loss functions that better track true solution error.",
+      "engineering_relevance": "This makes physics-informed PDE solvers substantially faster and more robust for both forward and inverse problems, which is valuable for simulation-driven engineering workflows.",
       "method": [
-        "Represent the unknown field with isogeometric B-spline basis functions instead of a neural network.",
-        "Minimize a robust weighted residual loss derived from Gram operators so the loss tracks true error better.",
-        "Solve the resulting sparse structured system with efficient Gauss--Newton optimization."
+        "Represent the unknown field with smooth B-spline/isogeometric basis functions instead of a neural network.",
+        "Minimize a robust residual loss built from weighted Gram operators to align the objective with true error.",
+        "Exploit the resulting sparse, structured Jacobians for efficient Gauss-Newton optimization."
       ],
-      "evidence_signal": "The paper evaluates Poisson, advection--diffusion, Helmholtz, Allen--Cahn, and inverse Helmholtz benchmarks and reports orders-of-magnitude speedups over PINNs and CRVPINNs while keeping high accuracy.",
-      "watch_item": "Performance depends on spline discretization, problem conditioning, and Gauss--Newton setup, so difficult geometries or very large 3D systems may still require careful tuning.",
+      "evidence_signal": "The abstract reports evaluation on Poisson, advection-diffusion, Helmholtz, Allen-Cahn, and inverse Helmholtz benchmarks, with orders-of-magnitude speedups over PINNs and CRVPINNs while maintaining high accuracy.",
+      "watch_item": "Performance depends on spline discretization and problem structure, so complex geometries or poorly conditioned inverse problems may still require careful formulation and tuning.",
       "hashtags": [
         "#ScientificMachineLearning",
         "#IsogeometricAnalysis",
@@ -46,7 +46,7 @@
       "paper_title": "IGA-ODIL: Optimizing DIscretre robust Loss with Isogeometric Analysis to solve forward and inverse problems faster using machine learning tools",
       "paper_date": "2026-05-28",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-05-31T02:46:31",
+      "generated_at": "2026-05-31T14:43:34",
       "generator": "openai"
     }
   },
@@ -81,27 +81,27 @@
     ],
     "score": 82,
     "infographic": {
-      "key_insight": "The paper reframes neural-network training and inference as Hamilton–Jacobi initial-value problems, with a single deformation parameter ε connecting deep learning, viscous PDEs, tropical algebra, and convex optimization.",
-      "engineering_relevance": "This gives a unified PDE-based lens for analyzing model training, robustness, attribution, and scaling across architectures such as residual networks, transformers, and recurrent models.",
+      "key_insight": "Training and inference in deep learning can be reformulated exactly or structurally as Hamilton–Jacobi initial-value problems, linking network weights, PDE dynamics, and convex optimization through a single deformation parameter ε.",
+      "engineering_relevance": "This provides a unified mathematical lens for designing, analyzing, and potentially hardening architectures such as residual networks, transformers, and recurrent models, with implications for robustness, attribution, and scaling laws.",
       "method": [
-        "Exact correspondence for log-sum-exp layers via the Hopf–Cole transform.",
-        "Generalizes structurally to residual networks, transformers, RNNs, LSTMs, and SSMs as discretizations of Hamilton–Jacobi equations.",
-        "Uses the co-state equation/Pontryagin framework to interpret backpropagation and derive influence/attribution behavior."
+        "Map gradient-based training to selecting initial data for a viscous Hamilton–Jacobi equation via Hopf–Cole propagation.",
+        "Interpret different architectures as discretizations of the same Hamilton–Jacobi class with architecture-specific Hamiltonian and viscosity.",
+        "Use the ε-parameter to connect neural networks, tropical algebra, viscous PDEs, and convex optimization in a commutative framework."
       ],
-      "evidence_signal": "The abstract reports theoretical results including an optimal generalization rate O(n^{-1/(d+2)}), an O(N) influence-function form, and scaling laws tied to intrinsic dimension, but does not mention empirical experiments.",
-      "watch_item": "The framework relies on Lipschitz and architecture-specific assumptions, so practical use may be sensitive to numerical stability, discretization error, and whether the exact PDE correspondence holds beyond idealized settings.",
+      "evidence_signal": "The abstract reports exact correspondence for log-sum-exp layers, structural correspondence for several architecture families, and theoretical results including generalization rate, robustness, and closed-form influence weights.",
+      "watch_item": "The framework relies on Lipschitz conditions and PDE/discretization assumptions, so practical implementation may be sensitive to model nonlinearity, numerical stability, and architecture-specific approximations.",
       "hashtags": [
-        "#DeepLearning",
+        "#DeepLearningTheory",
         "#HamiltonJacobi",
-        "#PDEs",
         "#Optimization",
-        "#TheoreticalAI"
+        "#PDEs",
+        "#NeuralNetworks"
       ],
       "paper_id": "2026-05-27-arxiv-the_hamilton_jacobi_theory_of_deep_learning",
       "paper_title": "The Hamilton-Jacobi Theory of Deep Learning",
       "paper_date": "2026-05-27",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-05-31T02:46:34",
+      "generated_at": "2026-05-31T14:43:38",
       "generator": "openai"
     }
   },
@@ -130,29 +130,29 @@
         "url": "https://arxiv.org/pdf/2605.28184v1"
       }
     ],
-    "score": 82,
+    "score": 77,
     "infographic": {
-      "key_insight": "Joint MTP-RL training fails under fixed losses because the MTP effect splits into a helpful first-order correlation and a harmful second-order penalty; Optimal Coefficient Calibration (OCC) adaptively balances them to recover strong joint training.",
-      "engineering_relevance": "For reasoning-model training pipelines, OCC offers a low-overhead way to keep multi-token prediction active without the performance drop seen in standard joint RL fine-tuning.",
+      "key_insight": "The paper shows that joint MTP-RL training fails or succeeds based on a tradeoff between a first-order alignment term and a second-order perturbation penalty, and proposes adaptive coefficient calibration to balance them.",
+      "engineering_relevance": "For reasoning-model training, OCC offers a low-cost way to keep multi-token prediction active without sacrificing RLVR performance, improving training efficiency and stability.",
       "method": [
-        "Decompose the MTP contribution to the RL objective into correlation and quadratic perturbation terms.",
-        "Unify and compare three regimes: Detach, Cross-Entropy loss, and Policy loss.",
-        "Track an online optimal coefficient using a log-probability proxy to calibrate MTP strength adaptively."
+        "Decompose MTP's effect on the RL objective into correlation and penalty terms.",
+        "Unify detach, cross-entropy, and policy-loss regimes under one optimization view.",
+        "Use Optimal Coefficient Calibration (OCC) to track an online coefficient via a log-probability proxy."
       ],
-      "evidence_signal": "The method is evaluated on six competition-level mathematical reasoning benchmarks, where OCC matches or exceeds the detach baseline.",
-      "watch_item": "The calibration relies on an online proxy, so stability and transfer across model scales or reward setups may require careful tuning.",
+      "evidence_signal": "The method is evaluated on six competition-level mathematical reasoning benchmarks and consistently matches or exceeds the detach baseline.",
+      "watch_item": "OCC depends on a proxy-based online coefficient estimate, so its stability may be sensitive to training dynamics and proxy calibration.",
       "hashtags": [
         "#ReinforcementLearning",
         "#MultiTokenPrediction",
-        "#LLMReasoning",
-        "#Optimization",
-        "#MathematicalReasoning"
+        "#LLMTraining",
+        "#MathematicalReasoning",
+        "#Optimization"
       ],
       "paper_id": "2026-05-27-arxiv-joint_training_of_multi_token_prediction_in_reinforcement_learning_via_optimal_coefficient",
       "paper_title": "Joint Training of Multi-Token Prediction in Reinforcement Learning via Optimal Coefficient Calibration",
       "paper_date": "2026-05-27",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-05-31T02:46:37",
+      "generated_at": "2026-05-31T14:43:40",
       "generator": "openai"
     }
   },
@@ -182,29 +182,29 @@
         "url": "https://arxiv.org/pdf/2605.29860v1"
       }
     ],
-    "score": 78,
+    "score": 73,
     "infographic": {
-      "key_insight": "ESPO reduces wasted RL compute by detecting early reasoning failure during rollout and stopping trajectories before they continue generating low-value tokens.",
-      "engineering_relevance": "For LLM RL training, early stopping can improve sample efficiency and sharpen credit assignment by turning failed rollouts into absorbing failure states with terminal penalties.",
+      "key_insight": "ESPO speeds up PPO for math reasoning by stopping rollouts early once a trajectory is likely to have failed, instead of wasting compute on useless tokens.",
+      "engineering_relevance": "This reduces training cost and noise in advantage estimates, making RL fine-tuning of large language models more efficient and potentially more stable.",
       "method": [
-        "Monitors surrogate regret from already-computed sampling logits at each generation step.",
-        "Applies a smoothed cumulative threshold to detect likely failure on the fly.",
-        "Stops rollouts early and assigns a terminal reward so negative TD error concentrates near the failure step."
+        "Detect failure online during generation using a surrogate regret computed from already available logits.",
+        "Smooth cumulative regret and stop when it significantly exceeds estimated values.",
+        "Treat truncated rollouts as absorbing failure states with a terminal reward to localize negative TD error near the failure step."
       ],
-      "evidence_signal": "On DeepSeek-R1-Distill-Qwen-7B, ESPO outperformed PPO on AIME 2024, AMC 2023, and MATH-500 while saving more than 20% of rollout tokens cumulatively.",
-      "watch_item": "Early stopping depends on the quality of the failure detector and threshold calibration, so overly aggressive truncation could cut off valid long reasoning chains.",
+      "evidence_signal": "On DeepSeek-R1-Distill-Qwen-7B, ESPO improved over PPO on AIME 2024, AMC 2023, and MATH-500 while saving more than 20% of rollout tokens.",
+      "watch_item": "Early stopping depends on a calibrated failure-detection threshold; if it is too aggressive or too lax, it may truncate useful reasoning or miss wasted compute.",
       "hashtags": [
-        "#LLMTraining",
+        "#RLHF",
         "#PPO",
-        "#ReinforcementLearning",
-        "#MathReasoning",
-        "#ComputeEfficiency"
+        "#LLMReasoning",
+        "#MathAI",
+        "#EfficientTraining"
       ],
       "paper_id": "2026-05-28-arxiv-espo_early_stopping_proximal_policy_optimization",
       "paper_title": "ESPO: Early-Stopping Proximal Policy Optimization",
       "paper_date": "2026-05-28",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-05-31T02:46:39",
+      "generated_at": "2026-05-31T14:43:42",
       "generator": "openai"
     }
   },
@@ -235,80 +235,29 @@
         "url": "https://arxiv.org/pdf/2605.29547v1"
       }
     ],
-    "score": 75,
+    "score": 70,
     "infographic": {
-      "key_insight": "S-Adam stabilizes non-smooth deep learning optimization by detecting local geometric instability and dampening steps where gradient signals conflict.",
-      "engineering_relevance": "This offers a practical optimizer for quantization-aware training and noisy small-batch regimes where standard Adam can oscillate or converge poorly.",
+      "key_insight": "S-Adam stabilizes non-smooth deep learning optimization by detecting local geometric instability and damping updates when the loss landscape is highly irregular.",
+      "engineering_relevance": "This provides a practical optimizer for quantization-aware training and other non-smooth workloads where standard adaptive methods can oscillate or fail to converge reliably.",
       "method": [
-        "Estimate Local Geometric Instability (LGI) from variance in randomized directional derivatives.",
-        "Apply adaptive damping exp(-λρ) to shrink updates in high-instability regions.",
-        "Use a Clarke subdifferential-based convergence framework to justify stable non-smooth optimization."
+        "Estimate Local Geometric Instability (LGI) from the variance of randomized directional derivatives.",
+        "Use an exponential damping factor exp(-λρ) to shrink steps in unstable regions.",
+        "Retain Adam-like fast progress in smoother parts of the landscape."
       ],
-      "evidence_signal": "The abstract reports improved performance over AdamW and Prox-SGD, with up to 6% accuracy gain on CIFAR-100 and 3% on TinyImageNet while reducing gradient oscillations.",
-      "watch_item": "The randomized probing and instability estimation add computation and hyperparameter sensitivity, so efficiency and tuning in large-scale training may be a concern.",
+      "evidence_signal": "The abstract reports improved performance on QAT and noisy small-batch training, with up to 6% higher accuracy on CIFAR-100 and 3% on TinyImageNet versus AdamW and Prox-SGD.",
+      "watch_item": "LGI estimation adds extra stochastic probes, so the runtime overhead and sensitivity to probe settings may matter in large-scale training.",
       "hashtags": [
-        "#Optimization",
-        "#DeepLearning",
         "#NonSmoothOptimization",
+        "#Adam",
         "#QuantizationAwareTraining",
-        "#Adam"
+        "#DeepLearningOptimization",
+        "#ClarkeSubdifferential"
       ],
       "paper_id": "2026-05-28-arxiv-singularity_aware_optimization_via_randomized_geometric_probing_towards_stable_non_smooth",
       "paper_title": "Singularity-aware Optimization via Randomized Geometric Probing: Towards Stable Non-smooth Optimization",
       "paper_date": "2026-05-28",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-05-31T02:46:41",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-05-28-arxiv-nara_noise_aware_lora_for_parameter_efficient_fine_tuning_of_diffusion_llms",
-    "arxiv_id": "2605.29716v1",
-    "date": "2026-05-28",
-    "title": "NaRA: Noise-Aware LoRA for Parameter-Efficient Fine-Tuning of Diffusion LLMs",
-    "authors": "Shuaidi Wang, Zhan Zhuang, Ruping Huang, Yu Zhang",
-    "abstract": "Diffusion Large Language Models (dLLMs) have emerged as a promising non-autoregressive generative paradigm. Given the prohibitive computational cost of full fine-tuning, Parameter-Efficient Fine-Tuning (PEFT) has become the standard approach. However, existing PEFT methods (e.g., LoRA), originally tailored for autoregressive models, rely on static parameters that are agnostic to the noise level. Consequently, they ignore the intrinsic dynamics of the diffusion process, where input distributions and generation difficulty shift significantly along the denoising trajectory, rendering them suboptimal for dLLMs. To address this, we propose Noise-aware Low-Rank Adaptation (NaRA), which introduces a low-rank core matrix generated by a lightweight, globally shared hypernetwork conditioned on the noise level. This design enables the update matrices to vary continuously along the diffusion process while keeping parameter and latency overhead negligible. We provide a theoretical justification for the proposed NaRA framework and empirically demonstrate consistent improvements over noise-agnostic baselines across commonsense reasoning, mathematical reasoning, and code generation benchmarks. Our code is available at https://github.com/generaldi/NaRA.",
-    "category": "Mathematical Reasoning",
-    "source": "arXiv",
-    "published": "2026-05-28T10:13:50Z",
-    "updated": "2026-05-28T10:13:50Z",
-    "primary_category": "cs.AI",
-    "categories": [
-      "cs.AI"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.29716v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.29716v1"
-      }
-    ],
-    "score": 71,
-    "infographic": {
-      "key_insight": "NaRA makes LoRA noise-aware by generating a low-rank update from a shared hypernetwork conditioned on diffusion noise level, so fine-tuning adapts לאורך the denoising trajectory instead of staying static.",
-      "engineering_relevance": "This offers a parameter-efficient way to improve diffusion LLM fine-tuning without meaningful extra latency or model size, making it practical for large-scale deployment.",
-      "method": [
-        "Adds a lightweight hypernetwork that outputs the low-rank core matrix from the current noise level.",
-        "Keeps the adaptation globally shared across layers to control parameter overhead.",
-        "Lets the update matrix vary continuously during denoising, matching changing difficulty and input distributions."
-      ],
-      "evidence_signal": "The abstract reports consistent gains over noise-agnostic PEFT baselines on commonsense reasoning, mathematical reasoning, and code generation benchmarks.",
-      "watch_item": "Performance and stability may depend on accurate noise-level conditioning and on integrating the hypernetwork cleanly into different dLLM architectures.",
-      "hashtags": [
-        "#DiffusionLLM",
-        "#LoRA",
-        "#ParameterEfficientFineTuning",
-        "#MathematicalReasoning",
-        "#NoiseAwareLearning"
-      ],
-      "paper_id": "2026-05-28-arxiv-nara_noise_aware_lora_for_parameter_efficient_fine_tuning_of_diffusion_llms",
-      "paper_title": "NaRA: Noise-Aware LoRA for Parameter-Efficient Fine-Tuning of Diffusion LLMs",
-      "paper_date": "2026-05-28",
-      "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-05-31T02:46:43",
+      "generated_at": "2026-05-31T14:43:44",
       "generator": "openai"
     }
   },
@@ -341,27 +290,27 @@
     ],
     "score": 70,
     "infographic": {
-      "key_insight": "OISD improves reasoning by using the model’s final layer as an on-policy teacher for intermediate layers, distilling both logits and attention during RL post-training.",
-      "engineering_relevance": "It offers a practical training recipe for boosting math-reasoning language models without external privileged supervision, while preserving a single acting policy.",
+      "key_insight": "OISD improves reasoning by distilling the final layer’s on-policy signals into intermediate layers during RL post-training, so the model learns both better outputs and better internal representations.",
+      "engineering_relevance": "For large language model training pipelines, OISD offers a plug-in alignment mechanism that can boost reasoning performance without external teacher models or privileged annotations.",
       "method": [
-        "Use the final layer as a detached internal teacher for selected intermediate layers during rollout and GRPO.",
-        "Align intermediate logits to transfer reasoning behavior and align attention patterns to transfer where-to-look signals.",
-        "Apply signed advantage-weighted Jensen–Shannon alignment to keep distilled representations policy-consistent."
+        "Use the final layer as both the acting policy and a detached internal teacher.",
+        "Align selected intermediate layers with the final layer using logit alignment to transfer reasoning behavior.",
+        "Add attention alignment and signed advantage-weighted Jensen–Shannon alignment to preserve policy consistency while distilling useful internal signals."
       ],
-      "evidence_signal": "The abstract reports substantial, consistent gains over strong reasoning RL baselines on four mathematical reasoning tasks.",
-      "watch_item": "The method adds alignment losses and layer-selection choices, so stability and compute overhead may depend on careful tuning.",
+      "evidence_signal": "The abstract reports substantial and consistent gains over strong reasoning RL baselines across four mathematical reasoning tasks.",
+      "watch_item": "Because the method adds intermediate-layer alignment terms during RL optimization, it may increase training complexity and require careful tuning to avoid destabilizing policy learning.",
       "hashtags": [
         "#LLMReasoning",
         "#ReinforcementLearning",
         "#SelfDistillation",
         "#MathAI",
-        "#GRPO"
+        "#PolicyOptimization"
       ],
       "paper_id": "2026-05-27-arxiv-oisd_on_policy_internal_self_distillation_of_language_models",
       "paper_title": "OISD: On-Policy Internal Self-Distillation of Language Models",
       "paper_date": "2026-05-27",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-05-31T02:46:46",
+      "generated_at": "2026-05-31T14:43:47",
       "generator": "openai"
     }
   },
@@ -392,19 +341,19 @@
     ],
     "score": 70,
     "infographic": {
-      "key_insight": "SHIFT selects RLVR training data without labels or reward scores by using a single inference rollout to measure hidden-state change as a proxy for instance utility.",
-      "engineering_relevance": "This gives a practical, training-free way to build compact high-value datasets for reasoning systems when labeled rewards are expensive or unavailable.",
+      "key_insight": "SHIFT selects RLVR training data without labels or training by using one deterministic rollout to measure hidden-state shift as a proxy for instance utility.",
+      "engineering_relevance": "This offers a practical, low-cost way to build compact high-value RLVR datasets in domains where rewards or ground-truth answers are unavailable or expensive to compute.",
       "method": [
-        "Run one deterministic reasoning rollout per candidate and compute the start-to-end hidden-state delta (RIRS).",
-        "Use RIRS magnitude as a quality score for each instance.",
-        "Apply quality-weighted farthest-first CoreSet selection in an RIRS-augmented feature space to preserve both utility and coverage."
+        "Run a single inference-time reasoning rollout per candidate.",
+        "Compute RIRS as the start-to-end hidden-state delta to score utility.",
+        "Use quality-weighted farthest-first CoreSet selection in an RIRS-augmented feature space to preserve both quality and coverage."
       ],
-      "evidence_signal": "The abstract reports consistent gains over diversity and difficulty/uncertainty baselines across mathematical reasoning and medical QA benchmarks, especially under ultra-low selection budgets.",
-      "watch_item": "RIRS depends on a specific model’s hidden-state dynamics and one rollout, so its ranking quality may be sensitive to the base model, prompt setup, and inference determinism.",
+      "evidence_signal": "Across mathematical reasoning and medical QA benchmarks under ultra-low budgets, SHIFT improves in-domain accuracy and transfer to harder evaluation settings versus training-free diversity and uncertainty baselines.",
+      "watch_item": "Because SHIFT depends on deterministic rollout behavior and hidden-state features, results may be sensitive to model choice, decoding setup, and feature extraction consistency.",
       "hashtags": [
         "#RLVR",
         "#DataSelection",
-        "#ReasoningModels",
+        "#MathematicalReasoning",
         "#HiddenStates",
         "#CoreSet"
       ],
@@ -412,7 +361,7 @@
       "paper_title": "Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection",
       "paper_date": "2026-05-27",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-05-31T02:46:48",
+      "generated_at": "2026-05-31T14:43:49",
       "generator": "openai"
     }
   },
@@ -443,19 +392,19 @@
     ],
     "score": 69,
     "infographic": {
-      "key_insight": "The paper shows that four classic paradoxes collectively define the safety boundaries of the Coq/Rocq kernel: impredicativity, large elimination, and universe constraints.",
-      "engineering_relevance": "For proof-assistant engineers, these mechanized paradoxes act as regression tests and design guidance for preventing unsound kernel extensions.",
+      "key_insight": "The paper shows that four classic paradoxes collectively define the safety boundaries of Rocq/Coq’s Calculus of Inductive Constructions, especially around impredicativity, large elimination, and universe constraints.",
+      "engineering_relevance": "For proof-assistant engineers, these mechanized paradoxes act as negative test cases that justify kernel restrictions and help prevent unsound extensions.",
       "method": [
-        "Formalize each paradox in the coq-paradoxes library.",
-        "Trace the shared well-foundedness and fixed-point machinery across the proofs.",
-        "Use the paradoxes as negative specifications of kernel features that must be rejected."
+        "Surveyed the coq-paradoxes library’s four formalized contradictions.",
+        "Explained the shared well-foundedness machinery and each paradox construction in context.",
+        "Mapped each paradox to a specific kernel safeguard: impredicativity, elimination, or universe discipline."
       ],
-      "evidence_signal": "The abstract reports four mechanized derivations of False, each formalized in a file that demonstrates a specific boundary of the Calculus of Inductive Constructions.",
-      "watch_item": "These results are about kernel soundness limits, so applicability depends on matching the exact universes, elimination rules, and impredicativity settings of the target system.",
+      "evidence_signal": "The evidence is entirely mechanized: each file in the library derives False in a system intentionally close to CIC, showing exactly where Rocq’s kernel rejects the construction.",
+      "watch_item": "The results are boundary-analysis proofs, not performance benchmarks; they validate soundness constraints but do not measure implementation costs or usability impacts.",
       "hashtags": [
         "#TheoremProving",
         "#Coq",
-        "#ProofAssistants",
+        "#Rocq",
         "#TypeTheory",
         "#FormalMethods"
       ],
@@ -463,7 +412,7 @@
       "paper_title": "Four Paradoxes and a Proof Assistant: Burali-Forti, Diaconescu, Reynolds, and Hurkens in the coq-paradoxes library",
       "paper_date": "2026-05-26",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-05-31T02:46:50",
+      "generated_at": "2026-05-31T14:43:51",
       "generator": "openai"
     }
   },
@@ -495,95 +444,41 @@
     ],
     "score": 69,
     "infographic": {
-      "key_insight": "OptiLoop shows that LLM-generated optimization agents can appear correct in isolation yet still fail semantically during coordination, so they must be verified and repaired inside the decision loop itself.",
-      "engineering_relevance": "This is useful for building decentralized optimization systems where agents must respect private objectives and constraints while coordinating reliably with other parties.",
+      "key_insight": "OptiLoop shows that LLM-generated optimization agents can look correct in isolation yet fail semantically during coordination, so verification must happen inside the interaction loop.",
+      "engineering_relevance": "This matters for decentralized optimization systems where privacy, incentives, and constraints must be respected across agents, not just within a single local solver.",
       "method": [
         "Generate local optimization agents from natural-language specs",
         "Run short bounded ADMM-style coordination checks against a fixed reference counterparty",
-        "Use extracted behavioral/static evidence to trigger code fixes or corrected-formulation repair"
+        "Use structured behavioral/static evidence to trigger code repair or corrected-formulation repair"
       ],
-      "evidence_signal": "On 40 held-out scenarios, OptiLoop-Full raised objective match from 66.0% to 93.0% and social match from 68.5% to 89.0%, while cutting mean objective gap from 15.3% to 3.5% and social gap from 7.6% to 2.0%.",
-      "watch_item": "The approach depends on a reference counterparty and bounded coordination tests, so performance may vary when real deployments have more complex dynamics or weaker observability.",
+      "evidence_signal": "On 40 held-out scenarios, OptiLoop-Full improved objective match from 66.0% to 93.0% and social match from 68.5% to 89.0%, while reducing mean objective gap from 15.3% to 3.5% and mean social gap from 7.6% to 2.0%.",
+      "watch_item": "The approach relies on a fixed reference counterparty and bounded coordination runs, so performance may depend on how well those checks approximate real multi-party deployments.",
       "hashtags": [
         "#LLMAgents",
         "#Optimization",
         "#ADMM",
         "#Verification",
-        "#AIforOperationsResearch"
+        "#DecentralizedSystems"
       ],
       "paper_id": "2026-05-26-arxiv-optiloop_coordination_in_the_loop_verification_and_repair_for_llm_generated_optimization_a",
       "paper_title": "OptiLoop: Coordination-in-the-Loop Verification and Repair for LLM-Generated Optimization Agents",
       "paper_date": "2026-05-26",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-05-31T02:46:53",
+      "generated_at": "2026-05-31T14:43:53",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-05-28-arxiv-fhrformer_a_self_supervised_masked_transformer_framework_for_fetal_heart_rate_time_series",
-    "arxiv_id": "2605.29695v1",
+    "id": "2026-05-28-arxiv-nara_noise_aware_lora_for_parameter_efficient_fine_tuning_of_diffusion_llms",
+    "arxiv_id": "2605.29716v1",
     "date": "2026-05-28",
-    "title": "FHRFormer: A Self-Supervised Masked Transformer Framework for Fetal Heart Rate Time-Series Inpainting and Forecasting",
-    "authors": "Kjersti Engan, Neel Kanwal, Anita Yeconia, Ladislaus Blacy, Yuda Munyaw, Estomih Mduma",
-    "abstract": "Approximately 10% of newborns require assistance to initiate breathing at birth, and around 5% need ventilation support. Fetal heart rate (FHR) monitoring plays a crucial role in assessing fetal well-being during prenatal care, enabling the detection of abnormal patterns and supporting timely obstetric interventions to mitigate fetal risks during labor. Applying artificial intelligence (AI) methods to analyze large datasets of continuous FHR monitoring episodes with diverse outcomes may offer novel insights into predicting the risk of needing breathing assistance or interventions. Recent advances in wearable FHR monitors have enabled continuous fetal monitoring without compromising maternal mobility. However, sensor displacement during maternal movement, as well as changes in fetal or maternal position, often lead to signal dropout, resulting in gaps in recorded FHR data. Such missing data limits the extraction of meaningful insights and complicates automated (AI-based) analysis. Traditional approaches to handling missing data, such as simple interpolation techniques, often fail to preserve the spectral characteristics of the signals. In this paper, we propose a masked transformer-based autoencoder approach to reconstruct missing FHR signals by capturing both local temporal and frequency components of the data. The proposed method demonstrates robustness across varying durations of missing data and can be used for signal inpainting and forecasting. The proposed approach can be applied retrospectively to research datasets to support the development of AI-based risk algorithms. In the future, the proposed method could be integrated into wearable FHR monitoring devices to achieve earlier and more robust risk detection.",
-    "category": "Number Theory and Algebra",
-    "source": "arXiv",
-    "published": "2026-05-28T09:55:14Z",
-    "updated": "2026-05-28T09:55:14Z",
-    "primary_category": "cs.AI",
-    "categories": [
-      "cs.AI",
-      "cs.CE",
-      "cs.LG",
-      "math.PR"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.29695v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.29695v1"
-      }
-    ],
-    "score": 67,
-    "infographic": {
-      "key_insight": "A masked transformer autoencoder can reconstruct missing fetal heart rate segments while preserving temporal and spectral structure, enabling both inpainting and forecasting.",
-      "engineering_relevance": "The method is directly relevant for wearable prenatal monitoring systems because it can make continuous FHR streams more usable despite signal dropouts from motion or sensor displacement.",
-      "method": [
-        "Self-supervised masked transformer autoencoder learns from incomplete FHR time series.",
-        "Reconstructs missing intervals by capturing local temporal patterns and frequency components.",
-        "Supports both signal inpainting and short-horizon forecasting."
-      ],
-      "evidence_signal": "The abstract reports robustness across varying missing-data durations, indicating the approach was evaluated for different gap lengths in continuous FHR episodes.",
-      "watch_item": "Performance may degrade on highly irregular dropout patterns or when deployed on-device under strict latency and power constraints.",
-      "hashtags": [
-        "#FetalHeartRate",
-        "#TimeSeriesImputation",
-        "#MaskedTransformer",
-        "#SelfSupervisedLearning",
-        "#WearableAI"
-      ],
-      "paper_id": "2026-05-28-arxiv-fhrformer_a_self_supervised_masked_transformer_framework_for_fetal_heart_rate_time_series",
-      "paper_title": "FHRFormer: A Self-Supervised Masked Transformer Framework for Fetal Heart Rate Time-Series Inpainting and Forecasting",
-      "paper_date": "2026-05-28",
-      "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-05-31T02:46:55",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-05-28-arxiv-entropy_kl_divergence_based_token_masking_a_novel_approach_for_selective_fine_tuning_of_la",
-    "arxiv_id": "2605.29303v1",
-    "date": "2026-05-28",
-    "title": "Entropy-KL Divergence-based Token Masking: A Novel Approach for Selective Fine-tuning of Large Language Models",
-    "authors": "Qi Liu, Mingdi Sun, Yongyi He, Zhi Zheng, Tong Xu, Yi Zheng",
-    "abstract": "Supervised fine-tuning (SFT) followed by reinforcement learning (RL) has become a standard post-training paradigm for large language models. This paradigm provides a cold-start for RL exploration, avoiding the inefficiency of pure RL where on-policy sampling yields insufficient positive samples. However, in practice, existing approaches often use a small amount of data for SFT initialization compared to the RL phase, which can cause the model to fit the limited samples and shift away from its pre-trained distribution. This distribution shift impedes the model's ability to effectively explore during subsequent RL training. To address this challenge, we propose that in low-data regimes, SFT should prioritize activating task-relevant capabilities rather than memorizing specific content. Along this line, we propose EKSFT (Entropy-KL Selective Fine-Tuning), which selectively masks tokens that exhibit either high entropy or high KL divergence from a reference model. By excluding these high-uncertainty, distribution-shifting tokens from imitation, EKSFT injects task-specific knowledge while preserving the integrity of the model's pre-trained distribution. Empirical evaluations on mathematical reasoning benchmarks demonstrate that EKSFT consistently outperforms standard SFT. Further RL fine-tuning from the EKSFT model yields consistently better post-RL performance, indicating improved exploration for the RL stage. Our codes and datasets are available at https://github.com/MINE-USTC/EKSFT.",
+    "title": "NaRA: Noise-Aware LoRA for Parameter-Efficient Fine-Tuning of Diffusion LLMs",
+    "authors": "Shuaidi Wang, Zhan Zhuang, Ruping Huang, Yu Zhang",
+    "abstract": "Diffusion Large Language Models (dLLMs) have emerged as a promising non-autoregressive generative paradigm. Given the prohibitive computational cost of full fine-tuning, Parameter-Efficient Fine-Tuning (PEFT) has become the standard approach. However, existing PEFT methods (e.g., LoRA), originally tailored for autoregressive models, rely on static parameters that are agnostic to the noise level. Consequently, they ignore the intrinsic dynamics of the diffusion process, where input distributions and generation difficulty shift significantly along the denoising trajectory, rendering them suboptimal for dLLMs. To address this, we propose Noise-aware Low-Rank Adaptation (NaRA), which introduces a low-rank core matrix generated by a lightweight, globally shared hypernetwork conditioned on the noise level. This design enables the update matrices to vary continuously along the diffusion process while keeping parameter and latency overhead negligible. We provide a theoretical justification for the proposed NaRA framework and empirically demonstrate consistent improvements over noise-agnostic baselines across commonsense reasoning, mathematical reasoning, and code generation benchmarks. Our code is available at https://github.com/generaldi/NaRA.",
     "category": "Mathematical Reasoning",
     "source": "arXiv",
-    "published": "2026-05-28T03:36:05Z",
-    "updated": "2026-05-28T03:36:05Z",
+    "published": "2026-05-28T10:13:50Z",
+    "updated": "2026-05-28T10:13:50Z",
     "primary_category": "cs.AI",
     "categories": [
       "cs.AI"
@@ -591,90 +486,36 @@
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.29303v1"
+        "url": "https://arxiv.org/abs/2605.29716v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.29303v1"
-      }
-    ],
-    "score": 67,
-    "infographic": {
-      "key_insight": "EKSFT improves low-data supervised fine-tuning by masking tokens with high entropy or high KL divergence, so the model learns task-relevant skills without drifting far from its pre-trained distribution.",
-      "engineering_relevance": "For LLM post-training pipelines, this offers a practical way to build a better RL warm-start that preserves exploration capacity and can improve downstream reasoning performance.",
-      "method": [
-        "Compute token-level entropy and KL divergence against a reference model.",
-        "Mask high-uncertainty or distribution-shifting tokens during SFT.",
-        "Fine-tune only on the remaining tokens to selectively imprint task knowledge."
-      ],
-      "evidence_signal": "The abstract reports that EKSFT consistently outperforms standard SFT on mathematical reasoning benchmarks and that RL from EKSFT yields better post-RL performance.",
-      "watch_item": "The masking strategy depends on a suitable reference model and thresholding scheme, which may require tuning to avoid removing too much useful supervision.",
-      "hashtags": [
-        "#LLM",
-        "#FineTuning",
-        "#MathematicalReasoning",
-        "#ReinforcementLearning",
-        "#TokenMasking"
-      ],
-      "paper_id": "2026-05-28-arxiv-entropy_kl_divergence_based_token_masking_a_novel_approach_for_selective_fine_tuning_of_la",
-      "paper_title": "Entropy-KL Divergence-based Token Masking: A Novel Approach for Selective Fine-tuning of Large Language Models",
-      "paper_date": "2026-05-28",
-      "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-05-31T02:46:57",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-05-28-arxiv-kernel_based_potential_mean_field_games_with_unbiased_random_fourier_u_statistics",
-    "arxiv_id": "2605.29371v1",
-    "date": "2026-05-28",
-    "title": "Kernel-based potential mean-field games with unbiased random Fourier $U$-statistics",
-    "authors": "Yumiharu Nakano",
-    "abstract": "We study the subclass of potential mean-field games in which the running interaction cost and the terminal target cost are both expressed through reproducing-kernel maximum mean discrepancy (MMD) penalties, and develop a computational framework that exploits this kernel structure. Both costs are estimated from finite-sample empirical distributions using a random Fourier U-statistic representation that is unbiased and has linear cost in the batch size. The drift of the controlled diffusion is parametrized by a neural network and trained via stochastic gradient descent. For this subclass we prove a sample-level almost-sure convergence theorem and an explicit almost-sure rate of convergence, under coupled rate conditions on the penalty parameter, the random-feature count, the sample size, and the optimization tolerance. The framework includes the kernel-MMD-penalty Schrödinger bridge problem as the special case of a vanishing interaction cost. Numerical experiments illustrate the method on the Schrödinger bridge problem in dimensions up to one hundred, and on an electric vehicle charging coordination problem with per-vehicle physical heterogeneity, where an aggregate-demand congestion cost represents price-feedback competition at the population level and the terminal MMD penalty shapes the state-of-charge distribution at the deadline.",
-    "category": "Theorem Proving",
-    "source": "arXiv",
-    "published": "2026-05-28T05:15:25Z",
-    "updated": "2026-05-28T05:15:25Z",
-    "primary_category": "math.OC",
-    "categories": [
-      "math.OC",
-      "cs.LG",
-      "math.NA",
-      "stat.ML"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.29371v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.29371v1"
+        "url": "https://arxiv.org/pdf/2605.29716v1"
       }
     ],
     "score": 66,
     "infographic": {
-      "key_insight": "The paper proves that kernel MMD penalties can be embedded into mean-field games and trained efficiently with unbiased random Fourier U-statistics, yielding almost-sure convergence guarantees for the learned control policy.",
-      "engineering_relevance": "This gives a scalable, theory-backed way to solve high-dimensional distribution-matching control problems such as Schrödinger bridges and coordinated EV charging with large-batch neural optimization.",
+      "key_insight": "NaRA makes LoRA noise-aware by conditioning a low-rank update on the diffusion step, so fine-tuning adapts to changing difficulty along the denoising trajectory.",
+      "engineering_relevance": "It offers a practical PEFT option for diffusion LLMs that preserves efficiency while better matching the non-autoregressive dynamics of generation.",
       "method": [
-        "Use RKHS/MMD penalties for both running interaction cost and terminal target cost.",
-        "Estimate penalties from finite samples via unbiased random Fourier U-statistics with linear batch complexity.",
-        "Parametrize the diffusion drift with a neural network and optimize by stochastic gradient descent."
+        "Uses a lightweight, globally shared hypernetwork to generate a low-rank core matrix from the noise level.",
+        "Allows update matrices to vary continuously across diffusion steps instead of remaining static.",
+        "Keeps parameter and latency overhead negligible compared with full fine-tuning."
       ],
-      "evidence_signal": "The abstract reports numerical experiments on Schrödinger bridge problems up to 100 dimensions and on an electric vehicle charging coordination task with heterogeneous vehicles.",
-      "watch_item": "Performance and guarantees depend on coupled tuning of the penalty strength, random-feature count, sample size, and optimization tolerance, so the method may be sensitive to hyperparameter balancing.",
+      "evidence_signal": "The abstract reports consistent gains over noise-agnostic baselines on commonsense reasoning, mathematical reasoning, and code generation benchmarks.",
+      "watch_item": "The added hypernetwork must be carefully implemented and trained so the noise-conditioned updates stay stable and do not erode the efficiency benefits.",
       "hashtags": [
-        "#MeanFieldGames",
-        "#KernelMethods",
-        "#MMD",
-        "#SchrodingerBridge",
-        "#StochasticOptimization"
+        "#DiffusionLLM",
+        "#LoRA",
+        "#ParameterEfficientFineTuning",
+        "#MathematicalReasoning",
+        "#GenerativeAI"
       ],
-      "paper_id": "2026-05-28-arxiv-kernel_based_potential_mean_field_games_with_unbiased_random_fourier_u_statistics",
-      "paper_title": "Kernel-based potential mean-field games with unbiased random Fourier $U$-statistics",
+      "paper_id": "2026-05-28-arxiv-nara_noise_aware_lora_for_parameter_efficient_fine_tuning_of_diffusion_llms",
+      "paper_title": "NaRA: Noise-Aware LoRA for Parameter-Efficient Fine-Tuning of Diffusion LLMs",
       "paper_date": "2026-05-28",
-      "paper_category": "Theorem Proving",
-      "generated_at": "2026-05-31T02:46:59",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-05-31T14:43:55",
       "generator": "openai"
     }
   },
@@ -705,79 +546,27 @@
     ],
     "score": 66,
     "infographic": {
-      "key_insight": "The paper learns fast approximate solution maps for multiparametric generalized Nash equilibrium problems by training on the Nikaido-Isoda gap instead of expensive full equilibrium labels.",
-      "engineering_relevance": "This enables near-real-time equilibrium approximation in coupled multi-agent systems, with large speedups over online solvers for optimization and control applications.",
+      "key_insight": "The paper learns fast approximate solution maps for multiparametric generalized Nash equilibrium problems by training a neural network with a Nikaido-Isoda gap-based loss instead of requiring full equilibrium labels.",
+      "engineering_relevance": "This enables near-instant online equilibrium prediction for coupled multi-agent systems, with potential use in control, energy, and networked optimization settings where classical solvers are too slow.",
       "method": [
-        "Use the Nikaido-Isoda gap as a loss so training needs only best-response data.",
-        "Replace bilevel best-response optimization with a value-function surrogate to obtain a single-level learning problem.",
-        "Extend the approach to standard multiparametric programming and prove existence of continuous parametric GNE selections under strong variational stability."
+        "Use the Nikaido-Isoda gap as the training objective so only best-response information is needed.",
+        "Replace bilevel best-response optimization with a learned value-function surrogate to obtain a single-level learning problem.",
+        "Extend the approach to standard multiparametric programming as a special case and derive continuity conditions via strong variational stability."
       ],
-      "evidence_signal": "The abstract reports numerical experiments across multiple problem classes and states that the trained network achieves speedups of several orders of magnitude over online solvers.",
-      "watch_item": "Performance depends on the quality of the surrogate loss and stability assumptions, so the method may be sensitive when best-response approximations or variational stability are weak.",
+      "evidence_signal": "The abstract reports numerical experiments across multiple problem classes and claims speedups of several orders of magnitude over online solvers.",
+      "watch_item": "Performance depends on the quality of the value-function surrogate and on assumptions for continuous parametric equilibrium selection, so difficult instances may be less reliable.",
       "hashtags": [
         "#Optimization",
         "#GameTheory",
         "#NeuralNetworks",
-        "#LearningToOptimize",
-        "#GNEP"
+        "#MultiparametricProgramming",
+        "#ComputationalScience"
       ],
       "paper_id": "2026-05-27-arxiv-learning_approximate_solutions_to_multiparametric_generalized_nash_equilibrium_problems",
       "paper_title": "Learning Approximate Solutions to Multiparametric Generalized Nash Equilibrium Problems",
       "paper_date": "2026-05-27",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-05-31T02:47:01",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-05-27-arxiv-saddle_networks_structure_preserving_architectures_for_convex_concave_functions",
-    "arxiv_id": "2605.28894v1",
-    "date": "2026-05-27",
-    "title": "Saddle Networks: Structure-Preserving Architectures for Convex-Concave Functions",
-    "authors": "Xavier Warin",
-    "abstract": "Saddle-point models arise throughout optimization, optimal transport, robust learning, and control. In many applications, the relevant function f(x,y) is convex in x and concave in y, and preserving this geometry is essential for obtaining tractable min--max formulations and reliable certificates. We introduce a structured separable decomposition that preserves the convex-concave geometry and prove a complete one-dimensional approximation theorem under a mixed Monge-type convexity condition. We then describe practical saddle network architectures that preserve convexity in x and concavity in y by construction. The proposed architectures require only convexity-preserving neural networks, together with simple output transformations enforcing sign and concavity constraints. Finally, we report numerical benchmarks in dimension 1 and 5, showing that the proposed saddle networks achieve high accuracy on smooth, nonsmooth, and high-rank convex--concave test functions.",
-    "category": "Theorem Proving",
-    "source": "arXiv",
-    "published": "2026-05-27T08:25:24Z",
-    "updated": "2026-05-27T08:25:24Z",
-    "primary_category": "math.OC",
-    "categories": [
-      "math.OC",
-      "stat.ML"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.28894v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.28894v1"
-      }
-    ],
-    "score": 66,
-    "infographic": {
-      "key_insight": "The paper shows that convex-concave saddle functions can be approximated by a structured separable form that preserves convexity in x and concavity in y by design.",
-      "engineering_relevance": "This enables reliable min-max models for optimization, optimal transport, robust learning, and control, where geometry-preserving approximations improve tractability and certificate quality.",
-      "method": [
-        "Prove a one-dimensional approximation theorem under a mixed Monge-type convexity condition.",
-        "Build saddle networks using convexity-preserving subnetworks plus simple output transforms to enforce sign and concavity.",
-        "Use a separable architecture that keeps the convex-concave structure intact throughout training and inference."
-      ],
-      "evidence_signal": "The abstract reports numerical benchmarks in dimensions 1 and 5, with high accuracy on smooth, nonsmooth, and high-rank convex-concave test functions.",
-      "watch_item": "Performance may depend on satisfying the mixed Monge-type condition and on carefully implementing the sign/concavity constraints.",
-      "hashtags": [
-        "#SaddleNetworks",
-        "#ConvexConcave",
-        "#Optimization",
-        "#TheoremProving",
-        "#ScientificML"
-      ],
-      "paper_id": "2026-05-27-arxiv-saddle_networks_structure_preserving_architectures_for_convex_concave_functions",
-      "paper_title": "Saddle Networks: Structure-Preserving Architectures for Convex-Concave Functions",
-      "paper_date": "2026-05-27",
-      "paper_category": "Theorem Proving",
-      "generated_at": "2026-05-31T02:47:03",
+      "generated_at": "2026-05-31T14:43:58",
       "generator": "openai"
     }
   },
@@ -810,18 +599,18 @@
     ],
     "score": 64,
     "infographic": {
-      "key_insight": "Preference shaping preserves exact expected-improvement geometry for some hypervolume variants, but for R2 improvement the correct geometry lives in scalarization space rather than objective space.",
-      "engineering_relevance": "This helps design Bayesian multiobjective optimizers with preference-aware acquisition functions that are exact, monotone, and computationally tractable.",
+      "key_insight": "The paper shows that preference-shaped expected improvement for multiobjective Bayesian optimization depends critically on geometry: hypervolume-based criteria and R2-based criteria preserve different exactness and monotonicity properties under different transformations.",
+      "engineering_relevance": "This clarifies when surrogate-based multiobjective optimizers can be computed exactly and when a preference transformation changes the meaning of the acquisition function, affecting algorithm design and reliability.",
       "method": [
-        "Reformulates EHVI with desirability coordinates and cone transformations, while separating cases where truncation breaks variance monotonicity.",
-        "Proves exact integral R2 improvement is not generally objective-space hypervolume; instead it equals a Tchebycheff shadow volume.",
-        "Derives finite-sum ER2I for discrete R2 plus quadrature and Gaussian-surrogate formulations for exact integral R2."
+        "Revisits EHVI using the Deng representation, including product-density weighted and cone-transformed variants.",
+        "Proves that exact integral R2 improvement is not generally an objective-space hypervolume, but a scalarization-space volume in Tchebycheff space.",
+        "Derives finite-sum discrete ER2I algorithms, quadrature methods for exact integral R2, and a Gaussian surrogate formulation for achievement-space ER2I."
       ],
-      "evidence_signal": "The abstract emphasizes exact representations and monotonicity proofs, but does not report empirical datasets or benchmark results.",
-      "watch_item": "Implementations must respect the underlying geometry: truncated EHVI can lose monotonicity, and R2 improvement cannot be computed as ordinary hypervolume in objective space.",
+      "evidence_signal": "The abstract reports exact geometric representations and theoretical results on monotonicity and Pareto compatibility, rather than an empirical benchmark study.",
+      "watch_item": "Truncated EHVI can break variance monotonicity, so preference shaping must be checked carefully before using it as an acquisition function.",
       "hashtags": [
-        "#BayesianOptimization",
         "#MultiobjectiveOptimization",
+        "#BayesianOptimization",
         "#Hypervolume",
         "#R2Indicator",
         "#ParetoOptimization"
@@ -830,7 +619,7 @@
       "paper_title": "Preference-Shaped Expected Hypervolume and R2 Improvement: Exact Computation and Monotonicity",
       "paper_date": "2026-05-27",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-05-31T02:47:05",
+      "generated_at": "2026-05-31T14:44:01",
       "generator": "openai"
     }
   },
@@ -862,27 +651,27 @@
     ],
     "score": 64,
     "infographic": {
-      "key_insight": "Projection onto SAE feature subspaces is an information bottleneck that removes most task-vector energy, so SAEs are better used to choose where to edit than to perform the edit itself.",
-      "engineering_relevance": "For practical LLM math editing, the paper offers a deterministic, zero-extra-inference-cost layer-selection strategy that improves targeted performance without full fine-tuning.",
+      "key_insight": "SAEs work better as layer-selection diagnostics than as projection filters: projecting task vectors into SAE feature subspaces throws away most of the useful update signal.",
+      "engineering_relevance": "For low-cost model editing in math LLMs, the paper offers a deterministic, no-extra-inference pipeline that improves target-domain performance without full fine-tuning.",
       "method": [
-        "Tested SAE-guided projection of raw task vectors onto feature subspaces for editing.",
-        "Found a geometric mismatch between activation-space SAE directions and weight-space task vectors.",
-        "Switched to an SAE-derived layer specificity score to inject unfiltered task vectors only into selected layers."
+        "Tested an SAE-guided task-vector editing pipeline on Gemma-3-4B-IT for math reasoning.",
+        "Found that SAE subspace projection discards about 97% of modification energy and yields no meaningful gains.",
+        "Switched to using SAE-derived specificity scores to choose layers, then applied raw task vectors unfiltered to those layers."
       ],
-      "evidence_signal": "On Gemma-3-4B-IT, the projection approach discarded about 97% of modification energy and showed no significant gains across seven math subjects, while layer selection improved Number Theory accuracy from 29.6% to 39.4% on Minerva Math.",
-      "watch_item": "The method depends on reliable SAE-derived layer specificity; if that diagnostic signal is misestimated or model geometry shifts, the selected layers may not generalize well.",
+      "evidence_signal": "On Minerva Math, Number Theory accuracy rose from 29.6% to 39.4% (z=+3.41, p=0.0007); 5 of 7 subjects improved and none significantly degraded.",
+      "watch_item": "The approach depends on reliable layer-specificity scoring from SAEs, and its gains may not transfer if activation-space features and weight-space updates are strongly misaligned.",
       "hashtags": [
         "#LLMEditing",
         "#SparseAutoencoders",
         "#MathReasoning",
         "#ModelInterpretability",
-        "#TaskVectors"
+        "#AIMethods"
       ],
       "paper_id": "2026-05-27-arxiv-interpretability_guided_layer_selection_over_subspace_projection_saes_as_stethoscopes_not",
       "paper_title": "Interpretability-Guided Layer Selection over Subspace Projection: SAEs as Stethoscopes, Not Scalpels, for Raw Task Vector Model Editing",
       "paper_date": "2026-05-27",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-05-31T02:47:07",
+      "generated_at": "2026-05-31T14:44:04",
       "generator": "openai"
     }
   },
@@ -913,81 +702,132 @@
     ],
     "score": 64,
     "infographic": {
-      "key_insight": "ReverseMath turns existing math problems inside out by inverting the answer, creating new verifiable problems at scale and exposing memorization-like behavior in LLMs.",
-      "engineering_relevance": "It offers a practical way to generate labeled math-training data automatically while also providing a stronger evaluation probe for robust reasoning systems.",
+      "key_insight": "ReverseMath turns a solved math problem into a new, verifiable one by inverting the answer, creating scalable benchmark and training data.",
+      "engineering_relevance": "It offers a practical way to generate labeled math data at scale while exposing memorization-like failures in LLMs during evaluation.",
       "method": [
-        "Mask a numerical value in an existing problem.",
-        "Use the original answer as a known condition.",
-        "Rewrite the problem so the masked value becomes the new answer."
+        "Mask a numerical value in an original problem.",
+        "Use the original answer as a known condition and rewrite the prompt so the masked value becomes the new answer.",
+        "Generate paired original/reversed problems for evaluation and RL data augmentation for training."
       ],
-      "evidence_signal": "The abstract reports that paired original/reversed problems cause substantial behavioral shifts, with models sometimes failing on reversed versions and even outputting the original answer.",
-      "watch_item": "Quality depends on whether the rewritten inverse problem remains mathematically valid and unambiguous, so inversion rules need careful checking.",
+      "evidence_signal": "The abstract reports substantial behavioral shifts on paired problems, including cases where models fail on reversed items and still output the original answer; adding ReverseMath data improves performance across multiple benchmarks.",
+      "watch_item": "Answer inversion depends on reliable problem rewriting and may not work well for all math question types or non-numeric reasoning steps.",
       "hashtags": [
         "#MathematicalReasoning",
         "#LLMEvaluation",
         "#DataAugmentation",
-        "#ReinforcementLearning",
-        "#AIResearch"
+        "#VerifiableData",
+        "#RLTraining"
       ],
       "paper_id": "2026-05-26-arxiv-reversemath_answer_inversion_for_scalable_and_verifiable_mathematical_problem_generation",
       "paper_title": "ReverseMath: Answer Inversion for Scalable and Verifiable Mathematical Problem Generation",
       "paper_date": "2026-05-26",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-05-31T02:47:09",
+      "generated_at": "2026-05-31T14:44:06",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-05-28-arxiv-the_topological_stability_index_a_variance_based_measure_for_persistence_barcodes",
-    "arxiv_id": "2605.29839v1",
+    "id": "2026-05-28-arxiv-fhrformer_a_self_supervised_masked_transformer_framework_for_fetal_heart_rate_time_series",
+    "arxiv_id": "2605.29695v1",
     "date": "2026-05-28",
-    "title": "The Topological Stability Index: A Variance-Based Measure for Persistence Barcodes",
-    "authors": "Joris Kirchner, Ioannis Diamantis",
-    "abstract": "We introduce the \\emph{Topological Stability Index} (TSI), a variance-based scalar measure for persistence barcodes that quantifies the dispersion of persistence lifetimes. Unlike persistent entropy, which depends only on normalized weights, the TSI captures absolute variability and is sensitive to heterogeneous feature scales. We establish fundamental properties of the TSI, including its scaling behavior, invariance under lifetime translation and explicit update formulas under insertion and deletion of bars. We also consider a complementary first-moment-type quantity, the Topological Signal Index (TSigI), which captures the typical scale of persistence lifetimes and provides additional interpretability alongside the TSI. We further introduce a normalized version, $cv\\text{TSI}$, which is scale invariant and admits an explicit algebraic relation to the Rényi entropy of order two. In particular, $cv\\text{TSI}$ is an affine function of the collision probability $\\sum_i p_i^2$, and therefore a monotone reparametrization of the Rényi entropy, providing a direct link between variance-based and entropy-based summaries in topological data analysis. Numerical experiments on synthetic data and stochastic time series demonstrate that the TSI captures structural variability complementary to entropy: it is relatively insensitive to deterministic trends, while responding strongly to stochastic fluctuations and variations in persistence magnitude.",
+    "title": "FHRFormer: A Self-Supervised Masked Transformer Framework for Fetal Heart Rate Time-Series Inpainting and Forecasting",
+    "authors": "Kjersti Engan, Neel Kanwal, Anita Yeconia, Ladislaus Blacy, Yuda Munyaw, Estomih Mduma",
+    "abstract": "Approximately 10% of newborns require assistance to initiate breathing at birth, and around 5% need ventilation support. Fetal heart rate (FHR) monitoring plays a crucial role in assessing fetal well-being during prenatal care, enabling the detection of abnormal patterns and supporting timely obstetric interventions to mitigate fetal risks during labor. Applying artificial intelligence (AI) methods to analyze large datasets of continuous FHR monitoring episodes with diverse outcomes may offer novel insights into predicting the risk of needing breathing assistance or interventions. Recent advances in wearable FHR monitors have enabled continuous fetal monitoring without compromising maternal mobility. However, sensor displacement during maternal movement, as well as changes in fetal or maternal position, often lead to signal dropout, resulting in gaps in recorded FHR data. Such missing data limits the extraction of meaningful insights and complicates automated (AI-based) analysis. Traditional approaches to handling missing data, such as simple interpolation techniques, often fail to preserve the spectral characteristics of the signals. In this paper, we propose a masked transformer-based autoencoder approach to reconstruct missing FHR signals by capturing both local temporal and frequency components of the data. The proposed method demonstrates robustness across varying durations of missing data and can be used for signal inpainting and forecasting. The proposed approach can be applied retrospectively to research datasets to support the development of AI-based risk algorithms. In the future, the proposed method could be integrated into wearable FHR monitoring devices to achieve earlier and more robust risk detection.",
     "category": "Number Theory and Algebra",
     "source": "arXiv",
-    "published": "2026-05-28T12:21:36Z",
-    "updated": "2026-05-28T12:21:36Z",
-    "primary_category": "math.ST",
+    "published": "2026-05-28T09:55:14Z",
+    "updated": "2026-05-28T09:55:14Z",
+    "primary_category": "cs.AI",
     "categories": [
-      "math.ST",
-      "cs.IT",
-      "physics.data-an",
-      "stat.ML"
+      "cs.AI",
+      "cs.CE",
+      "cs.LG",
+      "math.PR"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.29839v1"
+        "url": "https://arxiv.org/abs/2605.29695v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.29839v1"
+        "url": "https://arxiv.org/pdf/2605.29695v1"
       }
     ],
-    "score": 63,
+    "score": 62,
     "infographic": {
-      "key_insight": "The paper introduces the Topological Stability Index (TSI), a variance-based summary of persistence barcode lifetimes that captures absolute dispersion and complements entropy-based measures.",
-      "engineering_relevance": "TSI and its normalized variant cvTSI provide a simple, interpretable scalar feature for topological data analysis pipelines, especially when scale-sensitive variability matters in noisy or multiscale signals.",
+      "key_insight": "FHRFormer uses a self-supervised masked transformer autoencoder to reconstruct missing fetal heart rate segments while preserving temporal and frequency structure for inpainting and forecasting.",
+      "engineering_relevance": "The method can improve reliability of wearable fetal monitoring by reducing the impact of signal dropouts and enabling stronger downstream risk detection models.",
       "method": [
-        "Define TSI as the variance of persistence lifetimes to measure lifetime dispersion.",
-        "Prove key properties: scaling behavior, invariance under lifetime translation, and update rules for adding/removing bars.",
-        "Introduce TSigI and cvTSI, with cvTSI linked algebraically to Rényi entropy of order 2."
+        "Masks missing FHR segments during training and learns to reconstruct them.",
+        "Combines local temporal patterns with frequency-domain information in a transformer-based autoencoder.",
+        "Supports both signal inpainting and short-term forecasting from incomplete time series."
       ],
-      "evidence_signal": "The abstract reports numerical experiments on synthetic data and stochastic time series, showing TSI is complementary to entropy, weakly affected by deterministic trends, and strongly responsive to stochastic fluctuations and persistence-scale variation.",
-      "watch_item": "Because TSI is scale-sensitive, comparisons across datasets or filtrations may require careful normalization or use of cvTSI to avoid misleading magnitude effects.",
+      "evidence_signal": "The abstract reports robustness across varying missing-data durations and suitability for retrospective datasets used to build AI-based risk algorithms.",
+      "watch_item": "Performance may depend on the quality and diversity of training data, and real-world wearable deployment must handle frequent motion-induced artifact and sensor displacement.",
       "hashtags": [
-        "#TopologicalDataAnalysis",
-        "#PersistenceBarcodes",
-        "#VarianceMeasure",
-        "#RenyiEntropy",
-        "#ComputationalTopology"
+        "#FetalHeartRate",
+        "#TimeSeriesInpainting",
+        "#TransformerAI",
+        "#SelfSupervisedLearning",
+        "#BiomedicalSignalProcessing"
       ],
-      "paper_id": "2026-05-28-arxiv-the_topological_stability_index_a_variance_based_measure_for_persistence_barcodes",
-      "paper_title": "The Topological Stability Index: A Variance-Based Measure for Persistence Barcodes",
+      "paper_id": "2026-05-28-arxiv-fhrformer_a_self_supervised_masked_transformer_framework_for_fetal_heart_rate_time_series",
+      "paper_title": "FHRFormer: A Self-Supervised Masked Transformer Framework for Fetal Heart Rate Time-Series Inpainting and Forecasting",
       "paper_date": "2026-05-28",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-05-31T02:47:12",
+      "generated_at": "2026-05-31T14:44:08",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-05-28-arxiv-entropy_kl_divergence_based_token_masking_a_novel_approach_for_selective_fine_tuning_of_la",
+    "arxiv_id": "2605.29303v1",
+    "date": "2026-05-28",
+    "title": "Entropy-KL Divergence-based Token Masking: A Novel Approach for Selective Fine-tuning of Large Language Models",
+    "authors": "Qi Liu, Mingdi Sun, Yongyi He, Zhi Zheng, Tong Xu, Yi Zheng",
+    "abstract": "Supervised fine-tuning (SFT) followed by reinforcement learning (RL) has become a standard post-training paradigm for large language models. This paradigm provides a cold-start for RL exploration, avoiding the inefficiency of pure RL where on-policy sampling yields insufficient positive samples. However, in practice, existing approaches often use a small amount of data for SFT initialization compared to the RL phase, which can cause the model to fit the limited samples and shift away from its pre-trained distribution. This distribution shift impedes the model's ability to effectively explore during subsequent RL training. To address this challenge, we propose that in low-data regimes, SFT should prioritize activating task-relevant capabilities rather than memorizing specific content. Along this line, we propose EKSFT (Entropy-KL Selective Fine-Tuning), which selectively masks tokens that exhibit either high entropy or high KL divergence from a reference model. By excluding these high-uncertainty, distribution-shifting tokens from imitation, EKSFT injects task-specific knowledge while preserving the integrity of the model's pre-trained distribution. Empirical evaluations on mathematical reasoning benchmarks demonstrate that EKSFT consistently outperforms standard SFT. Further RL fine-tuning from the EKSFT model yields consistently better post-RL performance, indicating improved exploration for the RL stage. Our codes and datasets are available at https://github.com/MINE-USTC/EKSFT.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-05-28T03:36:05Z",
+    "updated": "2026-05-28T03:36:05Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2605.29303v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2605.29303v1"
+      }
+    ],
+    "score": 62,
+    "infographic": {
+      "key_insight": "EKSFT improves low-data supervised fine-tuning by masking tokens with high entropy or high KL divergence, so the model learns task-relevant skills without overfitting to noisy or distribution-shifting details.",
+      "engineering_relevance": "This offers a practical training strategy for math-focused LLM pipelines that preserves pre-trained behavior and leads to better downstream RL exploration and performance.",
+      "method": [
+        "Compute token-level entropy and KL divergence against a reference model",
+        "Mask high-uncertainty or high-shift tokens during SFT imitation",
+        "Use the resulting model as a better initialization for RL fine-tuning"
+      ],
+      "evidence_signal": "On mathematical reasoning benchmarks, EKSFT consistently outperformed standard SFT, and models further RL-finetuned from EKSFT achieved better post-RL results.",
+      "watch_item": "Token masking thresholds and reference-model choice may be sensitive hyperparameters, so improper calibration could suppress useful supervision or reduce gains.",
+      "hashtags": [
+        "#LLMs",
+        "#FineTuning",
+        "#MathReasoning",
+        "#ReinforcementLearning",
+        "#TokenMasking"
+      ],
+      "paper_id": "2026-05-28-arxiv-entropy_kl_divergence_based_token_masking_a_novel_approach_for_selective_fine_tuning_of_la",
+      "paper_title": "Entropy-KL Divergence-based Token Masking: A Novel Approach for Selective Fine-tuning of Large Language Models",
+      "paper_date": "2026-05-28",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-05-31T14:44:10",
       "generator": "openai"
     }
   },
@@ -1018,27 +858,185 @@
     ],
     "score": 62,
     "infographic": {
-      "key_insight": "GCPO replaces uniform sample-level rewards with per-token advantages by contrasting model predictions under positive and negative prompts, giving finer credit assignment for discrete policy optimization.",
-      "engineering_relevance": "This enables more targeted and scalable training signals for reasoning and generation systems, improving optimization quality in tasks where only a subset of tokens truly drive performance.",
+      "key_insight": "GCPO replaces uniform sample-level credit with token-level advantages by contrasting model outputs under positive and negative prompts, enabling finer-grained discrete policy optimization.",
+      "engineering_relevance": "The method is useful wherever discrete policy learning needs precise attribution, especially in chain-of-thought reasoning and text-to-image generation.",
       "method": [
-        "Compute contrastive predictions using positive vs. negative prompts.",
-        "Assign token-level advantages from the prediction differences instead of broadcasting one reward to all tokens.",
-        "Optimize a discrete policy with these finer-grained credit signals."
+        "Contrast predictions from positive vs. negative prompts to estimate per-token contribution.",
+        "Assign token-level advantages proportional to the contrastive difference instead of broadcasting one sample reward.",
+        "Optimize the policy with these finer-grained credit signals for more targeted learning."
       ],
-      "evidence_signal": "The abstract reports extensive experiments showing consistent gains over GRPO and DAPO on both text-to-image generation and chain-of-thought reasoning benchmarks.",
-      "watch_item": "The method depends on constructing meaningful positive/negative prompts, so performance may be sensitive to prompt design and contrast quality.",
+      "evidence_signal": "The abstract reports that GCPO was evaluated extensively and consistently outperformed GRPO and DAPO on both text-to-image generation and chain-of-thought reasoning benchmarks.",
+      "watch_item": "Performance depends on having well-designed positive and negative prompts; poor contrast pairs could weaken token-level credit assignment.",
       "hashtags": [
         "#ReinforcementLearning",
-        "#PolicyOptimization",
+        "#DiscreteOptimization",
         "#TokenCreditAssignment",
         "#MathReasoning",
-        "#TextToImage"
+        "#GenerativeAI"
       ],
       "paper_id": "2026-05-28-arxiv-guidance_contrastive_token_credit_assignment_for_discrete_policy_optimization",
       "paper_title": "Guidance Contrastive Token Credit Assignment for Discrete Policy Optimization",
       "paper_date": "2026-05-28",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-05-31T02:47:14",
+      "generated_at": "2026-05-31T14:44:12",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-05-27-arxiv-token_optimization_strategies_for_llm_based_oracle_to_postgresql_migration",
+    "arxiv_id": "2605.28557v1",
+    "date": "2026-05-27",
+    "title": "Token Optimization Strategies for LLM-Based Oracle-to-PostgreSQL Migration",
+    "authors": "Oleg Grynets, Dmytro Babarytskyi, Vasyl Lyashkevych",
+    "abstract": "LLMs are increasingly used for software modernization, code translation, and database migration. However, LLM-based Oracle2PostgreSQL migration remains constrained by high token consumption, long-context degradation, dialect-specific semantic differences, and the risk of semantic drift during query transformation. Direct inclusion of large Oracle SQL/PL-SQL artefacts, schema definitions, procedural logic, and migration instructions into the model context increases cost and may reduce generation quality. This paper shows token optimization as a constrained transformation problem in LLM-based Oracle2PostgreSQL migration. The study formalizes and evaluates twelve token optimization strategies: baseline representation, context pruning, minification, DSL-based semantic compression, metadata augmentation, context refactoring, schema distillation, adaptive routing, AST-based minification, identifier masking, output constraint enforcement, and hybrid optimization. The strategies are evaluated on samples of 10 and 100 Oracle SQL queries using Valid Syntax Rate, Exact Match, Semantic Match, CodeBLEU, and Token Efficiency. The results show that mild context pruning preserves semantic quality almost at the baseline level, achieving 89.75% Semantic Match on the 100-query sample compared with 89.80% for the unoptimized baseline. Adaptive routing provides the best practical trade-off, reducing input tokens by 8.72% and output tokens by 5.49% while maintaining 88.40% Semantic Match and increasing Token Efficiency by 6.67%. Aggressive schema distillation increases Token Efficiency by 132.22% but results in a 44.50-percentage-point decrease in Semantic Match. The findings demonstrate that token optimization cannot be treated as simple prompt shortening; it must be evaluated as a multi-objective migration problem balancing cost, syntactic validity, semantic preservation, and structural fidelity.",
+    "category": "Theorem Proving",
+    "source": "arXiv",
+    "published": "2026-05-27T14:46:35Z",
+    "updated": "2026-05-27T14:46:35Z",
+    "primary_category": "cs.LO",
+    "categories": [
+      "cs.LO",
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2605.28557v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2605.28557v1"
+      }
+    ],
+    "score": 62,
+    "infographic": {
+      "key_insight": "Token optimization for LLM-based Oracle-to-PostgreSQL migration is a multi-objective tradeoff, not just prompt shortening: some strategies cut tokens with little quality loss, while aggressive compression can severely damage semantic match.",
+      "engineering_relevance": "For database migration pipelines, the best practical gains come from adaptive context management that reduces cost and preserves translation quality, rather than blindly minimizing context size.",
+      "method": [
+        "Evaluated 12 token-optimization strategies for Oracle SQL/PL-SQL to PostgreSQL migration.",
+        "Compared them on 10- and 100-query samples using Valid Syntax Rate, Exact Match, Semantic Match, CodeBLEU, and Token Efficiency.",
+        "Studied approaches including pruning, minification, schema distillation, adaptive routing, and hybrid optimization."
+      ],
+      "evidence_signal": "On the 100-query sample, mild context pruning kept Semantic Match near baseline (89.75% vs. 89.80%), while adaptive routing reduced input tokens by 8.72% and output tokens by 5.49% with 88.40% Semantic Match and a 6.67% Token Efficiency gain.",
+      "watch_item": "Aggressive compression methods such as schema distillation can improve token efficiency but may introduce major semantic drift, so they need careful validation before deployment.",
+      "hashtags": [
+        "#LLM",
+        "#DatabaseMigration",
+        "#OracleToPostgreSQL",
+        "#PromptOptimization",
+        "#CodeTranslation"
+      ],
+      "paper_id": "2026-05-27-arxiv-token_optimization_strategies_for_llm_based_oracle_to_postgresql_migration",
+      "paper_title": "Token Optimization Strategies for LLM-Based Oracle-to-PostgreSQL Migration",
+      "paper_date": "2026-05-27",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-05-31T14:44:15",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-05-28-arxiv-kernel_based_potential_mean_field_games_with_unbiased_random_fourier_u_statistics",
+    "arxiv_id": "2605.29371v1",
+    "date": "2026-05-28",
+    "title": "Kernel-based potential mean-field games with unbiased random Fourier $U$-statistics",
+    "authors": "Yumiharu Nakano",
+    "abstract": "We study the subclass of potential mean-field games in which the running interaction cost and the terminal target cost are both expressed through reproducing-kernel maximum mean discrepancy (MMD) penalties, and develop a computational framework that exploits this kernel structure. Both costs are estimated from finite-sample empirical distributions using a random Fourier U-statistic representation that is unbiased and has linear cost in the batch size. The drift of the controlled diffusion is parametrized by a neural network and trained via stochastic gradient descent. For this subclass we prove a sample-level almost-sure convergence theorem and an explicit almost-sure rate of convergence, under coupled rate conditions on the penalty parameter, the random-feature count, the sample size, and the optimization tolerance. The framework includes the kernel-MMD-penalty Schrödinger bridge problem as the special case of a vanishing interaction cost. Numerical experiments illustrate the method on the Schrödinger bridge problem in dimensions up to one hundred, and on an electric vehicle charging coordination problem with per-vehicle physical heterogeneity, where an aggregate-demand congestion cost represents price-feedback competition at the population level and the terminal MMD penalty shapes the state-of-charge distribution at the deadline.",
+    "category": "Theorem Proving",
+    "source": "arXiv",
+    "published": "2026-05-28T05:15:25Z",
+    "updated": "2026-05-28T05:15:25Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC",
+      "cs.LG",
+      "math.NA",
+      "stat.ML"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2605.29371v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2605.29371v1"
+      }
+    ],
+    "score": 61,
+    "infographic": {
+      "key_insight": "The paper shows that mean-field games can be made computationally tractable by replacing distribution-matching costs with kernel MMD penalties estimated by unbiased random Fourier U-statistics, while still proving almost-sure convergence guarantees.",
+      "engineering_relevance": "This provides a scalable learning-based framework for large-population control problems such as Schrödinger bridges and coordinated EV charging, with linear-in-batch-cost estimators and provable convergence.",
+      "method": [
+        "Model running and terminal distribution costs with RKHS MMD penalties.",
+        "Estimate both costs from empirical samples using unbiased random Fourier U-statistics with linear batch complexity.",
+        "Train a neural-network drift for the controlled diffusion by stochastic gradient descent and prove sample-level almost-sure convergence."
+      ],
+      "evidence_signal": "The abstract reports numerical experiments on Schrödinger bridge problems up to 100 dimensions and on an electric-vehicle charging coordination task with heterogeneous vehicles.",
+      "watch_item": "Performance depends on coupled tuning of the penalty strength, random-feature count, sample size, and optimization tolerance, so miscalibration may hurt both accuracy and the stated convergence rate.",
+      "hashtags": [
+        "#MeanFieldGames",
+        "#KernelMethods",
+        "#MMD",
+        "#SchrodingerBridge",
+        "#OptimalControl"
+      ],
+      "paper_id": "2026-05-28-arxiv-kernel_based_potential_mean_field_games_with_unbiased_random_fourier_u_statistics",
+      "paper_title": "Kernel-based potential mean-field games with unbiased random Fourier $U$-statistics",
+      "paper_date": "2026-05-28",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-05-31T14:44:18",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-05-27-arxiv-saddle_networks_structure_preserving_architectures_for_convex_concave_functions",
+    "arxiv_id": "2605.28894v1",
+    "date": "2026-05-27",
+    "title": "Saddle Networks: Structure-Preserving Architectures for Convex-Concave Functions",
+    "authors": "Xavier Warin",
+    "abstract": "Saddle-point models arise throughout optimization, optimal transport, robust learning, and control. In many applications, the relevant function f(x,y) is convex in x and concave in y, and preserving this geometry is essential for obtaining tractable min--max formulations and reliable certificates. We introduce a structured separable decomposition that preserves the convex-concave geometry and prove a complete one-dimensional approximation theorem under a mixed Monge-type convexity condition. We then describe practical saddle network architectures that preserve convexity in x and concavity in y by construction. The proposed architectures require only convexity-preserving neural networks, together with simple output transformations enforcing sign and concavity constraints. Finally, we report numerical benchmarks in dimension 1 and 5, showing that the proposed saddle networks achieve high accuracy on smooth, nonsmooth, and high-rank convex--concave test functions.",
+    "category": "Theorem Proving",
+    "source": "arXiv",
+    "published": "2026-05-27T08:25:24Z",
+    "updated": "2026-05-27T08:25:24Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC",
+      "stat.ML"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2605.28894v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2605.28894v1"
+      }
+    ],
+    "score": 61,
+    "infographic": {
+      "key_insight": "The paper shows how to build neural architectures that preserve convexity in x and concavity in y by design, using a separable decomposition and a one-dimensional approximation theorem under mixed Monge-type convexity.",
+      "engineering_relevance": "This gives a principled way to model saddle-point objectives in optimization, control, robust learning, and optimal transport while retaining tractable min-max structure and certificates.",
+      "method": [
+        "Prove a complete 1D approximation theorem for convex-concave functions under a mixed Monge-type convexity condition.",
+        "Construct saddle networks from convexity-preserving subnetworks plus simple output transforms that enforce the required sign/concavity constraints.",
+        "Use a structured separable decomposition to preserve convex-concave geometry in the full model."
+      ],
+      "evidence_signal": "The abstract reports numerical benchmarks in dimensions 1 and 5, with strong accuracy on smooth, nonsmooth, and high-rank convex-concave test functions.",
+      "watch_item": "Performance depends on satisfying the architectural constraints exactly, so implementation must carefully enforce convexity and concavity-preserving components.",
+      "hashtags": [
+        "#SaddleNetworks",
+        "#ConvexConcave",
+        "#StructuredML",
+        "#Optimization",
+        "#TheoremProving"
+      ],
+      "paper_id": "2026-05-27-arxiv-saddle_networks_structure_preserving_architectures_for_convex_concave_functions",
+      "paper_title": "Saddle Networks: Structure-Preserving Architectures for Convex-Concave Functions",
+      "paper_date": "2026-05-27",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-05-31T14:44:21",
       "generator": "openai"
     }
   }

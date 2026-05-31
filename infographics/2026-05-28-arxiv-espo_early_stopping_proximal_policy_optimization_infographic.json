@@ -1,24 +1,24 @@
 {
-  "key_insight": "ESPO reduces wasted RL compute by detecting early reasoning failure during rollout and stopping trajectories before they continue generating low-value tokens.",
-  "engineering_relevance": "For LLM RL training, early stopping can improve sample efficiency and sharpen credit assignment by turning failed rollouts into absorbing failure states with terminal penalties.",
+  "key_insight": "ESPO speeds up PPO for math reasoning by stopping rollouts early once a trajectory is likely to have failed, instead of wasting compute on useless tokens.",
+  "engineering_relevance": "This reduces training cost and noise in advantage estimates, making RL fine-tuning of large language models more efficient and potentially more stable.",
   "method": [
-    "Monitors surrogate regret from already-computed sampling logits at each generation step.",
-    "Applies a smoothed cumulative threshold to detect likely failure on the fly.",
-    "Stops rollouts early and assigns a terminal reward so negative TD error concentrates near the failure step."
+    "Detect failure online during generation using a surrogate regret computed from already available logits.",
+    "Smooth cumulative regret and stop when it significantly exceeds estimated values.",
+    "Treat truncated rollouts as absorbing failure states with a terminal reward to localize negative TD error near the failure step."
   ],
-  "evidence_signal": "On DeepSeek-R1-Distill-Qwen-7B, ESPO outperformed PPO on AIME 2024, AMC 2023, and MATH-500 while saving more than 20% of rollout tokens cumulatively.",
-  "watch_item": "Early stopping depends on the quality of the failure detector and threshold calibration, so overly aggressive truncation could cut off valid long reasoning chains.",
+  "evidence_signal": "On DeepSeek-R1-Distill-Qwen-7B, ESPO improved over PPO on AIME 2024, AMC 2023, and MATH-500 while saving more than 20% of rollout tokens.",
+  "watch_item": "Early stopping depends on a calibrated failure-detection threshold; if it is too aggressive or too lax, it may truncate useful reasoning or miss wasted compute.",
   "hashtags": [
-    "#LLMTraining",
+    "#RLHF",
     "#PPO",
-    "#ReinforcementLearning",
-    "#MathReasoning",
-    "#ComputeEfficiency"
+    "#LLMReasoning",
+    "#MathAI",
+    "#EfficientTraining"
   ],
   "paper_id": "2026-05-28-arxiv-espo_early_stopping_proximal_policy_optimization",
   "paper_title": "ESPO: Early-Stopping Proximal Policy Optimization",
   "paper_date": "2026-05-28",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-05-31T02:46:39",
+  "generated_at": "2026-05-31T14:43:42",
   "generator": "openai"
 }

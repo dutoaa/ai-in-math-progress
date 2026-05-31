@@ -1,17 +1,17 @@
 {
-  "key_insight": "SHIFT selects RLVR training data without labels or reward scores by using a single inference rollout to measure hidden-state change as a proxy for instance utility.",
-  "engineering_relevance": "This gives a practical, training-free way to build compact high-value datasets for reasoning systems when labeled rewards are expensive or unavailable.",
+  "key_insight": "SHIFT selects RLVR training data without labels or training by using one deterministic rollout to measure hidden-state shift as a proxy for instance utility.",
+  "engineering_relevance": "This offers a practical, low-cost way to build compact high-value RLVR datasets in domains where rewards or ground-truth answers are unavailable or expensive to compute.",
   "method": [
-    "Run one deterministic reasoning rollout per candidate and compute the start-to-end hidden-state delta (RIRS).",
-    "Use RIRS magnitude as a quality score for each instance.",
-    "Apply quality-weighted farthest-first CoreSet selection in an RIRS-augmented feature space to preserve both utility and coverage."
+    "Run a single inference-time reasoning rollout per candidate.",
+    "Compute RIRS as the start-to-end hidden-state delta to score utility.",
+    "Use quality-weighted farthest-first CoreSet selection in an RIRS-augmented feature space to preserve both quality and coverage."
   ],
-  "evidence_signal": "The abstract reports consistent gains over diversity and difficulty/uncertainty baselines across mathematical reasoning and medical QA benchmarks, especially under ultra-low selection budgets.",
-  "watch_item": "RIRS depends on a specific model’s hidden-state dynamics and one rollout, so its ranking quality may be sensitive to the base model, prompt setup, and inference determinism.",
+  "evidence_signal": "Across mathematical reasoning and medical QA benchmarks under ultra-low budgets, SHIFT improves in-domain accuracy and transfer to harder evaluation settings versus training-free diversity and uncertainty baselines.",
+  "watch_item": "Because SHIFT depends on deterministic rollout behavior and hidden-state features, results may be sensitive to model choice, decoding setup, and feature extraction consistency.",
   "hashtags": [
     "#RLVR",
     "#DataSelection",
-    "#ReasoningModels",
+    "#MathematicalReasoning",
     "#HiddenStates",
     "#CoreSet"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection",
   "paper_date": "2026-05-27",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-05-31T02:46:48",
+  "generated_at": "2026-05-31T14:43:49",
   "generator": "openai"
 }

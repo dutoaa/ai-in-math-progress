@@ -1,24 +1,24 @@
 {
-  "key_insight": "Projection onto SAE feature subspaces is an information bottleneck that removes most task-vector energy, so SAEs are better used to choose where to edit than to perform the edit itself.",
-  "engineering_relevance": "For practical LLM math editing, the paper offers a deterministic, zero-extra-inference-cost layer-selection strategy that improves targeted performance without full fine-tuning.",
+  "key_insight": "SAEs work better as layer-selection diagnostics than as projection filters: projecting task vectors into SAE feature subspaces throws away most of the useful update signal.",
+  "engineering_relevance": "For low-cost model editing in math LLMs, the paper offers a deterministic, no-extra-inference pipeline that improves target-domain performance without full fine-tuning.",
   "method": [
-    "Tested SAE-guided projection of raw task vectors onto feature subspaces for editing.",
-    "Found a geometric mismatch between activation-space SAE directions and weight-space task vectors.",
-    "Switched to an SAE-derived layer specificity score to inject unfiltered task vectors only into selected layers."
+    "Tested an SAE-guided task-vector editing pipeline on Gemma-3-4B-IT for math reasoning.",
+    "Found that SAE subspace projection discards about 97% of modification energy and yields no meaningful gains.",
+    "Switched to using SAE-derived specificity scores to choose layers, then applied raw task vectors unfiltered to those layers."
   ],
-  "evidence_signal": "On Gemma-3-4B-IT, the projection approach discarded about 97% of modification energy and showed no significant gains across seven math subjects, while layer selection improved Number Theory accuracy from 29.6% to 39.4% on Minerva Math.",
-  "watch_item": "The method depends on reliable SAE-derived layer specificity; if that diagnostic signal is misestimated or model geometry shifts, the selected layers may not generalize well.",
+  "evidence_signal": "On Minerva Math, Number Theory accuracy rose from 29.6% to 39.4% (z=+3.41, p=0.0007); 5 of 7 subjects improved and none significantly degraded.",
+  "watch_item": "The approach depends on reliable layer-specificity scoring from SAEs, and its gains may not transfer if activation-space features and weight-space updates are strongly misaligned.",
   "hashtags": [
     "#LLMEditing",
     "#SparseAutoencoders",
     "#MathReasoning",
     "#ModelInterpretability",
-    "#TaskVectors"
+    "#AIMethods"
   ],
   "paper_id": "2026-05-27-arxiv-interpretability_guided_layer_selection_over_subspace_projection_saes_as_stethoscopes_not",
   "paper_title": "Interpretability-Guided Layer Selection over Subspace Projection: SAEs as Stethoscopes, Not Scalpels, for Raw Task Vector Model Editing",
   "paper_date": "2026-05-27",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-05-31T02:47:07",
+  "generated_at": "2026-05-31T14:44:04",
   "generator": "openai"
 }

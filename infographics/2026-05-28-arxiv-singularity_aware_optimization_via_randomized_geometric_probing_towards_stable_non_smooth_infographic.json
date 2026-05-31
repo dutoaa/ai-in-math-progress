@@ -1,24 +1,24 @@
 {
-  "key_insight": "S-Adam stabilizes non-smooth deep learning optimization by detecting local geometric instability and dampening steps where gradient signals conflict.",
-  "engineering_relevance": "This offers a practical optimizer for quantization-aware training and noisy small-batch regimes where standard Adam can oscillate or converge poorly.",
+  "key_insight": "S-Adam stabilizes non-smooth deep learning optimization by detecting local geometric instability and damping updates when the loss landscape is highly irregular.",
+  "engineering_relevance": "This provides a practical optimizer for quantization-aware training and other non-smooth workloads where standard adaptive methods can oscillate or fail to converge reliably.",
   "method": [
-    "Estimate Local Geometric Instability (LGI) from variance in randomized directional derivatives.",
-    "Apply adaptive damping exp(-λρ) to shrink updates in high-instability regions.",
-    "Use a Clarke subdifferential-based convergence framework to justify stable non-smooth optimization."
+    "Estimate Local Geometric Instability (LGI) from the variance of randomized directional derivatives.",
+    "Use an exponential damping factor exp(-λρ) to shrink steps in unstable regions.",
+    "Retain Adam-like fast progress in smoother parts of the landscape."
   ],
-  "evidence_signal": "The abstract reports improved performance over AdamW and Prox-SGD, with up to 6% accuracy gain on CIFAR-100 and 3% on TinyImageNet while reducing gradient oscillations.",
-  "watch_item": "The randomized probing and instability estimation add computation and hyperparameter sensitivity, so efficiency and tuning in large-scale training may be a concern.",
+  "evidence_signal": "The abstract reports improved performance on QAT and noisy small-batch training, with up to 6% higher accuracy on CIFAR-100 and 3% on TinyImageNet versus AdamW and Prox-SGD.",
+  "watch_item": "LGI estimation adds extra stochastic probes, so the runtime overhead and sensitivity to probe settings may matter in large-scale training.",
   "hashtags": [
-    "#Optimization",
-    "#DeepLearning",
     "#NonSmoothOptimization",
+    "#Adam",
     "#QuantizationAwareTraining",
-    "#Adam"
+    "#DeepLearningOptimization",
+    "#ClarkeSubdifferential"
   ],
   "paper_id": "2026-05-28-arxiv-singularity_aware_optimization_via_randomized_geometric_probing_towards_stable_non_smooth",
   "paper_title": "Singularity-aware Optimization via Randomized Geometric Probing: Towards Stable Non-smooth Optimization",
   "paper_date": "2026-05-28",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-05-31T02:46:41",
+  "generated_at": "2026-05-31T14:43:44",
   "generator": "openai"
 }

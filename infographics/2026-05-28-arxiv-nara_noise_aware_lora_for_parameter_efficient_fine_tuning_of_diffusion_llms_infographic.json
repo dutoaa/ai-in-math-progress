@@ -1,24 +1,24 @@
 {
-  "key_insight": "NaRA makes LoRA noise-aware by generating a low-rank update from a shared hypernetwork conditioned on diffusion noise level, so fine-tuning adapts לאורך the denoising trajectory instead of staying static.",
-  "engineering_relevance": "This offers a parameter-efficient way to improve diffusion LLM fine-tuning without meaningful extra latency or model size, making it practical for large-scale deployment.",
+  "key_insight": "NaRA makes LoRA noise-aware by conditioning a low-rank update on the diffusion step, so fine-tuning adapts to changing difficulty along the denoising trajectory.",
+  "engineering_relevance": "It offers a practical PEFT option for diffusion LLMs that preserves efficiency while better matching the non-autoregressive dynamics of generation.",
   "method": [
-    "Adds a lightweight hypernetwork that outputs the low-rank core matrix from the current noise level.",
-    "Keeps the adaptation globally shared across layers to control parameter overhead.",
-    "Lets the update matrix vary continuously during denoising, matching changing difficulty and input distributions."
+    "Uses a lightweight, globally shared hypernetwork to generate a low-rank core matrix from the noise level.",
+    "Allows update matrices to vary continuously across diffusion steps instead of remaining static.",
+    "Keeps parameter and latency overhead negligible compared with full fine-tuning."
   ],
-  "evidence_signal": "The abstract reports consistent gains over noise-agnostic PEFT baselines on commonsense reasoning, mathematical reasoning, and code generation benchmarks.",
-  "watch_item": "Performance and stability may depend on accurate noise-level conditioning and on integrating the hypernetwork cleanly into different dLLM architectures.",
+  "evidence_signal": "The abstract reports consistent gains over noise-agnostic baselines on commonsense reasoning, mathematical reasoning, and code generation benchmarks.",
+  "watch_item": "The added hypernetwork must be carefully implemented and trained so the noise-conditioned updates stay stable and do not erode the efficiency benefits.",
   "hashtags": [
     "#DiffusionLLM",
     "#LoRA",
     "#ParameterEfficientFineTuning",
     "#MathematicalReasoning",
-    "#NoiseAwareLearning"
+    "#GenerativeAI"
   ],
   "paper_id": "2026-05-28-arxiv-nara_noise_aware_lora_for_parameter_efficient_fine_tuning_of_diffusion_llms",
   "paper_title": "NaRA: Noise-Aware LoRA for Parameter-Efficient Fine-Tuning of Diffusion LLMs",
   "paper_date": "2026-05-28",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-05-31T02:46:43",
+  "generated_at": "2026-05-31T14:43:55",
   "generator": "openai"
 }

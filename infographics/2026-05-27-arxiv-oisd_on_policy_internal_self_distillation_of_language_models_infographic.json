@@ -1,24 +1,24 @@
 {
-  "key_insight": "OISD improves reasoning by using the model’s final layer as an on-policy teacher for intermediate layers, distilling both logits and attention during RL post-training.",
-  "engineering_relevance": "It offers a practical training recipe for boosting math-reasoning language models without external privileged supervision, while preserving a single acting policy.",
+  "key_insight": "OISD improves reasoning by distilling the final layer’s on-policy signals into intermediate layers during RL post-training, so the model learns both better outputs and better internal representations.",
+  "engineering_relevance": "For large language model training pipelines, OISD offers a plug-in alignment mechanism that can boost reasoning performance without external teacher models or privileged annotations.",
   "method": [
-    "Use the final layer as a detached internal teacher for selected intermediate layers during rollout and GRPO.",
-    "Align intermediate logits to transfer reasoning behavior and align attention patterns to transfer where-to-look signals.",
-    "Apply signed advantage-weighted Jensen–Shannon alignment to keep distilled representations policy-consistent."
+    "Use the final layer as both the acting policy and a detached internal teacher.",
+    "Align selected intermediate layers with the final layer using logit alignment to transfer reasoning behavior.",
+    "Add attention alignment and signed advantage-weighted Jensen–Shannon alignment to preserve policy consistency while distilling useful internal signals."
   ],
-  "evidence_signal": "The abstract reports substantial, consistent gains over strong reasoning RL baselines on four mathematical reasoning tasks.",
-  "watch_item": "The method adds alignment losses and layer-selection choices, so stability and compute overhead may depend on careful tuning.",
+  "evidence_signal": "The abstract reports substantial and consistent gains over strong reasoning RL baselines across four mathematical reasoning tasks.",
+  "watch_item": "Because the method adds intermediate-layer alignment terms during RL optimization, it may increase training complexity and require careful tuning to avoid destabilizing policy learning.",
   "hashtags": [
     "#LLMReasoning",
     "#ReinforcementLearning",
     "#SelfDistillation",
     "#MathAI",
-    "#GRPO"
+    "#PolicyOptimization"
   ],
   "paper_id": "2026-05-27-arxiv-oisd_on_policy_internal_self_distillation_of_language_models",
   "paper_title": "OISD: On-Policy Internal Self-Distillation of Language Models",
   "paper_date": "2026-05-27",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-05-31T02:46:46",
+  "generated_at": "2026-05-31T14:43:47",
   "generator": "openai"
 }

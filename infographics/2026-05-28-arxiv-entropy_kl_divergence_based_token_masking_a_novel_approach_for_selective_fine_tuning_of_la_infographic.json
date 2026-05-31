@@ -1,17 +1,17 @@
 {
-  "key_insight": "EKSFT improves low-data supervised fine-tuning by masking tokens with high entropy or high KL divergence, so the model learns task-relevant skills without drifting far from its pre-trained distribution.",
-  "engineering_relevance": "For LLM post-training pipelines, this offers a practical way to build a better RL warm-start that preserves exploration capacity and can improve downstream reasoning performance.",
+  "key_insight": "EKSFT improves low-data supervised fine-tuning by masking tokens with high entropy or high KL divergence, so the model learns task-relevant skills without overfitting to noisy or distribution-shifting details.",
+  "engineering_relevance": "This offers a practical training strategy for math-focused LLM pipelines that preserves pre-trained behavior and leads to better downstream RL exploration and performance.",
   "method": [
-    "Compute token-level entropy and KL divergence against a reference model.",
-    "Mask high-uncertainty or distribution-shifting tokens during SFT.",
-    "Fine-tune only on the remaining tokens to selectively imprint task knowledge."
+    "Compute token-level entropy and KL divergence against a reference model",
+    "Mask high-uncertainty or high-shift tokens during SFT imitation",
+    "Use the resulting model as a better initialization for RL fine-tuning"
   ],
-  "evidence_signal": "The abstract reports that EKSFT consistently outperforms standard SFT on mathematical reasoning benchmarks and that RL from EKSFT yields better post-RL performance.",
-  "watch_item": "The masking strategy depends on a suitable reference model and thresholding scheme, which may require tuning to avoid removing too much useful supervision.",
+  "evidence_signal": "On mathematical reasoning benchmarks, EKSFT consistently outperformed standard SFT, and models further RL-finetuned from EKSFT achieved better post-RL results.",
+  "watch_item": "Token masking thresholds and reference-model choice may be sensitive hyperparameters, so improper calibration could suppress useful supervision or reduce gains.",
   "hashtags": [
-    "#LLM",
+    "#LLMs",
     "#FineTuning",
-    "#MathematicalReasoning",
+    "#MathReasoning",
     "#ReinforcementLearning",
     "#TokenMasking"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Entropy-KL Divergence-based Token Masking: A Novel Approach for Selective Fine-tuning of Large Language Models",
   "paper_date": "2026-05-28",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-05-31T02:46:57",
+  "generated_at": "2026-05-31T14:44:10",
   "generator": "openai"
 }
