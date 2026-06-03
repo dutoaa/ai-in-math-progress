@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-06-02
+Generated: 2026-06-03
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Trust Region On-Policy Distillation
