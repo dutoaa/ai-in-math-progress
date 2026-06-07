@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-06-06
+Generated: 2026-06-07
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Proof-Refactor: Refactoring Generated Formal Proofs into Modular Artifacts
