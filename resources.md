@@ -1,9 +1,137 @@
 # AI math Progress Public Resources
 
-Generated: 2026-06-08
+Generated: 2026-06-09
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. No-Harm Physics-Informed Inverse Learning with Residual-Calibrated Uncertainty
+## 1. Artificial Intelligence for Mathematical Reasoning: An Integrated Survey of Language Models, Neuro-symbolic Systems, and Verified Discovery
+
+- Date: 2026-06-07
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.08728v1
+- PDF: https://arxiv.org/pdf/2606.08728v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-07-arxiv-artificial_intelligence_for_mathematical_reasoning_an_integrated_survey_of_language_models_infographic.json
+
+## 2. Particle Methods with Deep Learning for Stochastic Control under Partial Observation
+
+- Date: 2026-06-08
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.09055v1
+- PDF: https://arxiv.org/pdf/2606.09055v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-08-arxiv-particle_methods_with_deep_learning_for_stochastic_control_under_partial_observation_infographic.json
+
+## 3. Diverse Thinking Schemata Elicit Better Reasoning in Large Language Models
+
+- Date: 2026-06-08
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.08974v1
+- PDF: https://arxiv.org/pdf/2606.08974v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-08-arxiv-diverse_thinking_schemata_elicit_better_reasoning_in_large_language_models_infographic.json
+
+## 4. Momentum for Reasoning: Dense Intrinsic Signals in Policy Optimization
+
+- Date: 2026-06-07
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.08815v1
+- PDF: https://arxiv.org/pdf/2606.08815v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-07-arxiv-momentum_for_reasoning_dense_intrinsic_signals_in_policy_optimization_infographic.json
+
+## 5. An Agency-Transferring Model-Free Policy Enhancement Technique
+
+- Date: 2026-06-08
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.09825v1
+- PDF: https://arxiv.org/pdf/2606.09825v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-08-arxiv-an_agency_transferring_model_free_policy_enhancement_technique_infographic.json
+
+## 6. A Regret Minimization Framework on Preference Learning in Large Language Models
+
+- Date: 2026-06-08
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.09124v1
+- PDF: https://arxiv.org/pdf/2606.09124v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-08-arxiv-a_regret_minimization_framework_on_preference_learning_in_large_language_models_infographic.json
+
+## 7. LEAF: A Learning-Enabled ADMM Framework for Accelerated Convex Optimization
+
+- Date: 2026-06-08
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.08993v1
+- PDF: https://arxiv.org/pdf/2606.08993v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-08-arxiv-leaf_a_learning_enabled_admm_framework_for_accelerated_convex_optimization_infographic.json
+
+## 8. Boundary-Layer-Induced Failure of Standard Physics-Informed Neural Networks: A Legendre Wavelet Collocation Benchmark for Singularly Perturbed Transport Problems
+
+- Date: 2026-06-08
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2606.09676v1
+- PDF: https://arxiv.org/pdf/2606.09676v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-08-arxiv-boundary_layer_induced_failure_of_standard_physics_informed_neural_networks_a_legendre_wav_infographic.json
+
+## 9. ND-TNN: Tensor-Neural-Network Approximation for High-Dimensional Nonlocal Diffusion Models
+
+- Date: 2026-06-07
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.08685v1
+- PDF: https://arxiv.org/pdf/2606.08685v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-07-arxiv-nd_tnn_tensor_neural_network_approximation_for_high_dimensional_nonlocal_diffusion_models_infographic.json
+
+## 10. DyCo-RL: Dynamic Cross-Modal Coordination for Visual Reasoning
+
+- Date: 2026-06-06
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.08035v1
+- PDF: https://arxiv.org/pdf/2606.08035v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-06-arxiv-dyco_rl_dynamic_cross_modal_coordination_for_visual_reasoning_infographic.json
+
+## 11. Data-driven discovery of governing differential equations across physical systems
+
+- Date: 2026-06-08
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.09638v1
+- PDF: https://arxiv.org/pdf/2606.09638v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-08-arxiv-data_driven_discovery_of_governing_differential_equations_across_physical_systems_infographic.json
+
+## 12. PriFT: Prior-Support Guided Supervised Fine-Tuning
+
+- Date: 2026-06-08
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.09396v1
+- PDF: https://arxiv.org/pdf/2606.09396v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-08-arxiv-prift_prior_support_guided_supervised_fine_tuning_infographic.json
+
+## 13. Variational Proximal Policy Optimization
+
+- Date: 2026-06-06
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.08032v1
+- PDF: https://arxiv.org/pdf/2606.08032v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-06-arxiv-variational_proximal_policy_optimization_infographic.json
+
+## 14. Combining Reinforcement Learning with Arc-search Interior-Point Method for Path Planning
+
+- Date: 2026-06-06
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.07920v1
+- PDF: https://arxiv.org/pdf/2606.07920v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-06-arxiv-combining_reinforcement_learning_with_arc_search_interior_point_method_for_path_planning_infographic.json
+
+## 15. Self-Consistent Generative Paths via Admissible Random Variational Transport
+
+- Date: 2026-06-08
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2606.08953v1
+- PDF: https://arxiv.org/pdf/2606.08953v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-08-arxiv-self_consistent_generative_paths_via_admissible_random_variational_transport_infographic.json
+
+## 16. OptMuon: Closed-Loop Orthogonalized Momentum Methods for Stochastic Optimization with Zero-Noise Optimality
+
+- Date: 2026-06-07
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.08783v1
+- PDF: https://arxiv.org/pdf/2606.08783v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-07-arxiv-optmuon_closed_loop_orthogonalized_momentum_methods_for_stochastic_optimization_with_zero_infographic.json
+
+## 17. No-Harm Physics-Informed Inverse Learning with Residual-Calibrated Uncertainty
 
 - Date: 2026-06-05
 - Category: Optimization and PDEs
@@ -11,154 +139,26 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.07153v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-05-arxiv-no_harm_physics_informed_inverse_learning_with_residual_calibrated_uncertainty_infographic.json
 
-## 2. Counterintuitive problems in discrete probability
+## 18. Benchmarking Quantum Algorithmic Resilience for CVaR Portfolio Optimization: The Expressibility-Coherence Trade-off
 
 - Date: 2026-06-05
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.07727v1
+- PDF: https://arxiv.org/pdf/2606.07727v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-05-arxiv-benchmarking_quantum_algorithmic_resilience_for_cvar_portfolio_optimization_the_expressibi_infographic.json
+
+## 19. PAEC: Position-Aware Entropy Calibration for LLM Reasoning in RLVR
+
+- Date: 2026-06-07
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.07516v1
-- PDF: https://arxiv.org/pdf/2606.07516v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-05-arxiv-counterintuitive_problems_in_discrete_probability_infographic.json
+- arXiv: https://arxiv.org/abs/2606.08543v1
+- PDF: https://arxiv.org/pdf/2606.08543v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-07-arxiv-paec_position_aware_entropy_calibration_for_llm_reasoning_in_rlvr_infographic.json
 
-## 3. Learning Implicit Feasibility Constraints for Real-World Routing and Scheduling: Application to Log Transportation
-
-- Date: 2026-06-03
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.05353v1
-- PDF: https://arxiv.org/pdf/2606.05353v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-03-arxiv-learning_implicit_feasibility_constraints_for_real_world_routing_and_scheduling_applicatio_infographic.json
-
-## 4. A Comprehensive Anatomy of Human and DeepSeek-R1 LLM Mathematical Reasoning
+## 20. A Comprehensive Anatomy of Human and DeepSeek-R1 LLM Mathematical Reasoning
 
 - Date: 2026-06-05
 - Category: Mathematical Reasoning
 - arXiv: https://arxiv.org/abs/2606.07410v1
 - PDF: https://arxiv.org/pdf/2606.07410v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-05-arxiv-a_comprehensive_anatomy_of_human_and_deepseek_r1_llm_mathematical_reasoning_infographic.json
-
-## 5. Critic-Guided Heterogeneous Multi-Agent Reasoning for Reliable Mathematical Problem Solving
-
-- Date: 2026-06-04
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.05704v1
-- PDF: https://arxiv.org/pdf/2606.05704v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-04-arxiv-critic_guided_heterogeneous_multi_agent_reasoning_for_reliable_mathematical_problem_solvin_infographic.json
-
-## 6. Accelerated Decentralized Stochastic Gradient Descent for Strongly Convex Optimization
-
-- Date: 2026-06-05
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.07496v1
-- PDF: https://arxiv.org/pdf/2606.07496v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-05-arxiv-accelerated_decentralized_stochastic_gradient_descent_for_strongly_convex_optimization_infographic.json
-
-## 7. DAS-PINNs for high-dimensional partial differential equations: extending deep adaptive sampling to spacetime domains
-
-- Date: 2026-06-04
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.06314v1
-- PDF: https://arxiv.org/pdf/2606.06314v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-04-arxiv-das_pinns_for_high_dimensional_partial_differential_equations_extending_deep_adaptive_samp_infographic.json
-
-## 8. Towards Healthy Evolution: Exploring the Role and Mechanisms of Human-Agent Interaction in Self-Evolving Systems
-
-- Date: 2026-06-04
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.06114v1
-- PDF: https://arxiv.org/pdf/2606.06114v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-04-arxiv-towards_healthy_evolution_exploring_the_role_and_mechanisms_of_human_agent_interaction_in_infographic.json
-
-## 9. Cross-Epoch Adaptive Rollout Optimization for RL Post-Training
-
-- Date: 2026-06-04
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.05606v1
-- PDF: https://arxiv.org/pdf/2606.05606v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-04-arxiv-cross_epoch_adaptive_rollout_optimization_for_rl_post_training_infographic.json
-
-## 10. The Effect of Training Task Diversity on In-Context Learning through the Lens of Low-Dimensional Subspaces
-
-- Date: 2026-06-05
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.06814v1
-- PDF: https://arxiv.org/pdf/2606.06814v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-05-arxiv-the_effect_of_training_task_diversity_on_in_context_learning_through_the_lens_of_low_dimen_infographic.json
-
-## 11. Skip a Layer or Loop It? Learning Program-of-Layers in LLMs
-
-- Date: 2026-06-04
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.06574v1
-- PDF: https://arxiv.org/pdf/2606.06574v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-04-arxiv-skip_a_layer_or_loop_it_learning_program_of_layers_in_llms_infographic.json
-
-## 12. Selective-Advantage Entropy-Adaptive Horizon GRPO: Asymmetric Token-Level Discounting for Efficient Reinforcement Learning of Language Models
-
-- Date: 2026-06-03
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.05434v1
-- PDF: https://arxiv.org/pdf/2606.05434v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-03-arxiv-selective_advantage_entropy_adaptive_horizon_grpo_asymmetric_token_level_discounting_for_e_infographic.json
-
-## 13. A Temporal Spatial Minimax Rate for Smoothly-Varying Distributions in Wasserstein Space
-
-- Date: 2026-06-05
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2606.07325v1
-- PDF: https://arxiv.org/pdf/2606.07325v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-05-arxiv-a_temporal_spatial_minimax_rate_for_smoothly_varying_distributions_in_wasserstein_space_infographic.json
-
-## 14. LeanMarathon: Toward Reliable AI Co-Mathematicians through Long-Horizon Lean Autoformalization
-
-- Date: 2026-06-03
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.05400v1
-- PDF: https://arxiv.org/pdf/2606.05400v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-03-arxiv-leanmarathon_toward_reliable_ai_co_mathematicians_through_long_horizon_lean_autoformalizat_infographic.json
-
-## 15. Effective Dimensionality as an Operator Invariant for Physics-Preserving Constraint Adaptation in Physics-Informed Neural Networks
-
-- Date: 2026-06-04
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2606.06171v1
-- PDF: https://arxiv.org/pdf/2606.06171v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-04-arxiv-effective_dimensionality_as_an_operator_invariant_for_physics_preserving_constraint_adapta_infographic.json
-
-## 16. Integrating Mechanistic and Data-Driven Models for Neurological Disorders through Differentiable Programming
-
-- Date: 2026-06-04
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2606.06094v1
-- PDF: https://arxiv.org/pdf/2606.06094v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-04-arxiv-integrating_mechanistic_and_data_driven_models_for_neurological_disorders_through_differen_infographic.json
-
-## 17. The Proxy Benders Decomposition
-
-- Date: 2026-06-05
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.07403v1
-- PDF: https://arxiv.org/pdf/2606.07403v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-05-arxiv-the_proxy_benders_decomposition_infographic.json
-
-## 18. Constructing VAE Latent Spaces with Prescribed Topology
-
-- Date: 2026-06-05
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.07058v1
-- PDF: https://arxiv.org/pdf/2606.07058v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-05-arxiv-constructing_vae_latent_spaces_with_prescribed_topology_infographic.json
-
-## 19. TLA-Prover: Verifiable TLA+ Specification Synthesis via Preference-Optimized Low-Rank Adaptation
-
-- Date: 2026-06-04
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.06133v1
-- PDF: https://arxiv.org/pdf/2606.06133v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-04-arxiv-tla_prover_verifiable_tla_specification_synthesis_via_preference_optimized_low_rank_adapta_infographic.json
-
-## 20. Gradient descent at the Edge of Stability: free energy model and kinetic description of the two-layer network
-
-- Date: 2026-06-03
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2606.05326v1
-- PDF: https://arxiv.org/pdf/2606.05326v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-03-arxiv-gradient_descent_at_the_edge_of_stability_free_energy_model_and_kinetic_description_of_the_infographic.json
