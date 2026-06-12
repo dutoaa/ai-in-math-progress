@@ -25,29 +25,29 @@
         "url": "https://arxiv.org/pdf/2606.12337v1"
       }
     ],
-    "score": 94,
+    "score": 99,
     "infographic": {
-      "key_insight": "Adjoint methods and PINNs are not universally better than one another; the best choice depends mainly on how the unknown is represented, with grid-based fields favoring adjoints and neural representations favoring PINNs.",
-      "engineering_relevance": "For PDE-constrained inverse problems in mechanics and fluids, this paper gives a fair baseline for choosing between classical adjoint optimization and PINNs under matched problem settings.",
+      "key_insight": "The best inverse-solution method depends mainly on how the unknown is represented: grid-based fields favor adjoint optimization, while neural representations naturally favor PINNs.",
+      "engineering_relevance": "For PDE-constrained inverse problems in mechanics and fluids, this comparison clarifies when to use adjoints for accuracy and when PINNs can reduce cost or better fit neural parameterizations.",
       "method": [
-        "Common formulation with matched domains, PDEs, observations, regularization, optimizer, parameterization, and precision",
-        "Benchmark comparison on Burgers, Darcy permeability, Allen--Cahn reaction identification, and Navier--Stokes viscosity identification",
-        "PINN-warm-started adjoint strategy to combine fast neural initialization with high-accuracy adjoint refinement"
+        "Common formulation: same PDEs, observation models, regularization, optimizer, and precision for both methods.",
+        "Benchmarked on Burgers, Darcy permeability, Allen--Cahn reaction identification, and Navier--Stokes viscosity identification.",
+        "Tested a PINN-warm-started adjoint hybrid to combine fast initialization with adjoint-level accuracy."
       ],
-      "evidence_signal": "The abstract reports four benchmark inverse problems and compares reconstruction quality and cost under identical settings across both methods.",
-      "watch_item": "Results depend strongly on the chosen parameterization and can be affected by memory/trajectory-storage costs in time-dependent adjoint runs.",
+      "evidence_signal": "The abstract reports matched benchmark comparisons across four PDE inverse problems, showing performance differences tied to parameterization and time-dependent cost, with PINNs often reconstructing well at lower cost and warm-started adjoints improving efficiency.",
+      "watch_item": "Results may depend strongly on the chosen parameterization, since the comparison is fair only when both methods are instantiated under identical formulations and optimization settings.",
       "hashtags": [
         "#PDEInverseProblems",
-        "#AdjointMethod",
+        "#AdjointMethods",
         "#PINNs",
-        "#ScientificMachineLearning",
-        "#Optimization"
+        "#ComputationalMechanics",
+        "#ScientificML"
       ],
       "paper_id": "2026-06-10-arxiv-adjoint_method_versus_physics_informed_neural_networks_in_pde_constrained_inverse_problems",
       "paper_title": "Adjoint Method versus Physics-Informed Neural Networks in PDE-Constrained Inverse Problems",
       "paper_date": "2026-06-10",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-12T16:16:50",
+      "generated_at": "2026-06-11T16:54:35",
       "generator": "openai"
     }
   },
@@ -77,29 +77,29 @@
         "url": "https://arxiv.org/pdf/2606.12370v1"
       }
     ],
-    "score": 92,
+    "score": 97,
     "infographic": {
-      "key_insight": "MTP acceptance during RL is constrained by entropy fluctuation, and probabilistic rejection sampling plus an end-to-end TV loss can restore high acceptance rates and speed up rollouts.",
-      "engineering_relevance": "The paper offers a practical recipe for accelerating RL training pipelines in large language models, improving end-to-end throughput without requiring costly online MTP updates.",
+      "key_insight": "MTP speedups in RL are limited by entropy growth, and Bebop recovers high acceptance by pairing rejection sampling with an end-to-end TV loss.",
+      "engineering_relevance": "This gives a practical way to cut rollout latency and improve end-to-end RL training throughput for large language models.",
       "method": [
-        "Analyze how RL-induced entropy growth lowers MTP acceptance rates.",
+        "Analyze how RL-induced entropy changes constrain MTP acceptance rates.",
         "Use probabilistic rejection sampling instead of greedy draft sampling to reduce entropy disturbance.",
-        "Train with an end-to-end TV loss that directly optimizes multi-step acceptance rate."
+        "Train with an end-to-end TV loss to directly optimize multi-step acceptance rather than cross-entropy or KL."
       ],
-      "evidence_signal": "Across mathematical reasoning, code generation, and agentic tasks, the method reports about 10% higher acceptance rates, up to 95% acceptance, up to 25% extra inference throughput, and up to 1.8x end-to-end async RL acceleration on Qwen3.5/3.6/3.7.",
-      "watch_item": "The gains depend on careful integration of rejection sampling and TV-loss MTP pretraining, so deployment may require additional tuning for different model sizes and RL setups.",
+      "evidence_signal": "The abstract reports about 10% higher acceptance rates, up to 95% acceptance, up to 25% extra inference throughput, and up to 1.8x end-to-end RL acceleration on Qwen3.5/3.6/3.7 across math, code, and agentic tasks.",
+      "watch_item": "Gains depend on stable integration of rejection sampling and MTP into the RL pipeline, so implementation overhead and task-specific tuning may affect real-world speedups.",
       "hashtags": [
         "#ReinforcementLearning",
         "#MultiTokenPrediction",
         "#SpeculativeDecoding",
         "#LLMTraining",
-        "#EntropyBounds"
+        "#MathematicalReasoning"
       ],
       "paper_id": "2026-06-10-arxiv-breaking_entropy_bounds_accelerating_rl_training_via_mtp_with_rejection_sampling",
       "paper_title": "Breaking Entropy Bounds: Accelerating RL Training via MTP with Rejection Sampling",
       "paper_date": "2026-06-10",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-06-12T16:16:52",
+      "generated_at": "2026-06-11T16:54:38",
       "generator": "openai"
     }
   },
@@ -130,29 +130,29 @@
         "url": "https://arxiv.org/pdf/2606.11650v1"
       }
     ],
-    "score": 89,
+    "score": 94,
     "infographic": {
-      "key_insight": "The paper turns mixed finite-element conservation laws into a Gaussian-process surrogate, giving structure-preserving PDE predictions with closed-form uncertainty estimates for fluxes and boundary quantities.",
-      "engineering_relevance": "This enables near-real-time, verifiable surrogate simulation for PDE-driven engineering systems where both speed and trustworthy uncertainty quantification matter.",
+      "key_insight": "The paper turns PDE surrogates into structure-preserving reduced models by combining mixed finite elements with Gaussian-process uncertainty, enabling closed-form flux predictions and tractable posterior error estimates.",
+      "engineering_relevance": "This could provide fast, real-time surrogate solvers for conservation-law PDEs with built-in physical consistency and uncertainty quantification, useful for verification and decision-making.",
       "method": [
-        "Use a lightweight transformer to select compatible H(div)–L2 reduced spaces from Raviart–Thomas and dgP0 elements.",
-        "Formulate training as an optimal recovery problem with conservation-law equality constraints and solve it via a fast Schur-complement strategy.",
-        "Model inter-volume fluxes with a Gaussian process to obtain a Dirichlet-to-Neumann map and analytic posterior uncertainty."
+        "Learn a low-dimensional structure-preserving state space using H(div)–L2 subspaces of Raviart–Thomas and dgP0 elements via a lightweight transformer.",
+        "Model inter-volume fluxes with Gaussian process regression formulated as an optimal recovery problem with equality constraints enforcing conservation.",
+        "Use a Schur-complement training strategy to obtain closed-form Dirichlet-to-Neumann estimates and posterior uncertainty for quantities of interest."
       ],
-      "evidence_signal": "The abstract reports numerical experiments showing accurate posterior distributions that can be used for error estimation, alongside RKHS posterior error bounds.",
-      "watch_item": "The approach depends on careful construction of mixed FEM subspaces and constrained GP training, which may be sensitive to mesh design, problem class, and implementation complexity.",
+      "evidence_signal": "The abstract reports numerical experiments showing accurate posterior distributions and their usefulness as surrogate error estimators.",
+      "watch_item": "The approach depends on specific mixed FEM structure and constrained GP training, so implementation complexity and generalization to more complex PDE settings may be nontrivial.",
       "hashtags": [
         "#ScientificMachineLearning",
-        "#PDESurrogates",
+        "#PDEs",
         "#UncertaintyQuantification",
-        "#MixedFiniteElements",
-        "#PhysicsInformedAI"
+        "#FiniteElements",
+        "#GaussianProcesses"
       ],
       "paper_id": "2026-06-10-arxiv-structure_preserving_neural_surrogates_with_tractable_uncertainty_quantification",
       "paper_title": "Structure-Preserving Neural Surrogates with Tractable Uncertainty Quantification",
       "paper_date": "2026-06-10",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-12T16:16:55",
+      "generated_at": "2026-06-11T16:54:41",
       "generator": "openai"
     }
   },
@@ -181,29 +181,29 @@
         "url": "https://arxiv.org/pdf/2606.11470v1"
       }
     ],
-    "score": 87,
+    "score": 92,
     "infographic": {
-      "key_insight": "This survey organizes LLM reasoning into a unified taxonomy and shows that reasoning gains are real but still fragile, task-sensitive, and prone to failures.",
-      "engineering_relevance": "For AI systems in science and engineering, the paper highlights which reasoning paradigms to combine, evaluate, and harden for more reliable decision support.",
+      "key_insight": "This survey organizes more than 300 papers into a unified taxonomy of LLM reasoning, showing that progress is broad but still fragile across reasoning types and prompting setups.",
+      "engineering_relevance": "For building dependable AI systems, it highlights which reasoning paradigms, training methods, and evaluation practices are most important when designing robust, interpretable LLM applications.",
       "method": [
-        "Reviewed 300+ recent papers across major academic sources.",
-        "Grouped reasoning research into paradigms such as CoT, multi-hop, mathematical, multimodal, retrieval-augmented, tool-augmented, and RL-based reasoning.",
-        "Compared methods by prompting, architectures, training objectives, reward modeling, and benchmarks."
+        "Taxonomize reasoning research into paradigms such as CoT, multi-hop, mathematical, common sense, visual/temporal, code, retrieval-augmented, and agentic reasoning",
+        "Compare methodological trends across prompting, architectures, training objectives, reward modeling, and benchmarks",
+        "Synthesize common failure modes and emerging directions like meta-reasoning and multimodal reasoning"
       ],
-      "evidence_signal": "The survey synthesizes more than 300 papers and evaluates the field through patterns in benchmarks, prompting strategies, and reported failure cases.",
-      "watch_item": "A key concern is brittle multi-step inference, where performance can drop sharply with prompt wording, task design, or domain shift.",
+      "evidence_signal": "The survey analyzes over 300 recent papers drawn from arXiv, Semantic Scholar, Google Scholar, Papers with Code, and the ACL Anthology to map capabilities, methods, and failure patterns.",
+      "watch_item": "Reasoning performance remains sensitive to prompt design, task formulation, and model scale, so reported gains may not transfer reliably across domains.",
       "hashtags": [
         "#LLMReasoning",
-        "#MathAI",
+        "#MathReasoning",
         "#ChainOfThought",
         "#AIResearch",
-        "#Survey"
+        "#SurveyPaper"
       ],
       "paper_id": "2026-06-09-arxiv-the_periodic_table_of_llm_reasoning_a_structured_survey_of_reasoning_paradigms_methods_and",
       "paper_title": "The Periodic Table of LLM Reasoning: A Structured Survey of Reasoning Paradigms, Methods, and Failure Modes",
       "paper_date": "2026-06-09",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-06-12T16:16:58",
+      "generated_at": "2026-06-11T16:54:45",
       "generator": "openai"
     }
   },
@@ -233,83 +233,29 @@
         "url": "https://arxiv.org/pdf/2606.10254v1"
       }
     ],
-    "score": 84,
+    "score": 89,
     "infographic": {
-      "key_insight": "LLM judges that look strong on synthetic math solutions can still fail to accurately grade real student reasoning, revealing a major evaluation gap.",
-      "engineering_relevance": "For AI assessment pipelines in education and automated grading, this means synthetic benchmarks alone are not enough to validate robustness on authentic human work.",
+      "key_insight": "LLM judges are much less reliable at grading real student math reasoning than synthetic solutions, revealing a large evaluation gap between artificial and authentic reasoning.",
+      "engineering_relevance": "For math education and assessment pipelines, this means benchmark results on synthetic outputs may overestimate judge quality and should not be trusted as a proxy for real student work.",
       "method": [
-        "Built RealMath-Eval with 224 real high-school exam responses annotated for expert grading.",
-        "Compared state-of-the-art LLM judges on real student answers versus synthetic LLM-generated solutions.",
-        "Used embedding and surprisal analyses to test whether human reasoning is more diverse and out-of-distribution than synthetic reasoning."
+        "Built RealMath-Eval from 224 real high-school exam responses with expert human grading.",
+        "Compared state-of-the-art LLM judges on real student solutions versus synthetic LLM-generated solutions.",
+        "Used embedding, surprisal, and style-transfer analyses to explain why the judges generalize poorly to human reasoning."
       ],
-      "evidence_signal": "The abstract reports a large mismatch in grading accuracy: about MSE 2.96 on real responses versus about 1.17 on synthetic solutions.",
-      "watch_item": "The benchmark is relatively small and domain-specific, so broader claims should be tested across subjects, grade levels, and annotation settings.",
+      "evidence_signal": "The abstract reports high judge error on real student responses (MSE ~2.96) versus much lower error on synthetic solutions (MSE ~1.17).",
+      "watch_item": "The benchmark is relatively small and exam-domain specific, so broader claims about all math reasoning tasks should be made cautiously.",
       "hashtags": [
-        "#LLMEvaluation",
+        "#LLMJudging",
         "#MathReasoning",
-        "#AutomatedGrading",
-        "#HumanReasoning",
-        "#AIinEducation"
+        "#EvaluationGap",
+        "#EdTechAI",
+        "#Benchmarking"
       ],
       "paper_id": "2026-06-08-arxiv-realmath_eval_why_sota_judges_struggle_with_real_human_reasoning",
       "paper_title": "RealMath-Eval: Why SOTA Judges Struggle with Real Human Reasoning",
       "paper_date": "2026-06-08",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-06-12T16:17:00",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-11-arxiv-reward_modeling_for_multi_agent_orchestration",
-    "arxiv_id": "2606.13598v1",
-    "date": "2026-06-11",
-    "title": "Reward Modeling for Multi-Agent Orchestration",
-    "authors": "King Yeung Tsang, Zihao Zhao, Vishal Venkataramani, Haizhou Shi, Zixuan Ke, Semih Yavuz",
-    "abstract": "Multi-Agent Systems (MAS) built on Large Language Models (LLMs) require effective orchestration to coordinate specialized agents, yet training such orchestrators is hindered by limited supervision and high computational cost. We propose Orchestration Reward Modeling (OrchRM), a self-supervised framework for evaluating orchestration quality without human annotations. OrchRM leverages intermediate artifacts from multi-agent executions to construct win-lose pairs for Bradley-Terry reward model training. Unlike existing MAS test-time scaling and orchestrator training frameworks that rely on costly sub-agent rollouts, OrchRM operates directly at the orchestration level, enabling efficient and high-performing reward-guided orchestrator training and MAS test-time scaling. OrchRM improves training efficiency by up to 10x in token usage while improving MAS test-time scaling performance by up to 8% in accuracy. These gains consistently transfer across multiple domains, including mathematical reasoning, web-based question answering, and multi-hop reasoning, demonstrating orchestration-level reward modeling as a scalable direction for robust multi-agent orchestration. Code will be available at https://github.com/Wang-ML-Lab/OrchRM.",
-    "category": "Mathematical Reasoning",
-    "source": "arXiv",
-    "published": "2026-06-11T17:16:24Z",
-    "updated": "2026-06-11T17:16:24Z",
-    "primary_category": "cs.AI",
-    "categories": [
-      "cs.AI",
-      "cs.CL",
-      "cs.LG",
-      "cs.MA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.13598v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.13598v1"
-      }
-    ],
-    "score": 81,
-    "infographic": {
-      "key_insight": "OrchRM trains a reward model on orchestration-level win-lose comparisons from intermediate multi-agent artifacts, enabling self-supervised evaluation and better coordination without human labels.",
-      "engineering_relevance": "It offers a practical way to improve multi-agent orchestrator training and test-time scaling with much lower token cost, making LLM-based MAS more efficient to deploy.",
-      "method": [
-        "Build win-lose pairs from intermediate artifacts of multi-agent runs",
-        "Train a Bradley-Terry reward model to score orchestration quality",
-        "Use the reward model to guide orchestrator training and test-time scaling"
-      ],
-      "evidence_signal": "The abstract reports up to 10x token savings during training and up to 8% higher accuracy in multi-agent test-time scaling across math reasoning, web QA, and multi-hop reasoning.",
-      "watch_item": "Performance depends on the quality of extracted intermediate artifacts and the reward model may not generalize equally well across all agent architectures or task types.",
-      "hashtags": [
-        "#MultiAgentSystems",
-        "#RewardModeling",
-        "#LLMs",
-        "#Orchestration",
-        "#MathematicalReasoning"
-      ],
-      "paper_id": "2026-06-11-arxiv-reward_modeling_for_multi_agent_orchestration",
-      "paper_title": "Reward Modeling for Multi-Agent Orchestration",
-      "paper_date": "2026-06-11",
-      "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-06-12T16:17:02",
+      "generated_at": "2026-06-11T16:54:47",
       "generator": "openai"
     }
   },
@@ -338,29 +284,29 @@
         "url": "https://arxiv.org/pdf/2606.10479v1"
       }
     ],
-    "score": 80,
+    "score": 85,
     "infographic": {
-      "key_insight": "ComBench shows that Olympiad-level combinatorics splits into two distinct skills—rigorous proof reasoning and constructive realization—and top models are still far from mastering both.",
-      "engineering_relevance": "The benchmark provides a practical diagnostic for judging whether a model can produce mathematically valid arguments and verifiable constructions, which matters for reliable theorem-style reasoning systems.",
+      "key_insight": "ComBench shows that Olympiad-level combinatorics for LLMs is not a single skill: rigorous proof reasoning and constructive realization are separable capabilities, and both remain far from solved.",
+      "engineering_relevance": "The benchmark provides a targeted way to diagnose where math models fail, helping researchers compare proof quality versus construction validity rather than relying on a single aggregate score.",
       "method": [
         "100 human-annotated Olympiad-level combinatorics problems",
-        "Two tracks: analysis-centric proof problems and construction-centric realization problems",
+        "Two tracks: analysis-centric proofs and construction-centric explicit realizations",
         "Rubric-guided proof grading plus deterministic construction verification"
       ],
-      "evidence_signal": "Across frontier models, the strongest system reaches 65.4% overall Avg. and 75.3% overall Best@4, and the abstract reports that proof quality and construction validity can diverge.",
-      "watch_item": "Construction tasks are especially brittle because a model may present a plausible idea without producing a fully valid explicit construction or a verifiable proof of correctness.",
+      "evidence_signal": "Across frontier models, the benchmark is unsaturated, with the strongest model reaching 65.4% overall Avg. and 75.3% overall Best@4, and performance differing meaningfully between proof and construction tasks.",
+      "watch_item": "Because construction tasks are verified deterministically while proof tasks are rubric-scored, the two metrics are not directly interchangeable and may favor different model behaviors.",
       "hashtags": [
-        "#MathematicalReasoning",
+        "#MathReasoning",
         "#Combinatorics",
-        "#Benchmarking",
-        "#LLMEvaluation",
-        "#OlympiadMath"
+        "#LLMBenchmark",
+        "#ProofVerification",
+        "#AIForMath"
       ],
       "paper_id": "2026-06-09-arxiv-combench_a_benchmark_for_rigorous_proof_reasoning_and_constructive_realization_in_olympiad",
       "paper_title": "ComBench: A Benchmark for Rigorous Proof Reasoning and Constructive Realization in Olympiad-Level Combinatorics",
       "paper_date": "2026-06-09",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-06-12T16:17:04",
+      "generated_at": "2026-06-11T16:54:50",
       "generator": "openai"
     }
   },
@@ -389,82 +335,29 @@
         "url": "https://arxiv.org/pdf/2606.11634v1"
       }
     ],
-    "score": 78,
+    "score": 83,
     "infographic": {
-      "key_insight": "Sliding-window attention (SWA) becomes much more competitive for math reasoning when a pretrained self-attention model is first converted with supervised fine-tuning and then adapted with on-policy reinforcement learning.",
-      "engineering_relevance": "This offers a practical path to reduce long-context inference cost from quadratic to linear complexity without training a new base model from scratch.",
+      "key_insight": "Sliding-window attention becomes much more viable for math reasoning when architecture-aware reinforcement learning is added after supervised conversion from self-attention.",
+      "engineering_relevance": "The paper suggests a practical path to long-context efficiency: replace quadratic self-attention with linear-cost sliding-window attention without training a new base model from scratch.",
       "method": [
-        "Convert a pretrained self-attention model to SWA via supervised fine-tuning.",
-        "Apply reinforcement learning under the SWA constraint to adapt model trajectories.",
-        "Use the two-stage SWARR recipe to align training data and inference architecture."
+        "Convert a pretrained self-attention model to sliding-window attention with supervised fine-tuning.",
+        "Apply on-policy reinforcement learning so the model adapts trajectories under the sliding-window constraint.",
+        "Use architecture-aware training to reduce the mismatch between long-range SFT data and local attention."
       ],
-      "evidence_signal": "The abstract reports results on mathematical reasoning benchmarks, showing RL recovers much of the accuracy lost during SWA conversion while keeping linear-complexity attention benefits.",
-      "watch_item": "SWA can still lag after SFT alone, and the method may depend on how well RL can reshape data trajectories to fit the sliding-window constraint.",
+      "evidence_signal": "Across mathematical reasoning benchmarks, the two-stage SWARR recipe recovers much of the accuracy lost during sliding-window conversion while keeping efficiency benefits.",
+      "watch_item": "Results may depend on how well the RL data and reward setup align with the sliding-window inductive bias; gains could be smaller if long-range dependencies remain essential.",
       "hashtags": [
-        "#MathReasoning",
+        "#MathematicalReasoning",
+        "#LongContext",
         "#SlidingWindowAttention",
         "#ReinforcementLearning",
-        "#LongContextInference",
-        "#EfficientLLMs"
+        "#LLMOptimization"
       ],
       "paper_id": "2026-06-10-arxiv-architecture_aware_reinforcement_learning_makes_sliding_window_attention_competitive_in_ma",
       "paper_title": "Architecture-Aware Reinforcement Learning Makes Sliding-Window Attention Competitive in Math Reasoning",
       "paper_date": "2026-06-10",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-06-12T16:17:07",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-11-arxiv-distribution_agnostic_robust_trajectory_optimization_via_chance_constrained_reinforcement",
-    "arxiv_id": "2606.13605v1",
-    "date": "2026-06-11",
-    "title": "Distribution-Agnostic Robust Trajectory Optimization via Chance-Constrained Reinforcement Learning",
-    "authors": "Yashdeep Chaudhary, Roberto Armellin, Harry Holt, Marco Sagliano",
-    "abstract": "This paper presents a distribution-agnostic robust trajectory-optimization framework based on chance-constrained reinforcement learning. The uncertainty is represented here through initial conditions and process noise, with the only requirement being that it can be sampled. A deterministic nominal trajectory is first computed offline, and reinforcement learning is then used only to robustify that baseline through a structured affine closed-loop correction law comprising a feedforward control adjustment and time-varying feedback gains. Probabilistic feasibility is enforced empirically through rollout-based upper-tail quantiles, while terminal dispersion is regulated through covariance-feasibility penalties. The framework is assessed on two materially different trajectory design problems. The flagship case study is a three-dimensional multi-impulse Earth-Mars transfer, where the learned policy is benchmarked against a recent robust trajectory-optimization reference under Gaussian uncertainty and then evaluated under bounded uniform uncertainty and under process disturbances not seen during training. The second case study is a stochastic atmospheric pinpoint rocket landing problem, used to assess portability to a short-horizon continuous-thrust setting with drag, mass depletion, and glide-slope constraints. The results show that the proposed framework can remain competitive in upper-tail fuel cost while preserving probabilistic feasibility, and that the same robustification scaffold can be carried across heterogeneous spacecraft trajectory planning problems without redesign of its core stochastic-control structure.",
-    "category": "Number Theory and Algebra",
-    "source": "arXiv",
-    "published": "2026-06-11T17:22:05Z",
-    "updated": "2026-06-11T17:22:05Z",
-    "primary_category": "math.OC",
-    "categories": [
-      "math.OC",
-      "cs.LG",
-      "eess.SY"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.13605v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.13605v1"
-      }
-    ],
-    "score": 77,
-    "infographic": {
-      "key_insight": "A distribution-agnostic reinforcement-learning wrapper robustifies a nominal trajectory by learning affine feedback corrections that satisfy chance constraints using only sampleable uncertainty.",
-      "engineering_relevance": "The approach offers a reusable control scaffold for robust spacecraft and rocket trajectory planning when uncertainty models are incomplete or non-Gaussian.",
-      "method": [
-        "Compute a deterministic nominal trajectory offline.",
-        "Learn feedforward corrections plus time-varying feedback gains with reinforcement learning.",
-        "Enforce probabilistic feasibility with rollout-based upper-tail quantiles and terminal covariance penalties."
-      ],
-      "evidence_signal": "The framework is evaluated on two diverse problems—a 3D Earth-Mars transfer and a stochastic atmospheric rocket landing—and tested under Gaussian, bounded uniform, and unseen disturbance settings.",
-      "watch_item": "Performance depends on sampled rollouts and constraint tuning, so feasibility and cost may be sensitive to training coverage and distribution shift.",
-      "hashtags": [
-        "#TrajectoryOptimization",
-        "#ReinforcementLearning",
-        "#ChanceConstraints",
-        "#RobustControl",
-        "#SpacecraftGuidance"
-      ],
-      "paper_id": "2026-06-11-arxiv-distribution_agnostic_robust_trajectory_optimization_via_chance_constrained_reinforcement",
-      "paper_title": "Distribution-Agnostic Robust Trajectory Optimization via Chance-Constrained Reinforcement Learning",
-      "paper_date": "2026-06-11",
-      "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-06-12T16:17:09",
+      "generated_at": "2026-06-11T16:54:52",
       "generator": "openai"
     }
   },
@@ -493,29 +386,29 @@
         "url": "https://arxiv.org/pdf/2606.12348v1"
       }
     ],
-    "score": 77,
+    "score": 82,
     "infographic": {
-      "key_insight": "A layerwise self-adaptive PINN with dual-phase optimization better resolves high-Reynolds-number coupled Burgers’ shock fronts than standard PINNs.",
-      "engineering_relevance": "This improves mesh-free simulation of steep spatio-temporal gradients in nonlinear PDEs where conventional finite difference and finite element methods become unstable or mesh-dependent.",
+      "key_insight": "A layerwise self-adaptive PINN with dynamic loss weighting and dual-phase optimization improves stability and accuracy for high-Reynolds multidimensional coupled Burgers' equations with sharp shock fronts.",
+      "engineering_relevance": "This approach offers a mesh-free way to simulate strongly nonlinear PDEs where classical finite-difference and finite-element methods struggle with steep gradients and shock formation.",
       "method": [
-        "Dynamically reweights physics, initial, and boundary losses during training.",
-        "Uses a dual-phase optimization strategy for more stable convergence.",
-        "Implemented in MATLAB and tested on multidimensional coupled Burgers’ equations."
+        "Adjusts penalty weights for physics residual, initial conditions, and boundary conditions during training.",
+        "Uses a dual-phase optimization scheme for more stable convergence.",
+        "Benchmarks against standard PINN variants, including with and without L-BFGS."
       ],
-      "evidence_signal": "Numerical experiments in the abstract report lower relative L2 error than standard PINN baselines, including variants with and without L-BFGS, and better shock-front capture over time.",
-      "watch_item": "Adaptive weighting and dual-stage optimization can add tuning complexity and may be sensitive to training schedule or hyperparameter choices.",
+      "evidence_signal": "The abstract reports numerical experiments showing lower relative L2 error than standard PINN baselines and improved capture of evolving shock fronts.",
+      "watch_item": "Performance may depend on careful tuning of adaptive weights and optimization phases, especially for harder high-dimensional PDE settings.",
       "hashtags": [
         "#PINN",
-        "#PhysicsInformedNN",
-        "#BurgersEquations",
+        "#PhysicsInformedAI",
+        "#BurgersEquation",
         "#ScientificComputing",
-        "#MATLAB"
+        "#NeuralPDE"
       ],
       "paper_id": "2026-06-10-arxiv-matlab_based_layerwise_self_adaptive_physics_informed_neural_network_in_applications_to_mu",
       "paper_title": "MATLAB-Based Layerwise Self-Adaptive Physics-Informed Neural Network in Applications to Multidimensional Coupled Burgers' Equations with High Reynolds Numbers",
       "paper_date": "2026-06-10",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-06-12T16:17:12",
+      "generated_at": "2026-06-11T16:54:55",
       "generator": "openai"
     }
   },
@@ -546,29 +439,29 @@
         "url": "https://arxiv.org/pdf/2606.10562v1"
       }
     ],
-    "score": 76,
+    "score": 81,
     "infographic": {
-      "key_insight": "N-RSAV accelerates RSAV optimization by injecting randomized low-rank curvature information via a Nyström Hessian approximation while preserving energy dissipation.",
-      "engineering_relevance": "The method is aimed at ill-conditioned large-scale optimization problems, including PINN training, where faster convergence can reduce compute cost and time.",
+      "key_insight": "N-RSAV accelerates RSAV optimization by injecting randomized low-rank Hessian curvature while preserving the scheme’s energy-dissipation structure.",
+      "engineering_relevance": "The method is useful for ill-conditioned PDE-constrained and PINN training problems where first-order optimization is too slow but stability must be maintained.",
       "method": [
-        "Approximate the Hessian with a randomized low-rank Nyström operator.",
-        "Truncate negative eigenvalues to enforce positive semidefiniteness and keep the modified energy dissipation law.",
-        "Reuse the approximate Hessian adaptively based on the gap between original and modified energies to cut overhead."
+        "Build a Nyström low-rank approximation of the Hessian to form the RSAV linear operator.",
+        "Truncate negative eigenvalues so the approximate operator stays positive semidefinite and preserves dissipation.",
+        "Reuse the approximate Hessian adaptively when original and modified energies stay close, reducing overhead."
       ],
-      "evidence_signal": "The abstract reports numerical experiments on convex quadratic problems and PINN training, showing substantially faster convergence than conventional RSAV-based methods.",
-      "watch_item": "The approach depends on a reliable low-rank Hessian approximation and extra assumptions for convergence guarantees under the PL condition.",
+      "evidence_signal": "The abstract reports numerical tests on ill-conditioned, effectively low-rank problems such as convex quadratics and PINN training, showing substantially faster convergence than standard RSAV methods.",
+      "watch_item": "Performance depends on the quality of the low-rank Hessian approximation and the extra PSD truncation/adaptive-reuse logic may add tuning complexity.",
       "hashtags": [
         "#Optimization",
         "#PDEs",
-        "#Nyström",
         "#PINNs",
-        "#LowRankHessian"
+        "#LowRankMethods",
+        "#RandomizedLinearAlgebra"
       ],
       "paper_id": "2026-06-09-arxiv-accelerating_sav_based_optimization_via_randomized_low_rank_hessian_approximation",
       "paper_title": "Accelerating SAV-based optimization via randomized low-rank Hessian approximation",
       "paper_date": "2026-06-09",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-12T16:17:14",
+      "generated_at": "2026-06-11T16:54:58",
       "generator": "openai"
     }
   },
@@ -598,82 +491,29 @@
         "url": "https://arxiv.org/pdf/2606.11800v1"
       }
     ],
-    "score": 75,
+    "score": 80,
     "infographic": {
-      "key_insight": "Adding a proximal step to augmented Lagrangian methods turns the outer loop into an implicit gradient descent-ascent scheme, enabling provable acceleration for constrained convex optimization.",
-      "engineering_relevance": "The result offers a more memory-efficient alternative to Krylov solvers for large-scale equality-constrained problems in scientific computing, machine learning, and control.",
+      "key_insight": "Adding a proximal step to augmented Lagrangian methods reveals an implicit gradient descent-ascent structure that can be accelerated with continuous-time and Nesterov-style designs.",
+      "engineering_relevance": "The result offers faster outer-iteration solvers for constrained convex problems in scientific computing, machine learning, and control while reducing reliance on handcrafted Krylov preconditioners.",
       "method": [
-        "Proximal ALM is reinterpreted as implicit GDA, including variable step sizes.",
-        "A continuous-time ODE analysis yields an implicit GDA scheme with o(1/k) last-iterate convergence for objective gap and gradient norm.",
-        "A second-order ODE framework gives a Nesterov-type family with rate o(1/k^{r+1}); the r=0 case also yields an explicit GDA with o(1/k)."
+        "Show proximal ALM is equivalent to implicit GDA, including variable step sizes",
+        "Derive an ODE-based implicit GDA with o(1/k) last-iterate convergence for objective gap and gradient norm",
+        "Build a second-order Nesterov-type family (r≥0) with o(1/k^{r+1}) last-iterate gap rates; r=0 gives an explicit GDA variant"
       ],
-      "evidence_signal": "The paper validates the theory with numerical experiments showing the proposed accelerated schemes perform effectively and match the predicted convergence behavior.",
-      "watch_item": "The methods rely on solving implicit/proximal subproblems and careful step-size design, which may increase per-iteration cost and implementation complexity.",
+      "evidence_signal": "The paper supports the theory with numerical experiments that validate the convergence claims and demonstrate practical effectiveness.",
+      "watch_item": "The accelerated schemes are implicit and ODE-inspired, so implementation may require careful tuning of step sizes and inner-solve accuracy to preserve the stated rates.",
       "hashtags": [
         "#Optimization",
         "#AugmentedLagrangian",
-        "#ImplicitGDA",
-        "#ConvergenceRates",
+        "#GradientDescentAscent",
+        "#ConstrainedOptimization",
         "#ScientificComputing"
       ],
       "paper_id": "2026-06-10-arxiv-accelerated_implicit_gda_schemes_theoretical_guarantees_and_application_to_proximal_augmen",
       "paper_title": "Accelerated Implicit GDA Schemes: Theoretical Guarantees and Application to Proximal Augmented Lagrangian Methods",
       "paper_date": "2026-06-10",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-12T16:17:21",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-11-arxiv-clipping_makes_distributed_and_federated_asynchronous_sgd_robust_to_stragglers",
-    "arxiv_id": "2606.13287v1",
-    "date": "2026-06-11",
-    "title": "Clipping Makes Distributed and Federated Asynchronous SGD Robust to Stragglers",
-    "authors": "Samuel Erickson, Mikael Johansson",
-    "abstract": "In modern machine learning, parallelization of training is an important strategy for increasing scale. Asynchronous stochastic gradient descent (ASGD), which maximizes the utilization of available hardware by avoiding waiting for slow workers. However, with constant step sizes, the convergence of ASGD is nonetheless affected negatively by slow workers due to large delays in updates. At the same time, it has been empirically observed in asynchronous training of deep learning models that gradient clipping \"stabilizes\" training. In this work, we provide a theoretical justification for this behavior, as we show that clipping removes the dependence of the maximum delay in the oracle complexity. We employ a sub-Weibull model of gradient noise which generalizes sub-Gaussian and sub-exponential distributions to more heavy-tailed distributions, motivated by empirical observations in deep learning. We show convergence in expectation, and the first time in asynchronous optimization, convergence with high probability.",
-    "category": "Optimization and PDEs",
-    "source": "arXiv",
-    "published": "2026-06-11T12:43:53Z",
-    "updated": "2026-06-11T12:43:53Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "cs.DC",
-      "math.OC"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.13287v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.13287v1"
-      }
-    ],
-    "score": 74,
-    "infographic": {
-      "key_insight": "Gradient clipping makes asynchronous SGD robust to worker stragglers by removing the oracle-complexity dependence on the maximum delay.",
-      "engineering_relevance": "This suggests more stable and scalable distributed and federated training when some devices or workers are slow or intermittently delayed.",
-      "method": [
-        "Model ASGD with constant step sizes under delayed updates from stragglers.",
-        "Use gradient clipping to bound the effect of stale gradients on optimization.",
-        "Analyze convergence under sub-Weibull gradient noise, covering heavy-tailed cases, and prove both expectation and high-probability guarantees."
-      ],
-      "evidence_signal": "The abstract reports theoretical convergence results, including the first high-probability guarantee for asynchronous optimization under this noise model.",
-      "watch_item": "Clipping may improve robustness, but the clipping threshold and step size still need careful tuning to avoid slowing learning or biasing updates.",
-      "hashtags": [
-        "#AsynchronousSGD",
-        "#GradientClipping",
-        "#FederatedLearning",
-        "#Stragglers",
-        "#OptimizationTheory"
-      ],
-      "paper_id": "2026-06-11-arxiv-clipping_makes_distributed_and_federated_asynchronous_sgd_robust_to_stragglers",
-      "paper_title": "Clipping Makes Distributed and Federated Asynchronous SGD Robust to Stragglers",
-      "paper_date": "2026-06-11",
-      "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-12T16:17:23",
+      "generated_at": "2026-06-11T16:55:05",
       "generator": "openai"
     }
   },
@@ -703,29 +543,29 @@
         "url": "https://arxiv.org/pdf/2606.12050v1"
       }
     ],
-    "score": 73,
+    "score": 78,
     "infographic": {
-      "key_insight": "The paper gives computable two-sided a posteriori error certificates for PINNs solving ODEs by pairing localized lower bounds from strong monotonicity with localized upper bounds from one-sided Lipschitz conditions.",
-      "engineering_relevance": "This enables more trustworthy PINN deployments by quantifying prediction uncertainty without needing the exact solution, especially for certified control and simulation workflows.",
+      "key_insight": "The paper gives computable two-sided a posteriori error certificates for PINNs solving ODEs, pairing new lower bounds with sharper localized upper bounds under verifiable monotonicity conditions.",
+      "engineering_relevance": "This enables more trustworthy PINN deployment in scientific computing by quantifying when a learned ODE solution is actually close to the true state without needing the exact solution.",
       "method": [
-        "Derive lower error bounds on certified state-space domains using localized strong monotonicity.",
-        "Derive sharper upper bounds using localized one-sided Lipschitz constants and ODE residuals.",
-        "For linear systems, express certificates via eigenvalues of the symmetric part of the system matrix and add signed-residual finite-probe checks when initial conditions are enforced hard."
+        "Derive lower error bounds from localized strong monotonicity on certified state-space domains.",
+        "Derive localized upper bounds using a one-sided Lipschitz condition and the PINN residual.",
+        "For linear systems, express certificates via eigenvalues of the symmetric part and use signed-residual finite probes when initial conditions are enforced exactly."
       ],
-      "evidence_signal": "The abstract reports closed-form and computable certificates for ODEs, including explicit linear-system formulas and a training-time regularizer based on the propagated upper bound.",
-      "watch_item": "The certificates are only meaningful when the certified domain and monotonicity/Lipschitz assumptions can be verified; exact hard enforcement of initial conditions can make scalar lower bounds uninformative.",
+      "evidence_signal": "The abstract reports closed-form and computable certificates for ODEs, including explicit linear-system formulas, but does not mention a numerical benchmark or dataset in the text provided.",
+      "watch_item": "The lower certificate can become uninformative under hard enforcement of initial conditions, and the assumptions must be checked on a suitable certified domain.",
       "hashtags": [
         "#PINNs",
         "#ErrorBounds",
         "#APosteriori",
         "#ODEs",
-        "#ScientificML"
+        "#ScientificComputing"
       ],
       "paper_id": "2026-06-10-arxiv-reliable_error_estimation_for_pinns_lower_and_upper_a_posteriori_bounds",
       "paper_title": "Reliable Error Estimation for PINNs: Lower and Upper A Posteriori Bounds",
       "paper_date": "2026-06-10",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-06-12T16:17:26",
+      "generated_at": "2026-06-11T16:55:08",
       "generator": "openai"
     }
   },
@@ -754,80 +594,29 @@
         "url": "https://arxiv.org/pdf/2606.11515v1"
       }
     ],
-    "score": 73,
+    "score": 78,
     "infographic": {
-      "key_insight": "The paper introduces an adaptive primal-dual Bregman proximal algorithm for CVaR optimization that learns a tail-focused sampling distribution, effectively turning the dual variables into built-in importance sampling.",
-      "engineering_relevance": "This is useful for risk-sensitive optimization in finance and ML because it can accelerate stochastic optimization when only rare, high-loss tail events matter.",
+      "key_insight": "The paper introduces a CVaR optimization algorithm that uses duality-driven adaptive smoothing and importance sampling to focus computation on tail-risk samples where CVaR is determined.",
+      "engineering_relevance": "This offers a practical stochastic optimization approach for risk-sensitive problems in finance and machine learning, especially when rare but impactful events dominate the objective.",
       "method": [
-        "Use the dual CVaR risk-envelope formulation to alternate stochastic primal and dual updates.",
-        "Update a sampling distribution at each outer iteration so inner solves draw more often from the loss tail.",
-        "Leverage the converging likelihood ratio as an adaptive importance-sampling mechanism."
+        "Uses the dual representation of CVaR as a worst-case expectation over a risk envelope.",
+        "Alternates stochastic primal subproblems with dual updates via a Bregman proximal point algorithm.",
+        "Adapts the sampling distribution so the likelihood ratio converges toward the CVaR risk identifier, increasing tail-event sampling."
       ],
-      "evidence_signal": "The abstract reports convergence guarantees for convex objectives and numerical experiments on portfolio optimization and support-vector machines.",
-      "watch_item": "Performance depends on accurately maintaining and updating the dual sampling distribution, which may add implementation complexity and sensitivity to stochastic noise.",
+      "evidence_signal": "The abstract reports theoretical convergence for convex objectives and numerical experiments on portfolio optimization and support-vector machines.",
+      "watch_item": "Performance depends on accurately updating the dual sampling distribution, and the method is presented with convergence guarantees only for convex objectives.",
       "hashtags": [
         "#CVaR",
-        "#Optimization",
+        "#RiskOptimization",
         "#ImportanceSampling",
-        "#StochasticMethods",
+        "#StochasticOptimization",
         "#MachineLearning"
       ],
       "paper_id": "2026-06-09-arxiv-exponential_adaptive_smoothing_and_importance_sampling_for_optimization_of_the_conditional",
       "paper_title": "Exponential Adaptive Smoothing and Importance Sampling for Optimization of the Conditional Value-at-Risk",
       "paper_date": "2026-06-09",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-12T16:17:28",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-11-arxiv-generalization_bounds_for_transformer_based_next_token_prediction_in_a_language_model",
-    "arxiv_id": "2606.13280v1",
-    "date": "2026-06-11",
-    "title": "Generalization Bounds for Transformer-Based Next-Token Prediction in a Language Model",
-    "authors": "Insung Kong, Niklas Dexheimer, Johannes Schmidt-Hieber",
-    "abstract": "A refined statistical understanding of LLM pre-training requires the analysis of the transformer architecture for data distributions that encapsulate key characteristics of text data. To address this, we propose a text data distribution based on an extension of the log-bilinear language model from the natural language processing literature. For this data generating process, we derive generalization bounds for deep transformer architectures, highlighting the dependence on the network architecture, the vocabulary size, the number of documents and the document length.",
-    "category": "AI math",
-    "source": "arXiv",
-    "published": "2026-06-11T12:34:47Z",
-    "updated": "2026-06-11T12:34:47Z",
-    "primary_category": "math.ST",
-    "categories": [
-      "math.ST"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.13280v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.13280v1"
-      }
-    ],
-    "score": 70,
-    "infographic": {
-      "key_insight": "The paper derives theoretical generalization bounds for deep transformer next-token prediction under a text-like data model built from an extended log-bilinear language process.",
-      "engineering_relevance": "It gives practitioners a way to reason about how transformer architecture, vocabulary size, document count, and document length can affect pre-training generalization.",
-      "method": [
-        "Define a text data generating process via an extension of the log-bilinear language model.",
-        "Analyze deep transformer architectures on this distribution.",
-        "Derive generalization bounds that explicitly depend on model and dataset size parameters."
-      ],
-      "evidence_signal": "The abstract indicates a theoretical study with bounds derived for a specified synthetic/assumed text distribution, rather than an empirical benchmark evaluation.",
-      "watch_item": "The guarantees depend on the assumed text distribution, so real-language performance may differ if actual data deviates from the model.",
-      "hashtags": [
-        "#Transformers",
-        "#GeneralizationBounds",
-        "#LanguageModels",
-        "#TheoreticalAI",
-        "#StatisticalLearning"
-      ],
-      "paper_id": "2026-06-11-arxiv-generalization_bounds_for_transformer_based_next_token_prediction_in_a_language_model",
-      "paper_title": "Generalization Bounds for Transformer-Based Next-Token Prediction in a Language Model",
-      "paper_date": "2026-06-11",
-      "paper_category": "AI math",
-      "generated_at": "2026-06-12T16:17:30",
+      "generated_at": "2026-06-11T16:55:12",
       "generator": "openai"
     }
   },
@@ -858,21 +647,21 @@
         "url": "https://arxiv.org/pdf/2606.12182v1"
       }
     ],
-    "score": 70,
+    "score": 75,
     "infographic": {
-      "key_insight": "Active learning can dramatically reduce the number of measurements needed to discover sparse governing equations by sampling where model uncertainty is highest.",
-      "engineering_relevance": "This enables more efficient system identification for expensive-to-measure dynamical systems, including ODE and PDE settings in science and engineering.",
+      "key_insight": "An active learning loop can dramatically reduce the data needed to discover sparse governing equations by repeatedly sampling the most informative regions for SINDy model identification.",
+      "engineering_relevance": "This enables more efficient system identification for ODEs and PDEs when measurements are expensive, sparse, or limited by experimental access.",
       "method": [
-        "Start with SINDy as the sparse equation discovery model.",
-        "Use E-SINDy to estimate epistemic uncertainty across candidate samples.",
-        "Iteratively choose the most informative regions for ODEs and PDEs instead of sampling uniformly."
+        "Use E-SINDy to estimate epistemic uncertainty over candidate dynamics.",
+        "Select new samples from regions predicted to be most informative, rather than sampling uniformly at random.",
+        "Iterate data collection and sparse regression until the governing equations are recovered."
       ],
-      "evidence_signal": "The paper evaluates the approach on the Lorenz system across data budgets and noise levels, plus Burgers' and Kuramoto-Sivashinsky PDEs, and reports accurate recovery with far fewer samples than random sampling.",
-      "watch_item": "Performance depends on uncertainty estimates and may be sensitive to noise, sampling design, and the complexity of the underlying dynamics.",
+      "evidence_signal": "The method was tested on the Lorenz system across multiple noise levels and data budgets, plus Burgers' and Kuramoto-Sivashinsky PDEs, and it matched or outperformed random sampling with far fewer samples.",
+      "watch_item": "Performance may depend on reliable uncertainty estimates and on whether the system contains clearly informative regions; highly noisy or poorly structured data could make active sampling less effective.",
       "hashtags": [
         "#ActiveLearning",
         "#SINDy",
-        "#SparseDiscovery",
+        "#SparseModelDiscovery",
         "#PDEs",
         "#ScientificMachineLearning"
       ],
@@ -880,7 +669,7 @@
       "paper_title": "How Low Can You Go? Active Learning for Sparse Model Discovery in the Ultra-Low-Data Limit",
       "paper_date": "2026-06-10",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-12T16:17:32",
+      "generated_at": "2026-06-11T16:55:14",
       "generator": "openai"
     }
   },
@@ -911,29 +700,131 @@
         "url": "https://arxiv.org/pdf/2606.10335v1"
       }
     ],
-    "score": 70,
+    "score": 75,
     "infographic": {
-      "key_insight": "PI-MFA reconstructs continuous flow fields with B-splines while enforcing PDE and boundary constraints, so the approximation is both smooth and physically consistent.",
-      "engineering_relevance": "This gives engineers a compact, differentiable surrogate for simulation data that is better suited for analysis, visualization, and downstream computation than purely data-driven interpolation.",
+      "key_insight": "PI-MFA reconstructs flow fields with B-splines while explicitly enforcing PDE residuals and boundary/initial conditions, so the continuous approximation stays physically consistent.",
+      "engineering_relevance": "This gives engineers a compact, differentiable surrogate for flow data that is better suited for downstream analysis, visualization, and derivative-based quantities than purely data-driven interpolation.",
       "method": [
-        "Represent discrete flow data with tensor-product B-splines",
-        "Optimize spline control points to balance data fidelity and PDE residuals",
-        "Use exact analytic spline derivatives to evaluate physics constraints efficiently"
+        "Build a tensor-product B-spline representation with local support and exact analytical derivatives.",
+        "Solve for spline control points by balancing data fidelity against PDE residuals plus initial/boundary-condition penalties.",
+        "Use the resulting continuous field for efficient residual evaluation without storing full-resolution data."
       ],
-      "evidence_signal": "The abstract reports tests on 1D convection-diffusion, 2D coupled Burgers, and 2D incompressible Navier-Stokes, where PI-MFA reduced PDE residuals and improved balance-law consistency, often with lower error than standard MFA and competitive efficiency versus physics-informed neural networks.",
-      "watch_item": "Performance depends on accurate PDE specification and tuning the fidelity-versus-physics tradeoff, so mismatched models or weak constraints can degrade reconstruction quality.",
+      "evidence_signal": "Across 1D convection-diffusion, 2D coupled Burgers, and 2D incompressible Navier-Stokes tests, PI-MFA reduced PDE residuals and improved balance-law consistency, with lower approximation error on physically inconsistent data than standard or regularized MFA.",
+      "watch_item": "Performance depends on choosing appropriate PDE constraints and optimization weights; overly strong or mismatched physics terms could bias the reconstruction when the governing model is imperfect.",
       "hashtags": [
         "#ScientificComputing",
         "#PhysicsInformedML",
-        "#Bsplines",
+        "#BSplines",
         "#FlowSimulation",
-        "#PDEs"
+        "#NumericalMethods"
       ],
       "paper_id": "2026-06-09-arxiv-a_physics_informed_b_spline_framework_for_continuous_approximation_of_flow_data",
       "paper_title": "A Physics-Informed B-Spline Framework for Continuous Approximation of Flow Data",
       "paper_date": "2026-06-09",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-06-12T16:17:39",
+      "generated_at": "2026-06-11T16:55:17",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-08-arxiv-particle_methods_with_deep_learning_for_stochastic_control_under_partial_observation",
+    "arxiv_id": "2606.09055v1",
+    "date": "2026-06-08",
+    "title": "Particle Methods with Deep Learning for Stochastic Control under Partial Observation",
+    "authors": "Mathieu Laurière, Xiaolu Tan, Jiefei Yang",
+    "abstract": "Numerical computation of stochastic control problems under partial observation is challenging because the dynamic programming formulation is naturally posed on the conditional distribution of the hidden state. We propose particle-based methods that replace this infinite-dimensional filtering state by a finite-dimensional weighted particle system, building on recent limit theory for mean-field control with common-noise-adapted controls. We prove, under suitable assumptions, convergence of the fully discretized particle approximation to the original continuous-time partially observed control problem. The particle reformulation is high-dimensional but permutation-invariant, a structure that can be exploited by symmetric neural network architectures. We develop two deep learning algorithms: a direct optimization method for feedback controls and a Deep BSDE method for particle problems admitting a backward stochastic differential equation representation. We also extend the computational framework to partially observed mean-field control problems, which have been studied theoretically but remain less developed numerically. Numerical experiments on a linear--quadratic benchmark, a nonlinear partially observed mean-field control problem, and two financial applications, portfolio liquidation and asset allocation, demonstrate the accuracy and practical utility of the approach.",
+    "category": "Number Theory and Algebra",
+    "source": "arXiv",
+    "published": "2026-06-08T05:44:41Z",
+    "updated": "2026-06-08T05:44:41Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.09055v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.09055v1"
+      }
+    ],
+    "score": 75,
+    "infographic": {
+      "key_insight": "The paper replaces the infinite-dimensional belief state in partially observed stochastic control with a finite weighted particle system, enabling convergence-guaranteed deep learning methods for feedback control.",
+      "engineering_relevance": "This gives a practical pathway for solving high-dimensional control problems under hidden states in applications like finance, where direct dynamic programming is otherwise intractable.",
+      "method": [
+        "Particle approximation of the conditional distribution for partial observation.",
+        "Permutation-invariant neural architectures to exploit symmetry in particle states.",
+        "Two learning solvers: direct policy optimization and a Deep BSDE approach."
+      ],
+      "evidence_signal": "The abstract reports numerical experiments on a linear-quadratic benchmark, a nonlinear mean-field control problem, and two financial applications, showing accuracy and practical utility.",
+      "watch_item": "Performance depends on suitable assumptions and the particle discretization can become computationally heavy as the particle dimension grows.",
+      "hashtags": [
+        "#StochasticControl",
+        "#PartialObservation",
+        "#ParticleMethods",
+        "#DeepLearning",
+        "#MeanFieldControl"
+      ],
+      "paper_id": "2026-06-08-arxiv-particle_methods_with_deep_learning_for_stochastic_control_under_partial_observation",
+      "paper_title": "Particle Methods with Deep Learning for Stochastic Control under Partial Observation",
+      "paper_date": "2026-06-08",
+      "paper_category": "Number Theory and Algebra",
+      "generated_at": "2026-06-11T16:55:19",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-08-arxiv-diverse_thinking_schemata_elicit_better_reasoning_in_large_language_models",
+    "arxiv_id": "2606.08974v1",
+    "date": "2026-06-08",
+    "title": "Diverse Thinking Schemata Elicit Better Reasoning in Large Language Models",
+    "authors": "Xinyue Liang, Yizhe Yang, Yu Bai, Bin Xu, Jiawei Li, Yang Gao",
+    "abstract": "Large reasoning models (LRMs) have attracted increasing attention for their ability to solve complex mathematical problems by generating extended reasoning chains. In this work, we focus on two critical yet underexplored aspects of the reasoning process: reasoning transitions capturing the distinct transitions between reasoning steps and answer candidates reflecting the variety of solution paths produced by the model. We collectively define these two aspects as thinking schemata. We observe a correlation between the diversity of thinking schemata and model performance, which motivates us to enhance diversity as a means to further improve reasoning potential. To this end, we propose Diverse Schemata Policy Optimization (DiScO), a framework that first endows the model with schemata awareness, then encourages diversity through reinforcement learning, and further promotes diverse reasoning at inference time. Experiments on multiple mathematical reasoning benchmarks demonstrate that DiScO consistently outperforms standard group relative policy optimization. Beyond accuracy, human-annotated analyses show that DiScO substantially improves the model's ability to recover from erroneous initial attempts. Overall, our work suggests the important role that diversity of the thinking schemata plays and points to scaling along the diversity dimension as a promising research direction.",
+    "category": "Number Theory and Algebra",
+    "source": "arXiv",
+    "published": "2026-06-08T03:17:31Z",
+    "updated": "2026-06-08T03:17:31Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.08974v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.08974v1"
+      }
+    ],
+    "score": 75,
+    "infographic": {
+      "key_insight": "Diverse reasoning paths and step-to-step transitions (“thinking schemata”) are strongly linked to better large-language-model math reasoning, and increasing this diversity improves performance.",
+      "engineering_relevance": "For practical LLM-based math systems, encouraging varied solution trajectories during training and inference can make models more robust and better at recovering from early mistakes.",
+      "method": [
+        "Identify two diversity dimensions: reasoning transitions and answer-candidate paths.",
+        "Use Diverse Schemata Policy Optimization (DiScO) to first make schemata explicit, then reinforce diverse reasoning.",
+        "Promote diverse inference-time reasoning to widen solution exploration."
+      ],
+      "evidence_signal": "Across multiple mathematical reasoning benchmarks, DiScO consistently outperformed standard group relative policy optimization, and human annotations showed better recovery from incorrect initial attempts.",
+      "watch_item": "The approach adds complexity in training and inference, so gains may depend on reliable schemata modeling and careful control of diversity without destabilizing correctness.",
+      "hashtags": [
+        "#LLMReasoning",
+        "#MathAI",
+        "#PolicyOptimization",
+        "#Diversity",
+        "#Inference"
+      ],
+      "paper_id": "2026-06-08-arxiv-diverse_thinking_schemata_elicit_better_reasoning_in_large_language_models",
+      "paper_title": "Diverse Thinking Schemata Elicit Better Reasoning in Large Language Models",
+      "paper_date": "2026-06-08",
+      "paper_category": "Number Theory and Algebra",
+      "generated_at": "2026-06-11T16:55:21",
       "generator": "openai"
     }
   },
@@ -965,29 +856,134 @@
         "url": "https://arxiv.org/pdf/2606.12026v1"
       }
     ],
-    "score": 68,
+    "score": 73,
     "infographic": {
-      "key_insight": "The paper extends Perron--Frobenius theory and eigenvector centrality from real nonnegative networks to complex-weighted networks, enabling a principled notion of node importance when edge weights are complex.",
-      "engineering_relevance": "This gives engineers and scientists a way to rank nodes in complex-valued systems arising in quantum, electromagnetic, circuit, chemistry, and learning applications.",
+      "key_insight": "The paper extends Perron--Frobenius theory and eigenvector-based centrality from real positive networks to complex-weighted networks, enabling principled node-importance measures when edge weights are complex.",
+      "engineering_relevance": "This provides a foundation for analyzing complex networked systems in quantum, electrical, chemical, and communication settings where standard real-valued centralities do not apply.",
       "method": [
-        "Generalize PF-style conditions and connect several complex-matrix formulations.",
-        "Define eigenvector-based centralities for complex-weighted adjacency matrices.",
-        "Work through examples from electron transport, circuit analysis, mathematical chemistry, and communication networks."
+        "Generalize PF-style results to complex-valued matrices and compare related formulations.",
+        "Define and compute complex-weighted eigenvector-based centrality measures.",
+        "Construct examples from application domains to test existence and behavior of the generalized theory."
       ],
-      "evidence_signal": "The abstract reports theoretical results plus computed centralities on multiple example networks, but does not describe a benchmark dataset or quantitative comparison.",
-      "watch_item": "Complex eigenvectors can be phase-dependent and may require careful interpretation and normalization to make centrality scores meaningful.",
+      "evidence_signal": "The abstract reports theoretical proofs plus worked examples from electron transport, circuit analysis, mathematical chemistry, and communication networks, rather than a dataset-driven empirical evaluation.",
+      "watch_item": "Complex eigenvectors and non-real spectra may complicate interpretation, normalization, and numerical stability when turning the theory into a usable centrality score.",
       "hashtags": [
         "#PerronFrobenius",
-        "#ComplexNetworks",
+        "#NetworkScience",
+        "#ComplexWeights",
         "#EigenvectorCentrality",
-        "#GraphTheory",
-        "#AppliedLinearAlgebra"
+        "#TheoremProving"
       ],
       "paper_id": "2026-06-10-arxiv-generalizing_perron_frobenius_theory_and_eigenvector_based_centralities_to_networks_with_c",
       "paper_title": "Generalizing Perron--Frobenius theory and eigenvector-based centralities to networks with complex edge weights",
       "paper_date": "2026-06-10",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-06-12T16:17:41",
+      "generated_at": "2026-06-11T16:55:24",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-08-arxiv-an_agency_transferring_model_free_policy_enhancement_technique",
+    "arxiv_id": "2606.09825v1",
+    "date": "2026-06-08",
+    "title": "An Agency-Transferring Model-Free Policy Enhancement Technique",
+    "authors": "Anton Bolychev, Georgiy Malaniya, Sinan Ibrahim, Pavel Osinenko",
+    "abstract": "Training reinforcement learning (RL) policies from scratch is costly: it requires careful reward and environment design, extensive tuning, and substantial computation. Yet many control problems already have a functional but suboptimal policy available as a baseline. This paper proposes a method for embedding such a baseline into the RL training process, simultaneously improving training efficiency relative to from-scratch methods and producing a learning policy that outperforms the baseline. At each step, the method arbitrates between the baseline policy and a trainable learning policy, initially relying strongly on the baseline policy and then progressively transferring agency to the learning policy. By the end of training, the learning policy is a standalone neural network that operates without baseline policy support. The paper formalizes what it means for the baseline policy to be functional: under this policy, the agent reaches a goal set and remains there with high probability. The proposed arbitration mechanism is designed to exploit this property during training, yielding high goal-reaching rates right from the beginning of training. A theoretical analysis provides a formal interpretation of this behavior under stated assumptions and extends it to the final baseline-free regime, where explicit lower bounds are derived for the goal-reaching probability of the standalone learning policy. Empirical results on continuous-control benchmarks show that the proposed method achieves returns that match or exceed those of competitive approaches, while maintaining the highest goal-reaching rates throughout training among the compared methods -- including in the final stage, where the learning policy operates without any baseline support.",
+    "category": "Theorem Proving",
+    "source": "arXiv",
+    "published": "2026-06-08T17:59:39Z",
+    "updated": "2026-06-08T17:59:39Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "eess.SY",
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.09825v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.09825v1"
+      }
+    ],
+    "score": 73,
+    "infographic": {
+      "key_insight": "The paper transfers control from a known good baseline policy to a trainable RL policy during learning, so training starts safely and ends with a standalone policy that can outperform the baseline.",
+      "engineering_relevance": "This is useful when a workable controller already exists, because it can reduce RL training cost while preserving high goal-reaching performance in safety- or reliability-critical control tasks.",
+      "method": [
+        "Arbitrate at each step between the baseline policy and a learned policy.",
+        "Start by relying heavily on the baseline, then progressively shift agency to the learned policy.",
+        "By the end, deploy the learned neural policy without any baseline support."
+      ],
+      "evidence_signal": "On continuous-control benchmarks, the method matches or exceeds competitive returns and maintains the highest goal-reaching rates throughout training, including after the baseline is removed.",
+      "watch_item": "The approach depends on having a functional baseline policy and on assumptions that support the stated theoretical guarantees, so its benefits may weaken if the baseline is poor or the environment shifts.",
+      "hashtags": [
+        "#ReinforcementLearning",
+        "#ControlSystems",
+        "#PolicyTransfer",
+        "#SafeRL",
+        "#MachineLearning"
+      ],
+      "paper_id": "2026-06-08-arxiv-an_agency_transferring_model_free_policy_enhancement_technique",
+      "paper_title": "An Agency-Transferring Model-Free Policy Enhancement Technique",
+      "paper_date": "2026-06-08",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-06-11T16:55:26",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-08-arxiv-a_regret_minimization_framework_on_preference_learning_in_large_language_models",
+    "arxiv_id": "2606.09124v1",
+    "date": "2026-06-08",
+    "title": "A Regret Minimization Framework on Preference Learning in Large Language Models",
+    "authors": "Suhwan Kim, Taehyun Cho, Geon-Hyeong Kim, Yu Jin Kim, Youngsoo Jang, Moontae Lee",
+    "abstract": "Reinforcement learning with verifiable rewards (RLVR) has enabled progress on reasoning-intensive tasks by relying on task-specific verifiers that provide automated correctness signals. However, many realistic language tasks are difficult to equip with reliable verifiers, motivating a growing reliance on reinforcement learning from human feedback (RLHF). In this setting, we argue that a closer examination of how human feedback should be interpreted is essential. We introduce Regret-based Preference Optimization $(\\textbf{RePO})$, which reframes RLHF through $\\textit{regret minimization}$ rather than reward maximization. Human preferences are often shaped by $\\textit{prospective}$ anticipation of outcomes and $\\textit{counterfactual}$ comparisons to alternative behaviors, rather than by immediate, outcome-independent utility. $\\textbf{RePO}$ captures this structure by modeling preferences as behavior-conditioned assessments of relative suboptimality. Experiments on mathematical reasoning benchmarks and human preference datasets demonstrate consistent performance gains, indicating that $\\textbf{RePO}$ is an effective and human-aligned approach for training large language models.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-06-08T07:18:44Z",
+    "updated": "2026-06-08T07:18:44Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.09124v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.09124v1"
+      }
+    ],
+    "score": 73,
+    "infographic": {
+      "key_insight": "The paper reframes RLHF as regret minimization, arguing that human preferences reflect prospective and counterfactual judgments of suboptimality rather than simple reward maximization.",
+      "engineering_relevance": "RePO offers a more human-aligned training objective for large language models when reliable task verifiers are unavailable, which is common in practical language applications.",
+      "method": [
+        "Model preferences as behavior-conditioned regret instead of direct reward.",
+        "Optimize for minimizing relative suboptimality against alternatives.",
+        "Use this framework within RLHF to better match how humans compare candidate outputs."
+      ],
+      "evidence_signal": "The abstract reports consistent gains on mathematical reasoning benchmarks and human preference datasets.",
+      "watch_item": "The approach depends on accurately modeling human regret signals, which may be sensitive to how preferences are collected and represented.",
+      "hashtags": [
+        "#LLM",
+        "#RLHF",
+        "#PreferenceLearning",
+        "#RegretMinimization",
+        "#MathematicalReasoning"
+      ],
+      "paper_id": "2026-06-08-arxiv-a_regret_minimization_framework_on_preference_learning_in_large_language_models",
+      "paper_title": "A Regret Minimization Framework on Preference Learning in Large Language Models",
+      "paper_date": "2026-06-08",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-06-11T16:55:29",
       "generator": "openai"
     }
   },
@@ -1018,29 +1014,29 @@
         "url": "https://arxiv.org/pdf/2606.11911v1"
       }
     ],
-    "score": 67,
+    "score": 72,
     "infographic": {
-      "key_insight": "STRAND reinterprets persistence diagrams as survival data, enabling one coherent representation for hypothesis testing, effect sizes, and stable vectorisation.",
-      "engineering_relevance": "It gives practitioners a statistically grounded way to compare topological summaries and feed them into machine learning pipelines without switching methods.",
+      "key_insight": "STRAND reframes persistence diagrams as survival data, enabling both hypothesis testing and stable vector representations from the same interpretable persistence survival function.",
+      "engineering_relevance": "This gives practitioners a practical way to compare topological summaries statistically while also turning them into features for machine learning pipelines.",
       "method": [
-        "Treat each persistence value as a time-to-event and build the persistence survival function S(t)=P(p>t).",
-        "Use the shared survival representation to derive a non-parametric two-sample test and interpretable effect sizes.",
-        "Convert the survival curve into a 1-Wasserstein-stable feature vector for downstream prediction."
+        "Treat each persistence value p = d - b as a fully observed survival time.",
+        "Build the persistence survival function S(t) = P(p > t) as the common representation.",
+        "Derive a non-parametric two-sample test, effect sizes, and a 1-Wasserstein-stable vectorization from S(t)."
       ],
-      "evidence_signal": "The paper reports calibrated Type I error and high power on synthetic manifolds, plus competitive performance across 14 graph and 3D point-cloud benchmarks and an fMRI connectivity application.",
-      "watch_item": "Performance depends on having enough diagrams and on careful implementation of the survival-based statistics, especially when comparing complex or small-sample datasets.",
+      "evidence_signal": "The abstract reports calibrated Type I error, high power on synthetic manifolds, competitive results on 14 graph and 3 point-cloud benchmarks, and an application to fMRI brain connectivity.",
+      "watch_item": "Performance depends on how persistence diagrams are sampled and discretized into the survival representation, so calibration and stability should be checked for the target dataset.",
       "hashtags": [
         "#TopologicalDataAnalysis",
         "#PersistenceDiagrams",
-        "#StatisticalTesting",
+        "#SurvivalAnalysis",
         "#MachineLearning",
-        "#ComputationalGeometry"
+        "#Wasserstein"
       ],
       "paper_id": "2026-06-10-arxiv-from_persistence_to_survival_hypothesis_testing_effect_sizes_and_vectorisation_for_topolog",
       "paper_title": "From Persistence to Survival: Hypothesis Testing, Effect Sizes and Vectorisation for Topological Features",
       "paper_date": "2026-06-10",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-06-12T16:17:44",
+      "generated_at": "2026-06-11T16:55:31",
       "generator": "openai"
     }
   }

@@ -1,24 +1,24 @@
 {
-  "key_insight": "Sliding-window attention becomes much more viable for math reasoning when architecture-aware reinforcement learning is added after supervised conversion from self-attention.",
-  "engineering_relevance": "The paper suggests a practical path to long-context efficiency: replace quadratic self-attention with linear-cost sliding-window attention without training a new base model from scratch.",
+  "key_insight": "Sliding-window attention (SWA) becomes much more competitive for math reasoning when a pretrained self-attention model is first converted with supervised fine-tuning and then adapted with on-policy reinforcement learning.",
+  "engineering_relevance": "This offers a practical path to reduce long-context inference cost from quadratic to linear complexity without training a new base model from scratch.",
   "method": [
-    "Convert a pretrained self-attention model to sliding-window attention with supervised fine-tuning.",
-    "Apply on-policy reinforcement learning so the model adapts trajectories under the sliding-window constraint.",
-    "Use architecture-aware training to reduce the mismatch between long-range SFT data and local attention."
+    "Convert a pretrained self-attention model to SWA via supervised fine-tuning.",
+    "Apply reinforcement learning under the SWA constraint to adapt model trajectories.",
+    "Use the two-stage SWARR recipe to align training data and inference architecture."
   ],
-  "evidence_signal": "Across mathematical reasoning benchmarks, the two-stage SWARR recipe recovers much of the accuracy lost during sliding-window conversion while keeping efficiency benefits.",
-  "watch_item": "Results may depend on how well the RL data and reward setup align with the sliding-window inductive bias; gains could be smaller if long-range dependencies remain essential.",
+  "evidence_signal": "The abstract reports results on mathematical reasoning benchmarks, showing RL recovers much of the accuracy lost during SWA conversion while keeping linear-complexity attention benefits.",
+  "watch_item": "SWA can still lag after SFT alone, and the method may depend on how well RL can reshape data trajectories to fit the sliding-window constraint.",
   "hashtags": [
-    "#MathematicalReasoning",
-    "#LongContext",
+    "#MathReasoning",
     "#SlidingWindowAttention",
     "#ReinforcementLearning",
-    "#LLMOptimization"
+    "#LongContextInference",
+    "#EfficientLLMs"
   ],
   "paper_id": "2026-06-10-arxiv-architecture_aware_reinforcement_learning_makes_sliding_window_attention_competitive_in_ma",
   "paper_title": "Architecture-Aware Reinforcement Learning Makes Sliding-Window Attention Competitive in Math Reasoning",
   "paper_date": "2026-06-10",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-06-11T16:54:52",
+  "generated_at": "2026-06-12T16:17:07",
   "generator": "openai"
 }
