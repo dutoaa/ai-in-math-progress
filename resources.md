@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-06-12
+Generated: 2026-06-13
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Adjoint Method versus Physics-Informed Neural Networks in PDE-Constrained Inverse Problems
@@ -91,7 +91,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.10562v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-09-arxiv-accelerating_sav_based_optimization_via_randomized_low_rank_hessian_approximation_infographic.json
 
-## 12. Accelerated Implicit GDA Schemes: Theoretical Guarantees and Application to Proximal Augmented Lagrangian Methods
+## 12. How Low Can You Go? Active Learning for Sparse Model Discovery in the Ultra-Low-Data Limit
+
+- Date: 2026-06-10
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.12182v1
+- PDF: https://arxiv.org/pdf/2606.12182v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-10-arxiv-how_low_can_you_go_active_learning_for_sparse_model_discovery_in_the_ultra_low_data_limit_infographic.json
+
+## 13. Accelerated Implicit GDA Schemes: Theoretical Guarantees and Application to Proximal Augmented Lagrangian Methods
 
 - Date: 2026-06-10
 - Category: Optimization and PDEs
@@ -99,7 +107,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.11800v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-10-arxiv-accelerated_implicit_gda_schemes_theoretical_guarantees_and_application_to_proximal_augmen_infographic.json
 
-## 13. Clipping Makes Distributed and Federated Asynchronous SGD Robust to Stragglers
+## 14. Clipping Makes Distributed and Federated Asynchronous SGD Robust to Stragglers
 
 - Date: 2026-06-11
 - Category: Optimization and PDEs
@@ -107,7 +115,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.13287v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-11-arxiv-clipping_makes_distributed_and_federated_asynchronous_sgd_robust_to_stragglers_infographic.json
 
-## 14. Reliable Error Estimation for PINNs: Lower and Upper A Posteriori Bounds
+## 15. Reliable Error Estimation for PINNs: Lower and Upper A Posteriori Bounds
 
 - Date: 2026-06-10
 - Category: Symbolic Computation
@@ -115,7 +123,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.12050v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-10-arxiv-reliable_error_estimation_for_pinns_lower_and_upper_a_posteriori_bounds_infographic.json
 
-## 15. Exponential Adaptive Smoothing and Importance Sampling for Optimization of the Conditional Value-at-Risk
+## 16. Exponential Adaptive Smoothing and Importance Sampling for Optimization of the Conditional Value-at-Risk
 
 - Date: 2026-06-09
 - Category: Optimization and PDEs
@@ -123,21 +131,13 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.11515v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-09-arxiv-exponential_adaptive_smoothing_and_importance_sampling_for_optimization_of_the_conditional_infographic.json
 
-## 16. Generalization Bounds for Transformer-Based Next-Token Prediction in a Language Model
+## 17. Generalization Bounds for Transformer-Based Next-Token Prediction in a Language Model
 
 - Date: 2026-06-11
 - Category: AI math
 - arXiv: https://arxiv.org/abs/2606.13280v1
 - PDF: https://arxiv.org/pdf/2606.13280v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-11-arxiv-generalization_bounds_for_transformer_based_next_token_prediction_in_a_language_model_infographic.json
-
-## 17. How Low Can You Go? Active Learning for Sparse Model Discovery in the Ultra-Low-Data Limit
-
-- Date: 2026-06-10
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.12182v1
-- PDF: https://arxiv.org/pdf/2606.12182v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-10-arxiv-how_low_can_you_go_active_learning_for_sparse_model_discovery_in_the_ultra_low_data_limit_infographic.json
 
 ## 18. A Physics-Informed B-Spline Framework for Continuous Approximation of Flow Data
 
