@@ -1,24 +1,24 @@
 {
-  "key_insight": "Sliding-window attention can become competitive for math reasoning when it is converted from a pretrained self-attention model and then adapted with reinforcement learning.",
-  "engineering_relevance": "This offers a practical path to cut inference cost and memory from quadratic self-attention while retaining much of the reasoning accuracy needed for long-context LLM deployment.",
+  "key_insight": "A two-stage conversion-and-reinforcement pipeline can make sliding-window attention nearly as effective as full self-attention for math reasoning, while keeping linear-complexity inference.",
+  "engineering_relevance": "This offers a practical way to retrofit existing long-context LLMs for cheaper, more scalable inference without training a new base model from scratch.",
   "method": [
-    "Convert a pretrained self-attention model to sliding-window attention and fine-tune with supervised data.",
-    "Apply on-policy reinforcement learning under the sliding-window constraint to adapt generated trajectories.",
-    "Use architecture-aware adaptation to reduce the mismatch between training data and the restricted attention pattern."
+    "Convert a pretrained self-attention model to sliding-window attention with supervised fine-tuning.",
+    "Apply on-policy reinforcement learning so the model adapts its trajectories to the sliding-window constraint.",
+    "Use the RL stage to reduce the data-architecture mismatch that hurts SWA after SFT."
   ],
-  "evidence_signal": "Experiments on mathematical reasoning benchmarks show that RL narrows the accuracy gap between sliding-window and self-attention models, recovering much of the loss introduced by conversion and SFT.",
-  "watch_item": "The approach may be sensitive to the quality and architecture-match of training data, since SFT examples designed for self-attention can contain long-range dependencies that sliding-window models struggle to represent.",
+  "evidence_signal": "On mathematical reasoning benchmarks, the method substantially narrows the accuracy gap between sliding-window attention and self-attention, recovering much of the loss after conversion.",
+  "watch_item": "The approach depends on the quality and stability of RL adaptation, and performance may still be sensitive to tasks with strong long-range dependencies beyond the window.",
   "hashtags": [
-    "#MathReasoning",
-    "#LongContext",
+    "#LLMReasoning",
     "#SlidingWindowAttention",
     "#ReinforcementLearning",
-    "#LLMs"
+    "#MathReasoning",
+    "#EfficientInference"
   ],
   "paper_id": "2026-06-10-arxiv-architecture_aware_reinforcement_learning_makes_sliding_window_attention_competitive_in_ma",
   "paper_title": "Architecture-Aware Reinforcement Learning Makes Sliding-Window Attention Competitive in Math Reasoning",
   "paper_date": "2026-06-10",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-06-13T15:00:09",
+  "generated_at": "2026-06-14T15:07:50",
   "generator": "openai"
 }
