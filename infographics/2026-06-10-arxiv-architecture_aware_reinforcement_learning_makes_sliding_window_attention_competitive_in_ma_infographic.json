@@ -1,13 +1,13 @@
 {
-  "key_insight": "A two-stage conversion-and-reinforcement pipeline can make sliding-window attention nearly as effective as full self-attention for math reasoning, while keeping linear-complexity inference.",
-  "engineering_relevance": "This offers a practical way to retrofit existing long-context LLMs for cheaper, more scalable inference without training a new base model from scratch.",
+  "key_insight": "Sliding-window attention (SWA) can become competitive for math reasoning when converted from a pretrained self-attention model and then adapted with reinforcement learning, which reduces the performance gap caused by architecture mismatch.",
+  "engineering_relevance": "This offers a practical path to long-context reasoning systems with lower attention cost, preserving much of the accuracy of self-attention while moving toward linear-complexity inference.",
   "method": [
-    "Convert a pretrained self-attention model to sliding-window attention with supervised fine-tuning.",
-    "Apply on-policy reinforcement learning so the model adapts its trajectories to the sliding-window constraint.",
-    "Use the RL stage to reduce the data-architecture mismatch that hurts SWA after SFT."
+    "Convert a pretrained self-attention LLM to SWA and apply supervised fine-tuning.",
+    "Use on-policy reinforcement learning so the model adapts its own trajectories under the SWA constraint.",
+    "Align training data and model architecture to reduce long-range dependency mismatch."
   ],
-  "evidence_signal": "On mathematical reasoning benchmarks, the method substantially narrows the accuracy gap between sliding-window attention and self-attention, recovering much of the loss after conversion.",
-  "watch_item": "The approach depends on the quality and stability of RL adaptation, and performance may still be sensitive to tasks with strong long-range dependencies beyond the window.",
+  "evidence_signal": "The abstract reports evaluations on mathematical reasoning benchmarks showing RL substantially narrows the SWA-vs-SA gap and recovers much of the accuracy lost after conversion.",
+  "watch_item": "The approach may still depend on careful RL stabilization and may not fully solve tasks with strong long-range dependencies beyond the sliding window.",
   "hashtags": [
     "#LLMReasoning",
     "#SlidingWindowAttention",
@@ -19,6 +19,6 @@
   "paper_title": "Architecture-Aware Reinforcement Learning Makes Sliding-Window Attention Competitive in Math Reasoning",
   "paper_date": "2026-06-10",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-06-14T15:07:50",
+  "generated_at": "2026-06-15T17:59:02",
   "generator": "openai"
 }

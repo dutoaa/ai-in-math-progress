@@ -1,0 +1,24 @@
+{
+  "key_insight": "DiffusionGemma does not decode in a truly parallel or block-autoregressive way; instead it shows a weak, partial left-to-right commit bias whose apparent block structure depends on the measurement scale.",
+  "engineering_relevance": "For diffusion-based LLMs, decoding order and confidence need to be evaluated carefully because implementation details and analysis granularity can create misleading claims about how tokens are actually committed.",
+  "method": [
+    "Instrumented DiffusionGemma 26B by hooking the sampler accept step to log when each canvas position commits and at what confidence.",
+    "Ran a 686-prompt probe suite spanning six regimes to compare commit order, batch structure, and confidence patterns.",
+    "Accounted for confounders such as trailing-EOS padding, within-regime effects, non-monotonic commits, and block-size sensitivity."
+  ],
+  "evidence_signal": "Across 686 prompts, the model committed in large simultaneous batches with regime-dependent ordering, and commit confidence predicted mathematical correctness but not factual recall.",
+  "watch_item": "Commit-order conclusions are fragile unless trailing padding, ties within commit batches, and analysis granularity are handled consistently.",
+  "hashtags": [
+    "#DiffusionModels",
+    "#LLMs",
+    "#DecodingOrder",
+    "#MathematicalReasoning",
+    "#AIEvaluation"
+  ],
+  "paper_id": "2026-06-12-arxiv-neither_parallel_nor_sequential_how_diffusiongemma_actually_commits_tokens",
+  "paper_title": "Neither Parallel Nor Sequential: How DiffusionGemma Actually Commits Tokens",
+  "paper_date": "2026-06-12",
+  "paper_category": "Mathematical Reasoning",
+  "generated_at": "2026-06-15T17:59:22",
+  "generator": "openai"
+}
