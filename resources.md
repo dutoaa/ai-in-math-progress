@@ -1,17 +1,57 @@
 # AI math Progress Public Resources
 
-Generated: 2026-06-15
+Generated: 2026-06-16
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. MA-ProofBench: A Two-Tiered Evaluation of LLMs for Theorem Proving in Mathematical Analysis
 
 - Date: 2026-06-11
 - Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2606.13782v1
-- PDF: https://arxiv.org/pdf/2606.13782v1
+- arXiv: https://arxiv.org/abs/2606.13782v2
+- PDF: https://arxiv.org/pdf/2606.13782v2
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-11-arxiv-ma_proofbench_a_two_tiered_evaluation_of_llms_for_theorem_proving_in_mathematical_analysis_infographic.json
 
-## 2. A New Primal-Dual Algorithm with Convex Combination and Extrapolation for Convex-Concave Saddle Point Problems with Nonlinear Coupling Term
+## 2. Functional Gradient Descent with Adaptive Representations
+
+- Date: 2026-06-15
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.16926v1
+- PDF: https://arxiv.org/pdf/2606.16926v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-15-arxiv-functional_gradient_descent_with_adaptive_representations_infographic.json
+
+## 3. The Faithfulness Gap: Certifying Semantic Equivalence Between Natural-Language and Formal Mathematical Statements
+
+- Date: 2026-06-15
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.16541v1
+- PDF: https://arxiv.org/pdf/2606.16541v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-15-arxiv-the_faithfulness_gap_certifying_semantic_equivalence_between_natural_language_and_formal_m_infographic.json
+
+## 4. Learning the Geometry of Data: A Mathematical Review of Shape Space Analysis
+
+- Date: 2026-06-15
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2606.17022v1
+- PDF: https://arxiv.org/pdf/2606.17022v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-15-arxiv-learning_the_geometry_of_data_a_mathematical_review_of_shape_space_analysis_infographic.json
+
+## 5. Formalize Once, Edit the Rest: Efficient Lean-Based Answer Selection for Math Reasoning
+
+- Date: 2026-06-14
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.15972v1
+- PDF: https://arxiv.org/pdf/2606.15972v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-14-arxiv-formalize_once_edit_the_rest_efficient_lean_based_answer_selection_for_math_reasoning_infographic.json
+
+## 6. SILAGE: Memory-Efficient, Full-Gradient-Free Nonconvex Optimization for Nested Finite Sums
+
+- Date: 2026-06-14
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.15832v1
+- PDF: https://arxiv.org/pdf/2606.15832v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-14-arxiv-silage_memory_efficient_full_gradient_free_nonconvex_optimization_for_nested_finite_sums_infographic.json
+
+## 7. A New Primal-Dual Algorithm with Convex Combination and Extrapolation for Convex-Concave Saddle Point Problems with Nonlinear Coupling Term
 
 - Date: 2026-06-12
 - Category: Optimization and PDEs
@@ -19,146 +59,106 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.14220v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-12-arxiv-a_new_primal_dual_algorithm_with_convex_combination_and_extrapolation_for_convex_concave_s_infographic.json
 
-## 3. Adjoint Method versus Physics-Informed Neural Networks in PDE-Constrained Inverse Problems
+## 8. Towards Pareto-Optimal Tool-Integrated Agents with Pareto Ranking Policy Optimization
 
-- Date: 2026-06-10
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.12337v1
-- PDF: https://arxiv.org/pdf/2606.12337v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-10-arxiv-adjoint_method_versus_physics_informed_neural_networks_in_pde_constrained_inverse_problems_infographic.json
-
-## 4. Structure-Preserving Neural Surrogates with Tractable Uncertainty Quantification
-
-- Date: 2026-06-10
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.11650v1
-- PDF: https://arxiv.org/pdf/2606.11650v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-10-arxiv-structure_preserving_neural_surrogates_with_tractable_uncertainty_quantification_infographic.json
-
-## 5. Breaking Entropy Bounds: Accelerating RL Training via MTP with Rejection Sampling
-
-- Date: 2026-06-10
+- Date: 2026-06-15
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.12370v1
-- PDF: https://arxiv.org/pdf/2606.12370v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-10-arxiv-breaking_entropy_bounds_accelerating_rl_training_via_mtp_with_rejection_sampling_infographic.json
+- arXiv: https://arxiv.org/abs/2606.16111v1
+- PDF: https://arxiv.org/pdf/2606.16111v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-15-arxiv-towards_pareto_optimal_tool_integrated_agents_with_pareto_ranking_policy_optimization_infographic.json
 
-## 6. The Periodic Table of LLM Reasoning: A Structured Survey of Reasoning Paradigms, Methods, and Failure Modes
+## 9. A Gradient Perspective on RLVR Stability and Winner Advantage Policy Optimization
 
-- Date: 2026-06-09
+- Date: 2026-06-15
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.11470v1
-- PDF: https://arxiv.org/pdf/2606.11470v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-09-arxiv-the_periodic_table_of_llm_reasoning_a_structured_survey_of_reasoning_paradigms_methods_and_infographic.json
+- arXiv: https://arxiv.org/abs/2606.16154v1
+- PDF: https://arxiv.org/pdf/2606.16154v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-15-arxiv-a_gradient_perspective_on_rlvr_stability_and_winner_advantage_policy_optimization_infographic.json
 
-## 7. Robin-Neumann Coupling of PINN and FEM Solvers: A Steklov-Poincaré View, with Application to Fluid-Structure Interaction with Contact
+## 10. New lower bounds for the degree/diameter problem via interaction with a browser-accessible LLM
+
+- Date: 2026-06-14
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.15860v1
+- PDF: https://arxiv.org/pdf/2606.15860v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-14-arxiv-new_lower_bounds_for_the_degree_diameter_problem_via_interaction_with_a_browser_accessible_infographic.json
+
+## 11. The Information-Theoretic Benefit of Shared Representations under Orthogonality Constraints
+
+- Date: 2026-06-14
+- Category: AI math
+- arXiv: https://arxiv.org/abs/2606.16028v1
+- PDF: https://arxiv.org/pdf/2606.16028v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-14-arxiv-the_information_theoretic_benefit_of_shared_representations_under_orthogonality_constraint_infographic.json
+
+## 12. Schattor: Schatten-family methods for deep learning optimization
+
+- Date: 2026-06-14
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.15702v1
+- PDF: https://arxiv.org/pdf/2606.15702v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-14-arxiv-schattor_schatten_family_methods_for_deep_learning_optimization_infographic.json
+
+## 13. Learning Policy from a Single Trajectory in Average-Reward Markov Decision Process
+
+- Date: 2026-06-15
+- Category: AI math
+- arXiv: https://arxiv.org/abs/2606.16729v1
+- PDF: https://arxiv.org/pdf/2606.16729v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-15-arxiv-learning_policy_from_a_single_trajectory_in_average_reward_markov_decision_process_infographic.json
+
+## 14. Dual-Network PINNs for Optimal Control: A Reproducible Benchmark on the Mass-Spring-Damper System
+
+- Date: 2026-06-13
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.15271v1
+- PDF: https://arxiv.org/pdf/2606.15271v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-13-arxiv-dual_network_pinns_for_optimal_control_a_reproducible_benchmark_on_the_mass_spring_damper_infographic.json
+
+## 15. Mask-Proof: An LLM-based Automated Data Curation Pipeline on Mathematical Proofs
+
+- Date: 2026-06-13
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.15258v1
+- PDF: https://arxiv.org/pdf/2606.15258v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-13-arxiv-mask_proof_an_llm_based_automated_data_curation_pipeline_on_mathematical_proofs_infographic.json
+
+## 16. The Quality-Utility Paradox: Why High-Reward Data Impairs Small Model Mathematical Reasoning
+
+- Date: 2026-06-15
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.16152v1
+- PDF: https://arxiv.org/pdf/2606.16152v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-15-arxiv-the_quality_utility_paradox_why_high_reward_data_impairs_small_model_mathematical_reasonin_infographic.json
+
+## 17. Multi-Stage Stochastic Optimization and Reinforcement Learning Approaches for Dynamic Inspection of Infrastructure Systems
+
+- Date: 2026-06-14
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.15840v1
+- PDF: https://arxiv.org/pdf/2606.15840v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-14-arxiv-multi_stage_stochastic_optimization_and_reinforcement_learning_approaches_for_dynamic_insp_infographic.json
+
+## 18. Mapping Mathematical Hardness: Machine-Assisted Conjecture Discovery and the Quantification of Non-Triviality
+
+- Date: 2026-06-11
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.14804v1
+- PDF: https://arxiv.org/pdf/2606.14804v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-11-arxiv-mapping_mathematical_hardness_machine_assisted_conjecture_discovery_and_the_quantification_infographic.json
+
+## 19. TNODEV: Toolbox for Neural ODE Verification
+
+- Date: 2026-06-15
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.16567v1
+- PDF: https://arxiv.org/pdf/2606.16567v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-15-arxiv-tnodev_toolbox_for_neural_ode_verification_infographic.json
+
+## 20. Robin-Neumann Coupling of PINN and FEM Solvers: A Steklov-Poincaré View, with Application to Fluid-Structure Interaction with Contact
 
 - Date: 2026-06-12
 - Category: Geometry and Topology
 - arXiv: https://arxiv.org/abs/2606.14181v1
 - PDF: https://arxiv.org/pdf/2606.14181v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-12-arxiv-robin_neumann_coupling_of_pinn_and_fem_solvers_a_steklov_poincar_view_with_application_to_infographic.json
-
-## 8. VeriGeo: Controllable Geometry Question Generation with Numerical and Analytical Verification
-
-- Date: 2026-06-12
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.14176v1
-- PDF: https://arxiv.org/pdf/2606.14176v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-12-arxiv-verigeo_controllable_geometry_question_generation_with_numerical_and_analytical_verificati_infographic.json
-
-## 9. Riemannian Metric Matching for Scalable Geometric Modeling of Distributions
-
-- Date: 2026-06-12
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.14334v1
-- PDF: https://arxiv.org/pdf/2606.14334v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-12-arxiv-riemannian_metric_matching_for_scalable_geometric_modeling_of_distributions_infographic.json
-
-## 10. A Statistical and Machine Learning Framework for Operational Threshold Detection and Deployable Dispatch Controller Development in Hydrogen Multi-Energy Systems
-
-- Date: 2026-06-12
-- Category: AI math
-- arXiv: https://arxiv.org/abs/2606.14601v1
-- PDF: https://arxiv.org/pdf/2606.14601v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-12-arxiv-a_statistical_and_machine_learning_framework_for_operational_threshold_detection_and_deplo_infographic.json
-
-## 11. Optimal Hidden-Target Learning for Online Inventory Optimization on General Convex Sets
-
-- Date: 2026-06-12
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.14679v1
-- PDF: https://arxiv.org/pdf/2606.14679v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-12-arxiv-optimal_hidden_target_learning_for_online_inventory_optimization_on_general_convex_sets_infographic.json
-
-## 12. Architecture-Aware Reinforcement Learning Makes Sliding-Window Attention Competitive in Math Reasoning
-
-- Date: 2026-06-10
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.11634v1
-- PDF: https://arxiv.org/pdf/2606.11634v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-10-arxiv-architecture_aware_reinforcement_learning_makes_sliding_window_attention_competitive_in_ma_infographic.json
-
-## 13. Lyapunov-Based Sample Complexity Analysis for Weakly-Coupled MDPs
-
-- Date: 2026-06-12
-- Category: AI math
-- arXiv: https://arxiv.org/abs/2606.14095v1
-- PDF: https://arxiv.org/pdf/2606.14095v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-12-arxiv-lyapunov_based_sample_complexity_analysis_for_weakly_coupled_mdps_infographic.json
-
-## 14. Reward Modeling for Multi-Agent Orchestration
-
-- Date: 2026-06-11
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.13598v1
-- PDF: https://arxiv.org/pdf/2606.13598v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-11-arxiv-reward_modeling_for_multi_agent_orchestration_infographic.json
-
-## 15. Free Heavy-Tailed Lunch for Muon: A Theoretical Justification of Empirical Success
-
-- Date: 2026-06-12
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.14560v1
-- PDF: https://arxiv.org/pdf/2606.14560v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-12-arxiv-free_heavy_tailed_lunch_for_muon_a_theoretical_justification_of_empirical_success_infographic.json
-
-## 16. Accelerated Implicit GDA Schemes: Theoretical Guarantees and Application to Proximal Augmented Lagrangian Methods
-
-- Date: 2026-06-10
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.11800v1
-- PDF: https://arxiv.org/pdf/2606.11800v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-10-arxiv-accelerated_implicit_gda_schemes_theoretical_guarantees_and_application_to_proximal_augmen_infographic.json
-
-## 17. Clipping Makes Distributed and Federated Asynchronous SGD Robust to Stragglers
-
-- Date: 2026-06-11
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.13287v1
-- PDF: https://arxiv.org/pdf/2606.13287v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-11-arxiv-clipping_makes_distributed_and_federated_asynchronous_sgd_robust_to_stragglers_infographic.json
-
-## 18. Flood and Harvest: The Provable Necessity of Trivia for Generating Valuable Mathematics via the Lens of Language Generation in the Limit
-
-- Date: 2026-06-12
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.14688v1
-- PDF: https://arxiv.org/pdf/2606.14688v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-12-arxiv-flood_and_harvest_the_provable_necessity_of_trivia_for_generating_valuable_mathematics_via_infographic.json
-
-## 19. Neither Parallel Nor Sequential: How DiffusionGemma Actually Commits Tokens
-
-- Date: 2026-06-12
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.14620v1
-- PDF: https://arxiv.org/pdf/2606.14620v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-12-arxiv-neither_parallel_nor_sequential_how_diffusiongemma_actually_commits_tokens_infographic.json
-
-## 20. Reliable Error Estimation for PINNs: Lower and Upper A Posteriori Bounds
-
-- Date: 2026-06-10
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2606.12050v1
-- PDF: https://arxiv.org/pdf/2606.12050v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-10-arxiv-reliable_error_estimation_for_pinns_lower_and_upper_a_posteriori_bounds_infographic.json

@@ -1,24 +1,24 @@
 {
-  "key_insight": "Treating PINN and FEM solvers as Steklov–Poincaré operators lets Robin–Neumann coupling stabilize interface exchange and yields a contraction guarantee even when the PINN is only approximately trained.",
-  "engineering_relevance": "This provides a practical, meshless way to couple neural PDE solvers with FEM across moving interfaces and contact problems, reducing remeshing needs and improving robustness in fluid–structure interaction.",
+  "key_insight": "The paper reframes PINN–FEM coupling as a Steklov–Poincaré interface problem and shows that Robin–Neumann coupling stabilizes the exchange and contracts even when the PINN acts as a perturbed operator.",
+  "engineering_relevance": "This enables meshless fluid-structure/contact simulations that can handle moving interfaces and topology change without remeshing, while retaining the robustness of FEM on the other domain.",
   "method": [
-    "View each subdomain solver as a trace-to-flux operator.",
+    "Model each solver as a trace-to-flux (Steklov–Poincaré) operator across a shared interface.",
     "Replace unstable Dirichlet–Neumann coupling with Robin–Neumann coupling using a closed-form interface impedance.",
-    "Use a Fourier-mode interface probe to estimate PINN resolvable interface eigenvalues and diagnose spectral limits."
+    "Use a Fourier-mode interface probe to estimate the PINN’s resolvable interface spectrum and diagnose spectral limits."
   ],
-  "evidence_signal": "The abstract reports agreement between theory and experiments: predicted PINN–FEM contraction rates match measured rates within 7% on 1D/2D Poisson tests, and contact reaction error is 0.4% under mesh refinement.",
-  "watch_item": "The PINN can drift off the Stokes manifold over long time horizons, and under-resolved pre-impact squeeze-film effects indicate a risk of missing sharp interface dynamics.",
+  "evidence_signal": "The abstract reports agreement with measured PINN-FEM contraction rates within 7% on 1D/2D Poisson tests, 0.5% accuracy for recovered interface eigenvalues, and 0.4% error in the submerged-weight contact reaction on a Stokes/rigid-disc benchmark.",
+  "watch_item": "The approach still depends on PINN training quality; long-horizon drift off the Stokes manifold and under-resolved pre-impact squeeze-film effects remain concerns.",
   "hashtags": [
     "#PINN",
     "#FEM",
     "#DomainDecomposition",
-    "#FluidStructureInteraction",
-    "#ContactMechanics"
+    "#RobinNeumann",
+    "#FluidStructureInteraction"
   ],
   "paper_id": "2026-06-12-arxiv-robin_neumann_coupling_of_pinn_and_fem_solvers_a_steklov_poincar_view_with_application_to",
   "paper_title": "Robin-Neumann Coupling of PINN and FEM Solvers: A Steklov-Poincaré View, with Application to Fluid-Structure Interaction with Contact",
   "paper_date": "2026-06-12",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-06-15T17:58:47",
+  "generated_at": "2026-06-16T18:04:54",
   "generator": "openai"
 }
