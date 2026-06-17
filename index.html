@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI math Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-06-16. Ranked from recent arXiv AI math papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-06-17. Ranked from recent arXiv AI math papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -31,26 +31,26 @@
     </header>
     <section class="grid">
       <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>92</strong></div>
-        <p class="date">2026-06-11</p>
-        <h2>MA-ProofBench: A Two-Tiered Evaluation of LLMs for Theorem Proving in Mathematical Analysis</h2>
-        <p class="authors">Lushi Pu, Weiming Zhang, Xinheng Xie, Zixuan Fu, Bingxiang He, Hongya Lyu</p>
-        <p class="abstract">Large Language Models (LLMs) have made notable progress in automated theorem proving, yet existing formal benchmarks remain limited in both mathematical coverage and difficulty. Most are concentrated in areas that are easier to formalize, such as algebra and elementary number theory, and provide limited coverage of subfields that require deeper reasoning, including mathematical analysis. To address this gap, we introduce MA-ProofBench, to the best of our knowledge, the first formal theorem-proving benchmark dedicated to Mathematical Analysis. The benchmark contains 200 formalized theorems covering 6 core topics and 27 subcategories, including measure and integration theory, complex analysis, and functional analysis. The problems are divided into two difficulty levels, an undergraduate level (Level I, 100 problems) and a Ph.D. qualifying level (Level II, 100 problems), to evaluate how well LLMs perform formal reasoning at different mathematical depths. Each problem is constructed through a human-led, LLM-assisted formalization pipeline followed by independent expert review, ensuring that the formal statements remain faithful to the original mathematics. We evaluate a range of recent general-purpose reasoning models and formal theorem provers on MA-ProofBench. However, most models perform poorly: even the best-performing model, GPT-5.5, achieves only 16% Pass@8 on Level I and 5% on Level II, while most models stay close to 0% on Level II. Further analysis identifies Mathlib hallucinations and incomplete proofs as the two dominant failure modes, while an evaluation on the natural-language version of the benchmark exposes a clear gap between informal and formal reasoning. MA-ProofBench is intended to serve as a reliable reference for tracking progress in formal mathematical reasoning in advanced domains.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.13782v2" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.13782v2" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>105</strong></div>
+        <p class="date">2026-06-16</p>
+        <h2>A Convex Quasilinearization Method for Solving Nonlinear PDEs with Physics-Informed Neural Networks</h2>
+        <p class="authors">Gbenga T. Awojinrin, Abdul-Akeem Olawoyin, Rami M. Younis</p>
+        <p class="abstract">We present a numerical method for the forward solution of nonlinear partial differential equations (PDEs) in which Bellman-Kalaba quasilinearization reduces the nonlinear problem to a sequence of linear subproblems, each discretized by collocation onto a trial space that is linear in its parameters and solved by a single direct linear least-squares QR factorization. The trial space, which we term Linear-in-Learnables (LiL), comprises representations whose trainable parameters enter linearly, including random-feature extreme learning machines, spectral polynomial bases, and trigonometric expansions, each implemented as a physics-informed neural network. The method thus replaces the nonconvex gradient-based training that limits standard PINNs with a convex per-step solve. We establish local Newton-Kantorovich convergence of the outer iteration to a residual-limited neighborhood under an explicit smallness condition, with the limiting accuracy governed by the best-approximation residual of the trial space rather than by an optimization tolerance. The method, denoted LiL-Q, is assessed on seven benchmarks spanning scalar nonlinear PDEs (Bratu, viscous Burgers, Buckley-Leverett), coupled systems (plane-strain elasticity and the incompressible Navier-Stokes equations in two and three spatial dimensions), and steady-state Darcy flow with heterogeneous permeability. Across these problems, LiL-Q converges in single-digit outer iterations in most cases, even at the coarsest basis sizes and independent of the parameter count. When the exact solution lies in the span of the trial space, the method recovers it to machine precision in a single solve. On the Navier-Stokes benchmarks, it matches or exceeds published PINN solvers with up to two orders of magnitude fewer trainable parameters, without gradient-based optimization.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.18175v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.18175v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> MA-ProofBench is the first formal theorem-proving benchmark focused on mathematical analysis, showing that current LLMs still struggle heavily with deeper formal reasoning in this domain.</p>
-          <p><b>Engineering relevance:</b> The benchmark gives researchers a harder, more realistic testbed for measuring and improving theorem-proving systems beyond algebraic tasks.</p>
-          <ul><li>Built 200 formalized theorems across 6 core topics and 27 subcategories in mathematical analysis.</li><li>Split problems into two tiers: 100 undergraduate-level and 100 Ph.D.-qualifier-level.</li><li>Used a human-led, LLM-assisted formalization pipeline with independent expert review.</li></ul>
-          <p><b>Evidence signal:</b> In evaluation, the best model (GPT-5.5) reached only 16% Pass@8 on Level I and 5% on Level II, with most models near 0% on Level II.</p>
-          <p><b>Watch item:</b> Results may be influenced by Mathlib hallucinations and incomplete proofs, so benchmark performance does not fully reflect mathematical competence alone.</p>
-          <div class="tags"><span>#LLM</span> <span>#TheoremProving</span> <span>#MathematicalAnalysis</span> <span>#FormalVerification</span> <span>#Benchmarking</span></div>
+          <p><b>Key insight:</b> The paper replaces nonconvex PINN training with a convex, stepwise least-squares solve by combining quasilinearization with linear-in-parameters physics-informed trial spaces.</p>
+          <p><b>Engineering relevance:</b> This offers a more stable and often parameter-efficient route for solving nonlinear PDEs in engineering simulations, especially when reliable convergence matters more than end-to-end gradient training.</p>
+          <ul><li>Use Bellman-Kalaba quasilinearization to turn a nonlinear PDE into a sequence of linear subproblems.</li><li>Discretize each subproblem with collocation on a LiL trial space, such as random features, spectral polynomials, or trigonometric bases.</li><li>Solve each step directly with QR-based linear least squares instead of gradient descent.</li></ul>
+          <p><b>Evidence signal:</b> The method was tested on seven benchmarks, including Bratu, Burgers, Buckley-Leverett, elasticity, Navier-Stokes in 2D/3D, and Darcy flow, with single-digit outer iterations in most cases and machine-precision recovery when the exact solution lies in the trial space.</p>
+          <p><b>Watch item:</b> Convergence is local and depends on a smallness condition, so performance may degrade if the initial guess is poor or the solution lies outside the trial space.</p>
+          <div class="tags"><span>#PhysicsInformedNeuralNetworks</span> <span>#PDEs</span> <span>#Optimization</span> <span>#Quasilinearization</span> <span>#ScientificComputing</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>86</strong></div>
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>81</strong></div>
         <p class="date">2026-06-15</p>
         <h2>Functional Gradient Descent with Adaptive Representations</h2>
         <p class="authors">Daniel Csillag, Rodrigo Schuller, Pedro Dall&#x27;Antonia, Leonidas Guibas, Luiz Velho, Tiago Novello</p>
@@ -58,31 +58,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.16926v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.16926v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper turns functional gradient descent into a practical algorithm by adaptively improving the representation of the gradient during optimization, while still preserving convergence guarantees.</p>
-          <p><b>Engineering relevance:</b> This gives a more reliable way to solve inverse problems, PDEs, and learning tasks in function space without depending on a fixed, error-prone approximation.</p>
-          <ul><li>Adapt the gradient representation over iterations instead of using one fixed function approximation.</li><li>Include approximation error directly in the convergence analysis.</li><li>Prove convergence to a stationary point for smooth losses and to a global minimizer under a PL-type condition.</li></ul>
-          <p><b>Evidence signal:</b> The method is evaluated on regression, PDE solving, and computer vision, and the abstract reports consistent gains over fixed-approximation FGD and neural network baselines in both efficiency and accuracy.</p>
-          <p><b>Watch item:</b> The method’s practical performance still depends on how well the adaptive representation is chosen and updated, so implementation cost and approximation quality may affect results.</p>
-          <div class="tags"><span>#Optimization</span> <span>#FunctionalGradientDescent</span> <span>#PDEs</span> <span>#MachineLearning</span> <span>#ScientificComputing</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>82</strong></div>
-        <p class="date">2026-06-15</p>
-        <h2>The Faithfulness Gap: Certifying Semantic Equivalence Between Natural-Language and Formal Mathematical Statements</h2>
-        <p class="authors">Noor Islam S. Mohammad, Tamim Sheikh</p>
-        <p class="abstract">Autoformalization, translating natural-language mathematics into formal proof assistants, is bottlenecked not by translation fluency but by \emph{faithfulness}: a formal statement can typecheck and be provable, yet still encode a different theorem than the source intended. We introduce \emph{Bidirectional Provability Fingerprinting} (\bpf{}), a framework that certifies faithfulness by characterizing each candidate through its forward and backward consequence neighborhoods in the ambient theory and matching these against probes derived from the natural-language statement. We further introduce four novel components: (i) \emph{Counterfactual Probe Generation} (\cpg{}), a contrastive procedure that synthesizes probes targeting specific drift directions; (ii) the \emph{Equivalence Spectrum}, a continuous faithfulness score that replaces brittle binary verdicts; (iii) \emph{Adaptive Probe Budget Allocation} (\apba{}), an information-theoretic budget router; and (iv) \emph{Faithfulness-Guided Decoding} (\fgd{}), which uses \bpf{} signals as a reward during autoformalization. We prove a \emph{drift detection theorem} and a \emph{PAC-faithfulness} result establishing that the equivalence class of a natural language statement is learnable from $\mathcal{O}(\log(1/δ)/\varepsilon)$ probes under mild assumptions. We release \driftbench{}, a benchmark of $2{,}183$ NL/Lean~4 pairs with controlled drift labels across six subfields of mathlib4. \bpf{}\,+\,\cpg{} detects $89.6\%$ of drifted formalizations at a $3.0\%$ false-positive rate-against $41.2\%$ for typecheck and $63.3\%$ for LLM-judge baselines, and \fgd{} reduces the rate at which a state-of-the-art autoformalizer emits drifted statements by $47\%$. https://pmlrbd.github.io/BPF/</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.16541v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.16541v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper argues that autoformalization must verify semantic faithfulness, not just type correctness, and proposes bidirectional proof-based probes to detect when a formal statement drifts from the intended theorem.</p>
-          <p><b>Engineering relevance:</b> For theorem-proving pipelines, this offers a practical verification layer that can rank, filter, and guide generated Lean statements before they contaminate downstream proof search.</p>
-          <ul><li>Bidirectional Provability Fingerprinting compares a candidate formalization’s forward and backward consequence neighborhoods against probes from the source statement.</li><li>Counterfactual Probe Generation synthesizes contrastive probes aimed at specific semantic drift modes, while Adaptive Probe Budget Allocation routes probes where they are most informative.</li><li>Faithfulness-Guided Decoding feeds BPF signals back into autoformalization to discourage drift during generation.</li></ul>
-          <p><b>Evidence signal:</b> On DriftBench with 2,183 NL/Lean 4 pairs, BPF+C pG detected 89.6% of drifted formalizations at 3.0% false positives, outperforming typecheck (41.2%) and LLM-judge (63.3%), and FGD reduced drifted outputs by 47%.</p>
-          <p><b>Watch item:</b> The approach depends on probe quality and ambient-theory assumptions, so coverage may weaken for sparse theories, ambiguous natural language, or domains where generating faithful counterfactual probes is difficult.</p>
-          <div class="tags"><span>#TheoremProving</span> <span>#Autoformalization</span> <span>#Lean4</span> <span>#FormalMethods</span> <span>#AI4Math</span></div>
+          <p><b>Key insight:</b> The paper makes functional gradient descent practical by adapting the gradient representation during optimization, while preserving convergence guarantees despite approximation error.</p>
+          <p><b>Engineering relevance:</b> This provides a more reliable optimization framework for regression, PDE solvers, and vision models when fixed parameterizations or neural-network training are inefficient or unstable.</p>
+          <ul><li>Perform gradient descent directly in function space rather than only over network parameters.</li><li>Adaptively refine the representation of functional gradients as optimization proceeds.</li><li>Analyze the effect of approximation explicitly to prove convergence to stationary points, and to global minima under smoothness plus a PL-type condition.</li></ul>
+          <p><b>Evidence signal:</b> The method is evaluated on regression, numerical PDE solving, and modern computer vision, and the abstract reports consistent improvements over fixed-approximation FGD and neural-network baselines in efficiency and accuracy.</p>
+          <p><b>Watch item:</b> Practical performance still depends on how well the adaptive gradient representation is implemented and updated, which may add computational overhead and tuning complexity.</p>
+          <div class="tags"><span>#FunctionalOptimization</span> <span>#GradientDescent</span> <span>#PDEs</span> <span>#MachineLearning</span> <span>#ScientificComputing</span></div>
         </section>
       </article>
     
@@ -96,18 +77,75 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.17022v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17022v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper explains how shape space analysis turns complex geometric data into a mathematically grounded pipeline for measuring, comparing, and learning from nonlinear shape variation.</p>
-          <p><b>Engineering relevance:</b> It provides a framework for building geometry-aware algorithms that can analyze real-world shape data more reliably than standard machine learning methods.</p>
-          <ul><li>Represent shapes with suitable parameterizations or embeddings.</li><li>Define robust geodesic metrics on shape spaces to compare objects.</li><li>Apply statistical and learning methods that respect the underlying geometry.</li></ul>
-          <p><b>Evidence signal:</b> The abstract synthesizes a broad literature and highlights applications across biology, medicine, anthropology, and computer vision, including subcellular morphology and primate tooth evolution.</p>
-          <p><b>Watch item:</b> Results depend on careful shape representation and metric design, and unaligned or highly nonlinear variation can make implementation and interpretation difficult.</p>
-          <div class="tags"><span>#ShapeAnalysis</span> <span>#GeometricML</span> <span>#DifferentialGeometry</span> <span>#ComputationalScience</span> <span>#DataGeometry</span></div>
+          <p><b>Key insight:</b> Shape space analysis turns geometric data into a mathematically grounded framework so machine learning can compare, summarize, and learn from nonlinear shape variation.</p>
+          <p><b>Engineering relevance:</b> It provides practical tools for analyzing complex geometry in biology, medicine, anthropology, and vision where Euclidean features miss meaningful structure.</p>
+          <ul><li>Represent shapes with parameterizations suited to the domain</li><li>Construct robust geodesic metrics on nonlinear shape spaces</li><li>Apply statistical and learning methods that respect geometry and alignment</li></ul>
+          <p><b>Evidence signal:</b> The review synthesizes methods and applications across multiple domains, including subcellular morphology and primate tooth evolution, to show how the pipeline supports analysis of shape variability and trajectories.</p>
+          <p><b>Watch item:</b> A key implementation challenge is handling complex, nonlinear, and often unaligned geometric variation while keeping metrics and computations robust.</p>
+          <div class="tags"><span>#ShapeSpace</span> <span>#GeometricMachineLearning</span> <span>#DifferentialGeometry</span> <span>#ComputationalScience</span> <span>#DataAnalysis</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>80</strong></div>
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>78</strong></div>
+        <p class="date">2026-06-16</p>
+        <h2>Shattering the Autoregressive Curse: Dynamic Epistemic Entropy Orchestrated Erasable Reinforcement Learning for LLMs</h2>
+        <p class="authors">Ziliang Wang, Kang An, Faqiang Qian, Jialu Cai, Cijun Ouyang, Yuhang Wang</p>
+        <p class="abstract">Although reinforcement learning (RL) has expanded the cognitive boundaries of large language models (LLMs), it often remains vulnerable to the autoregressive curse in long-horizon logical reasoning: small epistemic perturbations introduced early in generation can propagate irreversibly along the Markov decision process flow, triggering cascading failures that drive the reasoning trajectory toward collapse. To overcome this autoregressive cascade, in which a single early mistake can compromise all subsequent reasoning steps, we propose dynamic epistemic entropy orchestrated erasable reinforcement learning ($\text{E}^3\text{RL}$). $\text{E}^3\text{RL}$ eliminates reliance on external signals by grounding the model&#x27;s endogenous local autoregressive cross-entropy as an intrinsic coordinate of epistemic uncertainty. By introducing segment-level adaptive dynamic thresholds and advantage allocation, $\text{E}^3\text{RL}$ enables the model to precisely excise localized logical defects while reusing historical key-value (KV) cache streams, thereby endowing the reasoning process with a self-healing capability. We train $\text{E}^3\text{RL}$ on the DeepMath-103k dataset. Experimental results show that $\text{E}^3\text{RL}$ reshapes the exploration efficiency of long-sequence reasoning and improves sample efficiency while maintaining linear memory overhead. On mathematical reasoning benchmarks such as AIME, $\text{E}^3\text{RL}$ achieves substantial performance gains, with the 4B and 8B parameter models surpassing previous state-of-the-art (SOTA) results by 5.349\% and 6.514\%, respectively. These findings suggest that $\text{E}^3\text{RL}$ shatters the autoregressive curse in long-sequence reasoning and establishes a theoretical and systems-level foundation for the next generation of self-healing artificial general intelligence (AGI).</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.17735v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17735v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> E^3RL uses the model’s own token-level entropy to detect and erase local reasoning errors during generation, reducing cascading failures in long-horizon math reasoning.</p>
+          <p><b>Engineering relevance:</b> The method aims to improve LLM reasoning reliability with self-healing rollback-like behavior while keeping memory overhead linear by reusing KV caches.</p>
+          <ul><li>Treat local autoregressive cross-entropy as an intrinsic uncertainty signal.</li><li>Apply segment-level adaptive thresholds to identify and excise faulty reasoning spans.</li><li>Use advantage allocation to preserve useful history and continue generation from cached states.</li></ul>
+          <p><b>Evidence signal:</b> Trained on DeepMath-103k, the approach reports improved sample efficiency and AIME gains, with 4B and 8B models exceeding prior SOTA by 5.349% and 6.514%, respectively.</p>
+          <p><b>Watch item:</b> The approach may be sensitive to threshold calibration and cache management, since incorrect erasure or reuse could destabilize long reasoning traces.</p>
+          <div class="tags"><span>#LLMReasoning</span> <span>#ReinforcementLearning</span> <span>#MathAI</span> <span>#Entropy</span> <span>#SelfHealingModels</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>77</strong></div>
+        <p class="date">2026-06-15</p>
+        <h2>The Faithfulness Gap: Certifying Semantic Equivalence Between Natural-Language and Formal Mathematical Statements</h2>
+        <p class="authors">Noor Islam S. Mohammad, Tamim Sheikh</p>
+        <p class="abstract">Autoformalization, translating natural-language mathematics into formal proof assistants, is bottlenecked not by translation fluency but by \emph{faithfulness}: a formal statement can typecheck and be provable, yet still encode a different theorem than the source intended. We introduce \emph{Bidirectional Provability Fingerprinting} (\bpf{}), a framework that certifies faithfulness by characterizing each candidate through its forward and backward consequence neighborhoods in the ambient theory and matching these against probes derived from the natural-language statement. We further introduce four novel components: (i) \emph{Counterfactual Probe Generation} (\cpg{}), a contrastive procedure that synthesizes probes targeting specific drift directions; (ii) the \emph{Equivalence Spectrum}, a continuous faithfulness score that replaces brittle binary verdicts; (iii) \emph{Adaptive Probe Budget Allocation} (\apba{}), an information-theoretic budget router; and (iv) \emph{Faithfulness-Guided Decoding} (\fgd{}), which uses \bpf{} signals as a reward during autoformalization. We prove a \emph{drift detection theorem} and a \emph{PAC-faithfulness} result establishing that the equivalence class of a natural language statement is learnable from $\mathcal{O}(\log(1/δ)/\varepsilon)$ probes under mild assumptions. We release \driftbench{}, a benchmark of $2{,}183$ NL/Lean~4 pairs with controlled drift labels across six subfields of mathlib4. \bpf{}\,+\,\cpg{} detects $89.6\%$ of drifted formalizations at a $3.0\%$ false-positive rate-against $41.2\%$ for typecheck and $63.3\%$ for LLM-judge baselines, and \fgd{} reduces the rate at which a state-of-the-art autoformalizer emits drifted statements by $47\%$. https://pmlrbd.github.io/BPF/</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.16541v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.16541v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper argues that autoformalization needs faithfulness checking, not just type-correct translation, and proposes Bidirectional Provability Fingerprinting to certify whether a formal statement preserves the intended theorem.</p>
+          <p><b>Engineering relevance:</b> This is useful for theorem-proving pipelines because it can screen, score, and even guide generation of Lean statements that are semantically closer to the original natural-language math.</p>
+          <ul><li>Build forward/backward consequence fingerprints for candidate formal statements and compare them to probes derived from the source text.</li><li>Use Counterfactual Probe Generation to target specific semantic drift directions and an Equivalence Spectrum to replace binary pass/fail judgments.</li><li>Allocate probe budget adaptively and feed faithfulness signals back into decoding as a reward for autoformalization.</li></ul>
+          <p><b>Evidence signal:</b> On DriftBench with 2,183 NL/Lean 4 pairs, BPF plus CPG detected 89.6% of drifted formalizations at a 3.0% false-positive rate, outperforming typecheck (41.2%) and LLM-judge (63.3%) baselines; FGD reduced drifted outputs by 47%.</p>
+          <p><b>Watch item:</b> The approach depends on well-designed probes and the ambient theory’s consequence structure, so performance may degrade when the target theorem is underspecified or the benchmark does not cover a domain’s drift modes.</p>
+          <div class="tags"><span>#TheoremProving</span> <span>#Autoformalization</span> <span>#FormalMethods</span> <span>#Lean4</span> <span>#AIforMath</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>76</strong></div>
+        <p class="date">2026-06-16</p>
+        <h2>IsabeLLM: Automated Theorem Proving Applied to Formally Verifying Consensus</h2>
+        <p class="authors">Elliot Jones, William Knottenbelt</p>
+        <p class="abstract">Advances in Artificial Intelligence (AI) have led AI for Theorem Proving to become a promising means of formally verifying computer systems. Whilst formal verification is traditionally reserved for safety-critical systems due to the required amount of expertise and effort, AI can help to automate a large amount of this workload and make it far more accessible. Blockchain-based systems are becoming increasingly popular and are frequently targeted by malicious actors, often resulting in huge financial losses, highlighting the need to better verify these systems and mitigate vulnerabilities. Arguably the most important component of these systems is the consensus protocol, which allows nodes to agree on decisions in a potentially adversarial environment. In this paper, we improve upon IsabeLLM, the automated theorem proving tool in Isabelle. Namely, we implement a Retrieval-Augmented Generation framework, Error tracing and counterexample generation for improved context supplied to the Large Language Model. Compatibility with the latest version of Isabelle and Sledgehammer is also implemented for improved efficiency. We compare the performance of the two versions of IsabeLLM in their ability to complete the verification of Bitcoin&#x27;s Proof of Work consensus.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.18098v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.18098v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> IsabeLLM enhances automated theorem proving in Isabelle by adding retrieval, error tracing, and counterexample support to better verify consensus protocols like Bitcoin Proof of Work.</p>
+          <p><b>Engineering relevance:</b> The work points toward more practical formal verification for blockchain consensus systems, reducing expert effort while improving the reliability of security-critical software.</p>
+          <ul><li>Added a Retrieval-Augmented Generation (RAG) pipeline to provide the LLM with more relevant proof context.</li><li>Implemented error tracing and counterexample generation to improve debugging and proof guidance.</li><li>Updated compatibility with the latest Isabelle and Sledgehammer for better efficiency and tooling support.</li></ul>
+          <p><b>Evidence signal:</b> The paper evaluates the two IsabeLLM versions by comparing how well they complete the formal verification of Bitcoin&#x27;s Proof of Work consensus.</p>
+          <p><b>Watch item:</b> Results depend on the quality of generated context and tooling integration, so the approach may still be sensitive to proof-search failures or Isabelle version-specific behavior.</p>
+          <div class="tags"><span>#TheoremProving</span> <span>#FormalVerification</span> <span>#AutomatedReasoning</span> <span>#BlockchainSecurity</span> <span>#LLM</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>75</strong></div>
         <p class="date">2026-06-14</p>
         <h2>Formalize Once, Edit the Rest: Efficient Lean-Based Answer Selection for Math Reasoning</h2>
         <p class="authors">Ji Feng, Zhouxing Shi</p>
@@ -115,18 +153,170 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.15972v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.15972v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> BASE formalizes only one candidate answer per problem and edits that Lean statement for the remaining candidates, reducing verification cost while improving answer selection.</p>
-          <p><b>Engineering relevance:</b> This makes Lean-based test-time scaling more practical by cutting repeated autoformalization calls, which can lower latency and compute in math-reasoning pipelines.</p>
-          <ul><li>Formalize one base candidate answer in Lean for each problem.</li><li>Train LEANSCRIBE to locate the answer expression and produce an edit function.</li><li>Reuse the edit to derive the other K-1 Lean statements instead of re-formalizing each one.</li></ul>
-          <p><b>Evidence signal:</b> Across 12 dataset-solver configurations on four benchmarks and three solvers, the method is reported to improve selection accuracy while cutting autoformalizer calls by about 5x at K=8.</p>
-          <p><b>Watch item:</b> The approach depends on reliably localizing and editing the answer expression, so complex formalizations or brittle rewrites could affect robustness.</p>
-          <div class="tags"><span>#Lean</span> <span>#TheoremProving</span> <span>#MathReasoning</span> <span>#Autoformalization</span> <span>#LLMScaling</span></div>
+          <p><b>Key insight:</b> BASE replaces per-candidate Lean formalization with a base-and-edit strategy, formalizing one answer and reusing edits for the rest to cut cost while improving answer selection.</p>
+          <p><b>Engineering relevance:</b> This makes Lean-based verification more practical for test-time scaling, reducing autoformalizer calls by around 5x at K=8 without sacrificing selection quality.</p>
+          <ul><li>Formalize one base candidate per problem in Lean.</li><li>Train LEANSCRIBE to locate the answer expression and produce a reusable edit function.</li><li>Generate the remaining K-1 formal statements by in-place edits instead of fresh autoformalization.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports a Pareto improvement across all 12 dataset-solver configurations on four benchmarks and three solvers, with about 5x fewer autoformalizer calls at K=8.</p>
+          <p><b>Watch item:</b> The approach depends on reliably identifying and editing the answer expression in the base formalization, which may be fragile for complex or ambiguous statements.</p>
+          <div class="tags"><span>#Lean</span> <span>#TheoremProving</span> <span>#MathReasoning</span> <span>#LLMVerification</span> <span>#TestTimeScaling</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>77</strong></div>
+        <div class="meta"><span>Symbolic Computation</span><span>arXiv</span><strong>73</strong></div>
+        <p class="date">2026-06-16</p>
+        <h2>A Diffusion Approximation for Temporal-Difference Learning with Linear Features under Markovian Noise</h2>
+        <p class="authors">M. Forzo, E. Monzio Compagnoni, A. Russo, A. Pacchiano</p>
+        <p class="abstract">Temporal difference (TD) learning with linear function approximation is a core method for policy evaluation. Its classical continuous-time description is an ordinary differential equation (ODE), which captures the asymptotic mean dynamics but neglects stochastic fluctuations determining the error floor. We introduce a stochastic differential equation (SDE) approximation for linear TD(0) under Markovian noise. The resulting model distinguishes the contraction dynamics governed by the projected Bellman operator from the influence of Markovian sampling. As a consequence, the model explains the constant-stepsize error floor through the interaction between Markovian long-run covariance and the contraction geometry of the projected Bellman operator.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.18183v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.18183v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper replaces the usual ODE view of linear TD(0) with an SDE approximation that captures both mean contraction and stochastic error-floor effects under Markovian noise.</p>
+          <p><b>Engineering relevance:</b> This gives a more accurate tool for predicting constant-stepsize TD performance in reinforcement learning systems where sampling data are temporally correlated.</p>
+          <ul><li>Derive a diffusion approximation for linear TD(0) with Markovian sampling noise.</li><li>Separate projected Bellman operator contraction from noise-driven fluctuations.</li><li>Link the steady-state error floor to long-run covariance and contraction geometry.</li></ul>
+          <p><b>Evidence signal:</b> The abstract presents a theoretical model-based result rather than an empirical benchmark, using the SDE approximation to explain the asymptotic error floor.</p>
+          <p><b>Watch item:</b> The approximation is tailored to linear features and Markovian noise, so care is needed when extending it to nonlinear function approximation or nonstationary data.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#TemporalDifferenceLearning</span> <span>#DiffusionApproximation</span> <span>#StochasticDifferentialEquations</span> <span>#MarkovNoise</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>73</strong></div>
+        <p class="date">2026-06-16</p>
+        <h2>Proximal Mediation Analysis with Hidden Recanting Witnesses</h2>
+        <p class="authors">Sihan Wu, Yang Bai, Yifan Cui</p>
+        <p class="abstract">Mediation analysis is essential for decomposing the causal effect of a treatment into direct and indirect pathways. However, many practical settings rely on the stringent assumption that recanting witnesses, defined as treatment-induced mediator-outcome confounders, are either absent or fully known a priori. Such a requirement is often untenable, especially when these variables remain unobservable due to measurement difficulties or privacy constraints. In this paper, we leverage proximal causal inference to develop three novel identification strategies to address the challenge of identifying path-specific effects in the presence of unknown recanting witnesses. Building on this, we develop a semiparametric inference framework that derives the efficient influence function and proposes a proximal multiply robust estimator, which remains consistent if at least one set of nuisance models is correctly specified. When all nuisance models are correctly specified and converge at appropriate rates, the estimator is asymptotically normal and achieves the semiparametric efficiency bound. We provide a minimax optimization-based debiased machine learning procedure for point estimation and constructing valid confidence intervals. The performance of the proposed methods is demonstrated by simulation studies and a real data application.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.17600v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17600v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper shows how proximal causal inference can identify path-specific mediation effects even when treatment-induced mediator-outcome confounders are hidden or only partially known.</p>
+          <p><b>Engineering relevance:</b> It provides a practical semiparametric estimation and confidence-interval framework for causal effect decomposition in real systems where key confounders are unobserved or privacy-restricted.</p>
+          <ul><li>Derive three identification strategies for path-specific effects using proximal causal inference.</li><li>Build the efficient influence function and a proximal multiply robust estimator.</li><li>Use debiased machine learning with minimax optimization for point estimation and valid intervals.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports support from simulation studies and a real data application, with asymptotic normality and semiparametric efficiency guaranteed under correct nuisance specification and rate conditions.</p>
+          <p><b>Watch item:</b> Performance depends on accurate nuisance-model specification and suitable convergence rates; hidden confounder proxies must be available and informative enough for proximal identification.</p>
+          <div class="tags"><span>#CausalInference</span> <span>#MediationAnalysis</span> <span>#ProximalInference</span> <span>#SemiparametricStatistics</span> <span>#DebiasedML</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>73</strong></div>
+        <p class="date">2026-06-16</p>
+        <h2>Beyond IGO-Flow: Toward Convergence Analysis of IGO in Continuous Spaces</h2>
+        <p class="authors">Ryosuke Kimura, Youhei Akimoto</p>
+        <p class="abstract">Information-Geometric Optimization (IGO) provides a unified framework for black-box optimization by interpreting the adaptation of a search distribution as a natural gradient update. Despite its conceptual importance, the convergence theory of IGO remains limited: most existing results concern continuous-time idealizations such as the IGO flow, rather than discrete-time updates with non-infinitesimal learning rates. In this paper, we study discrete-time IGO in continuous spaces, formulated as natural gradient updates in the expectation-parameter coordinates of an exponential family. In particular, we analyze IGO over the multivariate Gaussian family on strongly convex quadratic objective functions. Our analysis covers a setting that simultaneously incorporates full covariance adaptation, a fixed positive learning rate, and quantile-based weights. In this setting, we prove that the covariance matrix converges to the zero matrix. We further show that the mean vector converges to the global optimum, provided that the condition number of the appropriately scaled covariance matrix is bounded at sufficiently frequent iterations. These results advance the convergence theory of IGO and help bridge the gap between the mathematical theory of IGO and practical covariance-adaptive search methods such as CMA-ES.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.17523v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17523v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Discrete-time IGO with Gaussian search distributions is shown to converge on strongly convex quadratics: the covariance collapses to zero, and the mean can reach the optimum under a bounded-condition-number condition.</p>
+          <p><b>Engineering relevance:</b> This strengthens the theoretical basis for covariance-adaptive black-box optimizers like CMA-ES, especially when using fixed learning rates in continuous spaces.</p>
+          <ul><li>Formulate IGO as a natural-gradient update in expectation-parameter coordinates of an exponential family.</li><li>Analyze the multivariate Gaussian family on strongly convex quadratic objectives.</li><li>Prove covariance convergence to the zero matrix and mean convergence under a bounded condition-number assumption at frequent iterations.</li></ul>
+          <p><b>Evidence signal:</b> The paper provides a theoretical convergence analysis rather than an empirical benchmark, focusing on discrete-time updates with fixed positive learning rates and quantile-based weights.</p>
+          <p><b>Watch item:</b> Mean convergence is conditional on the scaled covariance matrix remaining well-conditioned often enough, so practical stability may depend on step-size and covariance dynamics.</p>
+          <div class="tags"><span>#InformationGeometricOptimization</span> <span>#NaturalGradient</span> <span>#CMAES</span> <span>#ConvergenceAnalysis</span> <span>#OptimizationTheory</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>73</strong></div>
+        <p class="date">2026-06-15</p>
+        <h2>Tight $L_\infty$ Sample Complexity for Low-Degree and Sparse Boolean Polynomials</h2>
+        <p class="authors">Jasper van Doornmalen, Mathieu Molina, Victor Verdugo, José Verschae</p>
+        <p class="abstract">Motivated by the optimization of bounded binary black-box functions, we study the problem of learning polynomial surrogates over the Boolean hypercube. To ensure that optimizing the surrogate yields good solutions for the underlying objective, we require uniform $L_\infty$-error guarantees rather than the usual $L_2$-type guarantees. We characterize the minimax sample complexity of uniform estimation under subgaussian noise for two classes of bounded polynomials. First, for polynomials of degree at most $d$ on $n$ variables, the sample complexity scales as $n^{d+1}$. Second, for $s$-sparse Fourier-Walsh polynomials with $s \leq n$, it scales as $ns^2$. These rates differ structurally from the noiseless setting, where uniform exact recovery scales as $n^d$ and $ns$, respectively. Our lower bounds hold even for arbitrary adaptive learners, showing that the additional factors are intrinsic to the noisy cases. Standard Fourier-analysis tools for the $L_2$-norm do not naturally extend to the $L_\infty$-setting in a way that yields uniform guarantees. Our proofs overcome this difficulty by relying on suitably chosen auxiliary norms that serve as proxies for controlling the $L_\infty$-error. Together, our results provide a tight characterization of the sample complexity of learning optimization-safe polynomial surrogates.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.17319v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17319v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Learning Boolean polynomial surrogates with uniform $L_\infty$ accuracy is fundamentally harder under noise, with optimal sample complexity scaling as $n^{d+1}$ for degree-$d$ polynomials and $ns^2$ for $s$-sparse Fourier-Walsh polynomials.</p>
+          <p><b>Engineering relevance:</b> For optimization pipelines over binary decision spaces, the result tells you how many noisy samples are needed so surrogate-based optimization remains safe and reliable in the worst case.</p>
+          <ul><li>Characterize minimax sample complexity for uniform estimation on the Boolean hypercube under subgaussian noise.</li><li>Prove tight lower bounds that apply even to adaptive learners.</li><li>Use auxiliary norms as proxies to control $L_\infty$ error when standard Fourier $L_2$ tools are insufficient.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports tight, matching sample-complexity rates from worst-case theory rather than empirical evaluation, and contrasts noisy uniform estimation with noiseless exact recovery.</p>
+          <p><b>Watch item:</b> The guarantees are worst-case and noise-aware, so practical performance may depend strongly on problem structure and on whether the chosen surrogate class matches the true objective.</p>
+          <div class="tags"><span>#TheoremProving</span> <span>#BooleanFunctions</span> <span>#SampleComplexity</span> <span>#LInfinityError</span> <span>#OptimizationSurrogates</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>72</strong></div>
+        <p class="date">2026-06-16</p>
+        <h2>PepsiCo Deploys AI-Driven Pricing and Promotion Optimization at Scale</h2>
+        <p class="authors">Aleix Llenas, Eduardo Salazar-Treviño, Francisco Leskovar, Francesc Pons-Llopis, Federico Todeschini, Deepika Gowda</p>
+        <p class="abstract">Effective pricing and promotion planning constitutes a central pillar of strategic revenue management for firms operating in highly competitive and dynamic markets. These planning activities require the simultaneous consideration of demand elasticity, competitor actions, channel and market specific constraints, and financial objectives. As the dimensionality and interdependencies inherent in these problems increase, manual or traditional approaches become suboptimal and insufficient. In this context, Operations Research provides a robust methodological foundation for scalable, data-driven decision support systems that can optimize complex planning processes across large product and customer portfolios. This paper presents two large-scale optimization systems developed and deployed at PepsiCo to support Revenue Growth Management initiatives: PromoAI and PricingAI. PromoAI couples machine learning-based promotional forecasts with a mixed-integer linear programming model to optimize promotional calendars across trade channels, searching millions of product-promotion-timing combinations for the one that maximizes PepsiCo and retailer revenues subject to customizable business constraints. PricingAI optimizes base prices across product portfolios over multi-period horizons, using Bayesian hierarchical models to estimate own- and cross-price elasticities and competitive interactions, then feeding these into a nonlinear programming engine that recommends price changes aligned with revenue and margin targets under operational constraints. Together, these systems demonstrate the feasibility and scalability of advanced optimization in large-scale enterprise environments. They highlight the value of integrating statistical learning with mathematical programming to enable enterprise-level, automated decision-making that is both data-informed and aligned with strategic business objectives.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.17941v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17941v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> PepsiCo deployed two optimization systems—PromoAI and PricingAI—that combine machine learning with mathematical programming to automate large-scale promotion and pricing decisions.</p>
+          <p><b>Engineering relevance:</b> The work shows how enterprise revenue management can be scaled across huge product portfolios by turning business rules, demand models, and financial goals into solvable optimization problems.</p>
+          <ul><li>PromoAI: machine-learning promotional forecasts + mixed-integer linear programming to optimize promotional calendars.</li><li>PricingAI: Bayesian hierarchical elasticity models + nonlinear programming to recommend base price changes.</li><li>Both systems search large decision spaces under customizable operational and business constraints.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports real-world deployment at PepsiCo and emphasizes that the systems can search millions of product-promotion-timing combinations at scale.</p>
+          <p><b>Watch item:</b> Performance depends on the quality of demand, elasticity, and competitor-interaction estimates, so model drift or poor data can weaken recommendations.</p>
+          <div class="tags"><span>#Optimization</span> <span>#RevenueManagement</span> <span>#MachineLearning</span> <span>#MixedIntegerProgramming</span> <span>#PricingAI</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>72</strong></div>
+        <p class="date">2026-06-16</p>
+        <h2>Continual Self-Improvement with Lightweight Experiential Latent Memories</h2>
+        <p class="authors">Vaggelis Dorovatas, Nancy Kalaj, Rahaf Aljundi</p>
+        <p class="abstract">Large language models achieve strong reasoning performance by scaling inference-time compute, yet remain fundamentally stateless, discarding the rich, self-produced reasoning traces generated during this process. We investigate whether models can instead learn online from this experience, converting transient computation (reasoning traces) into persistent reusable knowledge, and without external supervision or access to future data. We show that In-Context Learning (ICL) over raw reasoning traces fails to generalize, reflecting a fundamental limitation of token-level reuse: individual traces lack the abstraction needed for transfer, even after refinement (e.g. self-reflection). In contrast, drawing inspiration from recent works on unsupervised reinforcement learning, we find that lightweight per-instance training with self-generated test-time signals (majority voting) as rewards yields substantial gains, often surpassing full-dataset offline training, motivating a shift from raw traces to learned latent representations. Building on this insight, we propose an online method that distills inference-time compute spent on encountered problems into compact modular latent memories capturing the underlying reasoning structure. These memories are stored and retrieved for future inputs, enabling continual improvement while avoiding catastrophic forgetting through modular design. Importantly, our method is highly efficient, parametrized as extremely lightweight soft prompt memories (~0.001% of model parameters) and trained with only a few gradient steps, yet achieving performance competitive with full parametric updates and offline training. Across challenging mathematical reasoning benchmarks, our approach significantly outperforms zero-shot and raw data ICL baselines, while transferring effectively across datasets.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.17803v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17803v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Models can turn their own test-time reasoning traces into persistent latent memories, but only when the experience is distilled into learned representations rather than reused as raw text.</p>
+          <p><b>Engineering relevance:</b> This suggests a practical path to continual improvement in deployed LLMs: lightweight online adaptation that preserves useful reasoning patterns with tiny memory overhead instead of full retraining.</p>
+          <ul><li>Use self-generated test-time signals, especially majority voting, as rewards for per-instance online learning.</li><li>Distill encountered reasoning into compact modular soft-prompt latent memories.</li><li>Retrieve the appropriate memory for future inputs to enable continual learning while reducing forgetting.</li></ul>
+          <p><b>Evidence signal:</b> Across challenging mathematical reasoning benchmarks, the method outperforms zero-shot and raw-data in-context learning baselines, and often matches or exceeds full offline training despite using only a few gradient steps and ~0.001% of model parameters.</p>
+          <p><b>Watch item:</b> Performance depends on reliable self-generated reward signals and careful memory modularization; noisy signals or poor retrieval could limit transfer and stability.</p>
+          <div class="tags"><span>#LLMReasoning</span> <span>#ContinualLearning</span> <span>#LatentMemory</span> <span>#InContextLearning</span> <span>#MathematicalReasoning</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Symbolic Computation</span><span>arXiv</span><strong>72</strong></div>
+        <p class="date">2026-06-16</p>
+        <h2>Generalization Guarantees for Multi-Input Neural Operator Learning in Sobolev Spaces</h2>
+        <p class="authors">Yahong Yang, Zecheng Zhang, Wei Zhu, Wenjing Liao, Hao Liu</p>
+        <p class="abstract">We develop approximation and generalization error estimates for multi-input neural operators, with the output error measured in Sobolev norms. In contrast to standard operator-learning settings with a single input function, our framework allows multiple input functions defined on possibly different domains, with different dimensions and Sobolev regularities. The derived rates explicitly quantify the contribution of each input space to the final error bound. In particular, in the balanced regime, the approximation and generalization rates are governed by the interaction between the input dimensions, regularities, and Sobolev orders, while the dependence on the model complexity retains a \(\log\log/\log\)-type structure. Our analysis provides a general theoretical framework for multi-input operator learning, including Sobolev training, and is applicable to operator learning problems arising from partial differential equations and scientific computing.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.17419v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17419v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper gives Sobolev-norm approximation and generalization guarantees for neural operators that take multiple input functions from different domains, with error rates decomposing by each input’s dimension, smoothness, and Sobolev order.</p>
+          <p><b>Engineering relevance:</b> This provides a theoretical basis for designing and validating multi-physics or multi-field operator-learning models in scientific computing, especially when outputs must be accurate in derivative-sensitive Sobolev norms.</p>
+          <ul><li>Derive approximation error bounds for multi-input neural operators in Sobolev spaces.</li><li>Prove generalization estimates that explicitly track each input space’s dimension and regularity.</li><li>Show a balanced-regime rate with a log log / log dependence on model complexity.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports theoretical approximation and generalization error estimates rather than an experimental benchmark, with rates quantified analytically in Sobolev norms.</p>
+          <p><b>Watch item:</b> The guarantees are asymptotic and theory-driven, so practical performance may depend on whether the modeled PDE/operator setting matches the assumed domain, regularity, and balance conditions.</p>
+          <div class="tags"><span>#NeuralOperators</span> <span>#SobolevSpaces</span> <span>#GeneralizationBounds</span> <span>#ScientificComputing</span> <span>#PDEs</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>72</strong></div>
+        <p class="date">2026-06-15</p>
+        <h2>Quantifying Consistency in LLM Logical Reasoning via Structural Uncertainty</h2>
+        <p class="authors">Baishali Chaudhury, Mengdie Flora Wang, Hyunji Hayley Park, Rahul Ghosh, Sungmin Hong, Jae Oh Woo</p>
+        <p class="abstract">Large language models can arrive at the same answer through reasoning paths that are unstable, contradictory, or difficult to rank consistently -- a failure mode especially prevalent in multi-step deductive reasoning. Existing methods assess reliability primarily through output dispersion -- measuring how much sampled answers differ -- but this discards a complementary signal: whether the model can consistently rank competing reasoning candidates. We propose structural uncertainty, a consistency-aware framework derived from the stability of self-preference-induced rankings over sampled reasoning solutions. Given a query, we generate multiple candidate solutions and ask the model to judge pairwise preferences among its own outputs. We aggregate self-preferences into ranking distributions via Bradley-Terry modeling with PageRank, and decompose the signal into two entropy-based components: across-trial ranking instability and within-trial candidate ambiguity. Across five LLMs and eight benchmarks, structural signals provide information complementary to answer dispersion: on logical and mathematical reasoning tasks, the combination improves identification of unreliable instances, while on factual retrieval the structural signal collapses toward uniformity, diagnosing a regime boundary where reasoning-level consistency evaluation is uninformative. The two components relate differently to accuracy: within-trial ambiguity correlates positively with correctness -- consistent with settings where multiple plausible solution paths remain competitive -- while across-trial instability correlates negatively, signaling unreliable reasoning. Structural uncertainty is best understood not as a universal confidence estimator, but as a regime-sensitive evaluator of logical reasoning consistency.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.17312v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17312v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Structural uncertainty measures how consistently an LLM can rank its own reasoning paths, revealing reliability signals beyond simple answer disagreement.</p>
+          <p><b>Engineering relevance:</b> It offers a practical way to flag brittle reasoning in math and logic systems, especially when multiple candidate solutions are available for self-consistency checks.</p>
+          <ul><li>Generate multiple candidate solutions for each query.</li><li>Use the model to make pairwise self-preference judgments among its own outputs.</li><li>Aggregate preferences with Bradley-Terry + PageRank, then split uncertainty into across-trial instability and within-trial ambiguity.</li></ul>
+          <p><b>Evidence signal:</b> Across five LLMs and eight benchmarks, the structural signal complements answer dispersion and improves unreliable-instance detection on logical and mathematical tasks.</p>
+          <p><b>Watch item:</b> The method becomes uninformative in factual retrieval settings, where structural uncertainty collapses toward uniformity and may not distinguish confidence well.</p>
+          <div class="tags"><span>#LLMReasoning</span> <span>#MathematicalReasoning</span> <span>#UncertaintyQuantification</span> <span>#BradleyTerry</span> <span>#PageRank</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>72</strong></div>
         <p class="date">2026-06-14</p>
         <h2>SILAGE: Memory-Efficient, Full-Gradient-Free Nonconvex Optimization for Nested Finite Sums</h2>
         <p class="authors">Igor Sokolov, Laurent Condat, Peter Richtárik</p>
@@ -134,37 +324,56 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.15832v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.15832v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> SILAGE is a variance-reduced optimizer for nested finite sums that removes costly full-data gradient refreshes while using only O(n) memory by leveraging the problem’s block structure.</p>
-          <p><b>Engineering relevance:</b> This makes large-scale, centralized learning on partitioned or out-of-core datasets more practical when memory and communication overhead are bottlenecks.</p>
-          <ul><li>Uses a nested double-sum formulation to update with at most one local group gradient per iteration.</li><li>Avoids periodic global full-gradient computations over all nm samples.</li><li>Tracks only O(n) control information, with complexity adapting to cross-group (δ1) and within-group (δ2) data similarity.</li></ul>
-          <p><b>Evidence signal:</b> The abstract claims improved state-of-the-art complexity bounds and a tighter analysis that reflects data geometry rather than worst-case Lipschitz constants.</p>
-          <p><b>Watch item:</b> Performance depends on how well the block structure and heterogeneity parameters δ1 and δ2 match the real dataset; poor grouping may reduce the gains.</p>
-          <div class="tags"><span>#Optimization</span> <span>#VarianceReduction</span> <span>#NonconvexOptimization</span> <span>#MachineLearning</span> <span>#LargeScaleLearning</span></div>
+          <p><b>Key insight:</b> SILAGE is a variance-reduced nonconvex optimizer for nested finite sums that removes costly full-dataset gradient refreshes while using only O(n) memory.</p>
+          <p><b>Engineering relevance:</b> It is well suited for large-scale, partitioned training settings such as data silos, out-of-core learning, and stratified datasets where memory and communication are bottlenecks.</p>
+          <ul><li>Exploits the double-sum structure to update using at most one local group gradient per iteration.</li><li>Avoids periodic global full-gradient computations over all nm samples.</li><li>Uses only O(n) memory instead of storing per-sample control variates.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports a tight convergence analysis and complexity bounds that improve state of the art by adapting to two heterogeneity measures, across-group δ1 and within-group δ2.</p>
+          <p><b>Watch item:</b> Performance depends on the nested data structure and heterogeneity estimates, so benefits may be reduced if the partitioning is poor or the group structure is not meaningful.</p>
+          <div class="tags"><span>#Optimization</span> <span>#VarianceReduction</span> <span>#Nonconvex</span> <span>#FiniteSums</span> <span>#MachineLearning</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>77</strong></div>
-        <p class="date">2026-06-12</p>
-        <h2>A New Primal-Dual Algorithm with Convex Combination and Extrapolation for Convex-Concave Saddle Point Problems with Nonlinear Coupling Term</h2>
-        <p class="authors">Jialong Li, Zexian Liu, Xiaokai Chang</p>
-        <p class="abstract">Convex-concave saddle point problems with nonlinear coupling term have wide applications in signal processing, machine learning, robust optimization, and generative models, among others. Primal-dual algorithms are widely used for convex-concave saddle point problems. However, when handling nonlinear coupling term in convex-concave saddle point problems, primal-dual algorithms usually encounter geometric mismatches between variable and mapping spaces, delayed gradient information, and strong dependence on linesearch, resulting in less stable performance and complex convergence analysis. To address these issues, we propose a new primal-dual algorithm named PDAce by combining convex combination and extrapolation strategies. More specifically, in the update of the primal variable, we construct a convex combination point to replace the current iterative point and compute the Jacobian matrix of the vector function in the nonlinear coupling term at the convex combination point. Besides, we use the latest information of convex combination points to extend extrapolation to the mapping space in the update of the dual variable. The core innovations lie in performing linearization of the vector function in the nonlinear coupling term at convex combination points and shifting extrapolation from the variable space to the nonlinear mapping space. This design completely eliminates nonlinear residual terms and allows for rigorous convergence analysis without linesearch. Under mild convex assumptions, we construct a new Lyapunov potential function to prove that PDAce is globally convergent with an ergodic convergence rate of $\mathcal{O}(1/N)$. Moreover, we develop an accelerated version of PDAce, termed aPDAce, which achieves $\mathcal{O}(1/N^2)$ rate under strong convexity of the primal function, and linear convergence when both the primal and dual functions are strongly convex.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.14220v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.14220v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>71</strong></div>
+        <p class="date">2026-06-16</p>
+        <h2>Memory-Efficient Meta-Reinforcement Learning for Adaptive Safety-Critical Control in Adversarial Spacecraft Proximity Operations</h2>
+        <p class="authors">Alejandro Posadas-Nava, Richard Linares, Minduli Wijayatunga</p>
+        <p class="abstract">Autonomous spacecraft rendezvous and proximity operations (RPO) require controllers that guarantee safety under thrust constraints while minimizing fuel expenditure. Input-constrained control barrier functions (ICCBFs) provide a control method for nonlinear systems with actuation constraints that construct a forward-invariant safe set. Previous work has shown that learning class-$\mathcal{K}$ functions defining the ICCBF recursion via meta reinforcement learning (meta-RL) yields a robust, non-greedy approach to safety-critical control in RPO. This paper extends that framework further by investigating the performance of three recurrent network architectures (Long Short Term Memory (LSTM), Gated Recurrent Unit (GRU), Selective State Space Model (Mamba)) and two training algorithms (Proximal Policy Optimization (PPO) and Soft Actor Critic (SAC)) to identify the best setup for tuning ICCBF class-K functions via meta-RL. In addition to cooperative test cases, performance is evaluated in the presence of adversarial behavior where the target spacecraft behaves in a way that worsens the safety of the chaser spacecraft. Results indicate that state space models such as Mamba when used with PPO achieve superior task completion, safety, and fuel-savings compared to other architectures, across all cooperative and uncooperative scenarios tested.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.17414v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17414v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> PDAce stabilizes primal-dual optimization for nonlinear convex-concave saddle-point problems by linearizing at convex-combination points and moving extrapolation into the nonlinear mapping space, yielding provable convergence without linesearch.</p>
-          <p><b>Engineering relevance:</b> This gives a more robust solver template for large-scale inverse problems and learning systems where nonlinear coupling makes standard primal-dual methods unstable or hard to analyze.</p>
-          <ul><li>Constructs a convex-combination point in the primal update and evaluates the Jacobian of the nonlinear coupling term there.</li><li>Transfers extrapolation from variable space to mapping space using the latest convex-combination information.</li><li>Uses a Lyapunov-based proof to establish global convergence; the accelerated variant aPDAce improves rates under stronger convexity assumptions.</li></ul>
-          <p><b>Evidence signal:</b> From the abstract, the method is theoretically validated with global convergence and an ergodic O(1/N) rate, plus O(1/N^2) and linear convergence in stronger convexity regimes.</p>
-          <p><b>Watch item:</b> The abstract reports only theory; practical performance may depend on step-size selection, Jacobian cost, and how well the nonlinear model fits the convex assumptions.</p>
-          <div class="tags"><span>#Optimization</span> <span>#PrimalDual</span> <span>#ConvexAnalysis</span> <span>#SaddlePointProblems</span> <span>#ScientificComputing</span></div>
+          <p><b>Key insight:</b> Meta-RL can tune ICCBF class-K functions to produce safer, less fuel-hungry spacecraft proximity controllers, and Mamba + PPO performed best in the paper’s tests.</p>
+          <p><b>Engineering relevance:</b> This work suggests a practical path to adaptive, thrust-constrained safety control for autonomous rendezvous and proximity operations, including adversarial scenarios.</p>
+          <ul><li>Compare LSTM, GRU, and Mamba recurrent architectures for meta-RL tuning of ICCBF recursion.</li><li>Train with PPO or SAC to learn class-K functions that shape the safe control set.</li><li>Evaluate cooperative and adversarial target behaviors for safety, task completion, and fuel use.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports evaluation across cooperative and uncooperative RPO scenarios, with Mamba trained by PPO yielding superior task completion, safety, and fuel savings.</p>
+          <p><b>Watch item:</b> The reported gains depend on simulation/test scenarios, so real spacecraft deployment may still face model mismatch, tuning sensitivity, and verification challenges.</p>
+          <div class="tags"><span>#MetaRL</span> <span>#SpacecraftControl</span> <span>#SafeControl</span> <span>#Mamba</span> <span>#PPO</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>75</strong></div>
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>70</strong></div>
+        <p class="date">2026-06-15</p>
+        <h2>Verified Detection and Prevention of Concurrency Anomalies in Multi-Agent Large Language Model Systems</h2>
+        <p class="authors">Sajjad Khan</p>
+        <p class="abstract">Multi-agent LLM systems share state through memory stores, vector indices, and tool registries. We model such sharing as long-running read-generate-write operations under deterministic-generation semantics -- the regime durable-execution engines enforce by deterministic replay -- and formalize four concurrency anomalies in TLA+: stale-generation, phantom-tool, causal-cascade, and tool-effect reordering, structural analogues of classical isolation anomalies, each with a TLC counter-example. The exclusion lattice over these anomalies is trivial; the contribution is the mechanically verified realizability and strict separation of one maximal chain within it, $L_0 \subsetneq \cdots \subsetneq L_4$, to our knowledge the first machine-checked consistency hierarchy for such runtimes. A development of 274 Verus obligations (zero assume, zero admit; trust base: two structural axioms and a mutex correspondence) proves the detectors sound and complete against the specifications and each runtime its avoidance set. Three deployed Rust runtimes realize L0-L1 (pessimistic locking, serializable snapshot isolation, default-SI), each verified against stale-generation and refined to its state machine; L2-L4 are exec-mode-verified with dependency-free prevention twins (A3, A6, A2: 0/1000 versus 1000/1000), and L2 is run live across three model families (A3 prevented in all 120 retracted sessions). We reproduce a silent lost update in ByteDance&#x27;s deer-flow, formalizing its fix as a verified $L_0 \to L_1$ refinement, and exhibit tool-effect reordering in LangGraph&#x27;s ToolNode on unmodified output, removed by an L3 commit-order sequencer. The verified detector, refinements, and realizability artifacts are the contribution; the phenomena and lattice are classical.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.17182v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17182v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper uses TLA+ and Verus to formally define and verify four concurrency anomalies in multi-agent LLM runtimes, then proves a strict hierarchy of consistency levels and runtime refinements that prevent them.</p>
+          <p><b>Engineering relevance:</b> It gives system builders verified detectors and prevention mechanisms for shared-memory, vector-index, and tool-registry races in durable, deterministic multi-agent LLM workflows.</p>
+          <ul><li>Modeled shared-state LLM interactions as deterministic read-generate-write operations in TLA+ and extracted anomaly counterexamples with TLC.</li><li>Built 274 Verus obligations to prove detector soundness/completeness and runtime refinement against a small trust base.</li><li>Implemented and verified prevention variants for multiple runtime levels, including locking, snapshot isolation, and commit-order sequencing.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports 0/1000 failures for dependency-free prevention twins versus 1000/1000 for the corresponding anomalies, plus live evaluation of one anomaly across three model families with 120/120 prevention in retracted sessions.</p>
+          <p><b>Watch item:</b> The guarantees depend on deterministic replay semantics and a small set of structural axioms, so integration with nondeterministic tools or unmodeled runtime behaviors may require additional verification.</p>
+          <div class="tags"><span>#TheoremProving</span> <span>#FormalMethods</span> <span>#MultiAgentLLM</span> <span>#Concurrency</span> <span>#VerifiedSystems</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>70</strong></div>
         <p class="date">2026-06-15</p>
         <h2>Towards Pareto-Optimal Tool-Integrated Agents with Pareto Ranking Policy Optimization</h2>
         <p class="authors">Junyi Li, Xiaowei Qian, Yingyi Zhang, Wenlin Zhang, Guojing Li, Sheng Zhang</p>
@@ -172,18 +381,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.16111v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.16111v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> ParetoPO aligns tool-using LLMs for both correctness and efficiency by explicitly optimizing for Pareto-optimal trade-offs instead of accuracy alone.</p>
-          <p><b>Engineering relevance:</b> This matters for deploying agentic reasoning systems where lower tool usage, latency, and cost must be balanced against task performance.</p>
-          <ul><li>Stage 1: use hypervolume-guided dynamic scalarization to adapt reward weights as the Pareto frontier improves.</li><li>Stage 2: replace scalarized rewards with Pareto-ranking-based advantage computation to favor nondominated trajectories.</li><li>Apply dominance-aware credit assignment at the action level for fine-grained multi-objective optimization.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports experiments on mathematical reasoning and multi-hop QA, where ParetoPO found policies with better accuracy-efficiency trade-offs than static and heuristic baselines.</p>
-          <p><b>Watch item:</b> Multi-objective training can be sensitive to reward design and hypervolume/ranking implementation, so results may depend on stable objective scaling and evaluation settings.</p>
-          <div class="tags"><span>#MultiObjectiveRL</span> <span>#ToolUse</span> <span>#LLMAgents</span> <span>#ParetoOptimization</span> <span>#ReasoningAI</span></div>
+          <p><b>Key insight:</b> ParetoPO improves tool-integrated LLM alignment by optimizing accuracy and tool-use efficiency together instead of treating accuracy as the only goal.</p>
+          <p><b>Engineering relevance:</b> The method offers a practical training recipe for deploying reasoning agents that must balance answer quality with lower tool cost, latency, or token usage.</p>
+          <ul><li>Stage 1: hypervolume-guided dynamic scalarization adapts reward weights as the Pareto frontier improves.</li><li>Stage 2: Pareto-ranking advantage computation replaces scalarized signals with dominance-aware credit assignment.</li><li>Action-level optimization encourages nondominated trajectories across competing objectives.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports experiments on mathematical reasoning and multi-hop QA, where ParetoPO consistently found better accuracy-efficiency trade-offs than static and heuristic baselines.</p>
+          <p><b>Watch item:</b> The approach likely depends on reliable multi-objective reward design and Pareto ranking stability, which can be sensitive to implementation details.</p>
+          <div class="tags"><span>#LLMAgents</span> <span>#MultiObjectiveOptimization</span> <span>#ParetoOptimization</span> <span>#ToolUse</span> <span>#MathematicalReasoning</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>74</strong></div>
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>69</strong></div>
         <p class="date">2026-06-15</p>
         <h2>A Gradient Perspective on RLVR Stability and Winner Advantage Policy Optimization</h2>
         <p class="authors">Prasanth YSS, Zhichen Ren, Rasa Hosseinzadeh, Ilan Gofman, Yuqi Chen, Zhaoyan Liu</p>
@@ -191,221 +400,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.16154v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.16154v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> RLVR instability can be explained by token-level gradient dynamics: whether updates raise or lower next-token probabilities and entropy depends on both the advantage sign and the current token distribution.</p>
-          <p><b>Engineering relevance:</b> This suggests a simple way to make reasoning-model training more stable in practice by restricting policy updates to beneficial completions while preserving strong benchmark performance.</p>
-          <ul><li>Derive a token-level taxonomy of gradient effects for GRPO-style RLVR updates.</li><li>Show that stability depends jointly on advantage sign and current policy token probabilities.</li><li>Introduce WAPO, an online clipped policy-gradient objective that updates only on positive-advantage completions.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports improved training stability and competitive or better results across mathematical reasoning and multi-hop QA benchmarks, spanning multiple model families.</p>
-          <p><b>Watch item:</b> Because WAPO ignores negative-advantage completions, it may reduce learning signal diversity or require careful clipping/selection to avoid under-training.</p>
-          <div class="tags"><span>#RLVR</span> <span>#PolicyGradient</span> <span>#ReasoningModels</span> <span>#OptimizationStability</span> <span>#MathematicalAI</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>73</strong></div>
-        <p class="date">2026-06-14</p>
-        <h2>New lower bounds for the degree/diameter problem via interaction with a browser-accessible LLM</h2>
-        <p class="authors">Ryosuke Mizuno</p>
-        <p class="abstract">Let $N(Δ,D)$ denote the maximum number of vertices in a simple undirected connected graph with maximum degree at most $Δ$ and diameter at most $D$. Determining $N(Δ,D)$ is known as the degree/diameter problem. Although the problem has been studied for many years, the exact value of $N(Δ,D)$ is unknown for most pairs $(Δ,D)$. In this paper we construct explicit graphs, using a construction discovered through interaction with ChatGPT via its standard web interface, showing that $N(12,5)\ge 34{,}992$ and $N(16,5)\ge 147{,}456$. These improve the corresponding recorded lower bounds 29,621 and 132,496. The search was conducted without an external orchestration layer around ChatGPT: no custom agent framework, automated evaluator-driven search loop, problem-specific search engine, or formal proof assistant was set up in advance by the author. As far as the visible transcript shows, the author did not prompt the model with the concrete components or candidate families of the construction. After presenting the mathematical result, we describe the discovery process on the basis of the visible transcript. We focus on the meta-level interventions made during the approximately six-day search, and we identify the stage at which the abstraction underlying the construction first appeared.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.15860v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.15860v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A browser-accessible LLM was used to discover explicit graph constructions that raise lower bounds for the degree/diameter problem at $(\Delta,D)=(12,5)$ and $(16,5)$.</p>
-          <p><b>Engineering relevance:</b> This shows that general-purpose LLMs can contribute to combinatorial theorem discovery even without a custom search agent or formal proof environment.</p>
-          <ul><li>Interact with ChatGPT through the standard web interface</li><li>Iteratively develop an explicit graph construction from the conversation</li><li>Validate the result by proving improved lower bounds for $N(12,5)$ and $N(16,5)$</li></ul>
-          <p><b>Evidence signal:</b> The paper reports explicit constructions proving $N(12,5)\ge 34{,}992$ and $N(16,5)\ge 147{,}456$, improving prior recorded bounds.</p>
-          <p><b>Watch item:</b> The discovery process is based on a visible transcript and manual interaction, so the approach may be hard to reproduce or automate at scale.</p>
-          <div class="tags"><span>#TheoremProving</span> <span>#GraphTheory</span> <span>#DegreeDiameterProblem</span> <span>#LLMDiscovery</span> <span>#Combinatorics</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>AI math</span><span>arXiv</span><strong>70</strong></div>
-        <p class="date">2026-06-14</p>
-        <h2>The Information-Theoretic Benefit of Shared Representations under Orthogonality Constraints</h2>
-        <p class="authors">Thomas Dittrich, Oliver Potocki, Philipp Grohs</p>
-        <p class="abstract">Modern deep learning architectures are increasingly multi-task and multi-modal, using a pretrained foundation model combined with task-specific, fine-tuned models. Empirically, exploiting similarity across different problems, instead of solving them individually, can significantly improve overall performance. While the generalization and sample complexity properties of multitask learning have been widely studied, the parametric complexity of joint approximation in comparison to separate approximation remains less well understood. The question is particularly relevant in modern deep learning, where models are increasingly required to satisfy structural constraints such as equivariance, conservation laws, or orthogonality. We prove lower and upper bounds on the description-length for separate and joint approximation classes, respectively, in uniform norm. We build a class of orthogonal functions by composing a shared hard feature, realized by a Rademacher-Haar wavelet series, with Sawtooth-Walsh readouts to enforce orthogonality of output coordinates. The dyadic tree structure of the Rademacher-Haar wavelet concentrates the approximation hardness in the common feature component, while the readouts act as task-specific heads. Using an information-theoretic framework, we obtain a sharp gap between the optimal approximation rates achievable by joint and separate coding. Finally, we realize this separation in a neural network model using Heaviside activations via reduction to triangle-wave approximation. Our results show that even under an orthogonality constraint joint approximation requires strictly fewer bits in compositional architectures, provided the tasks share a latent hard feature. This provides theoretical insight into the description-length-efficiency of compositional multi-output architectures and clarifies how neural networks can retain expressivity under geometric constraints.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.16028v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.16028v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> When multiple outputs share a hard latent feature, a joint compositional code can represent them with strictly fewer bits than coding each task separately, even if the outputs must remain orthogonal.</p>
-          <p><b>Engineering relevance:</b> This gives a theoretical justification for shared backbones with task-specific heads in multi-task and multi-modal models under geometric constraints such as orthogonality, equivariance, or conservation laws.</p>
-          <ul><li>Build a shared hard feature using a Rademacher-Haar wavelet series.</li><li>Attach Sawtooth-Walsh readouts to enforce orthogonality across output coordinates.</li><li>Prove sharp upper/lower bounds on description length for joint vs. separate approximation in uniform norm.</li></ul>
-          <p><b>Evidence signal:</b> The paper provides an information-theoretic approximation-theory analysis, deriving sharp bounds and a neural-network realization, rather than reporting empirical benchmark data.</p>
-          <p><b>Watch item:</b> The separation is theoretical and relies on a specific compositional construction, so practical gains may depend on whether real tasks truly share a similarly hard latent feature.</p>
-          <div class="tags"><span>#MultiTaskLearning</span> <span>#InformationTheory</span> <span>#ApproximationTheory</span> <span>#OrthogonalNetworks</span> <span>#DeepLearningTheory</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>70</strong></div>
-        <p class="date">2026-06-14</p>
-        <h2>Schattor: Schatten-family methods for deep learning optimization</h2>
-        <p class="authors">Bohao Ma, Junyu Zhang, Chuan He</p>
-        <p class="abstract">Modern deep learning optimization features heterogeneous parameter structures, noisy gradients, and highly nonconvex landscapes, posing significant challenges for both algorithm design and theoretical analysis. Motivated by the limitations of SGD and the success of adaptive optimizers, we propose {\it Schattor}, a family of adaptive first-order methods based on Schatten norms. Schattor unifies SGD and the recently proposed matrix-variate adaptive optimizer Muon within a single Schatten-norm-based framework. We establish dimension-free stationarity guarantees for methods in the Schattor family for stochastic matrix optimization problems via a novel matrix martingale moment bound. We also develop multi-block extensions that adaptively balance block-wise optimization progress and prove dimension-free stationarity guarantees in this more general setting.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.15702v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.15702v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Schattor is a Schatten-norm-based family of adaptive first-order optimizers that unifies SGD and Muon while targeting matrix-structured deep learning problems.</p>
-          <p><b>Engineering relevance:</b> It offers a principled way to design scalable optimizers with dimension-free stationarity guarantees, which is useful for large neural network training with heterogeneous parameter blocks.</p>
-          <ul><li>Builds adaptive updates from Schatten norms to interpolate between SGD-like and matrix-variate optimization behavior.</li><li>Uses a novel matrix martingale moment bound to prove dimension-free stationarity for stochastic matrix optimization.</li><li>Extends to multi-block settings to balance optimization progress across parameter groups.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports theoretical analysis and stationarity guarantees for stochastic matrix optimization and multi-block extensions, but does not mention empirical results.</p>
-          <p><b>Watch item:</b> The framework appears theoretically strong, but practical performance and sensitivity to block structure or Schatten-norm choices are not described in the abstract.</p>
-          <div class="tags"><span>#DeepLearningOptimization</span> <span>#AdaptiveOptimizers</span> <span>#SchattenNorm</span> <span>#MatrixOptimization</span> <span>#TheoreticalMachineLearning</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>AI math</span><span>arXiv</span><strong>68</strong></div>
-        <p class="date">2026-06-15</p>
-        <h2>Learning Policy from a Single Trajectory in Average-Reward Markov Decision Process</h2>
-        <p class="authors">Jongmin Lee, Ernest K. Ryu, Vaneet Aggarwal</p>
-        <p class="abstract">While there is an extensive body of work characterizing the sample complexity of discounted cumulative-reward MDPs, finite sample analyses for average-reward MDPs have been limited, and most existing works rely on restrictive assumptions such as ergodicity or access to a generative model. In this work, we establish the first finite sample complexity guarantees from a single trajectory for weakly communicating average-reward MDPs. To this end, we study the dynamics of a single trajectory in weakly communicating MDPs and based on this analysis, we develop novel model-free methods. Notably, our value-based and policy-based methods provide finite sample complexity guarantees of $\widetilde{O}(1/\varepsilon^2)$ and $\widetilde{O}(1/\varepsilon^4)$ from a single trajectory in weakly communicating MDPs, respectively. Furthermore, we introduce the first model-free method that requires no prior knowledge of problem-dependent quantities for communicating MDPs.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.16729v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.16729v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper shows that average-reward reinforcement learning can be learned from just one trajectory with finite-sample guarantees, even without strong ergodicity assumptions.</p>
-          <p><b>Engineering relevance:</b> This makes policy learning more practical for long-running systems where only a single operational rollout is available and full environment simulation is not feasible.</p>
-          <ul><li>Analyze the dynamics of a single observed trajectory in weakly communicating MDPs.</li><li>Develop novel model-free value-based and policy-based algorithms.</li><li>Provide a model-free method for communicating MDPs that does not require prior knowledge of problem-dependent quantities.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports finite-sample complexity guarantees of ~O(1/ε^2) for the value-based method and ~O(1/ε^4) for the policy-based method from a single trajectory.</p>
-          <p><b>Watch item:</b> The stronger guarantees are for weakly communicating/communicating MDP settings, so performance may depend on how well a real system matches these assumptions.</p>
-          <div class="tags"><span>#ReinforcementLearning</span> <span>#AverageRewardMDP</span> <span>#SampleComplexity</span> <span>#ModelFreeRL</span> <span>#SingleTrajectory</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>68</strong></div>
-        <p class="date">2026-06-13</p>
-        <h2>Dual-Network PINNs for Optimal Control: A Reproducible Benchmark on the Mass-Spring-Damper System</h2>
-        <p class="authors">Abdeladhim Tahimi, Rinaldo Vieira da Silva Junior</p>
-        <p class="abstract">This work presents a transparent and reproducible benchmark study of a direct dual-network Physics-Informed Neural Network (PINN) formulation for the optimal control of a mass-spring-damper system. The classical linear-quadratic optimal control problem is solved by two independent classical methods -- Pontryagin&#x27;s Minimum Principle with single shooting, and direct transcription through trapezoidal collocation -- and recast as a constrained optimization problem solved by two feedforward neural networks: a state network whose boundary conditions are enforced exactly through a composite cubic-and-mask ansatz, and an unconstrained control network. The composite loss combines the physics residual at the collocation points with a trapezoidal approximation of the cost functional, weighted by a single scalar hyperparameter. On the benchmark considered, the PINN reproduces the classical optimal cost to four significant digits, satisfies the terminal state constraints exactly by construction, and produces pointwise state and control errors that fall within the spread of the two classical references. Training is approximately two orders of magnitude slower than classical shooting on this benchmark, which is honestly reported. The contribution is methodological clarity rather than methodological novelty: the formulation and the accompanying Google Colab implementation are intended to lower the barrier to entry for practitioners exploring PINN-based optimal control without prior exposure to adjoint methods or two-point boundary value problems.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.15271v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.15271v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A dual-network PINN can solve a mass-spring-damper optimal control problem while enforcing terminal state constraints exactly and matching classical optimal-control solutions closely.</p>
-          <p><b>Engineering relevance:</b> This offers a reproducible, lower-barrier workflow for engineers who want to prototype optimal control with neural networks instead of deriving and solving adjoint or boundary-value formulations.</p>
-          <ul><li>State network uses a composite cubic-and-mask ansatz to satisfy boundary conditions exactly</li><li>Control network remains unconstrained and is optimized jointly with the state network</li><li>Loss blends physics residuals at collocation points with a trapezoidal cost approximation using one scalar weight</li></ul>
-          <p><b>Evidence signal:</b> In the benchmark, the PINN reproduces the classical optimal cost to four significant digits and yields state/control errors within the spread of two classical reference methods.</p>
-          <p><b>Watch item:</b> Training is reported to be about two orders of magnitude slower than classical shooting on this benchmark, so compute cost and tuning sensitivity matter.</p>
-          <div class="tags"><span>#PINN</span> <span>#OptimalControl</span> <span>#PhysicsInformedLearning</span> <span>#MassSpringDamper</span> <span>#ReproducibleResearch</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>68</strong></div>
-        <p class="date">2026-06-13</p>
-        <h2>Mask-Proof: An LLM-based Automated Data Curation Pipeline on Mathematical Proofs</h2>
-        <p class="authors">Jierui Zhang, Siyuan Tan, Xinhang Li, Longzhuangzhi Lin, Dailin Li, Chengfeng Gu</p>
-        <p class="abstract">Large language models (LLMs) are increasingly capable of mathematical problem solving and can even assist with research-level proofs, yet we still lack a scalable and reproducible way to measure step-level reasoning in long proofs across diverse sources. This evaluation gap limits trustworthy AI assistance in proof-certified scientific progress. Existing evaluations often emphasize final answers or rely on costly expert grading, while end-to-end proof generation remains open-ended and hard to verify automatically. We introduce Mask-Proof, a pipeline that turns real proofs into automatically checkable masked-step tasks. It masks key formula steps, provides the necessary surrounding context, and evaluates model reconstructions with an LLM-based equivalence judge using repeated votes for stability. The resulting Mask-ProofBench contains 292 curated problems across diverse research areas. Experiments with 17 models show that reasoning-enhanced models outperform standard models by 12% to 27%. Our evaluator achieves 96.8% agreement with expert annotators, enabling faithful, reproducible, and comparable measurement of step-level mathematical reasoning. Benchmark, annotations, and code are available at https://github.com/weating/Mask-Proof.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.15258v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.15258v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Mask-Proof converts real mathematical proofs into masked-step reconstruction tasks, enabling scalable and reproducible evaluation of step-level reasoning in long-form proofs.</p>
-          <p><b>Engineering relevance:</b> It provides a practical benchmark and automated evaluator for measuring and comparing proof reasoning quality across LLMs without relying on costly expert-only grading.</p>
-          <ul><li>Mask key formula steps in authentic proofs while keeping surrounding context.</li><li>Ask models to reconstruct the hidden steps.</li><li>Use repeated-vote LLM equivalence judging to score correctness stably.</li></ul>
-          <p><b>Evidence signal:</b> The released Mask-ProofBench includes 292 curated problems, and the evaluator reports 96.8% agreement with expert annotators across 17 tested models.</p>
-          <p><b>Watch item:</b> LLM-based equivalence judging may still miss subtle proof nuances, so stability and calibration should be checked when extending to new mathematical domains.</p>
-          <div class="tags"><span>#LLMReasoning</span> <span>#MathematicalProofs</span> <span>#Benchmarking</span> <span>#AIEvaluation</span> <span>#ScientificML</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>67</strong></div>
-        <p class="date">2026-06-15</p>
-        <h2>The Quality-Utility Paradox: Why High-Reward Data Impairs Small Model Mathematical Reasoning</h2>
-        <p class="authors">Haolong Qian, Xianliang Yang, Yinuo ma, Lirong Che, Feng Lu, Ye Guo</p>
-        <p class="abstract">Knowledge distillation from powerful reasoning models is widely used to improve Small Language Models (SLMs) on mathematical reasoning, often assuming that traces with higher reward model scores provide more useful supervision. We identify a counterintuitive \textbf{Quality-Utility Paradox} in mathematical reasoning distillation. Data refined or synthesized by a stronger Oracle obtains higher perceived quality according to reward models, yet consistently underperforms traces generated by the SLM itself and selected through rejection sampling across Qwen2.5, LLaMA-3, and DeepSeek families. Our analysis shows that Oracle refinement couples logical repair with distributional drift away from the SLM&#x27;s native reasoning distribution. This drift increases the learner&#x27;s adaptation cost and can outweigh the benefit of improved reasoning logic. To test this mechanism, we introduce \textbf{Style-Aligned Refinement}, which preserves the native trajectory of the SLM while retaining logical repair from the Oracle. This intervention lowers adaptation cost and restores downstream utility. These findings suggest that effective mathematical reasoning distillation should jointly optimize perceived solution quality and learner-data compatibility, rather than relying solely on reward-model scores. The datasets and code are available at https://github.com/Dracoqhl/Quality-Utility-Paradox.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.16152v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.16152v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Higher reward-model quality does not necessarily improve small-model math reasoning: Oracle-refined traces can be worse than self-generated traces because they drift away from the student model’s native reasoning style.</p>
-          <p><b>Engineering relevance:</b> For distillation pipelines, utility should be optimized with data compatibility and style alignment, not reward scores alone, to avoid harming SLM adaptation and downstream accuracy.</p>
-          <ul><li>Compared Oracle-refined traces against SLM self-generated traces selected via rejection sampling.</li><li>Introduced Style-Aligned Refinement to keep the student’s native trajectory while preserving logical fixes from the Oracle.</li><li>Analyzed the tradeoff between logical repair and distributional drift as the cause of the paradox.</li></ul>
-          <p><b>Evidence signal:</b> Across Qwen2.5, LLaMA-3, and DeepSeek families, traces refined or synthesized by a stronger Oracle scored higher by reward models yet consistently underperformed self-generated, rejection-sampled traces.</p>
-          <p><b>Watch item:</b> Style alignment may require careful tuning to preserve reasoning quality without reintroducing the distributional drift it aims to remove.</p>
-          <div class="tags"><span>#MathReasoning</span> <span>#KnowledgeDistillation</span> <span>#SmallLanguageModels</span> <span>#RewardModels</span> <span>#LLMAlignment</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>67</strong></div>
-        <p class="date">2026-06-14</p>
-        <h2>Multi-Stage Stochastic Optimization and Reinforcement Learning Approaches for Dynamic Inspection of Infrastructure Systems</h2>
-        <p class="authors">Juan-Alberto Estrada-Garcia, Siqian Shen</p>
-        <p class="abstract">We study a dynamic inspection problem for infrastructure systems in which multiple vehicles are routed and scheduled to monitor components subject to heterogeneous and stochastic failures. A key challenge is endogenous uncertainty in which failure-time realizations are filtered through prior inspection actions and failure-propagation dynamics. This yields a multi-stage decision problem that integrates routing, scheduling, and decision-dependent reliability dynamics over time. We formulate the problem as a multi-stage stochastic mixed-integer program that jointly optimizes routing and scheduling decisions under endogenous uncertainty. We develop a stochastic dual dynamic integer programming (SDDiP) algorithm that integrates dual approximation, integer state reduction, and sampling-based forward simulation to approximate cost-to-go functions. In parallel, we propose a reinforcement learning framework that learns job clustering structures and routing policies through interaction with simulated system dynamics and failure processes. Numerical experiments on infrastructure networks with diverse topologies and failure patterns show that SDDiP yields high-quality solutions but faces scalability limitations, while the learning-based approach achieves strong scalability with competitive performance, highlighting a trade-off between optimality and tractability. This work advances the modeling of endogenous uncertainty in multi-stage stochastic routing problems and bridges stochastic programming with learning-based approaches. The results provide guidance on when to deploy optimization-based versus learning-based methods, enabling more effective and scalable inspection planning in practice. More broadly, the framework supports risk-aware allocation of inspection resources and improved reliability of critical infrastructure systems.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.15840v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.15840v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper models infrastructure inspection as a multi-stage stochastic optimization problem with endogenous uncertainty, and compares exacting optimization with reinforcement learning for scalable routing and scheduling.</p>
-          <p><b>Engineering relevance:</b> It helps engineers plan limited inspection resources more reliably by choosing between high-quality optimization methods and faster learning-based policies for large infrastructure networks.</p>
-          <ul><li>Formulate inspection routing/scheduling as a multi-stage stochastic mixed-integer program with failure dynamics.</li><li>Solve with stochastic dual dynamic integer programming (SDDiP) using dual approximation, integer state reduction, and sampling-based forward simulation.</li><li>Train a reinforcement learning policy to learn job clustering and routing decisions from simulated system behavior.</li></ul>
-          <p><b>Evidence signal:</b> Numerical experiments on infrastructure networks with different topologies and failure patterns show SDDiP gives high-quality solutions but scales poorly, while the learning approach scales better with competitive performance.</p>
-          <p><b>Watch item:</b> The learning-based method is more scalable, but its performance depends on the quality of simulation and may trade off against the stronger solution guarantees of optimization.</p>
-          <div class="tags"><span>#StochasticOptimization</span> <span>#ReinforcementLearning</span> <span>#InfrastructureInspection</span> <span>#DynamicRouting</span> <span>#EndogenousUncertainty</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>67</strong></div>
-        <p class="date">2026-06-11</p>
-        <h2>Mapping Mathematical Hardness: Machine-Assisted Conjecture Discovery and the Quantification of Non-Triviality</h2>
-        <p class="authors">Madhuparna Das</p>
-        <p class="abstract">Machine-assisted mathematical discovery has been a long-standing challenge in machine learning and artificial intelligence. In recent years, we have seen tremendous progress with generative AI, yet its contribution to automated discovery in advanced mathematical research has been limited. One of the most difficult benchmarks in this context is the Birch test, which asks whether a machine can discover truly novel and non-trivial mathematical structures without human intervention. In this work, we particularly focus on the branch of automated conjecture discovery. We use HypothesiX, an automated conjecture mining agent and analyse its generated conjectures related to the distribution of twin primes to verify the conditions of the Birch test. Furthermore, note that automated discovery is now operating at scale, but verifying its non-triviality still depends on human evaluation. We propose a benchmark to quantify the non-triviality of machine-generated conjectures using the Mahalanobis distance within an embedding cluster of selected known mathematical conjectures. We also note that this quantified benchmark can be used as an error indication signal to localise the incorrectness of a new mathematical statement, which autoformalisers fail to verify due to their limitations in proof discovery capability.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.14804v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.14804v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper proposes using embedding-based Mahalanobis distance to quantify how non-trivial machine-generated mathematical conjectures are, helping assess whether they meet a Birch-test-style standard of genuine novelty.</p>
-          <p><b>Engineering relevance:</b> This offers a practical evaluation layer for automated theorem-proving and conjecture-mining systems, especially when human review is the bottleneck for judging novelty and correctness.</p>
-          <ul><li>Run HypothesiX to mine conjectures, with a focus on twin-prime-related statements.</li><li>Embed machine-generated conjectures alongside known conjectures and measure cluster distance via Mahalanobis distance.</li><li>Use the resulting score as a non-triviality benchmark and an error-indication signal for localization of likely incorrect statements.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports an analysis of HypothesiX-generated conjectures and proposes the benchmark as a way to evaluate them against selected known mathematical conjectures in embedding space.</p>
-          <p><b>Watch item:</b> The benchmark still depends on the quality and representativeness of the chosen conjecture embedding cluster, so biased reference sets could distort the non-triviality score.</p>
-          <div class="tags"><span>#TheoremProving</span> <span>#AutomatedDiscovery</span> <span>#ConjectureMining</span> <span>#MathAI</span> <span>#MahalanobisDistance</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>65</strong></div>
-        <p class="date">2026-06-15</p>
-        <h2>TNODEV: Toolbox for Neural ODE Verification</h2>
-        <p class="authors">Abdelrahman Sayed Sayed, Pierre-Jean Meyer, Mohamed Ghazel</p>
-        <p class="abstract">Neural ordinary differential equations (neural ODE) have started to appear in safety critical settings such as continuous-time controllers for cyber-physical systems and classifiers integrated into automated decision pipelines, raising the question of whether their behavior can be formally verified. Existing tools dedicated to neural ODE provide only a single reachability call without iterative input set refinement, limiting the precision of their verdicts to whatever one reachability call can deliver. We present TNODEV, the first sound formal verifier for neural ODE that integrates a falsification checker, a fast interval-based reachability backend based on continuous-time mixed monotonicity, a verification and refinement loop with three input-set splitting heuristics, and a parallel scheduler in a single end-to-end pipeline. TNODEV supports safe-set inclusion verification on pure neural ODE, neural ODE in closed loop with a neural network controller and general neural ODE (GNODE), with the safe set specified either as an interval or as the half-space intersection induced by a target classification label. We evaluate TNODEV on a range of benchmarks across safe-set inclusion and classification-robustness properties, including a direct reachability comparison against NNV~2.0 and CORA and a verification comparison against NNV2.0 on MNIST general neural ODE classifiers.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.16567v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.16567v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> TNODEV adds iterative refinement and sound verification to neural ODE analysis, making formal safety and robustness checks more precise than single-shot reachability tools.</p>
-          <p><b>Engineering relevance:</b> This enables more reliable deployment of neural ODEs in safety-critical control and classification pipelines where bounded uncertainty matters.</p>
-          <ul><li>Falsification checker plus fast interval reachability using continuous-time mixed monotonicity</li><li>Verification-refinement loop with three input-set splitting heuristics</li><li>Parallel end-to-end scheduler for pure neural ODE, closed-loop neural controllers, and GNODEs</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports evaluation on safe-set inclusion and classification-robustness benchmarks, with direct comparisons against NNV 2.0 and CORA, including MNIST GNODE classifiers.</p>
-          <p><b>Watch item:</b> Soundness depends on the quality of interval bounds and splitting strategy, so difficult benchmarks may still require substantial computation.</p>
-          <div class="tags"><span>#NeuralODE</span> <span>#FormalVerification</span> <span>#ReachabilityAnalysis</span> <span>#SafetyCriticalAI</span> <span>#TheoremProving</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>65</strong></div>
-        <p class="date">2026-06-12</p>
-        <h2>Robin-Neumann Coupling of PINN and FEM Solvers: A Steklov-Poincaré View, with Application to Fluid-Structure Interaction with Contact</h2>
-        <p class="authors">Mikel Landajuela</p>
-        <p class="abstract">Physics-informed neural networks (PINNs) are meshless and carry moving geometry and topology change through resampling of collocation points; the finite-element method (FEM) is the workhorse for boundary-fitted discretisations. Coupling the two across a shared interface promises the best of both, yet existing PINN-FEM schemes are validated only empirically. We put the coupling on a domain-decomposition footing: viewing each solver as a Steklov-Poincaré (trace-to-flux) operator, we transfer the classical Dirichlet-Neumann (DN) divergence diagnosis and its Robin-Neumann (RN) cure, including a closed-form, sweep-free interface impedance, and prove a PINN-specific contraction theorem: a trained network realises only a perturbed Steklov operator with a per-step training residual, and RN still contracts, with no shared-eigenbasis hypothesis, to a floor set by the achieved training loss. Because a PINN has no stiffness matrix, we introduce a Fourier-mode interface probe that recovers the network&#x27;s resolvable Steklov eigenvalues to within 0.5% and doubles as a diagnostic of the network&#x27;s spectral cap. The theory predicts measured PINN-FEM contraction rates to within 7% on 1D and 2D Poisson couplings, and a two-slab analogue of the large-added-mass regime shows RN&#x27;s per-mode impedance matching winning decisively where tuned scalar relaxation saturates. We demonstrate the framework on a Stokes/rigid-disc problem with Alart-Curnier contact: the meshless PINN fluid absorbs the topology change at contact by collocation exclusion alone, no remeshing and no cut cells, and the static-equilibrium contact reaction matches the submerged weight to 0.4% under mesh refinement. We quantify remaining limitations: the warm-started PINN drifts off the Stokes manifold over long horizons, and matched FEM-FEM benchmarks attribute pre-impact squeeze-film signatures to PINN under-resolution.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.14181v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.14181v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper reframes PINN–FEM coupling as a Steklov–Poincaré interface problem and shows that Robin–Neumann coupling stabilizes the exchange and contracts even when the PINN acts as a perturbed operator.</p>
-          <p><b>Engineering relevance:</b> This enables meshless fluid-structure/contact simulations that can handle moving interfaces and topology change without remeshing, while retaining the robustness of FEM on the other domain.</p>
-          <ul><li>Model each solver as a trace-to-flux (Steklov–Poincaré) operator across a shared interface.</li><li>Replace unstable Dirichlet–Neumann coupling with Robin–Neumann coupling using a closed-form interface impedance.</li><li>Use a Fourier-mode interface probe to estimate the PINN’s resolvable interface spectrum and diagnose spectral limits.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports agreement with measured PINN-FEM contraction rates within 7% on 1D/2D Poisson tests, 0.5% accuracy for recovered interface eigenvalues, and 0.4% error in the submerged-weight contact reaction on a Stokes/rigid-disc benchmark.</p>
-          <p><b>Watch item:</b> The approach still depends on PINN training quality; long-horizon drift off the Stokes manifold and under-resolved pre-impact squeeze-film effects remain concerns.</p>
-          <div class="tags"><span>#PINN</span> <span>#FEM</span> <span>#DomainDecomposition</span> <span>#RobinNeumann</span> <span>#FluidStructureInteraction</span></div>
+          <p><b>Key insight:</b> The paper shows that RLVR instability can be predicted from token-level gradient dynamics, where both the advantage sign and the current token distribution determine whether updates sharpen or flatten the policy.</p>
+          <p><b>Engineering relevance:</b> This yields a simpler and more stable policy-optimization rule for reasoning models, helping practitioners reduce collapse during training while preserving or improving benchmark performance.</p>
+          <ul><li>Derive a token-level gradient taxonomy for RLVR updates and their effects on next-token probabilities and entropy.</li><li>Introduce Winner Advantage Policy Optimization (WAPO), a clipped online policy-gradient objective that trains only on positive-advantage completions.</li><li>Evaluate WAPO against GRPO-style baselines across multiple model families on mathematical reasoning and multi-hop QA tasks.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports that WAPO improves training stability and matches or outperforms baselines across mathematical reasoning and multi-hop QA benchmarks.</p>
+          <p><b>Watch item:</b> Because WAPO updates only on positive-advantage completions, implementation may depend strongly on reward quality and could reduce learning signal if positives are too sparse.</p>
+          <div class="tags"><span>#RLVR</span> <span>#PolicyOptimization</span> <span>#ReasoningModels</span> <span>#GradientDynamics</span> <span>#MachineLearning</span></div>
         </section>
       </article>
     </section>

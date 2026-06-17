@@ -1,24 +1,24 @@
 {
-  "key_insight": "RLVR instability can be explained by token-level gradient dynamics: whether updates raise or lower next-token probabilities and entropy depends on both the advantage sign and the current token distribution.",
-  "engineering_relevance": "This suggests a simple way to make reasoning-model training more stable in practice by restricting policy updates to beneficial completions while preserving strong benchmark performance.",
+  "key_insight": "The paper shows that RLVR instability can be predicted from token-level gradient dynamics, where both the advantage sign and the current token distribution determine whether updates sharpen or flatten the policy.",
+  "engineering_relevance": "This yields a simpler and more stable policy-optimization rule for reasoning models, helping practitioners reduce collapse during training while preserving or improving benchmark performance.",
   "method": [
-    "Derive a token-level taxonomy of gradient effects for GRPO-style RLVR updates.",
-    "Show that stability depends jointly on advantage sign and current policy token probabilities.",
-    "Introduce WAPO, an online clipped policy-gradient objective that updates only on positive-advantage completions."
+    "Derive a token-level gradient taxonomy for RLVR updates and their effects on next-token probabilities and entropy.",
+    "Introduce Winner Advantage Policy Optimization (WAPO), a clipped online policy-gradient objective that trains only on positive-advantage completions.",
+    "Evaluate WAPO against GRPO-style baselines across multiple model families on mathematical reasoning and multi-hop QA tasks."
   ],
-  "evidence_signal": "The abstract reports improved training stability and competitive or better results across mathematical reasoning and multi-hop QA benchmarks, spanning multiple model families.",
-  "watch_item": "Because WAPO ignores negative-advantage completions, it may reduce learning signal diversity or require careful clipping/selection to avoid under-training.",
+  "evidence_signal": "The abstract reports that WAPO improves training stability and matches or outperforms baselines across mathematical reasoning and multi-hop QA benchmarks.",
+  "watch_item": "Because WAPO updates only on positive-advantage completions, implementation may depend strongly on reward quality and could reduce learning signal if positives are too sparse.",
   "hashtags": [
     "#RLVR",
-    "#PolicyGradient",
+    "#PolicyOptimization",
     "#ReasoningModels",
-    "#OptimizationStability",
-    "#MathematicalAI"
+    "#GradientDynamics",
+    "#MachineLearning"
   ],
   "paper_id": "2026-06-15-arxiv-a_gradient_perspective_on_rlvr_stability_and_winner_advantage_policy_optimization",
   "paper_title": "A Gradient Perspective on RLVR Stability and Winner Advantage Policy Optimization",
   "paper_date": "2026-06-15",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-06-16T18:04:24",
+  "generated_at": "2026-06-17T16:39:38",
   "generator": "openai"
 }
