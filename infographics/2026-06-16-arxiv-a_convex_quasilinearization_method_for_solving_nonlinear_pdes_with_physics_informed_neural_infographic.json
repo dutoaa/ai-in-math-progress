@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper replaces nonconvex PINN training with a convex, stepwise least-squares solve by combining quasilinearization with linear-in-parameters physics-informed trial spaces.",
-  "engineering_relevance": "This offers a more stable and often parameter-efficient route for solving nonlinear PDEs in engineering simulations, especially when reliable convergence matters more than end-to-end gradient training.",
+  "key_insight": "The paper replaces nonconvex PINN training with a convex, per-iteration least-squares solve by combining Bellman-Kalaba quasilinearization with linear-in-parameters trial spaces.",
+  "engineering_relevance": "This offers a more stable and often faster way to solve nonlinear PDEs in engineering, especially when accurate physics-informed solutions are needed without gradient-based optimization.",
   "method": [
-    "Use Bellman-Kalaba quasilinearization to turn a nonlinear PDE into a sequence of linear subproblems.",
-    "Discretize each subproblem with collocation on a LiL trial space, such as random features, spectral polynomials, or trigonometric bases.",
-    "Solve each step directly with QR-based linear least squares instead of gradient descent."
+    "Quasilinearize the nonlinear PDE into a sequence of linear subproblems.",
+    "Discretize each subproblem by collocation on LiL trial spaces such as random features, spectral polynomials, or trigonometric bases.",
+    "Solve each step with a direct QR-based linear least-squares method instead of backpropagation."
   ],
-  "evidence_signal": "The method was tested on seven benchmarks, including Bratu, Burgers, Buckley-Leverett, elasticity, Navier-Stokes in 2D/3D, and Darcy flow, with single-digit outer iterations in most cases and machine-precision recovery when the exact solution lies in the trial space.",
-  "watch_item": "Convergence is local and depends on a smallness condition, so performance may degrade if the initial guess is poor or the solution lies outside the trial space.",
+  "evidence_signal": "The method was tested on seven benchmark PDE problems and typically converged in single-digit outer iterations, matching or surpassing published PINNs on Navier-Stokes while using far fewer trainable parameters.",
+  "watch_item": "The convergence guarantee is local and depends on a smallness condition, so performance may degrade if the initial guess or nonlinearity is too strong.",
   "hashtags": [
-    "#PhysicsInformedNeuralNetworks",
+    "#PhysicsInformedNNs",
     "#PDEs",
     "#Optimization",
-    "#Quasilinearization",
-    "#ScientificComputing"
+    "#ScientificML",
+    "#Quasilinearization"
   ],
   "paper_id": "2026-06-16-arxiv-a_convex_quasilinearization_method_for_solving_nonlinear_pdes_with_physics_informed_neural",
   "paper_title": "A Convex Quasilinearization Method for Solving Nonlinear PDEs with Physics-Informed Neural Networks",
   "paper_date": "2026-06-16",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-06-17T16:38:46",
+  "generated_at": "2026-06-18T16:30:48",
   "generator": "openai"
 }

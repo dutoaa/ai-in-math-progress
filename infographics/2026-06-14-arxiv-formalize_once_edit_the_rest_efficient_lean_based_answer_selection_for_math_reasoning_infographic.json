@@ -1,24 +1,24 @@
 {
-  "key_insight": "BASE replaces per-candidate Lean formalization with a base-and-edit strategy, formalizing one answer and reusing edits for the rest to cut cost while improving answer selection.",
-  "engineering_relevance": "This makes Lean-based verification more practical for test-time scaling, reducing autoformalizer calls by around 5x at K=8 without sacrificing selection quality.",
+  "key_insight": "BASE formalizes only one candidate answer with Lean and then reuses an edit-based rewrite to generate the remaining candidate statements, reducing cost without sacrificing answer-selection quality.",
+  "engineering_relevance": "This makes Lean-based test-time answer selection more scalable for math reasoning systems by cutting repeated autoformalization work while preserving verification-based selection.",
   "method": [
-    "Formalize one base candidate per problem in Lean.",
+    "Choose one base candidate per problem and autoformalize it once in Lean.",
     "Train LEANSCRIBE to locate the answer expression and produce a reusable edit function.",
-    "Generate the remaining K-1 formal statements by in-place edits instead of fresh autoformalization."
+    "Apply the edit in place to derive the other K-1 candidate formalizations instead of re-formalizing each one."
   ],
-  "evidence_signal": "The abstract reports a Pareto improvement across all 12 dataset-solver configurations on four benchmarks and three solvers, with about 5x fewer autoformalizer calls at K=8.",
-  "watch_item": "The approach depends on reliably identifying and editing the answer expression in the base formalization, which may be fragile for complex or ambiguous statements.",
+  "evidence_signal": "The abstract reports a Pareto improvement across all 12 dataset-solver settings on four benchmarks and three solvers, with about a 5x reduction in autoformalizer calls at K=8.",
+  "watch_item": "The approach depends on reliably localizing and editing the answer expression in the base formalization, so brittle rewriting or complex statement structure could limit robustness.",
   "hashtags": [
     "#Lean",
     "#TheoremProving",
     "#MathReasoning",
-    "#LLMVerification",
-    "#TestTimeScaling"
+    "#Autoformalization",
+    "#LLMs"
   ],
   "paper_id": "2026-06-14-arxiv-formalize_once_edit_the_rest_efficient_lean_based_answer_selection_for_math_reasoning",
   "paper_title": "Formalize Once, Edit the Rest: Efficient Lean-Based Answer Selection for Math Reasoning",
   "paper_date": "2026-06-14",
   "paper_category": "Theorem Proving",
-  "generated_at": "2026-06-17T16:39:02",
+  "generated_at": "2026-06-18T16:31:25",
   "generator": "openai"
 }

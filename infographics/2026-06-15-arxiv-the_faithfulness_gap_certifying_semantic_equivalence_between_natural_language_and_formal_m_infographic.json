@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper argues that autoformalization needs faithfulness checking, not just type-correct translation, and proposes Bidirectional Provability Fingerprinting to certify whether a formal statement preserves the intended theorem.",
-  "engineering_relevance": "This is useful for theorem-proving pipelines because it can screen, score, and even guide generation of Lean statements that are semantically closer to the original natural-language math.",
+  "key_insight": "The paper argues that autoformalization should be judged by semantic faithfulness, not just typechecking or provability, and proposes bidirectional proof-based fingerprints to detect meaning drift.",
+  "engineering_relevance": "For theorem-proving systems, BPF adds a practical verification layer that can filter unsafe formalizations and improve downstream autoformalization quality.",
   "method": [
-    "Build forward/backward consequence fingerprints for candidate formal statements and compare them to probes derived from the source text.",
-    "Use Counterfactual Probe Generation to target specific semantic drift directions and an Equivalence Spectrum to replace binary pass/fail judgments.",
-    "Allocate probe budget adaptively and feed faithfulness signals back into decoding as a reward for autoformalization."
+    "Bidirectional Provability Fingerprinting compares forward and backward consequence neighborhoods in the ambient theory.",
+    "Counterfactual Probe Generation creates contrastive probes to target specific drift directions.",
+    "Adaptive Probe Budget Allocation and Faithfulness-Guided Decoding use probe signals to spend verification effort efficiently and steer generation."
   ],
-  "evidence_signal": "On DriftBench with 2,183 NL/Lean 4 pairs, BPF plus CPG detected 89.6% of drifted formalizations at a 3.0% false-positive rate, outperforming typecheck (41.2%) and LLM-judge (63.3%) baselines; FGD reduced drifted outputs by 47%.",
-  "watch_item": "The approach depends on well-designed probes and the ambient theory’s consequence structure, so performance may degrade when the target theorem is underspecified or the benchmark does not cover a domain’s drift modes.",
+  "evidence_signal": "On DriftBench (2,183 NL/Lean 4 pairs), BPF+cpg detects 89.6% of drifted formalizations at a 3.0% false-positive rate, outperforming typecheck and LLM-judge baselines.",
+  "watch_item": "The approach depends on generating informative probes and theory-specific consequence checks, so scalability and coverage may vary with the complexity of the formal library.",
   "hashtags": [
     "#TheoremProving",
     "#Autoformalization",
-    "#FormalMethods",
     "#Lean4",
-    "#AIforMath"
+    "#SemanticFaithfulness",
+    "#FormalMethods"
   ],
   "paper_id": "2026-06-15-arxiv-the_faithfulness_gap_certifying_semantic_equivalence_between_natural_language_and_formal_m",
   "paper_title": "The Faithfulness Gap: Certifying Semantic Equivalence Between Natural-Language and Formal Mathematical Statements",
   "paper_date": "2026-06-15",
   "paper_category": "Theorem Proving",
-  "generated_at": "2026-06-17T16:38:57",
+  "generated_at": "2026-06-18T16:31:15",
   "generator": "openai"
 }
