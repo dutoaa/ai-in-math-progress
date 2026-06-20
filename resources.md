@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-06-19
+Generated: 2026-06-20
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Evolutionary Two-Stage Hyperparameter Optimization Strategies for Physics-Informed Neural Networks
@@ -107,7 +107,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.18305v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-starter_iterator_neural_operator_a_unified_architecture_for_high_fidelity_forward_and_inve_infographic.json
 
-## 14. Topological Data Analysis for High-Dimensional Dynamic Process Monitoring
+## 14. Agentic AutoResearch forSpace Autonomy: An Auditable, LLM-Driven Research Agent for Aerospace Control Problems
+
+- Date: 2026-06-18
+- Category: AI math
+- arXiv: https://arxiv.org/abs/2606.20394v1
+- PDF: https://arxiv.org/pdf/2606.20394v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-agentic_autoresearch_forspace_autonomy_an_auditable_llm_driven_research_agent_for_aerospac_infographic.json
+
+## 15. Topological Data Analysis for High-Dimensional Dynamic Process Monitoring
 
 - Date: 2026-06-18
 - Category: Symbolic Computation
@@ -115,7 +123,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.20443v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-topological_data_analysis_for_high_dimensional_dynamic_process_monitoring_infographic.json
 
-## 15. Shifting-based Optimizable Linear Relaxations for General Activation Functions
+## 16. Shifting-based Optimizable Linear Relaxations for General Activation Functions
 
 - Date: 2026-06-18
 - Category: Theorem Proving
@@ -123,7 +131,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.20292v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-shifting_based_optimizable_linear_relaxations_for_general_activation_functions_infographic.json
 
-## 16. Doeblin Curves
+## 17. Doeblin Curves
 
 - Date: 2026-06-18
 - Category: Optimization and PDEs
@@ -131,7 +139,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.19859v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-doeblin_curves_infographic.json
 
-## 17. Shattering the Autoregressive Curse: Dynamic Epistemic Entropy Orchestrated Erasable Reinforcement Learning for LLMs
+## 18. Shattering the Autoregressive Curse: Dynamic Epistemic Entropy Orchestrated Erasable Reinforcement Learning for LLMs
 
 - Date: 2026-06-16
 - Category: Mathematical Reasoning
@@ -139,7 +147,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.17735v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-shattering_the_autoregressive_curse_dynamic_epistemic_entropy_orchestrated_erasable_reinfo_infographic.json
 
-## 18. DeFAb: A Verifiable Benchmark for Defeasible Abduction in Foundation Models
+## 19. DeFAb: A Verifiable Benchmark for Defeasible Abduction in Foundation Models
 
 - Date: 2026-06-17
 - Category: Theorem Proving
@@ -147,18 +155,10 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.18557v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-17-arxiv-defab_a_verifiable_benchmark_for_defeasible_abduction_in_foundation_models_infographic.json
 
-## 19. Process-Verified Reinforcement Learning for Theorem Proving via Lean
+## 20. Process-Verified Reinforcement Learning for Theorem Proving via Lean
 
 - Date: 2026-06-18
 - Category: Theorem Proving
 - arXiv: https://arxiv.org/abs/2606.20068v1
 - PDF: https://arxiv.org/pdf/2606.20068v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-process_verified_reinforcement_learning_for_theorem_proving_via_lean_infographic.json
-
-## 20. LLM Parameters for Math Across Languages: Shared or Separate?
-
-- Date: 2026-06-16
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.18453v1
-- PDF: https://arxiv.org/pdf/2606.18453v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-llm_parameters_for_math_across_languages_shared_or_separate_infographic.json

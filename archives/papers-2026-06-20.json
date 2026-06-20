@@ -26,29 +26,29 @@
         "url": "https://arxiv.org/pdf/2606.20442v1"
       }
     ],
-    "score": 94,
+    "score": 99,
     "infographic": {
-      "key_insight": "A two-stage evolutionary search can make PINN training more reliable by first cheaply screening hyperparameters with short runs and then fully training only the most promising configurations.",
-      "engineering_relevance": "This provides a practical way to improve PDE-solving PINNs under fixed compute budgets, especially when training is unstable and hyperparameter sensitivity is high.",
+      "key_insight": "A two-stage evolutionary hyperparameter search can make PINN training more robust by using cheap low-fidelity screening first and full training only for the most promising configurations.",
+      "engineering_relevance": "This provides a practical way to improve PDE-solver accuracy under fixed compute budgets when PINNs are sensitive to hyperparameters and prone to unstable convergence.",
       "method": [
-        "Use an evolutionary algorithm to explore mixed, black-box hyperparameter spaces.",
-        "Run low-fidelity, truncated training epochs to quickly rank candidate PINN settings.",
-        "Fully train the top candidates with standard gradient-based optimization in a second stage."
+        "Stage 1: run truncated, low-fidelity PINN trainings to evaluate many hyperparameter candidates quickly.",
+        "Use an evolutionary algorithm to search a mixed, noisy black-box hyperparameter space.",
+        "Stage 2: fully train only the top candidates with standard gradient-based optimizers."
       ],
-      "evidence_signal": "The approach was evaluated on Advection, Klein-Gordon, and Helmholtz benchmarks and reportedly achieved lower mean error than standard training under constrained computational resources.",
-      "watch_item": "The extra outer-loop search adds implementation complexity and may still depend on careful budget allocation between screening and full training.",
+      "evidence_signal": "The approach was evaluated on Advection, Klein-Gordon, and Helmholtz problems and is reported to consistently beat standard training with significantly lower mean error under constrained computation.",
+      "watch_item": "The low-fidelity screening may mis-rank candidates if early training behavior does not reflect final PINN performance, so budget allocation and selection criteria need care.",
       "hashtags": [
-        "#PhysicsInformedNeuralNetworks",
-        "#HyperparameterOptimization",
-        "#EvolutionaryAlgorithms",
+        "#PINNs",
+        "#EvolutionaryOptimization",
         "#PDEs",
+        "#HyperparameterTuning",
         "#ScientificMachineLearning"
       ],
       "paper_id": "2026-06-18-arxiv-evolutionary_two_stage_hyperparameter_optimization_strategies_for_physics_informed_neural",
       "paper_title": "Evolutionary Two-Stage Hyperparameter Optimization Strategies for Physics-Informed Neural Networks",
       "paper_date": "2026-06-18",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-20T15:02:45",
+      "generated_at": "2026-06-19T15:58:42",
       "generator": "openai"
     }
   },
@@ -78,29 +78,29 @@
         "url": "https://arxiv.org/pdf/2606.19754v1"
       }
     ],
-    "score": 92,
+    "score": 97,
     "infographic": {
-      "key_insight": "Physics-Informed Broad Learning System (PIBLS) solves PDEs by turning the physics constraints into a direct least-squares problem, enabling fast, backpropagation-free training with a proven universal approximation guarantee.",
-      "engineering_relevance": "PIBLS offers a practical mesh-free alternative for real-time simulation and design optimization when traditional solvers are too costly and PINNs are too slow or unstable.",
+      "key_insight": "Physics-Informed Broad Learning System (PIBLS) solves PDEs with a backpropagation-free least-squares formulation, combining mesh-free physics constraints with a proven universal approximation property.",
+      "engineering_relevance": "PIBLS offers a faster and more stable alternative to PINNs for real-time simulation, design optimization, and other PDE-driven engineering workflows.",
       "method": [
-        "Reformulate PDE solving as a least-squares optimization problem.",
-        "Use a broad learning system instead of backpropagation-based training.",
-        "Extend the framework to nonlinear PDEs and prove universal approximation."
+        "Reformulate PDE solving as a direct least-squares optimization problem.",
+        "Use a broad learning system architecture instead of iterative backpropagation.",
+        "Extend the framework to nonlinear PDEs with an improved algorithm and approximation proof."
       ],
-      "evidence_signal": "On linear and nonlinear PDE benchmarks, PIBLS is reported to be 1–3 orders of magnitude faster than conventional PINNs while achieving higher solution accuracy.",
-      "watch_item": "The direct-solve approach may still depend on stable linear-system conditioning and careful formulation for complex nonlinear PDEs.",
+      "evidence_signal": "The abstract reports tests on linear and nonlinear PDEs where PIBLS is 1–3 orders of magnitude faster than conventional PINNs while achieving higher accuracy.",
+      "watch_item": "Performance and robustness may depend on problem setup and the quality of the nonlinear solver/least-squares formulation, so generalization to harder PDE classes should be validated carefully.",
       "hashtags": [
-        "#PhysicsInformedLearning",
         "#PDEs",
-        "#ScientificMachineLearning",
+        "#PhysicsInformedLearning",
         "#BroadLearningSystem",
-        "#PINNs"
+        "#ScientificMachineLearning",
+        "#Optimization"
       ],
       "paper_id": "2026-06-18-arxiv-learning_universal_approximations_for_partial_differential_equations_with_physics_informed",
       "paper_title": "Learning universal approximations for partial differential equations with Physics-Informed Broad Learning System",
       "paper_date": "2026-06-18",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-20T15:02:49",
+      "generated_at": "2026-06-19T15:58:45",
       "generator": "openai"
     }
   },
@@ -131,29 +131,29 @@
         "url": "https://arxiv.org/pdf/2606.18175v1"
       }
     ],
-    "score": 90,
+    "score": 95,
     "infographic": {
-      "key_insight": "A convex quasilinearization strategy turns nonlinear PDE solving into a sequence of linear least-squares problems with physics-informed neural network trial spaces that are linear in their trainable parameters.",
-      "engineering_relevance": "This can improve reliability and efficiency for engineering PDE solvers by avoiding nonconvex gradient training while preserving high accuracy on challenging nonlinear flow and elasticity problems.",
+      "key_insight": "LiL-Q turns nonlinear PDE solving into a sequence of convex linear least-squares problems by combining quasilinearization with physics-informed neural networks whose parameters enter linearly.",
+      "engineering_relevance": "It offers a more stable and parameter-efficient alternative to standard PINN training for difficult forward PDE problems in fluid flow, elasticity, porous media, and reaction-diffusion systems.",
       "method": [
-        "Bellman-Kalaba quasilinearization linearizes the nonlinear PDE into successive subproblems.",
-        "Each subproblem is discretized by collocation and solved via direct QR-based least squares.",
-        "Uses Linear-in-Learnables (LiL) PINN trial spaces such as random features, spectral polynomials, and trigonometric bases."
+        "Bellman-Kalaba quasilinearization linearizes the nonlinear PDE at each outer step.",
+        "Each linear subproblem is solved by direct QR-based least-squares on a Linear-in-Learnables trial space.",
+        "The trial space can use random features, spectral polynomials, or trigonometric bases within a PINN formulation."
       ],
-      "evidence_signal": "The method was tested on seven benchmarks, including Bratu, Burgers, Buckley-Leverett, elasticity, Navier-Stokes in 2D/3D, and Darcy flow, and typically converged in single-digit outer iterations with strong parameter efficiency.",
-      "watch_item": "Convergence is local and depends on a smallness condition, so performance may degrade if the initial guess or nonlinearity is too strong.",
+      "evidence_signal": "The authors report single-digit outer iterations on seven benchmarks, machine-precision recovery when the exact solution lies in the trial space, and up to two orders of magnitude fewer trainable parameters than compared PINN solvers on Navier-Stokes cases.",
+      "watch_item": "Convergence is local and depends on a smallness condition plus the approximation power of the chosen trial space, so performance may degrade if the initial guess or basis is inadequate.",
       "hashtags": [
-        "#PDEs",
-        "#PhysicsInformedNeuralNetworks",
-        "#Optimization",
-        "#ScientificComputing",
-        "#NumericalMethods"
+        "#PhysicsInformedNets",
+        "#NonlinearPDEs",
+        "#Quasilinearization",
+        "#ConvexOptimization",
+        "#ScientificMachineLearning"
       ],
       "paper_id": "2026-06-16-arxiv-a_convex_quasilinearization_method_for_solving_nonlinear_pdes_with_physics_informed_neural",
       "paper_title": "A Convex Quasilinearization Method for Solving Nonlinear PDEs with Physics-Informed Neural Networks",
       "paper_date": "2026-06-16",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-20T15:02:52",
+      "generated_at": "2026-06-19T15:58:47",
       "generator": "openai"
     }
   },
@@ -184,29 +184,29 @@
         "url": "https://arxiv.org/pdf/2606.20467v1"
       }
     ],
-    "score": 86,
+    "score": 91,
     "infographic": {
-      "key_insight": "Agentic Symbolic Search (ASYS) uses a prior-guided agent plus evolutionary and gradient optimization to discover interpretable symbolic PDE laws and approximations beyond manual derivations, meshes, or neural nets.",
-      "engineering_relevance": "It offers an automated way to turn PDE theory and constraints into reusable analytical representations that can support model understanding, simulation guidance, and downstream design decisions.",
+      "key_insight": "Agentic Symbolic Search (ASYS) turns PDE theory and prior knowledge into differentiable symbolic programs, then refines their forms and parameters to recover or approximate interpretable PDE laws.",
+      "engineering_relevance": "The method could give engineers and scientists compact, human-readable PDE models that are easier to analyze, validate, and generalize than mesh outputs or black-box neural predictions.",
       "method": [
-        "Agent translates PDE theory, problem constraints, and prior search experience into differentiable symbolic programs.",
-        "Evolutionary search refines the symbolic form while gradient descent fits continuous parameters.",
-        "Acts as inductive-bias injection for recovering known formulas or constructing new analytical approximations."
+        "Agent uses PDE theory, problem constraints, and past search experience to propose symbolic candidates.",
+        "Evolutionary search refines the symbolic structure while gradient-based optimization fits continuous parameters.",
+        "Produces analytical expressions or approximations instead of only numerical tables or neural surrogates."
       ],
-      "evidence_signal": "Across five PDE problems spanning bounded dynamics, finite-time blow-up, and free-boundary focusing, ASYS produced interpretable formulas such as a geometric interface law for Allen-Cahn 2D dynamics and a nine-parameter contraction law for Keller-Segel blow-up.",
-      "watch_item": "The approach depends on strong priors and search design, so its robustness and scalability to harder PDE families may be sensitive to the quality of symbolic constraints and optimization setup.",
+      "evidence_signal": "The abstract reports evaluation on five PDE problems, spanning bounded dynamics, finite-time blow-up, and free-boundary focusing, including previously unavailable interpretable formulas such as an Allen-Cahn interface law and a Keller-Segel contraction law.",
+      "watch_item": "Performance may depend on the quality of prior guidance and symbolic search space design, so strong domain input and careful implementation are likely necessary.",
       "hashtags": [
         "#PDEs",
         "#SymbolicRegression",
-        "#ScientificML",
+        "#ScientificAI",
         "#Optimization",
-        "#InterpretableAI"
+        "#InterpretableML"
       ],
       "paper_id": "2026-06-18-arxiv-agentic_symbolic_search_characterizing_pdes_beyond_hand_crafted_expressions_meshes_and_neu",
       "paper_title": "Agentic Symbolic Search: Characterizing PDEs Beyond Hand-crafted Expressions, Meshes, and Neural Networks",
       "paper_date": "2026-06-18",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-20T15:02:54",
+      "generated_at": "2026-06-19T15:58:50",
       "generator": "openai"
     }
   },
@@ -236,29 +236,29 @@
         "url": "https://arxiv.org/pdf/2606.19876v1"
       }
     ],
-    "score": 81,
+    "score": 86,
     "infographic": {
-      "key_insight": "Using reverse Fisher divergence instead of forward Fisher divergence makes gradient descent globally convergent for Gaussian-mixture score matching under stronger, more favorable optimization dynamics.",
-      "engineering_relevance": "This suggests a more stable training objective for generative modeling, diffusion-style score estimation, and unnormalized density fitting when mixture structure is present.",
+      "key_insight": "Using the reverse Fisher divergence makes gradient descent globally convergent for Gaussian-mixture score matching in settings where the standard forward objective can be unstable or initialization-dependent.",
+      "engineering_relevance": "This gives a more reliable optimization target for training score-based generative models, diffusion-style estimators, and unnormalized density fitters when mixture structure is present.",
       "method": [
-        "Optimize reverse Fisher divergence, where expectations are taken over the student distribution.",
-        "Prove global GD convergence for a Gaussian teacher with a Gaussian-mixture student having fixed weights and identity covariances.",
-        "Extend to Gaussian-mixture teachers under random initialization and a ~Ω(1)-separation condition on target means using a Lyapunov-based dynamics analysis."
+        "Replace the forward Fisher divergence with the reverse Fisher divergence, taking expectation under the student distribution.",
+        "Analyze gradient descent with a new Lyapunov function to prove monotonic progress and convergence.",
+        "Handle both a single-Gaussian teacher and a separated Gaussian-mixture teacher under random initialization."
       ],
-      "evidence_signal": "The abstract reports theoretical convergence guarantees, including high-probability component matching and total-variation convergence under stated separation and initialization assumptions.",
-      "watch_item": "The guarantees rely on fixed weights, identity covariances, random initialization, and sufficiently separated target means, so performance may degrade outside this regime.",
+      "evidence_signal": "The paper provides theoretical convergence guarantees: arbitrary initialization for a single-Gaussian teacher and high-probability global convergence under random initialization plus ildeΩ(1)-separation for mixture teachers.",
+      "watch_item": "The strongest mixture-theoretic guarantee depends on a separation assumption and random initialization, so performance may be less certain when components overlap heavily.",
       "hashtags": [
         "#ScoreMatching",
         "#GaussianMixtures",
         "#GradientDescent",
         "#ReverseFisherDivergence",
-        "#TheoremProving"
+        "#GenerativeModels"
       ],
       "paper_id": "2026-06-18-arxiv-global_convergence_of_gradient_descent_for_score_matching_in_gaussian_mixtures_via_reverse",
       "paper_title": "Global Convergence of Gradient Descent for Score Matching in Gaussian Mixtures via Reverse Fisher Divergence",
       "paper_date": "2026-06-18",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-06-20T15:02:57",
+      "generated_at": "2026-06-19T15:58:53",
       "generator": "openai"
     }
   },
@@ -288,17 +288,17 @@
         "url": "https://arxiv.org/pdf/2606.19521v1"
       }
     ],
-    "score": 75,
+    "score": 80,
     "infographic": {
-      "key_insight": "Preference Pareto Exploration (PPE) lets users navigate deep multi-task trade-offs interactively by moving along the Pareto manifold while respecting chosen preferences.",
-      "engineering_relevance": "It offers a practical way to tune deep multi-task models when simple weighted-sum losses are too restrictive or too expensive to retune repeatedly.",
+      "key_insight": "PPE is an interactive predictor-corrector framework that navigates the Pareto front of deep multi-task models while respecting user preferences and the front's geometry.",
+      "engineering_relevance": "It offers a practical way to tune trade-offs in deep learning without repeated costly re-optimization across many weighted-sum trials.",
       "method": [
-        "Predictor-corrector optimization on the Pareto-optimal manifold",
-        "Predictor step follows the decision maker’s preference tangentially",
-        "Krylov subspace approximation avoids explicit Hessian computation using matrix-vector products via automatic differentiation"
+        "Predict along the Pareto manifold tangentially in the direction of the decision maker's preference.",
+        "Correct each predicted point to a new Pareto-optimal trade-off.",
+        "Use a Krylov subspace method with automatic differentiation to avoid explicit Hessian computations."
       ],
-      "evidence_signal": "The abstract reports validation on toy problems and deep learning examples, showing functionality and performance in both settings.",
-      "watch_item": "Interactive Pareto navigation may still depend on a well-behaved Pareto geometry and careful numerical tuning of the predictor-corrector and Krylov steps.",
+      "evidence_signal": "The abstract reports validation on both toy problems and deep learning examples, showing functionality and performance in practice.",
+      "watch_item": "As an interactive method, PPE may require careful choice of preference inputs and reliable matrix-vector products to remain stable and efficient.",
       "hashtags": [
         "#MultiTaskLearning",
         "#ParetoOptimization",
@@ -310,7 +310,7 @@
       "paper_title": "Interactive Pareto navigation for deep multi-task learning",
       "paper_date": "2026-06-17",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-06-20T15:02:59",
+      "generated_at": "2026-06-19T15:58:55",
       "generator": "openai"
     }
   },
@@ -339,21 +339,21 @@
         "url": "https://arxiv.org/pdf/2606.20534v1"
       }
     ],
-    "score": 72,
+    "score": 77,
     "infographic": {
-      "key_insight": "The paper shows that bilevel optimization can be solved to second-order stationarity with an optimal deterministic \\(\\mathcal{O}(\\varepsilon^{-1.5})\\) rate using a single-loop cubic-regularized Newton strategy.",
-      "engineering_relevance": "This enables more efficient hyperparameter, meta-learning, and design optimization pipelines where the upper-level objective is nonconvex but the lower-level problem is strongly convex.",
+      "key_insight": "The paper shows that bilevel optimization can achieve the optimal second-order stationarity rate with a deterministic single-loop cubic regularized Newton method, even when the upper-level problem is nonconvex.",
+      "engineering_relevance": "This gives a more efficient and theoretically optimal framework for hyperparameter tuning, meta-learning, and other nested optimization tasks where bilevel structure is common.",
       "method": [
-        "Builds a double-loop CRN baseline that attains the optimal outer rate but repeatedly solves the lower-level problem.",
-        "Introduces a single-loop cubic regularized Newton method combining one lower-level gradient step with one Newton step for the hypergradient.",
-        "Proves deterministic \\(\\mathcal{O}(\\varepsilon^{-1.5})\\) total oracle complexity for finding an \\(\\varepsilon\\)-SOSP of the hyperfunction."
+        "Builds a double-loop CRN baseline to establish the optimal outer-rate target.",
+        "Proposes a single-loop algorithm with one lower-level gradient step plus one Newton step for the hypergradient.",
+        "Proves deterministic total oracle complexity of O(epsilon^-1.5) for finding an epsilon-SOSP."
       ],
-      "evidence_signal": "The abstract reports theoretical convergence and oracle-complexity guarantees only; no numerical experiments or datasets are mentioned.",
-      "watch_item": "The result depends on accurate hypergradient and hyper-Hessian control, and the abstract notes that seemingly simple method variants may lose convergence.",
+      "evidence_signal": "The abstract reports a deterministic O(epsilon^-1.5) total oracle complexity result, matching the optimal SOSP rate known for single-level cubic regularized Newton methods.",
+      "watch_item": "The convergence guarantee is sensitive to how hypergradient and hyper-Hessian approximations are updated; simple implementation changes may break the proof.",
       "hashtags": [
         "#BilevelOptimization",
         "#SecondOrderMethods",
-        "#NewtonMethod",
+        "#CubicNewton",
         "#Hypergradient",
         "#OptimizationTheory"
       ],
@@ -361,7 +361,7 @@
       "paper_title": "On Second-Order Methods for Bilevel Optimization",
       "paper_date": "2026-06-18",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-06-20T15:03:03",
+      "generated_at": "2026-06-19T15:58:57",
       "generator": "openai"
     }
   },
@@ -390,29 +390,29 @@
         "url": "https://arxiv.org/pdf/2606.18624v1"
       }
     ],
-    "score": 69,
+    "score": 74,
     "infographic": {
-      "key_insight": "PragReST teaches LLMs pragmatic inference by self-generating counterfactual reasoning traces and reinforcing them, reducing the tendency to default to literal interpretations.",
-      "engineering_relevance": "The framework offers a data-efficient way to improve language understanding in systems that must infer implied meaning, without requiring human-labeled pragmatic training data or a stronger teacher model.",
+      "key_insight": "PragReST teaches LLMs to reason pragmatically by generating and reinforcing counterfactual alternatives, helping them move beyond literal interpretations.",
+      "engineering_relevance": "This offers a self-supervised recipe for improving language-understanding reliability in downstream systems without requiring human-labeled pragmatic datasets or a stronger teacher model.",
       "method": [
-        "Constructs pragmatic QA data automatically from the model itself.",
-        "Generates counterfactual reasoning traces that contrast observed utterances with plausible alternatives.",
-        "Uses supervised fine-tuning plus reinforcement learning to internalize the counterfactual reasoning policy."
+        "Construct pragmatic QA data and counterfactual reasoning traces automatically.",
+        "Fine-tune models with supervised learning to internalize the traces.",
+        "Use reinforcement learning to reinforce counterfactual reasoning while preserving general capabilities."
       ],
-      "evidence_signal": "Evaluated on four pragmatic benchmarks (PragMega, Ludwig, MetoQA, AltPrag), PragReST outperformed backbones and non-counterfactual variants, improving accuracy by 5.37 and 5.50 percentage points for Qwen3-8B and Qwen3-14B on accuracy-based tasks.",
-      "watch_item": "The gains depend on high-quality counterfactual generation, so noisy or weakly grounded synthetic traces could limit robustness in new domains.",
+      "evidence_signal": "The method was evaluated on four pragmatic benchmarks—PragMega, Ludwig, MetoQA, and AltPrag—and improved instruct backbones by 5.37% and 5.50% absolute for Qwen3-8B and Qwen3-14B on accuracy-based tasks.",
+      "watch_item": "The gains depend on counterfactual reasoning quality, and the approach may be less effective if automatically generated alternatives are weak or biased.",
       "hashtags": [
         "#PragmaticReasoning",
-        "#CounterfactualLearning",
         "#LLMAlignment",
+        "#CounterfactualReasoning",
         "#SelfSupervisedLearning",
-        "#NaturalLanguageUnderstanding"
+        "#NLPResearch"
       ],
       "paper_id": "2026-06-17-arxiv-pragrest_self_reinforcing_counterfactual_reasoning_for_pragmatic_language_understanding",
       "paper_title": "PragReST: Self-Reinforcing Counterfactual Reasoning for Pragmatic Language Understanding",
       "paper_date": "2026-06-17",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-06-20T15:03:11",
+      "generated_at": "2026-06-19T15:59:00",
       "generator": "openai"
     }
   },
@@ -445,29 +445,29 @@
         "url": "https://arxiv.org/pdf/2606.20547v1"
       }
     ],
-    "score": 68,
+    "score": 73,
     "infographic": {
-      "key_insight": "The paper treats each attention token as a bare matrix Lie group element and computes attention from the intrinsic relative pose log(g_i^{-1}g_j), giving an equivariant, closed-form Lie-algebra kernel without learned representation machinery.",
-      "engineering_relevance": "This offers a parameter-efficient attention mechanism for geometric sequence modeling on matrix Lie groups, including non-compact affine transforms with scale and shear, where standard vector-token or irrep-based methods struggle.",
+      "key_insight": "Treating each token as a matrix Lie group element lets attention use the intrinsic relative transform log(g_i^{-1}g_j), yielding a tautologically equivariant, representation-free score.",
+      "engineering_relevance": "This provides a closed-form attention mechanism for geometric data on SE(2), SO(3), and even non-compact affine groups, with far fewer parameters than learned invariant kernels.",
       "method": [
-        "Token = group element g_i, not a feature vector",
-        "Score pairwise similarity with s_ij = -||log(g_i^{-1}g_j)||^2 / τ under a block-weighted Frobenius norm",
-        "Use the canonical relative transform log(g_i^{-1}g_j) to get intrinsic equivariance on any chart where the logarithm is defined"
+        "Tokens are bare group elements g_i, not feature vectors.",
+        "Compute relative pose g_i^{-1}g_j and map it via the Lie algebra logarithm.",
+        "Score attention by the negative squared algebra norm: s_ij = -||log(g_i^{-1}g_j)||^2_λ / τ."
       ],
-      "evidence_signal": "The abstract reports sequence-completion experiments on SE(2), SO(3), and Aff(2), where the closed-form score matches a learned MLP kernel, outperforms it on SE(2), uses 50–80× fewer score parameters, and preserves invariance far better than a vector-token baseline.",
-      "watch_item": "The method depends on choosing a logarithm chart that contains the relevant relative poses, so chart coverage and numerical stability near singular regions are practical implementation concerns.",
+      "evidence_signal": "In sequence-completion tests on SE(2), SO(3), and Aff(2), the closed-form score matched a learned MLP kernel on the same invariant, beat it on SE(2), used 50–80x fewer score parameters, and preserved invariance far better than a vector-token baseline.",
+      "watch_item": "The method depends on a logarithm chart that contains the relative poses, so practical use requires staying within the valid chart domain and handling non-compact group numerics carefully.",
       "hashtags": [
         "#LieGroups",
-        "#AttentionMechanisms",
-        "#EquivariantML",
+        "#Attention",
         "#GeometricDeepLearning",
-        "#MatrixLieGroups"
+        "#SE2",
+        "#SO3"
       ],
       "paper_id": "2026-06-18-arxiv-the_token_is_a_group_element_on_lie_algebra_attention_over_matrix_lie_groups",
       "paper_title": "The Token Is a Group Element: On Lie-Algebra Attention over Matrix Lie Groups",
       "paper_date": "2026-06-18",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-06-20T15:03:14",
+      "generated_at": "2026-06-19T15:59:02",
       "generator": "openai"
     }
   },
@@ -498,29 +498,29 @@
         "url": "https://arxiv.org/pdf/2606.19878v1"
       }
     ],
-    "score": 67,
+    "score": 72,
     "infographic": {
-      "key_insight": "PPI-GD reduces gradient oracle cost by interpolating first-order information over patches of the data domain, exploiting smoothness in the training data rather than only in the optimization variables.",
-      "engineering_relevance": "This can lower training-query overhead for large ERM problems when data features are sufficiently smooth and the data dimension is modest enough to support interpolation-based approximations.",
+      "key_insight": "PPI-GD reduces gradient oracle calls by interpolating gradients from equidistant data-domain samples, yielding better oracle complexity than standard GD variants when the loss is sufficiently smooth.",
+      "engineering_relevance": "This suggests a practical path to faster training for large ERM problems when data-domain smoothness can be exploited, especially in high-sample regimes with moderately low data dimension.",
       "method": [
-        "Query the first-order oracle at equidistant points in the data domain.",
-        "Build piecewise tensor-product polynomial interpolants of sampled gradients over local patches.",
-        "Use the interpolated gradient as an inexact update in gradient descent and analyze oracle complexity for strongly convex and non-convex losses."
+        "Query first-order oracle at equidistant points in the data domain",
+        "Build piecewise tensor-product polynomial interpolants of gradient samples on patches",
+        "Use the interpolated gradient inside an inexact gradient descent scheme"
       ],
-      "evidence_signal": "The abstract reports oracle-complexity analysis, with comparisons showing PPI-GD can outperform several GD variants in key regimes under sufficient smoothness assumptions.",
-      "watch_item": "Performance depends on strong smoothness and a data-space dimension bounded by a polylogarithmic function of sample size, so scalability may be limited when these conditions fail.",
+      "evidence_signal": "The paper provides oracle-complexity analysis for strongly convex and non-convex losses and shows improved complexity in key regimes under a polylogarithmic bound on data-space dimension.",
+      "watch_item": "Performance depends on sufficient smoothness and a manageable data-domain dimension, so interpolation error and patch construction may limit gains in practice.",
       "hashtags": [
         "#Optimization",
         "#GradientDescent",
         "#OracleComplexity",
         "#Interpolation",
-        "#MachineLearning"
+        "#ERM"
       ],
       "paper_id": "2026-06-18-arxiv-on_the_oracle_complexity_of_interpolation_based_gradient_descent",
       "paper_title": "On the Oracle Complexity of Interpolation-Based Gradient Descent",
       "paper_date": "2026-06-18",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-20T15:03:16",
+      "generated_at": "2026-06-19T15:59:05",
       "generator": "openai"
     }
   },
@@ -550,29 +550,29 @@
         "url": "https://arxiv.org/pdf/2606.19268v1"
       }
     ],
-    "score": 66,
+    "score": 71,
     "infographic": {
-      "key_insight": "The paper introduces the Patnaik-Pearson dimension, a new intrinsic-dimension estimator for data manifolds, and shows it can track how neural-network representations change across layers.",
-      "engineering_relevance": "This gives practitioners a geometry-based diagnostic for understanding token embeddings and internal representations in transformers, with possible links to model scaling and spectral properties of weights.",
+      "key_insight": "The paper introduces the Patnaik-Pearson dimension, a new intrinsic-dimension estimator for neural-network representations that connects geometric structure with spectral power-law behavior.",
+      "engineering_relevance": "It offers a tool for probing how token embeddings and hidden states change across layers in transformers, which can help diagnose representation compression, over-parameterization, and feature evolution.",
       "method": [
-        "Builds a new intrinsic-dimension measure inspired by TwoNN, HTSR, and SETOL.",
-        "Proves theoretical properties of the estimator and studies its behavior under common neural-network transformations.",
-        "Connects the estimator to Pareto-tailed weight spectra and compares it on BERT-base and DeepSeek-R1-Distill-Qwen-1."
+        "Defines a new intrinsic-dimension measure for data manifolds inspired by TwoNN, HTSR, and SETOL.",
+        "Proves theoretical properties of the estimator and studies how it transforms under neural-network-style operations.",
+        "Compares the dimension estimate to Pareto-tail behavior of weight-matrix spectra and applies it to BERT-base and DeepSeek-R1-Distill-Qwen-1."
       ],
-      "evidence_signal": "The abstract reports both theoretical analysis and numerical experiments on transformer token embeddings, including layerwise evolution of the estimated intrinsic dimension.",
-      "watch_item": "Results may depend on the assumed manifold structure and on fitting power-law tails, which can be sensitive to finite-sample effects and implementation choices.",
+      "evidence_signal": "The abstract reports both theoretical analysis and numerical experiments on transformer models, tracking the intrinsic dimension of token embeddings at initialization and across layers.",
+      "watch_item": "The method’s interpretation may depend on assumptions such as Pareto-like empirical spectral densities, so results may be less direct when spectra deviate from a power law.",
       "hashtags": [
         "#IntrinsicDimension",
-        "#Transformers",
         "#NeuralNetworks",
+        "#Transformers",
         "#SpectralAnalysis",
-        "#DeepLearningTheory"
+        "#GeometryAndTopology"
       ],
       "paper_id": "2026-06-17-arxiv-patnaik_pearson_intrinsic_dimension_for_internal_representations_of_neural_networks",
       "paper_title": "Patnaik-Pearson intrinsic dimension for internal representations of neural networks",
       "paper_date": "2026-06-17",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-06-20T15:03:19",
+      "generated_at": "2026-06-19T15:59:08",
       "generator": "openai"
     }
   },
@@ -601,29 +601,29 @@
         "url": "https://arxiv.org/pdf/2606.18098v1"
       }
     ],
-    "score": 66,
+    "score": 71,
     "infographic": {
-      "key_insight": "The paper shows that adding retrieval, error tracing, and counterexample guidance can improve LLM-assisted theorem proving for formally verifying blockchain consensus protocols.",
-      "engineering_relevance": "This makes formal verification of complex distributed systems more accessible and efficient, especially for security-critical blockchain consensus implementations.",
+      "key_insight": "The paper shows that adding retrieval, error tracing, and counterexample guidance can improve automated theorem proving for formally verifying consensus protocols in Isabelle.",
+      "engineering_relevance": "This work points to a practical path for making formal verification of blockchain consensus systems more accessible, faster, and more scalable for real-world engineering use.",
       "method": [
-        "Built an enhanced IsabeLLM pipeline for Isabelle theorem proving",
-        "Added Retrieval-Augmented Generation to supply more relevant proof context",
-        "Integrated error tracing, counterexample generation, and updated Isabelle/Sledgehammer compatibility"
+        "Builds on IsabeLLM, an AI-assisted theorem proving tool for Isabelle",
+        "Adds a Retrieval-Augmented Generation pipeline to provide better context to the LLM",
+        "Implements error tracing, counterexample generation, and compatibility updates for the latest Isabelle and Sledgehammer"
       ],
-      "evidence_signal": "The approach was evaluated by comparing the original and improved IsabeLLM on completing the formal verification of Bitcoin’s Proof of Work consensus.",
-      "watch_item": "Results are tied to one consensus case study, so broader reliability across other protocols and proof domains still needs validation.",
+      "evidence_signal": "The evaluation compares the original and improved IsabeLLM versions on completing the formal verification of Bitcoin's Proof of Work consensus.",
+      "watch_item": "The approach depends on toolchain compatibility and the quality of retrieved or generated context, which may affect robustness across different proofs.",
       "hashtags": [
-        "#TheoremProving",
+        "#AutomatedTheoremProving",
         "#FormalVerification",
-        "#AIforMath",
-        "#BlockchainSecurity",
-        "#Isabelle"
+        "#ConsensusProtocols",
+        "#Isabelle",
+        "#BlockchainSecurity"
       ],
       "paper_id": "2026-06-16-arxiv-isabellm_automated_theorem_proving_applied_to_formally_verifying_consensus",
       "paper_title": "IsabeLLM: Automated Theorem Proving Applied to Formally Verifying Consensus",
       "paper_date": "2026-06-16",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-06-20T15:03:21",
+      "generated_at": "2026-06-19T15:59:10",
       "generator": "openai"
     }
   },
@@ -653,81 +653,29 @@
         "url": "https://arxiv.org/pdf/2606.18305v1"
       }
     ],
-    "score": 65,
+    "score": 70,
     "infographic": {
-      "key_insight": "SINO unifies forward and inverse PDE solving by combining frequency-domain initialization with time-domain iterative refinement in a single neural operator.",
-      "engineering_relevance": "It offers a practical surrogate for high-dimensional PDEs, targeting faster and more accurate prediction for simulation, parameter sweeps, imaging, and forecasting.",
+      "key_insight": "SINO unifies neural operator design with starter-iterator ideas from iterative solvers to improve both forward simulation and inverse PDE inference.",
+      "engineering_relevance": "It offers a practical surrogate modeling framework for fast, high-fidelity prediction in many-query scientific workflows such as design sweeps, real-time control, and forecasting.",
       "method": [
-        "Frequency-domain module captures globally stable low-frequency structure.",
-        "Time-domain module iteratively reduces local solution residuals.",
-        "Designed to handle both forward simulation and inverse inference with spectral-spatiotemporal collaboration."
+        "Frequency-domain starter captures globally stable low-frequency structure",
+        "Time-domain iterator refines local residuals and long-term dynamics",
+        "Combines spectral and spatiotemporal learning for complex PDEs"
       ],
-      "evidence_signal": "The abstract reports experiments on Navier-Stokes and acoustic wave equations, plus super-resolution imaging and weather forecasting, showing strong accuracy, generalization, and robustness.",
-      "watch_item": "Performance may depend on careful balancing of spectral and iterative components, especially for complex boundaries or long-horizon dynamics.",
+      "evidence_signal": "The abstract reports strong evaluation on Navier-Stokes, acoustic wave equations, super-resolution imaging, and weather forecasting, with gains in numerical accuracy, generalization, and robustness.",
+      "watch_item": "Performance may depend on careful balancing of frequency-domain initialization and iterative refinement, especially for complex boundaries or very long-horizon dynamics.",
       "hashtags": [
         "#NeuralOperator",
         "#PDEs",
         "#ScientificMachineLearning",
         "#InverseProblems",
-        "#NumericalMethods"
+        "#SpectralLearning"
       ],
       "paper_id": "2026-06-16-arxiv-starter_iterator_neural_operator_a_unified_architecture_for_high_fidelity_forward_and_inve",
       "paper_title": "Starter-Iterator Neural Operator: A Unified Architecture for High-Fidelity Forward and Inverse PDE Problems",
       "paper_date": "2026-06-16",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-06-20T15:03:23",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-18-arxiv-agentic_autoresearch_forspace_autonomy_an_auditable_llm_driven_research_agent_for_aerospac",
-    "arxiv_id": "2606.20394v1",
-    "date": "2026-06-18",
-    "title": "Agentic AutoResearch forSpace Autonomy: An Auditable, LLM-Driven Research Agent for Aerospace Control Problems",
-    "authors": "Amit Jain, Richard Linares",
-    "abstract": "Spacecraft guidance, navigation, and control functions are increasingly realized as learned policies distilled from expert solvers. Developing such a policy is itself a research process: an investigator selects an architecture and hyperparameters, runs experiments, and must determine whether an apparent improvement is genuine or merely seed noise. This paper presents AutoResearch, a framework in which a large language model autonomously drives that loop for aerospace control problems, coupled with a credibility layer, built into the loop, that certifies each reported result against the problem's own measured seed noise. The language model serves only as the offline research agent that develops the control policy; the trained policy it produces is then deployed onboard the spacecraft, while the model itself never operates the vehicle. At each iteration the agent reads a plain-language problem description and the run history, proposes a single edit to the training script, executes it, and logs the outcome. No reported result is credited until it passes the same three checks: measured per-problem seed noise, reseeded verification of the best configuration, and leave-one-out pruning of the agent's edits. The same loop is applied, unchanged, to two aerospace control problems: a Clohessy-Wiltshire relative rendezvous and a safety-constrained collision-avoidance docking past a keep-out zone, each calibrated against a known optimal control benchmark. In both, the audited policy clears the measured seed noise by many standard deviations; an undirected search over the same parameters does not. On the docking problem the gap becomes categorical: undirected search yields no feasible policy, while the learned policy stays outside the keep-out zone on every seed.",
-    "category": "AI math",
-    "source": "arXiv",
-    "published": "2026-06-18T15:48:25Z",
-    "updated": "2026-06-18T15:48:25Z",
-    "primary_category": "cs.RO",
-    "categories": [
-      "cs.RO",
-      "math.OC"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.20394v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.20394v1"
-      }
-    ],
-    "score": 64,
-    "infographic": {
-      "key_insight": "An LLM can act as an offline research agent to iteratively improve spacecraft control policies, while an embedded credibility layer audits each claim against measured seed noise before it is credited.",
-      "engineering_relevance": "This provides a practical, auditable workflow for developing deployable autonomy policies for spacecraft guidance, navigation, and control without letting the LLM operate the vehicle.",
-      "method": [
-        "LLM reads a plain-language problem description and run history",
-        "LLM proposes one script edit per iteration, then the system trains and logs the result",
-        "Each result must pass seed-noise calibration, reseeded verification of the best run, and leave-one-out pruning of agent edits"
-      ],
-      "evidence_signal": "Across a Clohessy-Wiltshire rendezvous task and a safety-constrained docking task, the audited policy exceeded measured seed noise by many standard deviations; on docking, the learned policy remained feasible on every seed while undirected search failed to find any feasible policy.",
-      "watch_item": "The approach depends on accurate seed-noise estimation and robust audit bookkeeping; if either is mis-specified, the credibility guarantees could be overstated.",
-      "hashtags": [
-        "#AIforSpace",
-        "#AutonomousSystems",
-        "#LLMAgents",
-        "#ControlSystems",
-        "#ResearchAutomation"
-      ],
-      "paper_id": "2026-06-18-arxiv-agentic_autoresearch_forspace_autonomy_an_auditable_llm_driven_research_agent_for_aerospac",
-      "paper_title": "Agentic AutoResearch forSpace Autonomy: An Auditable, LLM-Driven Research Agent for Aerospace Control Problems",
-      "paper_date": "2026-06-18",
-      "paper_category": "AI math",
-      "generated_at": "2026-06-20T15:03:26",
+      "generated_at": "2026-06-19T15:59:12",
       "generator": "openai"
     }
   },
@@ -758,29 +706,29 @@
         "url": "https://arxiv.org/pdf/2606.20443v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "The paper turns high-dimensional process time series into topological summaries and learns their evolution with a neural ODE to detect events in real time.",
-      "engineering_relevance": "This gives industrial monitoring a trajectory-based alternative to reconstruction methods, potentially improving sensitivity to diverse process anomalies.",
+      "key_insight": "The paper models high-dimensional process time series as evolving manifolds and uses topological descriptors plus a neural ODE to detect events from changes in structure over time.",
+      "engineering_relevance": "This provides a real-time monitoring framework for industrial systems that can identify diverse process events more effectively than standard reconstruction-based and Koopman autoencoder baselines.",
       "method": [
-        "Represent multivariate time-series data as manifolds.",
-        "Extract topological descriptors to summarize structure.",
-        "Use a neural ordinary differential equation to model the evolution of these descriptors for event detection."
+        "Represent multivariate time-series data as manifolds",
+        "Extract topological descriptors to summarize structure",
+        "Learn temporal evolution of topology with a neural ordinary differential equation"
       ],
-      "evidence_signal": "The method was evaluated on real industrial process data and reported to detect diverse event types better than PCA, autoencoders, and a Koopman autoencoder baseline.",
-      "watch_item": "Performance depends on reliable topological feature extraction and neural ODE training, which may be sensitive to noise, hyperparameters, and changing process conditions.",
+      "evidence_signal": "The method was evaluated on real industrial process data and shown to detect diverse event types effectively, with comparisons against PCA, autoencoders, and Koopman autoencoders.",
+      "watch_item": "Topological feature extraction and neural ODE inference may add computational and tuning complexity for deployment in latency-sensitive monitoring pipelines.",
       "hashtags": [
         "#TopologicalDataAnalysis",
         "#ProcessMonitoring",
         "#NeuralODE",
-        "#TimeSeriesAnalytics",
-        "#AnomalyDetection"
+        "#TimeSeriesAnalysis",
+        "#IndustrialAI"
       ],
       "paper_id": "2026-06-18-arxiv-topological_data_analysis_for_high_dimensional_dynamic_process_monitoring",
       "paper_title": "Topological Data Analysis for High-Dimensional Dynamic Process Monitoring",
       "paper_date": "2026-06-18",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-06-20T15:03:28",
+      "generated_at": "2026-06-19T15:59:14",
       "generator": "openai"
     }
   },
@@ -810,29 +758,29 @@
         "url": "https://arxiv.org/pdf/2606.20292v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "SLiR turns many activation functions into optimizable sound linear bounds by choosing a slope and then shifting the offset to guarantee valid upper and lower relaxations.",
-      "engineering_relevance": "This makes neural network verification easier to scale because new activations need little manual relaxation design, while still supporting formal correctness guarantees.",
+      "key_insight": "SLiR turns activation-function relaxation design into a general, optimizable shifting procedure that yields sound linear upper and lower bounds for many activations.",
+      "engineering_relevance": "This makes neural network verification more scalable and easier to extend to new activation functions, reducing manual relaxation design effort in safety-critical systems.",
       "method": [
         "Parameterize each relaxation by its slope.",
-        "Compute the offset with a shifting procedure that enforces sound bounds over the input domain.",
-        "Use only a Lipschitz constant or a set of critical points, so the method applies broadly to many activations."
+        "Compute the offset with a shifting procedure that preserves soundness over the input domain.",
+        "Use only a Lipschitz constant or critical points, making the method broadly applicable."
       ],
-      "evidence_signal": "The abstract reports tight relaxations across a wide range of activation functions and up to 7.8× more verified properties than state-of-the-art methods.",
-      "watch_item": "Performance depends on having a valid Lipschitz constant or critical points, and the shifting step must be implemented carefully to preserve soundness.",
+      "evidence_signal": "The abstract reports that SLiR achieves tight relaxations across many practical activations and verifies up to 7.8x more properties than state-of-the-art methods.",
+      "watch_item": "Performance and tightness still depend on choosing valid slope parameters and reliable activation-specific bounds, so incorrect inputs could weaken verification quality.",
       "hashtags": [
         "#NeuralNetworkVerification",
+        "#LinearRelaxations",
         "#FormalMethods",
-        "#Optimization",
         "#ActivationFunctions",
-        "#SoundRelaxations"
+        "#SafetyCriticalAI"
       ],
       "paper_id": "2026-06-18-arxiv-shifting_based_optimizable_linear_relaxations_for_general_activation_functions",
       "paper_title": "Shifting-based Optimizable Linear Relaxations for General Activation Functions",
       "paper_date": "2026-06-18",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-06-20T15:03:30",
+      "generated_at": "2026-06-19T15:59:16",
       "generator": "openai"
     }
   },
@@ -864,29 +812,29 @@
         "url": "https://arxiv.org/pdf/2606.19859v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "Doeblin curves generalize Doeblin coefficients into a nonlinear, level-dependent contraction map that can certify information contraction even when the usual coefficient is zero.",
-      "engineering_relevance": "This gives sharper guarantees for noisy optimization, reliable computation under circuit noise, and differential privacy analysis in iterative algorithms.",
+      "key_insight": "Doeblin curves generalize Doeblin coefficients into a nonlinear, divergence-aware contraction profile that can certify information contraction even when the classic coefficient is zero.",
+      "engineering_relevance": "This provides sharper guarantees for noisy optimization, robust computation, and differential privacy analysis in iterative algorithms and circuits.",
       "method": [
-        "Introduce a nonlinear Doeblin curve to quantify contraction over sets of input distributions at specified divergence and power levels.",
-        "Derive a new variational characterization of Doeblin coefficients and use it to bound the proposed curves.",
-        "Develop power-constrained variants and apply them to generalization, error, and privacy bounds in broader settings."
+        "Define a Doeblin curve as a nonlinear map over divergence and power levels for a Markov kernel.",
+        "Develop a variational characterization of Doeblin coefficients and derive upper/lower bounds for the curves.",
+        "Apply the framework to generalization, noisy circuit reliability, and privacy guarantees in broader settings."
       ],
-      "evidence_signal": "The abstract reports analytical upper and lower bounds and multiple application case studies, but does not mention experiments or datasets.",
-      "watch_item": "The guarantees are still theory-driven and may require careful estimation or verification of kernel-specific divergence parameters in practice.",
+      "evidence_signal": "The abstract reports theoretical analysis and bound derivations, with applications demonstrating broader-domain guarantees rather than a new experimental dataset.",
+      "watch_item": "The framework appears mathematically powerful but may be hard to compute or validate tightly for complex channels, especially when only coarse kernel information is available.",
       "hashtags": [
         "#Optimization",
         "#PDEs",
         "#InformationTheory",
         "#DifferentialPrivacy",
-        "#StochasticAlgorithms"
+        "#MarkovChains"
       ],
       "paper_id": "2026-06-18-arxiv-doeblin_curves",
       "paper_title": "Doeblin Curves",
       "paper_date": "2026-06-18",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-06-20T15:03:32",
+      "generated_at": "2026-06-19T15:59:19",
       "generator": "openai"
     }
   },
@@ -915,29 +863,29 @@
         "url": "https://arxiv.org/pdf/2606.17735v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "E^3RL uses the model’s own local cross-entropy as an uncertainty signal to detect and erase faulty reasoning segments, reducing cascading errors in long-horizon generation.",
-      "engineering_relevance": "The method offers a practical path to more stable, memory-efficient LLM reasoning by enabling self-healing updates while reusing KV cache streams.",
+      "key_insight": "E^3RL treats local cross-entropy as an intrinsic uncertainty signal to detect and erase early reasoning defects, helping LLMs self-correct during long-horizon math reasoning.",
+      "engineering_relevance": "The method offers a practical path to more stable, memory-efficient long-sequence inference and training for reasoning-focused LLM systems.",
       "method": [
-        "Derive intrinsic epistemic entropy from endogenous autoregressive cross-entropy.",
-        "Apply segment-level adaptive thresholds and advantage allocation to isolate defective logical spans.",
-        "Erase erroneous segments and continue reasoning with reused historical KV cache for linear-memory operation."
+        "Uses endogenous autoregressive cross-entropy as epistemic entropy, avoiding dependence on external reward signals.",
+        "Applies segment-level adaptive thresholds plus advantage allocation to identify and excise localized logical errors.",
+        "Reuses historical KV caches to support self-healing reasoning with linear memory overhead."
       ],
-      "evidence_signal": "Trained on DeepMath-103k and evaluated on mathematical reasoning benchmarks such as AIME, where 4B and 8B models reportedly exceeded prior SOTA by 5.349% and 6.514%.",
-      "watch_item": "Performance gains depend on reliable segment-level error detection, which may be sensitive to threshold tuning and implementation of cache reuse.",
+      "evidence_signal": "Trained on DeepMath-103k and evaluated on math benchmarks like AIME, where 4B and 8B models improved over prior SOTA by 5.349% and 6.514%, respectively.",
+      "watch_item": "The approach may be sensitive to threshold design and cache-reuse correctness, which could affect stability and reproducibility across models and reasoning tasks.",
       "hashtags": [
         "#LLMReasoning",
         "#ReinforcementLearning",
-        "#MathematicalReasoning",
-        "#SelfHealingAI",
+        "#MathAI",
+        "#SelfHealingModels",
         "#EfficientInference"
       ],
       "paper_id": "2026-06-16-arxiv-shattering_the_autoregressive_curse_dynamic_epistemic_entropy_orchestrated_erasable_reinfo",
       "paper_title": "Shattering the Autoregressive Curse: Dynamic Epistemic Entropy Orchestrated Erasable Reinforcement Learning for LLMs",
       "paper_date": "2026-06-16",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-06-20T15:03:34",
+      "generated_at": "2026-06-19T15:59:21",
       "generator": "openai"
     }
   },
@@ -968,29 +916,29 @@
         "url": "https://arxiv.org/pdf/2606.18557v1"
       }
     ],
-    "score": 62,
+    "score": 67,
     "infographic": {
-      "key_insight": "DeFAb turns defeasible abduction into a verifiable benchmark where symbolic checks judge whether a hypothesis correctly explains anomalies without breaking unrelated defaults.",
-      "engineering_relevance": "The benchmark provides a high-precision testbed for evaluating and training foundation models on theory revision, with exact rewards that can support DPO, RLVR, and GRPO-style optimization.",
+      "key_insight": "DeFAb shows that defeasible abduction can be benchmarked with fully verifiable logic, revealing large gaps between symbolic solvers and frontier language models.",
+      "engineering_relevance": "The benchmark provides a rigorous testbed for trustworthy reasoning systems and a verifier that can also serve as an exact reward signal for preference optimization.",
       "method": [
-        "Converts public knowledge bases into defeasible abduction instances with polynomial-time verifiers for derivation, conservativity, and minimality.",
-        "Combines taxonomic and behavioral graph sources to generate 372,648+ instances across three difficulty levels.",
-        "Adds harder variants, including DeFAb-Hard and CONJURE, to stress-test reasoning beyond surface-form matching."
+        "Builds instances from 18 public knowledge sources, combining taxonomies and property graphs.",
+        "Generates 372,648+ defeasible abduction problems with polynomial-time checks for derivation, conservativity, and minimality.",
+        "Adds harder variants, including DeFAb-Hard and CONJURE, to test robustness and creativity."
       ],
-      "evidence_signal": "A rule-based solver achieves 100% accuracy in under 50 microseconds, while frontier language models peak at 65% and fall to 23.5% under rendering-robust evaluation.",
-      "watch_item": "Performance appears highly sensitive to surface rendering, so benchmark results may overstate robustness unless evaluation covers multiple textual formats and contamination is carefully controlled.",
+      "evidence_signal": "Across 33.75M materialized rules, a rule-based solver achieves 100% accuracy in under 50 microseconds per instance, while frontier models peak at 65% and drop to 23.5% under rendering-robust evaluation.",
+      "watch_item": "Performance is highly sensitive to surface rendering and evaluation setup, so benchmark results may not transfer cleanly to real-world open-ended reasoning tasks.",
       "hashtags": [
         "#TheoremProving",
         "#FoundationModels",
-        "#Logic",
-        "#Benchmark",
-        "#AIResearch"
+        "#ReasoningBenchmark",
+        "#SymbolicAI",
+        "#VerifiableAI"
       ],
       "paper_id": "2026-06-17-arxiv-defab_a_verifiable_benchmark_for_defeasible_abduction_in_foundation_models",
       "paper_title": "DeFAb: A Verifiable Benchmark for Defeasible Abduction in Foundation Models",
       "paper_date": "2026-06-17",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-06-20T15:03:37",
+      "generated_at": "2026-06-19T15:59:24",
       "generator": "openai"
     }
   },
@@ -1019,29 +967,80 @@
         "url": "https://arxiv.org/pdf/2606.20068v1"
       }
     ],
-    "score": 61,
+    "score": 66,
     "infographic": {
-      "key_insight": "Lean can provide dense, tactic-level verified feedback during reinforcement learning, not just a final pass/fail signal, improving theorem-proving training.",
-      "engineering_relevance": "This suggests a practical RLVR design for formal reasoning systems where symbolic proof assistants act as process reward oracles, enabling more informative and reliable credit assignment.",
+      "key_insight": "Lean can be used not just to verify proofs at the end, but to provide dense, step-level reward signals during training for theorem-proving RL.",
+      "engineering_relevance": "This enables more sample-efficient and reliable training of language-model provers by grounding credit assignment in symbolic type-theoretic checks instead of sparse binary rewards.",
       "method": [
-        "Parse proof attempts into tactic sequences.",
-        "Use Lean elaboration to label locally sound steps and the earliest failing step.",
-        "Train with a GRPO-style objective using first-error propagation and first-token credit to blend outcome and process rewards."
+        "Parse proof attempts into Lean tactic sequences",
+        "Use Lean elaboration to label locally sound steps and identify the first failing step",
+        "Train with a GRPO-style objective using first-error propagation and first-token credit"
       ],
-      "evidence_signal": "The abstract reports that tactic-level supervision outperforms outcome-only baselines in most settings on benchmarks including MiniF2F and ProofNet, using STP-Lean and DeepSeek-Prover-V1.5.",
-      "watch_item": "The approach depends on reliable Lean parsing/elaboration and may be sensitive to proof representation, error localization, and integration overhead in large-scale training.",
+      "evidence_signal": "Experiments on STP-Lean and DeepSeek-Prover-V1.5 show tactic-level supervision improves performance over outcome-only baselines on benchmarks including MiniF2F and ProofNet.",
+      "watch_item": "The approach depends on robust tactic parsing and Lean's feedback quality, so errors in proof state handling or reward shaping could reduce training stability.",
       "hashtags": [
         "#TheoremProving",
-        "#Lean",
         "#ReinforcementLearning",
+        "#Lean",
         "#FormalMethods",
-        "#AIforMath"
+        "#LLM"
       ],
       "paper_id": "2026-06-18-arxiv-process_verified_reinforcement_learning_for_theorem_proving_via_lean",
       "paper_title": "Process-Verified Reinforcement Learning for Theorem Proving via Lean",
       "paper_date": "2026-06-18",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-06-20T15:03:39",
+      "generated_at": "2026-06-19T15:59:27",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-16-arxiv-llm_parameters_for_math_across_languages_shared_or_separate",
+    "arxiv_id": "2606.18453v1",
+    "date": "2026-06-16",
+    "title": "LLM Parameters for Math Across Languages: Shared or Separate?",
+    "authors": "Behzad Shomali, Luisa Victor, Tim Selbach, Ali Hamza Bashir, David Berghaus, Joachim Koehler",
+    "abstract": "Large language models (LLMs) exhibit substantial cross-lingual variation in mathematical reasoning performance, but it remains unclear whether these differences reflect language-specific parameters or a shared mechanism that manifests differently by language. We present a cross-lingual mechanistic analysis of mathematical reasoning in LLMs, enabling us to localize and compare model parameters that support mathematical reasoning across languages. We find that the extracted math-associated parameters exhibit partial cross-lingual overlap, with the strongest overlap concentrated in intermediate model layers. We further observe that English consistently produces the largest set of math-relevant parameters, whereas lower-resource languages reveal smaller sets of relevant parameters. These results suggest that math-related behavior in multilingual LLMs is neither fully language-invariant nor fully language-specific, but instead exhibits partial cross-lingual parameter overlap with systematic language-dependent differences.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-06-16T20:02:42Z",
+    "updated": "2026-06-16T20:02:42Z",
+    "primary_category": "cs.CL",
+    "categories": [
+      "cs.CL"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.18453v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.18453v1"
+      }
+    ],
+    "score": 65,
+    "infographic": {
+      "key_insight": "Math reasoning in multilingual LLMs is supported by partially shared parameters across languages, with the strongest overlap appearing in intermediate layers rather than being fully language-invariant or language-specific.",
+      "engineering_relevance": "For multilingual model design and adaptation, language-aware parameter sharing may preserve math capability better than assuming one universal set of weights or separate per-language modules.",
+      "method": [
+        "Localized and compared math-associated parameters across languages in an LLM.",
+        "Identified cross-lingual overlap patterns across model layers.",
+        "Compared parameter sets for English versus lower-resource languages."
+      ],
+      "evidence_signal": "The abstract reports a mechanistic cross-lingual analysis showing that English yields the largest set of math-relevant parameters, while lower-resource languages produce smaller sets.",
+      "watch_item": "The results are based on extracted parameter overlap from the abstracted analysis, so practical gains may depend on how well these identified parameters transfer to downstream multilingual math tasks.",
+      "hashtags": [
+        "#LLM",
+        "#MultilingualAI",
+        "#MathReasoning",
+        "#MechanisticInterpretability",
+        "#CrossLingual"
+      ],
+      "paper_id": "2026-06-16-arxiv-llm_parameters_for_math_across_languages_shared_or_separate",
+      "paper_title": "LLM Parameters for Math Across Languages: Shared or Separate?",
+      "paper_date": "2026-06-16",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-06-19T15:59:29",
       "generator": "openai"
     }
   }

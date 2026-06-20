@@ -1,24 +1,24 @@
 {
-  "key_insight": "LiL-Q turns nonlinear PDE solving into a sequence of convex linear least-squares problems by combining quasilinearization with physics-informed neural networks whose parameters enter linearly.",
-  "engineering_relevance": "It offers a more stable and parameter-efficient alternative to standard PINN training for difficult forward PDE problems in fluid flow, elasticity, porous media, and reaction-diffusion systems.",
+  "key_insight": "A convex quasilinearization strategy turns nonlinear PDE solving into a sequence of linear least-squares problems with physics-informed neural network trial spaces that are linear in their trainable parameters.",
+  "engineering_relevance": "This can improve reliability and efficiency for engineering PDE solvers by avoiding nonconvex gradient training while preserving high accuracy on challenging nonlinear flow and elasticity problems.",
   "method": [
-    "Bellman-Kalaba quasilinearization linearizes the nonlinear PDE at each outer step.",
-    "Each linear subproblem is solved by direct QR-based least-squares on a Linear-in-Learnables trial space.",
-    "The trial space can use random features, spectral polynomials, or trigonometric bases within a PINN formulation."
+    "Bellman-Kalaba quasilinearization linearizes the nonlinear PDE into successive subproblems.",
+    "Each subproblem is discretized by collocation and solved via direct QR-based least squares.",
+    "Uses Linear-in-Learnables (LiL) PINN trial spaces such as random features, spectral polynomials, and trigonometric bases."
   ],
-  "evidence_signal": "The authors report single-digit outer iterations on seven benchmarks, machine-precision recovery when the exact solution lies in the trial space, and up to two orders of magnitude fewer trainable parameters than compared PINN solvers on Navier-Stokes cases.",
-  "watch_item": "Convergence is local and depends on a smallness condition plus the approximation power of the chosen trial space, so performance may degrade if the initial guess or basis is inadequate.",
+  "evidence_signal": "The method was tested on seven benchmarks, including Bratu, Burgers, Buckley-Leverett, elasticity, Navier-Stokes in 2D/3D, and Darcy flow, and typically converged in single-digit outer iterations with strong parameter efficiency.",
+  "watch_item": "Convergence is local and depends on a smallness condition, so performance may degrade if the initial guess or nonlinearity is too strong.",
   "hashtags": [
-    "#PhysicsInformedNets",
-    "#NonlinearPDEs",
-    "#Quasilinearization",
-    "#ConvexOptimization",
-    "#ScientificMachineLearning"
+    "#PDEs",
+    "#PhysicsInformedNeuralNetworks",
+    "#Optimization",
+    "#ScientificComputing",
+    "#NumericalMethods"
   ],
   "paper_id": "2026-06-16-arxiv-a_convex_quasilinearization_method_for_solving_nonlinear_pdes_with_physics_informed_neural",
   "paper_title": "A Convex Quasilinearization Method for Solving Nonlinear PDEs with Physics-Informed Neural Networks",
   "paper_date": "2026-06-16",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-06-19T15:58:47",
+  "generated_at": "2026-06-20T15:02:52",
   "generator": "openai"
 }
