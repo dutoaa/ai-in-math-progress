@@ -1,17 +1,17 @@
 {
-  "key_insight": "The paper treats each attention token as a bare matrix Lie group element and computes attention from the intrinsic relative pose log(g_i^{-1}g_j), giving an equivariant, closed-form Lie-algebra kernel without learned representation machinery.",
-  "engineering_relevance": "This offers a parameter-efficient attention mechanism for geometric sequence modeling on matrix Lie groups, including non-compact affine transforms with scale and shear, where standard vector-token or irrep-based methods struggle.",
+  "key_insight": "The paper introduces Lie-Algebra Attention, where each token is a bare matrix Lie group element and attention scores are computed directly from the logarithm of relative group poses.",
+  "engineering_relevance": "This gives a closed-form, parameter-efficient, and equivariant attention mechanism that works on matrix Lie groups including non-compact affine groups relevant to geometry-aware sequence modeling.",
   "method": [
-    "Token = group element g_i, not a feature vector",
-    "Score pairwise similarity with s_ij = -||log(g_i^{-1}g_j)||^2 / τ under a block-weighted Frobenius norm",
-    "Use the canonical relative transform log(g_i^{-1}g_j) to get intrinsic equivariance on any chart where the logarithm is defined"
+    "Token = group element g_i with no feature payload or external representation",
+    "Relative invariant: w_ij = log(g_i^{-1} g_j)",
+    "Score: s_ij = -||log(g_i^{-1} g_j)||_lambda^2 / tau using a block-weighted Frobenius norm"
   ],
-  "evidence_signal": "The abstract reports sequence-completion experiments on SE(2), SO(3), and Aff(2), where the closed-form score matches a learned MLP kernel, outperforms it on SE(2), uses 50–80× fewer score parameters, and preserves invariance far better than a vector-token baseline.",
-  "watch_item": "The method depends on choosing a logarithm chart that contains the relevant relative poses, so chart coverage and numerical stability near singular regions are practical implementation concerns.",
+  "evidence_signal": "On sequence-completion tasks over SE(2), SO(3), and Aff(2), the closed-form score matched an MLP kernel on the same invariant, outperformed it on SE(2), used 50–80x fewer score parameters, and preserved invariance far better than a vector-token baseline.",
+  "watch_item": "The method depends on a valid logarithm chart containing the relative poses, so implementation must handle chart coverage, branch choices, and numerical stability near singular regions.",
   "hashtags": [
     "#LieGroups",
     "#AttentionMechanisms",
-    "#EquivariantML",
+    "#Equivariance",
     "#GeometricDeepLearning",
     "#MatrixLieGroups"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "The Token Is a Group Element: On Lie-Algebra Attention over Matrix Lie Groups",
   "paper_date": "2026-06-18",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-06-20T15:03:14",
+  "generated_at": "2026-06-21T15:11:00",
   "generator": "openai"
 }

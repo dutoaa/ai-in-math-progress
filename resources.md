@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-06-20
+Generated: 2026-06-21
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Evolutionary Two-Stage Hyperparameter Optimization Strategies for Physics-Informed Neural Networks
