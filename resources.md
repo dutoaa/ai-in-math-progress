@@ -1,23 +1,23 @@
 # AI math Progress Public Resources
 
-Generated: 2026-06-21
+Generated: 2026-06-22
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. Evolutionary Two-Stage Hyperparameter Optimization Strategies for Physics-Informed Neural Networks
-
-- Date: 2026-06-18
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.20442v1
-- PDF: https://arxiv.org/pdf/2606.20442v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-evolutionary_two_stage_hyperparameter_optimization_strategies_for_physics_informed_neural_infographic.json
-
-## 2. Learning universal approximations for partial differential equations with Physics-Informed Broad Learning System
+## 1. Learning universal approximations for partial differential equations with Physics-Informed Broad Learning System
 
 - Date: 2026-06-18
 - Category: Optimization and PDEs
 - arXiv: https://arxiv.org/abs/2606.19754v1
 - PDF: https://arxiv.org/pdf/2606.19754v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-learning_universal_approximations_for_partial_differential_equations_with_physics_informed_infographic.json
+
+## 2. Evolutionary Two-Stage Hyperparameter Optimization Strategies for Physics-Informed Neural Networks
+
+- Date: 2026-06-18
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.20442v1
+- PDF: https://arxiv.org/pdf/2606.20442v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-evolutionary_two_stage_hyperparameter_optimization_strategies_for_physics_informed_neural_infographic.json
 
 ## 3. A Convex Quasilinearization Method for Solving Nonlinear PDEs with Physics-Informed Neural Networks
 
@@ -83,23 +83,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.19878v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-on_the_oracle_complexity_of_interpolation_based_gradient_descent_infographic.json
 
-## 11. Patnaik-Pearson intrinsic dimension for internal representations of neural networks
-
-- Date: 2026-06-17
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.19268v1
-- PDF: https://arxiv.org/pdf/2606.19268v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-17-arxiv-patnaik_pearson_intrinsic_dimension_for_internal_representations_of_neural_networks_infographic.json
-
-## 12. IsabeLLM: Automated Theorem Proving Applied to Formally Verifying Consensus
-
-- Date: 2026-06-16
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.18098v1
-- PDF: https://arxiv.org/pdf/2606.18098v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-isabellm_automated_theorem_proving_applied_to_formally_verifying_consensus_infographic.json
-
-## 13. Starter-Iterator Neural Operator: A Unified Architecture for High-Fidelity Forward and Inverse PDE Problems
+## 11. Starter-Iterator Neural Operator: A Unified Architecture for High-Fidelity Forward and Inverse PDE Problems
 
 - Date: 2026-06-16
 - Category: Number Theory and Algebra
@@ -107,23 +91,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.18305v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-starter_iterator_neural_operator_a_unified_architecture_for_high_fidelity_forward_and_inve_infographic.json
 
-## 14. Agentic AutoResearch forSpace Autonomy: An Auditable, LLM-Driven Research Agent for Aerospace Control Problems
-
-- Date: 2026-06-18
-- Category: AI math
-- arXiv: https://arxiv.org/abs/2606.20394v1
-- PDF: https://arxiv.org/pdf/2606.20394v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-agentic_autoresearch_forspace_autonomy_an_auditable_llm_driven_research_agent_for_aerospac_infographic.json
-
-## 15. Topological Data Analysis for High-Dimensional Dynamic Process Monitoring
-
-- Date: 2026-06-18
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2606.20443v1
-- PDF: https://arxiv.org/pdf/2606.20443v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-topological_data_analysis_for_high_dimensional_dynamic_process_monitoring_infographic.json
-
-## 16. Shifting-based Optimizable Linear Relaxations for General Activation Functions
+## 12. Shifting-based Optimizable Linear Relaxations for General Activation Functions
 
 - Date: 2026-06-18
 - Category: Theorem Proving
@@ -131,7 +99,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.20292v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-shifting_based_optimizable_linear_relaxations_for_general_activation_functions_infographic.json
 
-## 17. Doeblin Curves
+## 13. Doeblin Curves
 
 - Date: 2026-06-18
 - Category: Optimization and PDEs
@@ -139,7 +107,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.19859v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-doeblin_curves_infographic.json
 
-## 18. Shattering the Autoregressive Curse: Dynamic Epistemic Entropy Orchestrated Erasable Reinforcement Learning for LLMs
+## 14. Shattering the Autoregressive Curse: Dynamic Epistemic Entropy Orchestrated Erasable Reinforcement Learning for LLMs
 
 - Date: 2026-06-16
 - Category: Mathematical Reasoning
@@ -147,7 +115,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.17735v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-shattering_the_autoregressive_curse_dynamic_epistemic_entropy_orchestrated_erasable_reinfo_infographic.json
 
-## 19. DeFAb: A Verifiable Benchmark for Defeasible Abduction in Foundation Models
+## 15. DeFAb: A Verifiable Benchmark for Defeasible Abduction in Foundation Models
 
 - Date: 2026-06-17
 - Category: Theorem Proving
@@ -155,10 +123,42 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.18557v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-17-arxiv-defab_a_verifiable_benchmark_for_defeasible_abduction_in_foundation_models_infographic.json
 
-## 20. Process-Verified Reinforcement Learning for Theorem Proving via Lean
+## 16. Process-Verified Reinforcement Learning for Theorem Proving via Lean
 
 - Date: 2026-06-18
 - Category: Theorem Proving
 - arXiv: https://arxiv.org/abs/2606.20068v1
 - PDF: https://arxiv.org/pdf/2606.20068v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-process_verified_reinforcement_learning_for_theorem_proving_via_lean_infographic.json
+
+## 17. Patnaik-Pearson intrinsic dimension for internal representations of neural networks
+
+- Date: 2026-06-17
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2606.19268v1
+- PDF: https://arxiv.org/pdf/2606.19268v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-17-arxiv-patnaik_pearson_intrinsic_dimension_for_internal_representations_of_neural_networks_infographic.json
+
+## 18. IsabeLLM: Automated Theorem Proving Applied to Formally Verifying Consensus
+
+- Date: 2026-06-16
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.18098v1
+- PDF: https://arxiv.org/pdf/2606.18098v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-isabellm_automated_theorem_proving_applied_to_formally_verifying_consensus_infographic.json
+
+## 19. LLM Parameters for Math Across Languages: Shared or Separate?
+
+- Date: 2026-06-16
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.18453v1
+- PDF: https://arxiv.org/pdf/2606.18453v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-llm_parameters_for_math_across_languages_shared_or_separate_infographic.json
+
+## 20. Algebraic Networks and Architectural Degenerations
+
+- Date: 2026-06-16
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.18440v1
+- PDF: https://arxiv.org/pdf/2606.18440v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-algebraic_networks_and_architectural_degenerations_infographic.json

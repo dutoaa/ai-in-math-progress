@@ -1,13 +1,13 @@
 {
-  "key_insight": "A two-stage evolutionary hyperparameter search can make PINN training more reliable by using cheap screening runs first and full training only on the best candidates.",
-  "engineering_relevance": "This gives practitioners a practical way to improve PDE solution accuracy under limited compute, especially when PINN training is unstable and highly sensitive to hyperparameters.",
+  "key_insight": "A two-stage evolutionary hyperparameter search can make PINN training more reliable by cheaply screening many configurations first and only fully training the most promising ones.",
+  "engineering_relevance": "This improves the practicality of PINNs for PDE-constrained engineering workflows by reducing wasted compute and lowering sensitivity to difficult optimization settings.",
   "method": [
-    "Stage 1: run truncated, low-fidelity PINN trainings to evaluate many hyperparameter configurations quickly.",
-    "Use an evolutionary algorithm as the outer-loop search over mixed architectural and optimization hyperparameters.",
-    "Stage 2: fully train only the top-ranked candidates with standard gradient-based optimizers to refine final performance."
+    "Stage 1: run truncated, low-fidelity PINN trainings to evaluate many hyperparameter candidates as a black-box search problem.",
+    "Use evolutionary algorithms to explore mixed, non-differentiable hyperparameter spaces under noisy loss landscapes.",
+    "Stage 2: fully train the top-ranked candidates with standard gradient-based optimization to refine accuracy."
   ],
-  "evidence_signal": "The approach was evaluated on Advection, Klein-Gordon, and Helmholtz problems and consistently reduced mean error versus standard training within fixed computational budgets.",
-  "watch_item": "The method still depends on the quality of the low-fidelity proxy, so truncated training may mis-rank candidates if early loss behavior does not reflect final PDE accuracy.",
+  "evidence_signal": "The approach was evaluated on three PDE benchmarks—Advection, Klein-Gordon, and Helmholtz—and consistently reduced mean error versus standard training under fixed compute budgets.",
+  "watch_item": "Results may depend on the quality of the low-fidelity proxy and the chosen budget, so poor screening settings could discard good configurations early.",
   "hashtags": [
     "#PINNs",
     "#HyperparameterOptimization",
@@ -19,6 +19,6 @@
   "paper_title": "Evolutionary Two-Stage Hyperparameter Optimization Strategies for Physics-Informed Neural Networks",
   "paper_date": "2026-06-18",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-06-21T15:10:39",
+  "generated_at": "2026-06-22T17:40:04",
   "generator": "openai"
 }
