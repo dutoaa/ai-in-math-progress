@@ -1,17 +1,57 @@
 # AI math Progress Public Resources
 
-Generated: 2026-06-22
+Generated: 2026-06-23
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. Learning universal approximations for partial differential equations with Physics-Informed Broad Learning System
+## 1. What are Key Factors for Updates in RL for LLM Reasoning?
 
-- Date: 2026-06-18
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.19754v1
-- PDF: https://arxiv.org/pdf/2606.19754v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-learning_universal_approximations_for_partial_differential_equations_with_physics_informed_infographic.json
+- Date: 2026-06-21
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.22570v1
+- PDF: https://arxiv.org/pdf/2606.22570v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-21-arxiv-what_are_key_factors_for_updates_in_rl_for_llm_reasoning_infographic.json
 
-## 2. Evolutionary Two-Stage Hyperparameter Optimization Strategies for Physics-Informed Neural Networks
+## 2. Factored Sparse Approximate Inverse Preconditioning via Spectral Optimization
+
+- Date: 2026-06-22
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2606.22742v1
+- PDF: https://arxiv.org/pdf/2606.22742v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-22-arxiv-factored_sparse_approximate_inverse_preconditioning_via_spectral_optimization_infographic.json
+
+## 3. Towards an Automated Reasoning Tool for Complexity Analysis of Automated Reasoners
+
+- Date: 2026-06-22
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2606.23516v1
+- PDF: https://arxiv.org/pdf/2606.23516v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-22-arxiv-towards_an_automated_reasoning_tool_for_complexity_analysis_of_automated_reasoners_infographic.json
+
+## 4. ReNIO: Reweighting Negative Trajectory Importance for LLM On-Policy Distillation
+
+- Date: 2026-06-22
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.23104v1
+- PDF: https://arxiv.org/pdf/2606.23104v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-22-arxiv-renio_reweighting_negative_trajectory_importance_for_llm_on_policy_distillation_infographic.json
+
+## 5. Hierarchical Reinforcement Learning for Sparse-Reward Search in Commutative Algebra
+
+- Date: 2026-06-22
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2606.22922v1
+- PDF: https://arxiv.org/pdf/2606.22922v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-22-arxiv-hierarchical_reinforcement_learning_for_sparse_reward_search_in_commutative_algebra_infographic.json
+
+## 6. Beyond Penalizing Mistakes: Stabilizing Efficiency Training in Large Reasoning Models via Adaptive Correct-Only Rewards
+
+- Date: 2026-06-21
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.22716v1
+- PDF: https://arxiv.org/pdf/2606.22716v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-21-arxiv-beyond_penalizing_mistakes_stabilizing_efficiency_training_in_large_reasoning_models_via_a_infographic.json
+
+## 7. Evolutionary Two-Stage Hyperparameter Optimization Strategies for Physics-Informed Neural Networks
 
 - Date: 2026-06-18
 - Category: Optimization and PDEs
@@ -19,15 +59,71 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.20442v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-evolutionary_two_stage_hyperparameter_optimization_strategies_for_physics_informed_neural_infographic.json
 
-## 3. A Convex Quasilinearization Method for Solving Nonlinear PDEs with Physics-Informed Neural Networks
+## 8. Multigrid Training for Molecular Generation using Graph Neural Networks
 
-- Date: 2026-06-16
+- Date: 2026-06-21
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.18175v1
-- PDF: https://arxiv.org/pdf/2606.18175v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-a_convex_quasilinearization_method_for_solving_nonlinear_pdes_with_physics_informed_neural_infographic.json
+- arXiv: https://arxiv.org/abs/2606.22377v1
+- PDF: https://arxiv.org/pdf/2606.22377v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-21-arxiv-multigrid_training_for_molecular_generation_using_graph_neural_networks_infographic.json
 
-## 4. Agentic Symbolic Search: Characterizing PDEs Beyond Hand-crafted Expressions, Meshes, and Neural Networks
+## 9. Scheduling Thoughts: Learning the Order of Thought in Diffusion Language Models
+
+- Date: 2026-06-22
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.23567v1
+- PDF: https://arxiv.org/pdf/2606.23567v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-22-arxiv-scheduling_thoughts_learning_the_order_of_thought_in_diffusion_language_models_infographic.json
+
+## 10. VeriEvol: Scaling Multimodal Mathematical Reasoning via Verifiable Evol-Instruct
+
+- Date: 2026-06-22
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.23543v1
+- PDF: https://arxiv.org/pdf/2606.23543v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-22-arxiv-verievol_scaling_multimodal_mathematical_reasoning_via_verifiable_evol_instruct_infographic.json
+
+## 11. Adam Converges in Nonsmooth Nonconvex Optimization
+
+- Date: 2026-06-21
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.22326v1
+- PDF: https://arxiv.org/pdf/2606.22326v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-21-arxiv-adam_converges_in_nonsmooth_nonconvex_optimization_infographic.json
+
+## 12. Persistent Homology and Equivariance in Data Analysis: A Topological Introduction
+
+- Date: 2026-06-19
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.21084v1
+- PDF: https://arxiv.org/pdf/2606.21084v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-19-arxiv-persistent_homology_and_equivariance_in_data_analysis_a_topological_introduction_infographic.json
+
+## 13. The Fractal Neural Operator: Overcoming Spectral Bias in Chaotic Attractors via Prime-Harmonic Weierstrass Encodings
+
+- Date: 2026-06-22
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2606.23123v1
+- PDF: https://arxiv.org/pdf/2606.23123v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-22-arxiv-the_fractal_neural_operator_overcoming_spectral_bias_in_chaotic_attractors_via_prime_harmo_infographic.json
+
+## 14. Look Light, Think Heavy: What Multimodal Chain-of-Thought Reasoning Can and Cannot Do
+
+- Date: 2026-06-21
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.22565v1
+- PDF: https://arxiv.org/pdf/2606.22565v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-21-arxiv-look_light_think_heavy_what_multimodal_chain_of_thought_reasoning_can_and_cannot_do_infographic.json
+
+## 15. Convergence of Gradient Descent for General Neural Network Architectures Beyond the NTK Regime
+
+- Date: 2026-06-22
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.23364v1
+- PDF: https://arxiv.org/pdf/2606.23364v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-22-arxiv-convergence_of_gradient_descent_for_general_neural_network_architectures_beyond_the_ntk_re_infographic.json
+
+## 16. Agentic Symbolic Search: Characterizing PDEs Beyond Hand-crafted Expressions, Meshes, and Neural Networks
 
 - Date: 2026-06-18
 - Category: Optimization and PDEs
@@ -35,130 +131,34 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.20467v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-agentic_symbolic_search_characterizing_pdes_beyond_hand_crafted_expressions_meshes_and_neu_infographic.json
 
-## 5. Global Convergence of Gradient Descent for Score Matching in Gaussian Mixtures via Reverse Fisher Divergence
+## 17. SHACR: A Graph-Augmented Semi-Autonomous Framework for Multi-Class Conflict Resolution in Smart Home IoT Automation
 
-- Date: 2026-06-18
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.19876v1
-- PDF: https://arxiv.org/pdf/2606.19876v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-global_convergence_of_gradient_descent_for_score_matching_in_gaussian_mixtures_via_reverse_infographic.json
-
-## 6. Interactive Pareto navigation for deep multi-task learning
-
-- Date: 2026-06-17
+- Date: 2026-06-21
 - Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.19521v1
-- PDF: https://arxiv.org/pdf/2606.19521v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-17-arxiv-interactive_pareto_navigation_for_deep_multi_task_learning_infographic.json
+- arXiv: https://arxiv.org/abs/2606.22312v1
+- PDF: https://arxiv.org/pdf/2606.22312v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-21-arxiv-shacr_a_graph_augmented_semi_autonomous_framework_for_multi_class_conflict_resolution_in_s_infographic.json
 
-## 7. On Second-Order Methods for Bilevel Optimization
+## 18. Interpretable Kolmogorov-Arnold Network with Feature-Isolated Temporal Attention Mechanism for Electricity Load Forecasting
 
-- Date: 2026-06-18
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2606.20534v1
-- PDF: https://arxiv.org/pdf/2606.20534v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-on_second_order_methods_for_bilevel_optimization_infographic.json
+- Date: 2026-06-22
+- Category: AI math
+- arXiv: https://arxiv.org/abs/2606.23425v1
+- PDF: https://arxiv.org/pdf/2606.23425v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-22-arxiv-interpretable_kolmogorov_arnold_network_with_feature_isolated_temporal_attention_mechanism_infographic.json
 
-## 8. PragReST: Self-Reinforcing Counterfactual Reasoning for Pragmatic Language Understanding
+## 19. EML Trees Are Universal Approximators
 
-- Date: 2026-06-17
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.18624v1
-- PDF: https://arxiv.org/pdf/2606.18624v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-17-arxiv-pragrest_self_reinforcing_counterfactual_reasoning_for_pragmatic_language_understanding_infographic.json
-
-## 9. The Token Is a Group Element: On Lie-Algebra Attention over Matrix Lie Groups
-
-- Date: 2026-06-18
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2606.20547v1
-- PDF: https://arxiv.org/pdf/2606.20547v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-the_token_is_a_group_element_on_lie_algebra_attention_over_matrix_lie_groups_infographic.json
-
-## 10. On the Oracle Complexity of Interpolation-Based Gradient Descent
-
-- Date: 2026-06-18
+- Date: 2026-06-22
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.19878v1
-- PDF: https://arxiv.org/pdf/2606.19878v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-on_the_oracle_complexity_of_interpolation_based_gradient_descent_infographic.json
+- arXiv: https://arxiv.org/abs/2606.23179v1
+- PDF: https://arxiv.org/pdf/2606.23179v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-22-arxiv-eml_trees_are_universal_approximators_infographic.json
 
-## 11. Starter-Iterator Neural Operator: A Unified Architecture for High-Fidelity Forward and Inverse PDE Problems
+## 20. BLUEX v2: Benchmarking LLMs on Open-Ended Questions from Brazilian University Entrance Exams
 
-- Date: 2026-06-16
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2606.18305v1
-- PDF: https://arxiv.org/pdf/2606.18305v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-starter_iterator_neural_operator_a_unified_architecture_for_high_fidelity_forward_and_inve_infographic.json
-
-## 12. Shifting-based Optimizable Linear Relaxations for General Activation Functions
-
-- Date: 2026-06-18
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.20292v1
-- PDF: https://arxiv.org/pdf/2606.20292v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-shifting_based_optimizable_linear_relaxations_for_general_activation_functions_infographic.json
-
-## 13. Doeblin Curves
-
-- Date: 2026-06-18
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.19859v1
-- PDF: https://arxiv.org/pdf/2606.19859v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-doeblin_curves_infographic.json
-
-## 14. Shattering the Autoregressive Curse: Dynamic Epistemic Entropy Orchestrated Erasable Reinforcement Learning for LLMs
-
-- Date: 2026-06-16
+- Date: 2026-06-21
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.17735v1
-- PDF: https://arxiv.org/pdf/2606.17735v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-shattering_the_autoregressive_curse_dynamic_epistemic_entropy_orchestrated_erasable_reinfo_infographic.json
-
-## 15. DeFAb: A Verifiable Benchmark for Defeasible Abduction in Foundation Models
-
-- Date: 2026-06-17
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.18557v1
-- PDF: https://arxiv.org/pdf/2606.18557v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-17-arxiv-defab_a_verifiable_benchmark_for_defeasible_abduction_in_foundation_models_infographic.json
-
-## 16. Process-Verified Reinforcement Learning for Theorem Proving via Lean
-
-- Date: 2026-06-18
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.20068v1
-- PDF: https://arxiv.org/pdf/2606.20068v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-18-arxiv-process_verified_reinforcement_learning_for_theorem_proving_via_lean_infographic.json
-
-## 17. Patnaik-Pearson intrinsic dimension for internal representations of neural networks
-
-- Date: 2026-06-17
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.19268v1
-- PDF: https://arxiv.org/pdf/2606.19268v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-17-arxiv-patnaik_pearson_intrinsic_dimension_for_internal_representations_of_neural_networks_infographic.json
-
-## 18. IsabeLLM: Automated Theorem Proving Applied to Formally Verifying Consensus
-
-- Date: 2026-06-16
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.18098v1
-- PDF: https://arxiv.org/pdf/2606.18098v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-isabellm_automated_theorem_proving_applied_to_formally_verifying_consensus_infographic.json
-
-## 19. LLM Parameters for Math Across Languages: Shared or Separate?
-
-- Date: 2026-06-16
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.18453v1
-- PDF: https://arxiv.org/pdf/2606.18453v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-llm_parameters_for_math_across_languages_shared_or_separate_infographic.json
-
-## 20. Algebraic Networks and Architectural Degenerations
-
-- Date: 2026-06-16
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2606.18440v1
-- PDF: https://arxiv.org/pdf/2606.18440v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-16-arxiv-algebraic_networks_and_architectural_degenerations_infographic.json
+- arXiv: https://arxiv.org/abs/2606.22723v1
+- PDF: https://arxiv.org/pdf/2606.22723v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-21-arxiv-bluex_v2_benchmarking_llms_on_open_ended_questions_from_brazilian_university_entrance_exam_infographic.json
