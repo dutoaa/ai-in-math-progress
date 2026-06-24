@@ -1,24 +1,24 @@
 {
-  "key_insight": "ReNIO improves on-policy distillation by upweighting likely negative student trajectories using prefix-level probability ratios, rather than treating all self-generated outputs equally.",
-  "engineering_relevance": "This offers a practical training signal for reasoning LLMs that preserves prefix-only efficiency while boosting performance on math and code tasks.",
+  "key_insight": "ReNIO improves on-policy distillation by upweighting negative student trajectories that better capture exploratory reasoning near the model’s capability boundary.",
+  "engineering_relevance": "It offers a prefix-only training signal that boosts reasoning performance without needing full answer rollouts, making it practical for scalable LLM distillation.",
   "method": [
-    "Compare student-to-teacher token probabilities along generated prefixes.",
-    "Aggregate pivotal low-ratio tokens into a normalized sample weight.",
-    "Use the weight to emphasize likely incorrect trajectories during OPD/OPSD training."
+    "Compute a student-to-teacher token probability ratio along generated prefixes.",
+    "Aggregate pivotal low-ratio tokens into a normalized weight for each trajectory.",
+    "Assign larger training weight to likely negative trajectories without checking final-answer correctness."
   ],
-  "evidence_signal": "The abstract reports gains on mathematical reasoning and code generation benchmarks, with relative improvements up to 8.90% for Qwen3-1.7B and 10.00% for R1-Distill-Qwen-7B.",
-  "watch_item": "Because ReNIO relies on prefix-conditioned probability ratios, its effectiveness may depend on calibration quality and the availability of reliable teacher/student probabilities during training.",
+  "evidence_signal": "The abstract reports consistent gains over standard OPD and OPSD across mathematical reasoning and code generation, with up to 8.90% relative improvement for Qwen3-1.7B and 10.00% for R1-Distill-Qwen-7B on math benchmarks.",
+  "watch_item": "The approach depends on reliable teacher-student probability ratios and may be sensitive to model calibration, teacher quality, or noisy token-level weighting.",
   "hashtags": [
     "#LLMReasoning",
     "#OnPolicyDistillation",
     "#MathematicalReasoning",
-    "#CodeGeneration",
-    "#SelfTraining"
+    "#ReinforcementLearning",
+    "#ModelDistillation"
   ],
   "paper_id": "2026-06-22-arxiv-renio_reweighting_negative_trajectory_importance_for_llm_on_policy_distillation",
   "paper_title": "ReNIO: Reweighting Negative Trajectory Importance for LLM On-Policy Distillation",
   "paper_date": "2026-06-22",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-06-23T15:49:51",
+  "generated_at": "2026-06-24T15:33:09",
   "generator": "openai"
 }
