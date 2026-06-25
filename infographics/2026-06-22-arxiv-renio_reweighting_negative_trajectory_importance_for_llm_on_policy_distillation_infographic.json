@@ -1,24 +1,24 @@
 {
-  "key_insight": "ReNIO improves on-policy distillation by upweighting negative student trajectories that better capture exploratory reasoning near the model’s capability boundary.",
-  "engineering_relevance": "It offers a prefix-only training signal that boosts reasoning performance without needing full answer rollouts, making it practical for scalable LLM distillation.",
+  "key_insight": "ReNIO improves on-policy distillation by upweighting informative negative student trajectories using prefix-only token probability ratios, instead of treating all self-generated outputs equally.",
+  "engineering_relevance": "It offers a practical way to boost LLM reasoning and code generation while preserving the efficiency advantage of prefix-based training over full-rollout reinforcement learning.",
   "method": [
-    "Compute a student-to-teacher token probability ratio along generated prefixes.",
-    "Aggregate pivotal low-ratio tokens into a normalized weight for each trajectory.",
-    "Assign larger training weight to likely negative trajectories without checking final-answer correctness."
+    "Compute the student-to-teacher probability ratio over prefixes to detect pivotal tokens in wrong reasoning traces.",
+    "Aggregate token-level signals into a normalized sample weight that favors likely negative trajectories.",
+    "Use these weights to train OPD/OPSD without needing final-answer correctness labels."
   ],
-  "evidence_signal": "The abstract reports consistent gains over standard OPD and OPSD across mathematical reasoning and code generation, with up to 8.90% relative improvement for Qwen3-1.7B and 10.00% for R1-Distill-Qwen-7B on math benchmarks.",
-  "watch_item": "The approach depends on reliable teacher-student probability ratios and may be sensitive to model calibration, teacher quality, or noisy token-level weighting.",
+  "evidence_signal": "Across mathematical reasoning and code generation benchmarks, the method improves both OPD and OPSD, with reported gains up to 8.90% on Qwen3-1.7B and 10.00% on R1-Distill-Qwen-7B for math tasks.",
+  "watch_item": "Because ReNIO relies on prefix-conditioned probabilities and inferred negativity, its effectiveness may depend on calibration quality and may be sensitive to noisy teacher-student probability estimates.",
   "hashtags": [
     "#LLMReasoning",
     "#OnPolicyDistillation",
     "#MathematicalReasoning",
-    "#ReinforcementLearning",
-    "#ModelDistillation"
+    "#CodeGeneration",
+    "#ReinforcementLearning"
   ],
   "paper_id": "2026-06-22-arxiv-renio_reweighting_negative_trajectory_importance_for_llm_on_policy_distillation",
   "paper_title": "ReNIO: Reweighting Negative Trajectory Importance for LLM On-Policy Distillation",
   "paper_date": "2026-06-22",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-06-24T15:33:09",
+  "generated_at": "2026-06-25T15:40:03",
   "generator": "openai"
 }
