@@ -1,24 +1,24 @@
 {
-  "key_insight": "A single \"cliff token\" can trigger a model’s transition from correct mathematical reasoning to failure, and removing that token often restores successful recovery.",
-  "engineering_relevance": "This suggests a practical debugging and training target for LLM reasoning systems: identify high-risk tokens, intervene at the exact failure trigger, and improve robustness with token-level optimization.",
+  "key_insight": "A single “cliff token” can trigger a model’s shift from correct mathematical reasoning toward failure, and identifying it enables recovery and targeted improvement.",
+  "engineering_relevance": "For LLM reasoning systems, token-level failure detection can guide decoding, training, and debugging strategies that improve reliability on math benchmarks.",
   "method": [
-    "Detect cliff tokens using an adaptive threshold on token-wise potential drops with a one-sided two-proportion z-test.",
+    "Detect cliff tokens by looking for a significant drop in token-wise potential under an adaptive, local threshold using a one-sided two-proportion z-test.",
     "Classify cliffs into deterministic, uncertain, and sampled-off types using greedy choice and token entropy.",
-    "Apply single-token preference optimization at cliff positions (Cliff-DPO) to improve reasoning performance."
+    "Validate with Cliff-DPO: single-token preference optimization at cliff positions to improve downstream reasoning."
   ],
-  "evidence_signal": "The authors evaluate seven models on GSM1K, MATH500, and AIME 2025, reporting that deleting the first cliff token and resampling recovers pass@64 to 1.0, while Cliff-DPO improves accuracy by up to +6.6.",
-  "watch_item": "Cliff detection and taxonomy may depend on model scale, sampling behavior, and benchmark distribution, so gains may not transfer uniformly to other tasks or decoding settings.",
+  "evidence_signal": "Across seven models and three benchmarks (GSM1K, MATH500, AIME 2025), deleting the first cliff token and resampling recovered pass@64 to 1.0, while keeping it limited recovery to 0.71–1.00.",
+  "watch_item": "The method depends on token-level potential/entropy estimates and benchmark-specific training (Cliff-DPO trained on GSM8K), so robustness and transfer beyond these settings may need further validation.",
   "hashtags": [
     "#LLMReasoning",
     "#MathematicalReasoning",
-    "#FailureAnalysis",
-    "#TokenLevelOptimization",
-    "#AIResearch"
+    "#TokenLevelAnalysis",
+    "#FailureDetection",
+    "#AIAlignment"
   ],
   "paper_id": "2026-06-24-arxiv-cliff_tokens_identifying_single_token_failure_triggers_in_llm_mathematical_reasoning",
   "paper_title": "Cliff Tokens: Identifying Single-Token Failure Triggers in LLM Mathematical Reasoning",
   "paper_date": "2026-06-24",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-06-26T15:23:30",
+  "generated_at": "2026-06-27T14:28:41",
   "generator": "openai"
 }
