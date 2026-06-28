@@ -1,24 +1,24 @@
 {
-  "key_insight": "NebulaExp shows that a fully transparent, ablation-driven post-training pipeline can improve both instruction-following and reasoning performance on an 8B LLM without sacrificing reproducibility.",
-  "engineering_relevance": "The paper offers a practical, low-data recipe for building domain-tuned LLMs, with explicit data filtering, difficulty grading, and teacher-based optimization that can guide lightweight deployment workflows.",
+  "key_insight": "A fully transparent, ablation-driven post-training pipeline can materially improve both instruction-following and reasoning for an 8B LLM, with distinct optimization paths for general and reasoning-specialized models.",
+  "engineering_relevance": "The paper offers a reproducible recipe for data curation, filtering, and staged SFT/RL that can guide lightweight LLM deployment and post-training optimization.",
   "method": [
-    "Built two post-training branches on Qwen3-8B-base: an instruction model and a reasoning-specialized model",
-    "Curation pipeline used 3.84M SFT samples and 200K RL candidates with distillation, cross-verification, grading, and diversity sampling",
-    "Compared supervised fine-tuning, GRPO RL, and OPD/MOPD teacher-based training under full ablation"
+    "Curate 3.84M SFT samples and a 200K verifiable RL candidate pool",
+    "Apply response distillation, cross-verification filtering, difficulty grading, task classification, and diversity-aware sampling",
+    "Train separate branches with three-stage SFT, GRPO RL, and OPD/MOPD teacher-based optimization"
   ],
-  "evidence_signal": "The abstract reports gains from 55.01 to 60.99 after SFT and to 61.85 after GRPO for the instruct branch, and from 73.88 to 75.17 for the reasoning branch, using benchmark and verifier-based evaluations.",
-  "watch_item": "Results are reported for an 8B-scale base model and specific curated datasets, so transfer to other model sizes or domains may require retuning the data filters and teacher/verifier setup.",
+  "evidence_signal": "On Qwen3-8B-base, NebulaExp-Ins-SFT raises average benchmark score from 55.01 to 60.99, then GRPO reaches 61.85; the reasoning branch improves from 73.88 to 75.17, and MOPD uses only 10K samples for +4.18 average gain.",
+  "watch_item": "Results are tied to an 8B Qwen3-based setup and may not transfer directly to other model sizes, domains, or verifier availability constraints.",
   "hashtags": [
-    "#LLM",
+    "#LLMTraining",
     "#PostTraining",
-    "#AblationStudy",
     "#Reasoning",
-    "#Reproducibility"
+    "#RLHF",
+    "#AblationStudy"
   ],
   "paper_id": "2026-06-25-arxiv-nebulaexp_8b_an_empirical_post_training_pipeline_via_full_scale_ablation_research",
   "paper_title": "NebulaExp-8B: An Empirical Post-Training Pipeline via Full-Scale Ablation Research",
   "paper_date": "2026-06-25",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-06-27T14:28:27",
+  "generated_at": "2026-06-28T14:47:48",
   "generator": "openai"
 }

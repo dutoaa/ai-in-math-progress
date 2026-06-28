@@ -1,24 +1,24 @@
 {
-  "key_insight": "HiMuon speeds up Muon-style optimization by replacing one global Newton-Schulz update with independent Newton-Schulz updates on small tiles of each weight matrix.",
-  "engineering_relevance": "This makes optimizer steps more GPU-friendly and scalable by lowering compute from full-matrix coupling to tiled dense kernels that can be batched, chunked, and scheduled by tile size.",
+  "key_insight": "HiMuon replaces full-matrix Muon’s global Newton-Schulz update with independent tiled Newton-Schulz updates, reducing work by localizing spectral interactions to each tile.",
+  "engineering_relevance": "This makes Muon-style optimization more practical for large dense layers by enabling smaller GPU kernels, batching, chunking, and flexible tile-size schedules with lower compute cost.",
   "method": [
     "Partition each momentum-gradient matrix into T×T tiles.",
-    "Apply the same finite Newton-Schulz map separately to each tile.",
-    "Reassemble tile outputs, preserving interactions within tiles but not across tile boundaries."
+    "Apply the same finite Newton-Schulz map independently to every tile.",
+    "Reassemble tiled updates, preserving interactions within tiles while discarding cross-tile coupling."
   ],
-  "evidence_signal": "The paper reports experiments on transformer training and controlled matrix-function diagnostics, showing improved optimizer-step efficiency while remaining close to full-matrix Muon in the tested settings.",
-  "watch_item": "Because HiMuon is a local tiled map rather than a true approximation of the full-matrix update for finite tile sizes, its behavior may depend strongly on tile size and implementation details.",
+  "evidence_signal": "The abstract reports transformer-training experiments and controlled matrix-function diagnostics showing improved optimizer-step efficiency while staying close to full-matrix Muon in the tested regimes.",
+  "watch_item": "For finite tile sizes, HiMuon is a local matrix-function map rather than a convergent approximation to the full-matrix update, so behavior can depend on tile boundaries and schedule choices.",
   "hashtags": [
     "#Optimization",
-    "#Muon",
     "#NewtonSchulz",
-    "#GPUComputing",
-    "#DeepLearning"
+    "#Muon",
+    "#DeepLearningSystems",
+    "#GPUKernels"
   ],
   "paper_id": "2026-06-25-arxiv-hierarchical_muon_tiled_newton_schulz_updates_for_efficient_muon_optimization",
   "paper_title": "Hierarchical Muon: Tiled Newton-Schulz Updates for Efficient Muon Optimization",
   "paper_date": "2026-06-25",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-06-27T14:28:48",
+  "generated_at": "2026-06-28T14:48:12",
   "generator": "openai"
 }

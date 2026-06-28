@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-06-27
+Generated: 2026-06-28
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Hierarchical Reinforcement Learning for Neural Network Compression (HiReLC): Pruning and Quantization
