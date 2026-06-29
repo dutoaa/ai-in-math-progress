@@ -1,24 +1,24 @@
 {
-  "key_insight": "A single rollout can still provide token-level credit assignment if a calibrated critic predicts Pass@k success probability at each prefix, turning sparse outcome rewards into a more useful learning signal.",
-  "engineering_relevance": "This reduces the need for repeated trajectory sampling in RL for language models, offering a more efficient and stable way to train reasoning systems on hard math tasks.",
+  "key_insight": "A single rollout can still provide useful token-level credit if a critic learns the prompt-prefix Pass@k success probability instead of relying on noisy multi-sample baselines.",
+  "engineering_relevance": "This reduces sampling cost and improves credit assignment for RL training of language models, making reinforcement learning more practical for expensive reasoning tasks.",
   "method": [
-    "Train a token-level critic from Monte Carlo outcomes from one rollout per prompt.",
-    "Use predicted Pass@k at the prompt prefix as the credit signal instead of group-normalized episodic returns.",
-    "Interpret large-k Pass@k as a reachability-style signal for whether a prefix can still lead to success."
+    "Train a calibrated token-level critic from Monte Carlo outcomes using one rollout per prompt.",
+    "Predict Pass@k at each prefix to score how likely the prefix can still lead to a successful completion.",
+    "Use the critic in SR-PPO to assign token-level advantages without comparing heterogeneous sampled traces."
   ],
-  "evidence_signal": "The abstract reports stable learning and consistent gains in Pass@128 on mathematical reasoning benchmarks including HMMT26 and AIME24.",
-  "watch_item": "The approach relies on a calibrated critic and benchmark-specific evaluation, so performance may depend on how well Pass@k is estimated and generalizes across tasks.",
+  "evidence_signal": "The abstract reports stable learning and consistent improvements in Pass@128 success on mathematical reasoning benchmarks including HMMT26 and AIME24.",
+  "watch_item": "Pass@k-based credit is only as good as the critic calibration and may be sensitive to how rollout outcomes and prefixes are sampled.",
   "hashtags": [
-    "#ReinforcementLearning",
-    "#LLMReasoning",
-    "#PassAtK",
-    "#MathBenchmarks",
-    "#TokenCreditAssignment"
+    "#RLforLLMs",
+    "#Pass@k",
+    "#TokenLevelCredit",
+    "#PPO",
+    "#MathReasoning"
   ],
   "paper_id": "2026-06-24-arxiv-learning_with_a_single_rollout_via_monte_carlo_pass_k_critic",
   "paper_title": "Learning with a Single Rollout via Monte Carlo Pass@k Critic",
   "paper_date": "2026-06-24",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-06-28T14:48:19",
+  "generated_at": "2026-06-29T16:38:52",
   "generator": "openai"
 }

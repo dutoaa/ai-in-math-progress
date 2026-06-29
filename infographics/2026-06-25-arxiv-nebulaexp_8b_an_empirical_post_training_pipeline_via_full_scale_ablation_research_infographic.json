@@ -1,24 +1,24 @@
 {
-  "key_insight": "A fully transparent, ablation-driven post-training pipeline can materially improve both instruction-following and reasoning for an 8B LLM, with distinct optimization paths for general and reasoning-specialized models.",
-  "engineering_relevance": "The paper offers a reproducible recipe for data curation, filtering, and staged SFT/RL that can guide lightweight LLM deployment and post-training optimization.",
+  "key_insight": "NebulaExp shows that a transparent, ablation-driven post-training pipeline can materially improve an 8B LLM across both instruction-following and reasoning, while exposing clear trade-offs between these capabilities.",
+  "engineering_relevance": "The paper provides a reproducible recipe for post-training lightweight models, making it useful for teams optimizing 8B-scale LLMs under limited data, verifier, or compute budgets.",
   "method": [
-    "Curate 3.84M SFT samples and a 200K verifiable RL candidate pool",
-    "Apply response distillation, cross-verification filtering, difficulty grading, task classification, and diversity-aware sampling",
-    "Train separate branches with three-stage SFT, GRPO RL, and OPD/MOPD teacher-based optimization"
+    "Built two branches on Qwen3-8B-base: an instruct model and a reasoning-specialized model.",
+    "Designed an end-to-end data pipeline with response distillation, cross-verification filtering, difficulty grading, task classification, and diversity-aware sampling.",
+    "Compared supervised fine-tuning, GRPO reinforcement learning, and OPD/MOPD teacher-based optimization under controlled ablations."
   ],
-  "evidence_signal": "On Qwen3-8B-base, NebulaExp-Ins-SFT raises average benchmark score from 55.01 to 60.99, then GRPO reaches 61.85; the reasoning branch improves from 73.88 to 75.17, and MOPD uses only 10K samples for +4.18 average gain.",
-  "watch_item": "Results are tied to an 8B Qwen3-based setup and may not transfer directly to other model sizes, domains, or verifier availability constraints.",
+  "evidence_signal": "The abstract reports a 3.84M-sample SFT corpus and a 200K RL candidate pool, with gains such as 55.01 to 60.99 for the instruct SFT stage, 60.99 to 61.85 after GRPO, and 73.88 to 75.17 for reasoning RL.",
+  "watch_item": "Performance depends on careful data filtering, task verifiers, and teacher quality, so the pipeline may be harder to reproduce if those components are weak or unavailable.",
   "hashtags": [
-    "#LLMTraining",
-    "#PostTraining",
-    "#Reasoning",
-    "#RLHF",
+    "#LLMPostTraining",
+    "#ReasoningModels",
+    "#InstructionTuning",
+    "#ReinforcementLearning",
     "#AblationStudy"
   ],
   "paper_id": "2026-06-25-arxiv-nebulaexp_8b_an_empirical_post_training_pipeline_via_full_scale_ablation_research",
   "paper_title": "NebulaExp-8B: An Empirical Post-Training Pipeline via Full-Scale Ablation Research",
   "paper_date": "2026-06-25",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-06-28T14:47:48",
+  "generated_at": "2026-06-29T16:38:15",
   "generator": "openai"
 }
