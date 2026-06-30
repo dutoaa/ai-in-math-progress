@@ -1,9 +1,105 @@
 # AI math Progress Public Resources
 
-Generated: 2026-06-29
+Generated: 2026-06-30
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. A Structure-Preserving Neural-Spectral Method for Reconstructing Controls of Wave Equations
+## 1. PS-PPO: Prefix-Sampling PPO for Critic-Free RLHF
+
+- Date: 2026-06-29
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.29758v1
+- PDF: https://arxiv.org/pdf/2606.29758v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-29-arxiv-ps_ppo_prefix_sampling_ppo_for_critic_free_rlhf_infographic.json
+
+## 2. Curvature-Weighted Gradient Diversity: A Noise Measure for Geometry-Adaptive SGD Schedules
+
+- Date: 2026-06-29
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2606.30455v1
+- PDF: https://arxiv.org/pdf/2606.30455v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-29-arxiv-curvature_weighted_gradient_diversity_a_noise_measure_for_geometry_adaptive_sgd_schedules_infographic.json
+
+## 3. Self-Supervised Theorem Discovery in a Formal Axiomatic System
+
+- Date: 2026-06-27
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.28747v1
+- PDF: https://arxiv.org/pdf/2606.28747v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-27-arxiv-self_supervised_theorem_discovery_in_a_formal_axiomatic_system_infographic.json
+
+## 4. Process Advantage Signal Shaping: A Paradigm-Agnostic Middleware for Process-Supervised RL in LLM Reasoners
+
+- Date: 2026-06-28
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.29296v1
+- PDF: https://arxiv.org/pdf/2606.29296v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-28-arxiv-process_advantage_signal_shaping_a_paradigm_agnostic_middleware_for_process_supervised_rl_infographic.json
+
+## 5. A Machine-Verified Proof of a Quantum-Optimization Conjecture
+
+- Date: 2026-06-29
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.29687v1
+- PDF: https://arxiv.org/pdf/2606.29687v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-29-arxiv-a_machine_verified_proof_of_a_quantum_optimization_conjecture_infographic.json
+
+## 6. A Posteriori Error Analysis for Decoupled Neural Approximations of Fully Coupled FBSDEs with Control Mismatch
+
+- Date: 2026-06-28
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2606.29474v1
+- PDF: https://arxiv.org/pdf/2606.29474v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-28-arxiv-a_posteriori_error_analysis_for_decoupled_neural_approximations_of_fully_coupled_fbsdes_wi_infographic.json
+
+## 7. A Multi-Level Machine Learning Framework for Inverse Scattering Problems with Multi-Frequency Data
+
+- Date: 2026-06-28
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.29368v1
+- PDF: https://arxiv.org/pdf/2606.29368v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-28-arxiv-a_multi_level_machine_learning_framework_for_inverse_scattering_problems_with_multi_freque_infographic.json
+
+## 8. The Fundamental Limits of Valid Transport Map Estimation
+
+- Date: 2026-06-29
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.30574v1
+- PDF: https://arxiv.org/pdf/2606.30574v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-29-arxiv-the_fundamental_limits_of_valid_transport_map_estimation_infographic.json
+
+## 9. Dead-Direction Conditioners: Gauge-Equivariant Preconditioning for Deep Networks
+
+- Date: 2026-06-28
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2606.29176v1
+- PDF: https://arxiv.org/pdf/2606.29176v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-28-arxiv-dead_direction_conditioners_gauge_equivariant_preconditioning_for_deep_networks_infographic.json
+
+## 10. Structural functional identifiability and model discovery in differential equation models
+
+- Date: 2026-06-29
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2606.30289v1
+- PDF: https://arxiv.org/pdf/2606.30289v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-29-arxiv-structural_functional_identifiability_and_model_discovery_in_differential_equation_models_infographic.json
+
+## 11. Structured Proper Loss Geometries for Multiclass Classification: Theory and Controlled Empirical Evaluation
+
+- Date: 2026-06-28
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.29471v1
+- PDF: https://arxiv.org/pdf/2606.29471v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-28-arxiv-structured_proper_loss_geometries_for_multiclass_classification_theory_and_controlled_empi_infographic.json
+
+## 12. Adaptive AI Delegation under Uncertainty: A Bayesian Governance Policy for Sequential Decision Authority
+
+- Date: 2026-06-28
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2606.29406v1
+- PDF: https://arxiv.org/pdf/2606.29406v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-28-arxiv-adaptive_ai_delegation_under_uncertainty_a_bayesian_governance_policy_for_sequential_decis_infographic.json
+
+## 13. A Structure-Preserving Neural-Spectral Method for Reconstructing Controls of Wave Equations
 
 - Date: 2026-06-26
 - Category: Optimization and PDEs
@@ -11,31 +107,31 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.28029v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-26-arxiv-a_structure_preserving_neural_spectral_method_for_reconstructing_controls_of_wave_equation_infographic.json
 
-## 2. Hierarchical Reinforcement Learning for Neural Network Compression (HiReLC): Pruning and Quantization
+## 14. Are We Measuring Strategy or Phrasing? The Gap Between Surface- and Approach-Level Diversity in LLM Math Reasoning
 
-- Date: 2026-06-24
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.26002v1
-- PDF: https://arxiv.org/pdf/2606.26002v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-24-arxiv-hierarchical_reinforcement_learning_for_neural_network_compression_hirelc_pruning_and_quan_infographic.json
-
-## 3. NebulaExp-8B: An Empirical Post-Training Pipeline via Full-Scale Ablation Research
-
-- Date: 2026-06-25
+- Date: 2026-06-29
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.26671v1
-- PDF: https://arxiv.org/pdf/2606.26671v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-25-arxiv-nebulaexp_8b_an_empirical_post_training_pipeline_via_full_scale_ablation_research_infographic.json
+- arXiv: https://arxiv.org/abs/2606.29985v1
+- PDF: https://arxiv.org/pdf/2606.29985v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-29-arxiv-are_we_measuring_strategy_or_phrasing_the_gap_between_surface_and_approach_level_diversity_infographic.json
 
-## 4. Hodge Spectral Surrogates for Topology-Constrained Optimization
+## 15. AURORA: Asymmetry and Update-Induced Rotation for Robust Hallucination Detection in Large Language Models
 
-- Date: 2026-06-23
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.25194v1
-- PDF: https://arxiv.org/pdf/2606.25194v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-23-arxiv-hodge_spectral_surrogates_for_topology_constrained_optimization_infographic.json
+- Date: 2026-06-28
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.29545v1
+- PDF: https://arxiv.org/pdf/2606.29545v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-28-arxiv-aurora_asymmetry_and_update_induced_rotation_for_robust_hallucination_detection_in_large_l_infographic.json
 
-## 5. GEOALIGN: Geometric Rollout Curation for Robust LLM Reinforcement Learning
+## 16. LAMP: Lean-based Agentic framework with MCP and Proof Repair
+
+- Date: 2026-06-27
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2606.28841v1
+- PDF: https://arxiv.org/pdf/2606.28841v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-27-arxiv-lamp_lean_based_agentic_framework_with_mcp_and_proof_repair_infographic.json
+
+## 17. GEOALIGN: Geometric Rollout Curation for Robust LLM Reinforcement Learning
 
 - Date: 2026-06-25
 - Category: Mathematical Reasoning
@@ -43,7 +139,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.26917v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-25-arxiv-geoalign_geometric_rollout_curation_for_robust_llm_reinforcement_learning_infographic.json
 
-## 6. Internalizing the Future: A Unified Agentic Training Paradigm for World Model Planning
+## 18. Internalizing the Future: A Unified Agentic Training Paradigm for World Model Planning
 
 - Date: 2026-06-25
 - Category: Mathematical Reasoning
@@ -51,114 +147,18 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.27483v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-25-arxiv-internalizing_the_future_a_unified_agentic_training_paradigm_for_world_model_planning_infographic.json
 
-## 7. Generating Special Triangulations with Transformers
+## 19. Optimization Dynamics Imprint Semantic Specificity in Contrastive Embedding Norms
 
-- Date: 2026-06-25
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.26660v1
-- PDF: https://arxiv.org/pdf/2606.26660v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-25-arxiv-generating_special_triangulations_with_transformers_infographic.json
-
-## 8. A Zeroth-Order Deep Learning Method for Fully Nonlinear Parabolic Partial Differential Equations with Unknown Coefficients
-
-- Date: 2026-06-23
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.24999v1
-- PDF: https://arxiv.org/pdf/2606.24999v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-23-arxiv-a_zeroth_order_deep_learning_method_for_fully_nonlinear_parabolic_partial_differential_equ_infographic.json
-
-## 9. Second-Order KKT Guarantees for Bregman ADMM in Nonconvex and Non-Lipschitz Optimization
-
-- Date: 2026-06-26
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.28307v1
-- PDF: https://arxiv.org/pdf/2606.28307v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-26-arxiv-second_order_kkt_guarantees_for_bregman_admm_in_nonconvex_and_non_lipschitz_optimization_infographic.json
-
-## 10. Difference of Convex Programming in the Wasserstein Space with Applications to MMD Optimization
-
-- Date: 2026-06-26
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.27767v1
-- PDF: https://arxiv.org/pdf/2606.27767v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-26-arxiv-difference_of_convex_programming_in_the_wasserstein_space_with_applications_to_mmd_optimiz_infographic.json
-
-## 11. Operator Learning for Cubic Nonlinear Schrödinger Equation on Periodic Domains
-
-- Date: 2026-06-25
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2606.27459v1
-- PDF: https://arxiv.org/pdf/2606.27459v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-25-arxiv-operator_learning_for_cubic_nonlinear_schr_dinger_equation_on_periodic_domains_infographic.json
-
-## 12. Quantum Physics-Informed Neural Networks for Solving Integro and Fractional PDEs
-
-- Date: 2026-06-25
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2606.26865v1
-- PDF: https://arxiv.org/pdf/2606.26865v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-25-arxiv-quantum_physics_informed_neural_networks_for_solving_integro_and_fractional_pdes_infographic.json
-
-## 13. Cliff Tokens: Identifying Single-Token Failure Triggers in LLM Mathematical Reasoning
-
-- Date: 2026-06-24
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.25524v2
-- PDF: https://arxiv.org/pdf/2606.25524v2
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-24-arxiv-cliff_tokens_identifying_single_token_failure_triggers_in_llm_mathematical_reasoning_infographic.json
-
-## 14. AXLE: A Cloud Infrastructure for Lean 4 Theorem Proving Utilities
-
-- Date: 2026-06-24
+- Date: 2026-06-29
 - Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.26442v1
-- PDF: https://arxiv.org/pdf/2606.26442v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-24-arxiv-axle_a_cloud_infrastructure_for_lean_4_theorem_proving_utilities_infographic.json
+- arXiv: https://arxiv.org/abs/2606.30625v1
+- PDF: https://arxiv.org/pdf/2606.30625v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-29-arxiv-optimization_dynamics_imprint_semantic_specificity_in_contrastive_embedding_norms_infographic.json
 
-## 15. Reservoir Zero-Coordinatewise Projected Subspace Search for Minimization Over Sparse Symmetric Sets in Machine Learning
+## 20. A Distributionally Robust Framework for Learned Reconstructions in Inverse Problems
 
-- Date: 2026-06-26
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2606.28124v1
-- PDF: https://arxiv.org/pdf/2606.28124v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-26-arxiv-reservoir_zero_coordinatewise_projected_subspace_search_for_minimization_over_sparse_symme_infographic.json
-
-## 16. Local Fokker--Planck Geometry for Score Estimation: Heat-Ball Mean-Value Representations and Exact High-Dimensional Sampling
-
-- Date: 2026-06-26
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2606.27954v1
-- PDF: https://arxiv.org/pdf/2606.27954v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-26-arxiv-local_fokker_planck_geometry_for_score_estimation_heat_ball_mean_value_representations_and_infographic.json
-
-## 17. Recovering Governing Equations from Solution Data: Identifiability Bounds for Linear and Nonlinear ODEs
-
-- Date: 2026-06-25
+- Date: 2026-06-29
 - Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2606.27285v2
-- PDF: https://arxiv.org/pdf/2606.27285v2
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-25-arxiv-recovering_governing_equations_from_solution_data_identifiability_bounds_for_linear_and_no_infographic.json
-
-## 18. Learning with a Single Rollout via Monte Carlo Pass@k Critic
-
-- Date: 2026-06-24
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2606.25451v1
-- PDF: https://arxiv.org/pdf/2606.25451v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-24-arxiv-learning_with_a_single_rollout_via_monte_carlo_pass_k_critic_infographic.json
-
-## 19. LLM-ACES: Closed-Loop Discovery of Dynamical Systems with LLM-Guided Adaptive Search
-
-- Date: 2026-06-23
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2606.25039v1
-- PDF: https://arxiv.org/pdf/2606.25039v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-23-arxiv-llm_aces_closed_loop_discovery_of_dynamical_systems_with_llm_guided_adaptive_search_infographic.json
-
-## 20. The Educational Proof Assistant Waterproof in an Introductory Proof Course: Proof Construction and Learning Processes
-
-- Date: 2026-06-25
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.26809v1
-- PDF: https://arxiv.org/pdf/2606.26809v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-25-arxiv-the_educational_proof_assistant_waterproof_in_an_introductory_proof_course_proof_construct_infographic.json
+- arXiv: https://arxiv.org/abs/2606.30230v1
+- PDF: https://arxiv.org/pdf/2606.30230v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-29-arxiv-a_distributionally_robust_framework_for_learned_reconstructions_in_inverse_problems_infographic.json
