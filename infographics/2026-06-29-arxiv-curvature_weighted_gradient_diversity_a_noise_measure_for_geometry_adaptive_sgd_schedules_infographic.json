@@ -1,17 +1,17 @@
 {
-  "key_insight": "CWGD reweights gradient noise by local curvature, giving a more faithful measure of optimization noise than plain variance and enabling better learning-rate scheduling.",
-  "engineering_relevance": "For SGD-based training, this can improve convergence efficiency and final error with little overhead, especially when curvature varies strongly across parameter directions.",
+  "key_insight": "Curvature-Weighted Gradient Diversity (CWGD) reweights gradient noise by inverse curvature, giving a more geometry-aware measure of SGD noise than plain variance.",
+  "engineering_relevance": "This enables learning-rate schedules that adapt to the loss landscape, improving convergence efficiency and final error in optimization-heavy machine learning systems.",
   "method": [
-    "Compute per-sample gradient diversity with an inverse-square-root Hessian weighting.",
-    "Use a Hutchinson-based diagonal Hessian estimator, which is exact on quadratic objectives.",
-    "Modulate cosine learning-rate decay using the CWGD signal to adapt to geometry."
+    "Define CWGD as per-sample gradient diversity weighted by the inverse square root of the Hessian.",
+    "Use a Hutchinson-based diagonal Hessian estimator, which is exact for quadratic objectives.",
+    "Modulate cosine annealing with CWGD to reduce the effective optimization noise floor."
   ],
-  "evidence_signal": "On strongly convex quadratics across different condition numbers, batch sizes, and noise structures, CWGD-Cosine achieved about 20% lower final optimization error than standard cosine annealing, with up to a 2x reduction in asymptotic error floor in the analyzed setting.",
-  "watch_item": "The approach depends on Hessian estimates that can become stale in non-convex training, which may limit reliability outside the quadratic/convex regime.",
+  "evidence_signal": "In quadratic settings across varying condition numbers, batch sizes, and noise structures, CWGD-Cosine achieved about 20% lower final optimization error and up to a 2x reduction in asymptotic error floor versus standard cosine annealing.",
+  "watch_item": "The approach depends on Hessian estimates that can become stale or less reliable in non-convex training.",
   "hashtags": [
+    "#StochasticOptimization",
     "#SGD",
-    "#Optimization",
-    "#Curvature",
+    "#CurvatureAware",
     "#Hessian",
     "#MachineLearning"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Curvature-Weighted Gradient Diversity: A Noise Measure for Geometry-Adaptive SGD Schedules",
   "paper_date": "2026-06-29",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-07-01T15:40:55",
+  "generated_at": "2026-07-02T15:14:28",
   "generator": "openai"
 }

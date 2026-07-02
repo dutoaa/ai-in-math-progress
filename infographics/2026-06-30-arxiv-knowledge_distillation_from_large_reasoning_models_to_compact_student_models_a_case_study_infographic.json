@@ -1,17 +1,17 @@
 {
-  "key_insight": "A compact Qwen2.5-7B student can gain meaningful math-reasoning performance through Chain-of-Thought distillation from DeepSeek-R1, but only when training is carefully limited to avoid overfitting.",
-  "engineering_relevance": "The study shows that LoRA-based distillation on Apple Silicon with MLX can be a practical pathway for deploying smaller reasoning models without fully sacrificing accuracy.",
+  "key_insight": "Chain-of-thought distillation from DeepSeek-R1 to a compact Qwen2.5-7B student improves math reasoning, but performance depends strongly on response length.",
+  "engineering_relevance": "The study shows a practical LoRA/MLX pipeline on Apple Silicon for turning expensive reasoning traces into a deployable smaller model with measurable gains.",
   "method": [
-    "Built a CoT training corpus from John O'Bryan Mathematics Competition problems (2011–2025) using a dual-agent pipeline.",
-    "Fine-tuned Qwen2.5-7B with LoRA on Apple Silicon via MLX.",
-    "Evaluated across competition data, MATH-500, and reasoning-length levels R1–R6."
+    "Built a CoT training set from 2011–2025 John O'Bryan Math Competition problems using a dual-agent framework",
+    "Fine-tuned Qwen2.5-7B with LoRA on Apple Silicon via MLX",
+    "Evaluated multiple short training runs and tested transfer on MATH-500 and controlled response-length settings"
   ],
-  "evidence_signal": "Across five 200-iteration runs, the fine-tuned student reached 69.43% mean accuracy on the competition set and 73.1% on MATH-500, versus 64.67% for the base model and 91.40% for the teacher.",
-  "watch_item": "A 1,000-iteration run overfit quickly, with validation loss bottoming out around iteration 200, so training length and response length need careful control.",
+  "evidence_signal": "Base Qwen2.5-7B scored 64.67% and the DeepSeek-R1 teacher 91.40%; the distilled student reached 69.43% mean accuracy on the competition set and 73.1% on MATH-500.",
+  "watch_item": "An initial 1,000-iteration run overfit quickly, so the stable gains come from shorter 200-iteration runs and may not generalize across longer training schedules.",
   "hashtags": [
     "#KnowledgeDistillation",
     "#ChainOfThought",
-    "#MathReasoning",
+    "#MathematicalReasoning",
     "#LoRA",
     "#LLMCompression"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Knowledge Distillation from Large Reasoning Models to Compact Student Models: A Case Study on the John O Bryan Mathematics Competition",
   "paper_date": "2026-06-30",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-01T15:41:14",
+  "generated_at": "2026-07-02T15:14:51",
   "generator": "openai"
 }
