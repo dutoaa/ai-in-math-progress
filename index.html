@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI math Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-07-02. Ranked from recent arXiv AI math papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-07-03. Ranked from recent arXiv AI math papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -31,7 +31,7 @@
     </header>
     <section class="grid">
       <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>115</strong></div>
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>110</strong></div>
         <p class="date">2026-06-30</p>
         <h2>Tropical Geometry as a Restricted Architecture for Physics-Informed Neural Networks: Applications in Nonlinear Fluid-Structure Examples</h2>
         <p class="authors">Carla Valencia-Negrete, Cristhian Garay-Lopez, Marco Favela-Rodriguez, Alonso Andapia-Viveros</p>
@@ -39,18 +39,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.00237v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.00237v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper shows that tropical differential algebra can act as a hard architectural prior for PINNs, restricting the model to the exact support of valid formal power series solutions near singularities.</p>
-          <p><b>Engineering relevance:</b> This makes PINNs more reliable for nonlinear fluid-structure and shock-like problems by improving convergence in stiff, chaotic, or singular regimes.</p>
-          <ul><li>Use tropical algebra to compute a hard constraint on the admissible solution support.</li><li>Embed that constraint into the PINN architecture to shrink the hypothesis space.</li><li>Prove a valuation-support equivalence linking Briot-Bouquet indicial analysis with tropical differential algebraic geometry.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports numerical experiments on the Van der Pol and Burgers&#x27; equations, where tropical constraints improved accuracy and convergence speed.</p>
-          <p><b>Watch item:</b> The approach may depend on deriving correct tropical constraints and may be less straightforward to implement for general PDEs or problems without clear polynomial structure.</p>
-          <div class="tags"><span>#PINNs</span> <span>#TropicalGeometry</span> <span>#DifferentialEquations</span> <span>#FluidStructureInteraction</span> <span>#ScientificMachineLearning</span></div>
+          <p><b>Key insight:</b> The paper shows that tropical differential algebra can be used to derive hard constraints that restrict a PINN to the correct support of a formal power series solution, improving optimization in difficult nonlinear PDEs.</p>
+          <p><b>Engineering relevance:</b> This can make physics-informed models more reliable for stiff, singular, or chaotic fluid-structure and shock-like systems where standard PINNs often stall.</p>
+          <ul><li>Use tropical algebra to identify the valid solution support and singularity structure.</li><li>Embed this support as a hard architectural constraint in the PINN hypothesis space.</li><li>Prove a valuation-support equivalence linking Briot-Bouquet analysis with tropical differential geometry.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports numerical experiments on the Van der Pol and Burgers&#x27; equations, showing improved accuracy and faster convergence versus unconstrained training.</p>
+          <p><b>Watch item:</b> The approach depends on correctly deriving tropical constraints from the governing equations, which may be challenging for more complex or noisy physical models.</p>
+          <div class="tags"><span>#PINNs</span> <span>#TropicalGeometry</span> <span>#PhysicsInformedML</span> <span>#NonlinearPDEs</span> <span>#ScientificComputing</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>101</strong></div>
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>96</strong></div>
         <p class="date">2026-07-01</p>
         <h2>GAIA: Geometry-Adaptive Operator Learning for Forward and Inverse Problems</h2>
         <p class="authors">Meenakshi Krishnan, Pranav Pulijala, Ke Chen, Haizhao Yang, Ramani Duraiswami</p>
@@ -58,37 +58,75 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.01128v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01128v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> GAIA learns geometry-conditioned neural operators that can handle forward, boundary value, and inverse PDE problems on arbitrary domains in a single architecture.</p>
-          <p><b>Engineering relevance:</b> This enables fast surrogate modeling for simulation, reconstruction, and design optimization on complex geometries without retraining, iterative solvers, or graph construction.</p>
-          <ul><li>Encodes boundary geometry and interior fields into geometry tokens.</li><li>Uses cross-attention to condition integral transform layers on local geometric features.</li><li>Unifies forward and inverse inference across different input/output domains in one pass.</li></ul>
-          <p><b>Evidence signal:</b> Evaluated on seven 2D and 3D benchmarks, including four new or extended inverse/BVP tasks, GAIA achieves state-of-the-art results on all inverse and BVP problems and remains competitive on forward tasks.</p>
-          <p><b>Watch item:</b> Performance claims are benchmark-dependent, and stable deployment may still require careful handling of resolution shifts and unseen geometry distributions.</p>
-          <div class="tags"><span>#PDEs</span> <span>#OperatorLearning</span> <span>#NeuralOperators</span> <span>#InverseProblems</span> <span>#ScientificMachineLearning</span></div>
+          <p><b>Key insight:</b> GAIA learns geometry-aware operator mappings by encoding boundary and interior information into tokens, enabling one model to handle both forward and inverse PDE problems on arbitrary domains.</p>
+          <p><b>Engineering relevance:</b> This can accelerate simulation, reconstruction, and design workflows by replacing iterative solvers with a fast amortized surrogate that works across changing geometries.</p>
+          <ul><li>Encodes domain boundary and interior field samples into geometry tokens.</li><li>Uses cross-attention to condition integral transform layers on local geometric features.</li><li>Supports forward, boundary value, and inverse problems without retraining, graph construction, or iterative optimization.</li></ul>
+          <p><b>Evidence signal:</b> Evaluated on seven 2D/3D benchmarks, including four new or extended inverse/BVP tasks, where GAIA achieved new state of the art and reduced median relative L2 error by 64% on airfoil flow reconstruction and 27% on EIT versus the next best amortized method.</p>
+          <p><b>Watch item:</b> Performance may depend on accurate geometry encoding and sufficient training coverage of shape variability, so unseen domain classes or very sparse observations could still challenge generalization.</p>
+          <div class="tags"><span>#OperatorLearning</span> <span>#PDEs</span> <span>#ScientificML</span> <span>#InverseProblems</span> <span>#GeometryAdaptiveAI</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>95</strong></div>
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>90</strong></div>
+        <p class="date">2026-07-01</p>
+        <h2>Formalized $q$-series: The Rogers-Ramanujan Identities and Beyond</h2>
+        <p class="authors">Kenny Lau, Seewoo Lee, Ken Ono</p>
+        <p class="abstract">The theory of $q$-series and basic hypergeometric series plays a crucial role at the intersection of combinatorics, number theory, and representation theory. From the classical partition identities of Euler and Jacobi to modern developments in class field theory, vertex operator algebras, and the Monstrous Moonshine conjecture, $q$-series provide the analytic framework for a wide range of profound applications. In this paper, we discuss the formalization of this theory in the Lean proof assistant, a process that requires careful design of scalable and versatile structures to reconcile formal algebraic identities with analytic convergence properties. We address these foundational challenges by focusing on the construction of $q$-Pochhammer symbols, $q$-binomial coefficients, Bailey&#x27;s Lemma and similar primitives. To demonstrate the utility of this work, we provide fully verified proofs of the Jacobi Triple Product formula and the celebrated Rogers-Ramanujan identities, which serve as both historical and technical benchmarks for the field. This work establishes a rigorous computational foundation for the future formalization of mock theta functions, modular forms, and the diverse algebraic structures that underpin their applications across mathematics and physics.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.01544v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01544v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper formalizes core q-series machinery in Lean and uses it to machine-check landmark identities such as the Jacobi Triple Product and Rogers-Ramanujan identities.</p>
+          <p><b>Engineering relevance:</b> It provides reusable verified foundations for theorem proving workflows in computational mathematics, enabling future formalization of deeper results in modular forms, mock theta functions, and related areas.</p>
+          <ul><li>Built Lean-friendly definitions for q-Pochhammer symbols and q-binomial coefficients.</li><li>Developed formalized versions of Bailey&#x27;s Lemma and other q-series primitives.</li><li>Proved key benchmark identities end-to-end in the proof assistant.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports fully verified proofs of the Jacobi Triple Product formula and the Rogers-Ramanujan identities as validation of the formalization framework.</p>
+          <p><b>Watch item:</b> A main implementation concern is reconciling formal algebraic manipulations with analytic convergence assumptions in a scalable way.</p>
+          <div class="tags"><span>#LeanTheoremProving</span> <span>#qSeries</span> <span>#FormalMethods</span> <span>#RogersRamanujan</span> <span>#MathProofs</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>90</strong></div>
         <p class="date">2026-07-01</p>
         <h2>Is One Layer Enough? Training A Single Transformer Layer Can Match Full-Parameter RL Training</h2>
         <p class="authors">Zijian Zhang, Rizhen Hu, Athanasios Glentis, Dawei Li, Chung-Yiu Yau, Hongzhou Lin</p>
         <p class="abstract">Reinforcement learning (RL) has become a central component of post-training large language models (LLMs), yet little is understood about how RL adaptation is distributed across transformer layers. Existing approaches typically update all model parameters uniformly, implicitly assuming that every layer contributes similarly to the gains obtained during RL post-training. In this work, we challenge this assumption through a systematic layer-wise study of RL training. Surprisingly, we find that training a single transformer layer can recover most of the gains achieved by full-parameter RL training, and in some cases even surpass it. To quantify this phenomenon, we introduce the quantity layer contribution, which measures the fraction of full RL improvement recovered by training a layer in isolation. Across seven models spanning two model families (Qwen3, Qwen2.5), three RL algorithms (GRPO, GiGPO, Dr. GRPO), and multiple task domains including mathematical reasoning, code generation, and agentic decision-making, we observe a remarkably stable pattern: RL gains are highly concentrated in a small subset of, and in many cases even a single, transformer layers. More strikingly, the same structural pattern consistently emerges: high-contribution layers concentrate in the middle of the transformer stack, while layers near the input and output ends contribute substantially less. The resulting layer rankings remain strongly correlated across datasets, tasks, model families, and RL algorithms.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.01232v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01232v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="links"><a href="https://arxiv.org/abs/2607.01232v2" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01232v2" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> RL post-training gains are highly layer-localized: training just one transformer layer can recover most, and sometimes more than, full-parameter RL improvement, with the strongest effects concentrated in middle layers.</p>
-          <p><b>Engineering relevance:</b> For efficient LLM post-training, this suggests a low-cost way to target the most impactful transformer layer(s) instead of updating all parameters, reducing compute and potentially simplifying RL adaptation workflows.</p>
-          <ul><li>Defined &quot;layer contribution&quot; as the fraction of full RL improvement recovered by training a single layer in isolation.</li><li>Evaluated layer-wise RL training across seven models from Qwen3 and Qwen2.5 using GRPO, GiGPO, and Dr. GRPO.</li><li>Compared rankings across mathematical reasoning, code generation, and agentic decision-making tasks to test stability.</li></ul>
-          <p><b>Evidence signal:</b> Across seven models, three RL algorithms, and multiple tasks, the abstract reports a remarkably stable pattern: a small subset of layers, often a single middle-layer, accounts for most of the RL gain.</p>
-          <p><b>Watch item:</b> The result is based on layer-wise isolation studies, so practical deployment should verify whether the best layer choice holds under different training budgets, data distributions, and downstream objectives.</p>
-          <div class="tags"><span>#RLHF</span> <span>#Transformers</span> <span>#LLMTraining</span> <span>#MathReasoning</span> <span>#EfficientFineTuning</span></div>
+          <p><b>Key insight:</b> RL post-training gains are surprisingly concentrated: training just one transformer layer can recover most of the benefit of full-parameter RL, often with the strongest effect in middle layers.</p>
+          <p><b>Engineering relevance:</b> This suggests a far cheaper and more targeted way to adapt large models, reducing training cost, memory use, and update scope for RL post-training.</p>
+          <ul><li>Define &quot;layer contribution&quot; as the fraction of full RL improvement recovered by training one layer in isolation.</li><li>Run layer-wise RL studies across transformer stacks instead of updating all parameters uniformly.</li><li>Compare rankings of important layers across models, tasks, and RL algorithms to test stability.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports experiments on seven models from Qwen3 and Qwen2.5 using three RL algorithms (GRPO, GiGPO, Dr. GRPO) across mathematical reasoning, code generation, and agentic decision-making tasks.</p>
+          <p><b>Watch item:</b> Single-layer gains may be sensitive to the specific RL setup, so transferring this strategy to other model families or training regimes likely needs validation before deployment.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#Transformers</span> <span>#LLMPostTraining</span> <span>#MathematicalReasoning</span> <span>#EfficientTraining</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>89</strong></div>
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>86</strong></div>
+        <p class="date">2026-07-02</p>
+        <h2>Geometric Signatures of Reasoning: A Spectral Perspective on Task Hardness</h2>
+        <p class="authors">Aria Masoomi, Mahsa Bazzaz, Adel Javanmard, Vahab Mirrokni</p>
+        <p class="abstract">Chain-of-thought (CoT) reasoning enables large language models (LLMs) to solve complex problems by generating intermediate reasoning steps. While much attention has been paid to the length and content of these reasoning chains, far less is known about their internal geometry. We study the \emph{geometry} of CoT trajectories in the hidden state space of transformer models, formalizing each reasoning chain as a discrete curve in $\mathbb{R}^d$ and characterizing it through spectral, positional, and kinematic geometric functionals. We introduce the effective dimension $d_ρ$ as a measure of trajectory complexity and show theoretically that trajectories with flatter eigenvalue spectra correspond to harder tasks, as they explore more of the hidden dimensions. Lastly, we explore how kinematic features of the trajectory, mean position, positional dispersion, initial and current hidden states, mean velocity, mean speed, and speed dispersion, can be used to predict solution correctness before generation is complete, and may inform future early-stopping strategies. Experimentally, on mathematical reasoning problems from the MATH500 dataset, $d_ρ$ achieves $0.93$ AUC in distinguishing easy from hard problems, while kinematic features potentially can predict correctness from only the first $20\%$ of generated tokens. These correctness signatures transfer across questions of varying difficulty, establishing that the shape of a model&#x27;s internal reasoning trajectory is a principled window into both task hardness and solution quality.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.01571v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01571v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The shape of a model’s hidden-state reasoning trajectory reveals task hardness: flatter spectral signatures indicate harder problems and richer exploration of the latent space.</p>
+          <p><b>Engineering relevance:</b> These geometric signals could help build early-stopping and confidence-estimation tools for LLM reasoning systems, improving efficiency and reliability in deployment.</p>
+          <ul><li>Represent each chain-of-thought as a discrete curve in hidden-state space.</li><li>Compute spectral, positional, and kinematic functionals, including the effective dimension dρ.</li><li>Use early trajectory features to predict hardness and correctness before generation finishes.</li></ul>
+          <p><b>Evidence signal:</b> On MATH500, the effective dimension dρ reached 0.93 AUC for separating easy versus hard problems, and kinematic features could predict correctness from the first 20% of generated tokens.</p>
+          <p><b>Watch item:</b> Early-trajectory predictions may transfer imperfectly across models, prompt styles, or domains, so calibration and robustness checks are needed before using them for control decisions.</p>
+          <div class="tags"><span>#ChainOfThought</span> <span>#LLMReasoning</span> <span>#SpectralGeometry</span> <span>#MathematicalReasoning</span> <span>#EarlyStopping</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>84</strong></div>
         <p class="date">2026-07-01</p>
         <h2>Vehicle Routing Problem Meets Large Language Models: An Overview and Perspectives</h2>
         <p class="authors">Xianchao Xiu, Chong Shen, Yanjiao Zhu, Wanquan Liu</p>
@@ -96,56 +134,75 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.00604v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.00604v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> This survey frames large language models as a new interface for vehicle routing problems, with roles spanning constraint modeling, heuristic generation, and tool- or agent-based coordination.</p>
-          <p><b>Engineering relevance:</b> The paper is directly relevant to logistics and automation because it suggests LLMs can help translate real routing requirements into executable optimization workflows for industrial decision-making.</p>
-          <ul><li>Organize LLM-for-VRP research into three roles: modelers, designers, and coordinators.</li><li>Map LLM capabilities to routing tasks such as code generation, constraint reasoning, heuristic search, and tool calling.</li><li>Review VRP variants, solver families, benchmarks, operational datasets, and evaluation frameworks.</li></ul>
-          <p><b>Evidence signal:</b> The survey cites standard benchmarks, real or near-real operational datasets, evaluation frameworks, and two comparative experiments as its evidence base.</p>
-          <p><b>Watch item:</b> LLM-generated routing solutions still need careful validation because VRP constraints are complex and errors in modeling or tool orchestration can lead to infeasible plans.</p>
-          <div class="tags"><span>#VehicleRouting</span> <span>#LargeLanguageModels</span> <span>#Optimization</span> <span>#LogisticsAI</span> <span>#MathematicalReasoning</span></div>
+          <p><b>Key insight:</b> This survey frames large language models as three complementary roles in vehicle routing: translating requirements into models, generating routing strategies, and coordinating tools or agents.</p>
+          <p><b>Engineering relevance:</b> It is relevant to logistics and industrial automation because it suggests a natural-language interface for building and solving complex routing systems with operational constraints.</p>
+          <ul><li>Classifies LLM use in VRP into modelers, designers, and coordinators.</li><li>Summarizes VRP variants, solver families, benchmarks, and evaluation frameworks.</li><li>Reviews two comparative experiments and connects LLMs with external tools and neural solvers.</li></ul>
+          <p><b>Evidence signal:</b> The paper is a survey that synthesizes existing studies and reports benchmarks, real or near-real datasets, evaluation frameworks, and two comparative experiments.</p>
+          <p><b>Watch item:</b> LLM outputs must still be validated carefully, since routing problems are constraint-heavy and incorrect model translation or tool orchestration can produce infeasible plans.</p>
+          <div class="tags"><span>#VehicleRoutingProblem</span> <span>#LargeLanguageModels</span> <span>#Optimization</span> <span>#LogisticsAI</span> <span>#MathematicalReasoning</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>89</strong></div>
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>84</strong></div>
         <p class="date">2026-06-30</p>
         <h2>Beyond the Library: An Agentic Framework for Autoformalizing Research Mathematics</h2>
         <p class="authors">Arshia Soltani Moakhar, Iman Gholami, Max Springer, Mahdi JafariRaviz, MohammadTaghi Hajiaghayi</p>
         <p class="abstract">While Large Language Models (LLMs) have demonstrated exceptional capabilities in mathematical reasoning, they frequently produce subtle errors that evade human detection. Formal mathematical languages like Lean 4 offer mechanical proof checking, strongly motivating the need for autoformalization: the automatic translation of natural language mathematics into verifiable code. Recent trends indicate that general-purpose LLMs, heavily optimized for standard programming, now outperform smaller models explicitly fine-tuned for Lean. Leveraging this shift, we introduce an agentic autoformalization framework powered by general coding LLMs. At the core of our system is an orchestrator that manages a multi-agent pipeline tailored for research-level mathematics. Because cutting-edge research frequently relies on concepts outside the scope of existing libraries like Mathlib, our system dynamically extends necessary type definitions and validates them via a novel Auxiliary Lemma technique before formalizing the primary theorems. We applied our approach to PutnamBench, producing machine-checked Lean proofs for a random sample of 32 problems. Furthermore, we evaluate our system on five papers from the ACM Symposium on Theory of Computing (STOC) spanning combinatorics, communication complexity, mechanism design, and learning theory, successfully formalizing their main theorems and validating the generated formalizations with human experts; for all five we also formalize the proofs alongside the statements, and notably two of them are proved with no axioms beyond Lean&#x27;s kernel. All of our formalizations are available at https://beyondthelibrary.github.io/formal_arxiv .</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.31134v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.31134v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="links"><a href="https://arxiv.org/abs/2606.31134v2" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.31134v2" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> An agentic multi-LLM pipeline can autoformalize research-level mathematics in Lean 4, including introducing and checking new definitions when existing libraries are insufficient.</p>
-          <p><b>Engineering relevance:</b> This enables mechanically verified translation of mathematical research into proof assistant code, reducing silent reasoning errors and lowering the barrier to formal methods adoption in theory-heavy workflows.</p>
-          <ul><li>Orchestrator coordinates multiple agents for stepwise autoformalization.</li><li>Extends missing type definitions and validates them with an Auxiliary Lemma technique before proving the target theorem.</li><li>Uses general-purpose coding LLMs rather than Lean-specific fine-tuning.</li></ul>
-          <p><b>Evidence signal:</b> The system produced machine-checked Lean proofs for 32 PutnamBench problems and successfully formalized main theorems from five STOC papers, with all five also having proofs formalized and two requiring no axioms beyond Lean&#x27;s kernel.</p>
-          <p><b>Watch item:</b> Performance depends on carefully managing library gaps and auxiliary lemmas, so correctness and robustness may be sensitive to orchestration quality and the availability of human validation for complex cases.</p>
-          <div class="tags"><span>#Lean4</span> <span>#Autoformalization</span> <span>#TheoremProving</span> <span>#LLMAgents</span> <span>#FormalMethods</span></div>
+          <p><b>Key insight:</b> An agentic multi-model pipeline can autoformalize research mathematics in Lean 4, including extending missing library concepts before proving the target theorem.</p>
+          <p><b>Engineering relevance:</b> This shows a practical path for turning informal mathematical research into machine-checked artifacts, improving reliability for theorem proving and formal methods workflows.</p>
+          <ul><li>Orchestrator coordinates multiple agents for translation, proof search, and validation.</li><li>Auxiliary Lemma technique validates new type definitions before formalizing main theorems.</li><li>Uses general coding LLMs rather than Lean-specialized small models.</li></ul>
+          <p><b>Evidence signal:</b> The system produced machine-checked Lean proofs for 32 PutnamBench problems and successfully formalized and proof-checked main theorems from five STOC papers, with human validation and two proofs requiring no axioms beyond Lean&#x27;s kernel.</p>
+          <p><b>Watch item:</b> Performance may depend on careful orchestration and on correctly extending the formal library, so errors in auxiliary definitions or assumptions could still propagate.</p>
+          <div class="tags"><span>#Autoformalization</span> <span>#Lean4</span> <span>#TheoremProving</span> <span>#LLMAgents</span> <span>#FormalMethods</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>87</strong></div>
+        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>82</strong></div>
+        <p class="date">2026-07-02</p>
+        <h2>Structured Factorization Approaches for Quantum State Tomography</h2>
+        <p class="authors">Zhen Qin, Joseph M. Lukens, Brian T. Kirby, Zhihui Zhu</p>
+        <p class="abstract">Since the complexity of quantum state tomography (QST) scales exponentially with system size, exploiting priors such as low-rankness, tensor-network structures, and neural-network representations is essential for scalable QST in terms of sample complexity and parameter complexity. In this paper, we introduce a unified framework, termed structured factorization, that builds on BurerMonteiro-type factorization by parametrizing the density matrix as $FF^\dagger$, where the factor $F$ is constrained to belong to a structured model class. This factorization guarantees physical validity by construction while allowing a broad range of structural priors to be incorporated directly through the choice of the factor space, ranging from the generic Cholesky decomposition to low-rank matrices, matrix product operators, and neural density operators based on multilayer perceptron and transformer architectures. Building on this structured factorization framework, we formulate QST as an optimization problem over the factor space from measurement data. We first develop a unified statistical analysis of the sample complexity of least-squares estimation for a broad class of structured quantum states. We then propose a projected gradient descent method that operates directly on the factor space and accommodates a wide range of structural parametrizations and reconstruction objectives. To further exploit the geometry of the maximum-likelihood estimation formulation and the constraints on the factors, we derive a power method that yields a step-size-free algorithm with fast convergence, recovering Covers method as a special case when the factor is unconstrained.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.01608v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01608v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper unifies several quantum state tomography priors by writing the density matrix as FF†, where the factor F is structured to enforce physical validity and encode low-rank, tensor-network, or neural-network models directly.</p>
+          <p><b>Engineering relevance:</b> This gives a flexible pathway to scalable tomography algorithms that can reduce both sample and parameter complexity while staying compatible with practical optimization routines.</p>
+          <ul><li>Structured factorization framework: optimize over a constrained factor F instead of the full density matrix.</li><li>Unified statistical analysis for least-squares estimation across broad structured quantum state classes.</li><li>Projected gradient descent and a step-size-free power-method variant for maximum-likelihood estimation.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports theoretical sample-complexity analysis and optimization methods spanning multiple structured parametrizations, including generic Cholesky, low-rank, matrix product operators, and neural density operators.</p>
+          <p><b>Watch item:</b> Performance will depend on how well the chosen factorization matches the true quantum state, and more complex factor models may be harder to optimize or tune in practice.</p>
+          <div class="tags"><span>#QuantumTomography</span> <span>#StructuredFactorization</span> <span>#LowRankModels</span> <span>#Optimization</span> <span>#MachineLearningForPhysics</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>82</strong></div>
         <p class="date">2026-07-01</p>
         <h2>Theoria: Rewrite-Acceptability Verification over Informal Reasoning States</h2>
-        <p class="authors">Ben Slivinski, Michael Saldivar</p>
+        <p class="authors">Michael Saldivar, Ben Slivinski</p>
         <p class="abstract">When should an AI system&#x27;s answer be trusted? Formal proof assistants offer certainty but cannot reach most of the problem distribution; scalar LLM judges offer coverage but produce opaque scores that cannot be audited after the fact and are subject to the same coherence issues as any LLM. We present Theoria, a verification architecture that closes this gap. A candidate solution is rewritten into a sequence of typed state transitions, each licensed by an explicit justification, whether that be a citation, computation, or problem-given fact, and every transition is independently auditable. The foundational invariant is completeness of change: every difference between consecutive proof states must be accounted for, so hidden premises surface as unlicensed mutations rather than passing silently. On HLE-Verified Gold (185 text-only expert problems), Theoria certifies 105 at 91.4% strict precision (Wilson 95% CI [84.5%, 95.4%]). Every certification produces a human readable proof trace in which each step can be independently challenged. Holistic LLM judges achieve comparable precision at matched coverage but fail on different problems (Jaccard 0.14-0.36), making the approaches complementary. On 95 adversarial poisoned proofs across 15 domains, structured judges catch 94.7% versus 83.2% for holistic judging (p= 0.0017). The overall 11.5 pp gap concentrates in hidden premises (90.6% vs. 62.5%, a 28 pp difference) and fabricated citations (100% vs. 90%), the error classes where the formal analysis predicts an advantage; performance is identical on arithmetic and theorem-misapplication errors, where no advantage is predicted. On GPQA Diamond (n= 65), certified precision is 97.1% (Wilson CI [85.1%, 99.5%]).</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.01223v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01223v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="links"><a href="https://arxiv.org/abs/2607.01223v2" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01223v2" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Theoria verifies AI answers by rewriting them into auditable typed state transitions, so any hidden assumption becomes an explicit, checkable change instead of an opaque score.</p>
-          <p><b>Engineering relevance:</b> This offers a practical middle ground between full formal proof and free-form LLM judging, enabling higher-trust validation of expert-level math and reasoning outputs.</p>
-          <ul><li>Rewrite candidate solutions into sequences of typed proof-state transitions.</li><li>Require every transition to be licensed by an explicit justification such as a citation, computation, or problem-given fact.</li><li>Enforce completeness of change so all differences between consecutive states must be accounted for.</li></ul>
-          <p><b>Evidence signal:</b> On HLE-Verified Gold, Theoria certifies 105/185 problems at 91.4% strict precision, and on 95 adversarial poisoned proofs it catches 94.7%, outperforming holistic judging especially on hidden premises and fabricated citations.</p>
-          <p><b>Watch item:</b> Certification quality depends on the correctness and completeness of the rewrite/typing rules, so gaps in the state language or justification policy could allow subtle errors to slip through.</p>
-          <div class="tags"><span>#TheoremProving</span> <span>#LLMVerification</span> <span>#AISafety</span> <span>#FormalMethods</span> <span>#Reasoning</span></div>
+          <p><b>Key insight:</b> Theoria verifies AI answers by rewriting them into auditable typed state transitions, so every accepted change must be explicitly justified and hidden premises are exposed.</p>
+          <p><b>Engineering relevance:</b> This gives engineers a practical middle ground between rigid proof assistants and opaque scalar judges: broader coverage with traceable, challengeable verification.</p>
+          <ul><li>Rewrite a candidate solution into a sequence of typed proof-state transitions.</li><li>Require each transition to be licensed by an explicit justification such as citation, computation, or problem-given fact.</li><li>Enforce completeness of change so any unaccounted difference becomes an unlicensed mutation.</li></ul>
+          <p><b>Evidence signal:</b> On 185 HLE-Verified Gold problems, Theoria certified 105 with 91.4% strict precision, and on 95 adversarial poisoned proofs it caught 94.7% versus 83.2% for holistic judging.</p>
+          <p><b>Watch item:</b> The approach depends on reliable state rewriting and justification extraction, so implementation quality and domain-specific representation choices may affect coverage and auditability.</p>
+          <div class="tags"><span>#TheoremProving</span> <span>#LLMVerification</span> <span>#AITrust</span> <span>#ProofTracing</span> <span>#ComputationalScience</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>87</strong></div>
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>82</strong></div>
         <p class="date">2026-06-30</p>
         <h2>Geometry-Preserving Orthonormal Initialization for Low-Rank Adaptation in RLVR</h2>
         <p class="authors">Ruijia Zhang, Jiacheng Zhu, Hanqing Zhu, Laixi Shi</p>
@@ -153,18 +210,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.31813v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.31813v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> In RL with verifiable rewards, orthonormal LoRA initialization is theoretically the closest low-rank approximation to full fine-tuning and can stabilize training better than prior structured inits.</p>
-          <p><b>Engineering relevance:</b> This suggests a practical initialization rule for parameter-efficient RL fine-tuning of large language models, especially on math-reasoning tasks where training stability and performance matter.</p>
-          <ul><li>Analyze LoRA under RLVR and compare initialization geometries to full fine-tuning.</li><li>Propose geometry-preserving orthonormal initialization, yielding RLPO and RLMO variants.</li><li>Explain why PiSSA and MiLoRA can degrade or destabilize training in RLVR.</li></ul>
-          <p><b>Evidence signal:</b> The paper reports experiments on mathematical reasoning benchmarks showing orthonormal initialization stabilizes RLVR training and outperforms standard LoRA, PiSSA, and MiLoRA.</p>
-          <p><b>Watch item:</b> The gains are shown in RLVR math-reasoning settings, so the same initialization advantage may not transfer unchanged to other reward structures or tasks.</p>
-          <div class="tags"><span>#LoRA</span> <span>#RLVR</span> <span>#LLM</span> <span>#MathReasoning</span> <span>#ParameterEfficientFineTuning</span></div>
+          <p><b>Key insight:</b> In RLVR, orthonormal LoRA initialization preserves geometry better than common structured initializations, giving the smallest gap to full fine-tuning and improving stability.</p>
+          <p><b>Engineering relevance:</b> For parameter-efficient RL on mathematical reasoning tasks, the choice of low-rank initialization can materially affect training robustness, so RLPO/RLMO offer a safer default than standard LoRA, PiSSA, or MiLoRA.</p>
+          <ul><li>The authors analyze LoRA under RLVR and derive that orthonormal initialization minimizes the discrepancy from full fine-tuning.</li><li>They propose geometry-preserving orthonormal variants: RLPO and RLMO.</li><li>They compare against standard LoRA, PiSSA, and MiLoRA to explain why structured SFT-friendly inits may fail in RLVR.</li></ul>
+          <p><b>Evidence signal:</b> Experiments on mathematical reasoning benchmarks show the orthonormal initialization stabilizes RLVR training and outperforms standard LoRA, while PiSSA and MiLoRA can underperform.</p>
+          <p><b>Watch item:</b> The benefit appears tied to RLVR and task/setup specifics, so implementations should verify orthonormal initialization is preserved throughout training and not assume SFT results transfer directly.</p>
+          <div class="tags"><span>#LoRA</span> <span>#RLVR</span> <span>#OrthogonalInitialization</span> <span>#MathematicalReasoning</span> <span>#ParameterEfficientFineTuning</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>82</strong></div>
+        <div class="meta"><span>Symbolic Computation</span><span>arXiv</span><strong>80</strong></div>
+        <p class="date">2026-07-02</p>
+        <h2>An Optimisation Framework for the Well-Conditioned Training of Physics-Informed Neural Networks</h2>
+        <p class="authors">Joseph Webb, Sadok Jerad, Coralia Cartis</p>
+        <p class="abstract">Physics-informed neural networks (PINNs) have emerged as a promising route to solve partial differential equations, yet they have struggled to reach the precision of classical solvers. The obstacle is increasingly understood to be one of optimisation, owing to the severely ill-conditioned loss landscape. We present $\textbf{DSGNAR}$: Doubly-Sketched Gauss-Newton with Adaptive Ratio, a scalable second-order optimisation framework that confronts this ill-conditioning and, in doing so, obtains unprecedented accuracy and speed. $\textbf{DSGNAR}$ couples a doubly-sketched Gauss-Newton model with a novel strategy that carefully controls both regularisation and step length. Across a suite of problems spanning nonlinear, chaotic, multi-scale, high-dimensional, and Navier-Stokes, the framework greatly improves on the state of the art: able to attain relative $\ell_2$ errors as low as $3\times10^{-16}$ in double precision, improve contemporary results by five orders of magnitude on the canonical Burgers&#x27; equation, and as much as eight orders on a high-dimensional Poisson problem, while remaining markedly faster. We further show that, in single precision, solutions at the limit of round-off error can be obtained very quickly: Burgers&#x27; equation to $\ell_2^{\text{rel}} = 4.75 \times 10^{-7}$ in under ten seconds. The framework is also robust to the choice of architecture, arithmetic precision, and initial hyperparameters. The code is available at https://www.github.com/wephy/physics-informed-neural-networks</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.02194v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.02194v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> DSGNAR is a scalable second-order optimization framework that makes PINN training far better conditioned, enabling much higher accuracy and faster convergence than standard methods.</p>
+          <p><b>Engineering relevance:</b> It could make physics-informed neural networks practical for engineering PDE solving where classical solvers are expensive or PINNs previously failed to reach sufficient precision.</p>
+          <ul><li>Uses a doubly-sketched Gauss-Newton update to approximate second-order curvature efficiently.</li><li>Adds Adaptive Ratio control to tune regularization and step length during training.</li><li>Targets ill-conditioned PINN loss landscapes across nonlinear, chaotic, multi-scale, high-dimensional, and Navier-Stokes problems.</li></ul>
+          <p><b>Evidence signal:</b> Across a suite of benchmark PDEs, the abstract reports relative \ell_2 errors as low as 3×10^-16 in double precision, five orders of magnitude improvement on Burgers&#x27; equation, eight orders on a high-dimensional Poisson problem, and fast single-precision convergence to 4.75×10^-7 in under ten seconds.</p>
+          <p><b>Watch item:</b> Performance depends on accurate curvature approximation and careful hyperparameter/precision handling, so memory, implementation complexity, and stability should be checked on new architectures and PDEs.</p>
+          <div class="tags"><span>#PINNs</span> <span>#Optimization</span> <span>#GaussNewton</span> <span>#ScientificMachineLearning</span> <span>#PDEs</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>77</strong></div>
         <p class="date">2026-07-01</p>
         <h2>ZO-Act: Efficient Zeroth-Order Fine-Tuning via One-Shot Activation-Informed Low-Rank Subspaces</h2>
         <p class="authors">Xun Dong, Yibo Xu, Naigang Wang, Xin Li, Penghang Yin, Zi Yang</p>
@@ -172,18 +248,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.01125v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01125v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> ZO-Act improves zeroth-order fine-tuning by searching in a fixed activation-derived low-rank subspace instead of perturbing full weights or random subspaces, reducing estimator noise and enabling efficient forward-only training.</p>
-          <p><b>Engineering relevance:</b> It offers a practical way to fine-tune large and quantized LLMs when backpropagation is unavailable or too memory-intensive, while remaining compatible with standard optimizers like Adam.</p>
-          <ul><li>Compute a small activation basis once at initialization for each linear layer.</li><li>Optimize only lightweight coefficient matrices in the low-rank subspace using forward-only loss evaluations.</li><li>Keep low-bit weights frozen to support quantized LLM fine-tuning.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports consistent gains on Llama-3-8B, OPT-13B, and INT4 Llama-3-8B across language understanding, question answering, and commonsense reasoning benchmarks.</p>
-          <p><b>Watch item:</b> The approach introduces a subspace approximation bias, so performance may depend on how well the chosen activation basis captures the relevant gradient directions.</p>
-          <div class="tags"><span>#ZerothOrderOptimization</span> <span>#LLMFineTuning</span> <span>#LowRankAdaptation</span> <span>#QuantizedLLM</span> <span>#EfficientTraining</span></div>
+          <p><b>Key insight:</b> ZO-Act speeds up zeroth-order fine-tuning by perturbing a small activation-derived low-rank coefficient space instead of full model weights or random subspaces.</p>
+          <p><b>Engineering relevance:</b> It offers a memory-efficient way to adapt large and quantized LLMs when backpropagation is unavailable, costly, or impractical.</p>
+          <ul><li>Compute a small activation basis once per linear layer at initialization.</li><li>Optimize only lightweight coefficient matrices with forward-only loss evaluations.</li><li>Keep quantized weights frozen while using the low-rank subspace for ZO updates.</li></ul>
+          <p><b>Evidence signal:</b> Experiments on Llama-3-8B, OPT-13B, and INT4 Llama-3-8B show consistent improvements over strong ZO baselines on language understanding, QA, and commonsense tasks.</p>
+          <p><b>Watch item:</b> Performance depends on how well the chosen activation subspace matches the true gradient structure, so subspace approximation bias can limit gains.</p>
+          <div class="tags"><span>#ZerothOrderOptimization</span> <span>#LLMFineTuning</span> <span>#LowRankAdaptation</span> <span>#EfficientAI</span> <span>#QuantizedLLM</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>82</strong></div>
+        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>77</strong></div>
         <p class="date">2026-06-30</p>
         <h2>Domain-Decomposed Randomized Neural Networks for Partial Differential Equations in Unbounded Domains</h2>
         <p class="authors">Haixin Wang, Haoning Dang, Fei Wang, Shimin Guo</p>
@@ -191,56 +267,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.31342v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.31342v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper decomposes unbounded PDE domains into near-field and far-field regions, using randomized neural subnetworks plus linear least-squares output fitting to handle each regime efficiently.</p>
-          <p><b>Engineering relevance:</b> This offers a flexible alternative to artificial boundary truncation for large-scale PDE simulation in open or exterior domains, especially when local detail and far-field decay must both be captured.</p>
-          <ul><li>Assign separate randomized subnetworks to near-field and far-field spatial regimes.</li><li>Enforce coupling through boundary and interface conditions.</li><li>Solve only the output-layer coefficients via Petrov--Galerkin or collocation least-squares systems.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports numerical experiments on Poisson and time-dependent Schrödinger equations, alongside a conditional approximation theorem and error decomposition.</p>
-          <p><b>Watch item:</b> Performance may depend on how well the domain split, interface conditions, and quadrature/least-squares setup are chosen for a given geometry and PDE.</p>
-          <div class="tags"><span>#PDEs</span> <span>#ScientificMachineLearning</span> <span>#NeuralNetworks</span> <span>#DomainDecomposition</span> <span>#UnboundedDomains</span></div>
+          <p><b>Key insight:</b> A domain-decomposed randomized neural network splits unbounded PDEs into near-field and far-field regions, letting each subnetwork specialize while only linear output coefficients are solved.</p>
+          <p><b>Engineering relevance:</b> This offers a practical mesh-free alternative for exterior-domain simulations where artificial boundaries and global bases are hard to tune, especially for complex geometry and mixed local/far-field behavior.</p>
+          <ul><li>Assign separate randomized subnetworks to different spatial regimes (near field vs far field).</li><li>Enforce coupling through boundary/interface conditions and solve only the last-layer coefficients via linear least squares.</li><li>Use Petrov--Galerkin for semi-unbounded elliptic problems and collocation for fully unbounded, perforated, and time-dependent problems.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports numerical experiments on Poisson and time-dependent Schrödinger equations, plus a bounded-parameter approximation result and an error decomposition.</p>
+          <p><b>Watch item:</b> Performance may depend on how well the domain split, random features, and quadrature/collocation choices are tuned for the specific PDE and geometry.</p>
+          <div class="tags"><span>#PDEs</span> <span>#NeuralNetworks</span> <span>#DomainDecomposition</span> <span>#UnboundedDomains</span> <span>#ScientificComputing</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>77</strong></div>
-        <p class="date">2026-06-30</p>
-        <h2>Beyond Compilation: Evaluating Faithful Natural-Language-to-Lean Statement Formalization</h2>
-        <p class="authors">Ke Zhang, Patricio Gallardo Candela, Sudhir Murthy, Yi Xie, Zhi Wang, Maziar Raissi</p>
-        <p class="abstract">Theorem-proving benchmarks evaluate proof search against fixed formal statements, but natural-language-to-Lean formalization must generate the formal statement itself. In this setting, compilation is only a validity check: a Lean declaration may type-check while omitting hypotheses, changing domains, or expressing a vacuous claim. We study faithful statement formalization as both an evaluation problem and a bottleneck-attribution problem. On a 400-entry graduate-level benchmark spanning real analysis, complex analysis, topology, and algebra, our protocol combines Lean compilation, cross-model semantic judging, and human expert calibration. The resulting picture is different from compile-rate evaluation: a full tool-augmented agent reaches 89.5% compilation but only 60.5% consensus faithfulness, exposing a 29.0-point compile-pass but consensus-unfaithful gap. Targeted human audits support the metric as a conservative decision boundary: across available case-level audits, 96.0% of consensus-positive outputs are human-confirmed faithful, while 82.4% of compile-pass consensus-negative outputs are human-confirmed semantic failures. Under this metric, existing one-shot formalizer models and prover-oriented Lean models remain low, suggesting that formal validity, proof-oriented Lean competence, and faithful statement generation should be reported separately. We then use a full $2^3$ factorial design to decompose three recurring interventions in formalization pipelines: parametric expert drafting, Mathlib/context search, and Lean elaboration feedback. Elaboration feedback is the largest validity intervention, but it also exposes a larger compile-pass semantic-failure bucket; search mainly improves grounding and selectivity; and fine-tuned drafting is largely substitutable in this tool stack once feedback and grounding are available.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.31002v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.31002v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Compilation is not enough for Lean formalization: many type-checking statements are still semantically wrong, so faithfulness must be evaluated separately from validity.</p>
-          <p><b>Engineering relevance:</b> For theorem-proving systems, this shows that pipeline design and benchmark reporting should distinguish proof success, statement correctness, and tool-augmented formalization quality.</p>
-          <ul><li>Built a 400-entry graduate-level benchmark across analysis, topology, and algebra.</li><li>Evaluated outputs with Lean compilation, cross-model semantic judging, and human expert calibration.</li><li>Used a $2^3$ factorial study to isolate the effects of drafting, search, and elaboration feedback.</li></ul>
-          <p><b>Evidence signal:</b> A full tool-augmented agent achieved 89.5% compilation but only 60.5% consensus faithfulness, revealing a 29.0-point validity-versus-faithfulness gap.</p>
-          <p><b>Watch item:</b> Cross-model semantic judgments are conservative and may miss some valid-but-subtle formalizations, so human audit coverage and calibration remain important.</p>
-          <div class="tags"><span>#TheoremProving</span> <span>#Lean</span> <span>#FormalMethods</span> <span>#AI4Math</span> <span>#Benchmarking</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>77</strong></div>
-        <p class="date">2026-06-29</p>
-        <h2>Curvature-Weighted Gradient Diversity: A Noise Measure for Geometry-Adaptive SGD Schedules</h2>
-        <p class="authors">Muhammad Hamza, Ayush Goel</p>
-        <p class="abstract">The standard convergence analysis of mini-batch stochastic gradient descent (SGD) models gradient noise using a single variance term that treats all parameter directions equally, ignoring the fact that noise in high-curvature directions has less impact because learning rates are already constrained there. We introduce Curvature-Weighted Gradient Diversity (CWGD), a geometry-aware measure that weights per-sample gradient diversity by the inverse square root of the Hessian, providing a tighter proxy for the effective optimization noise. For strongly convex quadratic objectives with diagonal Hessians and isotropic noise, we prove that a CWGD-modulated cosine learning-rate schedule can reduce the asymptotic optimization error floor by up to a factor of two compared with standard cosine annealing. We implement this idea as CWGD-Cosine using a Hutchinson-based diagonal Hessian estimator that is exact for quadratic objectives. Across a range of condition numbers, batch sizes, and noise structures, CWGD-Cosine consistently achieves approximately 20% lower final optimization error than standard cosine annealing while incurring negligible overhead in the quadratic setting. We also identify and correct a degenerate curvature estimator, analyze the robustness of the proposed estimator, and explicitly discuss the limitations of the method, including Hessian staleness in non-convex optimization. These results establish CWGD as a principled geometry-aware measure of optimization noise and motivate future extensions to more general learning problems.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.30455v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.30455v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Curvature-Weighted Gradient Diversity (CWGD) reweights gradient noise by inverse curvature, giving a more geometry-aware measure of SGD noise than plain variance.</p>
-          <p><b>Engineering relevance:</b> This enables learning-rate schedules that adapt to the loss landscape, improving convergence efficiency and final error in optimization-heavy machine learning systems.</p>
-          <ul><li>Define CWGD as per-sample gradient diversity weighted by the inverse square root of the Hessian.</li><li>Use a Hutchinson-based diagonal Hessian estimator, which is exact for quadratic objectives.</li><li>Modulate cosine annealing with CWGD to reduce the effective optimization noise floor.</li></ul>
-          <p><b>Evidence signal:</b> In quadratic settings across varying condition numbers, batch sizes, and noise structures, CWGD-Cosine achieved about 20% lower final optimization error and up to a 2x reduction in asymptotic error floor versus standard cosine annealing.</p>
-          <p><b>Watch item:</b> The approach depends on Hessian estimates that can become stale or less reliable in non-convex training.</p>
-          <div class="tags"><span>#StochasticOptimization</span> <span>#SGD</span> <span>#CurvatureAware</span> <span>#Hessian</span> <span>#MachineLearning</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>76</strong></div>
+        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>71</strong></div>
         <p class="date">2026-07-01</p>
         <h2>Convolutional Symmetric AutoEncoders: enhancing latent stability via differential geometry</h2>
         <p class="authors">G. Li Causi, N. Tonicello, L. Magri, G. Rozza</p>
@@ -248,18 +286,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.00669v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.00669v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper shows that enforcing symmetry and geometric consistency in convolutional autoencoders improves latent stability and makes reduced-order models more reliable.</p>
-          <p><b>Engineering relevance:</b> For PDE surrogate modeling, the proposed symmetric CAE architecture can deliver more accurate, robust low-dimensional ROMs than classical convolutional autoencoders.</p>
-          <ul><li>Extend representation-consistent autoencoder ideas from fully connected networks to convolutional layers.</li><li>Design symmetric CAEs to better preserve manifold parametrization properties in the latent space.</li><li>Integrate the encoder-decoder model into a ROM workflow for parametric PDE dynamics.</li></ul>
-          <p><b>Evidence signal:</b> The approach is evaluated on three 1D benchmark PDEs—Linear Advection, Viscous Burger, and Kuramoto–Sivashinsky—and the symmetric CAE consistently outperforms classical CAEs in latent trajectory accuracy, reconstruction error, and robustness.</p>
-          <p><b>Watch item:</b> The results are demonstrated on 1D academic test cases, so transfer to higher-dimensional or highly complex PDE settings still needs validation.</p>
-          <div class="tags"><span>#ReducedOrderModeling</span> <span>#Autoencoders</span> <span>#ConvolutionalNeuralNetworks</span> <span>#ComputationalScience</span> <span>#DifferentialGeometry</span></div>
+          <p><b>Key insight:</b> The paper shows that enforcing geometry-inspired symmetry in convolutional autoencoders makes latent spaces more stable and better suited for reduced-order modeling of PDE solution manifolds.</p>
+          <p><b>Engineering relevance:</b> This improves ROM predictability and robustness for fast surrogate simulation of parametric PDEs, especially when nonlinear dynamics are hard to compress with linear methods like POD.</p>
+          <ul><li>Design symmetric convolutional autoencoders that preserve manifold-parameterization properties.</li><li>Extend representation consistency from fully connected autoencoders to convolutional layers.</li><li>Integrate the symmetric CAE into a ROM pipeline and compare against classical CAEs.</li></ul>
+          <p><b>Evidence signal:</b> On three 1D test cases—linear advection, viscous Burgers, and Kuramoto–Sivashinsky—the symmetric CAE ROMs reported lower reconstruction errors, more accurate latent trajectories, and improved robustness.</p>
+          <p><b>Watch item:</b> The gains are demonstrated on 1D academic benchmarks, so performance and training stability may differ on higher-dimensional or more complex PDE settings.</p>
+          <div class="tags"><span>#Autoencoders</span> <span>#ReducedOrderModeling</span> <span>#ConvolutionalNeuralNetworks</span> <span>#DifferentialGeometry</span> <span>#ScientificMachineLearning</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>75</strong></div>
+        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>70</strong></div>
+        <p class="date">2026-07-02</p>
+        <h2>From Finite Cayley Graphs to Growth of Infinite Groups</h2>
+        <p class="authors">Tal Weissblat</p>
+        <p class="abstract">Graph neural networks (GNNs) have recently been shown to learn algebraic properties of finite groups from their Cayley graphs [1,2]. In this work, we investigate whether such models generalize to infinite finitely generated groups. Motivated by Gromov&#x27;s theorem [3], a GNN is trained and validated exclusively on finite complete and truncated Cayley graphs, and then evaluated, without retraining, on truncated Cayley graphs of unseen infinite groups. The evaluation includes free abelian groups of various ranks, the discrete Heisenberg group, the infinite dihedral group, free groups, and direct products with both infinite abelian and finite groups. The results show strong generalization across these families, suggesting that finite Cayley graphs encode sufficient local geometric information to transfer to the infinite setting. Overall, this provides evidence that GNNs trained solely on finite groups can capture geometric features related to the growth of infinite finitely generated groups.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.02102v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.02102v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A GNN trained only on finite Cayley graphs can transfer learned algebraic and geometric cues to truncated Cayley graphs of infinite finitely generated groups.</p>
+          <p><b>Engineering relevance:</b> This suggests graph models can infer large-scale group growth behavior from local connectivity patterns, enabling scalable analysis of algebraic structure from finite samples.</p>
+          <ul><li>Train and validate on finite complete and truncated Cayley graphs only</li><li>Test zero-shot on truncated Cayley graphs of unseen infinite groups</li><li>Evaluate across free abelian, Heisenberg, dihedral, free, and product-group families</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports strong zero-shot generalization on multiple infinite-group families using truncated Cayley graphs without retraining.</p>
+          <p><b>Watch item:</b> Because the model sees only truncated graphs, performance may depend on truncation scale and may not fully capture asymptotic growth beyond local neighborhoods.</p>
+          <div class="tags"><span>#GNNs</span> <span>#CayleyGraphs</span> <span>#GroupTheory</span> <span>#GraphLearning</span> <span>#AlgebraicAI</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>70</strong></div>
         <p class="date">2026-06-30</p>
         <h2>Stabilization Learning: A Paradigm Transition Bridging Control Theory and Machine Learning</h2>
         <p class="authors">Quan Quan</p>
@@ -267,18 +324,56 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.31562v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.31562v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Stabilization learning reframes machine learning around stability and feedback, unifying control, observation, and recognition through a mathematical framework built for robustness under perturbation.</p>
-          <p><b>Engineering relevance:</b> The framework is relevant for safety-critical and adaptive systems where reliable behavior matters more than pure prediction accuracy or optimality.</p>
-          <ul><li>Uses Lyapunov-based stability analysis and design to guarantee or assess system behavior.</li><li>Combines deep feature extraction with data-driven feedback synthesis for high-dimensional nonlinear systems.</li><li>Formulates problems with a unified six-tuple and two seven-tuple variants for constrained learning and tracking.</li></ul>
-          <p><b>Evidence signal:</b> The abstract supports the framework by reformulating 11 representative problems, including multi-agent tracking, visual servo stabilization, chess, and Push-T tasks.</p>
-          <p><b>Watch item:</b> A key implementation concern is how to choose the state space, metrics, and policy so the theory remains practical and robust across very different domains.</p>
-          <div class="tags"><span>#StabilizationLearning</span> <span>#ControlTheory</span> <span>#MachineLearning</span> <span>#LyapunovStability</span> <span>#AdaptiveSystems</span></div>
+          <p><b>Key insight:</b> Stabilization learning reframes machine learning around stability and feedback, unifying control theory and learning for adaptive behavior under perturbations.</p>
+          <p><b>Engineering relevance:</b> It offers a practical framework for robust control, observation, and recognition in high-dimensional nonlinear systems where reliability matters more than pure optimality.</p>
+          <ul><li>Lyapunov-based stability analysis and design</li><li>Deep feature extraction with data-driven feedback synthesis</li><li>Unified six-tuple framework expanded to seven-tuple models for constrained learning and tracking</li></ul>
+          <p><b>Evidence signal:</b> The abstract supports the framework by formally reformulating 11 representative problems across control, robotics, games, and multi-agent tasks.</p>
+          <p><b>Watch item:</b> The framework is broad and abstract, so real deployments may face nontrivial choices in defining state spaces, metrics, policies, and stability constraints.</p>
+          <div class="tags"><span>#ControlTheory</span> <span>#MachineLearning</span> <span>#Stability</span> <span>#Lyapunov</span> <span>#Robotics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>AI math</span><span>arXiv</span><strong>73</strong></div>
+        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>69</strong></div>
+        <p class="date">2026-07-02</p>
+        <h2>From Answer Generators to Reasoning Facilitators: Designing AI Tutors for Mathematical Reasoning in High-Stakes Environments</h2>
+        <p class="authors">Yuming Feng, Yuan Tian, Erica Zhao</p>
+        <p class="abstract">The rapid integration of Large Language Models (LLMs) into educational technology threatens to reduce mathematical learning to mere answer generation. This paper presents a generative study, usability study, and 12-participant field deployment of AITutor, an interactive system that translates theoretical pedagogical mechanisms into concrete user interface features. We explore how junior-high students preparing for high-stakes exams (Zhongkao) interact with AI tutoring. Through mixed-methods triangulation (7,379 telemetry events, 8 contextual observations, 10 interviews), we reveal that students actively resist traditional Socratic dialogue under time pressure, repurposing &quot;answer-first&quot; shortcuts as vital diagnostic checkpoints. We demonstrate how features like layered worked examples, step-linked visual grounding, and metacognitive scaffolding lower the interaction cost of reasoning repair. We contribute a &quot;Reasoning-Centered Product Loop,&quot; offering actionable implications for designing AI that structurally supports the inspection, local repair, curriculum verification, and delayed retrieval of mathematical reasoning in the wild.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.01692v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01692v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> AI tutors for high-stakes math should facilitate reasoning repair and verification, not just force Socratic dialogue or final-answer generation.</p>
+          <p><b>Engineering relevance:</b> The paper translates pedagogical theory into concrete UI features—layered worked examples, step-linked visual grounding, and metacognitive scaffolding—that can reduce the cost of debugging student reasoning in real tutoring systems.</p>
+          <ul><li>Generative design study of AITutor features</li><li>Usability study with junior-high exam-prep learners</li><li>12-participant field deployment with mixed-methods triangulation</li></ul>
+          <p><b>Evidence signal:</b> Evidence combines 7,379 telemetry events, 8 contextual observations, and 10 interviews showing students often prefer answer-first shortcuts as diagnostic checkpoints under time pressure.</p>
+          <p><b>Watch item:</b> A key implementation concern is that in high-stakes contexts, overly rigid Socratic interaction may frustrate learners and add friction unless the system supports fast inspection and local repair.</p>
+          <div class="tags"><span>#AIEducation</span> <span>#MathTutoring</span> <span>#LLMs</span> <span>#HumanComputerInteraction</span> <span>#LearningAnalytics</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>68</strong></div>
+        <p class="date">2026-07-02</p>
+        <h2>The Dual Nature of LLM Persona: Aggregated Tendencies and Frame-Dependent Geometry</h2>
+        <p class="authors">Yuan Yuan</p>
+        <p class="abstract">Evaluations of LLM personas via psychometric questionnaires typically rely on aggregate scores, discarding within-instance correlation structure. We test whether this geometric structure is intrinsic or frame-dependent. Constructing within-instance correlation matrices from IPIP-50 responses, we analyze geometry on SPD manifolds under manipulated question orderings in GPT-4o simulating American and Chinese-American personas. We find that persona expression comprises two dissociable components: aggregated features (Big Five scores) degrade under randomization (21% drop) but are frame-robust; geometric features (SPD manifold) collapse under frame misalignment (42% drop) but recover substantially (to 84%) under shared frames, surpassing aggregated features (76%). This collapse-recovery pattern reveals that persona geometry is not intrinsic but a frame-dependent coordination pattern encoding information invisible to aggregation. Our findings establish a dual-nature framework for LLM personas, frame-dependent geometry versus frame-robust aggregates, necessitating frame-aware evaluation and challenging static trait conceptions.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.02368v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.02368v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> LLM personas have two distinct parts: stable aggregate trait scores and a separate geometry of correlated responses that depends on question framing.</p>
+          <p><b>Engineering relevance:</b> For reliable persona evaluation, systems should measure both summary scores and frame-sensitive correlation structure, especially when prompt order or context can change.</p>
+          <ul><li>Built within-instance correlation matrices from IPIP-50 questionnaire responses.</li><li>Compared geometry on symmetric positive definite (SPD) manifolds under different question orderings.</li><li>Tested GPT-4o with American and Chinese-American persona settings plus randomized vs shared frames.</li></ul>
+          <p><b>Evidence signal:</b> Aggregate Big Five features dropped 21% under randomization but remained frame-robust, while geometric SPD features fell 42% under frame misalignment and recovered to 84% with shared frames.</p>
+          <p><b>Watch item:</b> Results may depend on the specific questionnaire, personas, and model/prompt setup, so the frame-dependent geometry should be validated across other instruments and LLMs.</p>
+          <div class="tags"><span>#LLMPersonas</span> <span>#Geometry</span> <span>#SPDManifold</span> <span>#Psychometrics</span> <span>#PromptEngineering</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>AI math</span><span>arXiv</span><strong>68</strong></div>
         <p class="date">2026-06-30</p>
         <h2>The Calibration Turn in AI-Assisted Research: A Conceptual and Methodological Framework for Evidence-Licensed Claims</h2>
         <p class="authors">Hongmin Li</p>
@@ -286,126 +381,31 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.31273v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.31273v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> AI-assisted research should be judged by whether its claims are calibrated to the evidence that licenses them, not just by whether it can generate outputs.</p>
-          <p><b>Engineering relevance:</b> For AI research systems, the key design goal is an evidence-aware workflow that separates hypothesis generation, validation, belief updating, and claim calibration before publishing conclusions.</p>
-          <ul><li>Frames AI-assisted research as five operators: hypothesis generation, consequence derivation, external validation, belief update, and claim calibration.</li><li>Introduces claim-centered concepts including linguistic, consequence-based, interventional, and evidence-licensed semantics.</li><li>Defines the claim-evidence gap and epistemic debt, and treats minimal structural reconstruction as a stronger form of calibration.</li></ul>
-          <p><b>Evidence signal:</b> The abstract presents AISim-Cal as a synthetic dynamics illustration rather than an empirical benchmark, so the paper is primarily conceptual and methodological.</p>
-          <p><b>Watch item:</b> Because AISim-Cal is illustrative and not an empirical evaluation, the framework still needs real-world validation across diverse AI research pipelines.</p>
-          <div class="tags"><span>#AIResearch</span> <span>#ScientificReasoning</span> <span>#ModelCalibration</span> <span>#LLMAgents</span> <span>#EvidenceBasedAI</span></div>
+          <p><b>Key insight:</b> The paper argues that in AI-assisted research, scientific claims should be calibrated to the exact evidence that licenses them, not just to how plausible or well-phrased they sound.</p>
+          <p><b>Engineering relevance:</b> For AI research systems, this reframes reliability as a claim-management problem: generate ideas, validate them independently, then only output statements whose evidence level supports their strength.</p>
+          <ul><li>Models AI-assisted research as five operators: hypothesis generation, consequence derivation, external validation, belief update, and claim calibration.</li><li>Introduces concepts like linguistic vs evidence-licensed semantics, claim-evidence gap, and epistemic debt.</li><li>Treats minimal structural reconstruction of heterogeneous outputs as an upward calibration step.</li></ul>
+          <p><b>Evidence signal:</b> The abstract describes AISim-Cal as an illustrative synthetic dynamics exercise, not as empirical evaluation or a benchmark.</p>
+          <p><b>Watch item:</b> A practical challenge is enforcing evidence-licensed calibration across diverse AI outputs without over-restricting useful provisional statements.</p>
+          <div class="tags"><span>#AIResearch</span> <span>#ScientificCalibration</span> <span>#EvidenceLicensedClaims</span> <span>#LLMAgents</span> <span>#ResearchReliability</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>72</strong></div>
-        <p class="date">2026-06-30</p>
-        <h2>Low-dimensional topology of deep neural networks</h2>
-        <p class="authors">Junyu Ren, Lek-Heng Lim</p>
-        <p class="abstract">We study layered models, including feedforward networks, ResNets, and transformers, by limiting each layer to a width of $d = 3$, i.e., $\mathbb{R}^3$ as representation space. This allows us to track how a neural network changes low-dimensional topological invariants through its layers. Just about any topological structure may be simplified or even trivialized by simply increasing dimension; e.g., any knot is equivalent to an unknot in $\mathbb{R}^4$. By restricting to $\mathbb{R}^3$, we not only isolate the effects of activation and depth from that of width, we work in a space that lends itself to easy visualization. We focus on linking number here, deferring other invariants like link groups, Milnor&#x27;s $\barμ$-invariants, knot types, ambient cobordisms, to a sequel. We provide full proofs and empirical experiments to justify the following insights: When measured by their power to effect changes in linking numbers, the layer-skipping feature in ResNets is as powerful as the attention mechanism in transformers; both ResNets and transformers are strictly more powerful than feedforward neural networks with monotonic activations, which are in turn more powerful than invertible and flow-based models; but replacing monotonic activation with a nonmonotonic one elevates a feedforward network into the same expressivity class as ResNets and transformers. These results suggest that low-dimensional topology can be a useful tool to guide designs of AI architectures. We also generalize our results from $d = 3$ to arbitrary $d &gt; 3$.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.31856v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.31856v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>67</strong></div>
+        <p class="date">2026-07-02</p>
+        <h2>Decentralized Stochastic Subgradient-type Methods with Communication Compression for Nonsmooth Nonconvex Optimization</h2>
+        <p class="authors">Siyuan Zhang, Nachuan Xiao, Xin Liu</p>
+        <p class="abstract">In this paper, we consider the nonsmooth nonconvex decentralized optimization problem, where inter-agent communication is compressed. We propose a general framework that unifies various decentralized stochastic subgradient-type methods with unbiased compression and contractive compression with error compensation. By relating the consensus-error iterates and the averaged iterates to the trajectories of continuous-time differential inclusions, we establish global convergence for all methods encompassed by our framework when the objective functions are nonsmooth and lack Clarke regularity. Based on our framework, we further develop several compression-based methods, including decentralized stochastic subgradient methods utilizing sign-based regularization and gradient-tracking momentum. Preliminary numerical experiments empirically support our theoretical results and highlight the communication-accuracy trade-off of the newly developed methods.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.01755v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01755v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Restricting networks to 3D representations lets the authors compare architectures by how strongly they can change low-dimensional topology, especially linking number.</p>
-          <p><b>Engineering relevance:</b> The results suggest that architectural choices like skip connections, attention, and activation shape can directly affect expressivity in ways that topology can help quantify.</p>
-          <ul><li>Model layers in ^3 to isolate depth/activation effects from width.</li><li>Track changes in linking number across feedforward nets, ResNets, transformers, and flow-based models.</li><li>Prove expressivity comparisons and validate them with experiments.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports full proofs plus empirical experiments supporting the expressivity hierarchy across architecture classes.</p>
-          <p><b>Watch item:</b> The conclusions are derived from a very low-dimensional setting, so translating the topology-based ranking to practical high-width models may require care.</p>
-          <div class="tags"><span>#DeepLearning</span> <span>#Topology</span> <span>#NeuralNetworks</span> <span>#Transformers</span> <span>#ResNets</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>72</strong></div>
-        <p class="date">2026-06-30</p>
-        <h2>Think in English, Answer in Korean: Efficient Adaptation of Multilingual Tool-Using Agents</h2>
-        <p class="authors">Utsav Garg, Sungjin Hong, Jason Jung, Justin Lee, Shaan Desai, Joon Hee Kim</p>
-        <p class="abstract">We present LuckyStar 111B, a 111B-parameter hybrid reasoning model developed through a collaboration between Cohere and LG CNS for Korean-English enterprise agents under practical memory and serving constraints. The model trains from Cohere&#x27;s fully post-trained Command A model rather than a new pretraining run, and uses preamble conditioning to switch between concise non-reasoning behavior and longer tool-oriented reasoning. We study four choices for scaling tool-using agents efficiently: multilingual supervised fine-tuning, reinforcement learning with verifiable rewards for multi-step tool-use tasks, language-consistency rewards for Korean user-facing responses, and 4-bit quantization for single-GPU serving. The adapted model improves mathematical reasoning, function calling, and agentic natural-language-to-SQL (NL2SQL) performance while preserving general Korean and English instruction-following quality. These results provide a practical recipe and failure-mode analysis for adapting post-trained multilingual models to verifiable agentic workflows under memory-constrained deployment.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.31648v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.31648v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> LuckyStar 111B shows that a post-trained multilingual model can be efficiently adapted into a Korean-English tool-using agent by combining preamble-controlled reasoning with targeted fine-tuning, verifiable RL, and quantized deployment.</p>
-          <p><b>Engineering relevance:</b> The paper offers a practical recipe for building enterprise agents that reason and call tools accurately while staying within memory and serving constraints on a single GPU.</p>
-          <ul><li>Start from Cohere Command A instead of training from scratch</li><li>Use preamble conditioning to toggle between concise answers and longer tool-oriented reasoning</li><li>Apply multilingual SFT, RL with verifiable rewards, language-consistency rewards, and 4-bit quantization</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports improved mathematical reasoning, function calling, and NL2SQL performance while preserving Korean and English instruction-following quality.</p>
-          <p><b>Watch item:</b> The approach depends on careful reward design and quantized serving, so misaligned language-consistency objectives or quantization-induced accuracy loss could affect real deployments.</p>
-          <div class="tags"><span>#MultilingualAgents</span> <span>#ToolUse</span> <span>#ReasoningModels</span> <span>#Quantization</span> <span>#NL2SQL</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>70</strong></div>
-        <p class="date">2026-06-29</p>
-        <h2>SGD at the Edge of Stability: Stochastic Stabilization with Large Learning Rates</h2>
-        <p class="authors">Konstantinos Emmanouilidis, Lachlan MacDonald, Salma Tarmoun, Rene Vidal</p>
-        <p class="abstract">Modern deep learning has been shown to operate at the edge of stability, routinely using learning rates far larger than those justified by classical optimization theory. Most prior analyses of the edge of stability phenomenon focus on deterministic gradient descent, leaving the stochastic setting largely unexplored. In this work, we provide sharp convergence guarantees for Stochastic Gradient Descent (SGD) applied to the multiclass cross-entropy loss, for both linear classifiers and two-layer neural networks. We show that the stochasticity of SGD may cause the dynamics to alternate between an edge-of-stability regime that is dominated by curvature-driven oscillations, and a stable regime in which the expected loss decreases at a controlled rate. Despite that, we prove that SGD self-stabilizes the dynamics, ensuring that the iterates return to stability in a fixed number of iterations and allowing convergence in the best-iterate sense even with large learning rates. Experiments validate our theoretical findings and illustrate the benefits of SGD in the large-stepsize regime.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.30930v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.30930v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> SGD can self-stabilize near the edge of stability, alternating between oscillatory and stable phases while still converging with large learning rates.</p>
-          <p><b>Engineering relevance:</b> This suggests practitioners can use larger stepsizes in deep learning without immediate divergence, potentially improving speed and robustness when tuned carefully.</p>
-          <ul><li>Analyze SGD on multiclass cross-entropy for linear classifiers and two-layer neural networks.</li><li>Prove fixed-time return to stability after edge-of-stability excursions.</li><li>Establish best-iterate convergence guarantees under large learning rates.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports experiments that validate the theory and show benefits of SGD in the large-stepsize regime.</p>
-          <p><b>Watch item:</b> The guarantees are problem-specific and rely on cross-entropy models, so direct transfer to other losses or architectures may require new analysis.</p>
-          <div class="tags"><span>#SGD</span> <span>#DeepLearningTheory</span> <span>#Optimization</span> <span>#EdgeOfStability</span> <span>#LargeLearningRates</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>69</strong></div>
-        <p class="date">2026-07-01</p>
-        <h2>GPU-Parallel Linearization Error Bounds for Real-Time Robust Optimal Control of Nonlinear and Neural Network Dynamics</h2>
-        <p class="authors">Jeffrey Fang, Keyi Shen, Anutam Srinivasan, Glen Chou</p>
-        <p class="abstract">This paper studies real-time robust optimal control for uncertain nonlinear systems, where linear time-varying (LTV) approximations make planning tractable but require sound linearization error bounds (LEBs) to guarantee robust constraint satisfaction. We develop tight, differentiable, GPU-parallel LEBs for LTV approximations of nonlinear and neural network (NN) dynamics. For analytic dynamics, we introduce path-based Hessian bounds that are tighter than standard interval methods. For NN dynamics, we derive certified LEBs using NN verifier-generated affine relaxations and local Jacobian corrections. We adapt a GPU-parallel system-level synthesis LTV-based robust control solver to be compatible with these LEBs by extending it to handle right-invertible disturbance matrices and non-zero-centered disturbance sets for tight zonotopic uncertainty propagation. Our method, GPUSLS-LEO, enables online optimization of robust feedback policies that account for linearization error, producing tight, formally verified reachable tubes. On complex nonlinear and NN dynamics up to 168 state dimensions, our method can compute robust control policies on the GPU at rates up to 67 Hz, reducing solve times and conservativeness relative to baselines while preserving formal guarantees and real-time performance.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.01203v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.01203v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper makes real-time robust control tractable by pairing GPU-parallel linearization error bounds with LTV approximations, yielding formally certified robustness for nonlinear and neural-network dynamics.</p>
-          <p><b>Engineering relevance:</b> It enables online synthesis of safe feedback policies and reachable tubes for high-dimensional systems while preserving both speed and formal constraint guarantees.</p>
-          <ul><li>Path-based Hessian bounds for tighter analytic linearization error bounds than interval methods</li><li>Certified NN linearization bounds via verifier affine relaxations plus local Jacobian corrections</li><li>GPU-parallel SLS solver extended for right-invertible disturbance matrices and non-zero-centered zonotopic uncertainty</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports GPU performance up to 67 Hz on systems with as many as 168 state dimensions, with reduced solve time and conservativeness versus baselines.</p>
-          <p><b>Watch item:</b> The approach depends on accurate verifier relaxations and solver compatibility with the disturbance/zonotope assumptions, so implementation details may affect tightness and scalability.</p>
-          <div class="tags"><span>#RobustControl</span> <span>#GPUComputing</span> <span>#FormalVerification</span> <span>#NonlinearSystems</span> <span>#NeuralNetworks</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>69</strong></div>
-        <p class="date">2026-06-30</p>
-        <h2>PolicyGuard: From Organizational Policies to Neuro-SymbolicCompliance Review Engines</h2>
-        <p class="authors">Sameer Malik, Ayush Singh, Amar Prakash Azad</p>
-        <p class="abstract">Policy-grounded document review requires determining whether a target document complies with organization-specific policies, guidelines, or playbooks. While large language models can assist with policy interpretation and document analysis, end-to-end prompting leaves the applied policy logic implicit, making compliance decisions difficult to inspect, update, and test. We present PolicyGuard, a neuro-symbolic framework for policy-grounded document compliance review. PolicyGuard converts organizational policy guidance into an executable review engine consisting of typed relational logic rules and atom-level extraction questions. During review, LLMs answer these local questions using retrieved document evidence, and a symbolic evaluator applies the formal rules to detect non-compliance. We instantiate and evaluate PolicyGuard on company-specific NDA compliance review, where contract clauses must be checked against organization-specific negotiation policies. By separating policy formalization, local document interpretation, and symbolic compliance evaluation, PolicyGuard makes document review more explicit, maintainable, and systematically testable.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.32004v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.32004v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> PolicyGuard turns organizational policy text into an executable neuro-symbolic compliance engine, making document review explicit instead of relying on opaque end-to-end prompting.</p>
-          <p><b>Engineering relevance:</b> It offers a maintainable way to audit and update compliance workflows for contract review, especially where policy logic must be inspectable and testable.</p>
-          <ul><li>Convert policy guidance into typed relational logic rules plus atom-level extraction questions.</li><li>Use LLMs to answer local questions from retrieved document evidence.</li><li>Apply a symbolic evaluator to the extracted facts to flag non-compliance.</li></ul>
-          <p><b>Evidence signal:</b> The paper instantiates and evaluates PolicyGuard on company-specific NDA compliance review, where contract clauses are checked against organization-specific negotiation policies.</p>
-          <p><b>Watch item:</b> Performance depends on high-quality policy formalization, retrieval, and question design; errors in any of these stages can propagate into the final compliance decision.</p>
-          <div class="tags"><span>#NeuroSymbolicAI</span> <span>#ComplianceReview</span> <span>#PolicyReasoning</span> <span>#DocumentAnalysis</span> <span>#TheoremProving</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>69</strong></div>
-        <p class="date">2026-06-30</p>
-        <h2>Knowledge Distillation from Large Reasoning Models to Compact Student Models: A Case Study on the John O Bryan Mathematics Competition</h2>
-        <p class="authors">Gaurab Baral, Aaditya Khanal, Yangyang Tao, Junxiu Zhou</p>
-        <p class="abstract">This paper investigates knowledge distillation from a large reasoning model (DeepSeek-R1) to a compact student model (Qwen2.5-7B). Using historical problems from the John O&#x27;Bryan Mathematics Competition at Northern Kentucky University (2011-2025), we build a Chain-of-Thought (CoT) training corpus through a dual-agent framework. The dataset is used to fine-tune the student model with Low-Rank Adaptation (LoRA) on Apple Silicon hardware using the MLX framework. The base Qwen2.5-7B model achieves 64.67% accuracy on competition problems, while the DeepSeek-R1 teacher achieves 91.40%. An initial 1,000-iteration training run revealed severe overfitting, with validation loss reaching a minimum at iteration 200 before rising steadily. Based on this finding, we ran five independent training runs each limited to 200 iterations with varied random seeds to assess result stability. Across these five runs, the fine-tuned student model achieves a mean accuracy of 69.43% (std dev 0.17%) on the competition dataset, a 4.76 percentage-point improvement over the base model, and generalizes to 73.1% (std dev 0.18%) on the MATH-500 benchmark. We further study how response length affects answer quality across six reasoning levels (R1-R6): accuracy declines consistently from 69.43% at R1 (mean 220 words) to 41.9% at R6 (mean 31.2 words), with the two-person speed section most sensitive to token reduction. These results demonstrate that CoT distillation improves compact student models and that response length is a critical factor in mathematical reasoning quality.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.31048v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.31048v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Chain-of-thought distillation from DeepSeek-R1 to a compact Qwen2.5-7B student improves math reasoning, but performance depends strongly on response length.</p>
-          <p><b>Engineering relevance:</b> The study shows a practical LoRA/MLX pipeline on Apple Silicon for turning expensive reasoning traces into a deployable smaller model with measurable gains.</p>
-          <ul><li>Built a CoT training set from 2011–2025 John O&#x27;Bryan Math Competition problems using a dual-agent framework</li><li>Fine-tuned Qwen2.5-7B with LoRA on Apple Silicon via MLX</li><li>Evaluated multiple short training runs and tested transfer on MATH-500 and controlled response-length settings</li></ul>
-          <p><b>Evidence signal:</b> Base Qwen2.5-7B scored 64.67% and the DeepSeek-R1 teacher 91.40%; the distilled student reached 69.43% mean accuracy on the competition set and 73.1% on MATH-500.</p>
-          <p><b>Watch item:</b> An initial 1,000-iteration run overfit quickly, so the stable gains come from shorter 200-iteration runs and may not generalize across longer training schedules.</p>
-          <div class="tags"><span>#KnowledgeDistillation</span> <span>#ChainOfThought</span> <span>#MathematicalReasoning</span> <span>#LoRA</span> <span>#LLMCompression</span></div>
+          <p><b>Key insight:</b> The paper gives a unified convergence framework for decentralized stochastic subgradient methods under compressed communication, even for nonsmooth nonconvex objectives without Clarke regularity.</p>
+          <p><b>Engineering relevance:</b> It provides practical algorithmic guidance for distributed learning systems that must trade off communication cost, robustness, and optimization accuracy.</p>
+          <ul><li>Unifies decentralized stochastic subgradient-type methods with unbiased compression and contractive compression plus error compensation.</li><li>Tracks both consensus-error iterates and averaged iterates via continuous-time differential inclusions to prove global convergence.</li><li>Develops new compression-based variants, including sign-regularized methods and gradient-tracking momentum.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports preliminary numerical experiments that empirically support the theory and illustrate the communication-accuracy trade-off.</p>
+          <p><b>Watch item:</b> The results are based on preliminary experiments, so the performance and tuning burden of the new compressed methods may vary in larger or more heterogeneous deployments.</p>
+          <div class="tags"><span>#DistributedOptimization</span> <span>#Compression</span> <span>#NonconvexOptimization</span> <span>#SubgradientMethods</span> <span>#CommunicationEfficiency</span></div>
         </section>
       </article>
     </section>
