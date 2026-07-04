@@ -1,24 +1,24 @@
 {
-  "key_insight": "RL post-training gains are surprisingly concentrated: training just one transformer layer can recover most of the benefit of full-parameter RL, often with the strongest effect in middle layers.",
-  "engineering_relevance": "This suggests a far cheaper and more targeted way to adapt large models, reducing training cost, memory use, and update scope for RL post-training.",
+  "key_insight": "RL post-training gains are concentrated in a small number of transformer layers, and in many cases a single middle layer can recover most of the benefit of full-parameter training.",
+  "engineering_relevance": "This suggests a far more parameter-efficient and cheaper RL fine-tuning strategy for LLMs, with potential benefits for training speed, memory use, and targeted adaptation.",
   "method": [
-    "Define \"layer contribution\" as the fraction of full RL improvement recovered by training one layer in isolation.",
-    "Run layer-wise RL studies across transformer stacks instead of updating all parameters uniformly.",
-    "Compare rankings of important layers across models, tasks, and RL algorithms to test stability."
+    "Train one transformer layer at a time while keeping the rest of the model frozen.",
+    "Define layer contribution as the fraction of full RL improvement recovered by an isolated layer.",
+    "Compare layer rankings across model families, RL algorithms, and task domains."
   ],
-  "evidence_signal": "The abstract reports experiments on seven models from Qwen3 and Qwen2.5 using three RL algorithms (GRPO, GiGPO, Dr. GRPO) across mathematical reasoning, code generation, and agentic decision-making tasks.",
-  "watch_item": "Single-layer gains may be sensitive to the specific RL setup, so transferring this strategy to other model families or training regimes likely needs validation before deployment.",
+  "evidence_signal": "The study evaluates seven models across Qwen3 and Qwen2.5, three RL algorithms, and multiple tasks, finding a stable middle-layer concentration pattern and strongly correlated layer rankings.",
+  "watch_item": "Layer importance appears model- and task-dependent enough that the best layer should be validated empirically before using a single-layer training recipe.",
   "hashtags": [
+    "#LLM",
     "#ReinforcementLearning",
-    "#Transformers",
-    "#LLMPostTraining",
-    "#MathematicalReasoning",
-    "#EfficientTraining"
+    "#TransformerLayers",
+    "#PostTraining",
+    "#EfficientFineTuning"
   ],
   "paper_id": "2026-07-01-arxiv-is_one_layer_enough_training_a_single_transformer_layer_can_match_full_parameter_rl_traini",
   "paper_title": "Is One Layer Enough? Training A Single Transformer Layer Can Match Full-Parameter RL Training",
   "paper_date": "2026-07-01",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-03T15:10:22",
+  "generated_at": "2026-07-04T14:28:30",
   "generator": "openai"
 }
