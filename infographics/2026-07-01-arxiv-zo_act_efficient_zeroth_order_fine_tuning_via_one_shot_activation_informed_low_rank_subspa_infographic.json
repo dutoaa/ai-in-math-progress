@@ -1,24 +1,24 @@
 {
-  "key_insight": "ZO-Act turns zeroth-order fine-tuning into optimization over a small activation-derived low-rank coefficient space, which lowers estimator variance and finite-difference error without backpropagation.",
-  "engineering_relevance": "It offers a practical way to adapt large and quantized language models under memory or autodiff constraints while keeping trainable parameters lightweight and optimizer-friendly.",
+  "key_insight": "ZO-Act makes zeroth-order fine-tuning more stable and efficient by perturbing a fixed low-rank activation-derived subspace instead of full weights or random directions.",
+  "engineering_relevance": "This enables forward-only, memory-light fine-tuning of large and quantized language models while remaining compatible with practical optimizers like Adam.",
   "method": [
-    "Compute a compact activation basis once at initialization for each linear layer.",
-    "Freeze model weights and optimize only low-rank coefficient matrices using forward-only loss evaluations.",
-    "Use the restricted subspace to support low-bit fine-tuning and momentum-based optimizers like Adam."
+    "Compute a small activation basis once at initialization for each linear layer.",
+    "Optimize only lightweight coefficient matrices in that basis using forward-loss evaluations.",
+    "Keep the original weights frozen, which is especially useful for low-bit/INT4 models."
   ],
-  "evidence_signal": "The abstract reports consistent improvements over strong ZO baselines on Llama-3-8B, OPT-13B, and INT4 Llama-3-8B across language understanding, QA, and commonsense reasoning.",
-  "watch_item": "Performance depends on how well the fixed activation subspace matches the task, so a poor subspace choice can introduce approximation bias and limit gains.",
+  "evidence_signal": "The method is evaluated on Llama-3-8B, OPT-13B, and INT4 Llama-3-8B, with consistent improvements over strong zeroth-order baselines on language understanding, QA, and commonsense reasoning tasks.",
+  "watch_item": "Performance may depend on how well the chosen low-rank activation subspace matches the true gradient structure, since subspace approximation introduces some bias.",
   "hashtags": [
     "#ZerothOrderOptimization",
-    "#LLMFineTuning",
-    "#LowRankSubspace",
-    "#QuantizedLLMs",
+    "#LLMFinetuning",
+    "#LowRankMethods",
+    "#QuantizedModels",
     "#EfficientAI"
   ],
   "paper_id": "2026-07-01-arxiv-zo_act_efficient_zeroth_order_fine_tuning_via_one_shot_activation_informed_low_rank_subspa",
   "paper_title": "ZO-Act: Efficient Zeroth-Order Fine-Tuning via One-Shot Activation-Informed Low-Rank Subspaces",
   "paper_date": "2026-07-01",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-04T14:28:49",
+  "generated_at": "2026-07-05T14:42:38",
   "generator": "openai"
 }
