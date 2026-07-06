@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-07-05
+Generated: 2026-07-06
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Tropical Geometry as a Restricted Architecture for Physics-Informed Neural Networks: Applications in Nonlinear Fluid-Structure Examples
@@ -75,15 +75,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.01223v2
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-01-arxiv-theoria_rewrite_acceptability_verification_over_informal_reasoning_states_infographic.json
 
-## 10. Geometry-Preserving Orthonormal Initialization for Low-Rank Adaptation in RLVR
-
-- Date: 2026-06-30
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.31813v1
-- PDF: https://arxiv.org/pdf/2606.31813v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-geometry_preserving_orthonormal_initialization_for_low_rank_adaptation_in_rlvr_infographic.json
-
-## 11. An Optimisation Framework for the Well-Conditioned Training of Physics-Informed Neural Networks
+## 10. An Optimisation Framework for the Well-Conditioned Training of Physics-Informed Neural Networks
 
 - Date: 2026-07-02
 - Category: Symbolic Computation
@@ -91,21 +83,29 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.02194v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-02-arxiv-an_optimisation_framework_for_the_well_conditioned_training_of_physics_informed_neural_net_infographic.json
 
-## 12. ZO-Act: Efficient Zeroth-Order Fine-Tuning via One-Shot Activation-Informed Low-Rank Subspaces
+## 11. Geometry-Preserving Orthonormal Initialization for Low-Rank Adaptation in RLVR
 
-- Date: 2026-07-01
+- Date: 2026-06-30
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2607.01125v1
-- PDF: https://arxiv.org/pdf/2607.01125v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-01-arxiv-zo_act_efficient_zeroth_order_fine_tuning_via_one_shot_activation_informed_low_rank_subspa_infographic.json
+- arXiv: https://arxiv.org/abs/2606.31813v1
+- PDF: https://arxiv.org/pdf/2606.31813v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-geometry_preserving_orthonormal_initialization_for_low_rank_adaptation_in_rlvr_infographic.json
 
-## 13. Domain-Decomposed Randomized Neural Networks for Partial Differential Equations in Unbounded Domains
+## 12. Domain-Decomposed Randomized Neural Networks for Partial Differential Equations in Unbounded Domains
 
 - Date: 2026-06-30
 - Category: Number Theory and Algebra
 - arXiv: https://arxiv.org/abs/2606.31342v1
 - PDF: https://arxiv.org/pdf/2606.31342v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-domain_decomposed_randomized_neural_networks_for_partial_differential_equations_in_unbound_infographic.json
+
+## 13. ZO-Act: Efficient Zeroth-Order Fine-Tuning via One-Shot Activation-Informed Low-Rank Subspaces
+
+- Date: 2026-07-01
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2607.01125v1
+- PDF: https://arxiv.org/pdf/2607.01125v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-01-arxiv-zo_act_efficient_zeroth_order_fine_tuning_via_one_shot_activation_informed_low_rank_subspa_infographic.json
 
 ## 14. Convolutional Symmetric AutoEncoders: enhancing latent stability via differential geometry
 
@@ -139,15 +139,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.01692v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-02-arxiv-from_answer_generators_to_reasoning_facilitators_designing_ai_tutors_for_mathematical_reas_infographic.json
 
-## 18. The Dual Nature of LLM Persona: Aggregated Tendencies and Frame-Dependent Geometry
-
-- Date: 2026-07-02
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2607.02368v1
-- PDF: https://arxiv.org/pdf/2607.02368v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-02-arxiv-the_dual_nature_of_llm_persona_aggregated_tendencies_and_frame_dependent_geometry_infographic.json
-
-## 19. The Calibration Turn in AI-Assisted Research: A Conceptual and Methodological Framework for Evidence-Licensed Claims
+## 18. The Calibration Turn in AI-Assisted Research: A Conceptual and Methodological Framework for Evidence-Licensed Claims
 
 - Date: 2026-06-30
 - Category: AI math
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2606.31273v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-the_calibration_turn_in_ai_assisted_research_a_conceptual_and_methodological_framework_for_infographic.json
 
-## 20. Decentralized Stochastic Subgradient-type Methods with Communication Compression for Nonsmooth Nonconvex Optimization
+## 19. Decentralized Stochastic Subgradient-type Methods with Communication Compression for Nonsmooth Nonconvex Optimization
 
 - Date: 2026-07-02
 - Category: Optimization and PDEs
 - arXiv: https://arxiv.org/abs/2607.01755v1
 - PDF: https://arxiv.org/pdf/2607.01755v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-02-arxiv-decentralized_stochastic_subgradient_type_methods_with_communication_compression_for_nonsm_infographic.json
+
+## 20. Think in English, Answer in Korean: Efficient Adaptation of Multilingual Tool-Using Agents
+
+- Date: 2026-06-30
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2606.31648v1
+- PDF: https://arxiv.org/pdf/2606.31648v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-think_in_english_answer_in_korean_efficient_adaptation_of_multilingual_tool_using_agents_infographic.json
