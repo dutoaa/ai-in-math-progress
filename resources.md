@@ -1,164 +1,164 @@
 # AI math Progress Public Resources
 
-Generated: 2026-07-06
+Generated: 2026-07-07
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. Tropical Geometry as a Restricted Architecture for Physics-Informed Neural Networks: Applications in Nonlinear Fluid-Structure Examples
+## 1. MechMath Agent Team: LLM Driven Agents for Mathematical Research
 
-- Date: 2026-06-30
+- Date: 2026-07-05
 - Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2607.00237v1
-- PDF: https://arxiv.org/pdf/2607.00237v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-tropical_geometry_as_a_restricted_architecture_for_physics_informed_neural_networks_applic_infographic.json
+- arXiv: https://arxiv.org/abs/2607.04394v1
+- PDF: https://arxiv.org/pdf/2607.04394v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-05-arxiv-mechmath_agent_team_llm_driven_agents_for_mathematical_research_infographic.json
 
-## 2. GAIA: Geometry-Adaptive Operator Learning for Forward and Inverse Problems
+## 2. TREK: Distill to Explore, Reinforce to Refine
 
-- Date: 2026-07-01
+- Date: 2026-07-06
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2607.05339v1
+- PDF: https://arxiv.org/pdf/2607.05339v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-06-arxiv-trek_distill_to_explore_reinforce_to_refine_infographic.json
+
+## 3. Why Pure Reasoning is Not Enough: Nature as the Source of Mathematical Innovation
+
+- Date: 2026-07-05
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2607.04505v1
+- PDF: https://arxiv.org/pdf/2607.04505v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-05-arxiv-why_pure_reasoning_is_not_enough_nature_as_the_source_of_mathematical_innovation_infographic.json
+
+## 4. Unified convergence analysis for gradient descent optimization methods in the training of deep neural networks
+
+- Date: 2026-07-05
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2607.01128v1
-- PDF: https://arxiv.org/pdf/2607.01128v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-01-arxiv-gaia_geometry_adaptive_operator_learning_for_forward_and_inverse_problems_infographic.json
+- arXiv: https://arxiv.org/abs/2607.04233v1
+- PDF: https://arxiv.org/pdf/2607.04233v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-05-arxiv-unified_convergence_analysis_for_gradient_descent_optimization_methods_in_the_training_of_infographic.json
 
-## 3. Formalized $q$-series: The Rogers-Ramanujan Identities and Beyond
+## 5. LLM-as-a-Verifier: A General-Purpose Verification Framework
 
-- Date: 2026-07-01
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2607.01544v1
-- PDF: https://arxiv.org/pdf/2607.01544v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-01-arxiv-formalized_q_series_the_rogers_ramanujan_identities_and_beyond_infographic.json
-
-## 4. Is One Layer Enough? Training A Single Transformer Layer Can Match Full-Parameter RL Training
-
-- Date: 2026-07-01
+- Date: 2026-07-06
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2607.01232v2
-- PDF: https://arxiv.org/pdf/2607.01232v2
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-01-arxiv-is_one_layer_enough_training_a_single_transformer_layer_can_match_full_parameter_rl_traini_infographic.json
+- arXiv: https://arxiv.org/abs/2607.05391v1
+- PDF: https://arxiv.org/pdf/2607.05391v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-06-arxiv-llm_as_a_verifier_a_general_purpose_verification_framework_infographic.json
 
-## 5. Geometric Signatures of Reasoning: A Spectral Perspective on Task Hardness
+## 6. Regime-Conditional Stabilisation of LLM-Augmented Cooperative Multi-Agent Reinforcement Learning
 
-- Date: 2026-07-02
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2607.01571v1
-- PDF: https://arxiv.org/pdf/2607.01571v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-02-arxiv-geometric_signatures_of_reasoning_a_spectral_perspective_on_task_hardness_infographic.json
+- Date: 2026-07-05
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2607.04470v1
+- PDF: https://arxiv.org/pdf/2607.04470v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-05-arxiv-regime_conditional_stabilisation_of_llm_augmented_cooperative_multi_agent_reinforcement_le_infographic.json
 
-## 6. Vehicle Routing Problem Meets Large Language Models: An Overview and Perspectives
+## 7. Robustness Verification of an Autonomous Underwater Vehicle-based Plankton Classifier
 
-- Date: 2026-07-01
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2607.00604v1
-- PDF: https://arxiv.org/pdf/2607.00604v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-01-arxiv-vehicle_routing_problem_meets_large_language_models_an_overview_and_perspectives_infographic.json
-
-## 7. Beyond the Library: An Agentic Framework for Autoformalizing Research Mathematics
-
-- Date: 2026-06-30
+- Date: 2026-07-05
 - Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.31134v2
-- PDF: https://arxiv.org/pdf/2606.31134v2
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-beyond_the_library_an_agentic_framework_for_autoformalizing_research_mathematics_infographic.json
+- arXiv: https://arxiv.org/abs/2607.04453v1
+- PDF: https://arxiv.org/pdf/2607.04453v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-05-arxiv-robustness_verification_of_an_autonomous_underwater_vehicle_based_plankton_classifier_infographic.json
 
-## 8. Structured Factorization Approaches for Quantum State Tomography
+## 8. ACPO: Adaptive Credit Policy Optimization via Fine-Grained Surrogate Entropy
 
-- Date: 2026-07-02
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2607.01608v1
-- PDF: https://arxiv.org/pdf/2607.01608v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-02-arxiv-structured_factorization_approaches_for_quantum_state_tomography_infographic.json
+- Date: 2026-07-03
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2607.03126v1
+- PDF: https://arxiv.org/pdf/2607.03126v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-03-arxiv-acpo_adaptive_credit_policy_optimization_via_fine_grained_surrogate_entropy_infographic.json
 
-## 9. Theoria: Rewrite-Acceptability Verification over Informal Reasoning States
+## 9. Constrained Flow Matching via Lagrangian Dual Flows
 
-- Date: 2026-07-01
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2607.01223v2
-- PDF: https://arxiv.org/pdf/2607.01223v2
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-01-arxiv-theoria_rewrite_acceptability_verification_over_informal_reasoning_states_infographic.json
+- Date: 2026-07-05
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2607.04513v1
+- PDF: https://arxiv.org/pdf/2607.04513v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-05-arxiv-constrained_flow_matching_via_lagrangian_dual_flows_infographic.json
 
-## 10. An Optimisation Framework for the Well-Conditioned Training of Physics-Informed Neural Networks
+## 10. Reward Granularity in RLVR: Comparing Process and Outcome Reward Structures for Mathematical Reasoning in Small Language Models
+
+- Date: 2026-07-03
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2607.02869v1
+- PDF: https://arxiv.org/pdf/2607.02869v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-03-arxiv-reward_granularity_in_rlvr_comparing_process_and_outcome_reward_structures_for_mathematica_infographic.json
+
+## 11. Multi-Turn On-Policy Distillation with Prefix Replay
+
+- Date: 2026-07-06
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2607.04763v1
+- PDF: https://arxiv.org/pdf/2607.04763v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-06-arxiv-multi_turn_on_policy_distillation_with_prefix_replay_infographic.json
+
+## 12. LLM-Guided Transportation Hub Capacity Planning with Textual Business Inputs
+
+- Date: 2026-07-04
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2607.03651v1
+- PDF: https://arxiv.org/pdf/2607.03651v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-04-arxiv-llm_guided_transportation_hub_capacity_planning_with_textual_business_inputs_infographic.json
+
+## 13. Spectral Rewiring for Exploration, Purification, and Model Merging
+
+- Date: 2026-07-03
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2607.03065v1
+- PDF: https://arxiv.org/pdf/2607.03065v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-03-arxiv-spectral_rewiring_for_exploration_purification_and_model_merging_infographic.json
+
+## 14. Optimality-Informed Neural Networks for Lunar Landing Trajectory Optimization
 
 - Date: 2026-07-02
 - Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2607.02194v1
-- PDF: https://arxiv.org/pdf/2607.02194v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-02-arxiv-an_optimisation_framework_for_the_well_conditioned_training_of_physics_informed_neural_net_infographic.json
+- arXiv: https://arxiv.org/abs/2607.02741v1
+- PDF: https://arxiv.org/pdf/2607.02741v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-02-arxiv-optimality_informed_neural_networks_for_lunar_landing_trajectory_optimization_infographic.json
 
-## 11. Geometry-Preserving Orthonormal Initialization for Low-Rank Adaptation in RLVR
+## 15. Online Linear Programming for Multi-Objective Routing in LLM Serving
 
-- Date: 2026-06-30
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.31813v1
-- PDF: https://arxiv.org/pdf/2606.31813v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-geometry_preserving_orthonormal_initialization_for_low_rank_adaptation_in_rlvr_infographic.json
-
-## 12. Domain-Decomposed Randomized Neural Networks for Partial Differential Equations in Unbounded Domains
-
-- Date: 2026-06-30
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2606.31342v1
-- PDF: https://arxiv.org/pdf/2606.31342v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-domain_decomposed_randomized_neural_networks_for_partial_differential_equations_in_unbound_infographic.json
-
-## 13. ZO-Act: Efficient Zeroth-Order Fine-Tuning via One-Shot Activation-Informed Low-Rank Subspaces
-
-- Date: 2026-07-01
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2607.01125v1
-- PDF: https://arxiv.org/pdf/2607.01125v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-01-arxiv-zo_act_efficient_zeroth_order_fine_tuning_via_one_shot_activation_informed_low_rank_subspa_infographic.json
-
-## 14. Convolutional Symmetric AutoEncoders: enhancing latent stability via differential geometry
-
-- Date: 2026-07-01
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2607.00669v1
-- PDF: https://arxiv.org/pdf/2607.00669v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-01-arxiv-convolutional_symmetric_autoencoders_enhancing_latent_stability_via_differential_geometry_infographic.json
-
-## 15. From Finite Cayley Graphs to Growth of Infinite Groups
-
-- Date: 2026-07-02
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2607.02102v1
-- PDF: https://arxiv.org/pdf/2607.02102v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-02-arxiv-from_finite_cayley_graphs_to_growth_of_infinite_groups_infographic.json
-
-## 16. Stabilization Learning: A Paradigm Transition Bridging Control Theory and Machine Learning
-
-- Date: 2026-06-30
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2606.31562v1
-- PDF: https://arxiv.org/pdf/2606.31562v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-stabilization_learning_a_paradigm_transition_bridging_control_theory_and_machine_learning_infographic.json
-
-## 17. From Answer Generators to Reasoning Facilitators: Designing AI Tutors for Mathematical Reasoning in High-Stakes Environments
-
-- Date: 2026-07-02
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2607.01692v1
-- PDF: https://arxiv.org/pdf/2607.01692v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-02-arxiv-from_answer_generators_to_reasoning_facilitators_designing_ai_tutors_for_mathematical_reas_infographic.json
-
-## 18. The Calibration Turn in AI-Assisted Research: A Conceptual and Methodological Framework for Evidence-Licensed Claims
-
-- Date: 2026-06-30
-- Category: AI math
-- arXiv: https://arxiv.org/abs/2606.31273v1
-- PDF: https://arxiv.org/pdf/2606.31273v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-the_calibration_turn_in_ai_assisted_research_a_conceptual_and_methodological_framework_for_infographic.json
-
-## 19. Decentralized Stochastic Subgradient-type Methods with Communication Compression for Nonsmooth Nonconvex Optimization
-
-- Date: 2026-07-02
+- Date: 2026-07-04
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2607.01755v1
-- PDF: https://arxiv.org/pdf/2607.01755v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-02-arxiv-decentralized_stochastic_subgradient_type_methods_with_communication_compression_for_nonsm_infographic.json
+- arXiv: https://arxiv.org/abs/2607.03948v1
+- PDF: https://arxiv.org/pdf/2607.03948v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-04-arxiv-online_linear_programming_for_multi_objective_routing_in_llm_serving_infographic.json
 
-## 20. Think in English, Answer in Korean: Efficient Adaptation of Multilingual Tool-Using Agents
+## 16. Pointwise Error Estimates for Numerical Physics-Informed Neural Networks
 
-- Date: 2026-06-30
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2606.31648v1
-- PDF: https://arxiv.org/pdf/2606.31648v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-06-30-arxiv-think_in_english_answer_in_korean_efficient_adaptation_of_multilingual_tool_using_agents_infographic.json
+- Date: 2026-07-03
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2607.03431v1
+- PDF: https://arxiv.org/pdf/2607.03431v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-03-arxiv-pointwise_error_estimates_for_numerical_physics_informed_neural_networks_infographic.json
+
+## 17. Neuro-Symbolic Reasoning for Vulnerability Detection
+
+- Date: 2026-07-04
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2607.03963v1
+- PDF: https://arxiv.org/pdf/2607.03963v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-04-arxiv-neuro_symbolic_reasoning_for_vulnerability_detection_infographic.json
+
+## 18. PIEFS: Physics-Informed Eigenfunction Features with Learnable Scaling
+
+- Date: 2026-07-04
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2607.03692v1
+- PDF: https://arxiv.org/pdf/2607.03692v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-04-arxiv-piefs_physics_informed_eigenfunction_features_with_learnable_scaling_infographic.json
+
+## 19. Dynamics of Chemotactic Gliding-Aggregation in Myxobacteria on Bounded Domains: Stochastic Modeling, Analysis, and Deep Neural Network Simulations
+
+- Date: 2026-07-04
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2607.03677v1
+- PDF: https://arxiv.org/pdf/2607.03677v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-04-arxiv-dynamics_of_chemotactic_gliding_aggregation_in_myxobacteria_on_bounded_domains_stochastic_infographic.json
+
+## 20. Privacy-Preserving Robustness Verification for Neural Networks
+
+- Date: 2026-07-06
+- Category: AI math
+- arXiv: https://arxiv.org/abs/2607.05251v1
+- PDF: https://arxiv.org/pdf/2607.05251v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-06-arxiv-privacy_preserving_robustness_verification_for_neural_networks_infographic.json
