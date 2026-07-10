@@ -1,24 +1,24 @@
 {
-  "key_insight": "GeoSD improves reasoning generalization by making self-distillation trust the student's current support and by limiting how far predictions drift over training in the same distribution geometry.",
-  "engineering_relevance": "For post-training large language models, the method offers a practical way to keep in-distribution gains from self-distillation while reducing overconfident out-of-distribution failures.",
+  "key_insight": "GeoSD improves reasoning generalization by dampening overconfident self-distillation updates and constraining prediction drift in the same probability geometry as next-token outputs.",
+  "engineering_relevance": "For LLM post-training, it offers a practical way to keep in-distribution gains from self-distillation while reducing OOD failure modes on mathematical reasoning tasks.",
   "method": [
-    "Hellinger-weighted distillation down-weights teacher preferences that the student cannot yet justify.",
-    "A proximal regularizer constrains prediction drift from a recent checkpoint using Fisher-Rao distance.",
-    "Natural-gradient updates are used so optimization follows the geometry of next-token distributions."
+    "Uses a Hellinger loss to downweight teacher targets the student cannot yet support.",
+    "Adds a proximal Fisher-Rao regularization term to limit drift from a recent checkpoint.",
+    "Applies natural-gradient-style updates in distribution space rather than plain parameter space."
   ],
-  "evidence_signal": "Across mathematical reasoning benchmarks and three model families, GeoSD improves average OOD accuracy by 5.7-8.6 points over the base model, with results reported from 1.7B to 32B models.",
-  "watch_item": "The approach adds geometric regularization and checkpoint-based constraints, so implementation needs careful tuning to avoid reducing the gains of standard self-distillation.",
+  "evidence_signal": "Across mathematical reasoning benchmarks and three model families, GeoSD improves average OOD accuracy by 5.7-8.6 points over the base model, with gains reported from 1.7B to 32B models.",
+  "watch_item": "The method adds geometric regularization and checkpoint-dependent proximal control, which may increase training complexity and sensitivity to distance estimates or update scheduling.",
   "hashtags": [
-    "#LLMReasoning",
+    "#LLMs",
     "#SelfDistillation",
+    "#Reasoning",
     "#OODGeneralization",
-    "#NaturalGradient",
-    "#MathematicalReasoning"
+    "#NaturalGradient"
   ],
   "paper_id": "2026-07-07-arxiv-geometric_self_distillation_for_reasoning_generalization",
   "paper_title": "Geometric Self-Distillation for Reasoning Generalization",
   "paper_date": "2026-07-07",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-09T15:56:07",
+  "generated_at": "2026-07-10T15:32:05",
   "generator": "openai"
 }

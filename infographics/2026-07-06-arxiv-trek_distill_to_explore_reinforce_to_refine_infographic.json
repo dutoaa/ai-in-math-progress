@@ -1,24 +1,24 @@
 {
-  "key_insight": "TREK expands a student model’s reasoning support with verified teacher-generated trajectories before reinforcing them on-policy, helping GRPO escape hard-prompt failure modes.",
-  "engineering_relevance": "It offers a practical training recipe for improving reasoning and agent performance using only verified outputs, with support for black-box teachers or even self-context generation.",
+  "key_insight": "TREK expands a student model’s reasoning support with verified teacher-proposed solutions before switching back to GRPO, helping policy optimization escape hard prompts where on-policy exploration stalls.",
+  "engineering_relevance": "The method is practical for training and deployment because it works with black-box teachers, white-box teachers, or self-context and only needs verified trajectories, not teacher internals.",
   "method": [
-    "Find prompts where the student has very low pass rate.",
-    "Query a proposal source and keep verified candidate solutions ranked by student likelihood.",
-    "Run a short forward-KL distillation phase, then resume standard on-policy GRPO refinement."
+    "Identify hard prompts where the student has low pass rate.",
+    "Query a proposal source to generate verified candidate solutions and keep the top-r by student likelihood.",
+    "Apply a short forward-KL distillation phase to pull those modes into support, then resume standard on-policy GRPO refinement."
   ],
-  "evidence_signal": "In the abstract, TREK improves Qwen3 on AIME 2024/2025 across tested scales, with Qwen3-8B reaching 40.3 on AIME 2025 and 51.1 on AIME 2024 (avg@16), and also boosts ALFWorld and ScienceWorld success rates.",
-  "watch_item": "Performance depends on obtaining verified proposals and enough teacher support to expand the student’s support; without good proposal quality, the exploration phase may be less effective.",
+  "evidence_signal": "The abstract reports consistent gains on math and agentic benchmarks, including Qwen3-8B improving from 36.9 to 40.3 on AIME 2025 and from 47.9 to 51.1 on AIME 2024, with similar gains on ALFWorld and ScienceWorld.",
+  "watch_item": "TREK depends on access to verified candidate trajectories and the quality of the proposal source, so weak verification or poor proposals could limit the benefit or add extra training cost.",
   "hashtags": [
-    "#ReinforcementLearning",
-    "#LLMReasoning",
-    "#KnowledgeDistillation",
-    "#MathematicalReasoning",
-    "#AgenticAI"
+    "#MathReasoning",
+    "#RLHF",
+    "#GRPO",
+    "#Distillation",
+    "#LLMTraining"
   ],
   "paper_id": "2026-07-06-arxiv-trek_distill_to_explore_reinforce_to_refine",
   "paper_title": "TREK: Distill to Explore, Reinforce to Refine",
   "paper_date": "2026-07-06",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-09T15:55:57",
+  "generated_at": "2026-07-10T15:31:54",
   "generator": "openai"
 }
