@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-07-10
+Generated: 2026-07-11
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. From Solvers to Research: Large Language Model-Driven Formal Mathematics at the Research Frontier
@@ -27,39 +27,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.06820v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-07-arxiv-evaluating_sagemath_augmented_llm_agents_for_computational_and_experimental_mathematics_infographic.json
 
-## 4. Learning the Energy Landscapes of Dynamical Systems via Energetic Variational Optimal Transport under Data Quantity--Quality Trade-offs
-
-- Date: 2026-07-08
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2607.07919v1
-- PDF: https://arxiv.org/pdf/2607.07919v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-08-arxiv-learning_the_energy_landscapes_of_dynamical_systems_via_energetic_variational_optimal_tran_infographic.json
-
-## 5. Mathematical methods of reinforcement learning
-
-- Date: 2026-07-08
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2607.06935v1
-- PDF: https://arxiv.org/pdf/2607.06935v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-08-arxiv-mathematical_methods_of_reinforcement_learning_infographic.json
-
-## 6. Any-Dimensional Learning by Sampling
-
-- Date: 2026-07-08
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2607.07680v1
-- PDF: https://arxiv.org/pdf/2607.07680v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-08-arxiv-any_dimensional_learning_by_sampling_infographic.json
-
-## 7. Higher-Order Geometric Updates for Levenberg-Marquardt Method via Riemann Normal Coordinates
-
-- Date: 2026-07-08
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2607.07623v1
-- PDF: https://arxiv.org/pdf/2607.07623v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-08-arxiv-higher_order_geometric_updates_for_levenberg_marquardt_method_via_riemann_normal_coordinat_infographic.json
-
-## 8. Physics-Informed Neural Embeddings of PDE Solution Families
+## 4. Physics-Informed Neural Embeddings of PDE Solution Families
 
 - Date: 2026-07-07
 - Category: Geometry and Topology
@@ -67,7 +35,47 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.06348v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-07-arxiv-physics_informed_neural_embeddings_of_pde_solution_families_infographic.json
 
-## 9. Leveraging Extragradient for Effective Sharpness-Aware Minimization in Deep Learning
+## 5. Learning the Energy Landscapes of Dynamical Systems via Energetic Variational Optimal Transport under Data Quantity--Quality Trade-offs
+
+- Date: 2026-07-08
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2607.07919v1
+- PDF: https://arxiv.org/pdf/2607.07919v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-08-arxiv-learning_the_energy_landscapes_of_dynamical_systems_via_energetic_variational_optimal_tran_infographic.json
+
+## 6. Trustworthy Machine Learning through the Lens of Combinatorial Optimization: Survey and Research Perspectives
+
+- Date: 2026-07-08
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2607.07762v1
+- PDF: https://arxiv.org/pdf/2607.07762v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-08-arxiv-trustworthy_machine_learning_through_the_lens_of_combinatorial_optimization_survey_and_res_infographic.json
+
+## 7. Mathematical methods of reinforcement learning
+
+- Date: 2026-07-08
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2607.06935v1
+- PDF: https://arxiv.org/pdf/2607.06935v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-08-arxiv-mathematical_methods_of_reinforcement_learning_infographic.json
+
+## 8. Any-Dimensional Learning by Sampling
+
+- Date: 2026-07-08
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2607.07680v1
+- PDF: https://arxiv.org/pdf/2607.07680v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-08-arxiv-any_dimensional_learning_by_sampling_infographic.json
+
+## 9. Higher-Order Geometric Updates for Levenberg-Marquardt Method via Riemann Normal Coordinates
+
+- Date: 2026-07-08
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2607.07623v1
+- PDF: https://arxiv.org/pdf/2607.07623v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-08-arxiv-higher_order_geometric_updates_for_levenberg_marquardt_method_via_riemann_normal_coordinat_infographic.json
+
+## 10. Leveraging Extragradient for Effective Sharpness-Aware Minimization in Deep Learning
 
 - Date: 2026-07-07
 - Category: Geometry and Topology
@@ -75,7 +83,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.06151v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-07-arxiv-leveraging_extragradient_for_effective_sharpness_aware_minimization_in_deep_learning_infographic.json
 
-## 10. Dynamics of Gradient Descent with Large Step Size Near a Manifold of Flat Minima
+## 11. Dynamics of Gradient Descent with Large Step Size Near a Manifold of Flat Minima
 
 - Date: 2026-07-09
 - Category: Theorem Proving
@@ -83,21 +91,13 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.08380v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-09-arxiv-dynamics_of_gradient_descent_with_large_step_size_near_a_manifold_of_flat_minima_infographic.json
 
-## 11. Reinforcing the Generation Order of Multimodal Masked Diffusion Models
+## 12. Reinforcing the Generation Order of Multimodal Masked Diffusion Models
 
 - Date: 2026-07-09
 - Category: Number Theory and Algebra
 - arXiv: https://arxiv.org/abs/2607.08056v1
 - PDF: https://arxiv.org/pdf/2607.08056v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-09-arxiv-reinforcing_the_generation_order_of_multimodal_masked_diffusion_models_infographic.json
-
-## 12. Trustworthy Machine Learning through the Lens of Combinatorial Optimization: Survey and Research Perspectives
-
-- Date: 2026-07-08
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2607.07762v1
-- PDF: https://arxiv.org/pdf/2607.07762v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-08-arxiv-trustworthy_machine_learning_through_the_lens_of_combinatorial_optimization_survey_and_res_infographic.json
 
 ## 13. The Technological Turn in Mathematics
 
