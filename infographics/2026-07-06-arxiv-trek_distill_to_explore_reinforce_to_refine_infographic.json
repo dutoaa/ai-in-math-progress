@@ -1,24 +1,24 @@
 {
-  "key_insight": "TREK expands a model’s exploration support with short distillation from verified teacher solutions, then uses GRPO to refine those newly reachable reasoning modes.",
-  "engineering_relevance": "The method offers a practical way to improve hard-problem performance when on-policy RL stalls, and it works with black-box, white-box, or self-context teachers.",
+  "key_insight": "TREK expands a student model’s support on hard reasoning problems by using verified teacher-generated solutions for short forward-KL exploration, then switches back to GRPO for refinement.",
+  "engineering_relevance": "It offers a practical training recipe for boosting hard-task reasoning and agent performance even when the teacher is a black box or only inference-time context is available.",
   "method": [
-    "Find prompts where the student has very low pass rate.",
-    "Generate verified candidate solutions from a proposal source and keep the top-r by student likelihood.",
-    "Apply a brief forward-KL phase to pull useful modes into support, then resume standard GRPO refinement."
+    "Identify prompts where the student has very low pass rate.",
+    "Query a proposal source for verified candidate solutions and keep the top-r ranked by student likelihood.",
+    "Apply a short forward-KL distillation phase to pull those modes into support, then resume on-policy GRPO."
   ],
-  "evidence_signal": "In the abstract, TREK improves Qwen3 models on AIME 2024/2025 and boosts agentic task success, including Qwen3-8B from 36.9 to 40.3 on AIME 2025 and from 47.9 to 51.1 on AIME 2024 (avg@16).",
-  "watch_item": "TREK depends on access to verified candidate trajectories, so its gains may be limited by proposal quality, verification cost, or mismatch between teacher-generated modes and the student’s target domain.",
+  "evidence_signal": "On Qwen3-8B, TREK improves AIME 2025 from 36.9 to 40.3 and AIME 2024 from 47.9 to 51.1 (avg@16), and also boosts ALFWorld and ScienceWorld success rates.",
+  "watch_item": "Performance depends on finding verified proposals and selecting useful hard prompts, so compute cost and proposal quality may limit gains in practice.",
   "hashtags": [
-    "#MathematicalReasoning",
+    "#MathReasoning",
+    "#RLHF",
     "#GRPO",
     "#Distillation",
-    "#ReinforcementLearning",
-    "#LLMTraining"
+    "#AgenticAI"
   ],
   "paper_id": "2026-07-06-arxiv-trek_distill_to_explore_reinforce_to_refine",
   "paper_title": "TREK: Distill to Explore, Reinforce to Refine",
   "paper_date": "2026-07-06",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-11T14:21:48",
+  "generated_at": "2026-07-12T14:26:04",
   "generator": "openai"
 }
