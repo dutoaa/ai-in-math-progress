@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-07-13
+Generated: 2026-07-14
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. From Solvers to Research: Large Language Model-Driven Formal Mathematics at the Research Frontier
