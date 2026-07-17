@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-07-16
+Generated: 2026-07-17
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Spectral-Informed Neural Networks Outperform Spectral Methods in High-dimensional PDEs

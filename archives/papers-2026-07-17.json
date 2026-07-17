@@ -29,27 +29,27 @@
     ],
     "score": 87,
     "infographic": {
-      "key_insight": "Modified spectral-informed neural networks use spectral-domain learning, coefficient decay scaling, and basis embeddings to improve high-dimensional PDE approximation beyond standard PINNs and sparse-grid spectral methods.",
-      "engineering_relevance": "The approach is attractive for scalable PDE solvers in high dimensions because it reduces spatial derivative computation and memory use while retaining spectral accuracy benefits.",
+      "key_insight": "Modified SINNs inject spectral structure into neural networks, improving high-dimensional PDE approximation by learning in the spectral domain with coefficient-decay scaling and basis embeddings.",
+      "engineering_relevance": "The approach offers a scalable alternative to classical spectral solvers and PINNs for high-dimensional PDEs, with better accuracy and lower memory use when dimensionality is large.",
       "method": [
-        "Operate directly in the spectral domain to learn PDE solutions without repeated spatial derivative evaluation.",
-        "Add coefficient-decay scaling to better model high-dimensional spectral coefficients.",
-        "Use harmonic-analysis-inspired basis embeddings to improve approximation quality and robustness."
+        "Operate directly in spectral space to avoid explicit spatial derivative computation.",
+        "Add coefficient decay scaling to better capture unknown spectral coefficients.",
+        "Use harmonic-analysis-inspired basis embeddings to strengthen approximation in high dimensions."
       ],
-      "evidence_signal": "The abstract reports numerical experiments on steady and time-dependent PDEs showing better performance than sparse-grid spectral methods in middle-dimensional settings with incomplete spectral information and higher accuracy than PINNs in high dimensions.",
-      "watch_item": "Performance likely depends on access to useful spectral structure or basis choices, so tuning and basis selection may be critical for difficult PDEs.",
+      "evidence_signal": "The abstract reports numerical experiments on steady and time-dependent PDEs showing superior accuracy over sparse-grid spectral methods in middle dimensions and over PINNs in high dimensions.",
+      "watch_item": "Performance depends on spectral information quality and implementation details; incomplete coefficients or poor basis/scaling choices may reduce gains.",
       "hashtags": [
-        "#PDEs",
-        "#NeuralNetworks",
+        "#ScientificMachineLearning",
+        "#PINNs",
         "#SpectralMethods",
-        "#HighDimensionalComputing",
-        "#PhysicsInformedLearning"
+        "#PDEs",
+        "#HighDimensionalComputation"
       ],
       "paper_id": "2026-07-15-arxiv-spectral_informed_neural_networks_outperform_spectral_methods_in_high_dimensional_pdes",
       "paper_title": "Spectral-Informed Neural Networks Outperform Spectral Methods in High-dimensional PDEs",
       "paper_date": "2026-07-15",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-17T14:48:57",
+      "generated_at": "2026-07-16T15:00:32",
       "generator": "openai"
     }
   },
@@ -83,27 +83,27 @@
     ],
     "score": 85,
     "infographic": {
-      "key_insight": "Cayley graphs encode enough geometric and spectral structure to learn and compare finite-group properties directly from graph observables.",
-      "engineering_relevance": "This work provides a large benchmark for graph-based property prediction in algebraic data, useful for designing interpretable graph ML pipelines and feature sets.",
+      "key_insight": "Cayley graphs encode enough geometric and spectral structure to predict several finite-group properties, and graph-aware models can learn this signal effectively.",
+      "engineering_relevance": "The paper provides a large benchmark of 131,406 labeled Cayley graphs, useful for testing graph analytics, representation learning, and algebra-aware ML pipelines.",
       "method": [
-        "Built a dataset of 131,406 Cayley graphs for all groups of order at most 767 except 512, with algebraic labels and graph statistics.",
-        "Computed cycle, distance, spectral, and disorder-based features to probe which observables correlate with group properties.",
-        "Compared classical models, an MLP, and GNNs (notably GIN and sometimes GCN) for predicting algebraic labels from graphs."
+        "Built a census of Cayley graphs for all groups of order ≤767 except 512, with exact algebraic labels.",
+        "Computed broad graph, cycle, distance, and spectral statistics as engineered features.",
+        "Compared classical models, an MLP, and GNNs (notably GIN and, in some fixed-order cases, GCN) for property prediction."
       ],
-      "evidence_signal": "The evaluation spans 131,406 labeled graphs and shows engineered graph statistics are highly informative, while GIN and some fixed-order GCN settings recover substantial structural signal from the raw graphs.",
-      "watch_item": "Results may depend on group order and feature availability, so fixed-order model performance and generalization beyond the sampled orders should be treated cautiously.",
+      "evidence_signal": "The dataset spans 131,406 graphs and the abstract reports that engineered graph statistics are highly informative, while GIN and some GCN settings recover substantial structural signal from graph data.",
+      "watch_item": "Performance may depend strongly on graph order and feature design, so results may not transfer cleanly to larger groups or unseen Cayley-graph families.",
       "hashtags": [
         "#GraphNeuralNetworks",
         "#CayleyGraphs",
         "#FiniteGroups",
-        "#SpectralGraphTheory",
-        "#MachineLearningForMath"
+        "#AlgebraicGraphTheory",
+        "#ScientificMachineLearning"
       ],
       "paper_id": "2026-07-13-arxiv-learning_the_graphical_nature_of_symmetries",
       "paper_title": "Learning the Graphical Nature of Symmetries",
       "paper_date": "2026-07-13",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-17T14:49:00",
+      "generated_at": "2026-07-16T15:00:34",
       "generator": "openai"
     }
   },
@@ -136,19 +136,19 @@
     ],
     "score": 84,
     "infographic": {
-      "key_insight": "FormalAnalyticGeo turns analytic-geometry problem creation into a closed-loop neural-symbolic pipeline that generates aligned text, diagrams, formal constraints, and verified answers automatically.",
-      "engineering_relevance": "The framework provides a scalable way to build high-quality multimodal training data for geometry-focused AI systems without human annotation, which is valuable for benchmark and curriculum generation.",
+      "key_insight": "FormalAnalyticGeo uses a neural-symbolic pipeline to automatically generate multimodal analytic geometry problems with aligned text, precise diagrams, and verified answers.",
+      "engineering_relevance": "It provides a scalable way to build high-quality geometry datasets by combining formal language, SDF-based rendering, and automated quality control without human annotation.",
       "method": [
-        "Uses CDL as a formal intermediate language between natural-language problems and diagram rendering.",
-        "Renders constraint-driven analytic-geometry diagrams with an SDF-based engine for geometric precision.",
-        "Chains Generator → Formalizer → Measurer → Quality Verifier with retry feedback to enforce correctness."
+        "Generator creates diverse analytic geometry problems.",
+        "Formalizer converts each problem into CDL for precise SDF diagram rendering.",
+        "Measurer and Quality Verifier extract ground truth and trigger automatic retries when needed."
       ],
-      "evidence_signal": "Applied at scale, the system produced AnalyticGeo7K with over 7K verified multimodal problems; the generated set reports a median ground-truth relative error of 0.70% and 82.3% of answers within 5% of the exact symbolic solution.",
-      "watch_item": "The pipeline’s quality depends on the accuracy of formalization, rendering, and vision-based measurement, so error propagation or edge cases in complex diagrams may still require careful validation.",
+      "evidence_signal": "The resulting AnalyticGeo7K dataset has over 7K verified problems, with a median ground-truth relative error of 0.70% and 82.3% of answers within 5% of the exact symbolic solution.",
+      "watch_item": "Accuracy depends on the reliability of the formalization, rendering, and vision-based measurement pipeline, so error accumulation or failure cases may still occur in complex layouts.",
       "hashtags": [
-        "#MultimodalAI",
+        "#NeuralSymbolicAI",
+        "#MultimodalLLM",
         "#AnalyticGeometry",
-        "#NeuralSymbolic",
         "#SyntheticData",
         "#MathReasoning"
       ],
@@ -156,7 +156,7 @@
       "paper_title": "FormalAnalyticGeo: A Neural-Symbolic Based Framework for Multimodal Analytic Geometry Problem Generation",
       "paper_date": "2026-07-14",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-17T14:49:03",
+      "generated_at": "2026-07-16T15:00:39",
       "generator": "openai"
     }
   },
@@ -189,27 +189,27 @@
     ],
     "score": 81,
     "infographic": {
-      "key_insight": "The paper improves the mixing-time guarantee of the Dikin walk on polytopes from the previous $d^{2.5}$ bound to $d^{2.25}$ by using a scaled Lee--Sidford metric and a higher-order geometric analysis.",
-      "engineering_relevance": "This sharpens the theoretical efficiency of affine-invariant sampling methods used in convex optimization and randomized algorithms for high-dimensional polytopes.",
+      "key_insight": "The paper improves the mixing-time guarantee of Dikin walks on polytopes from the previous $d^{2.5}$ bound to $d^{2.25}$ by using a scaled Lee--Sidford metric and a higher-order geometric analysis.",
+      "engineering_relevance": "This advances affine-invariant sampling for high-dimensional constrained optimization and can improve the efficiency of randomized methods used in convex optimization, uncertainty quantification, and probabilistic inference over polytopes.",
       "method": [
-        "Uses a scaled Lee--Sidford metric to define better local proposal geometry.",
+        "Uses a scaled Lee--Sidford metric to define the Dikin proposal.",
         "Proves improved average self-concordance to raise Metropolis acceptance probability.",
-        "Introduces higher-order tools: selective expansions, moving orthonormal frames, and Wiener-chaos decompositions."
+        "Combines higher-order expansion, moving orthonormal frames, and Wiener-chaos tools to control Gaussian polynomial terms."
       ],
-      "evidence_signal": "The result is a new proven warm-start mixing bound of $d^{2.25}$ iterations for exponential sampling over a polytope, with a corresponding improved cold-start bound via annealing.",
-      "watch_item": "The improvement is theoretical and depends on sophisticated higher-order geometric analysis, which may make practical implementation and parameter tuning nontrivial.",
+      "evidence_signal": "The abstract reports a formal theoretical result: warm-start mixing for exponential sampling over a polytope in $d^{2.25}$ iterations, with an improved cold-start bound via annealing.",
+      "watch_item": "The guarantee depends on a warm start and sophisticated barrier-geometry calculations, so practical performance may be sensitive to metric construction and implementation overhead.",
       "hashtags": [
-        "#DikinWalk",
-        "#ConvexOptimization",
-        "#MixingTime",
         "#Sampling",
+        "#ConvexOptimization",
+        "#DikinWalk",
+        "#Polytopes",
         "#TheoremProving"
       ],
       "paper_id": "2026-07-15-arxiv-beyond_the_d_2_5_mixing_bound_for_dikin_walks_on_polytopes",
       "paper_title": "Beyond the $d^{2.5}$-mixing bound for Dikin walks on polytopes",
       "paper_date": "2026-07-15",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-07-17T14:49:05",
+      "generated_at": "2026-07-16T15:00:41",
       "generator": "openai"
     }
   },
@@ -240,27 +240,27 @@
     ],
     "score": 78,
     "infographic": {
-      "key_insight": "The paper shows that agentic theorem-proving workflows can formalize Shor’s algorithm family in Lean and derive machine-checked resource estimates for attacking RSA-2048 and P-256.",
-      "engineering_relevance": "It demonstrates a path toward trustworthy AI-assisted quantum cryptanalysis and reusable formal verification pipelines for complex quantum algorithms and cryptographic security analyses.",
+      "key_insight": "The paper shows that agentic AI systems can help formally build and machine-check Lean proofs of Shor-style quantum attacks, including resource estimates for RSA-2048 and P-256.",
+      "engineering_relevance": "It advances trustworthy quantum-cryptography analysis by turning high-level attack cost reasoning into verified formal artifacts that can support security evaluation and proof-carrying toolchains.",
       "method": [
-        "Agents search sources, generate Lean code, and repair proofs with human review of claims.",
-        "Formalize quantum order-finding, modular arithmetic, and elliptic-curve arithmetic in Lean.",
-        "Prove logical resource estimates for RSA-2048 and P-256 based on prior literature."
+        "Agents search and reuse existing formal developments while writing and repairing Lean proofs.",
+        "The formalization covers order finding, reversible quantum circuits, modular arithmetic, and elliptic-curve arithmetic.",
+        "Human reviewers validate the scientific claims, and Lean machine-checks the proofs."
       ],
-      "evidence_signal": "The abstract reports a machine-checked Lean formalization spanning Shor-style algorithms and resource estimates grounded in Quantum 5 and ASIACRYPT 2017 results.",
-      "watch_item": "The results depend on a human-in-the-loop workflow and on the accuracy of the underlying scientific assumptions and resource models, so implementation overhead and model transferability remain concerns.",
+      "evidence_signal": "The abstract reports formalizations of resource estimates for RSA-2048 and P-256, based on prior results from Quantum 5 and ASIACRYPT 2017, plus added classical-operation estimates.",
+      "watch_item": "The main limitation is that the results are formal proofs and resource estimates, not practical quantum implementations or demonstrated cryptanalytic speedups on real hardware.",
       "hashtags": [
         "#Lean",
-        "#TheoremProving",
+        "#FormalMethods",
         "#QuantumComputing",
-        "#ShorsAlgorithm",
-        "#FormalVerification"
+        "#Cryptography",
+        "#AIforScience"
       ],
       "paper_id": "2026-07-15-arxiv-building_shor_s_algorithm_in_lean_an_agentic_formalization_of_quantum_attacks_on_rsa_2048",
       "paper_title": "Building Shor's Algorithm in Lean: An Agentic Formalization of Quantum Attacks on RSA-2048 and P-256",
       "paper_date": "2026-07-15",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-07-17T14:49:07",
+      "generated_at": "2026-07-16T15:00:59",
       "generator": "openai"
     }
   },
@@ -292,27 +292,27 @@
     ],
     "score": 78,
     "infographic": {
-      "key_insight": "MEDA combines an LLM agent with symbolic regression to automatically discover biologically meaningful ODE models, not just trajectory-fitting equations.",
-      "engineering_relevance": "This points to a practical workflow for model discovery in systems biology, where prior knowledge and mechanistic constraints can improve interpretability and reliability of learned dynamics.",
+      "key_insight": "MEDA is an LLM-guided, symbolic-regression agent that can discover biologically plausible ODE models by combining background knowledge, mechanistic constraints, and data fitting.",
+      "engineering_relevance": "This offers a practical path toward automated model discovery for biological dynamics, especially when interpretability and structural correctness matter more than trajectory fit alone.",
       "method": [
-        "Retrieves background knowledge and defines admissible state variables",
-        "Generates mechanistic constraints and candidate ODE structures",
-        "Fits and evaluates models with symbolic regression and numerical optimization"
+        "Retrieves domain knowledge to ground the search space and infer admissible state variables.",
+        "Generates mechanistic constraints and proposes candidate ODE structures with an agentic workflow.",
+        "Fits and evaluates candidate models, then compares retrieval, extrapolation, and open-ended discovery performance."
       ],
-      "evidence_signal": "The system was tested on canonical retrieval, extrapolation to unseen variants, and open-ended discovery, with and without experimental data, and the abstract reports strong structural recovery and biologically plausible models.",
-      "watch_item": "A key concern is that numerical fitting alone can yield trajectory-matching equations that are biologically incorrect, so constraint quality and knowledge formalization are critical.",
+      "evidence_signal": "The paper evaluates MEDA on canonical model retrieval, reasoning-based extrapolation to unseen variants, and open-ended discovery, reporting strong structural recovery and biologically plausible models.",
+      "watch_item": "A model can still match trajectories while producing biologically incorrect equations, so constraint quality and domain priors are critical.",
       "hashtags": [
         "#SymbolicRegression",
         "#ODEDiscovery",
-        "#BioSystems",
         "#LLMAgents",
-        "#ScientificAI"
+        "#ComputationalBiology",
+        "#ScientificDiscovery"
       ],
       "paper_id": "2026-07-15-arxiv-automatic_ordinary_differential_equations_discovery_for_biological_systems_using_large_lan",
       "paper_title": "Automatic Ordinary Differential Equations Discovery For Biological Systems Using Large Language Model Powered Agentic System",
       "paper_date": "2026-07-15",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-07-17T14:49:10",
+      "generated_at": "2026-07-16T15:01:03",
       "generator": "openai"
     }
   },
@@ -345,27 +345,27 @@
     ],
     "score": 78,
     "infographic": {
-      "key_insight": "The paper formulates AI-native insurance for agentic AI as an optimization problem that prices risk, sets coverage, and encodes governance incentives based on deployment characteristics.",
-      "engineering_relevance": "It provides a quantitative contract-design framework that can help operators, insurers, and regulators manage autonomous AI deployments in high-stakes environments.",
+      "key_insight": "The paper frames insurance for agentic AI as a mathematical optimization problem that jointly prices risk, designs contracts, and enforces governance based on an AI deployment’s autonomy and exposure profile.",
+      "engineering_relevance": "It provides a practical blueprint for turning AI governance metrics into insurable terms, helping operators quantify liability, incentives, and compliance for autonomous systems in high-stakes settings.",
       "method": [
-        "Represent each AI deployment with a risk state capturing autonomy, authority, permission exposure, governance maturity, and dependency concentration.",
-        "Map the risk state to event probabilities, loss severities, governance costs, premiums, deductibles, coverage, and covenants.",
-        "Optimize insurance contracts under participation, profitability, and incentive-compatibility constraints while characterizing insurability thresholds."
+        "Model each deployment with a risk state: autonomy, authority, permission exposure, governance maturity, and dependency concentration.",
+        "Map the risk state to probabilities, loss severity, governance cost, premiums, deductibles, coverage, and policy covenants.",
+        "Solve a constrained optimization problem with participation, profitability, and incentive-compatibility requirements."
       ],
-      "evidence_signal": "The abstract reports a healthcare case study with contract optimization, sensitivity analysis, and automated claims processing for agentic AI systems.",
-      "watch_item": "Practical use may depend on reliable measurement of governance maturity and exposure, which could be hard to standardize across deployments.",
+      "evidence_signal": "The abstract reports a healthcare case study with contract optimization, sensitivity analysis, and automated claims processing to illustrate the framework.",
+      "watch_item": "The framework depends on accurately quantifying deployment risk states and governance quality, which may be difficult to standardize across real-world AI systems.",
       "hashtags": [
         "#AgenticAI",
         "#AIInsurance",
-        "#RiskOptimization",
-        "#Governance",
-        "#ComputationalScience"
+        "#RiskModeling",
+        "#Optimization",
+        "#Governance"
       ],
       "paper_id": "2026-07-14-arxiv-ai_native_insurance_for_agentic_ai_pricing_underwriting_and_end_to_end_automation",
       "paper_title": "AI-Native Insurance for Agentic AI: Pricing, Underwriting, and End-to-End Automation",
       "paper_date": "2026-07-14",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-17T14:49:12",
+      "generated_at": "2026-07-16T15:01:06",
       "generator": "openai"
     }
   },
@@ -397,15 +397,15 @@
     ],
     "score": 78,
     "infographic": {
-      "key_insight": "The paper turns high-dimensional PDE solving into a neural inf-sup saddle-point optimization problem using a primal network and a Lagrange-multiplier network.",
-      "engineering_relevance": "This provides a scalable PDE solver framework that is designed to better handle high-dimensional problems while offering theory-driven error control.",
+      "key_insight": "The paper turns high-dimensional PDE solving into a saddle-point inf-sup optimization problem by introducing a Lagrange multiplier and training two neural networks for the primal and dual variables.",
+      "engineering_relevance": "This gives a scalable neural solver framework for PDEs in high dimensions, with error decomposition that helps practitioners understand approximation, sampling, and optimization tradeoffs.",
       "method": [
-        "Reformulate the PDE as an inf-sup optimization problem with a Lagrange multiplier.",
+        "Reformulate the PDE as an inf-sup variational optimization problem using a Lagrange multiplier.",
         "Parameterize the primal solution and multiplier with two neural networks.",
-        "Train them with iterative saddle-point optimization and derive error bounds for approximation, sampling, and optimization errors."
+        "Solve the resulting saddle-point problem with iterative optimization and derive theoretical error bounds."
       ],
-      "evidence_signal": "The abstract reports numerical experiments showing accuracy, stability, and efficiency, alongside theoretical equivalence and rigorous error estimates.",
-      "watch_item": "Performance may depend on the stability of saddle-point training and on balancing network approximation, sampling, and optimization errors in practice.",
+      "evidence_signal": "The abstract reports numerical experiments showing accuracy, stability, and efficiency, and the theory provides rigorous estimates for approximation, sampling, and optimization errors.",
+      "watch_item": "Performance depends on stable saddle-point optimization and sufficient sampling, so training dynamics and error balance may be challenging in practice.",
       "hashtags": [
         "#PDEs",
         "#DeepLearning",
@@ -417,7 +417,7 @@
       "paper_title": "Inf-Sup Neural Networks for High Dimensional PDEs",
       "paper_date": "2026-07-13",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-17T14:49:17",
+      "generated_at": "2026-07-16T15:01:08",
       "generator": "openai"
     }
   },
@@ -448,27 +448,27 @@
     ],
     "score": 78,
     "infographic": {
-      "key_insight": "ToMap makes proof autoformalization more efficient by spending test-time optimization mainly on the Decomposer, since high-quality atomic proof units are the key bottleneck for downstream formalization and proving.",
-      "engineering_relevance": "The paper offers a practical test-time compute allocation strategy for theorem proving systems, improving accuracy and semantic fidelity while reducing inference cost.",
+      "key_insight": "ToMap shows that in proof autoformalization, improving the decomposition step yields the biggest test-time gains, because high-quality atomic proof units unlock downstream formalization and proving.",
+      "engineering_relevance": "The paper suggests a practical compute-allocation strategy for theorem proving systems: spend test-time budget on the bottleneck agent rather than applying broad, costly repair to every stage.",
       "method": [
-        "Decomposer-Formalizer-Prover pipeline for long-horizon proof autoformalization",
-        "Bottleneck analysis identifies decomposition quality as the main failure point",
-        "GEPA-inspired prompt evolution uses formal verification progress plus semantic proof rubrics to guide decomposition refinement"
+        "Decomposer-Formalizer-Prover pipeline for full-proof autoformalization",
+        "Test-time optimization focused on Decomposer refinement, not all agents",
+        "Prompt evolution over candidate decompositions using formal verification progress and semantic proof rubrics"
       ],
-      "evidence_signal": "On ProofFlowBench, ToMap reports a 19.0% improvement over the prior best method under both syntactic correctness and semantic faithfulness, with lower test-time cost.",
-      "watch_item": "The approach depends on reliable formal-verification feedback and rubric design, so gains may be sensitive to prover quality and the number of refinement iterations chosen.",
+      "evidence_signal": "On ProofFlowBench, ToMap improves the prior best method by 19.0% on combined syntactic correctness and semantic faithfulness while reducing test-time cost.",
+      "watch_item": "The approach depends on reliable verification signals and rubric quality, so performance may be sensitive to how well these objectives capture true proof correctness.",
       "hashtags": [
         "#TheoremProving",
         "#Autoformalization",
         "#TestTimeOptimization",
-        "#FormalVerification",
-        "#MultiAgentAI"
+        "#MultiAgentSystems",
+        "#FormalVerification"
       ],
       "paper_id": "2026-07-13-arxiv-efficient_test_time_optimization_for_multi_agent_proof_autoformalization",
       "paper_title": "Efficient Test-Time Optimization for Multi-Agent Proof Autoformalization",
       "paper_date": "2026-07-13",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-07-17T14:49:19",
+      "generated_at": "2026-07-16T15:01:10",
       "generator": "openai"
     }
   },
@@ -500,27 +500,27 @@
     ],
     "score": 76,
     "infographic": {
-      "key_insight": "A time-aware tabular deep learning model can accurately predict inter-stop trolleybus energy use while also ranking the causal drivers of consumption and savings.",
-      "engineering_relevance": "The framework can support route-level energy management, vehicle operation guidance, and infrastructure planning for dual-source trolleybus fleets.",
+      "key_insight": "A time-aware tabular deep learning model can accurately predict inter-stop trolleybus energy use while also quantifying which operational factors causally reduce or increase consumption.",
+      "engineering_relevance": "The results support practical decisions in trolleybus operation and network planning, including driving guidance, vehicle allocation, battery-catenary scheduling, and catenary infrastructure design.",
       "method": [
-        "Periodic time encoding + parameter-efficient batch-ensemble backbone for static and sequential tabular features",
+        "Periodic time encoding + parameter-efficient batch ensemble for mixed static and sequential inputs",
         "Bayesian optimization with tree-structured density estimation for hyperparameter tuning",
-        "Three-layer causal pipeline: feature attribution, LiNGAM causal direction discovery, and meta-learner treatment effect estimation"
+        "Three-stage causal pipeline: feature attribution, LiNGAM causal direction discovery, and meta-learner treatment effects"
       ],
-      "evidence_signal": "On the Zurich trolleybus dataset with weather data, the model achieved MAPE 6.52% and R 0.982, outperforming ten statistical, tree-ensemble, and deep learning baselines.",
-      "watch_item": "Causal findings depend on observational data and model assumptions, so they should be validated before being used as operational or policy thresholds.",
+      "evidence_signal": "On the Zurich trolleybus dataset with weather data, the method achieved 6.52% MAPE and R = 0.982, outperforming ten statistical, tree-ensemble, and deep learning baselines.",
+      "watch_item": "Causal findings are observational and depend on model assumptions and data quality, so the identified drivers should be validated before using them as operational policies.",
       "hashtags": [
         "#TrolleybusEnergy",
-        "#TimeAwareDeepLearning",
+        "#DeepLearning",
         "#CausalInference",
-        "#TabularAI",
-        "#SmartTransportation"
+        "#TimeSeries",
+        "#SmartMobility"
       ],
       "paper_id": "2026-07-13-arxiv-inter_stop_energy_prediction_and_causal_driver_quantification_for_dual_source_trolleybuses",
       "paper_title": "Inter-Stop Energy Prediction and Causal Driver Quantification for Dual-Source Trolleybuses via a Time-Aware Tabular Deep Learning Architecture",
       "paper_date": "2026-07-13",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-17T14:49:21",
+      "generated_at": "2026-07-16T15:01:13",
       "generator": "openai"
     }
   },
@@ -552,27 +552,27 @@
     ],
     "score": 75,
     "infographic": {
-      "key_insight": "The paper replaces lifting-based SOS reformulations with a lifting-free regularization that keeps the original conic structure while enabling efficient primal-dual optimization.",
-      "engineering_relevance": "This can reduce memory and runtime bottlenecks for large-scale constrained regression, system identification, and machine-learning optimization problems.",
+      "key_insight": "The paper makes quadratic sum-of-squares optimization faster by replacing costly liftings with a lifting-free regularization that preserves the original conic structure.",
+      "engineering_relevance": "This can reduce memory and runtime for large constrained regression and learning problems, making SOS-based optimization more practical in computational science workflows.",
       "method": [
-        "Add a norm penalty to SOS variables to regularize the QSOS problem without introducing Schur-complement or SOC liftings.",
-        "Derive closed-form primal updates and an unconstrained concave dual with a Lipschitz gradient.",
-        "Use accelerated first-order methods to maximize the dual and recover the solution with non-asymptotic convergence guarantees."
+        "Add a norm penalty to SOS variables to avoid Schur-complement and SOC liftings.",
+        "Derive closed-form primal updates and an unconstrained concave dual with Lipschitz gradient.",
+        "Solve the dual efficiently with accelerated first-order methods and prove non-asymptotic recovery."
       ],
-      "evidence_signal": "In constrained regression experiments, the approach was reported to be up to 40% faster than SCS and able to solve larger instances than MOSEK.",
-      "watch_item": "Performance depends on the regularization choice and the method still requires solving the dual efficiently for the specific constraint structure.",
+      "evidence_signal": "In constrained regression experiments, the method was reported to be up to 40% faster than SCS and to handle larger instances than MOSEK.",
+      "watch_item": "Performance gains depend on the new regularization and first-order optimization accuracy, so tuning and convergence behavior may matter on harder or ill-conditioned problems.",
       "hashtags": [
         "#Optimization",
         "#SumOfSquares",
         "#FirstOrderMethods",
-        "#ConstrainedRegression",
-        "#ScientificComputing"
+        "#ConvexOptimization",
+        "#MachineLearning"
       ],
       "paper_id": "2026-07-15-arxiv-lifting_free_quadratic_sum_of_squares_programming",
       "paper_title": "Lifting-Free Quadratic Sum-Of-Squares Programming",
       "paper_date": "2026-07-15",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-17T14:49:23",
+      "generated_at": "2026-07-16T15:01:15",
       "generator": "openai"
     }
   },
@@ -603,27 +603,27 @@
     ],
     "score": 74,
     "infographic": {
-      "key_insight": "Post-training changes not just answer accuracy but when confidence is trustworthy: OPD helps before reasoning, SFT helps with early stopping during reasoning, and RL helps after reasoning for aggregation.",
-      "engineering_relevance": "For math-reasoning systems, confidence should be used stage-wise and by token position to reduce wasted decoding and improve final answer selection under compute budgets.",
+      "key_insight": "Post-training methods change when confidence is trustworthy during chain-of-thought reasoning: OPD is best before reasoning, SFT is best for early stopping, and RL is best for aggregating final answers.",
+      "engineering_relevance": "A stage-aware, position-aware confidence policy can improve reasoning systems' accuracy and token efficiency by using confidence only where it is calibrated.",
       "method": [
-        "Three-stage calibration analysis: pre-CoT, intra-CoT, and post-CoT confidence.",
-        "Compare SFT, RL, and on-policy distillation (OPD) on mathematical reasoning benchmarks.",
-        "Introduce PosConf, which only uses confidence from reliable relative-position intervals."
+        "Three-stage calibration: pre-reasoning, during reasoning, and post-reasoning confidence analysis.",
+        "Compare SFT, RL, and OPD on mathematical reasoning benchmarks for difficulty estimation, early termination, and answer aggregation.",
+        "PosConf uses confidence only in reliable relative-position intervals to avoid miscalibrated regions."
       ],
-      "evidence_signal": "Controlled benchmark evaluation shows PosConf improves RL aggregation by 6.1 points over majority voting and improves OPD early stopping by up to 4.3 points under tight token budgets.",
-      "watch_item": "Position-dependent calibration can invert later in the reasoning trace, so using confidence without stage/position filtering may degrade performance.",
+      "evidence_signal": "On controlled math reasoning benchmarks, PosConf improved RL answer aggregation by 6.1 points over majority voting and improved OPD early stopping by up to 4.3 points under tight token budgets.",
+      "watch_item": "Confidence reliability shifts with position, so a fixed threshold or single-stage calibration policy may fail when the model enters inverse-calibrated regions.",
       "hashtags": [
         "#LLMReasoning",
         "#Calibration",
         "#ChainOfThought",
-        "#MathAI",
-        "#PostTraining"
+        "#PostTraining",
+        "#MathematicalReasoning"
       ],
       "paper_id": "2026-07-15-arxiv-post_training_shifts_confidence_a_three_stage_analysis_of_how_sft_rl_and_opd_shape_pre_int",
       "paper_title": "Post-Training Shifts Confidence: A Three-Stage Analysis of How SFT, RL, and OPD Shape Pre-, Intra-, and Post-CoT Calibration",
       "paper_date": "2026-07-15",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-07-17T14:49:26",
+      "generated_at": "2026-07-16T15:01:19",
       "generator": "openai"
     }
   },
@@ -659,27 +659,27 @@
     ],
     "score": 73,
     "infographic": {
-      "key_insight": "Randomized Hamiltonian Monte Carlo achieves faster mixing for log-concave targets by using random integration times and velocity resets, with total simulation time scaling like $O(\\alpha^{-1/2}\\log(\\varepsilon^{-1}))$ under an $\u0017alpha$-Talagrand condition.",
-      "engineering_relevance": "This gives a practical sampling strategy for high-dimensional Bayesian and uncertainty-quantification workflows where faster convergence to the target distribution reduces computational cost.",
+      "key_insight": "Randomized Hamiltonian Monte Carlo mixes faster by randomizing integration times, achieving accelerated KL convergence for log-concave targets and even stronger total-time scaling with a schedule of increasing means.",
+      "engineering_relevance": "This gives a practical sampling strategy for large-scale probabilistic inference and uncertainty quantification when fast, reliable draws from log-concave posteriors are needed.",
       "method": [
-        "Simulate continuous-time Hamiltonian dynamics for a random duration.",
-        "Reset velocity to an independent Gaussian between trajectories.",
-        "Use triangular or exponential integration-time distributions; for general log-concave targets, use triangular times with increasing means."
+        "Simulate continuous-time Hamiltonian dynamics with random integration times instead of fixed trajectories.",
+        "Reset velocity to an independent Gaussian between segments.",
+        "Use triangular or exponential time distributions with mean Θ(α^{-1/2}) to get exponential KL decay; use triangular times with increasing means for O(ε^{-1/2}) total time under general log-concavity."
       ],
-      "evidence_signal": "The paper provides theoretical convergence guarantees, showing exponential decay in KL divergence under an $\u0017alpha$-Talagrand assumption and an $O(\\varepsilon^{-1/2})$ total-time guarantee for a more general schedule.",
-      "watch_item": "The guarantees depend on log-concavity and, for the strongest rate, an $\u0017alpha$-Talagrand condition, so performance may be weaker or harder to tune outside these assumptions.",
+      "evidence_signal": "The paper provides theoretical convergence guarantees in KL divergence and total integration-time complexity bounds for log-concave distributions, including α-Talagrand and α-strongly log-concave cases.",
+      "watch_item": "The guarantees depend on log-concavity and on carefully chosen random-time distributions; performance and tuning may be sensitive outside these assumptions.",
       "hashtags": [
         "#HamiltonianMonteCarlo",
         "#Sampling",
         "#LogConcave",
-        "#MixingTime",
-        "#Optimization"
+        "#Optimization",
+        "#TheoreticalML"
       ],
       "paper_id": "2026-07-14-arxiv-accelerated_mixing_time_of_randomized_hamiltonian_monte_carlo",
       "paper_title": "Accelerated Mixing Time of Randomized Hamiltonian Monte Carlo",
       "paper_date": "2026-07-14",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-17T14:49:29",
+      "generated_at": "2026-07-16T15:01:22",
       "generator": "openai"
     }
   },
@@ -714,15 +714,15 @@
     ],
     "score": 71,
     "infographic": {
-      "key_insight": "Static equilibrium notions (Nash, correlated, and coarse correlated) can hide dynamic instability, and the paper argues that this can make classic Price of Anarchy guarantees misleading or even unbounded.",
-      "engineering_relevance": "For multi-agent systems and networked optimization, using only equilibrium-based worst-case bounds may overestimate robustness and miss chaotic or unstable learning behavior.",
+      "key_insight": "Static equilibrium concepts can hide unstable and chaotic multi-agent dynamics, so worst-case Price of Anarchy guarantees may be misleading or unbounded in several game settings.",
+      "engineering_relevance": "For distributed systems, routing, and learning-based control, the paper warns that convergence to equilibrium alone is not enough to guarantee robust performance or efficiency.",
       "method": [
-        "Analyze the geometry of Nash equilibria and show interior equilibria can lack usable $C^1$ vector-field information.",
-        "Study how PoA behaves under strictly positive affine costs, dominated strategies, and congestion-game dynamics.",
-        "Examine learning dynamics beyond static equilibrium, including swap-regret, proximal refinements, and non-atomic congestion-game limits."
+        "Analyze geometry of Nash and correlated equilibrium sets in relation to learning dynamics",
+        "Show instability/repeller behavior in congestion games and positive-affine-cost settings",
+        "Study discrete-time learning in non-atomic congestion games and swap-regret dynamics"
       ],
-      "evidence_signal": "The abstract reports theoretical results across canonical congestion games and non-atomic congestion-game limits, including unbounded PoA under positive affine costs and chaotic/unstable long-run learning dynamics.",
-      "watch_item": "These results are asymptotic and theory-driven, so applying them to finite, practical multi-agent systems may require checking whether the same instability mechanisms appear in the specific game and learning rule.",
+      "evidence_signal": "The abstract reports theoretical results, including unbounded PoA under strictly positive affine costs, chaotic limit sets under optimal swap-regret minimization, and exponential inefficiency growth as 2^p in non-atomic congestion games.",
+      "watch_item": "These are worst-case theoretical constructions, so practitioners should be cautious about directly extrapolating the instability and chaos claims to specific real-world systems without model validation.",
       "hashtags": [
         "#GameTheory",
         "#PriceOfAnarchy",
@@ -734,7 +734,7 @@
       "paper_title": "Paradoxes of Game Theoretic Equilibria and Price of Anarchy",
       "paper_date": "2026-07-13",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-17T14:49:31",
+      "generated_at": "2026-07-16T15:01:24",
       "generator": "openai"
     }
   },
@@ -766,15 +766,15 @@
     ],
     "score": 69,
     "infographic": {
-      "key_insight": "Likelihood-based deep neural networks can recover smooth regression functions under speckle noise at essentially the same minimax rate as standard Gaussian-noise regression, up to logarithmic factors.",
-      "engineering_relevance": "This provides a theoretically justified path for despeckling in coherent imaging systems such as SAR, OCT, and digital holography when multiplicative noise breaks ordinary least-squares assumptions.",
+      "key_insight": "Likelihood-based deep neural networks can estimate smooth regression functions under speckle noise at nearly the same minimax rate as ordinary additive Gaussian noise.",
+      "engineering_relevance": "This gives a theoretical foundation for despeckling in coherent imaging systems such as SAR, OCT, and digital holography, where multiplicative noise breaks standard least-squares training.",
       "method": [
-        "Model speckle plus additive Gaussian noise and fit the regression function with likelihood-based DNN estimators.",
-        "Derive finite-sample upper bounds for low-dimensional and sparse high-dimensional settings.",
-        "Prove matching minimax lower bounds, showing the rate is near-optimal up to logs."
+        "Model speckle as multiplicative noise plus additive Gaussian noise.",
+        "Use likelihood-based DNN estimators for low-dimensional and sparse high-dimensional regression.",
+        "Prove finite-sample upper bounds and matching minimax lower bounds up to logarithmic factors."
       ],
-      "evidence_signal": "The abstract reports numerical experiments showing the proposed DNN despeckling methods are consistent and effective.",
-      "watch_item": "The guarantees are asymptotic up to logarithmic factors and depend on likelihood modeling assumptions, so performance may degrade if the noise model is misspecified.",
+      "evidence_signal": "The abstract reports numerical experiments showing consistent performance of the proposed DNN-based despeckling methods and effective recovery.",
+      "watch_item": "The guarantees are minimax-theoretic and asymptotic up to logarithmic factors, so practical performance may depend on model misspecification, feature sparsity assumptions, and noise calibration.",
       "hashtags": [
         "#DeepLearning",
         "#SpeckleNoise",
@@ -786,7 +786,7 @@
       "paper_title": "Minimax Theory of Likelihood-Based Deep Learning for Speckle Regression",
       "paper_date": "2026-07-15",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-07-17T14:49:35",
+      "generated_at": "2026-07-16T15:01:27",
       "generator": "openai"
     }
   },
@@ -817,27 +817,27 @@
     ],
     "score": 69,
     "infographic": {
-      "key_insight": "AdvancedMathBench shows that frontier LLMs still struggle with advanced mathematical proof construction and, even more, with reliably detecting proof errors.",
-      "engineering_relevance": "The benchmark provides a more rigorous way to measure reasoning quality in mathematical AI systems, which is useful for developing and validating proof assistants and verifier models.",
+      "key_insight": "AdvancedMathBench shows that current frontier LLMs still struggle with advanced mathematical proof construction and, especially, reliable proof verification.",
+      "engineering_relevance": "The benchmark provides a more rigorous way to test reasoning systems by scoring both proof correctness and error detection, not just final answers.",
       "method": [
         "ProverBench: 296 advanced proof-generation problems spanning undergraduate and doctoral qualifying-exam levels.",
-        "Automated proof-verification pipeline trained on large-scale expert annotations to score correctness and identify fine-grained proof errors.",
-        "VerifierBench: 888 model-generated proof trajectories with expert ground truth for evaluating proof validity judgments and verification rationales."
+        "Automatic verification pipeline trained on large-scale expert annotations to judge proof correctness and localize proof errors.",
+        "VerifierBench: 888 model-generated proof trajectories with expert ground truth for validity checking and rationale evaluation."
       ],
-      "evidence_signal": "The abstract reports strong expert agreement for the verification pipeline and shows challenging results for models, including GPT-5.5-xhigh at 75.8/66.1 on UGD/QE and a best verification Balanced F1 of 65.1.",
-      "watch_item": "Benchmark performance may depend on the quality and coverage of expert annotations and could still miss subtle mathematical nuances not captured by automated verification.",
+      "evidence_signal": "The abstract reports strong agreement between the verification pipeline and human experts, while top model performance remains limited (75.8/66.1 on proof generation and 65.1 Balanced F1 on verification).",
+      "watch_item": "Automatic proof evaluation is still sensitive to annotation quality and may not fully capture subtle mathematical validity or alternative correct proofs.",
       "hashtags": [
-        "#LLMReasoning",
-        "#MathematicalProofs",
-        "#Benchmark",
+        "#MathReasoning",
+        "#LLMEvaluation",
         "#ProofVerification",
-        "#AIforMath"
+        "#Benchmarking",
+        "#AIforScience"
       ],
       "paper_id": "2026-07-13-arxiv-advancedmathbench_a_benchmark_suite_for_advanced_mathematical_proof_generation_and_verific",
       "paper_title": "AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification",
       "paper_date": "2026-07-13",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-07-17T14:49:38",
+      "generated_at": "2026-07-16T15:01:31",
       "generator": "openai"
     }
   },
@@ -870,27 +870,27 @@
     ],
     "score": 68,
     "infographic": {
-      "key_insight": "LASKO treats skill editing as a Lie algebroid problem, using the anchor to separate visible Markdown changes from latent structure and the bracket to detect noncommuting edits.",
-      "engineering_relevance": "This could make agent self-improvement cheaper and safer by filtering likely edit conflicts in microseconds before running expensive model-based validation.",
+      "key_insight": "LASKO treats skill edits as Lie algebroid sections, using the anchor to separate visible Markdown changes from latent structure and the bracket to detect noncommuting edit interactions.",
+      "engineering_relevance": "It offers a cheaper way to optimize prompts, rubrics, plans, and validators by screening edit compatibility in microseconds before paying for full LLM-based validation.",
       "method": [
         "Model typed, anchored Markdown skills as the base category.",
         "Represent edit policies as sections of a controlled Lie algebroid with anchor \\u03c1.",
-        "Use bracket screening to test whether edits commute before rollout/validation."
+        "Use Lie-bracket tests to flag order-sensitive or incompatible edit compositions before rollout."
       ],
-      "evidence_signal": "The abstract reports preliminary benchmark gains, including nearly 15x speedup on a causal extraction task versus brute-force validation with a DeepSeek V3.1 4-bit 671B model.",
-      "watch_item": "The results are preliminary, so the practical value depends on whether the Lie-bracket screening remains reliable across diverse skill-editing workflows and real production templates.",
+      "evidence_signal": "The abstract reports preliminary benchmark results including nearly 15× speedup on a causal extraction task versus brute-force validation with a DeepSeek V3.1 4-bit 671B-parameter model.",
+      "watch_item": "The gains appear preliminary and depend on how faithfully the anchor and bracket approximations capture real edit effects across different skill templates and workflows.",
       "hashtags": [
-        "#AIAgents",
-        "#Optimization",
+        "#AIMath",
         "#LieAlgebroids",
-        "#ProgramAnalysis",
-        "#MachineLearning"
+        "#AgenticSystems",
+        "#SkillOptimization",
+        "#PromptEngineering"
       ],
       "paper_id": "2026-07-13-arxiv-agentic_skill_optimization_over_lie_algebroids",
       "paper_title": "Agentic Skill Optimization over Lie Algebroids",
       "paper_date": "2026-07-13",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-17T14:49:40",
+      "generated_at": "2026-07-16T15:01:34",
       "generator": "openai"
     }
   },
@@ -924,15 +924,15 @@
     ],
     "score": 68,
     "infographic": {
-      "key_insight": "The paper extends continuous-time mean field control to settings where dynamics and rewards depend on both state and control distributions, and derives a deterministic-policy actor-critic gradient that works in this extended measure-dependent setting.",
-      "engineering_relevance": "It enables model-free reinforcement learning for complex coupled multi-agent systems and control problems with distributional feedback, such as consensus formation and liquidation with crowding effects.",
+      "key_insight": "The paper extends mean field control to deterministic policies with joint state-control distributions, enabling a model-free continuous-time actor-critic method with measure-aware policy gradients.",
+      "engineering_relevance": "This provides a practical reinforcement learning framework for systems where collective behavior and control interactions matter, such as crowds, swarms, and finance with trade crowding.",
       "method": [
-        "Derive a model-free sensitivity formula for parameterized McKean–Vlasov dynamics.",
-        "Build a deterministic policy gradient using advantage-rate functions on Wasserstein space, with local value/advantage representations that include measure derivatives.",
-        "Implement a continuous-time deep deterministic policy gradient algorithm with particle approximations, measure-dependent neural networks, temporal-difference learning, and exploration in action or parameter space."
+        "Derive a model-free sensitivity formula for McKean–Vlasov dynamics.",
+        "Express the policy gradient via advantage-rate and local value/advantage-rate functions on Wasserstein space.",
+        "Build a continuous-time deep deterministic policy gradient algorithm using particle approximations, measure-dependent neural networks, and temporal-difference learning."
       ],
-      "evidence_signal": "The method is evaluated in numerical experiments on stochastic Cucker–Smale consensus control and optimal liquidation with trade crowding, showing efficiency, stability, and robustness.",
-      "watch_item": "The approach relies on particle approximations and measure-derivative estimation, which can be computationally demanding and sensitive to approximation error in high-dimensional settings.",
+      "evidence_signal": "The method is validated in numerical experiments on stochastic Cucker–Smale consensus control and optimal liquidation with trade crowding, showing efficiency, stability, and robustness.",
+      "watch_item": "Implementation may be challenging because the algorithm requires accurate particle approximations and learning measure-derivative terms for joint state-action distributions.",
       "hashtags": [
         "#MeanFieldControl",
         "#ReinforcementLearning",
@@ -944,7 +944,7 @@
       "paper_title": "Actor-Critic Learning for Extended Mean Field Control with Deterministic Policies",
       "paper_date": "2026-07-13",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-17T14:49:42",
+      "generated_at": "2026-07-16T15:01:36",
       "generator": "openai"
     }
   },
@@ -975,19 +975,19 @@
     ],
     "score": 67,
     "infographic": {
-      "key_insight": "The paper learns how uncertainty changes with both context and decisions using nonparametric models, then plugs those predictions into a residual-corrected stochastic optimization framework.",
-      "engineering_relevance": "It enables more reliable decision-making in systems where demand, costs, or constraints depend on actions and external context, such as pricing, inventory, and facility location.",
+      "key_insight": "The paper learns decision-dependent uncertainty from context and past residuals using nonparametric models, then embeds those predictions into a robust stochastic optimization framework with provable statistical guarantees.",
+      "engineering_relevance": "This enables better real-world planning and control in systems where outcomes depend on both observed context and the decisions being made, such as supply chains, facility location, and pricing.",
       "method": [
-        "Use kNN, CART, or ReLU networks to estimate decision- and context-dependent uncertainty.",
-        "Add empirical residuals to point predictions in an ER-DD-SAA formulation to hedge prediction error.",
-        "Derive exact mixed-integer programming reformulations; for kNN two-stage problems, use a Benders + constraint-generation solver (BD-CG)."
+        "Use kNN, CART, or ReLU neural nets to model uncertainty as a function of decisions and context.",
+        "Apply ER-DD-SAA by adding empirical residuals to point predictions to account for estimation error.",
+        "For kNN two-stage problems, use a Benders decomposition plus constraint generation (BD-CG) algorithm with finite convergence guarantees."
       ],
-      "evidence_signal": "Experiments on a newsvendor-with-pricing problem and a two-stage facility location problem show better out-of-sample performance than a parametric benchmark and improved computational tractability.",
-      "watch_item": "The approach relies on accurate nonparametric learning and MIP reformulations, so performance and scalability may degrade with very high-dimensional data or weak training coverage.",
+      "evidence_signal": "Experiments on a newsvendor-with-pricing problem and a two-stage facility location problem show improved out-of-sample performance over a parametric benchmark and better computational tractability.",
+      "watch_item": "Performance depends on the quality of nonparametric learning and residual modeling, so scalability and tuning can be challenging in high-dimensional or data-sparse settings.",
       "hashtags": [
         "#StochasticOptimization",
-        "#NonparametricLearning",
         "#DecisionDependentUncertainty",
+        "#NonparametricLearning",
         "#MixedIntegerProgramming",
         "#OperationsResearch"
       ],
@@ -995,7 +995,7 @@
       "paper_title": "Contextual Stochastic Optimization with Decision-Dependent Uncertainty via Nonparametric Learning",
       "paper_date": "2026-07-13",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-17T14:49:45",
+      "generated_at": "2026-07-16T15:01:39",
       "generator": "openai"
     }
   },
@@ -1029,27 +1029,27 @@
     ],
     "score": 66,
     "infographic": {
-      "key_insight": "A hypernetwork-conditioned hybrid physics-data surrogate can learn how mycelium composite microstructure changes multiscale mechanical response, enabling efficient optimization across graded materials.",
-      "engineering_relevance": "This makes functionally graded, sustainable composite structures practical to design by reducing the cost of full multiscale simulations while still targeting macro-level stress reduction.",
+      "key_insight": "A microstructure-conditioned hybrid surrogate, trained via a hypernetwork, can predict multiscale behavior of mycelium composites across varying microstructures with far less data than standard surrogates.",
+      "engineering_relevance": "This enables tractable multiscale optimization of graded sustainable materials and can meaningfully reduce stress concentrations in designed structures.",
       "method": [
-        "Condition a hybrid surrogate on microstructural variables using a hypernetwork.",
-        "Use the surrogate inside multiscale optimization for graded mycelium-woodchip composites.",
-        "Extend conditioning to manufacturing variables to link process settings to final behavior."
+        "Condition a hybrid physics-data microscale surrogate on microstructural variables using a hypernetwork.",
+        "Use the surrogate inside multiscale optimization to evaluate functionally graded designs efficiently.",
+        "Extend conditioning to manufacturing variables to link process settings to macroscopic response."
       ],
-      "evidence_signal": "The conditioned surrogate was validated against full FE^2 simulation and the optimized graded disk reduced peak stress by 42% versus a random-microstructure design.",
-      "watch_item": "Performance may depend on the representativeness of the small training set, so extrapolation to unseen microstructures or manufacturing conditions should be treated cautiously.",
+      "evidence_signal": "The approach was validated against full FE^2 simulation and used to optimize a graded disk, reducing peak stress by 42% versus a random microstructure.",
+      "watch_item": "Performance may depend on how well the training set covers the space of microstructures and manufacturing conditions, so extrapolation beyond seen designs is a risk.",
       "hashtags": [
         "#SurrogateModeling",
-        "#MultiscaleSimulation",
-        "#Microstructure",
-        "#SustainableMaterials",
-        "#TopologicalOptimization"
+        "#MultiscaleOptimization",
+        "#MyceliumComposites",
+        "#PhysicsInformedML",
+        "#SustainableMaterials"
       ],
       "paper_id": "2026-07-15-arxiv-microstructure_conditioned_surrogate_models_for_graded_multiscale_optimization_of_mycelium",
       "paper_title": "Microstructure-Conditioned Surrogate Models for Graded Multiscale Optimization of Mycelium Composites",
       "paper_date": "2026-07-15",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-17T14:49:47",
+      "generated_at": "2026-07-16T15:01:41",
       "generator": "openai"
     }
   }

@@ -1,24 +1,24 @@
 {
-  "key_insight": "Post-training methods change when confidence is trustworthy during chain-of-thought reasoning: OPD is best before reasoning, SFT is best for early stopping, and RL is best for aggregating final answers.",
-  "engineering_relevance": "A stage-aware, position-aware confidence policy can improve reasoning systems' accuracy and token efficiency by using confidence only where it is calibrated.",
+  "key_insight": "Post-training changes not just answer accuracy but when confidence is trustworthy: OPD helps before reasoning, SFT helps with early stopping during reasoning, and RL helps after reasoning for aggregation.",
+  "engineering_relevance": "For math-reasoning systems, confidence should be used stage-wise and by token position to reduce wasted decoding and improve final answer selection under compute budgets.",
   "method": [
-    "Three-stage calibration: pre-reasoning, during reasoning, and post-reasoning confidence analysis.",
-    "Compare SFT, RL, and OPD on mathematical reasoning benchmarks for difficulty estimation, early termination, and answer aggregation.",
-    "PosConf uses confidence only in reliable relative-position intervals to avoid miscalibrated regions."
+    "Three-stage calibration analysis: pre-CoT, intra-CoT, and post-CoT confidence.",
+    "Compare SFT, RL, and on-policy distillation (OPD) on mathematical reasoning benchmarks.",
+    "Introduce PosConf, which only uses confidence from reliable relative-position intervals."
   ],
-  "evidence_signal": "On controlled math reasoning benchmarks, PosConf improved RL answer aggregation by 6.1 points over majority voting and improved OPD early stopping by up to 4.3 points under tight token budgets.",
-  "watch_item": "Confidence reliability shifts with position, so a fixed threshold or single-stage calibration policy may fail when the model enters inverse-calibrated regions.",
+  "evidence_signal": "Controlled benchmark evaluation shows PosConf improves RL aggregation by 6.1 points over majority voting and improves OPD early stopping by up to 4.3 points under tight token budgets.",
+  "watch_item": "Position-dependent calibration can invert later in the reasoning trace, so using confidence without stage/position filtering may degrade performance.",
   "hashtags": [
     "#LLMReasoning",
     "#Calibration",
     "#ChainOfThought",
-    "#PostTraining",
-    "#MathematicalReasoning"
+    "#MathAI",
+    "#PostTraining"
   ],
   "paper_id": "2026-07-15-arxiv-post_training_shifts_confidence_a_three_stage_analysis_of_how_sft_rl_and_opd_shape_pre_int",
   "paper_title": "Post-Training Shifts Confidence: A Three-Stage Analysis of How SFT, RL, and OPD Shape Pre-, Intra-, and Post-CoT Calibration",
   "paper_date": "2026-07-15",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-16T15:01:19",
+  "generated_at": "2026-07-17T14:49:26",
   "generator": "openai"
 }
