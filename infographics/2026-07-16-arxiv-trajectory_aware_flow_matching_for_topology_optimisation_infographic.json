@@ -1,15 +1,15 @@
 {
-  "key_insight": "Trajectory-aware flow matching learns to generate feasible topology-optimised designs by using BESO optimisation history as a physics-guided transport path instead of relying on slow reverse diffusion or extra guidance at inference.",
-  "engineering_relevance": "This enables faster design exploration for structural optimisation problems, producing multiple candidate layouts with better compliance, volume-fraction control, and topology fidelity.",
+  "key_insight": "The paper replaces expensive iterative topology optimization with a flow-matching generative model that learns to synthesize feasible structures, especially by using BESO optimization trajectories as physics-aware training paths.",
+  "engineering_relevance": "This enables faster candidate design generation for structural topology optimization under changing constraints, with better compliance and volume-fraction control than diffusion-based sampling.",
   "method": [
-    "Linear FMTO: interpolate between Gaussian noise and a BESO reference topology as the baseline transport path.",
-    "Trajectory-aware FMTO: build the probability path and target velocity field from volume-fraction-indexed BESO states.",
-    "Use trajectory weighting to inject optimisation history while keeping inference step counts low, with no extra optimisation at sampling time."
+    "Linear FMTO: interpolate from Gaussian noise to a BESO reference topology as an endpoint-based baseline.",
+    "Trajectory-aware FMTO: build probability paths from volume-fraction-indexed BESO states to encode optimization history.",
+    "Learn a target velocity field from these paths so inference needs no extra optimization or guidance."
   ],
-  "evidence_signal": "Experiments show FMTO outperforms a diffusion-based baseline in sampling efficiency and design quality, and moderate trajectory weighting gives the best overall results especially under limited training data.",
-  "watch_item": "Too much trajectory guidance can over-constrain the learned flow, so path design and weight selection need careful tuning to avoid reduced generative flexibility.",
+  "evidence_signal": "Experiments report improved compliance-related performance, topology fidelity, and volume-fraction satisfaction with far fewer sampling steps than a diffusion baseline, and moderate trajectory weighting performs best under limited data.",
+  "watch_item": "Too much trajectory guidance can over-constrain transport and reduce generative flexibility, so path weighting and anchor density need careful tuning.",
   "hashtags": [
-    "#TopologyOptimisation",
+    "#TopologyOptimization",
     "#FlowMatching",
     "#GenerativeDesign",
     "#ComputationalMechanics",
@@ -19,6 +19,6 @@
   "paper_title": "Trajectory-Aware Flow Matching for Topology Optimisation",
   "paper_date": "2026-07-16",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-07-18T14:21:09",
+  "generated_at": "2026-07-19T14:23:34",
   "generator": "openai"
 }
