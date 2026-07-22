@@ -1,24 +1,24 @@
 {
-  "key_insight": "PriorProof measures how nonstandard a formal proof route is at a specific time by scoring the surprisal of its dependency footprint against an earlier snapshot of Mathlib.",
-  "engineering_relevance": "It gives theorem-proving systems a decomposable, label-free novelty signal that can help rank proofs, compare techniques, and flag when a proof path is unusually unfamiliar.",
+  "key_insight": "PriorProof turns proof novelty into a time-relative, machine-computable score by measuring how surprising a Lean proof’s dependency footprint is compared with an earlier snapshot of Mathlib.",
+  "engineering_relevance": "This offers a decomposable signal for formal proof search, proof analysis, and technique detection without requiring a hand-built ontology or human-labeled training data.",
   "method": [
-    "Extract the proof term’s dependency footprint from Lean.",
-    "Learn statement retrieval from proof-derived contrastive pairs.",
-    "Score footprint surprisal with a retrieval-conditioned, hierarchically smoothed prior built from an earlier Mathlib snapshot."
+    "Extract the proof-term dependency footprint from each Lean theorem.",
+    "Score that footprint using weighted surprisal under a retrieval-conditioned, hierarchically smoothed prior built from an earlier Mathlib snapshot.",
+    "Learn statement retrieval from proof-derived contrastive pairs, then evaluate against blinded human and LLM judgments."
   ],
-  "evidence_signal": "In a blinded topology study, PriorProof matched the majority of domain raters on 53/76 paired judgments (69.7%), with 11/12 canonical contrasts correct and a non-significant paired difference versus the best language-model condition (McNemar p = 0.210).",
-  "watch_item": "The signal is time-relative and depends on the quality of retrieval and the chosen historical snapshot, so performance may shift as Mathlib evolves or if proof-term parsing is brittle.",
+  "evidence_signal": "In blinded evaluation, PriorProof matched the majority of domain raters on 53/76 pairs (69.7%) and showed endpoint-calibration behavior, with accuracy rising to 84.2% in the largest score-gap bin.",
+  "watch_item": "Because the metric is anchored to an earlier library snapshot, results may depend on snapshot choice and on how well retrieval generalizes across theorem domains and evolving proof styles.",
   "hashtags": [
     "#TheoremProving",
+    "#FormalMethods",
     "#Lean",
-    "#FormalVerification",
-    "#ProofNovelty",
-    "#MathAI"
+    "#Mathlib",
+    "#NoveltyDetection"
   ],
   "paper_id": "2026-07-18-arxiv-priorproof_a_point_in_time_measure_of_technique_novelty_for_formal_proofs",
   "paper_title": "PriorProof: A Point-in-Time Measure of Technique Novelty for Formal Proofs",
   "paper_date": "2026-07-18",
   "paper_category": "Theorem Proving",
-  "generated_at": "2026-07-21T15:03:22",
+  "generated_at": "2026-07-22T15:08:27",
   "generator": "openai"
 }

@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-07-21
+Generated: 2026-07-22
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. A domain decomposition online-learning-enhanced nonlinear elimination preconditioner

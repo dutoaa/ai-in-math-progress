@@ -26,27 +26,27 @@
     ],
     "score": 90,
     "infographic": {
-      "key_insight": "The paper improves nonlinear elimination preconditioning by learning the slowly converging “bad” residual components from dominant residual structure rather than selecting them directly from noisy raw residuals.",
-      "engineering_relevance": "This makes Newton solvers for large nonlinear PDE systems more robust and less sensitive to manual thresholds, which is valuable for scalable CFD and other multiphysics simulations.",
+      "key_insight": "The paper replaces thresholding on noisy raw nonlinear residuals with online-learned residual structure to more reliably identify which variables should be eliminated in nonlinear elimination preconditioning.",
+      "engineering_relevance": "This improves robustness and scalability of nonlinear solvers for large PDE systems by making preconditioner selection less sensitive to hand-tuned parameters and local oscillations.",
       "method": [
         "Collect residual snapshots during Newton stagnation phases.",
-        "Train an unsupervised extractor (PCA or autoencoder) to reconstruct dominant residual structure.",
-        "Use the reconstructed residuals to identify the bad subset inside a parallel domain decomposition framework."
+        "Train an unsupervised extractor (PCA or autoencoder) to learn the dominant residual pattern.",
+        "Use the reconstructed residual to define the bad subset, within a parallel domain-decomposition framework."
       ],
-      "evidence_signal": "The abstract reports lid-driven cavity flow tests up to Reynolds number 10,000, where the learned method produced more coherent bad subsets, was robust to parameter choices, and outperformed the baseline NE preconditioner.",
-      "watch_item": "The approach adds online training and subdomain model fitting, so performance may depend on snapshot quality, stagnation detection, and the extra computational cost of learning.",
+      "evidence_signal": "The method was evaluated on lid-driven cavity flow problems up to Reynolds number 10,000 and reported more coherent bad subsets, better robustness to parameters, and improved convergence over the baseline NE preconditioner.",
+      "watch_item": "The approach adds online training overhead and may depend on the quality and timing of stagnation-phase snapshots on each subdomain.",
       "hashtags": [
-        "#NewtonMethods",
-        "#Preconditioning",
+        "#NonlinearSolvers",
         "#DomainDecomposition",
+        "#Preconditioning",
         "#MachineLearningForPDEs",
-        "#ComputationalScience"
+        "#ScientificComputing"
       ],
       "paper_id": "2026-07-20-arxiv-a_domain_decomposition_online_learning_enhanced_nonlinear_elimination_preconditioner",
       "paper_title": "A domain decomposition online-learning-enhanced nonlinear elimination preconditioner",
       "paper_date": "2026-07-20",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-22T15:08:11",
+      "generated_at": "2026-07-21T15:03:07",
       "generator": "openai"
     }
   },
@@ -80,27 +80,27 @@
     ],
     "score": 78,
     "infographic": {
-      "key_insight": "MADA-RL improves compact-model mathematical reasoning by training generator and critic agents with a counterfactual, debate-aware reward that explicitly teaches critics to outperform generator consensus.",
-      "engineering_relevance": "The method offers a parameter-efficient post-training path for small models, using LoRA and multi-agent coordination to gain accuracy with far fewer trainable parameters than full fine-tuning.",
+      "key_insight": "MADA-RL turns a compact math model into coordinated generator and critic agents and uses a counterfactual debate-aware reward to improve reasoning with only a small LoRA-tuned parameter budget.",
+      "engineering_relevance": "The method offers a parameter-efficient post-training recipe for deploying stronger reasoning in compact models, trading a modest accuracy gain for far lower training cost and trainable-parameter count.",
       "method": [
-        "Split a compact model into generator and critic roles.",
-        "Train with a counterfactual critic advantage: critic reward minus generator ensemble accuracy.",
-        "Use LoRA adapters and a lightweight multi-round debate protocol at inference."
+        "Specializes the model into generator and critic roles.",
+        "Trains only LoRA adapter parameters with a debate-aware signal.",
+        "Uses a counterfactual critic advantage that benchmarks critic reward against generator ensemble accuracy."
       ],
-      "evidence_signal": "Across five math benchmarks, DeepSeek-R1-Distill-Qwen-1.5B improved from 39.9% to 41.9% (+2.0 points, p<0.001) with 16× fewer trainable parameters than fully fine-tuned baselines.",
-      "watch_item": "The gains do not surpass the strongest larger-data baselines, and the multi-round deployment protocol adds inference-time cost that must be budgeted in practice.",
+      "evidence_signal": "On five mathematical reasoning benchmarks, DeepSeek-R1-Distill-Qwen-1.5B improved from 39.9% to 41.9% (+2.0 points, p < 0.001) with 16× fewer trainable parameters than fully fine-tuned baselines.",
+      "watch_item": "The gains are modest and still fall short of the strongest larger-data baselines, so inference-time multi-round debate cost and data scale remain practical concerns.",
       "hashtags": [
         "#MathematicalReasoning",
         "#ReinforcementLearning",
         "#MultiAgentSystems",
-        "#ParameterEfficientFineTuning",
+        "#LoRA",
         "#CompactLLMs"
       ],
       "paper_id": "2026-07-20-arxiv-mada_rl_multi_agent_debate_aware_reinforcement_learning_for_parameter_efficient_reasoning",
       "paper_title": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
       "paper_date": "2026-07-20",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-07-22T15:08:14",
+      "generated_at": "2026-07-21T15:03:10",
       "generator": "openai"
     }
   },
@@ -132,27 +132,27 @@
     ],
     "score": 78,
     "infographic": {
-      "key_insight": "VRR-Stop decides when to stop verify-repair loops by estimating whether the next repair is likely to improve true validity, while remaining robust to noisy verifiers and repairers.",
-      "engineering_relevance": "This gives LLM-agent pipelines a principled stopping rule that can reduce wasted repair rounds and avoid over-repair that damages already-correct solutions.",
+      "key_insight": "VRR-Stop decides whether to keep repairing or stop by estimating the true marginal gain of a noisy verify-repair loop, and it switches to a conservative fallback when verification becomes too unreliable.",
+      "engineering_relevance": "For LLM agents that generate code, solve math, or use tools, this gives a principled stopping rule that can reduce wasted repair steps and prevent good solutions from being damaged by over-repair.",
       "method": [
-        "Models verifier and repair noise with four parameters: false acceptance, false rejection, repair improvement, and repair damage.",
-        "Uses belief filtering over repeated verification votes to estimate committed validity and compare the true marginal gain of repairing versus stopping.",
-        "Adds VRR-Guard as a fallback when verifier discrimination is too weak for reliable calibration."
+        "Models verification and repair with four noise parameters: false accept, false reject, repair improvement, and repair damage.",
+        "Uses belief filtering over repeated verifier votes to estimate committed validity and decide based on the sign of the true marginal gain.",
+        "Adds VRR-Guard as an estimation-free fallback when verifier discrimination is near zero or stopping calibration becomes unreliable."
       ],
-      "evidence_signal": "On a GSM8K stress setting, VRR-Stop improved final true validity by 60.6 percentage points over fixed five-round repair with an average of 0.72 repair rounds.",
-      "watch_item": "The stopping rule depends on verifier discrimination and a sufficient decision margin; if verifier separation is near zero, calibration can fail and the fallback guard may be needed.",
+      "evidence_signal": "On a GSM8K stress test, VRR-Stop improved final true validity by 60.6 percentage points over fixed five-round repair while using only 0.72 repair rounds on average.",
+      "watch_item": "The method depends on verifier discrimination and a reliable decision margin; when the verifier is nearly uninformative, estimation error can flip the stopping decision.",
       "hashtags": [
         "#LLMAgents",
         "#MathematicalReasoning",
-        "#RobustStopping",
-        "#VerifyRepair",
-        "#GSM8K"
+        "#Verification",
+        "#RepairLoops",
+        "#RobustStopping"
       ],
       "paper_id": "2026-07-20-arxiv-verify_repair_repeat_or_stop_robust_stopping_for_noisy_verify_repair_loops_in_llm_agents",
       "paper_title": "Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents",
       "paper_date": "2026-07-20",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-07-22T15:08:18",
+      "generated_at": "2026-07-21T15:03:13",
       "generator": "openai"
     }
   },
@@ -183,27 +183,27 @@
     ],
     "score": 72,
     "infographic": {
-      "key_insight": "Training-free dimensional adaptation plus ratio-controlled weighted averaging can merge heterogeneous LLM checkpoints surprisingly well, but only when the interpolation ratio is carefully kept away from a near-balanced mix.",
-      "engineering_relevance": "For practical model fusion, simple parameter averaging is a strong low-complexity baseline that can transfer complementary capabilities across different billion-parameter models without distillation, adapters, or semantic alignment.",
+      "key_insight": "Training-free dimensional adaptation plus carefully weighted averaging can merge heterogeneous billion-parameter LLMs surprisingly well, but only when interpolation ratios are kept far from balanced.",
+      "engineering_relevance": "This provides a simple, low-cost baseline for model fusion that avoids distillation, adapters, and alignment machinery, making heterogeneous checkpoint merging more practical to test and deploy.",
       "method": [
         "Expand the smaller model into the larger parameter space for union-style merging.",
         "Truncate the larger model into the smaller parameter space for intersection-style merging.",
-        "Apply deterministic weighted interpolation with carefully chosen ratios to preserve source behavior and sometimes improve performance."
+        "Apply ratio-controlled interpolation to transfer complementary capabilities without training."
       ],
-      "evidence_signal": "The authors evaluate Qwen-family model pairs on benchmarks spanning mathematical reasoning, code generation, language understanding, commonsense reasoning, knowledge, and instruction following, reporting both gains and collapse cases.",
-      "watch_item": "Near-balanced interpolation can collapse and task-level gains may come with regressions elsewhere, so ratio selection is critical and merging may induce a seesaw trade-off.",
+      "evidence_signal": "The abstract reports experiments on Qwen-family model pairs across math reasoning, code, language understanding, commonsense, knowledge, and instruction-following benchmarks, where small-ratio interpolation often improved over strong source checkpoints.",
+      "watch_item": "Near-balanced interpolation can collapse and task-level gains may come with regressions elsewhere, so ratio choice and capability trade-offs need careful validation.",
       "hashtags": [
-        "#LLMMerging",
+        "#LLMerging",
         "#ModelAveraging",
         "#HeterogeneousLLMs",
         "#MathematicalReasoning",
-        "#AIMethods"
+        "#AIResearch"
       ],
       "paper_id": "2026-07-20-arxiv-rethinking_heterogeneous_llm_merging_a_weighted_model_averaging_perspective",
       "paper_title": "Rethinking Heterogeneous LLM Merging: A Weighted Model Averaging Perspective",
       "paper_date": "2026-07-20",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-07-22T15:08:20",
+      "generated_at": "2026-07-21T15:03:16",
       "generator": "openai"
     }
   },
@@ -234,27 +234,27 @@
     ],
     "score": 72,
     "infographic": {
-      "key_insight": "A hierarchical NMPC scheme with neural thermal models can jointly optimize BEV cabin comfort and battery safety while reducing HVAC/BTM energy use.",
-      "engineering_relevance": "This provides a practical control architecture for extending electric vehicle range without sacrificing passenger comfort or thermal constraints.",
+      "key_insight": "A hierarchical NMPC scheme with neural thermal models optimizes BEV HVAC and battery thermal control to reduce energy use while maintaining cabin comfort and battery safety.",
+      "engineering_relevance": "The approach offers a practical control framework for extending EV range by coordinating cabin and battery thermal management under realistic driving conditions.",
       "method": [
-        "Supervisory NMPC optimizes long-horizon trade-offs between energy consumption and cabin temperature tracking.",
-        "Lower-layer NMPC applies local corrections to handle disturbances and model uncertainty.",
-        "Data-driven neural network models predict the nonlinear coupled thermal dynamics for both control layers."
+        "Supervisory NMPC balances energy cost vs. cabin temperature tracking over a long horizon.",
+        "Lower-layer NMPC applies local corrections to handle disturbances and model mismatch.",
+        "Neural network prediction models capture the nonlinear coupled thermal dynamics of HVAC and BTM."
       ],
-      "evidence_signal": "The approach was validated in a high-fidelity BEV thermal simulator and benchmarked against an industrial rule-based controller over the WLTC driving cycle, showing lower energy use while meeting comfort and battery limits.",
-      "watch_item": "Performance depends on the fidelity of the learned thermal models and simulator-to-real-world transfer under varying weather, traffic, and aging conditions.",
+      "evidence_signal": "The method was validated in a high-fidelity BEV thermal simulator and benchmarked against an industrial rule-based controller over the WLTC driving cycle, showing lower energy consumption while meeting constraints.",
+      "watch_item": "Performance depends on simulator fidelity and the neural models’ ability to generalize to unseen thermal conditions and vehicle usage patterns.",
       "hashtags": [
-        "#BatteryElectricVehicles",
+        "#BEV",
         "#NMPC",
         "#ThermalManagement",
-        "#NeuralNetworks",
+        "#NeuralModels",
         "#EnergyEfficiency"
       ],
       "paper_id": "2026-07-20-arxiv-thermal_management_optimization_of_battery_electric_vehicles_via_hierarchical_nmpc_with_cm",
       "paper_title": "Thermal management optimization of Battery Electric Vehicles via hierarchical NMPC with CMO-trained Neural Models",
       "paper_date": "2026-07-20",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-22T15:08:23",
+      "generated_at": "2026-07-21T15:03:19",
       "generator": "openai"
     }
   },
@@ -287,27 +287,27 @@
     ],
     "score": 71,
     "infographic": {
-      "key_insight": "PriorProof turns proof novelty into a time-relative, machine-computable score by measuring how surprising a Lean proof’s dependency footprint is compared with an earlier snapshot of Mathlib.",
-      "engineering_relevance": "This offers a decomposable signal for formal proof search, proof analysis, and technique detection without requiring a hand-built ontology or human-labeled training data.",
+      "key_insight": "PriorProof measures how nonstandard a formal proof route is at a specific time by scoring the surprisal of its dependency footprint against an earlier snapshot of Mathlib.",
+      "engineering_relevance": "It gives theorem-proving systems a decomposable, label-free novelty signal that can help rank proofs, compare techniques, and flag when a proof path is unusually unfamiliar.",
       "method": [
-        "Extract the proof-term dependency footprint from each Lean theorem.",
-        "Score that footprint using weighted surprisal under a retrieval-conditioned, hierarchically smoothed prior built from an earlier Mathlib snapshot.",
-        "Learn statement retrieval from proof-derived contrastive pairs, then evaluate against blinded human and LLM judgments."
+        "Extract the proof term’s dependency footprint from Lean.",
+        "Learn statement retrieval from proof-derived contrastive pairs.",
+        "Score footprint surprisal with a retrieval-conditioned, hierarchically smoothed prior built from an earlier Mathlib snapshot."
       ],
-      "evidence_signal": "In blinded evaluation, PriorProof matched the majority of domain raters on 53/76 pairs (69.7%) and showed endpoint-calibration behavior, with accuracy rising to 84.2% in the largest score-gap bin.",
-      "watch_item": "Because the metric is anchored to an earlier library snapshot, results may depend on snapshot choice and on how well retrieval generalizes across theorem domains and evolving proof styles.",
+      "evidence_signal": "In a blinded topology study, PriorProof matched the majority of domain raters on 53/76 paired judgments (69.7%), with 11/12 canonical contrasts correct and a non-significant paired difference versus the best language-model condition (McNemar p = 0.210).",
+      "watch_item": "The signal is time-relative and depends on the quality of retrieval and the chosen historical snapshot, so performance may shift as Mathlib evolves or if proof-term parsing is brittle.",
       "hashtags": [
         "#TheoremProving",
-        "#FormalMethods",
         "#Lean",
-        "#Mathlib",
-        "#NoveltyDetection"
+        "#FormalVerification",
+        "#ProofNovelty",
+        "#MathAI"
       ],
       "paper_id": "2026-07-18-arxiv-priorproof_a_point_in_time_measure_of_technique_novelty_for_formal_proofs",
       "paper_title": "PriorProof: A Point-in-Time Measure of Technique Novelty for Formal Proofs",
       "paper_date": "2026-07-18",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-07-22T15:08:27",
+      "generated_at": "2026-07-21T15:03:22",
       "generator": "openai"
     }
   },
@@ -341,19 +341,19 @@
     ],
     "score": 70,
     "infographic": {
-      "key_insight": "The paper derives a predictive law that decomposes LLM ensemble lift into rescue and damage masses, showing that diversity of thought can be quantified and used to forecast ensemble gains.",
-      "engineering_relevance": "This gives practitioners a practical way to estimate when weighted model ensembles will outperform individual LLMs, helping choose vote splits and model combinations before deployment.",
+      "key_insight": "The paper derives a predictive law showing that LLM ensemble lift can be explained by decomposing diversity into rescue and damage mass, with accuracy-adjusted correlation and accuracy gap being strong predictors of when ensembles improve.",
+      "engineering_relevance": "This gives practitioners a compact way to forecast whether combining multiple LLMs will outperform a single model, helping design more reliable voting and routing systems.",
       "method": [
-        "Derive an exact ensemble-lift decomposition into rescue and damage mass.",
-        "Define predictive metrics: accuracy-adjusted correctness correlation (φ_adj), accuracy gap, and collective accuracy.",
-        "Calibrate a heuristic on one benchmark, then test transfer with frozen coefficients on unseen datasets."
+        "Derived an exact lift decomposition into rescue and damage masses.",
+        "Defined \u0003c6_adj, accuracy gap, and collective accuracy as pre-pooling predictors.",
+        "Validated a frozen heuristic across multiple benchmarks and model pairs."
       ],
-      "evidence_signal": "Evaluated on 767,520 inferences from ten open-weight models across two graduate science benchmarks plus a forensic multi-turn tool-use benchmark; the heuristic achieved Spearman ρ=0.84 on calibration, ρ=0.51 and 0.84 on transfer tasks, and swap mass tracked realized lift with R²≥0.96.",
-      "watch_item": "Results depend on calibration at a specific 40:60 vote split, so generalization to other ensemble sizes, domains, or routing policies may require re-calibration.",
+      "evidence_signal": "Evaluated on 767,520 inferences from ten open-weight models across SuperGPQA, GPQA Diamond, and a forensic multi-turn tool-use benchmark, with strong transfer performance and high agreement between swap mass and realized lift.",
+      "watch_item": "The calibration was tuned on one dataset and vote split, so performance may depend on benchmark mix, model family, and whether the ensemble setting matches the tested conditions.",
       "hashtags": [
         "#LLMEnsembles",
-        "#TheoremProving",
         "#ModelDiversity",
+        "#TheoremProving",
         "#AIResearch",
         "#PredictiveMetrics"
       ],
@@ -361,7 +361,7 @@
       "paper_title": "Quantifying Diversity of Thought: A Predictive Law of Weighted LLM Ensemble Lift",
       "paper_date": "2026-07-19",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-07-22T15:08:31",
+      "generated_at": "2026-07-21T15:03:25",
       "generator": "openai"
     }
   },
@@ -394,27 +394,27 @@
     ],
     "score": 69,
     "infographic": {
-      "key_insight": "Adaptive Mamba Neural Operators (AMO) replace the usual kernel integral view of state-space models with reproducing-kernel constructions based on Takenaka–Malmquist systems, enabling flexible PDE solution learning on diverse geometries and meshes.",
-      "engineering_relevance": "AMO is relevant for simulation workflows because it targets accurate surrogate solvers for PDEs across point clouds, structured meshes, grids, and irregular domains.",
+      "key_insight": "Adaptive Mamba Neural Operators replace the usual kernel-integral view of state-space models with reproducing-kernel representations built from Takenaka–Malmquist systems, enabling flexible PDE solution learning on varied geometries and meshes.",
+      "engineering_relevance": "This offers a potentially more robust neural-operator framework for simulation tasks in fluids, solids, and finance where data come from point clouds, structured grids, or irregular domains.",
       "method": [
-        "Builds a neural operator around state-space models with reproducing kernels.",
-        "Uses Takenaka–Malmquist systems to adaptively represent PDE solution manifolds.",
-        "Aligns the operator design with adaptive Fourier decomposition (AFD) theory."
+        "Construct reproducing kernels for state-space models instead of using the standard SSM integral kernel.",
+        "Build Takenaka–Malmquist systems to match PDE solution structure and geometry.",
+        "Leverage adaptive Fourier decomposition theory to form an explainable operator representation."
       ],
-      "evidence_signal": "The abstract reports evaluation on challenging benchmark PDEs in fluid physics, solid physics, and finance, where AMO consistently achieves lower relative L2 error than state-of-the-art solvers.",
-      "watch_item": "Performance may depend on how well the Takenaka–Malmquist/AFD representation is constructed for a given geometry or mesh, which could add implementation complexity.",
+      "evidence_signal": "The abstract reports benchmark testing on challenging PDE problems across fluid physics, solid physics, and finance, with AMO consistently achieving lower relative L2 error than state-of-the-art solvers.",
+      "watch_item": "Performance gains are reported from the abstract only; practical deployment may depend on stable construction of the adaptive kernel basis and good generalization across unseen geometries.",
       "hashtags": [
         "#NeuralOperators",
         "#PDEs",
-        "#Mamba",
-        "#ScientificMachineLearning",
-        "#AdaptiveFourierDecomposition"
+        "#StateSpaceModels",
+        "#AdaptiveFourierDecomposition",
+        "#ScientificMachineLearning"
       ],
       "paper_id": "2026-07-20-arxiv-adaptive_mamba_neural_operators",
       "paper_title": "Adaptive Mamba Neural Operators",
       "paper_date": "2026-07-20",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-22T15:08:34",
+      "generated_at": "2026-07-21T15:03:28",
       "generator": "openai"
     }
   },
@@ -446,18 +446,18 @@
     ],
     "score": 69,
     "infographic": {
-      "key_insight": "PI-Splines replace the neural network in physics-informed learning with a trainable tensor-product B-spline field, keeping residual-based training while adding locality, smoothness control, and interpretable parameters.",
-      "engineering_relevance": "This is useful for PDE-constrained modeling when compact support, stable derivatives, and strong boundary enforcement matter more than a fully flexible black-box network.",
+      "key_insight": "PI-Splines replace the neural-network field in physics-informed learning with a trainable tensor-product B-spline expansion, keeping residual-based training while adding structure, locality, and analytic smoothness control.",
+      "engineering_relevance": "This is attractive for PDE-constrained modeling when compact support, interpretable parameters, and strong boundary enforcement matter more than fully general neural representations.",
       "method": [
-        "Represent the unknown solution as a tensor-product B-spline expansion with trainable control coefficients.",
-        "Train the spline coefficients by minimizing the physics residual, like in PINNs.",
-        "Impose boundary conditions strongly by fixing boundary control points when the spline basis allows it."
+        "Represent the unknown solution directly with B-spline control coefficients instead of a neural network.",
+        "Train the coefficients by minimizing physics residuals under the same PINN-style loss and collocation setup.",
+        "Impose boundary conditions strongly by fixing compatible boundary control points when the spline space allows it."
       ],
-      "evidence_signal": "The paper benchmarks PI-Splines on several PDE test problems and compares them against standard physics-informed methods under matched equations, collocation points, losses, and optimization settings.",
-      "watch_item": "The approach depends on choosing a spline representation compatible with the problem geometry and boundary conditions, so it may be less straightforward to apply in highly irregular domains.",
+      "evidence_signal": "The method was tested on several benchmark PDE problems and compared against standard physics-informed frameworks using matched equations, collocation sets, losses, and optimizers to isolate the representation effect.",
+      "watch_item": "Performance depends on choosing a spline space compatible with the PDE geometry and boundary conditions, so setup and knot/design choices may limit generality.",
       "hashtags": [
         "#PhysicsInformedLearning",
-        "#Splines",
+        "#BSplines",
         "#PDEs",
         "#ScientificMachineLearning",
         "#Optimization"
@@ -466,7 +466,7 @@
       "paper_title": "Trainable Spline Representations for Physics-Informed Learning",
       "paper_date": "2026-07-17",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-22T15:08:38",
+      "generated_at": "2026-07-21T15:03:31",
       "generator": "openai"
     }
   },
@@ -497,27 +497,27 @@
     ],
     "score": 67,
     "infographic": {
-      "key_insight": "CADMM-Prox adds a bi-level proximal mechanism to consensus ADMM to stabilize distributed optimization for non-smooth, non-convex problems and obtain convergence to a neighborhood of a Clarke stationary point.",
-      "engineering_relevance": "The method is relevant for large-scale distributed learning, control, and signal-processing pipelines where sparse or inherently non-convex objectives must be optimized reliably across agents.",
+      "key_insight": "CADMM-Prox adds a proximal outer-level update to Consensus ADMM to stabilize distributed optimization for non-smooth, non-convex problems and converge to a neighborhood of a Clarke stationary point.",
+      "engineering_relevance": "It offers a practical distributed optimization tool for machine learning, control, and signal-processing workflows where sparsity and non-convex objectives make standard methods unstable.",
       "method": [
-        "Combines classical Consensus ADMM with an outer-level proximal term.",
-        "Uses a sufficiently large proximal parameter to improve stability in the non-smooth, non-convex setting.",
-        "Assumes local objectives are semi-convex to support global convergence guarantees."
+        "Combine classical Consensus ADMM with a bi-level structure.",
+        "Introduce a sufficiently large proximal term tied to an outer-level variable.",
+        "Assume local objectives are semi-convex to obtain global neighborhood convergence."
       ],
-      "evidence_signal": "The abstract reports numerical experiments on phase retrieval, where CADMM-Prox showed more stable convergence than the baseline method.",
-      "watch_item": "The guarantee is only convergence to a neighborhood of a Clarke stationary point, so exact stationarity is not ensured and performance may depend on proximal tuning.",
+      "evidence_signal": "The abstract reports numerical experiments on phase retrieval, where CADMM-Prox shows more stable convergence than the baseline algorithm.",
+      "watch_item": "The guarantee is convergence only to a neighborhood of a Clarke stationary point, so solution accuracy may depend on proximal tuning and problem conditioning.",
       "hashtags": [
         "#ADMM",
         "#DistributedOptimization",
         "#NonconvexOptimization",
-        "#ConsensusAlgorithms",
-        "#PhaseRetrieval"
+        "#PhaseRetrieval",
+        "#OptimizationTheory"
       ],
       "paper_id": "2026-07-20-arxiv-cadmm_prox_a_bi_level_consensus_admm_for_non_smooth_non_convex_distributed_consensus_optim",
       "paper_title": "CADMM-Prox: A Bi-level Consensus ADMM for Non-smooth Non-convex Distributed Consensus Optimization",
       "paper_date": "2026-07-20",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-22T15:08:40",
+      "generated_at": "2026-07-21T15:03:33",
       "generator": "openai"
     }
   },
@@ -550,27 +550,27 @@
     ],
     "score": 67,
     "infographic": {
-      "key_insight": "TOPD distills reasoning into a masked diffusion LLM by training on its own on-policy denoising traces, using teacher token distributions instead of rewards.",
-      "engineering_relevance": "This provides a practical post-training route for diffusion-based LLMs that keeps dense supervision while avoiding sparse RL signals and off-policy state mismatch.",
+      "key_insight": "TOPD distills reasoning into a masked diffusion LLM by training on the model’s own denoising traces with a token-level Reverse-KL loss, avoiding reward modeling.",
+      "engineering_relevance": "It offers a practical post-training path for diffusion-based language models that preserves dense supervision while improving reasoning efficiency and alignment with on-policy states.",
       "method": [
-        "Sample diffusion trajectories from the target dLLM itself.",
-        "Query a stronger teacher on the partially denoised states along the trace.",
-        "Optimize the target with token-level Reverse-KL on trace-aligned decisions."
+        "Sample on-policy diffusion trajectories from the target dLLM.",
+        "Query a teacher model on the corresponding partially denoised states.",
+        "Update the target with token-level Reverse-KL to match teacher distributions along trace-aligned decisions."
       ],
-      "evidence_signal": "On MATH500, SDAR-4B-Chat matched the RL-trained TraDo-4B-Instruct, improving by +5.7 on static evaluation and +4.5 on dynamic evaluation, with 4× fewer rollout rounds.",
-      "watch_item": "The approach still depends on access to a capable teacher and careful alignment between teacher supervision and the student’s evolving denoising states.",
+      "evidence_signal": "On MATH500, TOPD lets SDAR-4B-Chat match TraDo-4B-Instruct, improving by +5.7 static and +4.5 dynamic accuracy while using 4× fewer rollout rounds and an estimated 96.0× model-compute speedup.",
+      "watch_item": "The approach still depends on a strong teacher and careful handling of partially denoised states, so gains may be sensitive to teacher quality and trajectory mismatch.",
       "hashtags": [
         "#DiffusionLLM",
-        "#Reasoning",
+        "#MathematicalReasoning",
         "#KnowledgeDistillation",
         "#ReverseKL",
-        "#MathAI"
+        "#OnPolicyTraining"
       ],
       "paper_id": "2026-07-18-arxiv-trace_based_on_policy_distillation_for_masked_diffusion_language_models",
       "paper_title": "Trace-Based On-Policy Distillation for Masked Diffusion Language Models",
       "paper_date": "2026-07-18",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-07-22T15:08:43",
+      "generated_at": "2026-07-21T15:03:37",
       "generator": "openai"
     }
   },
@@ -603,27 +603,27 @@
     ],
     "score": 66,
     "infographic": {
-      "key_insight": "Nonconvex stochastic optimization can be reduced in a black-box way to ordinary static-regret online convex optimization by learning a preconditioner for a gradient tracker.",
-      "engineering_relevance": "This gives a modular framework for building adaptive optimizers, clarifying how methods like AdaGrad and Shampoo can be viewed through online preconditioner selection for practical nonconvex training.",
+      "key_insight": "The paper shows that nonconvex stochastic optimization can be reduced in a black-box way to ordinary static regret minimization, with the online learner choosing a preconditioner for the gradient tracker.",
+      "engineering_relevance": "This gives a modular template for designing adaptive optimizers, helping practitioners plug in existing OCO methods to obtain provable convergence for smooth and nonsmooth nonconvex problems.",
       "method": [
-        "Predict a stochastic gradient tracker for the nonconvex objective.",
-        "Use an online convex learner to choose a preconditioner that transforms the tracker into the update direction.",
-        "Require only static regret against one fixed comparator, not stronger online regret notions."
+        "Maintain a predictable gradient tracker from stochastic gradients.",
+        "Use a black-box online convex learner to choose the preconditioner that maps the tracker to the update direction.",
+        "Prove convergence from only static-regret guarantees, including for Lipschitz nonconvex objectives and Goldstein stationarity."
       ],
-      "evidence_signal": "For β-smooth objectives with bounded range and bounded-variance stochastic gradients, the method achieves a gradient-norm bound that matches the classical O(1/√T) rate whenever the OCO oracle has O(√T) static regret; for Lipschitz non-smooth nonconvex objectives it achieves the optimal O(T^-2/7) Goldstein-stationary rate.",
-      "watch_item": "Performance depends on the quality of the online regret oracle and on access to an unbiased stochastic-gradient oracle, so practical gains may vary with the chosen preconditioner learner.",
+      "evidence_signal": "The abstract gives rate guarantees: for smooth objectives the method achieves an average squared-gradient bound with terms scaling like O(1/sqrt(T)) when the OCO oracle has O(sqrt(T)) regret, and for nonsmooth Lipschitz objectives it achieves the optimal O(T^(-2/7)) rate.",
+      "watch_item": "Performance depends on the quality of the online regret oracle and the stability of the preconditioner, so implementation details of the OCO subroutine may affect practical behavior.",
       "hashtags": [
+        "#Optimization",
         "#NonconvexOptimization",
         "#OnlineLearning",
         "#Preconditioning",
-        "#StaticRegret",
-        "#AdaptiveOptimization"
+        "#AdaptiveMethods"
       ],
       "paper_id": "2026-07-20-arxiv-optimizing_the_preconditioner_a_black_box_online_to_nonconvex_conversion_with_static_regre",
       "paper_title": "Optimizing the Preconditioner: A Black-box Online-to-Nonconvex Conversion with Static Regret Minimization Oracles",
       "paper_date": "2026-07-20",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-22T15:08:46",
+      "generated_at": "2026-07-21T15:03:40",
       "generator": "openai"
     }
   },
@@ -656,27 +656,27 @@
     ],
     "score": 66,
     "infographic": {
-      "key_insight": "A unified, elementary proof gives both mean-square and sub-Gaussian concentration bounds for contractive stochastic approximation with multiplicative noise and potentially unbounded iterates, without smoothing the norm.",
-      "engineering_relevance": "This strengthens reliability guarantees for reinforcement-learning and other iterative control/optimization methods where updates are contractive but noise depends on the state size.",
+      "key_insight": "The paper gives a unified, elementary proof strategy for mean-square and sub-Gaussian concentration bounds in contractive stochastic approximation with multiplicative noise and potentially unbounded iterates.",
+      "engineering_relevance": "This matters for reinforcement learning and other iterative optimization/control systems where contractive operators and state-dependent noise are common, especially under \\ell_\\infty-style norms.",
       "method": [
-        "Use an averaged-noise sequence and auxiliary iterates to derive a one-step Lyapunov drift inequality directly on the normed error.",
-        "Prove boundedness in expectation via induction to obtain the mean-square bound.",
-        "For concentration, run a probabilistic induction on “good” events so Azuma-Hoeffding can be applied over controlled trajectories."
+        "Uses averaged noise and auxiliary iterates to derive a one-step Lyapunov drift inequality directly on the normed error.",
+        "Avoids smoothing the norm with generalized Moreau envelopes and skips the multi-stage bootstrapping used in prior concentration proofs.",
+        "Uses induction for mean-square control and probabilistic induction over \"good\" events to enable Azuma-Hoeffding concentration."
       ],
-      "evidence_signal": "The abstract reports theoretical guarantees only: mean-square bounds and the first sub-Gaussian-tailed maximal all-time concentration bound for SA under multiplicative noise, with no empirical evaluation mentioned.",
-      "watch_item": "The concentration result depends on a stepsize that scales logarithmically with the confidence level, so practical tuning may be more delicate under tight risk constraints.",
+      "evidence_signal": "The abstract states theoretical results only, including the first sub-Gaussian tailed maximal concentration bound for SA under multiplicative noise, rather than empirical evaluation.",
+      "watch_item": "The concentration result depends on a stepsize tuned logarithmically with the confidence level, which may complicate practical parameter selection.",
       "hashtags": [
         "#StochasticApproximation",
-        "#ReinforcementLearning",
         "#ConcentrationBounds",
-        "#MeanSquareAnalysis",
-        "#Theory"
+        "#ReinforcementLearning",
+        "#ContractiveMappings",
+        "#TheoremProving"
       ],
       "paper_id": "2026-07-20-arxiv-concentration_and_mean_square_bounds_for_contractive_stochastic_approximation_a_unified_el",
       "paper_title": "Concentration and Mean-Square Bounds for Contractive Stochastic Approximation: A Unified Elementary Approach",
       "paper_date": "2026-07-20",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-07-22T15:08:49",
+      "generated_at": "2026-07-21T15:03:43",
       "generator": "openai"
     }
   },
@@ -709,27 +709,27 @@
     ],
     "score": 66,
     "infographic": {
-      "key_insight": "A Lean proof agent can improve its own proof workflow by self-modifying under trusted Lean verification while the benchmark difficulty coevolves with its capability.",
-      "engineering_relevance": "This suggests a practical path to more robust theorem-proving systems: evolve prompts, tools, and proof context together, but keep success tied to machine-checked Lean proofs.",
+      "key_insight": "A Lean proof agent can improve itself by jointly evolving its proof workflow and the benchmark it trains against, while still requiring Lean-verified proof success as the only acceptance criterion.",
+      "engineering_relevance": "This suggests a practical path to stronger theorem-proving systems: use a small trusted core with mutable prompts, tools, and workflow around a verifier-grounded loop.",
       "method": [
-        "Small trusted runtime; fully mutable workspace for workflow, prompts, and tools.",
-        "Champion agent revises the task distribution with a mastery-throttled curriculum that adds harder proofs only after mastering current ones.",
-        "Single-anchor recalibration re-scores the champion on the updated benchmark to keep comparisons fair as tasks get harder."
+        "A self-modifying Lean agent rewrites its workflow, prompts, tools, and proof-context representation inside a trusted runtime.",
+        "The benchmark coevolves via a mastery-throttled curriculum that unlocks harder tasks only after current tasks are mastered.",
+        "A single-anchor recalibration re-runs the champion on the updated benchmark to preserve score comparability as difficulty rises."
       ],
-      "evidence_signal": "Over 15 active generations, the best coevolving agent reached 45.1% solve rate on held-out miniF2F, compared with 12.7% for the seed and 32.0% for the best fixed-benchmark baseline.",
-      "watch_item": "Because the benchmark itself changes during evolution, the approach depends on careful recalibration and trusted verification to avoid misleading score gains or benchmark drift.",
+      "evidence_signal": "Across 15 active generations, the best coevolving agent reached 45.1% held-out solve rate on miniF2F, versus 12.7% for the seed and 32.0% for the best fixed-benchmark baseline.",
+      "watch_item": "Because the benchmark changes over time, careful calibration is needed to ensure improvements reflect real reasoning gains rather than curriculum or scoring artifacts.",
       "hashtags": [
-        "#TheoremProving",
         "#Lean",
-        "#SelfEvolvingAI",
-        "#FormalVerification",
+        "#TheoremProving",
+        "#FormalMethods",
+        "#SelfEvolvingAgents",
         "#BenchmarkCoevolution"
       ],
       "paper_id": "2026-07-19-arxiv-self_modifying_lean_proof_agents_with_verifier_grounded_benchmark_coevolution",
       "paper_title": "Self-Modifying Lean Proof Agents with Verifier-Grounded Benchmark Coevolution",
       "paper_date": "2026-07-19",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-07-22T15:08:52",
+      "generated_at": "2026-07-21T15:03:46",
       "generator": "openai"
     }
   },
@@ -760,27 +760,27 @@
     ],
     "score": 65,
     "infographic": {
-      "key_insight": "A neural operator preconditioner trained on mixed Helmholtz datasets can act as an effective nonlinear preconditioner inside FGMRES, enabling robust solves for difficult transcranial ultrasound systems.",
-      "engineering_relevance": "The method offers a practical path to accelerate large-scale, patient-specific acoustic simulations where standard iterative solvers struggle with strong heterogeneity and poor convergence.",
+      "key_insight": "A neural operator can act as a learned preconditioner for Helmholtz systems, and training on a mixed source/velocity dataset substantially improves robustness and convergence in transcranial ultrasound simulations.",
+      "engineering_relevance": "This offers a practical path to accelerate large-scale, patient-specific wave solvers that are otherwise difficult for standard Krylov methods to handle.",
       "method": [
-        "Train a neural operator on coarse-grid Helmholtz problems using a physics-informed relative-residual loss.",
-        "Use six mixed velocity-source datasets with randomized sources, idealized skull fields, and noise to improve generalization.",
-        "Embed the learned operator as a nonlinear preconditioner in flexible GMRES (FGMRES)."
+        "Train a neural operator on coarse-grid Helmholtz solves using physics-informed relative residual loss.",
+        "Use mixed datasets combining randomized sources, idealized skull velocities, and noise to improve generalization.",
+        "Embed the learned operator as a nonlinear preconditioner inside FGMRES."
       ],
-      "evidence_signal": "In numerical tests, the hybrid solver converged on grids 64× larger than training resolution, while classical GMRES and the learned optimizer did not converge within similar computational budgets.",
-      "watch_item": "Performance depends on dataset design and may be sensitive to how well the training mixtures match real patient-specific velocity and source variability.",
+      "evidence_signal": "The method solved transcranial ultrasound cases on grids 64× larger than training and outperformed classical GMRES and the learned optimizer, which did not converge within similar budgets.",
+      "watch_item": "Performance likely depends on dataset design and coarse-to-fine transfer, so robustness should be rechecked when velocity fields or discretizations change substantially.",
       "hashtags": [
-        "#NeuralOperator",
+        "#NeuralOperators",
+        "#HelmholtzEquation",
         "#Preconditioning",
-        "#Helmholtz",
         "#FGMRES",
-        "#TranscranialUltrasound"
+        "#ScientificML"
       ],
       "paper_id": "2026-07-18-arxiv-neural_operator_preconditioning_from_mixed_dataset_for_the_helmholtz_equations_application",
       "paper_title": "Neural operator preconditioning from mixed dataset for the Helmholtz equations: Application to transcranial ultrasound",
       "paper_date": "2026-07-18",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-22T15:08:55",
+      "generated_at": "2026-07-21T15:03:48",
       "generator": "openai"
     }
   },
@@ -812,27 +812,27 @@
     ],
     "score": 65,
     "infographic": {
-      "key_insight": "The paper turns persistent UAS surveillance into a provably correct decentralized control problem by combining cyclic team reconfiguration, bounded LTL mission logic, and local communication.",
-      "engineering_relevance": "It offers a practical blueprint for swarm surveillance systems that must maintain coverage and formation performance under energy and communication limits while preserving formal guarantees.",
+      "key_insight": "The paper shows that a UAS swarm can achieve continuous surveillance with guaranteed correctness by combining decentralized coordination, cyclic role switching, and bounded LTL mission specifications.",
+      "engineering_relevance": "This provides a practical blueprint for certifiable multi-drone surveillance in energy- and communication-limited settings, with decentralized control and finite-time formation convergence.",
       "method": [
         "Partition the swarm into stationary anchors and mobile workers with cyclic replacement modes.",
-        "Use a bounded LTL hierarchy to encode reference consistency, finite-time reachability, tracking, and coverage requirements.",
-        "Synthesize new worker reference configurations by minimizing KL divergence, which also fixes a deterministic mode-dependent communication topology."
+        "Use a DNN-inspired local communication topology that is determined by the reference configuration of newly deployed workers.",
+        "Choose worker references by minimizing KL divergence between surveillance-node distribution and induced coverage density, then realize them with a decentralized quadrotor controller."
       ],
-      "evidence_signal": "The abstract reports numerical simulations showing cyclic reconfiguration, decentralized topology synthesis, finite-time formation convergence, and certified persistent surveillance coverage.",
-      "watch_item": "The approach depends on accurate model assumptions and mode-dependent coordination rules, so real-world deployment may be sensitive to disturbances, sensing errors, or communication dropouts.",
+      "evidence_signal": "The abstract reports numerical simulations demonstrating cyclic team reconfiguration, decentralized topology synthesis, finite-time formation convergence, and certified persistent coverage.",
+      "watch_item": "The framework depends on accurate local communication, correct mode switching, and faithful model assumptions; real-world disturbances or network failures could weaken the formal guarantees.",
       "hashtags": [
-        "#UASSwarms",
-        "#FormalMethods",
-        "#LTL",
+        "#UASSwarm",
+        "#AerialSurveillance",
+        "#BoundedLTL",
         "#DecentralizedControl",
-        "#AerialSurveillance"
+        "#FormalMethods"
       ],
       "paper_id": "2026-07-17-arxiv-distributed_continuous_aerial_surveillance_by_uas_swarms_under_formal_mission_specificatio",
       "paper_title": "Distributed Continuous Aerial Surveillance by UAS Swarms Under Formal Mission Specifications",
       "paper_date": "2026-07-17",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-07-22T15:08:58",
+      "generated_at": "2026-07-21T15:03:51",
       "generator": "openai"
     }
   },
@@ -863,27 +863,27 @@
     ],
     "score": 63,
     "infographic": {
-      "key_insight": "PriEco-DRL jointly coordinates electric-bus eco-driving and transit-priority adaptive signals with deep reinforcement learning to reduce energy use while preserving reliability and comfort.",
-      "engineering_relevance": "The framework offers a practical way to tune the energy–time trade-off in real transit corridors, helping operators balance bus efficiency, priority service, and network performance.",
+      "key_insight": "PriEco-DRL jointly learns electric-bus eco-driving and transit-priority signal timing to cut energy use while preserving schedule reliability, comfort, and network performance.",
+      "engineering_relevance": "The framework offers a practical control strategy for electrified bus corridors, enabling operators to tune the energy–time trade-off without sacrificing transit priority.",
       "method": [
-        "Priority-weighted max-pressure signal control allocates green time using occupancy-aware pressure.",
-        "CTDE with parameter sharing lets one DRL agent learn from multiple buses/routes using local observations.",
-        "A structured reward blends guidance and event-based reinforcement over energy, time, comfort, and safety."
+        "Priority-weighted max-pressure adaptive signal control allocates green time using occupancy-aware pressure.",
+        "A DRL vehicle controller adapts bus longitudinal speed to uncertain, evolving signal cues.",
+        "Centralized training with decentralized execution and parameter sharing lets one agent learn from multiple buses/routes using local observations."
       ],
-      "evidence_signal": "Experiments on a real-world corridor show lower electric-bus energy consumption than fixed-time, actuated, and rule-based baselines while maintaining transit priority and network efficiency.",
-      "watch_item": "Performance depends on reward weighting and local signal uncertainty, so careful tuning and field validation are needed before deployment.",
+      "evidence_signal": "In real-world corridor experiments, the method outperformed fixed-time, actuated, and rule-based baselines, reducing energy use while maintaining efficiency and transit priority.",
+      "watch_item": "Performance depends on careful reward weighting and reliable local signal-state estimation, so transfer to other corridors may require retuning and validation.",
       "hashtags": [
         "#DeepReinforcementLearning",
         "#ElectricBuses",
-        "#TransitPriority",
         "#EcoDriving",
+        "#TransitPriority",
         "#AdaptiveSignals"
       ],
       "paper_id": "2026-07-17-arxiv-prieco_drl_joint_optimization_of_electric_bus_eco_driving_and_transit_priority_adaptive_si",
       "paper_title": "PriEco-DRL: Joint Optimization of Electric-Bus Eco-Driving and Transit-Priority Adaptive Signals via Deep Reinforcement Learning",
       "paper_date": "2026-07-17",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-22T15:09:01",
+      "generated_at": "2026-07-21T15:03:54",
       "generator": "openai"
     }
   },
@@ -915,27 +915,27 @@
     ],
     "score": 63,
     "infographic": {
-      "key_insight": "The paper argues that combining logic with optimization enables transparent, rule-based AI by making inference both expressive and computationally practical.",
-      "engineering_relevance": "This framework is relevant for building reproducible, explainable, and fair AI systems where rule bases, uncertainty, and inference must be handled efficiently.",
+      "key_insight": "Logic supplies transparent rule-based representations, while optimization turns those rules into efficient inference engines for explainable and trustworthy AI.",
+      "engineering_relevance": "The paper shows that modern optimization methods can make rule-based AI practical for reproducibility, fairness, and post-hoc explanation in engineering systems.",
       "method": [
-        "Uses optimization to compute logical inferences from rule-based representations.",
-        "Surveys integration methods including probabilistic logic, Bayesian logic, belief logics, Dempster-Shafer theory, default logic, and many-valued logics.",
-        "Highlights computational tools such as decision diagrams, logic-based Benders decomposition, Boolean regression, and answer set programming modulo theories."
+        "Surveyed logic-optimization hybrids: probabilistic logic, Bayesian logic, belief logics, Dempster-Shafer theory, and default logic.",
+        "Uses decision diagrams and logic-based Benders decomposition to compute projections, a core inference problem.",
+        "Applies postoptimality analysis and Boolean regression to explain conclusions and infer logical formulas from noisy data."
       ],
-      "evidence_signal": "The abstract is a survey and conceptual synthesis rather than a new experimental study, so its support comes from reviewed methods and problem classes rather than reported benchmark results.",
-      "watch_item": "Practical deployment may be challenging because some logic-optimization formulations can become computationally expensive or require careful modeling to preserve transparency.",
+      "evidence_signal": "The abstract presents a conceptual survey and methodology review rather than reporting a single experimental dataset or benchmark result.",
+      "watch_item": "Practical deployment may be limited by scalability and modeling complexity when encoding large rule bases or noisy real-world data.",
       "hashtags": [
-        "#LogicProgramming",
-        "#Optimization",
         "#ExplainableAI",
+        "#Optimization",
+        "#Logic",
         "#RuleBasedAI",
-        "#ComputationalIntelligence"
+        "#TheoremProving"
       ],
       "paper_id": "2026-07-17-arxiv-logic_optimization_and_artificial_intelligence",
       "paper_title": "Logic, Optimization, and Artificial Intelligence",
       "paper_date": "2026-07-17",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-07-22T15:09:04",
+      "generated_at": "2026-07-21T15:03:57",
       "generator": "openai"
     }
   },
@@ -967,19 +967,19 @@
     ],
     "score": 61,
     "infographic": {
-      "key_insight": "The paper replaces finite-support robustification with a continuous Wasserstein-2 ambiguity set over Gaussian mixtures, letting the worst-case distribution choose both component locations and covariance structure.",
-      "engineering_relevance": "This enables more reliable chance-constrained decisions in systems like EV charging allocation when uncertainty stems from misspecified mixture models, not just noisy samples.",
+      "key_insight": "The paper introduces a continuous-support Wasserstein-2 ambiguity set for Gaussian mixtures, letting the worst-case distribution choose both the number and parameters of mixture components in robust chance constraints.",
+      "engineering_relevance": "This enables more realistic reliability-aware design when uncertainty is structurally misspecified, as in energy allocation and other safety-critical optimization problems.",
       "method": [
-        "Define a continuous-parameter Wasserstein-2 ambiguity set using the Bures-Wasserstein metric on Gaussian mixtures.",
+        "Build a Wasserstein-2 ambiguity set using the Bures-Wasserstein metric over Gaussian mixtures.",
         "Prove strong duality and derive a semi-infinite reformulation for the inner worst-case chance constraint.",
-        "Use an adaptive cutting-surface algorithm with block-alternating local search to add worst-case components until the target optimality gap is met."
+        "Use an adaptive cutting-surface algorithm with block-alternating local search to add worst-case mixture components and reach a desired optimality gap finitely."
       ],
-      "evidence_signal": "A case study on electric-vehicle charging-station energy allocation shows the method can meet prescribed reliability targets and changes allocations more substantially than FDR.",
-      "watch_item": "The approach is mathematically and computationally heavier than finite-support robust optimization, since it requires solving a semi-infinite problem with iterative component search.",
+      "evidence_signal": "A case study on electric-vehicle charging-station energy allocation shows the approach can meet reliability targets and produce different allocation decisions than finite-support robust optimization.",
+      "watch_item": "The method is more complex than finite-support robust optimization and depends on regularity assumptions plus iterative local search, so implementation and scaling may be challenging.",
       "hashtags": [
-        "#Optimization",
+        "#RobustOptimization",
         "#ChanceConstraints",
-        "#WassersteinRobustness",
+        "#WassersteinDistance",
         "#GaussianMixtures",
         "#EnergySystems"
       ],
@@ -987,7 +987,7 @@
       "paper_title": "Robust Chance-Constrained Optimization using a Continuous Parameter Space Wasserstein-2 Ambiguity Set of Gaussian Mixtures",
       "paper_date": "2026-07-19",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-22T15:09:07",
+      "generated_at": "2026-07-21T15:03:59",
       "generator": "openai"
     }
   },
@@ -1019,27 +1019,27 @@
     ],
     "score": 60,
     "infographic": {
-      "key_insight": "The paper gives black-box algorithms to recognize Suzuki groups Sz(q), construct standard generators, and perform constructive membership testing with no false positives.",
-      "engineering_relevance": "This provides practical group-theoretic tooling for computer algebra systems, enabling reliable recognition and certification of elements in finite simple groups.",
+      "key_insight": "The paper gives black box algorithms to recognize Suzuki groups Sz(q), construct standard generators, test membership, and produce straight-line programs without needing an explicit matrix representation.",
+      "engineering_relevance": "This enables practical group-theoretic computations in computational algebra systems when only oracle access to the group is available.",
       "method": [
-        "One-sided Monte Carlo algorithm for constructing standard generators of Sz(q).",
-        "Constructive membership test that expresses elements as a straight-line program in the standard generators.",
-        "Efficiently verifiable group presentation for Sz(q)."
+        "Construct standard generators for Sz(q) using a one-sided Monte Carlo algorithm.",
+        "Perform constructive membership testing and express elements as straight-line programs in the standard generators.",
+        "Provide an efficient presentation of Sz(q) that can be verified algorithmically."
       ],
-      "evidence_signal": "The abstract reports algorithmic correctness properties and implementation in Magma, but does not give benchmark data or experimental results.",
-      "watch_item": "As a Monte Carlo method, the algorithm may require randomized trials and its runtime/robustness can depend on the black-box group representation.",
+      "evidence_signal": "The abstract states the algorithms are implemented in Magma and are one-sided Monte Carlo with no false positives.",
+      "watch_item": "Because the recognition procedure is Monte Carlo, it may require probabilistic runs and careful handling of rare failure cases or runtime variability.",
       "hashtags": [
-        "#FiniteGroups",
-        "#SuzukiGroups",
         "#ComputationalAlgebra",
+        "#GroupTheory",
         "#BlackBoxAlgorithms",
-        "#Magma"
+        "#MonteCarloAlgorithms",
+        "#SuzukiGroups"
       ],
       "paper_id": "2026-07-19-arxiv-black_box_recognition_of_the_suzuki_groups",
       "paper_title": "Black Box Recognition of the Suzuki groups",
       "paper_date": "2026-07-19",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-22T15:09:10",
+      "generated_at": "2026-07-21T15:04:01",
       "generator": "openai"
     }
   }

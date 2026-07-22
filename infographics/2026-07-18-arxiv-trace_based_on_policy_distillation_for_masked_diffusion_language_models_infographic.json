@@ -1,24 +1,24 @@
 {
-  "key_insight": "TOPD distills reasoning into a masked diffusion LLM by training on the model’s own denoising traces with a token-level Reverse-KL loss, avoiding reward modeling.",
-  "engineering_relevance": "It offers a practical post-training path for diffusion-based language models that preserves dense supervision while improving reasoning efficiency and alignment with on-policy states.",
+  "key_insight": "TOPD distills reasoning into a masked diffusion LLM by training on its own on-policy denoising traces, using teacher token distributions instead of rewards.",
+  "engineering_relevance": "This provides a practical post-training route for diffusion-based LLMs that keeps dense supervision while avoiding sparse RL signals and off-policy state mismatch.",
   "method": [
-    "Sample on-policy diffusion trajectories from the target dLLM.",
-    "Query a teacher model on the corresponding partially denoised states.",
-    "Update the target with token-level Reverse-KL to match teacher distributions along trace-aligned decisions."
+    "Sample diffusion trajectories from the target dLLM itself.",
+    "Query a stronger teacher on the partially denoised states along the trace.",
+    "Optimize the target with token-level Reverse-KL on trace-aligned decisions."
   ],
-  "evidence_signal": "On MATH500, TOPD lets SDAR-4B-Chat match TraDo-4B-Instruct, improving by +5.7 static and +4.5 dynamic accuracy while using 4× fewer rollout rounds and an estimated 96.0× model-compute speedup.",
-  "watch_item": "The approach still depends on a strong teacher and careful handling of partially denoised states, so gains may be sensitive to teacher quality and trajectory mismatch.",
+  "evidence_signal": "On MATH500, SDAR-4B-Chat matched the RL-trained TraDo-4B-Instruct, improving by +5.7 on static evaluation and +4.5 on dynamic evaluation, with 4× fewer rollout rounds.",
+  "watch_item": "The approach still depends on access to a capable teacher and careful alignment between teacher supervision and the student’s evolving denoising states.",
   "hashtags": [
     "#DiffusionLLM",
-    "#MathematicalReasoning",
+    "#Reasoning",
     "#KnowledgeDistillation",
     "#ReverseKL",
-    "#OnPolicyTraining"
+    "#MathAI"
   ],
   "paper_id": "2026-07-18-arxiv-trace_based_on_policy_distillation_for_masked_diffusion_language_models",
   "paper_title": "Trace-Based On-Policy Distillation for Masked Diffusion Language Models",
   "paper_date": "2026-07-18",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-21T15:03:37",
+  "generated_at": "2026-07-22T15:08:43",
   "generator": "openai"
 }
