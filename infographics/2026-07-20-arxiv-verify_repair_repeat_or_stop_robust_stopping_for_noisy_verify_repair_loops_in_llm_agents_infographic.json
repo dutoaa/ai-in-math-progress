@@ -1,24 +1,24 @@
 {
-  "key_insight": "VRR-Stop decides when to stop verify-repair loops by estimating whether the next repair is likely to improve true validity, while remaining robust to noisy verifiers and repairers.",
-  "engineering_relevance": "This gives LLM-agent pipelines a principled stopping rule that can reduce wasted repair rounds and avoid over-repair that damages already-correct solutions.",
+  "key_insight": "VRR-Stop decides when to stop repairing an LLM’s answer by estimating whether the next verify-repair step has positive true value, even when both verification and repair are noisy.",
+  "engineering_relevance": "This gives LLM agent builders a principled stopping rule that can reduce unnecessary repairs, avoid self-damaging edits, and improve reliability in code, math, and tool-use workflows.",
   "method": [
-    "Models verifier and repair noise with four parameters: false acceptance, false rejection, repair improvement, and repair damage.",
-    "Uses belief filtering over repeated verification votes to estimate committed validity and compare the true marginal gain of repairing versus stopping.",
-    "Adds VRR-Guard as a fallback when verifier discrimination is too weak for reliable calibration."
+    "Uses a four-parameter noise model to separate verifier false accepts/rejects from repairer help/damage behavior.",
+    "Aggregates repeated verification votes with belief filtering to estimate committed validity.",
+    "Adds VRR-Guard, a fallback rule that stops relying on estimation and uses a verification-margin threshold when calibration becomes unreliable."
   ],
-  "evidence_signal": "On a GSM8K stress setting, VRR-Stop improved final true validity by 60.6 percentage points over fixed five-round repair with an average of 0.72 repair rounds.",
-  "watch_item": "The stopping rule depends on verifier discrimination and a sufficient decision margin; if verifier separation is near zero, calibration can fail and the fallback guard may be needed.",
+  "evidence_signal": "On a GSM8K stress test, VRR-Stop improved final true validity by 60.6 percentage points over fixed five-round repair while averaging only 0.72 repair rounds.",
+  "watch_item": "The method depends on verifier discrimination and a sufficient decision margin; when discrimination is near zero, estimation error can flip the stopping decision, making the fallback safeguard important.",
   "hashtags": [
     "#LLMAgents",
-    "#MathematicalReasoning",
-    "#RobustStopping",
-    "#VerifyRepair",
-    "#GSM8K"
+    "#MathReasoning",
+    "#Verification",
+    "#RepairLoops",
+    "#RobustStopping"
   ],
   "paper_id": "2026-07-20-arxiv-verify_repair_repeat_or_stop_robust_stopping_for_noisy_verify_repair_loops_in_llm_agents",
   "paper_title": "Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents",
   "paper_date": "2026-07-20",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-22T15:08:18",
+  "generated_at": "2026-07-23T15:09:07",
   "generator": "openai"
 }
