@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-07-24
+Generated: 2026-07-25
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Profiling Lightweight Large Language Models
@@ -83,7 +83,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.20316v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-22-arxiv-decentralized_online_riemannian_optimization_for_strongly_geodesically_convex_functions_infographic.json
 
-## 11. Writhe-Based Polymer Link Classification Using Machine Learning
+## 11. DQAOA-GPT: AI-Accelerated Distributed Quantum Optimization for Combinatorial Problems
+
+- Date: 2026-07-22
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2607.20225v1
+- PDF: https://arxiv.org/pdf/2607.20225v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-22-arxiv-dqaoa_gpt_ai_accelerated_distributed_quantum_optimization_for_combinatorial_problems_infographic.json
+
+## 12. Writhe-Based Polymer Link Classification Using Machine Learning
 
 - Date: 2026-07-22
 - Category: Geometry and Topology
@@ -91,7 +99,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.20657v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-22-arxiv-writhe_based_polymer_link_classification_using_machine_learning_infographic.json
 
-## 12. Fishing Out Free Riders: Shapley-Based Reward Attribution for Parallel Reasoning via Reinforcement Learning
+## 13. Fishing Out Free Riders: Shapley-Based Reward Attribution for Parallel Reasoning via Reinforcement Learning
 
 - Date: 2026-07-21
 - Category: Mathematical Reasoning
@@ -99,7 +107,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.18979v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-21-arxiv-fishing_out_free_riders_shapley_based_reward_attribution_for_parallel_reasoning_via_reinfo_infographic.json
 
-## 13. Barzilai-Borwein Fails Superlinear Convergence on an Open Set of Quadratics for Every Dimension $n\geq 4$
+## 14. Barzilai-Borwein Fails Superlinear Convergence on an Open Set of Quadratics for Every Dimension $n\geq 4$
 
 - Date: 2026-07-23
 - Category: Theorem Proving
@@ -107,7 +115,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.21579v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-23-arxiv-barzilai_borwein_fails_superlinear_convergence_on_an_open_set_of_quadratics_for_every_dime_infographic.json
 
-## 14. Bayesian optimization approach for tracking a moving target from far-field data in three dimensions
+## 15. Bayesian optimization approach for tracking a moving target from far-field data in three dimensions
 
 - Date: 2026-07-23
 - Category: Number Theory and Algebra
@@ -115,7 +123,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.21135v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-23-arxiv-bayesian_optimization_approach_for_tracking_a_moving_target_from_far_field_data_in_three_d_infographic.json
 
-## 15. Exact ensemble controllability for neural differential equations via neural interpolation
+## 16. Exact ensemble controllability for neural differential equations via neural interpolation
 
 - Date: 2026-07-23
 - Category: Symbolic Computation
@@ -123,7 +131,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.21112v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-23-arxiv-exact_ensemble_controllability_for_neural_differential_equations_via_neural_interpolation_infographic.json
 
-## 16. EvoThink: Evolving Thinking in Large Reasoning Models via Self-Pruning and Aha-Moment Preference Optimization
+## 17. EvoThink: Evolving Thinking in Large Reasoning Models via Self-Pruning and Aha-Moment Preference Optimization
 
 - Date: 2026-07-22
 - Category: Mathematical Reasoning
@@ -131,21 +139,13 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.19962v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-22-arxiv-evothink_evolving_thinking_in_large_reasoning_models_via_self_pruning_and_aha_moment_prefe_infographic.json
 
-## 17. A Hyper-Reduced Neural Network-Augmented Semi-smooth Newton Method for Nonlinear Parametric Variational Inequalities
+## 18. A Hyper-Reduced Neural Network-Augmented Semi-smooth Newton Method for Nonlinear Parametric Variational Inequalities
 
 - Date: 2026-07-23
 - Category: Symbolic Computation
 - arXiv: https://arxiv.org/abs/2607.21242v1
 - PDF: https://arxiv.org/pdf/2607.21242v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-23-arxiv-a_hyper_reduced_neural_network_augmented_semi_smooth_newton_method_for_nonlinear_parametri_infographic.json
-
-## 18. DQAOA-GPT: AI-Accelerated Distributed Quantum Optimization for Combinatorial Problems
-
-- Date: 2026-07-22
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2607.20225v1
-- PDF: https://arxiv.org/pdf/2607.20225v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-22-arxiv-dqaoa_gpt_ai_accelerated_distributed_quantum_optimization_for_combinatorial_problems_infographic.json
 
 ## 19. Case study: proving sqrt(2) irrational with LPTP and an LLM
 
