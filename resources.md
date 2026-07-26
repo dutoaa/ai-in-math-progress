@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-07-25
+Generated: 2026-07-26
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Profiling Lightweight Large Language Models

@@ -1,24 +1,24 @@
 {
-  "key_insight": "PyroDash teaches a small language model to trigger token-level handoffs to a frozen large model only when needed, cutting inference cost while preserving strong mathematical reasoning accuracy.",
-  "engineering_relevance": "This enables cheaper, scalable serving for reasoning systems by internalizing routing inside the SLM and avoiding separate routers, LLM retraining, or access to LLM logits.",
+  "key_insight": "PyroDash teaches a small language model to decide token-by-token when to hand off to a frozen large model, trading off reasoning accuracy and inference cost without needing a separate router or LLM logit access.",
+  "engineering_relevance": "This offers a practical serving strategy for math-reasoning systems that need scalable deployment, enabling configurable accuracy-cost tradeoffs and much lower LLM usage in production.",
   "method": [
-    "Learns a control token that lets the SLM request LLM assistance mid-generation.",
-    "Uses a single handoff Collaborate Engine to pass the query plus partial reasoning trace to the frozen LLM.",
-    "Trains in three stages: control-token embedding learning, offloading-focused SFT, and cost-aware GRPO alignment."
+    "SLM emits a control token during generation to trigger a single handoff to the LLM with the partial reasoning trace.",
+    "Training proceeds in three stages: control-token embedding learning, offloading-oriented supervised fine-tuning, and cost-aware alignment via Group Relative Policy Optimization.",
+    "The reward balances answer correctness against normalized inference cost, encouraging selective LLM use only when needed."
   ],
-  "evidence_signal": "On five math reasoning benchmarks, PyroDash achieved different accuracy-cost tradeoffs, including 64.04% average accuracy at λ=0.05 with 20.4% cost reduction, and 54.55% accuracy at λ=0.6 with only 0.012 LLM calls per example.",
-  "watch_item": "The approach depends on careful reward tuning and benchmark-specific behavior, so real-world gains may vary with prompt complexity, model choice, and cost accounting assumptions.",
+  "evidence_signal": "Across five mathematical reasoning benchmarks, the method reaches different operating points; at λ=0.05 it averages 64.04% accuracy with 20.4% lower cost, and at λ=0.6 it cuts LLM usage to 1.90% token ratio and 0.012 calls per example while reducing cost from USD 49.36 to USD 1.78.",
+  "watch_item": "Performance depends on the quality of the learned offloading policy, so miscalibrated control-token decisions could underuse the LLM on hard steps or overuse it and erode cost savings.",
   "hashtags": [
     "#LLM",
-    "#SmallLargeModel",
+    "#SLM",
     "#CostEfficientAI",
-    "#MathematicalReasoning",
-    "#InferenceOptimization"
+    "#TokenLevelInference",
+    "#MathReasoning"
   ],
   "paper_id": "2026-07-22-arxiv-pyrodash_cost_efficient_token_level_small_large_language_model_collaborative_inference",
   "paper_title": "PyroDash: Cost-Efficient Token-Level Small-Large Language Model Collaborative Inference",
   "paper_date": "2026-07-22",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-07-25T14:36:40",
+  "generated_at": "2026-07-26T14:27:57",
   "generator": "openai"
 }

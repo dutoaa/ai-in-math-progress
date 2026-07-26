@@ -24,29 +24,29 @@
         "url": "https://arxiv.org/pdf/2607.20806v1"
       }
     ],
-    "score": 70,
+    "score": 75,
     "infographic": {
-      "key_insight": "PTME profiling shows that lightweight LLMs can have similar accuracy under different resource envelopes, but their real deployment cost varies substantially in time, memory, and energy.",
-      "engineering_relevance": "For edge and local deployment, model choice should be based on measured Precision-Time-Memory-Energy tradeoffs rather than proxy metrics like parameters or FLOPs alone.",
+      "key_insight": "Precision-aware PTME profiling shows that lightweight LLM deployment choices cannot be made reliably from size or FLOPs alone because resource cost and task accuracy do not track each other.",
+      "engineering_relevance": "For edge and local deployment, PTME measurements help engineers pick models that meet accuracy targets while minimizing real hardware costs in time, memory, and energy.",
       "method": [
-        "Directly measure Precision, execution Time, peak Memory, and Energy (PTME) during inference",
-        "Evaluate multiple lightweight LLMs on code generation, mathematical reasoning, and multi-task understanding",
-        "Use Pareto analysis to identify non-dominated model configurations under edge-class resource constraints"
+        "Measure Precision, Time, peak Memory, and Energy directly on hardware during inference.",
+        "Test multiple lightweight LLMs under controlled edge-class resource envelopes.",
+        "Use Pareto analysis to identify non-dominated model configurations across PTME trade-offs."
       ],
-      "evidence_signal": "The authors benchmarked lightweight LLMs locally on a controlled desktop platform and found that tighter resource envelopes increased cost without changing precision, with time affected more strongly than energy.",
-      "watch_item": "Results are based on a controlled desktop setup, so the measured PTME tradeoffs may shift on different hardware, runtimes, or thermal/power management settings.",
+      "evidence_signal": "The paper evaluates lightweight LLMs locally on a desktop platform across benchmarks for code generation, mathematical reasoning, and multi-task understanding, comparing direct PTME measurements against proxy descriptors.",
+      "watch_item": "Results are tied to a controlled desktop setup, so deployment rankings may shift on other devices, workloads, or thermal/power constraints.",
       "hashtags": [
-        "#LLM",
+        "#LLMProfiling",
         "#EdgeAI",
-        "#EnergyEfficientAI",
-        "#ModelProfiling",
+        "#EnergyEfficiency",
+        "#ModelSelection",
         "#MathematicalReasoning"
       ],
       "paper_id": "2026-07-23-arxiv-profiling_lightweight_large_language_models",
       "paper_title": "Profiling Lightweight Large Language Models",
       "paper_date": "2026-07-23",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-07-26T14:27:53",
+      "generated_at": "2026-07-25T14:36:37",
       "generator": "openai"
     }
   },
@@ -75,29 +75,29 @@
         "url": "https://arxiv.org/pdf/2607.20327v1"
       }
     ],
-    "score": 70,
+    "score": 75,
     "infographic": {
-      "key_insight": "PyroDash teaches a small language model to decide token-by-token when to hand off to a frozen large model, trading off reasoning accuracy and inference cost without needing a separate router or LLM logit access.",
-      "engineering_relevance": "This offers a practical serving strategy for math-reasoning systems that need scalable deployment, enabling configurable accuracy-cost tradeoffs and much lower LLM usage in production.",
+      "key_insight": "PyroDash teaches a small language model to trigger token-level handoffs to a frozen large model only when needed, cutting inference cost while preserving strong mathematical reasoning accuracy.",
+      "engineering_relevance": "This enables cheaper, scalable serving for reasoning systems by internalizing routing inside the SLM and avoiding separate routers, LLM retraining, or access to LLM logits.",
       "method": [
-        "SLM emits a control token during generation to trigger a single handoff to the LLM with the partial reasoning trace.",
-        "Training proceeds in three stages: control-token embedding learning, offloading-oriented supervised fine-tuning, and cost-aware alignment via Group Relative Policy Optimization.",
-        "The reward balances answer correctness against normalized inference cost, encouraging selective LLM use only when needed."
+        "Learns a control token that lets the SLM request LLM assistance mid-generation.",
+        "Uses a single handoff Collaborate Engine to pass the query plus partial reasoning trace to the frozen LLM.",
+        "Trains in three stages: control-token embedding learning, offloading-focused SFT, and cost-aware GRPO alignment."
       ],
-      "evidence_signal": "Across five mathematical reasoning benchmarks, the method reaches different operating points; at λ=0.05 it averages 64.04% accuracy with 20.4% lower cost, and at λ=0.6 it cuts LLM usage to 1.90% token ratio and 0.012 calls per example while reducing cost from USD 49.36 to USD 1.78.",
-      "watch_item": "Performance depends on the quality of the learned offloading policy, so miscalibrated control-token decisions could underuse the LLM on hard steps or overuse it and erode cost savings.",
+      "evidence_signal": "On five math reasoning benchmarks, PyroDash achieved different accuracy-cost tradeoffs, including 64.04% average accuracy at λ=0.05 with 20.4% cost reduction, and 54.55% accuracy at λ=0.6 with only 0.012 LLM calls per example.",
+      "watch_item": "The approach depends on careful reward tuning and benchmark-specific behavior, so real-world gains may vary with prompt complexity, model choice, and cost accounting assumptions.",
       "hashtags": [
         "#LLM",
-        "#SLM",
+        "#SmallLargeModel",
         "#CostEfficientAI",
-        "#TokenLevelInference",
-        "#MathReasoning"
+        "#MathematicalReasoning",
+        "#InferenceOptimization"
       ],
       "paper_id": "2026-07-22-arxiv-pyrodash_cost_efficient_token_level_small_large_language_model_collaborative_inference",
       "paper_title": "PyroDash: Cost-Efficient Token-Level Small-Large Language Model Collaborative Inference",
       "paper_date": "2026-07-22",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-26T14:27:57",
+      "generated_at": "2026-07-25T14:36:40",
       "generator": "openai"
     }
   },
@@ -128,29 +128,29 @@
         "url": "https://arxiv.org/pdf/2607.19075v1"
       }
     ],
-    "score": 66,
+    "score": 71,
     "infographic": {
-      "key_insight": "This review shows that operations research for elderly care has advanced from static scheduling toward dynamic, AI-enabled decision support, but still rarely connects operational gains to actual patient health outcomes.",
-      "engineering_relevance": "For engineers and system designers, the paper points to integrated, multi-level healthcare optimization as the next step beyond routing and staffing models.",
+      "key_insight": "This review shows that elderly-care OR research has evolved from static, deterministic optimization to dynamic, stochastic, and AI-assisted decision support, but still rarely translates operational gains into better patient outcomes.",
+      "engineering_relevance": "The paper informs healthcare systems engineering by identifying where routing, staffing, and scheduling tools can be extended into integrated, patient-centered decision frameworks across hospital and community care.",
       "method": [
-        "The authors thematically review 30 seminal studies.",
-        "They group the literature into home healthcare operations, polypharmacy management, and clinical chronotherapy.",
-        "They propose a conceptual framework for bridging operational decisions with clinical and community-care outcomes."
+        "Thematic review of 30 seminal studies in OR and elderly care",
+        "Literature grouped into home healthcare operations, polypharmacy management, and clinical chronotherapy",
+        "Conceptual framework proposed for multi-level, digitally enabled decision-making"
       ],
-      "evidence_signal": "The evidence base is a thematic review of 30 seminal studies, synthesizing methodological trends rather than reporting new experimental results.",
-      "watch_item": "A key concern is the translational gap: many models improve process metrics, but their impact on measurable patient outcomes and hospital-to-community transitions remains unclear.",
+      "evidence_signal": "The abstract reports a thematic review of 30 studies and synthesizes methodological trends rather than presenting new experimental data or a quantitative benchmark evaluation.",
+      "watch_item": "A key implementation concern is that process optimization alone may not yield measurable clinical benefit without human-centered design and stronger links between operational and health outcomes.",
       "hashtags": [
         "#OperationsResearch",
         "#ElderlyCare",
         "#HealthcareOptimization",
         "#DecisionSupport",
-        "#AIGovernance"
+        "#DigitalHealth"
       ],
       "paper_id": "2026-07-21-arxiv-from_operations_to_elderly_care_outcomes_a_thematic_review_of_industrial_engineering_and_d",
       "paper_title": "From Operations to Elderly Care Outcomes: A Thematic Review of Industrial Engineering and Decision-Support Approaches",
       "paper_date": "2026-07-21",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-26T14:27:59",
+      "generated_at": "2026-07-25T14:36:43",
       "generator": "openai"
     }
   },
@@ -179,29 +179,29 @@
         "url": "https://arxiv.org/pdf/2607.18915v1"
       }
     ],
-    "score": 66,
+    "score": 71,
     "infographic": {
-      "key_insight": "The paper shows that many LLM reasoning errors are not from missing knowledge, but from context-sensitive factual hallucinations that emerge during multi-step reasoning.",
-      "engineering_relevance": "For applied LLM systems, step-level reward shaping can improve reasoning reliability by targeting where errors occur instead of only scoring final answers.",
+      "key_insight": "LLMs can know the right fact but still make reasoning errors because context during multi-step chains interferes with factual recall.",
+      "engineering_relevance": "The paper suggests a practical way to improve reasoning reliability by rewarding correct intermediate steps, which can help make LLM outputs safer and more robust in deployed systems.",
       "method": [
-        "Analyze hallucinations at the step level in reasoning traces.",
-        "Compute step self-consistency across multiple rollouts.",
-        "Use SSC-GRPO to assign step-level rewards during policy optimization."
+        "Analyze hallucinations at the step level in long reasoning traces.",
+        "Compute self-consistency scores for each step across multiple rollouts.",
+        "Use step-level rewards in SSC-GRPO to optimize reasoning policies."
       ],
       "evidence_signal": "The authors report state-of-the-art results on both mathematical reasoning benchmarks and hallucination leaderboards.",
-      "watch_item": "Step-level self-consistency requires multiple rollouts, which can raise training cost and complexity, and may still miss errors that are consistent across samples.",
+      "watch_item": "Step-level self-consistency depends on multiple rollouts, so training and inference may become more expensive and sensitive to how consistency is measured.",
       "hashtags": [
         "#LLMReasoning",
         "#HallucinationDetection",
-        "#PolicyOptimization",
-        "#MathematicalReasoning",
-        "#AIAlignment"
+        "#SelfConsistency",
+        "#RLHF",
+        "#MathAI"
       ],
       "paper_id": "2026-07-21-arxiv-reasoning_error_from_known_fact_step_level_self_consistency_group_relative_policy_optimiza",
       "paper_title": "Reasoning Error from Known Fact: Step-Level Self-Consistency Group Relative Policy Optimization for LLM",
       "paper_date": "2026-07-21",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-26T14:28:02",
+      "generated_at": "2026-07-25T14:36:45",
       "generator": "openai"
     }
   },
@@ -232,29 +232,29 @@
         "url": "https://arxiv.org/pdf/2607.20674v1"
       }
     ],
-    "score": 65,
+    "score": 70,
     "infographic": {
-      "key_insight": "The paper scales end-to-end learning of safe feedback controllers by turning the CBF safety filter into a differentiable optimization layer and training it efficiently with operator splitting plus Jacobian-Free Backpropagation.",
-      "engineering_relevance": "This enables practical high-dimensional control for safety-critical systems, preserving hard safety constraints while extending learned feedback control to multi-agent problems far beyond prior low-dimensional limits.",
+      "key_insight": "The paper enables end-to-end learning of high-dimensional feedback controllers that remain hard-safe by inserting a control barrier function safety layer into training and making it scalable with operator splitting plus Jacobian-Free Backpropagation.",
+      "engineering_relevance": "This approach could make safety-critical control practical for large multi-agent and other high-dimensional systems where standard CBF-based learning was previously too slow or limited in dimension.",
       "method": [
-        "Embed a quadratic-program CBF safety filter as an optimization layer.",
-        "Use operator splitting to make the safety layer scalable.",
-        "Apply Jacobian-Free Backpropagation for efficient end-to-end training without explicit Jacobians."
+        "Embed a quadratic-program CBF safety filter as an optimization layer inside policy training.",
+        "Use operator splitting to solve the safety layer efficiently at scale.",
+        "Apply Jacobian-Free Backpropagation to reduce differentiation cost while preserving end-to-end learning."
       ],
-      "evidence_signal": "The abstract reports successful validation on high-dimensional multi-agent nonlinear control problems with state dimension up to 1200 and control dimension up to 400.",
-      "watch_item": "The approach still depends on accurately formulated CBF constraints and a numerically stable QP/solver pipeline, which may be sensitive in real-time deployment.",
+      "evidence_signal": "The abstract reports successful demonstrations on high-dimensional multi-agent nonlinear control problems with state dimension up to 1200 and control dimension up to 400, surpassing prior low-dimensional limits.",
+      "watch_item": "The method still depends on solving a QP-based safety filter inside the loop, so real-time performance and robustness may be sensitive to solver accuracy and problem conditioning.",
       "hashtags": [
         "#ControlBarrierFunctions",
-        "#SafeRL",
-        "#OptimizationLayers",
-        "#JacobianFreeBackprop",
-        "#HighDimensionalControl"
+        "#SafeLearning",
+        "#OptimalControl",
+        "#JacobianFreeBackpropagation",
+        "#HighDimensionalOptimization"
       ],
       "paper_id": "2026-07-22-arxiv-end_to_end_learning_of_safe_optimal_feedback_control_in_high_dimensions_with_control_barri",
       "paper_title": "End-to-End Learning of Safe Optimal Feedback Control in High Dimensions with Control Barrier Function Layers",
       "paper_date": "2026-07-22",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-26T14:28:04",
+      "generated_at": "2026-07-25T14:36:48",
       "generator": "openai"
     }
   },
@@ -283,29 +283,29 @@
         "url": "https://arxiv.org/pdf/2607.19690v1"
       }
     ],
-    "score": 65,
+    "score": 70,
     "infographic": {
-      "key_insight": "MCL-PINNs is a specialized phase-field neural solver that combines physics-informed learning with time-marching and adaptive training tricks to handle moving contact line problems with dynamic boundary conditions.",
-      "engineering_relevance": "It offers a mesh-free way to simulate wetting, droplet motion, and interfacial evolution more robustly in complex fluid systems where sharp interfaces and contact-line dynamics are difficult for standard PINNs.",
+      "key_insight": "MCL-PINNs combines phase-field physics with a discrete-time, multi-network PINN design to better capture sharp interfaces and moving contact lines with dynamic boundary conditions.",
+      "engineering_relevance": "This offers a mesh-free solver option for interfacial flow problems in wetting, coating, and microfluidic systems where contact angle evolution and long-time stability matter.",
       "method": [
-        "Discrete-time phase-field solver with a multi-network time-marching scheme",
-        "Relaxed output distribution constraints plus variable scaling for sharp interfacial features",
-        "Adaptive loss weighting and adaptive collocation sampling with interface extraction; symmetry-aware inputs when applicable"
+        "Discrete-time time-marching with separate networks for successive steps",
+        "Relaxed output distribution constraint plus variable scaling for sharp phase-field profiles",
+        "Adaptive loss weighting and interface-focused collocation sampling; symmetry inputs when applicable"
       ],
-      "evidence_signal": "The abstract reports validation on three benchmark scenarios—droplet coalescence, shear-induced droplet deformation, and dynamic wetting in a heterogeneous channel—showing improved accuracy and robustness over standard PINN formulations.",
-      "watch_item": "Performance depends on careful loss balancing, adaptive sampling, and problem-specific scaling, so implementation complexity may limit ease of use and transferability.",
+      "evidence_signal": "The method was tested on three numerical examples—droplet coalescence, shear-induced deformation, and dynamic wetting in a heterogeneous channel—and reported improved accuracy and robustness over standard PINNs.",
+      "watch_item": "Performance depends on careful tuning of adaptive weights, sampling, and scaling, and the approach may still be sensitive when interfaces become extremely sharp or long-time error accumulates.",
       "hashtags": [
-        "#PINNs",
-        "#PhaseField",
+        "#PhysicsInformedNNs",
+        "#PhaseFieldModeling",
         "#MovingContactLine",
-        "#ComputationalFluidDynamics",
-        "#ScientificMachineLearning"
+        "#CahnHilliard",
+        "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-07-22-arxiv-a_phase_field_neural_solver_for_moving_contact_line_problems_with_dynamic_boundary_conditi",
       "paper_title": "A phase-field neural solver for moving contact line problems with dynamic boundary conditions",
       "paper_date": "2026-07-22",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-07-26T14:28:07",
+      "generated_at": "2026-07-25T14:36:52",
       "generator": "openai"
     }
   },
@@ -335,29 +335,29 @@
         "url": "https://arxiv.org/pdf/2607.20378v1"
       }
     ],
-    "score": 64,
+    "score": 69,
     "infographic": {
-      "key_insight": "PG-KINN pairs a Kolmogorov-Arnold Network trial function with a Petrov-Galerkin weak form to solve PDEs more stably and accurately than strong-form, energy-form, or MLP-based physics-informed methods.",
-      "engineering_relevance": "The approach improves forward and inverse PDE solving for computational mechanics problems with non-self-adjoint operators, nonlinear physics, and complex geometries while reducing derivative burden and conditioning issues.",
+      "key_insight": "PG-KINN combines a Kolmogorov-Arnold Network trial space with a Petrov-Galerkin weak form, reducing derivative order and improving physics-informed PDE solving beyond standard MLP and strong-form KAN approaches.",
+      "engineering_relevance": "This offers a more stable and interpretable neural solver for forward and inverse PDEs in computational mechanics, especially for nonlinear, non-self-adjoint, and geometry-complex problems.",
       "method": [
-        "Use a KAN as the trial space to represent the PDE solution.",
-        "Use an independent compactly supported piecewise-polynomial test space with Gauss-Legendre quadrature.",
-        "Apply integration by parts to obtain localized weak residuals with lower-order derivatives."
+        "KAN is used as the trial solution network with spline-based activations.",
+        "An independent compactly supported piecewise-polynomial test space enforces weak residuals element-wise.",
+        "Gauss-Legendre quadrature and integration by parts lower differentiation demands and improve conditioning."
       ],
-      "evidence_signal": "The abstract reports evaluation on benchmarks including crack singularities, stress concentration, Neo-Hookean hyperelasticity, inverse parameter identification in heterogeneous media, and complex geometries, where PG-KINN outperforms MLP and prior KAN-based baselines.",
-      "watch_item": "The method depends on carefully chosen test functions and quadrature, so implementation quality and mesh/test-space design may strongly affect accuracy and conditioning.",
+      "evidence_signal": "The paper reports benchmark gains across crack singularities, stress concentration, Neo-Hookean hyperelasticity, inverse parameter identification in heterogeneous media, and complex geometries, outperforming MLP baselines and prior KAN-based formulations.",
+      "watch_item": "Performance depends on careful test-space design and quadrature accuracy, and the method may be more implementation-heavy than standard strong-form PINNs.",
       "hashtags": [
-        "#PhysicsInformedML",
-        "#PDEs",
+        "#PhysicsInformedLearning",
         "#PetrovGalerkin",
-        "#KAN",
+        "#KolmogorovArnoldNetworks",
+        "#PDEs",
         "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-22-arxiv-pg_kinn_a_physics_informed_petrov_galerkin_kolmogorov_arnold_network_for_solving_forward_a",
       "paper_title": "PG-KINN: A Physics-Informed Petrov-Galerkin Kolmogorov-Arnold Network for Solving Forward and Inverse PDEs",
       "paper_date": "2026-07-22",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-26T14:28:10",
+      "generated_at": "2026-07-25T14:36:54",
       "generator": "openai"
     }
   },
@@ -387,29 +387,29 @@
         "url": "https://arxiv.org/pdf/2607.19450v1"
       }
     ],
-    "score": 64,
+    "score": 69,
     "infographic": {
-      "key_insight": "REGEN reuses expert RL replay buffers to train a generalist offline, eliminating the need for costly coupled rollout-and-backprop distillation.",
-      "engineering_relevance": "It offers a more scalable and cheaper post-training path for LLM reasoning and agentic capabilities by decoupling data generation from model updates.",
+      "key_insight": "REGEN turns expert RL replay buffers into reusable offline training data, enabling expert-to-generalist distillation without expensive online rollouts.",
+      "engineering_relevance": "It offers a cheaper, more scalable post-training pipeline for LLMs by decoupling data generation from optimization while preserving performance.",
       "method": [
-        "Recycle replay memory produced by specialized expert RL training.",
-        "Apply offline RL to distill expert behavior into a generalist model.",
-        "Avoid multi-teacher on-policy distillation and repeated online rollouts."
+        "Recycle replay memory produced during specialized RL training",
+        "Train the generalist with offline RL instead of multi-teacher on-policy distillation",
+        "Eliminate coupled rollout sampling and backward passes to cut compute"
       ],
-      "evidence_signal": "Across mathematical reasoning, code generation, and instruction following, REGEN matches MOPD accuracy while using substantially lower training cost.",
-      "watch_item": "Performance depends on the quality and coverage of the experts' replay data, so weak or biased replay buffers may limit generalization.",
+      "evidence_signal": "The abstract reports that REGEN matches MOPD accuracy across mathematical reasoning, code generation, and instruction following at substantially lower cost.",
+      "watch_item": "Performance may depend on the quality, diversity, and coverage of the recycled replay data, which could limit transfer to new tasks or weaker teachers.",
       "hashtags": [
         "#OfflineRL",
-        "#LLMPostTraining",
-        "#MathematicalReasoning",
-        "#ReinforcementLearning",
-        "#ModelDistillation"
+        "#LLMDistillation",
+        "#ReplayBuffer",
+        "#ReasoningAI",
+        "#EfficientTraining"
       ],
       "paper_id": "2026-07-21-arxiv-regen_replay_recycling_for_expert_to_generalist_distillation_with_offline_reinforcement_le",
       "paper_title": "REGEN: Replay-recycling for Expert-to-Generalist distillation with Offline Reinforcement Learning",
       "paper_date": "2026-07-21",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-07-26T14:28:13",
+      "generated_at": "2026-07-25T14:36:57",
       "generator": "openai"
     }
   },
@@ -438,29 +438,29 @@
         "url": "https://arxiv.org/pdf/2607.20901v1"
       }
     ],
-    "score": 62,
+    "score": 67,
     "infographic": {
-      "key_insight": "A reinforcement-learning policy adaptively chooses the deviation bound in a sequence of mixed-integer reoptimizations to recover feasible log-truck schedules while tracing a strong stability–cost Pareto front.",
-      "engineering_relevance": "This gives forestry dispatchers faster real-time recovery plans after disruptions, with better trade-offs between staying close to the original schedule and minimizing operational cost.",
+      "key_insight": "The paper learns how to choose the recovery radius k adaptively so it can generate a Pareto front of feasible log-truck rescheduling plans that balance stability against operational cost.",
+      "engineering_relevance": "This provides dispatchers with fast, disruption-aware recovery options for forestry logistics, helping restore feasibility while minimizing deviation from the original schedule.",
       "method": [
-        "Model recovery as neighborhood-restricted MILPs indexed by deviation bound k.",
-        "Compute the minimum feasible deviation k_min exactly to anchor the search.",
-        "Use REINFORCE to adaptively pick successive k values from solver feedback and stop when gains diminish."
+        "Formulate recovery after disruptions as a sequence of neighborhood-restricted MILPs indexed by the deviation bound k.",
+        "Compute the exact minimum feasible deviation k_min to anchor the search at the most stable feasible plan.",
+        "Use REINFORCE-based reinforcement learning to adaptively select the next k from solver feedback and stop when further gains are unlikely."
       ],
-      "evidence_signal": "On weekly historical instances from a Canadian forestry partner across all disruption types, the method produced richer Pareto fronts with fewer solver calls than fixed-grid and dichotomic baselines and remained within operational reoptimization times.",
-      "watch_item": "Performance depends on solver feedback quality and training data coverage, so the learned policy may need retraining or retuning when disruption patterns or fleet operations change.",
+      "evidence_signal": "On weekly real-world instances from a Canadian forestry partner, the method produced richer Pareto fronts with fewer solver calls than fixed-grid and dichotomic search baselines, while staying within acceptable reoptimization times across disruption types.",
+      "watch_item": "Performance depends on the quality and representativeness of the training disruptions, and the learned policy may need retraining or tuning if the operating conditions change significantly.",
       "hashtags": [
         "#ReinforcementLearning",
-        "#MixedIntegerProgramming",
+        "#MILP",
         "#LogisticsOptimization",
-        "#RealTimeRecovery",
-        "#OperationsResearch"
+        "#ForestOperations",
+        "#DisruptionRecovery"
       ],
       "paper_id": "2026-07-23-arxiv-learning_to_recover_adaptive_local_branching_with_reinforcement_learning_for_log_truck_rou",
       "paper_title": "Learning to recover: Adaptive local branching with reinforcement learning for log-truck routing and scheduling under disruptions",
       "paper_date": "2026-07-23",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-26T14:28:15",
+      "generated_at": "2026-07-25T14:36:59",
       "generator": "openai"
     }
   },
@@ -491,17 +491,17 @@
         "url": "https://arxiv.org/pdf/2607.20316v1"
       }
     ],
-    "score": 61,
+    "score": 66,
     "infographic": {
-      "key_insight": "The paper shows that decentralized online Riemannian optimization can achieve the optimal $O(\\log T)$ regret for strongly geodesically convex losses by combining time-varying step-size analysis with new network-error bounds.",
-      "engineering_relevance": "This enables scalable learning and control on curved state spaces in distributed systems, including settings such as consensus, sensing, and robotics on manifolds with positive curvature.",
+      "key_insight": "The paper shows that decentralized online optimization on Riemannian manifolds can achieve the optimal $O(\\log T)$ regret for strongly geodesically convex losses, even with online and bandit feedback.",
+      "engineering_relevance": "This gives a principled convergence guarantee for distributed learning on curved spaces, which is useful for networked robotics, sensing, and geometric machine learning systems.",
       "method": [
-        "Derive a general network-error analysis for decentralized Riemannian optimization with time-varying step sizes.",
-        "Use the analysis to prove $O(\\log T)$ static regret for decentralized online Riemannian gradient descent.",
+        "Derive a new network-error analysis that works with time-varying step sizes.",
+        "Use decentralized online Riemannian gradient descent with a decaying schedule to match the strongly g-convex regime.",
         "Extend the result to two-point bandit feedback via strong subconvexity of smoothed losses."
       ],
-      "evidence_signal": "The abstract reports theoretical regret guarantees, including the first decentralized $O(\\log T)$ bound for strongly g-convex losses and the same rate under two-point bandit feedback.",
-      "watch_item": "The guarantees rely on bounded sectional curvature and carefully decaying step sizes, so practical performance may be sensitive to manifold geometry, network connectivity, and parameter tuning.",
+      "evidence_signal": "The abstract reports first-time $O(\\log T)$ static regret bounds in both full-information decentralized online Riemannian optimization and two-point bandit feedback settings.",
+      "watch_item": "The guarantees rely on bounded sectional curvature and carefully chosen decaying step sizes, so practical performance may depend on geometry and network conditions.",
       "hashtags": [
         "#RiemannianOptimization",
         "#DecentralizedLearning",
@@ -513,7 +513,7 @@
       "paper_title": "Decentralized Online Riemannian Optimization for Strongly Geodesically Convex Functions",
       "paper_date": "2026-07-22",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-07-26T14:28:21",
+      "generated_at": "2026-07-25T14:37:01",
       "generator": "openai"
     }
   },
@@ -545,29 +545,29 @@
         "url": "https://arxiv.org/pdf/2607.20225v1"
       }
     ],
-    "score": 61,
+    "score": 66,
     "infographic": {
-      "key_insight": "DQAOA-GPT replaces iterative variational tuning with GPT-generated quantum circuits for decomposed optimization subproblems, aiming to cut cost while preserving solution quality.",
-      "engineering_relevance": "The approach could make hybrid HPC-quantum workflows more practical for large combinatorial optimization tasks in engineering and scientific computing.",
+      "key_insight": "DQAOA-GPT replaces iterative variational tuning with GPT-generated quantum circuits inside a distributed QAOA workflow, aiming to cut optimization cost while preserving solution quality.",
+      "engineering_relevance": "The approach could make large combinatorial optimization more practical for HPC-QC workflows in scheduling, design, and other compute-intensive engineering applications.",
       "method": [
-        "Decompose a large HUBO problem into smaller sub-problems using distributed QAOA.",
-        "Use a trained GPT-based generator to directly propose quantum circuits for each sub-problem.",
-        "Benchmark against conventional DQAOA on dense instances up to 100 decision variables."
+        "Decompose a dense HUBO problem into smaller sub-problems using distributed QAOA.",
+        "Use a trained GPT-based model to directly generate quantum circuits for each sub-problem.",
+        "Evaluate the hybrid pipeline against conventional DQAOA on benchmark instances."
       ],
-      "evidence_signal": "The abstract reports benchmark-scale evaluation on dense HUBO problems up to 100 variables, showing lower computational cost with competitive solution quality and stronger speedup for larger sub-problems.",
-      "watch_item": "The validation is benchmark-scale only, so real-world scalability and training/generalization of the circuit generator remain open concerns.",
+      "evidence_signal": "On dense HUBO benchmarks with up to 100 decision variables, the abstract reports significantly lower computational cost with competitive solution quality, especially for larger sub-problems.",
+      "watch_item": "The validation is benchmark-scale only, so scaling behavior, training dependence, and deployment cost in real HPC-QC settings remain uncertain.",
       "hashtags": [
         "#QuantumOptimization",
         "#QAOA",
-        "#HPC",
-        "#MachineLearning",
-        "#CombinatorialOptimization"
+        "#HybridHPCQC",
+        "#CombinatorialOptimization",
+        "#GenerativeAI"
       ],
       "paper_id": "2026-07-22-arxiv-dqaoa_gpt_ai_accelerated_distributed_quantum_optimization_for_combinatorial_problems",
       "paper_title": "DQAOA-GPT: AI-Accelerated Distributed Quantum Optimization for Combinatorial Problems",
       "paper_date": "2026-07-22",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-07-26T14:28:23",
+      "generated_at": "2026-07-25T14:37:04",
       "generator": "openai"
     }
   },
@@ -598,29 +598,29 @@
         "url": "https://arxiv.org/pdf/2607.20657v1"
       }
     ],
-    "score": 60,
+    "score": 65,
     "infographic": {
-      "key_insight": "A feedforward neural network using the writhe density matrix can classify the first six prime two-component links with high accuracy, showing that this geometric descriptor encodes topology-relevant information.",
-      "engineering_relevance": "The approach offers a fast surrogate for exact topological invariant calculations, which could be useful for analyzing polymer, DNA, and protein link structures in large-scale simulations.",
+      "key_insight": "A feedforward neural network using the writhe density matrix can classify the first six prime two-component links with high accuracy, suggesting the matrix encodes topology-relevant structure.",
+      "engineering_relevance": "This offers a fast surrogate for link classification in polymer, DNA, and protein systems where exact topological calculations can become computationally expensive.",
       "method": [
-        "Compute the writhe density matrix from polymer/link configurations",
-        "Train a feedforward neural network on thermally equilibrated samples",
-        "Test robustness across temperature, component length, and Gaussian noise"
+        "Computed writhe density matrices from equilibrated link configurations",
+        "Trained a feedforward neural network on these matrix features",
+        "Tested robustness across temperature, component length, and added Gaussian noise"
       ],
-      "evidence_signal": "The model achieves 97% classification accuracy on thermally equilibrated configurations and remains strong across temperatures and link lengths, but degrades sharply under topology-altering Gaussian noise.",
-      "watch_item": "Performance may drop when inputs are perturbed in ways that alter topology, so the method should not be assumed robust to noisy or unresolved geometric data.",
+      "evidence_signal": "The model achieved 97% accuracy on thermally equilibrated configurations and remained strong across temperatures and lengths, but performance dropped sharply under topology-altering Gaussian noise.",
+      "watch_item": "The approach may be sensitive to noise that changes topology, so generalization to more complex or partially observed link geometries should be validated carefully.",
       "hashtags": [
         "#MachineLearning",
         "#Topology",
-        "#PolymerPhysics",
-        "#KnotTheory",
-        "#ComputationalScience"
+        "#KnotsAndLinks",
+        "#ComputationalGeometry",
+        "#PolymerPhysics"
       ],
       "paper_id": "2026-07-22-arxiv-writhe_based_polymer_link_classification_using_machine_learning",
       "paper_title": "Writhe-Based Polymer Link Classification Using Machine Learning",
       "paper_date": "2026-07-22",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-07-26T14:28:25",
+      "generated_at": "2026-07-25T14:37:06",
       "generator": "openai"
     }
   },
@@ -649,17 +649,17 @@
         "url": "https://arxiv.org/pdf/2607.18979v1"
       }
     ],
-    "score": 60,
+    "score": 65,
     "infographic": {
-      "key_insight": "Parallel Shapley assigns rewards to each reasoning path by estimating its Shapley value, so helpful paths get credit while redundant or harmful ones are downweighted.",
-      "engineering_relevance": "This gives a more stable training signal for parallel LLM reasoning systems and can improve multi-path decision quality in mathematical problem solving.",
+      "key_insight": "Parallel Shapley assigns path-level rewards in multi-path LLM reasoning using Shapley values, so useful reasoning paths get more credit while redundant or harmful paths are penalized.",
+      "engineering_relevance": "This gives a more stable and interpretable reinforcement learning signal for training reasoning systems, which is useful for improving multi-path decision pipelines in mathematical reasoning.",
       "method": [
-        "Model each reasoning path as a player in a cooperative game.",
-        "Estimate path utility with a generative reward model.",
-        "Approximate Shapley values efficiently using Monte Carlo sampling."
+        "Treat each reasoning path as a cooperative-game player.",
+        "Estimate each path's marginal contribution with Shapley values.",
+        "Use a generative reward model plus Monte Carlo sampling to approximate path utilities efficiently."
       ],
-      "evidence_signal": "The abstract reports improved performance over existing baselines on mathematical reasoning benchmarks, with more stable and interpretable training.",
-      "watch_item": "Shapley estimation adds computational overhead and depends on the quality of the reward model and sampling approximation.",
+      "evidence_signal": "The abstract reports experiments on mathematical reasoning benchmarks, where Parallel Shapley outperforms baselines and improves training stability and interpretability.",
+      "watch_item": "Shapley estimation can be computationally expensive and may depend on the quality of the reward model and the accuracy of Monte Carlo approximation.",
       "hashtags": [
         "#LLMReasoning",
         "#ShapleyValue",
@@ -671,7 +671,7 @@
       "paper_title": "Fishing Out Free Riders: Shapley-Based Reward Attribution for Parallel Reasoning via Reinforcement Learning",
       "paper_date": "2026-07-21",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-07-26T14:28:27",
+      "generated_at": "2026-07-25T14:37:08",
       "generator": "openai"
     }
   },
@@ -702,29 +702,29 @@
         "url": "https://arxiv.org/pdf/2607.21579v1"
       }
     ],
-    "score": 59,
+    "score": 64,
     "infographic": {
-      "key_insight": "The paper proves that Barzilai--Borwein (BB1) is not superlinearly convergent on a nonempty open set of strictly convex quadratic problems in every dimension n≥4.",
-      "engineering_relevance": "This warns practitioners that BB1 can be fast in practice yet still exhibit only geometric convergence on certain quadratic problems, so relying on superlinear behavior is unsafe.",
+      "key_insight": "For every dimension n ≥ 4, there exists an open set of strictly convex quadratic problems where the long Barzilai–Borwein method converges but cannot be root-superlinear.",
+      "engineering_relevance": "This identifies a concrete failure mode for a widely used first-order optimizer, cautioning practitioners against assuming rapid asymptotic convergence on quadratic objectives.",
       "method": [
-        "Constructs an open family of strictly convex quadratics and initial points with bad BB dynamics",
-        "Uses a computer-assisted proof of an attracting nonresonant seven-cycle in the projectivized BB system",
-        "Derives two-sided geometric bounds for gradient, error, and objective gap"
+        "Construct an explicit positive-measure family of quadratics and initial points.",
+        "Use a computer-assisted proof of a nonresonant attracting seven-cycle in the projectivized BB dynamics (dimension 4).",
+        "Derive two-sided geometric bounds for gradient and error norms, ruling out superlinear decay."
       ],
-      "evidence_signal": "The abstract reports explicit constants (ρ_min=10^-6, ρ_max=0.61) and geometric lower/upper bounds showing convergence but ruling out root-superlinear rates.",
-      "watch_item": "The result is for a constructed open set of quadratic instances with a computer-assisted proof, so it does not claim typical failure for all problems or all BB variants.",
+      "evidence_signal": "The paper reports explicit constants (ρ_min = 10^-6, ρ_max = 0.61) and two-sided geometric estimates for spectral components, gradient norm, error norm, and objective gap.",
+      "watch_item": "The result is a worst-case construction for BB1 on quadratics; it does not imply typical problems will exhibit this behavior, but it does show superlinear convergence is not generic.",
       "hashtags": [
         "#BarzilaiBorwein",
         "#OptimizationTheory",
-        "#QuadraticProgramming",
-        "#ConvergenceAnalysis",
+        "#QuadraticOptimization",
+        "#ConvergenceRates",
         "#TheoremProving"
       ],
       "paper_id": "2026-07-23-arxiv-barzilai_borwein_fails_superlinear_convergence_on_an_open_set_of_quadratics_for_every_dime",
       "paper_title": "Barzilai-Borwein Fails Superlinear Convergence on an Open Set of Quadratics for Every Dimension $n\\geq 4$",
       "paper_date": "2026-07-23",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-07-26T14:28:30",
+      "generated_at": "2026-07-25T14:37:11",
       "generator": "openai"
     }
   },
@@ -753,29 +753,29 @@
         "url": "https://arxiv.org/pdf/2607.21135v1"
       }
     ],
-    "score": 57,
+    "score": 62,
     "infographic": {
-      "key_insight": "The paper proposes a Bayesian optimization framework to track a rigidly moving 3D target’s position and orientation from far-field data across time, using analytical motion models for translations and rotations.",
-      "engineering_relevance": "This enables noninvasive object tracking in wave-based sensing systems, with potential use in radar, sonar, and inverse-scattering-based monitoring.",
+      "key_insight": "The paper tracks a rigid target in 3D from single-source far-field measurements by combining analytical scattering updates with Bayesian optimization over translation and rotation across time.",
+      "engineering_relevance": "This provides a practical framework for remote sensing, surveillance, and nondestructive evaluation when only limited far-field data are available and the object is moving.",
       "method": [
-        "Derive far-field pattern formulas for translated and rotated targets.",
-        "Model translation and rotation as independent stochastic processes over successive time steps.",
-        "Use Bayesian optimization to jointly estimate location and orientation; identify unknown shape at the initial time with a fully connected neural network trained on precomputed data."
+        "Derive far-field pattern formulas for target translation and rotation in 3D.",
+        "Model translational and rotational motion as independent stochastic processes and solve sequential tracking with Bayesian optimization.",
+        "Use a fully connected neural network to identify an unknown shape at the initial time from a precomputed dataset."
       ],
-      "evidence_signal": "The abstract reports numerical experiments validating the framework and a posterior consistency result for the probabilistic model.",
-      "watch_item": "Performance may depend on accurate stochastic motion assumptions and on the quality of the precomputed dataset used for initial shape identification.",
+      "evidence_signal": "The abstract reports numerical experiments that validate the framework and also establishes posterior consistency for the probabilistic model.",
+      "watch_item": "Performance may depend on the quality of the precomputed shape dataset and on how well the motion assumptions match real target dynamics.",
       "hashtags": [
         "#BayesianOptimization",
         "#InverseScattering",
-        "#TargetTracking",
+        "#3DTracking",
         "#FarFieldData",
-        "#3DImaging"
+        "#ComputationalPhysics"
       ],
       "paper_id": "2026-07-23-arxiv-bayesian_optimization_approach_for_tracking_a_moving_target_from_far_field_data_in_three_d",
       "paper_title": "Bayesian optimization approach for tracking a moving target from far-field data in three dimensions",
       "paper_date": "2026-07-23",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-26T14:28:32",
+      "generated_at": "2026-07-25T14:37:13",
       "generator": "openai"
     }
   },
@@ -804,29 +804,29 @@
         "url": "https://arxiv.org/pdf/2607.21112v1"
       }
     ],
-    "score": 57,
+    "score": 62,
     "infographic": {
-      "key_insight": "The paper shows that exact ensemble controllability for neural differential equations can be achieved constructively by solving a neural interpolation problem, and for depth-2 neural right-hand sides this reduces to linear algebra.",
-      "engineering_relevance": "This provides a principled way to train one neural dynamics to realize multiple input-to-target behaviors at once, which is useful for multi-task control and machine-learning models with shared parameters.",
+      "key_insight": "The paper shows that exact ensemble controllability of neural differential equations can be achieved constructively by solving a neural interpolation problem, and for depth-2 networks this reduces to a linear system.",
+      "engineering_relevance": "This gives a principled way to train one neural dynamics to steer multiple initial conditions to different targets simultaneously, which is useful for multi-task control and learning systems.",
       "method": [
-        "Formulate exact ensemble controllability as a simultaneous steering problem for N initial states.",
+        "Formulate exact ensemble controllability for neural differential equations.",
         "Reduce the control design to a neural interpolation problem.",
-        "For depth-2 neural dynamics, convert interpolation into a linear system that can be solved explicitly."
+        "For depth-2 right-hand sides, convert interpolation into linear equations and solve constructively."
       ],
-      "evidence_signal": "The abstract presents a constructive theoretical result and an explicit reduction to linear equations for depth-2 networks, but does not report numerical experiments or benchmark data.",
-      "watch_item": "The result is exact and constructive at the theory level, but practical scalability may depend on solving potentially large linear systems and on how the interpolation conditions are specified.",
+      "evidence_signal": "The abstract reports a theoretical constructive result and a reduction to linear equations for depth-2 networks, rather than an empirical benchmark.",
+      "watch_item": "The approach is mathematically exact under the stated model assumptions, so practical use may depend on whether real systems fit the neural dynamics and interpolation conditions.",
       "hashtags": [
         "#NeuralODEs",
         "#EnsembleControllability",
-        "#MachineLearningTheory",
-        "#DeepLearning",
-        "#LinearAlgebra"
+        "#MachineLearning",
+        "#ControlTheory",
+        "#SymbolicComputation"
       ],
       "paper_id": "2026-07-23-arxiv-exact_ensemble_controllability_for_neural_differential_equations_via_neural_interpolation",
       "paper_title": "Exact ensemble controllability for neural differential equations via neural interpolation",
       "paper_date": "2026-07-23",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-07-26T14:28:35",
+      "generated_at": "2026-07-25T14:37:15",
       "generator": "openai"
     }
   },
@@ -855,29 +855,29 @@
         "url": "https://arxiv.org/pdf/2607.19962v1"
       }
     ],
-    "score": 57,
+    "score": 62,
     "infographic": {
-      "key_insight": "EvoThink improves large reasoning models by pruning redundant verification steps and training them to discover more useful reasoning paths, boosting both efficiency and capability.",
-      "engineering_relevance": "The method can reduce inference token cost in math and code systems while preserving or improving reasoning quality, making it attractive for deployable LLM reasoning pipelines.",
+      "key_insight": "EvoThink reduces LRM overthinking by pruning redundant reasoning steps and teaching the model to learn from valuable failed attempts, improving both efficiency and reasoning quality.",
+      "engineering_relevance": "The framework offers a practical way to cut inference token costs without sacrificing performance, making large reasoning systems cheaper and more deployable.",
       "method": [
-        "Self-Pruning Training (SPT): iteratively removes redundant reasoning steps and self-trains on the shorter trajectories.",
-        "Aha-Moment Preference Optimization (AMPO): mines successful structure from failed attempts and optimizes the model to reproduce from-wrong-to-right reasoning transitions.",
-        "Combines efficiency gains with reasoning improvement instead of trading one off against the other."
+        "Self-Pruning Training (SPT): iteratively removes redundant reasoning steps and self-trains on concise trajectories.",
+        "Aha-Moment Preference Optimization (AMPO): mines useful failed attempts and turns them into from-wrong-to-right preference data.",
+        "Joint goal: preserve beneficial reasoning while suppressing unnecessary verification."
       ],
-      "evidence_signal": "The abstract reports extensive evaluations on mathematical reasoning and code generation benchmarks, showing reduced inference-time token usage and improved reasoning performance.",
-      "watch_item": "Iterative pruning and preference optimization may be sensitive to the quality of mined trajectories, so careful validation is needed to avoid removing useful reasoning steps or reinforcing noisy patterns.",
+      "evidence_signal": "The abstract reports extensive evaluation on mathematical reasoning and code generation benchmarks, showing reduced inference-time token usage and improved reasoning capability.",
+      "watch_item": "A key implementation concern is that pruning too aggressively could discard subtle but useful verification steps, so the pruning criterion must be carefully controlled.",
       "hashtags": [
-        "#LargeReasoningModels",
+        "#ReasoningModels",
+        "#LLMOptimization",
         "#MathematicalReasoning",
-        "#SelfPruning",
-        "#PreferenceOptimization",
-        "#EfficientAI"
+        "#TokenEfficiency",
+        "#SelfTraining"
       ],
       "paper_id": "2026-07-22-arxiv-evothink_evolving_thinking_in_large_reasoning_models_via_self_pruning_and_aha_moment_prefe",
       "paper_title": "EvoThink: Evolving Thinking in Large Reasoning Models via Self-Pruning and Aha-Moment Preference Optimization",
       "paper_date": "2026-07-22",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-07-26T14:28:38",
+      "generated_at": "2026-07-25T14:37:18",
       "generator": "openai"
     }
   },
@@ -906,29 +906,29 @@
         "url": "https://arxiv.org/pdf/2607.21242v1"
       }
     ],
-    "score": 56,
+    "score": 61,
     "infographic": {
-      "key_insight": "The paper combines semi-smooth Newton solvers, POD reduction, and neural-network corrections to build a nonlinear reduced-order model for parametrized variational inequalities.",
-      "engineering_relevance": "It enables much faster online simulation of contact and obstacle mechanics problems while retaining high-fidelity accuracy, which is valuable for design, optimization, and uncertainty studies.",
+      "key_insight": "The paper combines POD-based model reduction, semi-smooth Newton solvers, and neural-network corrections to efficiently solve nonlinear parametric variational inequalities while preserving primal-dual complementarity structure.",
+      "engineering_relevance": "This enables faster surrogate simulation for computational mechanics problems such as obstacle and frictional contact models, where high-fidelity nonlinear solves are too expensive for repeated queries or design loops.",
       "method": [
-        "Build mixed primal-dual reduced models with POD from primal and dual snapshots.",
-        "Augment the truncated POD coordinates with feedforward neural networks to learn nonlinear manifold corrections.",
-        "Apply hyper-reduction via sparse cubature and greedy nonnegative least squares to cut residual-evaluation cost."
+        "Builds reduced primal-dual models using POD snapshots from both primal and dual variables.",
+        "Augments the linear reduced space with two feedforward networks that learn nonlinear corrections in truncated coordinates.",
+        "Uses sparse cubature hyper-reduction via greedy nonnegative least squares to cut online residual costs."
       ],
-      "evidence_signal": "The abstract reports tests on two benchmark problems—an obstacle problem and a 3D frictional contact problem—showing accurate approximations and substantial online cost reduction across high-fidelity, linear ROM, neural ROM, and hyper-reduced variants.",
-      "watch_item": "Performance may depend on how well the neural manifold and hyper-reduction sample the nonsmooth primal-dual dynamics, so training coverage and stability of the semi-smooth Newton iterations are important implementation concerns.",
+      "evidence_signal": "The abstract reports numerical tests on a 2D obstacle problem and a 3D frictional contact problem, comparing full-order, linear reduced, neural-augmented reduced, and hyper-reduced variants.",
+      "watch_item": "The learned nonlinear manifold and hyper-reduction must be carefully coupled, since approximation quality and Newton convergence can degrade if the reduced basis or cubature set is insufficient.",
       "hashtags": [
-        "#ModelOrderReduction",
+        "#ModelReduction",
         "#VariationalInequalities",
-        "#SemismoothNewton",
-        "#NeuralROM",
-        "#HyperReduction"
+        "#SemiSmoothNewton",
+        "#NeuralSurrogates",
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-23-arxiv-a_hyper_reduced_neural_network_augmented_semi_smooth_newton_method_for_nonlinear_parametri",
       "paper_title": "A Hyper-Reduced Neural Network-Augmented Semi-smooth Newton Method for Nonlinear Parametric Variational Inequalities",
       "paper_date": "2026-07-23",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-07-26T14:28:41",
+      "generated_at": "2026-07-25T14:37:20",
       "generator": "openai"
     }
   },
@@ -959,29 +959,29 @@
         "url": "https://arxiv.org/pdf/2607.21187v1"
       }
     ],
-    "score": 55,
+    "score": 60,
     "infographic": {
-      "key_insight": "An LLM can help generate a human-readable formal proof of the irrationality of \u001a2, but the proof is still validated end-to-end by the LPTP theorem prover.",
-      "engineering_relevance": "This shows a practical workflow for pairing language models with logic-program theorem proving to accelerate formal verification while preserving proof correctness.",
+      "key_insight": "The paper shows that an LLM can help generate a formal, human-readable proof of the irrationality of √2, with LPTP providing the final proof check.",
+      "engineering_relevance": "This demonstrates a practical workflow for combining language models with theorem provers to accelerate formal verification in logic programming and mathematical software.",
       "method": [
-        "Start from basic pure logic-program predicate definitions.",
-        "Use LPTP natural-deduction proof language to sketch the classic irrationality proof.",
-        "Iteratively interact with an LLM, then fully proof-check the generated result in LPTP."
+        "Start from basic pure logic program predicate definitions.",
+        "Use LPTP natural-deduction proofs to formalize the classic irrationality argument.",
+        "Iteratively interact with an LLM, then verify the resulting proof fully in LPTP."
       ],
-      "evidence_signal": "The abstract reports a single case study: the authors obtained a complete formal proof, partially generated by an LLM and fully checked by LPTP.",
-      "watch_item": "The result is demonstrated on one classic theorem, so broader reliability on more complex proofs or different logic-program settings remains unproven.",
+      "evidence_signal": "The abstract reports a single case study: a complete formal proof was partially generated by an LLM and fully proof-checked by LPTP.",
+      "watch_item": "The result is a proof-of-concept on one classic theorem, so broader reliability and scalability for harder proofs remain untested.",
       "hashtags": [
         "#TheoremProving",
         "#LLM",
         "#LogicProgramming",
         "#FormalVerification",
-        "#LPTP"
+        "#AIforMath"
       ],
       "paper_id": "2026-07-23-arxiv-case_study_proving_sqrt_2_irrational_with_lptp_and_an_llm",
       "paper_title": "Case study: proving sqrt(2) irrational with LPTP and an LLM",
       "paper_date": "2026-07-23",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-07-26T14:28:43",
+      "generated_at": "2026-07-25T14:37:22",
       "generator": "openai"
     }
   },
@@ -1012,29 +1012,29 @@
         "url": "https://arxiv.org/pdf/2607.20818v1"
       }
     ],
-    "score": 55,
+    "score": 60,
     "infographic": {
-      "key_insight": "A self-balancing sequential sampler adaptively biases choices to make empirical coverage converge as fast as possible while keeping future selections difficult to predict.",
-      "engineering_relevance": "This offers a practical way to reduce repeated picks and long gaps in scheduling, auditing, and treatment assignment without sacrificing randomness too much.",
+      "key_insight": "A self-balancing sequential sampler adaptively biases choices so the empirical distribution reaches a target law at the optimal O(n^-1) rate while remaining difficult to predict.",
+      "engineering_relevance": "This can improve audit schedules, representative sampling, and treatment assignment by reducing repeated selections and long gaps without sacrificing unpredictability.",
       "method": [
-        "Use adaptive sampling probabilities that depend on current count imbalance.",
-        "Exploit a Markovian invariance property and a stochastic mirror-descent view.",
-        "Tune biasing strength to trade off convergence speed against predictability."
+        "Adaptive Markovian sampling with biasing rules that steer counts toward the target distribution",
+        "Entropy-regularized optimization to trade off fast convergence against sample unpredictability",
+        "Stochastic mirror-descent view plus a weak-bias diffusion limit leading to an Ornstein–Uhlenbeck approximation"
       ],
-      "evidence_signal": "The abstract reports an explicit theoretical guarantee of optimal O(n^-1) convergence, a uniqueness result from an entropy-regularized optimization problem, and an Ornstein-Uhlenbeck diffusive limit under weak biasing.",
-      "watch_item": "Performance depends on bias-parameter choice, so overly strong biasing may reduce unpredictability or make implementation sensitive to tuning.",
+      "evidence_signal": "The abstract reports theoretical analysis and explicit convergence results, including a fastest-possible O(n^-1) rate, uniqueness under an entropy-regularized objective, and a diffusive-limit characterization.",
+      "watch_item": "Performance depends on the chosen biasing parameters, so overly aggressive settings may reduce unpredictability or make implementation tuning nontrivial.",
       "hashtags": [
         "#SequentialSampling",
-        "#StochasticProcesses",
-        "#MirrorDescent",
         "#Optimization",
-        "#UncertaintyQuantification"
+        "#StochasticProcesses",
+        "#EntropyRegularization",
+        "#MarkovChains"
       ],
       "paper_id": "2026-07-23-arxiv-self_balancing_sequential_sampling_fast_convergence_with_controlled_predictability",
       "paper_title": "Self-Balancing Sequential Sampling: Fast Convergence with Controlled Predictability",
       "paper_date": "2026-07-23",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-07-26T14:28:46",
+      "generated_at": "2026-07-25T14:37:25",
       "generator": "openai"
     }
   }
