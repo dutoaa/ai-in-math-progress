@@ -1,0 +1,24 @@
+{
+  "key_insight": "IFCLoRA allocates LoRA rank before fine-tuning by using a topology-aware information-flow score, so each Transformer module gets adaptation capacity based on global task structure rather than only local gradients.",
+  "engineering_relevance": "This gives a practical way to improve parameter-efficient fine-tuning under a fixed compute and memory budget, especially when rank must be spent selectively across large models.",
+  "method": [
+    "Build a sparse task-conditioned interaction graph from a small calibration set and a frozen pretrained model.",
+    "Combine global information-flow topology with local gradient sensitivity to compute Information-Flow Centrality for each LoRA-compatible module.",
+    "Assign the total rank budget once, producing a non-uniform rank profile before training starts."
+  ],
+  "evidence_signal": "Across multiple models, tasks, and low-rank settings, IFCLoRA outperformed LoRA, AdaLoRA, and EVA under matched budgets; on LLaMA 3 8B mathematical reasoning it improved by 1.36 points at rank 4 and 1.82 points at rank 8.",
+  "watch_item": "The method depends on a calibration set and graph construction quality, so rank allocation may be sensitive to how representative the pre-finetuning data and topology estimates are.",
+  "hashtags": [
+    "#LoRA",
+    "#ParameterEfficientFineTuning",
+    "#Transformer",
+    "#TopologyAware",
+    "#LLM"
+  ],
+  "paper_id": "2026-07-24-arxiv-ifclora_topology_aware_rank_allocation_for_parameter_efficient_fine_tuning",
+  "paper_title": "IFCLoRA: Topology-Aware Rank Allocation for Parameter-Efficient Fine-Tuning",
+  "paper_date": "2026-07-24",
+  "paper_category": "Geometry and Topology",
+  "generated_at": "2026-07-27T15:41:15",
+  "generator": "openai"
+}
