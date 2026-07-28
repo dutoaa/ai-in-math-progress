@@ -1,9 +1,25 @@
 # AI math Progress Public Resources
 
-Generated: 2026-07-27
+Generated: 2026-07-28
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. Deconstructing Off-Policy Ratios: Entropy-Scaled Trust Regions for Asynchronous Reinforcement Learning
+## 1. From RLVR to RLSVR: Task Transformation Induces Self-Verifiable Rewards for Open-Ended LLM Self-Improvement
+
+- Date: 2026-07-26
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2607.23802v1
+- PDF: https://arxiv.org/pdf/2607.23802v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-26-arxiv-from_rlvr_to_rlsvr_task_transformation_induces_self_verifiable_rewards_for_open_ended_llm_infographic.json
+
+## 2. Learning Asymptotics with Convergence-Rate Guarantees using Linear Least Squares
+
+- Date: 2026-07-25
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2607.23287v1
+- PDF: https://arxiv.org/pdf/2607.23287v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-25-arxiv-learning_asymptotics_with_convergence_rate_guarantees_using_linear_least_squares_infographic.json
+
+## 3. Deconstructing Off-Policy Ratios: Entropy-Scaled Trust Regions for Asynchronous Reinforcement Learning
 
 - Date: 2026-07-24
 - Category: Mathematical Reasoning
@@ -11,7 +27,55 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.22186v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-24-arxiv-deconstructing_off_policy_ratios_entropy_scaled_trust_regions_for_asynchronous_reinforceme_infographic.json
 
-## 2. IFCLoRA: Topology-Aware Rank Allocation for Parameter-Efficient Fine-Tuning
+## 4. Tikhonov-Regularized Physics-Informed Neural Networks for Terminal-State Distributed Optimal Control of Parabolic Partial Differential Equations
+
+- Date: 2026-07-27
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2607.24572v1
+- PDF: https://arxiv.org/pdf/2607.24572v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-27-arxiv-tikhonov_regularized_physics_informed_neural_networks_for_terminal_state_distributed_optim_infographic.json
+
+## 5. Global Convergence of DGM and PINN Algorithms for Solving Nonlinear PDEs
+
+- Date: 2026-07-27
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2607.24726v1
+- PDF: https://arxiv.org/pdf/2607.24726v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-27-arxiv-global_convergence_of_dgm_and_pinn_algorithms_for_solving_nonlinear_pdes_infographic.json
+
+## 6. Rethinking Logic Optimization Operators: Theory-Derived Operator Compression via Agentic Source Analysis
+
+- Date: 2026-07-26
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2607.23672v1
+- PDF: https://arxiv.org/pdf/2607.23672v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-26-arxiv-rethinking_logic_optimization_operators_theory_derived_operator_compression_via_agentic_so_infographic.json
+
+## 7. Scale Weight Decay and Train Better
+
+- Date: 2026-07-26
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2607.23777v1
+- PDF: https://arxiv.org/pdf/2607.23777v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-26-arxiv-scale_weight_decay_and_train_better_infographic.json
+
+## 8. Topological Data Analysis and Graph-Theoretic Approaches for Tennis Match Prediction
+
+- Date: 2026-07-26
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2607.23509v1
+- PDF: https://arxiv.org/pdf/2607.23509v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-26-arxiv-topological_data_analysis_and_graph_theoretic_approaches_for_tennis_match_prediction_infographic.json
+
+## 9. Let AI Agents Translate Networks, Not Reason About Them
+
+- Date: 2026-07-24
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2607.22947v1
+- PDF: https://arxiv.org/pdf/2607.22947v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-24-arxiv-let_ai_agents_translate_networks_not_reason_about_them_infographic.json
+
+## 10. IFCLoRA: Topology-Aware Rank Allocation for Parameter-Efficient Fine-Tuning
 
 - Date: 2026-07-24
 - Category: Geometry and Topology
@@ -19,7 +83,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.22251v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-24-arxiv-ifclora_topology_aware_rank_allocation_for_parameter_efficient_fine_tuning_infographic.json
 
-## 3. PIML-OFEM: A New Large-Scale Structural Analysis Method Based on Problem-Independent Machine Learning and Overlapping Finite Element Technique
+## 11. PIML-OFEM: A New Large-Scale Structural Analysis Method Based on Problem-Independent Machine Learning and Overlapping Finite Element Technique
 
 - Date: 2026-07-24
 - Category: Geometry and Topology
@@ -27,7 +91,63 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.22019v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-24-arxiv-piml_ofem_a_new_large_scale_structural_analysis_method_based_on_problem_independent_machin_infographic.json
 
-## 4. CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference
+## 12. From Score Learning to Discretized Sampling: An End-to-End Generalization Analysis of Diffusion Models
+
+- Date: 2026-07-25
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2607.23226v1
+- PDF: https://arxiv.org/pdf/2607.23226v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-25-arxiv-from_score_learning_to_discretized_sampling_an_end_to_end_generalization_analysis_of_diffu_infographic.json
+
+## 13. Beyond ICA: Identifiability by Symmetry Breaking
+
+- Date: 2026-07-25
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2607.23182v1
+- PDF: https://arxiv.org/pdf/2607.23182v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-25-arxiv-beyond_ica_identifiability_by_symmetry_breaking_infographic.json
+
+## 14. Nesterov acceleration in optimizing over probability measures
+
+- Date: 2026-07-25
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2607.23008v1
+- PDF: https://arxiv.org/pdf/2607.23008v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-25-arxiv-nesterov_acceleration_in_optimizing_over_probability_measures_infographic.json
+
+## 15. GNN-based Multi-Agent Control of Traffic Shockwaves in Sparse Vehicular Ad-hoc Networks
+
+- Date: 2026-07-26
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2607.23792v1
+- PDF: https://arxiv.org/pdf/2607.23792v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-26-arxiv-gnn_based_multi_agent_control_of_traffic_shockwaves_in_sparse_vehicular_ad_hoc_networks_infographic.json
+
+## 16. When Rates Are Geometric: Rate-Certificate Transfer for Contact Splittings in Optimization
+
+- Date: 2026-07-26
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2607.23642v1
+- PDF: https://arxiv.org/pdf/2607.23642v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-26-arxiv-when_rates_are_geometric_rate_certificate_transfer_for_contact_splittings_in_optimization_infographic.json
+
+## 17. Optimal Reward Shaping: Autonomous Car Parking Case Study
+
+- Date: 2026-07-26
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2607.23617v1
+- PDF: https://arxiv.org/pdf/2607.23617v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-26-arxiv-optimal_reward_shaping_autonomous_car_parking_case_study_infographic.json
+
+## 18. Finite-Time Analysis of the Natural Policy Gradient in Finite-Horizon Markov Decision Processes
+
+- Date: 2026-07-25
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2607.22982v1
+- PDF: https://arxiv.org/pdf/2607.22982v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-25-arxiv-finite_time_analysis_of_the_natural_policy_gradient_in_finite_horizon_markov_decision_proc_infographic.json
+
+## 19. CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference
 
 - Date: 2026-07-24
 - Category: Theorem Proving
@@ -35,130 +155,10 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2607.22511v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-24-arxiv-causalforge_a_formally_grounded_self_improving_agentic_framework_for_automated_research_in_infographic.json
 
-## 5. A Defense of the Quadratic Model
-
-- Date: 2026-07-23
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2607.21716v1
-- PDF: https://arxiv.org/pdf/2607.21716v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-23-arxiv-a_defense_of_the_quadratic_model_infographic.json
-
-## 6. Profiling Lightweight Large Language Models
-
-- Date: 2026-07-23
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2607.20806v1
-- PDF: https://arxiv.org/pdf/2607.20806v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-23-arxiv-profiling_lightweight_large_language_models_infographic.json
-
-## 7. PyroDash: Cost-Efficient Token-Level Small-Large Language Model Collaborative Inference
-
-- Date: 2026-07-22
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2607.20327v1
-- PDF: https://arxiv.org/pdf/2607.20327v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-22-arxiv-pyrodash_cost_efficient_token_level_small_large_language_model_collaborative_inference_infographic.json
-
-## 8. A physics-informed neural network for improving surface reconstruction of intracranial saccular aneurysms via variational membrane equilibrium
+## 20. Can the perfect Swiss alphorn be designed? A combination of reduced basis method and machine learning for shape optimization
 
 - Date: 2026-07-24
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2607.22055v1
-- PDF: https://arxiv.org/pdf/2607.22055v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-24-arxiv-a_physics_informed_neural_network_for_improving_surface_reconstruction_of_intracranial_sac_infographic.json
-
-## 9. Learning as Reasoning Unfolds: Progressive Rollout Allocation for Efficient Reinforcement Learning
-
-- Date: 2026-07-24
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2607.22002v1
-- PDF: https://arxiv.org/pdf/2607.22002v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-24-arxiv-learning_as_reasoning_unfolds_progressive_rollout_allocation_for_efficient_reinforcement_l_infographic.json
-
-## 10. Parametric Neural r-Adaptivity for Isogeometric Analysis via Residual Minimization
-
-- Date: 2026-07-23
 - Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2607.21753v1
-- PDF: https://arxiv.org/pdf/2607.21753v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-23-arxiv-parametric_neural_r_adaptivity_for_isogeometric_analysis_via_residual_minimization_infographic.json
-
-## 11. End-to-End Learning of Safe Optimal Feedback Control in High Dimensions with Control Barrier Function Layers
-
-- Date: 2026-07-22
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2607.20674v1
-- PDF: https://arxiv.org/pdf/2607.20674v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-22-arxiv-end_to_end_learning_of_safe_optimal_feedback_control_in_high_dimensions_with_control_barri_infographic.json
-
-## 12. A phase-field neural solver for moving contact line problems with dynamic boundary conditions
-
-- Date: 2026-07-22
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2607.19690v1
-- PDF: https://arxiv.org/pdf/2607.19690v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-22-arxiv-a_phase_field_neural_solver_for_moving_contact_line_problems_with_dynamic_boundary_conditi_infographic.json
-
-## 13. PG-KINN: A Physics-Informed Petrov-Galerkin Kolmogorov-Arnold Network for Solving Forward and Inverse PDEs
-
-- Date: 2026-07-22
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2607.20378v1
-- PDF: https://arxiv.org/pdf/2607.20378v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-22-arxiv-pg_kinn_a_physics_informed_petrov_galerkin_kolmogorov_arnold_network_for_solving_forward_a_infographic.json
-
-## 14. Learning to recover: Adaptive local branching with reinforcement learning for log-truck routing and scheduling under disruptions
-
-- Date: 2026-07-23
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2607.20901v1
-- PDF: https://arxiv.org/pdf/2607.20901v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-23-arxiv-learning_to_recover_adaptive_local_branching_with_reinforcement_learning_for_log_truck_rou_infographic.json
-
-## 15. Remedying Coarsening-Based GNN Training under Heterophily via Adaptive Complementary Enhancement
-
-- Date: 2026-07-24
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2607.21885v1
-- PDF: https://arxiv.org/pdf/2607.21885v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-24-arxiv-remedying_coarsening_based_gnn_training_under_heterophily_via_adaptive_complementary_enhan_infographic.json
-
-## 16. Smart predict-then-robustly-optimize
-
-- Date: 2026-07-23
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2607.21773v1
-- PDF: https://arxiv.org/pdf/2607.21773v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-23-arxiv-smart_predict_then_robustly_optimize_infographic.json
-
-## 17. Decentralized Online Riemannian Optimization for Strongly Geodesically Convex Functions
-
-- Date: 2026-07-22
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2607.20316v1
-- PDF: https://arxiv.org/pdf/2607.20316v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-22-arxiv-decentralized_online_riemannian_optimization_for_strongly_geodesically_convex_functions_infographic.json
-
-## 18. Explicit Iteration Complexity of Exact Data-Driven Inverse Optimization for Integer Linear Programs
-
-- Date: 2026-07-24
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2607.22263v1
-- PDF: https://arxiv.org/pdf/2607.22263v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-24-arxiv-explicit_iteration_complexity_of_exact_data_driven_inverse_optimization_for_integer_linear_infographic.json
-
-## 19. Be Consistent! Enhancing Robust Visual Reasoning in LVLMs with Consistency Constraints
-
-- Date: 2026-07-23
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2607.21722v1
-- PDF: https://arxiv.org/pdf/2607.21722v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-23-arxiv-be_consistent_enhancing_robust_visual_reasoning_in_lvlms_with_consistency_constraints_infographic.json
-
-## 20. Writhe-Based Polymer Link Classification Using Machine Learning
-
-- Date: 2026-07-22
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2607.20657v1
-- PDF: https://arxiv.org/pdf/2607.20657v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-22-arxiv-writhe_based_polymer_link_classification_using_machine_learning_infographic.json
+- arXiv: https://arxiv.org/abs/2607.22823v1
+- PDF: https://arxiv.org/pdf/2607.22823v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-07-24-arxiv-can_the_perfect_swiss_alphorn_be_designed_a_combination_of_reduced_basis_method_and_machin_infographic.json

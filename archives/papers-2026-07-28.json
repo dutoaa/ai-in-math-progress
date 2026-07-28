@@ -1,0 +1,1043 @@
+[
+  {
+    "id": "2026-07-24-arxiv-deconstructing_off_policy_ratios_entropy_scaled_trust_regions_for_asynchronous_reinforceme",
+    "arxiv_id": "2607.22186v1",
+    "date": "2026-07-24",
+    "title": "Deconstructing Off-Policy Ratios: Entropy-Scaled Trust Regions for Asynchronous Reinforcement Learning",
+    "authors": "Guanqun Zhao, Zijun Xie, Binbin Zheng, Enlei Gong, Jiafeng Lu, Yehan Yang",
+    "abstract": "Asynchronous reinforcement learning (RL) accelerates large language model (LLM) post-training by overlapping rollout generation with policy optimization, but the resulting stale, off-policy data can destabilize optimization and ultimately cause policy collapse. Existing methods typically retain or discard tokens based solely on the magnitude of their importance ratios, applying the same threshold uniformly across token positions. In this work, we reveal that the natural scale of the importance ratio varies systematically with token entropy. Under asynchronous dynamics, this entropy-ratio scaling dictates two distinct phenomena: at low entropy, the inherent train-inference discrepancy is drastically amplified into substantial sampling noise; at high entropy, in-flight weight updates naturally induce pronounced, legitimate exploratory deviations. Consequently, magnitude-only correction inadvertently admits the amplified noise while strictly masking out the essential exploration triggered by in-flight updates. To address this, we propose the Entropy-Scaled Trust Region (ESTR), which scales each token's off-policy deviation by its local entropy, requiring no auxiliary forward passes or explicit version-switch detection. Across long-horizon agentic tasks and mathematical reasoning benchmarks, ESTR consistently outperforms existing asynchronous methods and achieves the best train-inference consistency. Compared with synchronous GRPO, ESTR attains comparable accuracy while improving training speed by $2.6\\times$.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-07-24T10:55:42Z",
+    "updated": "2026-07-24T10:55:42Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.22186v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.22186v1"
+      }
+    ],
+    "score": 88,
+    "infographic": {
+      "key_insight": "Off-policy importance ratios in asynchronous RL are not uniformly meaningful: their natural scale depends on token entropy, so entropy-aware correction can separate harmful noise from legitimate exploratory updates.",
+      "engineering_relevance": "For LLM post-training pipelines that overlap rollout and optimization, entropy-scaled trust regions offer a practical way to improve stability and throughput without extra forward passes or version-detection machinery.",
+      "method": [
+        "Scale each token’s off-policy deviation by its local entropy rather than using a single global ratio threshold.",
+        "Apply a trust-region style filter that suppresses low-entropy amplified noise while preserving high-entropy exploratory deviations.",
+        "Designed for asynchronous training with no auxiliary forward pass or explicit policy-version switch detection."
+      ],
+      "evidence_signal": "Across long-horizon agentic tasks and mathematical reasoning benchmarks, ESTR outperformed existing asynchronous methods, matched synchronous GRPO accuracy, and improved training speed by 2.6×.",
+      "watch_item": "Entropy scaling may be sensitive to how token entropy is estimated and calibrated, so misestimation could still over-filter useful updates or admit stale noise.",
+      "hashtags": [
+        "#AsynchronousRL",
+        "#LLMPostTraining",
+        "#TrustRegion",
+        "#ImportanceSampling",
+        "#EntropyScaling"
+      ],
+      "paper_id": "2026-07-24-arxiv-deconstructing_off_policy_ratios_entropy_scaled_trust_regions_for_asynchronous_reinforceme",
+      "paper_title": "Deconstructing Off-Policy Ratios: Entropy-Scaled Trust Regions for Asynchronous Reinforcement Learning",
+      "paper_date": "2026-07-24",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-07-27T15:41:12",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-24-arxiv-ifclora_topology_aware_rank_allocation_for_parameter_efficient_fine_tuning",
+    "arxiv_id": "2607.22251v1",
+    "date": "2026-07-24",
+    "title": "IFCLoRA: Topology-Aware Rank Allocation for Parameter-Efficient Fine-Tuning",
+    "authors": "Wei Zhang, Xinwu Liu, Yihang Cheng",
+    "abstract": "Low-Rank Adaptation (LoRA) is a widely used parameter-efficient fine-tuning method for large language models, but its performance depends strongly on how a fixed rank budget is distributed across Transformer modules. Existing adaptive-rank methods usually rely on local gradient statistics collected during training, which introduces extra memory and computation and overlooks task-conditioned global information flow. We propose IFCLoRA, a topology-aware rank allocation method applied before fine-tuning. Using a small calibration set and a frozen pretrained model, IFCLoRA builds a sparse task-conditioned interaction graph whose nodes represent LoRA-compatible modules. It combines a global information-flow topology prior with local gradient sensitivity to compute Information-Flow Centrality scores, which estimate each module's adaptation importance under multi-hop propagation. Ranks are then assigned once under a global budget. Across multiple models, tasks, and low-rank settings, IFCLoRA consistently outperforms LoRA, AdaLoRA, and EVA under matched training configurations and total rank budgets, while retaining training costs comparable to standard LoRA. On mathematical reasoning with LLaMA 3 8B, IFCLoRA improves over LoRA by 1.36 percent at rank 4 and 1.82 percent at rank 8. Further analysis shows task-dependent, non-uniform rank profiles, indicating that global information-flow structure provides an informative and interpretable prior for low-budget parameter-efficient fine-tuning.",
+    "category": "Geometry and Topology",
+    "source": "arXiv",
+    "published": "2026-07-24T12:34:46Z",
+    "updated": "2026-07-24T12:34:46Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.22251v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.22251v1"
+      }
+    ],
+    "score": 78,
+    "infographic": {
+      "key_insight": "IFCLoRA allocates LoRA rank before fine-tuning by using a topology-aware information-flow score, so each Transformer module gets adaptation capacity based on global task structure rather than only local gradients.",
+      "engineering_relevance": "This gives a practical way to improve parameter-efficient fine-tuning under a fixed compute and memory budget, especially when rank must be spent selectively across large models.",
+      "method": [
+        "Build a sparse task-conditioned interaction graph from a small calibration set and a frozen pretrained model.",
+        "Combine global information-flow topology with local gradient sensitivity to compute Information-Flow Centrality for each LoRA-compatible module.",
+        "Assign the total rank budget once, producing a non-uniform rank profile before training starts."
+      ],
+      "evidence_signal": "Across multiple models, tasks, and low-rank settings, IFCLoRA outperformed LoRA, AdaLoRA, and EVA under matched budgets; on LLaMA 3 8B mathematical reasoning it improved by 1.36 points at rank 4 and 1.82 points at rank 8.",
+      "watch_item": "The method depends on a calibration set and graph construction quality, so rank allocation may be sensitive to how representative the pre-finetuning data and topology estimates are.",
+      "hashtags": [
+        "#LoRA",
+        "#ParameterEfficientFineTuning",
+        "#Transformer",
+        "#TopologyAware",
+        "#LLM"
+      ],
+      "paper_id": "2026-07-24-arxiv-ifclora_topology_aware_rank_allocation_for_parameter_efficient_fine_tuning",
+      "paper_title": "IFCLoRA: Topology-Aware Rank Allocation for Parameter-Efficient Fine-Tuning",
+      "paper_date": "2026-07-24",
+      "paper_category": "Geometry and Topology",
+      "generated_at": "2026-07-27T15:41:15",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-24-arxiv-piml_ofem_a_new_large_scale_structural_analysis_method_based_on_problem_independent_machin",
+    "arxiv_id": "2607.22019v1",
+    "date": "2026-07-24",
+    "title": "PIML-OFEM: A New Large-Scale Structural Analysis Method Based on Problem-Independent Machine Learning and Overlapping Finite Element Technique",
+    "authors": "Yilin Guo, Chang Liu, Zongliang Du, Jin Liu, Jingyu Feng, Xinyang Zhang",
+    "abstract": "High-resolution analysis and design of large-scale heterogeneous structures require accurate reduced-order models and efficient online computation. Existing multiscale methods must repeatedly construct local basis functions for different material distributions, whereas substructure-based problem-independent machine learning (PIML) methods can be limited by prescribed boundary displacement interpolation. We propose PIML-OFEM, an overlapping finite element method accelerated by problem-independent machine learning. Each substructure retains only its corner-node degrees of freedom. Oversampled numerical basis functions are constructed by solving local elasticity problems on extended domains and restricting the solutions to the target substructure, eliminating prescribed displacement interpolation on its boundary. Independently constructed local bases are blended through a partition-of-unity overlapping formulation to obtain a globally continuous displacement field. A U-Net learns the mapping from local Young's modulus distributions to numerical basis functions, replacing repeated online local solves and allowing the model to be reused across load cases and global boundary conditions. Numerical examples show close agreement with fine-scale finite element results in displacement and elemental strain energy. PIML-OFEM reduces online computational cost relative to direct finite element analysis and improves accuracy over PIML substructure models based on linear boundary interpolation. In topology optimization, the method supports stable high-resolution iterations with small filter radii and preserves fine-scale features, including local patterns resembling rank-2 microstructures. The framework provides an efficient physics-data approach for large-scale heterogeneous structural analysis and high-resolution topology optimization.",
+    "category": "Geometry and Topology",
+    "source": "arXiv",
+    "published": "2026-07-24T06:34:10Z",
+    "updated": "2026-07-24T06:34:10Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "physics.comp-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.22019v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.22019v1"
+      }
+    ],
+    "score": 78,
+    "infographic": {
+      "key_insight": "High-resolution analysis and design of large-scale heterogeneous structures require accurate reduced-order models and efficient online computation.",
+      "engineering_relevance": "Potential relevance: geometry and topology workflows and research evaluation.",
+      "method": [
+        "AI math paper selected from recent arXiv submissions.",
+        "Ranked by recency plus AI and math relevance signals.",
+        "Use the linked paper for methods, data, and validation details."
+      ],
+      "evidence_signal": "Evidence details are summarized from the public abstract only.",
+      "watch_item": "Review the full paper for governing assumptions, validation data, and generalization limits.",
+      "hashtags": [
+        "#AIMath",
+        "#Mathematics",
+        "#TheoremProving",
+        "#AIResearch",
+        "#arXiv"
+      ],
+      "paper_id": "2026-07-24-arxiv-piml_ofem_a_new_large_scale_structural_analysis_method_based_on_problem_independent_machin",
+      "paper_title": "PIML-OFEM: A New Large-Scale Structural Analysis Method Based on Problem-Independent Machine Learning and Overlapping Finite Element Technique",
+      "paper_date": "2026-07-24",
+      "paper_category": "Geometry and Topology",
+      "generated_at": "2026-07-27T15:42:46",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-24-arxiv-causalforge_a_formally_grounded_self_improving_agentic_framework_for_automated_research_in",
+    "arxiv_id": "2607.22511v1",
+    "date": "2026-07-24",
+    "title": "CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference",
+    "authors": "Jiyuan Tan, Vasilis Syrgkanis",
+    "abstract": "Automating theoretical research is constrained not only by the generation of candidate results, but also by their reliable evaluation. A common approach is to close the research loop with a large language model (LLM) reviewer. However, such reviewers remain empirically unreliable: they may accept fabricated papers and detect them at rates close to chance (Bad Scientist, 2025). We present CausalForge, a framework for automated theoretical research in causal inference grounded in the Lean proof assistant. CausalForge combines Causalean, a foundational Lean library for causal inference containing 7,035 machine-checked declarations developed with language-model assistance under human design and review, with CausalSmith, a self-improving agentic pipeline that selects research topics, proposes results, formalizes statements, constructs proofs, and presents the resulting artifacts for human inspection. Because a machine-checked proof establishes only that a formal statement follows from its assumptions, not that the statement faithfully captures the intended scientific claim, the pipeline augments kernel verification with a statement audit that compares each formal theorem against the informal claim it is intended to express. We evaluate the system using artifacts produced by completed autonomous research runs. The source code, formal library, and run records are available at https://github.com/Jiyuan-Tan/CausalForge.",
+    "category": "Theorem Proving",
+    "source": "arXiv",
+    "published": "2026-07-24T17:32:35Z",
+    "updated": "2026-07-24T17:32:35Z",
+    "primary_category": "stat.ML",
+    "categories": [
+      "stat.ML",
+      "cs.AI",
+      "cs.LG",
+      "econ.EM"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.22511v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.22511v1"
+      }
+    ],
+    "score": 72,
+    "infographic": {
+      "key_insight": "Automating theoretical research is constrained not only by the generation of candidate results, but also by their reliable evaluation.",
+      "engineering_relevance": "Potential relevance: theorem proving workflows and research evaluation.",
+      "method": [
+        "AI math paper selected from recent arXiv submissions.",
+        "Ranked by recency plus AI and math relevance signals.",
+        "Use the linked paper for methods, data, and validation details."
+      ],
+      "evidence_signal": "Evidence details are summarized from the public abstract only.",
+      "watch_item": "Review the full paper for governing assumptions, validation data, and generalization limits.",
+      "hashtags": [
+        "#AIMath",
+        "#Mathematics",
+        "#TheoremProving",
+        "#AIResearch",
+        "#arXiv"
+      ],
+      "paper_id": "2026-07-24-arxiv-causalforge_a_formally_grounded_self_improving_agentic_framework_for_automated_research_in",
+      "paper_title": "CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference",
+      "paper_date": "2026-07-24",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-07-27T15:44:16",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-23-arxiv-a_defense_of_the_quadratic_model",
+    "arxiv_id": "2607.21716v1",
+    "date": "2026-07-23",
+    "title": "A Defense of the Quadratic Model",
+    "authors": "Alexandru Meterez, Pranav Ajit Nair, Depen Morwani, Cengiz Pehlevan, Sham Kakade, Alex Damian",
+    "abstract": "Due to the complexity of neural network loss landscapes, optimization theory is forced to rely on idealized models, and there is generally a tradeoff between how theoretically tractable the model is, and how accurately it describes the true optimization dynamics. In this work, we stress test the simplest possible model of optimization -- the quadratic model -- and show that it can be surprisingly predictive in an LLM setting with 150M parameters and 3B training tokens. Specifically, we show that Taylor expanding the model and the loss function at intermediate checkpoints through training can accurately predict the optimization dynamics over windows that can last up to 10\\% of training. Having established this agreement, we then turn to analyzing the structure of these local quadratic optimization problems through two lenses: the Hessian spectrum and local stability. Using Lanczos quadrature with extremely deep probes, we are able to estimate the Hessian spectrum deep into the tail, and we find a surprising amount of structure in both the eigenvalues and eigenvectors, which depends on the batch size, preconditioner, and training time. We also empirically test local linear stability at intermediate checkpoints and compare it to theoretical predictions to demonstrate that optimization in LLMs typically occurs at a stochastic edge of stability, whose nature is also determined by batch size. Our results indicate the quadratic model may be a theoretically tractable proxy for pretraining optimization dynamics.",
+    "category": "Optimization and PDEs",
+    "source": "arXiv",
+    "published": "2026-07-23T18:02:03Z",
+    "updated": "2026-07-23T18:02:03Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "math.OC",
+      "stat.ML"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.21716v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.21716v1"
+      }
+    ],
+    "score": 68,
+    "infographic": {
+      "key_insight": "A local quadratic approximation can meaningfully predict LLM pretraining dynamics over surprisingly long training windows, making it a useful proxy for optimization behavior.",
+      "engineering_relevance": "This suggests practitioners can analyze and potentially monitor large-scale training using tractable local curvature models, Hessian spectra, and stability diagnostics without fully simulating the full loss landscape.",
+      "method": [
+        "Taylor-expand the model and loss around intermediate checkpoints to form local quadratic optimization problems.",
+        "Estimate deep Hessian spectral structure using Lanczos quadrature with very deep probes.",
+        "Evaluate local linear stability and compare it with theoretical edge-of-stability predictions across batch sizes and preconditioners."
+      ],
+      "evidence_signal": "On a 150M-parameter model trained on 3B tokens, the quadratic model predicted optimization dynamics accurately over windows lasting up to 10% of training.",
+      "watch_item": "The conclusions are local and checkpoint-dependent, so the proxy may break down outside the tested windows or when training setup, batch size, or preconditioner changes substantially.",
+      "hashtags": [
+        "#Optimization",
+        "#QuadraticModel",
+        "#HessianSpectrum",
+        "#LLMTraining",
+        "#EdgeOfStability"
+      ],
+      "paper_id": "2026-07-23-arxiv-a_defense_of_the_quadratic_model",
+      "paper_title": "A Defense of the Quadratic Model",
+      "paper_date": "2026-07-23",
+      "paper_category": "Optimization and PDEs",
+      "generated_at": "2026-07-27T15:44:20",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-23-arxiv-profiling_lightweight_large_language_models",
+    "arxiv_id": "2607.20806v1",
+    "date": "2026-07-23",
+    "title": "Profiling Lightweight Large Language Models",
+    "authors": "Tomohiro Harada, Enrique Alba, Gabriel Luque",
+    "abstract": "Lightweight large language models (LLMs) are increasingly being deployed locally on personal computers and are expected to play a growing role in resource-constrained edge and mobile environments. In such settings, energy consumption, execution time, and memory usage directly affect practical usability, yet existing evaluations of LLM efficiency largely rely on proxy descriptors such as parameter count or FLOPs, often decoupled from task precision. This paper introduces a PTME-based experimental framework for the precision-aware profiling of lightweight LLM inference, jointly measuring Precision, execution Time, peak Memory usage, and Energy consumption through direct hardware-level measurements. The methodology is applied to a representative set of lightweight LLMs executed locally under edge-class resource envelopes on a controlled desktop platform, using benchmarks spanning code generation, mathematical reasoning, and multi-task understanding. We find that static proxy descriptors approximate inference cost well but fail to predict precision. Tightening the resource envelope increases cost without affecting precision, amplifying execution time more strongly than energy and penalizing larger models the most. Moreover, no single model dominates across all PTME dimensions, and a Pareto analysis reveals non-dominated configurations that would be hidden by accuracy-only or efficiency-only assessments, providing practical guidance for selecting models under different resource envelopes. These results show that selecting lightweight LLMs by size, FLOPs, latency, or accuracy alone can select the wrong deployment candidate; PTME profiling exposes configurations that preserve useful accuracy at lower physical cost.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-07-23T00:24:22Z",
+    "updated": "2026-07-23T00:24:22Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.20806v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.20806v1"
+      }
+    ],
+    "score": 65,
+    "infographic": {
+      "key_insight": "Lightweight large language models (LLMs) are increasingly being deployed locally on personal computers and are expected to play a growing role in resource-constrained edge and mobile environments.",
+      "engineering_relevance": "Potential relevance: mathematical reasoning workflows and research evaluation.",
+      "method": [
+        "AI math paper selected from recent arXiv submissions.",
+        "Ranked by recency plus AI and math relevance signals.",
+        "Use the linked paper for methods, data, and validation details."
+      ],
+      "evidence_signal": "Evidence details are summarized from the public abstract only.",
+      "watch_item": "Review the full paper for governing assumptions, validation data, and generalization limits.",
+      "hashtags": [
+        "#AIMath",
+        "#Mathematics",
+        "#TheoremProving",
+        "#AIResearch",
+        "#arXiv"
+      ],
+      "paper_id": "2026-07-23-arxiv-profiling_lightweight_large_language_models",
+      "paper_title": "Profiling Lightweight Large Language Models",
+      "paper_date": "2026-07-23",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-07-27T15:45:50",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-22-arxiv-pyrodash_cost_efficient_token_level_small_large_language_model_collaborative_inference",
+    "arxiv_id": "2607.20327v1",
+    "date": "2026-07-22",
+    "title": "PyroDash: Cost-Efficient Token-Level Small-Large Language Model Collaborative Inference",
+    "authors": "Niqi Lyu, Pengtao Shi, Wei Qiu, Jianlin Zhong, Sicong Xia, Jianyao Ma",
+    "abstract": "Large language models (LLMs) provide strong reasoning capabilities but are expensive to serve at scale, whereas small language models (SLMs) are cheaper but less reliable on difficult problems. We introduce PyroDash, a cost-aware framework for token-level SLM-LLM collaborative inference. During generation, the SLM decides whether to request assistance by emitting a control token. A Collaborate Engine then sends the query and partial reasoning trace to a frozen LLM for completion through a single handoff. The policy is internalized in the SLM, requiring neither a separate router, LLM retraining, nor access to LLM logits. PyroDash trains the SLM in three stages: control-token embedding learning, offloading-oriented supervised fine-tuning, and cost-aware alignment with Group Relative Policy Optimization. Its reward balances answer accuracy against inference cost normalized by LLM-only inference. Across five mathematical reasoning benchmarks, PyroDash supports different accuracy-cost operating points. With $λ=0.05$, it achieves 64.04 percent average accuracy, 6.36 percentage points above the LLM-only baseline, while reducing cost by 20.4 percent. With $λ=0.6$, it achieves 54.55 percent accuracy with a 1.90 percent LLM token ratio and 0.012 LLM calls per example, reducing total cost from USD 49.36 to USD 1.78. These results show that learned token-level handoffs can reduce LLM use while preserving strong reasoning performance.",
+    "category": "Number Theory and Algebra",
+    "source": "arXiv",
+    "published": "2026-07-22T16:14:26Z",
+    "updated": "2026-07-22T16:14:26Z",
+    "primary_category": "cs.CL",
+    "categories": [
+      "cs.CL"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.20327v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.20327v1"
+      }
+    ],
+    "score": 65,
+    "infographic": {
+      "key_insight": "PyroDash lets a small language model decide token-by-token when to hand off difficult reasoning to a frozen large model, reducing LLM usage while keeping strong math performance.",
+      "engineering_relevance": "It offers a practical, cost-aware inference design for scalable reasoning systems by internalizing routing inside the SLM and avoiding separate routers, LLM retraining, or LLM logit access.",
+      "method": [
+        "SLM emits a control token to request LLM assistance during generation.",
+        "A Collaborate Engine sends the query plus partial reasoning trace to the frozen LLM for a single completion handoff.",
+        "Training uses three stages: control-token embedding learning, offloading-oriented supervised fine-tuning, and cost-aware alignment with Group Relative Policy Optimization."
+      ],
+      "evidence_signal": "Across five mathematical reasoning benchmarks, PyroDash trades off accuracy and cost; at λ=0.05 it reaches 64.04% average accuracy with 20.4% lower cost, and at λ=0.6 it cuts cost from USD 49.36 to USD 1.78.",
+      "watch_item": "Performance depends on the learned control-token policy, so miscalibrated handoffs or distribution shifts could increase LLM calls or reduce reasoning accuracy.",
+      "hashtags": [
+        "#LLM",
+        "#SLM",
+        "#CostEfficientInference",
+        "#MathematicalReasoning",
+        "#TokenLevelRouting"
+      ],
+      "paper_id": "2026-07-22-arxiv-pyrodash_cost_efficient_token_level_small_large_language_model_collaborative_inference",
+      "paper_title": "PyroDash: Cost-Efficient Token-Level Small-Large Language Model Collaborative Inference",
+      "paper_date": "2026-07-22",
+      "paper_category": "Number Theory and Algebra",
+      "generated_at": "2026-07-27T15:45:53",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-24-arxiv-a_physics_informed_neural_network_for_improving_surface_reconstruction_of_intracranial_sac",
+    "arxiv_id": "2607.22055v1",
+    "date": "2026-07-24",
+    "title": "A physics-informed neural network for improving surface reconstruction of intracranial saccular aneurysms via variational membrane equilibrium",
+    "authors": "Hyomin Ryu, Seung Hwan Kim, Jaemin Kim",
+    "abstract": "Intracranial saccular aneurysms (ISAs) pose severe health risks, yet conventional population-based risk stratification scores (PHASES, UIATS, and ELAPSS) offer limited capacity for patient-specific rupture risk assessment. Image-based computational approaches have gained prominence, but traditional surface reconstruction relies on mathematical smoothing (e.g., L-curve criteria) that indiscriminately suppresses both imaging artifacts and genuine pathological features such as rupture-prone blebs. Although Laplace's membrane equilibrium ($κ_1 T_1 + κ_2 T_2 = P$) has long governed aneurysm wall mechanics (Humphrey and Kyriacou [Neurol. Res., 18 (1996)]), its integration into geometric reconstruction pipelines remains unexplored. This work introduces a physics-informed neural network (PINN) framework with B-spline representations, whose key contributions are: (i) embedding the variational equilibrium condition ($δΠ= 0$) as a physics-informed loss that replaces the mathematical L-curve criterion with a biomechanically grounded artifact discrimination, (ii) developing a Manifold-Consistent CNN ansatz that preserves the closed-surface topology of vascular geometries, and (iii) establishing a Laplace equilibrium-driven reconstruction that filters imaging noise while preserving diagnostically critical high-curvature features. Application to patient-specific clinical datasets demonstrates that the framework eliminates non-physical concave artifacts without compromising genuine geometric anomalies. Clinical evaluation by a practicing neurosurgeon confirms that the resulting risk map---with rupture risk concentrated at the dome apex---is consistent with intraoperative observations, establishing a computational biomarker foundation for patient-specific rupture risk assessment of intracranial saccular aneurysms.",
+    "category": "Geometry and Topology",
+    "source": "arXiv",
+    "published": "2026-07-24T07:48:07Z",
+    "updated": "2026-07-24T07:48:07Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.22055v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.22055v1"
+      }
+    ],
+    "score": 62,
+    "infographic": {
+      "key_insight": "The paper replaces heuristic smoothing in aneurysm surface reconstruction with a physics-informed neural network that enforces Laplace membrane equilibrium to preserve real high-curvature features while removing imaging artifacts.",
+      "engineering_relevance": "This offers a geometry-aware, biomechanics-grounded reconstruction pipeline for patient-specific vascular models that can improve downstream rupture-risk assessment and clinical interpretation.",
+      "method": [
+        "Encode aneurysm surfaces with B-spline geometry.",
+        "Train a PINN using a variational equilibrium loss (δΠ = 0) instead of an L-curve smoothing rule.",
+        "Use a manifold-consistent CNN ansatz to preserve closed-surface topology and suppress non-physical artifacts."
+      ],
+      "evidence_signal": "On patient-specific clinical datasets, the method removed non-physical concave artifacts while preserving true geometric anomalies, and a neurosurgeon judged the resulting dome-apex risk map consistent with intraoperative observations.",
+      "watch_item": "Performance depends on the quality of imaging data and the fidelity of the physics prior, so overconstraining the model could still mask subtle but real anatomy if the equilibrium assumptions are violated.",
+      "hashtags": [
+        "#PhysicsInformedNN",
+        "#MedicalImaging",
+        "#SurfaceReconstruction",
+        "#Aneurysm",
+        "#ComputationalBiology"
+      ],
+      "paper_id": "2026-07-24-arxiv-a_physics_informed_neural_network_for_improving_surface_reconstruction_of_intracranial_sac",
+      "paper_title": "A physics-informed neural network for improving surface reconstruction of intracranial saccular aneurysms via variational membrane equilibrium",
+      "paper_date": "2026-07-24",
+      "paper_category": "Geometry and Topology",
+      "generated_at": "2026-07-27T15:45:56",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-24-arxiv-learning_as_reasoning_unfolds_progressive_rollout_allocation_for_efficient_reinforcement_l",
+    "arxiv_id": "2607.22002v1",
+    "date": "2026-07-24",
+    "title": "Learning as Reasoning Unfolds: Progressive Rollout Allocation for Efficient Reinforcement Learning",
+    "authors": "Heyang Jiang, Henry Liu, Baharan Mirzasoleiman",
+    "abstract": "Reinforcement learning with verifiable rewards (RLVR) has emerged as a highly effective framework for improving LLM reasoning, with methods such as GRPO among its most successful instantiations. However, GRPO relies on repeated generation of long chain-of-thought rollouts. Training time scales with the number of rollouts, a large fraction of which are uninformative. Thus, GRPO is computationally expensive and unstable. To mitigate this, existing approaches either generate a larger pool of rollouts and filter the most informative prompts, or leverage historical signals for filtering at later stages of training. These strategies offer modest performance gains, but slow down the overall process. To address this, we propose VarIance Guided Online Rollout allocation (VIGOR) which instead of allocating a fixed rollout budget per example, begins with a small number of rollouts for all examples in a batch and iteratively allocates additional rollouts to those with the highest group reward variance until a fixed total rollout budget is reached. Theoretically, we show that under RLVR, reward variance controls the gradient magnitude, and derive VIGOR's closed-form speedup ratio over GRPO, which grows with refinement rounds under Pareto-distributed reward variance. Experiments on mathematical reasoning and coding tasks show that VIGOR reaches target accuracy with up to 2.3$\\times$ fewer rollouts on math, reaches GRPO's final coding full pass rate with 1.49$\\times$ fewer rollouts, and improves the coding average test pass rate by 3.4 points.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-07-24T06:04:04Z",
+    "updated": "2026-07-24T06:04:04Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.22002v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.22002v1"
+      }
+    ],
+    "score": 62,
+    "infographic": {
+      "key_insight": "VIGOR makes RLVR training more efficient by adaptively giving extra rollouts only to prompts whose reward variance suggests they will contribute the most learning signal.",
+      "engineering_relevance": "This reduces the compute cost and instability of long-chain reasoning training while preserving or improving model performance, making large-scale LLM reinforcement learning more practical.",
+      "method": [
+        "Start with a small rollout budget for every example in a batch.",
+        "Measure group reward variance and iteratively allocate extra rollouts to the highest-variance examples.",
+        "Stop when a fixed total rollout budget is reached, rather than using a fixed per-example budget."
+      ],
+      "evidence_signal": "Across mathematical reasoning and coding benchmarks, VIGOR achieved target math accuracy with up to 2.3× fewer rollouts, matched GRPO’s final coding full-pass rate with 1.49× fewer rollouts, and improved coding average test pass rate by 3.4 points.",
+      "watch_item": "The approach depends on reward variance as a proxy for learning value, so noisy reward estimates or poorly calibrated verifiers could reduce its benefit in practice.",
+      "hashtags": [
+        "#ReinforcementLearning",
+        "#LLMReasoning",
+        "#EfficientTraining",
+        "#RolloutAllocation",
+        "#MathematicalReasoning"
+      ],
+      "paper_id": "2026-07-24-arxiv-learning_as_reasoning_unfolds_progressive_rollout_allocation_for_efficient_reinforcement_l",
+      "paper_title": "Learning as Reasoning Unfolds: Progressive Rollout Allocation for Efficient Reinforcement Learning",
+      "paper_date": "2026-07-24",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-07-27T15:45:59",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-23-arxiv-parametric_neural_r_adaptivity_for_isogeometric_analysis_via_residual_minimization",
+    "arxiv_id": "2607.21753v1",
+    "date": "2026-07-23",
+    "title": "Parametric Neural r-Adaptivity for Isogeometric Analysis via Residual Minimization",
+    "authors": "Elías Caru, David Pardo, Judit Muñoz-Matute",
+    "abstract": "We propose an r-adaptive neural algorithm for Isogeometric Analysis (IGA) based on residual minimization. The boundary-value problem is solved using a standard conforming Galerkin formulation, while a neural network relocates the interior knots. A strong-form residual in the sense of physics-informed neural networks (PINNs) controls a norm stronger than the energy (H^1) error. We therefore weight it by classical a posteriori theory: element residuals scaled by the local mesh size, interface flux jumps, and Neumann boundary residuals yield a computable estimator of the energy error, which we minimize with respect to the knots. For coercive problems on admissible mesh families, this estimator is reliable and locally efficient up to oscillation terms; beyond that regime, the same loss remains well-defined and extends differentiable r-adaptivity to indefinite and advection-dominated problems. In the parametric setting, the network maps each parameter to a knot-density function in a single evaluation; since it outputs a density rather than a fixed-dimensional vector of knot locations, one trained network produces an admissible mesh at any refinement level. Mesh gradients are obtained by reverse-mode automatic differentiation through the discrete solution equation. Numerical experiments in one and two dimensions illustrate that the method concentrates degrees of freedom near singularities, material interfaces, and boundary layers, improving accuracy for a fixed number of degrees of freedom.",
+    "category": "Symbolic Computation",
+    "source": "arXiv",
+    "published": "2026-07-23T19:05:46Z",
+    "updated": "2026-07-23T19:05:46Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.21753v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.21753v1"
+      }
+    ],
+    "score": 62,
+    "infographic": {
+      "key_insight": "A neural network learns parameter-dependent knot densities to move IGA mesh points by minimizing a residual-based a posteriori energy-error estimator.",
+      "engineering_relevance": "This enables automated r-adaptivity that can place degrees of freedom where they matter most, improving accuracy for singularities, interfaces, and boundary layers at fixed mesh size.",
+      "method": [
+        "Solve the PDE with standard conforming Galerkin isogeometric analysis.",
+        "Use a neural network to map each problem parameter to a knot-density function and relocate interior knots.",
+        "Minimize a differentiable residual loss built from element residuals, flux jumps, and Neumann boundary terms via reverse-mode autodiff."
+      ],
+      "evidence_signal": "The abstract reports one- and two-dimensional numerical experiments showing improved accuracy and degree-of-freedom concentration near difficult solution features.",
+      "watch_item": "The estimator is guaranteed reliable/efficient only for coercive problems on admissible meshes; beyond that, the loss is still usable but theoretical error control is weaker.",
+      "hashtags": [
+        "#IsogeometricAnalysis",
+        "#AdaptiveMeshing",
+        "#PINNs",
+        "#ResidualMinimization",
+        "#ScientificMachineLearning"
+      ],
+      "paper_id": "2026-07-23-arxiv-parametric_neural_r_adaptivity_for_isogeometric_analysis_via_residual_minimization",
+      "paper_title": "Parametric Neural r-Adaptivity for Isogeometric Analysis via Residual Minimization",
+      "paper_date": "2026-07-23",
+      "paper_category": "Symbolic Computation",
+      "generated_at": "2026-07-27T15:46:02",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-22-arxiv-end_to_end_learning_of_safe_optimal_feedback_control_in_high_dimensions_with_control_barri",
+    "arxiv_id": "2607.20674v1",
+    "date": "2026-07-22",
+    "title": "End-to-End Learning of Safe Optimal Feedback Control in High Dimensions with Control Barrier Function Layers",
+    "authors": "Xingjian Li, Kelvin Kan, Deepanshu Verma, Krishna Kumar, Stanley Osher, Samy Wu Fung",
+    "abstract": "We consider the problem of learning high-dimensional semi-global feedback controllers under hard safety constraints enforced by control barrier functions (CBFs). Incorporating CBFs into end-to-end policy training requires embedding a quadratic-program-based safety filter as an optimization layer, but computational and differentiation bottlenecks have largely restricted prior approaches to low-dimensional systems, typically with at most 16 state dimensions. We address this limitation by combining operator splitting with the recently developed Jacobian-Free Backpropagation (JFB) method to enable scalable end-to-end training while preserving hard safety guarantees through the CBF safety filter. We justify this training methodology theoretically using nonsmooth analysis techniques and demonstrate its effectiveness on high-dimensional multi-agent nonlinear control problems with state and control dimensions up to 1200 and 400, respectively.",
+    "category": "Optimization and PDEs",
+    "source": "arXiv",
+    "published": "2026-07-22T19:17:11Z",
+    "updated": "2026-07-22T19:17:11Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "eess.SY",
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.20674v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.20674v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "The paper enables end-to-end training of high-dimensional feedback controllers with hard safety guarantees by combining control barrier function layers, operator splitting, and Jacobian-Free Backpropagation.",
+      "engineering_relevance": "This makes safe learning-based control more scalable for large multi-agent and nonlinear systems where conventional CBF-based training was previously too computationally expensive.",
+      "method": [
+        "Embed a QP-based control barrier function safety filter as a differentiable optimization layer.",
+        "Use operator splitting to make the safety-layer computation scalable in high dimensions.",
+        "Apply Jacobian-Free Backpropagation to reduce differentiation overhead during end-to-end policy training."
+      ],
+      "evidence_signal": "The abstract reports successful demonstrations on high-dimensional multi-agent nonlinear control problems with state dimensions up to 1200 and control dimensions up to 400.",
+      "watch_item": "The approach still depends on solving a QP-based safety filter online, so runtime stability and solver robustness may be critical in real deployments.",
+      "hashtags": [
+        "#ControlBarrierFunctions",
+        "#SafeLearning",
+        "#OptimizationLayers",
+        "#JacobianFreeBackprop",
+        "#HighDimensionalControl"
+      ],
+      "paper_id": "2026-07-22-arxiv-end_to_end_learning_of_safe_optimal_feedback_control_in_high_dimensions_with_control_barri",
+      "paper_title": "End-to-End Learning of Safe Optimal Feedback Control in High Dimensions with Control Barrier Function Layers",
+      "paper_date": "2026-07-22",
+      "paper_category": "Optimization and PDEs",
+      "generated_at": "2026-07-27T15:46:05",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-22-arxiv-a_phase_field_neural_solver_for_moving_contact_line_problems_with_dynamic_boundary_conditi",
+    "arxiv_id": "2607.19690v1",
+    "date": "2026-07-22",
+    "title": "A phase-field neural solver for moving contact line problems with dynamic boundary conditions",
+    "authors": "Ziyan Chen, Jinpeng Zhang, Pai Zhang, Li Luo",
+    "abstract": "Phase-field models based on the Cahn--Hilliard equation coupled with dynamic boundary conditions provide a thermodynamically consistent framework for moving contact line (MCL) problems. Although physics-informed neural networks (PINNs) offer a mesh-free approach for solving partial differential equations, their direct application to MCL problems remains challenging due to long-time error accumulation, sharp interfacial profiles, localized contact line dynamics, and complex contact angle evolution. In this work, we propose MCL-PINNs, a specialized phase-field neural solver designed for MCL problems with dynamic boundary conditions. The method is built on a discrete-time formulation and incorporates several key techniques, including a multi-network time-marching scheme, a relaxed distribution constraint on the neural network outputs, variable scaling for sharply varying solution features, adaptive loss weighting, adaptive collocation sampling with interface extraction, and, when applicable, symmetry preservation through neural network inputs. These techniques improve the capability of the neural solver in resolving sharp interfacial profiles and contact line motion. The proposed method is validated through three numerical examples involving droplet coalescence, shear-induced droplet deformation, and dynamic wetting in a heterogeneous channel. The numerical results show that MCL-PINNs significantly improve prediction accuracy and robustness compared with standard PINNs formulations, enabling reliable resolution of complex interfacial evolution and moving contact line dynamics.",
+    "category": "Symbolic Computation",
+    "source": "arXiv",
+    "published": "2026-07-22T02:39:58Z",
+    "updated": "2026-07-22T02:39:58Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.19690v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.19690v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "MCL-PINNs is a phase-field neural solver that combines discrete-time PINNs with specialized training tricks to reliably capture moving contact lines and sharp interface evolution under dynamic boundary conditions.",
+      "engineering_relevance": "It offers a mesh-free, physics-informed tool for simulating wetting, coalescence, and droplet deformation in interfacial fluid systems where standard PINNs struggle.",
+      "method": [
+        "Multi-network time marching to reduce long-time error accumulation",
+        "Relaxed output distribution constraints and variable scaling for sharp phase-field features",
+        "Adaptive loss weighting plus interface-focused collocation sampling; symmetry inputs when applicable"
+      ],
+      "evidence_signal": "The method is validated on three numerical cases—droplet coalescence, shear-induced droplet deformation, and dynamic wetting in a heterogeneous channel—and is reported to outperform standard PINN formulations.",
+      "watch_item": "Performance may depend on careful tuning of scaling, adaptive sampling, and loss weights, especially for highly localized contact-line dynamics.",
+      "hashtags": [
+        "#PINNs",
+        "#PhaseField",
+        "#CahnHilliard",
+        "#MovingContactLine",
+        "#ComputationalFluidDynamics"
+      ],
+      "paper_id": "2026-07-22-arxiv-a_phase_field_neural_solver_for_moving_contact_line_problems_with_dynamic_boundary_conditi",
+      "paper_title": "A phase-field neural solver for moving contact line problems with dynamic boundary conditions",
+      "paper_date": "2026-07-22",
+      "paper_category": "Symbolic Computation",
+      "generated_at": "2026-07-27T15:46:07",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-22-arxiv-pg_kinn_a_physics_informed_petrov_galerkin_kolmogorov_arnold_network_for_solving_forward_a",
+    "arxiv_id": "2607.20378v1",
+    "date": "2026-07-22",
+    "title": "PG-KINN: A Physics-Informed Petrov-Galerkin Kolmogorov-Arnold Network for Solving Forward and Inverse PDEs",
+    "authors": "Amirhossein Sadr, Nima Soltani, Vahideh Moghtadaiee, Aida Pakniyat, Dara Rahmati, Saeid Gorgin",
+    "abstract": "Physics-informed learning of partial differential equations (PDEs) has been dominated by multilayer perceptrons (MLPs), whose spectral bias and dense parameterization limit both accuracy and interpretability. Kolmogorov Arnold Networks (KANs) mitigate these limitations because their learnable spline activations are structurally aligned with the piecewise-polynomial bases of classical discretizations. However, the way a PDE is cast into a loss functional is as decisive as the choice of approximator: strong-form residual minimization requires high-order derivatives and heavily weighted losses, the energy (Bubnov-Galerkin) form is restricted to self-adjoint operators and, as we show, collapses to a trivial solution for parameter-identification problems, and boundary integral forms require a known fundamental solution. We propose PG-KINN, a physics-informed KAN built on a Petrov-Galerkin formulation in which the trial space is a KAN and the test space is an independent, compactly supported, piecewise-polynomial space evaluated with Gauss-Legendre quadrature. Integration by parts lowers the differentiation order while retaining applicability to general non-self-adjoint, nonlinear, and inverse problems; the localized test functions turn the global residual into a set of element-wise weak residuals with favorable conditioning. On a suite of benchmarks spanning crack singularities, stress concentration, Neo-Hookean hyperelasticity, inverse parameter identification in heterogeneous media, and complex geometries, PG-KINN consistently outperforms legacy MLP baselines and state-of-the-art KAN-based strong/energy/inverse formulations (PIKAN). These results position the Petrov-Galerkin coupling of KAN trial spaces and polynomial test spaces as a robust and accurate route for AI-based computational mechanics.",
+    "category": "Optimization and PDEs",
+    "source": "arXiv",
+    "published": "2026-07-22T17:08:29Z",
+    "updated": "2026-07-22T17:08:29Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.20378v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.20378v1"
+      }
+    ],
+    "score": 59,
+    "infographic": {
+      "key_insight": "PG-KINN pairs a Kolmogorov-Arnold Network trial function with an independent Petrov-Galerkin test space to solve PDEs more accurately and robustly than strong-form or energy-form physics-informed models.",
+      "engineering_relevance": "This gives computational mechanics and inverse-design workflows a more stable physics-informed solver for nonlinear, non-self-adjoint, and parameter-identification PDE problems.",
+      "method": [
+        "KAN as the trial space with learnable spline activations",
+        "Compactly supported piecewise-polynomial test functions in a Petrov-Galerkin weak form",
+        "Gauss-Legendre quadrature after integration by parts to reduce derivative order"
+      ],
+      "evidence_signal": "The abstract reports consistent gains on benchmarks including crack singularities, stress concentration, Neo-Hookean hyperelasticity, inverse heterogeneous-media identification, and complex geometries versus MLP and prior KAN baselines.",
+      "watch_item": "The approach depends on careful choice of test-space resolution and quadrature, so implementation details may strongly affect stability and accuracy.",
+      "hashtags": [
+        "#PhysicsInformedAI",
+        "#KolmogorovArnoldNetworks",
+        "#PetrovGalerkin",
+        "#PDEs",
+        "#ComputationalMechanics"
+      ],
+      "paper_id": "2026-07-22-arxiv-pg_kinn_a_physics_informed_petrov_galerkin_kolmogorov_arnold_network_for_solving_forward_a",
+      "paper_title": "PG-KINN: A Physics-Informed Petrov-Galerkin Kolmogorov-Arnold Network for Solving Forward and Inverse PDEs",
+      "paper_date": "2026-07-22",
+      "paper_category": "Optimization and PDEs",
+      "generated_at": "2026-07-27T15:46:10",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-23-arxiv-learning_to_recover_adaptive_local_branching_with_reinforcement_learning_for_log_truck_rou",
+    "arxiv_id": "2607.20901v1",
+    "date": "2026-07-23",
+    "title": "Learning to recover: Adaptive local branching with reinforcement learning for log-truck routing and scheduling under disruptions",
+    "authors": "Abdelhakim Abdellaoui, Issmail El Hallaoui, Loubna Benabbou, François Aubé, Mouloud Amazouz",
+    "abstract": "We consider the real-time reoptimisation of log-truck routing and scheduling in the Canadian forestry industry following unforeseen disruptions. Road closures, vehicle breakdowns, travel delays, and demand fluctuations invalidate pre-established tactical plans and call for recovery decisions that simultaneously restore feasibility and limit deviation from the original schedule, two objectives inherently in tension under tight time constraints. We formulate recovery as a sequence of neighbourhood-restricted mixed-integer linear programs parameterised by a deviation bound $k$, the $\\ell_1$ distance between the recovered and baseline plans. We show that the minimum feasible value $k_{\\min}$ can be computed exactly, anchoring the search at its most stable extreme. Rather than targeting a single $k$, we seek a Pareto front of non-dominated recovery plans spanning the stability--cost space, giving dispatchers a structured set of operational options. To navigate this space efficiently, we propose a reinforcement learning policy, trained with the REINFORCE policy-gradient algorithm, that adaptively selects successive values of $k$ from solver feedback, concentrating computational effort in productive regions and terminating exploration when further improvement is unlikely. Evaluated on weekly instances derived from historical data of a Canadian forestry partner, under disruption scenarios covering all event categories considered, the approach recovers richer Pareto fronts with fewer solver calls than fixed-$k$ grid and dichotomic search baselines, and produces feasible recovery plans within operationally acceptable reoptimization times across all configurations and disruption types.",
+    "category": "Number Theory and Algebra",
+    "source": "arXiv",
+    "published": "2026-07-23T03:51:29Z",
+    "updated": "2026-07-23T03:51:29Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.20901v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.20901v1"
+      }
+    ],
+    "score": 57,
+    "infographic": {
+      "key_insight": "The paper uses reinforcement learning to adaptively choose neighborhood size in recovery optimization, finding high-quality feasible log-truck schedules faster than fixed search strategies.",
+      "engineering_relevance": "It offers a practical decision-support method for dispatchers to quickly replan transportation operations after disruptions while balancing schedule stability and operating cost.",
+      "method": [
+        "Formulate recovery as a sequence of MILPs constrained by an _1 deviation bound k from the baseline plan.",
+        "Compute the minimum feasible deviation k_min exactly to anchor the search at the most stable feasible point.",
+        "Train a REINFORCE policy to select successive k values from solver feedback and build a Pareto front of recovery options."
+      ],
+      "evidence_signal": "On weekly real-world instances from a Canadian forestry partner, the method produced richer Pareto fronts with fewer solver calls than fixed-grid and dichotomic baselines across all disruption categories.",
+      "watch_item": "The approach depends on reliable solver feedback and trained policy behavior, so performance may vary when disruption patterns or instance structure differ from the training and evaluation data.",
+      "hashtags": [
+        "#ReinforcementLearning",
+        "#MILP",
+        "#Optimization",
+        "#Logistics",
+        "#DisruptionRecovery"
+      ],
+      "paper_id": "2026-07-23-arxiv-learning_to_recover_adaptive_local_branching_with_reinforcement_learning_for_log_truck_rou",
+      "paper_title": "Learning to recover: Adaptive local branching with reinforcement learning for log-truck routing and scheduling under disruptions",
+      "paper_date": "2026-07-23",
+      "paper_category": "Number Theory and Algebra",
+      "generated_at": "2026-07-27T15:46:13",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-24-arxiv-remedying_coarsening_based_gnn_training_under_heterophily_via_adaptive_complementary_enhan",
+    "arxiv_id": "2607.21885v1",
+    "date": "2026-07-24",
+    "title": "Remedying Coarsening-Based GNN Training under Heterophily via Adaptive Complementary Enhancement",
+    "authors": "Guoming Li, Jian Yang, Xukun Wang, Zixiao Wang, Shangsong Liang, Yifan Chen",
+    "abstract": "Coarsening-based training for graph neural networks (GNNs), i.e.\\ training on coarsened graphs rather than the original large ones, has become a promising direction for scaling GNNs to massive graphs. However, prior work has been evaluated almost exclusively on \\textit{homophilic} graphs, leaving the more challenging \\textit{heterophilic} settings underexplored. We show, both empirically and theoretically, that existing coarsening-based training methods suffer significant performance degradation on heterophilic graphs due to inevitable loss of graph information during coarsening. To address this, we propose {\\bf A}daptive {\\bf C}omplementary {\\bf E}nhancement, a plug-and-play, model-agnostic strategy that reintegrates the information discarded in coarsening: ACE learns a projector for re-constructing original node features and applies \\textit{anisotropic structural regularization} to embed local heterophily. We further adopt \\textit{homoscedastic uncertainty weighting} to adaptively balance the combined training objective of primary coarsened-graph training loss and full-graph auxiliary loss with augmented node features re-constructed by the heterophily-aware projector. Extensive experiments show that ACE drives consistent gains on heterophilic benchmarks while preserving competitive results on homophilic graphs with minimal computational overhead. Code is available at the GitHub repository: https://github.com/vasile-paskardlgm/ACE.",
+    "category": "Geometry and Topology",
+    "source": "arXiv",
+    "published": "2026-07-24T01:29:28Z",
+    "updated": "2026-07-24T01:29:28Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "eess.SP",
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.21885v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.21885v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "Coarsening-based GNN training can lose critical information on heterophilic graphs, and ACE fixes this by reconstructing discarded content with adaptive complementary enhancement.",
+      "engineering_relevance": "This provides a practical plug-and-play way to scale GNN training to large graphs without sacrificing accuracy in heterophilic settings.",
+      "method": [
+        "Learn a projector to reconstruct original node features from the coarsened graph.",
+        "Use anisotropic structural regularization to preserve local heterophily in the learned representation.",
+        "Balance coarsened-graph training and full-graph auxiliary training with homoscedastic uncertainty weighting."
+      ],
+      "evidence_signal": "The abstract reports extensive experiments showing consistent gains on heterophilic benchmarks while keeping competitive performance on homophilic graphs with minimal overhead.",
+      "watch_item": "Performance may depend on the quality of feature reconstruction and the added auxiliary objectives may introduce extra tuning complexity.",
+      "hashtags": [
+        "#GNN",
+        "#GraphCoarsening",
+        "#Heterophily",
+        "#GraphML",
+        "#ScalableAI"
+      ],
+      "paper_id": "2026-07-24-arxiv-remedying_coarsening_based_gnn_training_under_heterophily_via_adaptive_complementary_enhan",
+      "paper_title": "Remedying Coarsening-Based GNN Training under Heterophily via Adaptive Complementary Enhancement",
+      "paper_date": "2026-07-24",
+      "paper_category": "Geometry and Topology",
+      "generated_at": "2026-07-27T15:46:16",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-23-arxiv-smart_predict_then_robustly_optimize",
+    "arxiv_id": "2607.21773v1",
+    "date": "2026-07-23",
+    "title": "Smart predict-then-robustly-optimize",
+    "authors": "Aakil Caunhye, Xuefei Lu, Belen Martin-Barragan",
+    "abstract": "In this paper, we propose and study a robust variant of the smart predict-then-optimize approach that accounts for prediction shifts due to disturbance in the covariate feature space. While traditional integrated-learning-and-optimization models assume that side information is perfectly revealed, empirical data-driven features are frequently corrupted or noisy at the time of decision-making, leading to fragile operational policies. To bridge this gap, we integrate principles of robust optimization directly into the predictive-prescriptive pipeline via a smart predict-then-robustly optimize loss and establish a computationally tractable convex surrogate, designed to hedge against worst-case feature perturbations. On the theoretical front, we formalize the structural validity of this surrogate by proving its approximation error probability decays exponentially according to a sub-Gaussian concentration profile. Furthermore, we establish that under mild assumptions, the surrogate is Fisher consistent with high probability. We also prove necessary conditions under which our framework outperforms standard smart predict-then-optimize and maintain its superiority even when the standard method is equipped with regularized upstream predictions. Numerical experiments validate that our robust framework consistently yields significant performance improvements over standard methods, both in out-of-sample terms and in training stability.",
+    "category": "Theorem Proving",
+    "source": "arXiv",
+    "published": "2026-07-23T19:37:17Z",
+    "updated": "2026-07-23T19:37:17Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.21773v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.21773v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "The paper adds robust optimization to smart predict-then-optimize so decisions stay reliable when input features are noisy or disturbed at decision time.",
+      "engineering_relevance": "This is useful for real-world control and operations pipelines where forecasts feed decisions but the sensed covariates can shift, corrupting standard predictive-prescriptive models.",
+      "method": [
+        "Formulate a smart predict-then-robustly-optimize loss that guards against worst-case feature perturbations.",
+        "Derive a tractable convex surrogate to make the robust objective computationally practical.",
+        "Prove the surrogate has exponential error decay and is Fisher consistent with high probability under mild assumptions."
+      ],
+      "evidence_signal": "The abstract reports numerical experiments showing consistently better out-of-sample performance and improved training stability versus standard methods.",
+      "watch_item": "The robustness gains depend on the assumed perturbation model and mild theoretical conditions, so performance may weaken if real feature noise is outside that design envelope.",
+      "hashtags": [
+        "#RobustOptimization",
+        "#PredictThenOptimize",
+        "#ConvexSurrogate",
+        "#FisherConsistency",
+        "#DecisionMaking"
+      ],
+      "paper_id": "2026-07-23-arxiv-smart_predict_then_robustly_optimize",
+      "paper_title": "Smart predict-then-robustly-optimize",
+      "paper_date": "2026-07-23",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-07-27T15:46:19",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-22-arxiv-decentralized_online_riemannian_optimization_for_strongly_geodesically_convex_functions",
+    "arxiv_id": "2607.20316v1",
+    "date": "2026-07-22",
+    "title": "Decentralized Online Riemannian Optimization for Strongly Geodesically Convex Functions",
+    "authors": "Zhanyuan Cai, Emre Sahinoglu, Shahin Shahrampour",
+    "abstract": "We study decentralized online optimization for strongly geodesically convex (strongly g-convex) losses on Riemannian manifolds with bounded sectional curvature, including positively curved manifolds. In centralized Riemannian optimization, strong g-convexity tightens the optimal regret from $O(\\sqrt{T})$ to $O(\\log T)$, where $T$ is the time horizon; in the decentralized Riemannian setting, however, existing methods address only g-convex losses, leaving the strongly g-convex regime unexplored. One challenge is that the required decaying step size in the centralized regime is incompatible with existing network-error analyses, which typically assume a fixed step size. First, we provide a general network-error analysis for time-varying schedules. Next, we build on this analysis to establish the first $O(\\log T)$ static regret bound for decentralized online Riemannian gradient descent, matching the minimax-optimal rate for strongly-convex Euclidean online optimization. Finally, we prove the same $O(\\log T)$ regret bound for the two-point bandit feedback setting using novel strong subconvexity arguments for the smoothed versions of the loss functions.",
+    "category": "Geometry and Topology",
+    "source": "arXiv",
+    "published": "2026-07-22T16:03:43Z",
+    "updated": "2026-07-22T16:03:43Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC",
+      "cs.LG",
+      "cs.MA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.20316v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.20316v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "The paper extends decentralized online optimization on Riemannian manifolds to strongly geodesically convex losses and achieves the first logarithmic static regret guarantee in this setting.",
+      "engineering_relevance": "This provides a principled foundation for distributed learning and control on curved spaces, where communication-constrained agents need provable performance under time-varying online data.",
+      "method": [
+        "Generalize network-error analysis to handle time-varying, decaying step sizes.",
+        "Prove O(log T) static regret for decentralized online Riemannian gradient descent under strong g-convexity.",
+        "Extend the guarantee to two-point bandit feedback via strong subconvexity of smoothed losses."
+      ],
+      "evidence_signal": "The abstract reports theoretical regret bounds—O(log T) versus the usual O(√T)—and states the result is minimax-optimal in the strongly-convex online setting.",
+      "watch_item": "The guarantees rely on bounded sectional curvature and carefully scheduled step sizes, so practical performance may be sensitive to manifold geometry and network conditions.",
+      "hashtags": [
+        "#RiemannianOptimization",
+        "#DecentralizedLearning",
+        "#OnlineOptimization",
+        "#GeometricML",
+        "#RegretBounds"
+      ],
+      "paper_id": "2026-07-22-arxiv-decentralized_online_riemannian_optimization_for_strongly_geodesically_convex_functions",
+      "paper_title": "Decentralized Online Riemannian Optimization for Strongly Geodesically Convex Functions",
+      "paper_date": "2026-07-22",
+      "paper_category": "Geometry and Topology",
+      "generated_at": "2026-07-27T15:46:21",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-24-arxiv-explicit_iteration_complexity_of_exact_data_driven_inverse_optimization_for_integer_linear",
+    "arxiv_id": "2607.22263v1",
+    "date": "2026-07-24",
+    "title": "Explicit Iteration Complexity of Exact Data-Driven Inverse Optimization for Integer Linear Programs",
+    "authors": "Akira Kitaoka",
+    "abstract": "A data-driven inverse optimization problem (DDIOP) is the problem of estimating the objective-function parameters (weights) that explain observed optimal-solution data, and it arises in many applications, including integer linear programming (ILP). It is known that, by applying gradient-based optimization methods to the suboptimality loss, the inverse optimization of ILPs can be solved exactly within finitely many oracle iterations, and that the required number of iterations is bounded as $T=O(1/γ(\\ell_{\\mathrm{sub}})^2)$ in terms of a problem-dependent geometric constant $γ(\\ell_{\\mathrm{sub}})$. However, no means of bounding $γ(\\ell_{\\mathrm{sub}})$ from below as a function of the problem size has been available, and hence the number of iterations could not be given as an explicit function of the problem size. We therefore give, when the forward problem is an integer linear program (ILP), the number of iterations sufficient for projected subgradient descent applied to the suboptimality loss to achieve exact consistency with the observed data, as a fully explicit function of the number of samples, the dimension of the features, the ranges of the features, and the structure of the constraint coefficient matrix, up to polynomial factors in the basic constants (the diameter of the weight set, the step-size parameter, and the Lipschitz constant of the suboptimality loss).",
+    "category": "Optimization and PDEs",
+    "source": "arXiv",
+    "published": "2026-07-24T12:56:54Z",
+    "updated": "2026-07-24T12:56:54Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC",
+      "cs.AI",
+      "cs.LG",
+      "stat.ML"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.22263v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.22263v1"
+      }
+    ],
+    "score": 55,
+    "infographic": {
+      "key_insight": "The paper gives an explicit finite-iteration bound for exact data-driven inverse optimization of integer linear programs by turning an abstract geometric convergence rate into a problem-size-dependent iteration guarantee.",
+      "engineering_relevance": "This makes inverse modeling for ILP-based decision systems more predictable and deployable, since practitioners can estimate how much computation is needed to recover weights from observed optimal decisions.",
+      "method": [
+        "Uses projected subgradient descent on the suboptimality loss for inverse optimization.",
+        "Derives an explicit lower bound on the geometric constant \u0003b3(\u001ell_sub) in terms of sample size, feature dimension, feature ranges, and constraint-matrix structure.",
+        "Converts the previously implicit O(1/\u0003b3(\u001ell_sub)^2) iteration bound into a fully explicit complexity bound up to polynomial factors in standard constants."
+      ],
+      "evidence_signal": "The abstract reports a theoretical complexity result for ILP inverse optimization, showing exact consistency can be achieved in finitely many oracle iterations with an explicit bound derived from problem parameters.",
+      "watch_item": "The bound is explicit only up to polynomial factors in constants such as weight-set diameter, step size, and Lipschitz constant, so practical runtime can still depend strongly on these choices and on ILP structure.",
+      "hashtags": [
+        "#InverseOptimization",
+        "#IntegerLinearProgramming",
+        "#SubgradientDescent",
+        "#OptimizationTheory",
+        "#ComputationalMathematics"
+      ],
+      "paper_id": "2026-07-24-arxiv-explicit_iteration_complexity_of_exact_data_driven_inverse_optimization_for_integer_linear",
+      "paper_title": "Explicit Iteration Complexity of Exact Data-Driven Inverse Optimization for Integer Linear Programs",
+      "paper_date": "2026-07-24",
+      "paper_category": "Optimization and PDEs",
+      "generated_at": "2026-07-27T15:46:25",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-23-arxiv-be_consistent_enhancing_robust_visual_reasoning_in_lvlms_with_consistency_constraints",
+    "arxiv_id": "2607.21722v1",
+    "date": "2026-07-23",
+    "title": "Be Consistent! Enhancing Robust Visual Reasoning in LVLMs with Consistency Constraints",
+    "authors": "Liqiang Jing, Xiong Zhou, Siddharth Varia, Neha Anna John, Xinya Du, Vassilis N. Ioannidis",
+    "abstract": "While Large Vision-Language Models (LVLMs) exhibit strong perceptual capabilities, they remain vulnerable in visual reasoning tasks. Existing benchmarks largely focus on symbolic mathematical or scientific problems and simple vision-centric tasks, offering limited assessment of complex visual reasoning and logical consistency, a critical requirement for reliable reasoning systems. We introduce ConVBench, a complex vision-centric reasoning benchmark in which each image is paired with two logically equivalent questions across six categories: action and state, complex counting, spatial reasoning, causal and intent understanding, commonsense reasoning, and temporal perception. To complement this benchmark, we define two evaluation metrics, logical consistency and robust accuracy, that jointly assess both the correctness and consistency of model responses. We further present ConVLM, which improves LVLM reasoning through Group Relative Policy Optimization (GRPO)-based reinforcement learning with a novel consistency reward. This method leverages automatically generated logically equivalent question-answer pairs and a dual-reward design combining accuracy- and consistency-based signals, encouraging agreement between paired responses. The framework functions effectively with or without strict answer supervision.",
+    "category": "Number Theory and Algebra",
+    "source": "arXiv",
+    "published": "2026-07-23T18:04:51Z",
+    "updated": "2026-07-23T18:04:51Z",
+    "primary_category": "cs.CV",
+    "categories": [
+      "cs.CV"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.21722v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.21722v1"
+      }
+    ],
+    "score": 55,
+    "infographic": {
+      "key_insight": "The paper shows that LVLMs can be made more reliable for visual reasoning by training them to give consistent answers to logically equivalent questions, not just correct ones.",
+      "engineering_relevance": "For dependable multimodal systems, consistency constraints provide a practical way to improve robustness in complex visual reasoning tasks where single-answer accuracy is not enough.",
+      "method": [
+        "Built ConVBench: a vision-centric benchmark with paired logically equivalent questions across six reasoning categories.",
+        "Defined two metrics: logical consistency and robust accuracy to evaluate both agreement and correctness.",
+        "Trained ConVLM with GRPO reinforcement learning using a dual reward for accuracy and consistency, with automatically generated paired QA data."
+      ],
+      "evidence_signal": "The abstract reports a benchmark of images paired with two logically equivalent questions across six categories and evaluates models with both logical consistency and robust accuracy.",
+      "watch_item": "Automatically generated equivalent-question pairs may introduce noise or bias, so the quality of pair generation and reward design is important for stable training.",
+      "hashtags": [
+        "#LVLM",
+        "#VisualReasoning",
+        "#ConsistencyLearning",
+        "#ReinforcementLearning",
+        "#MultimodalAI"
+      ],
+      "paper_id": "2026-07-23-arxiv-be_consistent_enhancing_robust_visual_reasoning_in_lvlms_with_consistency_constraints",
+      "paper_title": "Be Consistent! Enhancing Robust Visual Reasoning in LVLMs with Consistency Constraints",
+      "paper_date": "2026-07-23",
+      "paper_category": "Number Theory and Algebra",
+      "generated_at": "2026-07-27T15:46:27",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-22-arxiv-writhe_based_polymer_link_classification_using_machine_learning",
+    "arxiv_id": "2607.20657v1",
+    "date": "2026-07-22",
+    "title": "Writhe-Based Polymer Link Classification Using Machine Learning",
+    "authors": "Jack Beda, Djordje Mihajlovic, Kasturi Barkataki, Davide Michieletto",
+    "abstract": "Unique and rapid classification of knots and links is an open mathematical problem that is relevant to a range of (bio)physical systems, including polymer melts, DNA, and proteins. In this paper, we explore a data-driven approach to the classification problem of link topology. Extending the framework introduced in Ref. 1 (Sleiman et al, 2024 Soft Matter, 20(1), pp.71-78), we show that a feedforward neural network trained on the writhe density matrix classifies thermally equilibrated configurations of the first six prime links with 97% accuracy. We demonstrate that this accuracy remains high across a range of temperatures and lengths of link components, while rapidly deteriorating with the addition of topology-altering Gaussian noise; a result consistent with the writhe density matrix containing features sensitive to topology. Our results show that neural networks based on the writhe density matrix efficiently classify two-component links, establishing machine learning as a promising tool for rapid classification of more complex link topologies, e.g. Borromean rings and multi-component links, as the computational cost of exact numerical calculation of topological invariants becomes prohibitive.",
+    "category": "Geometry and Topology",
+    "source": "arXiv",
+    "published": "2026-07-22T18:31:30Z",
+    "updated": "2026-07-22T18:31:30Z",
+    "primary_category": "math.GT",
+    "categories": [
+      "math.GT",
+      "cond-mat.soft",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.20657v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.20657v1"
+      }
+    ],
+    "score": 55,
+    "infographic": {
+      "key_insight": "A feedforward neural network trained on the writhe density matrix can classify the first six prime two-component links with high accuracy, showing that topology can be learned from geometric features.",
+      "engineering_relevance": "This offers a fast, data-driven alternative to exact topological computations for polymer, DNA, and protein systems where link classification can be a bottleneck.",
+      "method": [
+        "Build a writhe density matrix from polymer/link configurations",
+        "Train a feedforward neural network on thermally equilibrated examples",
+        "Test robustness across temperature, component length, and added Gaussian noise"
+      ],
+      "evidence_signal": "The model achieved 97% accuracy on thermally equilibrated configurations and stayed accurate across temperatures and link lengths, but performance dropped sharply under topology-altering Gaussian noise.",
+      "watch_item": "The approach is sensitive to noise that changes topology, so its reliability may depend on how well the input configurations preserve the true link structure.",
+      "hashtags": [
+        "#MachineLearning",
+        "#Topology",
+        "#PolymerPhysics",
+        "#GraphicalSummary",
+        "#ComputationalGeometry"
+      ],
+      "paper_id": "2026-07-22-arxiv-writhe_based_polymer_link_classification_using_machine_learning",
+      "paper_title": "Writhe-Based Polymer Link Classification Using Machine Learning",
+      "paper_date": "2026-07-22",
+      "paper_category": "Geometry and Topology",
+      "generated_at": "2026-07-27T15:46:30",
+      "generator": "openai"
+    }
+  }
+]
