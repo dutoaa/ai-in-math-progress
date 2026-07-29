@@ -1,24 +1,24 @@
 {
-  "key_insight": "IFCLoRA allocates LoRA ranks before training using a topology-aware information-flow score, so each Transformer module gets budget based on task-conditioned global importance rather than only local gradients.",
-  "engineering_relevance": "It improves parameter-efficient fine-tuning accuracy at fixed rank budgets while keeping training cost close to standard LoRA, making it practical for low-memory LLM adaptation.",
+  "key_insight": "IFCLoRA allocates LoRA ranks before training by using a topology-aware, task-conditioned information-flow graph to better spend a fixed parameter budget across Transformer modules.",
+  "engineering_relevance": "It offers a low-overhead way to improve parameter-efficient fine-tuning of large language models without the extra training-time memory and computation of gradient-driven adaptive-rank methods.",
   "method": [
-    "Build a sparse interaction graph from a small calibration set and a frozen pretrained model.",
-    "Combine global information-flow topology with local gradient sensitivity to compute Information-Flow Centrality for LoRA-compatible modules.",
-    "Assign ranks once under a global budget before fine-tuning."
+    "Builds a sparse interaction graph from a small calibration set and a frozen pretrained model.",
+    "Computes Information-Flow Centrality by combining global propagation structure with local gradient sensitivity.",
+    "Assigns module ranks once under a global budget before fine-tuning."
   ],
-  "evidence_signal": "Across multiple models, tasks, and low-rank settings, IFCLoRA outperforms LoRA, AdaLoRA, and EVA; on mathematical reasoning with LLaMA 3 8B it improves over LoRA by 1.36% at rank 4 and 1.82% at rank 8.",
-  "watch_item": "Because the rank allocation depends on a calibration set and graph construction, performance may be sensitive to calibration quality and the chosen interaction sparsity.",
+  "evidence_signal": "Across multiple models, tasks, and rank settings, IFCLoRA outperforms LoRA, AdaLoRA, and EVA; on LLaMA 3 8B math reasoning it improves over LoRA by 1.36% at rank 4 and 1.82% at rank 8.",
+  "watch_item": "The approach depends on the quality and representativeness of the calibration set and on how well the inferred graph captures task-specific information flow.",
   "hashtags": [
     "#LoRA",
     "#FineTuning",
     "#LLM",
-    "#TopologyAware",
-    "#ParameterEfficientAI"
+    "#ParameterEfficientML",
+    "#TopologyAware"
   ],
   "paper_id": "2026-07-24-arxiv-ifclora_topology_aware_rank_allocation_for_parameter_efficient_fine_tuning",
   "paper_title": "IFCLoRA: Topology-Aware Rank Allocation for Parameter-Efficient Fine-Tuning",
   "paper_date": "2026-07-24",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-07-28T15:20:12",
+  "generated_at": "2026-07-29T15:12:28",
   "generator": "openai"
 }

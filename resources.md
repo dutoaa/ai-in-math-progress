@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-07-28
+Generated: 2026-07-29
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. From RLVR to RLSVR: Task Transformation Induces Self-Verifiable Rewards for Open-Ended LLM Self-Improvement

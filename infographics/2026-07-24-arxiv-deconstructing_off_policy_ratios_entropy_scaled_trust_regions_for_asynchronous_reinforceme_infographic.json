@@ -1,24 +1,24 @@
 {
-  "key_insight": "Off-policy instability in asynchronous RL is not governed by ratio magnitude alone; it depends on token entropy, which changes how stale data should be trusted.",
-  "engineering_relevance": "Entropy-aware filtering can stabilize large-scale LLM post-training in asynchronous pipelines, improving throughput without sacrificing accuracy.",
+  "key_insight": "Off-policy importance ratios in asynchronous RL are not uniform: their effective scale depends on token entropy, so magnitude-only filtering can keep harmful noise while rejecting useful exploration.",
+  "engineering_relevance": "For large language model post-training systems, entropy-aware trust regions can stabilize asynchronous optimization without extra forward passes or version-detection logic, improving throughput and train-inference consistency.",
   "method": [
-    "Scale each token’s importance-ratio deviation by its local entropy.",
-    "Apply an entropy-scaled trust region instead of a uniform ratio threshold.",
-    "Avoid extra forward passes and version-switch detection."
+    "Scale each token’s off-policy deviation by its local entropy.",
+    "Use an entropy-scaled trust region instead of a fixed ratio threshold.",
+    "Avoid auxiliary forward passes and explicit stale-version detection."
   ],
-  "evidence_signal": "The method outperforms prior asynchronous approaches on long-horizon agentic and mathematical reasoning benchmarks, and matches synchronous GRPO accuracy while training 2.6× faster.",
-  "watch_item": "Performance may depend on reliable token-level entropy estimates, so implementation details and hyperparameter tuning could affect stability.",
+  "evidence_signal": "Across long-horizon agentic tasks and mathematical reasoning benchmarks, ESTR outperformed existing asynchronous methods and matched synchronous GRPO accuracy while training 2.6× faster.",
+  "watch_item": "Performance may depend on reliable entropy estimation and careful threshold calibration, especially in very low- or high-entropy token regimes.",
   "hashtags": [
     "#ReinforcementLearning",
-    "#AsynchronousRL",
     "#LLMPostTraining",
-    "#EntropyScaling",
-    "#TrustRegion"
+    "#AsynchronousTraining",
+    "#ImportanceSampling",
+    "#EntropyRegularization"
   ],
   "paper_id": "2026-07-24-arxiv-deconstructing_off_policy_ratios_entropy_scaled_trust_regions_for_asynchronous_reinforceme",
   "paper_title": "Deconstructing Off-Policy Ratios: Entropy-Scaled Trust Regions for Asynchronous Reinforcement Learning",
   "paper_date": "2026-07-24",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-28T15:19:52",
+  "generated_at": "2026-07-29T15:12:04",
   "generator": "openai"
 }

@@ -1,24 +1,24 @@
 {
-  "key_insight": "Scale the weight decay coefficient by the learning-rate fraction during training to keep the regularization effect stable without introducing extra asymptotic bias.",
-  "engineering_relevance": "This gives a near drop-in change for optimizer code that can preserve training stability while speeding up large-scale pretraining, especially for mixture-of-experts models.",
+  "key_insight": "Scale weight decay by the current learning rate fraction so regularization fades as training cools, preserving optimization behavior while avoiding the steady norm shrinkage caused by constant decoupled weight decay.",
+  "engineering_relevance": "For large-scale neural network training, this simple change can speed convergence without changing the optimizer’s target, making it attractive for practical pretraining pipelines.",
   "method": [
-    "Replace constant decoupled weight decay with \u0003b7/\u0003b7_max-scaled decay.",
-    "Use Robbins\u0010Monro-style conditions to retain asymptotic stationarity guarantees.",
-    "Apply the approach to SGD and the non-Euclidean optimizer Muon (Muon-SW)."
+    "Replace constant decoupled weight decay with weight decay scaled by η/η_max.",
+    "Prove asymptotic stationarity is preserved for both SGD and Muon.",
+    "Use steady-state analysis to explain why weight norms stabilize instead of continuously shrinking."
   ],
-  "evidence_signal": "In mixture-of-experts training runs from 72M to 930M parameters, Muon with scaled weight decay reached the same validation loss about 30% faster at the largest scale.",
-  "watch_item": "The claimed speedup is shown on the reported MoE benchmarks and optimizer setup, so gains may depend on the learning-rate schedule, scale, and implementation details.",
+  "evidence_signal": "In mixture-of-experts training, Muon-SW reached the same validation loss 30% faster at the largest scale across models from 72M to 930M parameters, trained at about 600 tokens per active parameter.",
+  "watch_item": "The reported gains come from large-scale MoE pretraining, so results may depend on model class, training schedule, and the exact learning-rate/decay setup.",
   "hashtags": [
     "#WeightDecay",
-    "#DeepLearningOptimization",
-    "#ScalingLaws",
+    "#Optimization",
     "#Muon",
-    "#MixtureOfExperts"
+    "#DeepLearning",
+    "#ScalingLaws"
   ],
   "paper_id": "2026-07-26-arxiv-scale_weight_decay_and_train_better",
   "paper_title": "Scale Weight Decay and Train Better",
   "paper_date": "2026-07-26",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-07-28T15:20:03",
+  "generated_at": "2026-07-29T15:12:18",
   "generator": "openai"
 }
