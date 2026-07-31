@@ -1,24 +1,24 @@
 {
-  "key_insight": "GRPO can overly concentrate on high-probability reasoning paths, reducing coverage of alternative solutions, and ReCo reweights updates to preserve diversity while keeping performance competitive.",
-  "engineering_relevance": "For math reasoning models, ReCo offers a practical training tweak that can improve large-k Pass@k by preventing the policy from collapsing onto a narrow set of easy responses.",
+  "key_insight": "GRPO can hurt reasoning diversity by overemphasizing high-probability responses and saturated token choices, and ReCo fixes this with reweighting at both the response and token levels.",
+  "engineering_relevance": "For post-training math LMs, ReCo offers a practical way to preserve exploration and improve large-k Pass@k without sacrificing small-k performance.",
   "method": [
-    "Normalize response-level gradient contributions by their expected occurrence in the rollout group.",
-    "Replace the token-level importance ratio with a variance-based ratio that emphasizes non-saturated decision points.",
-    "Target both repeated high-probability responses and token-scale reinforcement that drive distributional concentration."
+    "Normalize each response's contribution by its expected occurrence in the rollout group.",
+    "Replace the standard token-level importance ratio with a variance-based ratio.",
+    "Amplify updates at non-saturated decision points where alternative tokens are still plausible."
   ],
-  "evidence_signal": "Evaluated on Qwen2.5-Math-1.5B/7B and Llama-3.1-8B-Instruct across five math benchmarks, ReCo improved Pass@k for large k and stayed comparable to GRPO for small k.",
-  "watch_item": "The method adds a new reweighting rule, so careful implementation and validation are needed to ensure it does not destabilize training or trade off small-k performance in other settings.",
+  "evidence_signal": "Across Qwen2.5-Math-1.5B/7B and Llama-3.1-8B-Instruct on five math reasoning benchmarks, ReCo improves Pass@k for large k and remains comparable to GRPO for small k.",
+  "watch_item": "The reweighting scheme adds design complexity and may require careful tuning to avoid instability or unintended shifts in update scale.",
   "hashtags": [
     "#GRPO",
     "#ReinforcementLearning",
     "#MathReasoning",
-    "#LLMTraining",
-    "#PassAtK"
+    "#LLMAlignment",
+    "#Pass@k"
   ],
   "paper_id": "2026-07-29-arxiv-reco_reweighting_grpo_against_distributional_concentration",
   "paper_title": "ReCo: Reweighting GRPO Against Distributional Concentration",
   "paper_date": "2026-07-29",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-30T15:09:19",
+  "generated_at": "2026-07-31T15:18:24",
   "generator": "openai"
 }

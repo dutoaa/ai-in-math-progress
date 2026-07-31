@@ -1,24 +1,24 @@
 {
-  "key_insight": "A solver-guided LLM can learn to choose the best MIP formulation for each multi-warehouse inventory instance, improving allocation quality beyond any single fixed formulation.",
-  "engineering_relevance": "This enables adaptive optimization pipelines that match formulation choice to instance characteristics like demand concentration, imbalance, scale, service constraints, and volatility.",
+  "key_insight": "A solver-guided LLM can choose the best mixed-integer programming formulation for each multi-warehouse inventory instance, improving allocation quality beyond any single fixed formulation.",
+  "engineering_relevance": "This turns OR model selection into an instance-wise decision problem, helping e-commerce planning systems adapt formulations to changing demand, inventory, and service regimes.",
   "method": [
-    "Build a candidate library of OR experts, where each expert is a solver-executable MIP formulation with a different allocation priority.",
-    "Create balanced supervised fine-tuning records, then convert solver-evaluated quality gaps into margin-weighted IPO preferences and reward metadata.",
-    "Use GRPO to train the selector to pick the best formulation per instance based on solver feedback."
+    "Build a candidate library of solver-executable MIP formulations, each encoding a different allocation priority.",
+    "Create balanced supervised fine-tuning data for schema learning, then derive margin-weighted preference data from solver-evaluated quality gaps.",
+    "Train the selector with IPO and GRPO, using per-instance expert-score metadata as reward lookup during policy optimization."
   ],
-  "evidence_signal": "On JD.com inventory allocation instances, GRPO raised Hit Ratio@1 from 21.45% to 50.42% and Hit Ratio@2 from 70.47% to 82.31%, improving allocation accuracy by 12.57 percentage points and narrowing the oracle gap to 4.85 points.",
-  "watch_item": "The approach depends on reliable solver-evaluated labels and may be sensitive to candidate-formulation coverage, reward design, and compute cost during training.",
+  "evidence_signal": "On JD.com inventory allocation instances, GRPO raised Hit Ratio@1 from 21.45% to 50.42% and Hit Ratio@2 from 70.47% to 82.31%, and improved allocation accuracy by 12.57 percentage points over the incumbent baseline.",
+  "watch_item": "Performance depends on the quality and coverage of the expert library and solver-labeled historical instances, so deployment may be sensitive to domain shift and the cost of generating preference data.",
   "hashtags": [
-    "#OperationsResearch",
-    "#LargeLanguageModels",
-    "#MIP",
+    "#LLMforOR",
+    "#MixedIntegerProgramming",
     "#InventoryOptimization",
+    "#FormulationSelection",
     "#ReinforcementLearning"
   ],
   "paper_id": "2026-07-28-arxiv-large_language_model_for_operations_research_formulation_selection_in_multi_warehouse_inve",
   "paper_title": "Large Language Model for Operations Research Formulation Selection in Multi-Warehouse Inventory Allocation",
   "paper_date": "2026-07-28",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-07-30T15:09:22",
+  "generated_at": "2026-07-31T15:18:27",
   "generator": "openai"
 }

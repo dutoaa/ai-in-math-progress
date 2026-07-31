@@ -1,0 +1,24 @@
+{
+  "key_insight": "LSPO fixes a zero-gradient failure mode in RLVR by temporarily adding a low-rank LoRA scaffold to regenerate learning signal on \"cliff\" prompts where GRPO would otherwise get none.",
+  "engineering_relevance": "It offers a practical training-time patch for improving mathematical reasoning models without changing the final deployment model, since the adapter is used only during sampling and discarded afterward.",
+  "method": [
+    "Detect prompts where all group rollouts fail and the RL advantage collapses to zero.",
+    "Fit a small LoRA adapter on ground-truth solutions for those cliff prompts.",
+    "Re-roll with base+adapter, importance-correct the successful samples, and update the base model with GRPO."
+  ],
+  "evidence_signal": "On DeepMath-103K with DeepSeek-R1-Distill-Qwen-1.5B, LSPO matched or beat a DAPO baseline on all 16 benchmark/pass@k cells across 5 paired seeds, with an average +3.8-point gain and up to +10.7 on AIME24/pass@4.",
+  "watch_item": "The extra supervised scaffold step and importance-sampling splice add training complexity and may be sensitive to how cliff prompts are detected, how the adapter is fit, and whether the correction remains stable.",
+  "hashtags": [
+    "#RLVR",
+    "#LoRA",
+    "#MathReasoning",
+    "#ReinforcementLearning",
+    "#LLMTraining"
+  ],
+  "paper_id": "2026-07-30-arxiv-lora_scaffolded_policy_optimization_lspo_a_sampling_time_low_rank_scaffold_for_recovering",
+  "paper_title": "LoRA Scaffolded Policy Optimization (LSPO): A Sampling-Time Low-Rank Scaffold for Recovering Reinforcement-Learning Gradient on Zero-Reward Cliff Prompts",
+  "paper_date": "2026-07-30",
+  "paper_category": "Number Theory and Algebra",
+  "generated_at": "2026-07-31T15:18:07",
+  "generator": "openai"
+}
