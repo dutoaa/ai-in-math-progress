@@ -1,13 +1,13 @@
 {
-  "key_insight": "Token-level shifts from privileged self-distillation are driven more by counterfactual sensitivity than by true answer-aligned learning value, so credit should be reallocated away from highly sensitive tokens.",
-  "engineering_relevance": "CSCR is a simple drop-in modification to GRPO that preserves verifier-determined direction while improving long-CoT reasoning performance on mathematical benchmarks.",
+  "key_insight": "Token-level credit in long-CoT RL is not uniform: highly sensitive tokens often shift without providing reliable answer-aligned learning signal, so credit should be reallocated rather than broadcast equally.",
+  "engineering_relevance": "For training reasoning LLMs with RLVR, CSCR offers a low-overhead drop-in improvement over GRPO that preserves verifier direction while reducing wasted or misleading updates.",
   "method": [
-    "Re-score each sampled trajectory under two counterfactual outcomes: correct vs. incorrect.",
-    "Measure which tokens change most and downweight highly sensitive, easily substitutable tokens.",
-    "Renormalize token-level advantages to keep the original credit budget and update direction."
+    "Measure each sampled trajectory under both correct and incorrect counterfactual outcomes.",
+    "Identify tokens with large, low-value sensitivity shifts and downweight their credit.",
+    "Renormalize token advantages to keep the original credit budget and update direction."
   ],
-  "evidence_signal": "On long-CoT mathematical reasoning benchmarks, CSCR consistently beats the GRPO baseline with the same number of policy updates, and ablations show moderate downweighting works best.",
-  "watch_item": "Over-modulating token credit can destabilize optimization, so the sensitivity downweighting must be kept moderate.",
+  "evidence_signal": "The authors evaluate on long-CoT mathematical reasoning benchmarks and report that CSCR consistently outperforms GRPO with the same number of policy updates, with ablations showing moderate downweighting works best.",
+  "watch_item": "Over-modulating token credits can destabilize optimization, so the downweighting strength needs careful tuning.",
   "hashtags": [
     "#LLMReasoning",
     "#RLVR",
@@ -19,6 +19,6 @@
   "paper_title": "Not All Tokens Deserve Equal Credit: Counterfactual Sensitivity Credit Reallocation for Long-CoT Reasoning",
   "paper_date": "2026-07-30",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-31T15:17:54",
+  "generated_at": "2026-08-01T14:24:57",
   "generator": "openai"
 }

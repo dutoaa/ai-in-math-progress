@@ -1,24 +1,24 @@
 {
-  "key_insight": "Learned diffusion proposals help continuous constraint solving only in narrow regimes; for many systems, budget-matched random multi-start is just as good or better once exact polishing and checking are included.",
-  "engineering_relevance": "For solver design, the main gain from learning may lie in discrete repair/augmentation selection, while value assignment often remains competitive with simpler randomized search under the same compute budget.",
+  "key_insight": "Learned diffusion proposals help constraint solving mainly when random multi-start is weak; otherwise, classical restart plus exact polishing often matches or beats them.",
+  "engineering_relevance": "For continuous algebraic solvers, the biggest practical gain may come from smarter discrete repair/augmentation selection, while value proposals should be benchmarked against budget-matched random restarts.",
   "method": [
-    "Model the constraint problem as a factor graph and use a graph-neural diffusion denoiser to propose continuous assignments.",
-    "Polish each proposal with descent on an exact computer-algebra energy, then certify with an exact symbolic checker.",
-    "Compare against matched random multi-start baselines and a candidate-conditioned repair ranker over the same refinement budget."
+    "Turn the constraint system into a factor graph and use a GNN diffusion denoiser to propose assignments.",
+    "Polish proposals with exact computer-algebra descent and verify them with a symbolic checker.",
+    "For augmentation selection, use a candidate-conditioned repair ranker over K options instead of exhaustive enumeration."
   ],
-  "evidence_signal": "The abstract reports that random multi-start matches learned proposals in trapped low-dimensional cases, dominates in high dimension, and that a simple best-of-K formula accurately predicts success across curves with mean absolute error 0.012.",
-  "watch_item": "The learned advantage appears regime-dependent and can disappear when variables are strongly coupled, so evaluation must include a strict random-restart control under identical polishing and checking budgets.",
+  "evidence_signal": "Across synthetic families and eight real systems, learned proposals only beat random multi-start in a narrow high-dimensional regime; best-of-K random restart followed the exact curve 1-(1-q(n))^K with mean absolute error 0.012.",
+  "watch_item": "Reported gains depend strongly on the problem regime, so fair evaluation must include the same refinement budget and a random multi-start control.",
   "hashtags": [
     "#SymbolicComputation",
-    "#DiffusionModels",
     "#ConstraintSolving",
-    "#Optimization",
-    "#Benchmarking"
+    "#DiffusionModels",
+    "#GraphNeuralNetworks",
+    "#AlgorithmicBenchmarking"
   ],
   "paper_id": "2026-07-29-arxiv-when_do_learned_diffusion_proposals_help_constraint_solving_a_controlled_study_on_continuo",
   "paper_title": "When Do Learned Diffusion Proposals Help Constraint Solving? A Controlled Study on Continuous Algebraic Systems",
   "paper_date": "2026-07-29",
   "paper_category": "Symbolic Computation",
-  "generated_at": "2026-07-31T15:18:19",
+  "generated_at": "2026-08-01T14:25:17",
   "generator": "openai"
 }

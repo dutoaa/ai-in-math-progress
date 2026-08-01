@@ -1,24 +1,24 @@
 {
-  "key_insight": "ReDiPPO improves mathematical reasoning by using reference answers to calibrate value estimates and by reweighting token-level advantages where the standard critic disagrees most with the reference-guided critic.",
-  "engineering_relevance": "The method targets a core RL bottleneck for long-horizon reasoning: noisy token credit assignment under sparse rewards, which can improve training stability and final model accuracy.",
+  "key_insight": "ReDiPPO improves mathematical reasoning by using a reference-guided critic for better value estimates and a discrepancy signal to reweight token-level training advantages.",
+  "engineering_relevance": "The method targets a core RL failure mode in long-horizon reasoning—noisy credit assignment—making PPO-style training more reliable for LLMs on math tasks.",
   "method": [
-    "Reference-guided critic uses training-time answer references to produce more accurate value estimates.",
-    "Standard critic remains in place, and its discrepancy from the reference-guided critic marks difficult reasoning states.",
-    "Token-level advantages are reweighted during PPO updates based on this discrepancy."
+    "Train a reference-guided critic using privileged reference answers during training.",
+    "Keep a standard critic and measure the discrepancy between reference-guided and standard value estimates.",
+    "Use this discrepancy to reweight token-level advantages in PPO, emphasizing harder reasoning states."
   ],
-  "evidence_signal": "The abstract reports extensive experiments on diverse mathematical reasoning benchmarks, where ReDiPPO improves value-estimation accuracy and outperforms PPO, DAPO, and GSPO in final reasoning performance.",
-  "watch_item": "Because the approach relies on reference answers during training, performance may depend on access to high-quality supervision and careful handling of train-test mismatch.",
+  "evidence_signal": "The abstract reports extensive experiments on diverse mathematical reasoning benchmarks, with ReDiPPO improving value-estimation accuracy and outperforming PPO, DAPO, and GSPO in final reasoning performance.",
+  "watch_item": "Because the approach relies on reference answers as training-time privileged signals, its setup may be harder to apply when high-quality references are unavailable or noisy.",
   "hashtags": [
+    "#LLMReasoning",
+    "#PPO",
     "#MathematicalReasoning",
     "#ReinforcementLearning",
-    "#PPO",
-    "#LargeLanguageModels",
-    "#CreditAssignment"
+    "#ValueEstimation"
   ],
   "paper_id": "2026-07-30-arxiv-redippo_reference_guided_value_calibration_and_discrepancy_aware_token_reweighting_for_mat",
   "paper_title": "ReDiPPO: Reference-Guided Value Calibration and Discrepancy-Aware Token Reweighting for Mathematical Reasoning",
   "paper_date": "2026-07-30",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-07-31T15:17:56",
+  "generated_at": "2026-08-01T14:24:59",
   "generator": "openai"
 }
