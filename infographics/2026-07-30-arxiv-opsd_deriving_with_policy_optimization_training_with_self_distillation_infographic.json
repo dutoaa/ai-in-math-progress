@@ -1,24 +1,24 @@
 {
-  "key_insight": "β-OPSD generalizes vanilla OPSD by making the KL anchor weight β explicit, revealing an optimal policy that geometrically interpolates between the reference policy and a privileged teacher.",
-  "engineering_relevance": "This turns brittle self-distillation into a tunable, more stable training recipe that preserves OPSD’s efficiency while improving reasoning performance.",
+  "key_insight": "β-OPSD generalizes vanilla OPSD by treating the KL anchor as a tunable β, and its optimal policy becomes a geometric interpolation between a reference model and a privileged teacher.",
+  "engineering_relevance": "This makes self-distillation more stable and controllable for reasoning LMs, while preserving the efficiency of distillation instead of expensive RL optimization.",
   "method": [
-    "Introduce β as a controllable KL-regularization parameter in the policy-optimization view of OPSD.",
-    "Derive the closed-form optimal policy as a geometric interpolation between reference and teacher policies.",
-    "Approximate the RL optimum efficiently by distilling from mixed token-level logits, with return-to-go credit assignment for sequence-level alignment."
+    "Derive β-OPSD as a policy-optimization objective with β weighting the KL penalty to the reference policy.",
+    "Use the closed-form optimal policy as a distillation target by mixing token-level logits from the reference and teacher.",
+    "Apply return-to-go credit assignment to better align token updates with sequence-level reasoning performance."
   ],
-  "evidence_signal": "Experiments on mathematical reasoning benchmarks show β-OPSD is more stable than vanilla OPSD and yields better downstream reasoning performance.",
-  "watch_item": "The method depends on carefully mixing teacher and reference logits and on return-to-go credit assignment, so implementation choices may still affect stability and results.",
+  "evidence_signal": "Experiments on mathematical reasoning benchmarks show consistent gains over vanilla OPSD in both optimization stability and downstream reasoning performance.",
+  "watch_item": "Direct RL optimization of the β-OPSD objective is high-variance and costly, so the distilled approximation still depends on careful logit-mixing and credit-assignment implementation.",
   "hashtags": [
-    "#MathReasoning",
+    "#LLMReasoning",
     "#SelfDistillation",
     "#PolicyOptimization",
-    "#RLHF",
-    "#LLMTraining"
+    "#MathematicalReasoning",
+    "#RLHF"
   ],
   "paper_id": "2026-07-30-arxiv-opsd_deriving_with_policy_optimization_training_with_self_distillation",
   "paper_title": "$β$-OPSD: Deriving with Policy Optimization, Training with Self-Distillation",
   "paper_date": "2026-07-30",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-08-01T14:25:02",
+  "generated_at": "2026-08-02T14:28:06",
   "generator": "openai"
 }

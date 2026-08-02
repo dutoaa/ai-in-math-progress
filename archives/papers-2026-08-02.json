@@ -24,29 +24,29 @@
         "url": "https://arxiv.org/pdf/2607.28527v1"
       }
     ],
-    "score": 88,
+    "score": 93,
     "infographic": {
-      "key_insight": "MANTA lets a multi-agent system adapt its communication topology during inference, so collaboration structure can self-evolve when the current organization is no longer effective.",
-      "engineering_relevance": "This matters for building more robust agentic AI systems because it enables dynamic routing, role reassignment, and validation control without changing the task interface or agent budget.",
+      "key_insight": "MANTA lets a multi-agent system adapt its communication topology during inference, so the collaboration structure can self-evolve when the current setup is no longer effective.",
+      "engineering_relevance": "This suggests a practical way to improve multi-agent AI performance without changing the task interface or agent budget, by updating roles, links, ordering, visibility, and validation pathways on the fly.",
       "method": [
         "Initialize a task-conditioned topology from prior structural experience before execution.",
-        "Monitor collaboration traces at deployment and apply bounded structural updates when needed.",
-        "Adjust roles, links, execution order, information visibility, and validation pathways while preserving the same agents."
+        "Monitor collaboration traces during deployment and trigger bounded structural updates when coordination degrades.",
+        "Adapt network structure while preserving the existing agent set and task interface."
       ],
-      "evidence_signal": "Across five benchmarks covering information seeking, tool use, planning, workflow execution, and mathematical reasoning, MANTA achieved the best average score of 74.0 and outperformed the strongest baseline by 5.8 points, including the top result on PlanCraft.",
-      "watch_item": "The approach introduces extra online control logic, so stability, update safety, and compute overhead may become important implementation concerns.",
+      "evidence_signal": "The paper evaluates MANTA on five benchmarks and reports the best average score of 74.0, beating the strongest baseline by 5.8 points and achieving the top result on PlanCraft.",
+      "watch_item": "Dynamic topology updates may add complexity in control, debugging, and stability, so bounded update rules and reliable monitoring are critical.",
       "hashtags": [
         "#MultiAgentSystems",
         "#TopologyAdaptation",
         "#LLMAgents",
-        "#InferenceTimeAdaptation",
+        "#InferenceTimeLearning",
         "#MathematicalReasoning"
       ],
       "paper_id": "2026-07-30-arxiv-manta_multi_agent_network_topology_adaptation_for_self_evolving_multi_agent_systems",
       "paper_title": "MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems",
       "paper_date": "2026-07-30",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-08-02T14:27:56",
+      "generated_at": "2026-08-01T14:24:53",
       "generator": "openai"
     }
   },
@@ -76,29 +76,29 @@
         "url": "https://arxiv.org/pdf/2607.27705v1"
       }
     ],
-    "score": 81,
+    "score": 86,
     "infographic": {
-      "key_insight": "Albilich is a steerable, long-horizon agent framework that improves LLM-assisted mathematical research by combining reasoning, CAS tools, literature retrieval, and persistent state management.",
-      "engineering_relevance": "The paper shows that orchestration and tool integration can substantially improve reliability and efficiency for autonomous theorem-proving and conjecture exploration workflows.",
+      "key_insight": "Albilich is a steerable, stateful agent framework that combines LLM reasoning, CAS, retrieval, and persistence to make long-horizon mathematical research more reliable and reproducible.",
+      "engineering_relevance": "The system shows how proof-state orchestration plus CAS integration can reduce token use and improve success on challenging symbolic reasoning tasks.",
       "method": [
-        "Agentic harness for multi-step mathematical research",
-        "Integrates CAS, retrieval, advisor/verifier agents, and SQLite context persistence",
-        "Supports human steering across proof search and validation"
+        "Long-horizon agentic proof search with advisor/verifier roles",
+        "CAS integration for symbolic computation and checking",
+        "SQLite-based persistent context plus literature retrieval"
       ],
-      "evidence_signal": "On RealMath, Albilich solved 10/10 problems with CAS and 9/10 without CAS, and on Kourovka notebook problems it found a counterexample for one problem and a proof-strengthening for another.",
-      "watch_item": "Results depend on benchmark-specific setups and agent coordination, so performance may be sensitive to verifier quality, prompt design, and CAS availability.",
+      "evidence_signal": "The abstract reports 10/10 success on RealMath with CAS, 9/10 without CAS, and case studies on Kourovka Notebook problems including a counterexample and a strengthened proof.",
+      "watch_item": "Results come from a limited set of benchmarks and case studies, so broader generalization and dependence on agent orchestration quality remain uncertain.",
       "hashtags": [
-        "#MathAI",
-        "#LLMAgents",
-        "#CAS",
-        "#AutoResearch",
-        "#TheoremProving"
+        "#LLM4Math",
+        "#ComputerAlgebraSystem",
+        "#AgenticAI",
+        "#AutomatedReasoning",
+        "#MathematicalResearch"
       ],
       "paper_id": "2026-07-30-arxiv-albilich_steerable_proof_state_orchestration_for_llm_based_mathematical_research_with_cas",
       "paper_title": "Albilich: Steerable Proof-State Orchestration for LLM-Based Mathematical Research with CAS Integration",
       "paper_date": "2026-07-30",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-08-02T14:27:58",
+      "generated_at": "2026-08-01T14:24:55",
       "generator": "openai"
     }
   },
@@ -127,29 +127,29 @@
         "url": "https://arxiv.org/pdf/2607.27888v1"
       }
     ],
-    "score": 76,
+    "score": 81,
     "infographic": {
-      "key_insight": "Token-level credit in long-CoT RLVR is highly uneven: large likelihood shifts mostly reflect counterfactual sensitivity of surface-form tokens, not reliable answer-aligned learning signals.",
-      "engineering_relevance": "For reasoning-model training, CSCR improves upon uniform token credit assignment in GRPO by downweighting sensitive tokens while preserving verifier-determined update direction and total credit budget.",
+      "key_insight": "Token-level credit in long-CoT RL is not uniform: highly sensitive tokens often shift without providing reliable answer-aligned learning signal, so credit should be reallocated rather than broadcast equally.",
+      "engineering_relevance": "For training reasoning LLMs with RLVR, CSCR offers a low-overhead drop-in improvement over GRPO that preserves verifier direction while reducing wasted or misleading updates.",
       "method": [
-        "Re-score each sampled trajectory under two opposite outcomes: correct vs incorrect.",
-        "Measure token sensitivity from the induced likelihood shifts and reduce credit for highly sensitive tokens.",
-        "Renormalize token advantages so the original credit budget and RL signal direction are preserved."
+        "Measure each sampled trajectory under both correct and incorrect counterfactual outcomes.",
+        "Identify tokens with large, low-value sensitivity shifts and downweight their credit.",
+        "Renormalize token advantages to keep the original credit budget and update direction."
       ],
-      "evidence_signal": "The authors test fixed trajectories under opposing outcome conditions and evaluate CSCR on long-CoT mathematical reasoning benchmarks, where it consistently outperforms GRPO with the same number of policy updates.",
-      "watch_item": "Over-downweighting sensitive tokens can destabilize optimization, so the credit modulation strength needs careful tuning.",
+      "evidence_signal": "The authors evaluate on long-CoT mathematical reasoning benchmarks and report that CSCR consistently outperforms GRPO with the same number of policy updates, with ablations showing moderate downweighting works best.",
+      "watch_item": "Over-modulating token credits can destabilize optimization, so the downweighting strength needs careful tuning.",
       "hashtags": [
+        "#LLMReasoning",
         "#RLVR",
         "#LongCoT",
-        "#MathematicalReasoning",
-        "#LLMTraining",
-        "#CreditAssignment"
+        "#CreditAssignment",
+        "#MathematicalReasoning"
       ],
       "paper_id": "2026-07-30-arxiv-not_all_tokens_deserve_equal_credit_counterfactual_sensitivity_credit_reallocation_for_lon",
       "paper_title": "Not All Tokens Deserve Equal Credit: Counterfactual Sensitivity Credit Reallocation for Long-CoT Reasoning",
       "paper_date": "2026-07-30",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-08-02T14:28:01",
+      "generated_at": "2026-08-01T14:24:57",
       "generator": "openai"
     }
   },
@@ -179,21 +179,21 @@
         "url": "https://arxiv.org/pdf/2607.27631v1"
       }
     ],
-    "score": 76,
+    "score": 81,
     "infographic": {
-      "key_insight": "ReDiPPO improves mathematical reasoning by using a reference-guided critic to calibrate value estimates and a discrepancy signal to reweight token-level advantages during PPO.",
-      "engineering_relevance": "The method is relevant for training large language models on long-horizon reasoning tasks where sparse rewards make standard token credit assignment unreliable.",
+      "key_insight": "ReDiPPO improves mathematical reasoning by using a reference-guided critic for better value estimates and a discrepancy signal to reweight token-level training advantages.",
+      "engineering_relevance": "The method targets a core RL failure mode in long-horizon reasoning—noisy credit assignment—making PPO-style training more reliable for LLMs on math tasks.",
       "method": [
-        "Train a reference-guided critic using reference answers as privileged supervision.",
-        "Keep a standard critic and measure token-level discrepancy between the two value estimates.",
-        "Use discrepancy-aware reweighting to emphasize difficult reasoning tokens during PPO updates."
+        "Train a reference-guided critic using privileged reference answers during training.",
+        "Keep a standard critic and measure the discrepancy between reference-guided and standard value estimates.",
+        "Use this discrepancy to reweight token-level advantages in PPO, emphasizing harder reasoning states."
       ],
       "evidence_signal": "The abstract reports extensive experiments on diverse mathematical reasoning benchmarks, with ReDiPPO improving value-estimation accuracy and outperforming PPO, DAPO, and GSPO in final reasoning performance.",
-      "watch_item": "The approach depends on access to reference answers during training and adds extra critic machinery, which may increase training complexity and deployment mismatch.",
+      "watch_item": "Because the approach relies on reference answers as training-time privileged signals, its setup may be harder to apply when high-quality references are unavailable or noisy.",
       "hashtags": [
-        "#MathematicalReasoning",
+        "#LLMReasoning",
         "#PPO",
-        "#LLMs",
+        "#MathematicalReasoning",
         "#ReinforcementLearning",
         "#ValueEstimation"
       ],
@@ -201,7 +201,7 @@
       "paper_title": "ReDiPPO: Reference-Guided Value Calibration and Discrepancy-Aware Token Reweighting for Mathematical Reasoning",
       "paper_date": "2026-07-30",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-08-02T14:28:04",
+      "generated_at": "2026-08-01T14:24:59",
       "generator": "openai"
     }
   },
@@ -230,29 +230,29 @@
         "url": "https://arxiv.org/pdf/2607.28582v1"
       }
     ],
-    "score": 75,
+    "score": 80,
     "infographic": {
-      "key_insight": "β-OPSD generalizes vanilla OPSD by treating the KL anchor as a tunable β, and its optimal policy becomes a geometric interpolation between a reference model and a privileged teacher.",
-      "engineering_relevance": "This makes self-distillation more stable and controllable for reasoning LMs, while preserving the efficiency of distillation instead of expensive RL optimization.",
+      "key_insight": "β-OPSD generalizes vanilla OPSD by making the KL anchor weight β explicit, revealing an optimal policy that geometrically interpolates between the reference policy and a privileged teacher.",
+      "engineering_relevance": "This turns brittle self-distillation into a tunable, more stable training recipe that preserves OPSD’s efficiency while improving reasoning performance.",
       "method": [
-        "Derive β-OPSD as a policy-optimization objective with β weighting the KL penalty to the reference policy.",
-        "Use the closed-form optimal policy as a distillation target by mixing token-level logits from the reference and teacher.",
-        "Apply return-to-go credit assignment to better align token updates with sequence-level reasoning performance."
+        "Introduce β as a controllable KL-regularization parameter in the policy-optimization view of OPSD.",
+        "Derive the closed-form optimal policy as a geometric interpolation between reference and teacher policies.",
+        "Approximate the RL optimum efficiently by distilling from mixed token-level logits, with return-to-go credit assignment for sequence-level alignment."
       ],
-      "evidence_signal": "Experiments on mathematical reasoning benchmarks show consistent gains over vanilla OPSD in both optimization stability and downstream reasoning performance.",
-      "watch_item": "Direct RL optimization of the β-OPSD objective is high-variance and costly, so the distilled approximation still depends on careful logit-mixing and credit-assignment implementation.",
+      "evidence_signal": "Experiments on mathematical reasoning benchmarks show β-OPSD is more stable than vanilla OPSD and yields better downstream reasoning performance.",
+      "watch_item": "The method depends on carefully mixing teacher and reference logits and on return-to-go credit assignment, so implementation choices may still affect stability and results.",
       "hashtags": [
-        "#LLMReasoning",
+        "#MathReasoning",
         "#SelfDistillation",
         "#PolicyOptimization",
-        "#MathematicalReasoning",
-        "#RLHF"
+        "#RLHF",
+        "#LLMTraining"
       ],
       "paper_id": "2026-07-30-arxiv-opsd_deriving_with_policy_optimization_training_with_self_distillation",
       "paper_title": "$β$-OPSD: Deriving with Policy Optimization, Training with Self-Distillation",
       "paper_date": "2026-07-30",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-08-02T14:28:06",
+      "generated_at": "2026-08-01T14:25:02",
       "generator": "openai"
     }
   },
@@ -281,29 +281,29 @@
         "url": "https://arxiv.org/pdf/2607.27918v1"
       }
     ],
-    "score": 72,
+    "score": 77,
     "infographic": {
-      "key_insight": "OptGraph turns past optimization attempts into a typed graph and uses graph retrieval to improve LLM-based evolutionary optimization with better pattern reuse, correction, and refinement.",
-      "engineering_relevance": "This offers a practical way to make automated optimization agents more reliable across tasks without retraining model parameters.",
+      "key_insight": "OptGraph improves automated optimization by converting past problem-solving experience into a typed graph and retrieving neighborhood knowledge to support better modeling, verification, and refinement.",
+      "engineering_relevance": "The method offers a practical no-finetuning workflow for reusing solver knowledge across diverse computational tasks, which can reduce iteration cost and improve robustness in automated engineering optimization pipelines.",
       "method": [
-        "Builds a typed graph of reusable experience linking modeling patterns, formalization, implementation, and error fixes.",
-        "Retrieves graph neighborhoods at inference time to add structured context for modeling, verification, and iterative improvement.",
-        "Updates the graph with execution traces and verification feedback to continuously expand knowledge."
+        "Build a typed graph of reusable experience linking modeling patterns, formalization, implementation details, and error corrections.",
+        "At inference, retrieve graph neighborhoods to add structured context for problem solving and iterative refinement.",
+        "Continuously update the graph from execution traces and verification feedback without LLM parameter tuning."
       ],
-      "evidence_signal": "The abstract reports benchmark experiments showing OptGraph improves average exact accuracy by 8.9% over state-of-the-art prompt-based automated optimization frameworks.",
-      "watch_item": "Performance depends on the quality of graph construction and retrieval, and the approach may be harder to implement than standard prompting pipelines.",
+      "evidence_signal": "On benchmark datasets, OptGraph reports an average exact accuracy improvement of 8.9% over the strongest prompt-based automated optimization baselines.",
+      "watch_item": "Performance depends on the quality of graph construction and retrieval; noisy or incomplete graph updates could weaken the benefits of GraphRAG.",
       "hashtags": [
         "#LLM",
         "#GraphRAG",
-        "#Optimization",
-        "#EvolutionaryAlgorithms",
-        "#AutomatedReasoning"
+        "#EvolutionaryOptimization",
+        "#AutomatedReasoning",
+        "#TheoremProving"
       ],
       "paper_id": "2026-07-30-arxiv-optgraph_large_language_models_enhanced_evolutionary_optimization_via_graph_retrieval_augm",
       "paper_title": "OptGraph: Large Language Models Enhanced Evolutionary Optimization Via Graph Retrieval-Augmented Generation",
       "paper_date": "2026-07-30",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-08-02T14:28:09",
+      "generated_at": "2026-08-01T14:25:04",
       "generator": "openai"
     }
   },
@@ -332,29 +332,29 @@
         "url": "https://arxiv.org/pdf/2607.27770v1"
       }
     ],
-    "score": 70,
+    "score": 75,
     "infographic": {
-      "key_insight": "RL-trained reasoners are local probes of a multi-basin solution manifold, so better students come from building a complementary teacher union rather than relying on a single “best” teacher.",
-      "engineering_relevance": "The method offers a practical training recipe for distilling stronger single-model inference systems by expanding teacher coverage first and then compressing it into one student.",
+      "key_insight": "RL-trained reasoners are best treated as complementary local experts, and a stronger student comes from expanding teacher coverage then compressing the teacher union rather than copying one “best” teacher.",
+      "engineering_relevance": "The framework offers a practical recipe for training single-model deployable systems with better reasoning quality by combining multi-teacher diversity, reliability gating, and distillation.",
       "method": [
-        "RGRPO expands teacher coverage by training successive teachers from the same initialization and steering later rounds toward uncovered examples.",
-        "TU-OPD distills from the teacher union with reliability gating, so only trustworthy teachers contribute to each example.",
-        "Consensus-Residual Decomposition keeps a winner teacher’s excess preferences over reliable peers to preserve specialist behavior during aggregation."
+        "RGRPO: train successive teachers from the same initialization while redirecting later rounds toward uncovered examples.",
+        "TU-OPD: distill from the student’s own prefixes using only reliable teachers, weighted by per-example quality.",
+        "Consensus-Residual Decomposition: preserve a winner teacher’s extra token preferences so specialist behaviors survive aggregation."
       ],
-      "evidence_signal": "On mathematical reasoning, code generation, and instruction following, the Qwen3-1.7B student beat the strongest individual teacher with relative gains of 2.0%, 8.3%, and 6.9%, respectively.",
-      "watch_item": "The approach depends on correctly estimating per-example teacher reliability and union coverage, which may be sensitive to teacher quality and aggregation design.",
+      "evidence_signal": "On math reasoning, code generation, and instruction following, the Qwen3-1.7B student outperformed the strongest individual teacher with relative gains of 2.0%, 8.3%, and 6.9% while keeping single-model inference.",
+      "watch_item": "The approach depends on reliable teacher selection and quality weighting, so noisy teacher scoring or poor coverage tracking could weaken the union and reduce the benefit.",
       "hashtags": [
-        "#LLMDistillation",
+        "#LLMReasoning",
         "#ReinforcementLearning",
-        "#MathematicalReasoning",
-        "#TeacherStudentTraining",
-        "#PolicyOptimization"
+        "#KnowledgeDistillation",
+        "#MathAI",
+        "#MultiTeacher"
       ],
       "paper_id": "2026-07-30-arxiv-beyond_the_best_teacher_expanding_and_compressing_the_reasoning_solution_manifold",
       "paper_title": "Beyond the Best Teacher: Expanding and Compressing the Reasoning Solution Manifold",
       "paper_date": "2026-07-30",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-08-02T14:28:11",
+      "generated_at": "2026-08-01T14:25:06",
       "generator": "openai"
     }
   },
@@ -384,29 +384,29 @@
         "url": "https://arxiv.org/pdf/2607.27787v1"
       }
     ],
-    "score": 69,
+    "score": 74,
     "infographic": {
-      "key_insight": "LSPO recovers otherwise missing reinforcement-learning signal on “cliff” math prompts by briefly adding a low-rank LoRA scaffold during sampling, then training the base model on the improved rollouts.",
-      "engineering_relevance": "It is a practical way to stabilize RLVR for frontier reasoning tasks without keeping the adapter at deployment, since the final model remains base-only.",
+      "key_insight": "LSPO recovers missing reinforcement-learning signal on \"cliff\" prompts by briefly adding a low-rank supervised adapter, re-sampling successful answers, and then updating the base model with GRPO.",
+      "engineering_relevance": "It offers a practical way to improve math-reasoning RL when many frontier prompts produce zero reward, without permanently changing the deployed model architecture.",
       "method": [
-        "Detect zero-reward cliff prompts in each RL batch.",
-        "Fit a small LoRA adapter with a short supervised step on ground-truth solutions.",
-        "Re-sample those prompts with base+adapter, splice successful rollouts back into GRPO with importance correction, and discard the adapter after checkpointing."
+        "Detect zero-reward \"cliff\" prompts during RL.",
+        "Fit a small LoRA adapter on ground-truth solutions for those prompts.",
+        "Re-roll completions with base+adapter, splice successes into the RL batch with importance-sampling correction, and discard the adapter at checkpoint."
       ],
-      "evidence_signal": "On DeepMath-103K with DeepSeek-R1-Distill-Qwen-1.5B, evaluated over five paired seeds and a matched 1000-step horizon, LSPO beat or matched DAPO in all 16 benchmark/pass@k cells, with up to +10.7 points on AIME24/pass@4.",
-      "watch_item": "The approach adds extra online sampling and a supervised adapter fit each RL step, so compute overhead and stability of the cliff-detection/resampling loop are important implementation concerns.",
+      "evidence_signal": "In DeepMath-103K with DeepSeek-R1-Distill-Qwen-1.5B over 5 paired seeds and a matched 1000-step horizon, LSPO matched or beat DAPO on all 16 benchmark/pass@k cells, with an average gain of +3.8 points.",
+      "watch_item": "The approach depends on having ground-truth solutions available for cliff prompts and adds an extra supervised fitting/sampling stage that may increase training complexity.",
       "hashtags": [
         "#ReinforcementLearning",
-        "#LLMReasoning",
+        "#MathReasoning",
         "#LoRA",
-        "#MathAI",
-        "#DeepLearning"
+        "#LLMTraining",
+        "#RLVR"
       ],
       "paper_id": "2026-07-30-arxiv-lora_scaffolded_policy_optimization_lspo_a_sampling_time_low_rank_scaffold_for_recovering",
       "paper_title": "LoRA Scaffolded Policy Optimization (LSPO): A Sampling-Time Low-Rank Scaffold for Recovering Reinforcement-Learning Gradient on Zero-Reward Cliff Prompts",
       "paper_date": "2026-07-30",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-08-02T14:28:14",
+      "generated_at": "2026-08-01T14:25:08",
       "generator": "openai"
     }
   },
@@ -436,29 +436,29 @@
         "url": "https://arxiv.org/pdf/2607.27781v1"
       }
     ],
-    "score": 69,
+    "score": 74,
     "infographic": {
-      "key_insight": "The paper develops dimension-efficient neural network approximations for fractional parabolic PDEs by introducing anisotropic spectral Barron spaces that separately control time and space regularity.",
-      "engineering_relevance": "This provides a scalable theory for approximating time-dependent fractional diffusion models with lower-order drift and potential terms, which is relevant for high-dimensional scientific computing.",
+      "key_insight": "The paper develops a dimension-efficient neural network approximation theory for fractional parabolic PDEs by separating temporal and spatial regularity in anisotropic spectral Barron spaces.",
+      "engineering_relevance": "This provides a principled path to train two-layer networks that approximate time-dependent fractional diffusion models with dimension-independent error control.",
       "method": [
-        "Define anisotropic spectral Barron norms in space-time Fourier variables to capture temporal and spatial smoothness separately.",
-        "Prove dimension-independent maximal regularity using multiplication estimates plus the method of continuity for lower-order terms.",
-        "Use a Vandermonde-based global-in-time extension of the fractional heat semigroup to analyze forward evolution and derive network approximation bounds."
+        "Build anisotropic spectral Barron spaces that measure time and space regularity separately in frequency space.",
+        "Prove dimension-independent maximal regularity using multiplication estimates and the method of continuity for drift and potential terms.",
+        "Use a Vandermonde-based global-in-time extension of the fractional heat semigroup to analyze forward evolution and derive approximation bounds."
       ],
-      "evidence_signal": "The abstract reports theoretical approximation results, including n^{-1/2} two-layer bounds in mixed Sobolev norms under stated regularity assumptions.",
-      "watch_item": "The uniform-in-time spectral Barron regularity can fail, so the theory depends on carefully chosen anisotropic regularity assumptions and may not apply to all solutions.",
+      "evidence_signal": "The abstract reports theoretical approximation bounds, including n^{-1/2} rates in mixed Sobolev norms for periodic activations and, under extra anisotropic Barron regularity, for certain non-periodic activations.",
+      "watch_item": "The uniform-in-time spectral Barron regularity can fail in general, so the theory may not transfer to all time horizons without additional assumptions.",
       "hashtags": [
         "#NeuralPDEs",
         "#FractionalPDEs",
         "#BarronSpaces",
         "#ApproximationTheory",
-        "#ScientificComputing"
+        "#ComputationalScience"
       ],
       "paper_id": "2026-07-30-arxiv-neural_network_approximation_of_solutions_to_fractional_parabolic_partial_differential_equ",
       "paper_title": "Neural Network Approximation of Solutions to Fractional Parabolic Partial Differential Equations",
       "paper_date": "2026-07-30",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-08-02T14:28:17",
+      "generated_at": "2026-08-01T14:25:10",
       "generator": "openai"
     }
   },
@@ -488,29 +488,29 @@
         "url": "https://arxiv.org/pdf/2607.28456v1"
       }
     ],
-    "score": 68,
+    "score": 73,
     "infographic": {
-      "key_insight": "A graph neural preconditioner that uses an AMG-style multilevel hierarchy can improve iterative solver convergence on some sparse systems, but it is not uniformly better than strong classical or single-level baselines.",
-      "engineering_relevance": "This work suggests a path toward more general-purpose learned preconditioners for large sparse linear systems in scientific computing, especially as drop-in accelerators for Krylov solvers.",
+      "key_insight": "A graph neural preconditioner that preserves an AMG-style multilevel hierarchy can improve Krylov solver convergence on some general sparse systems, but its benefit depends on the matrix class and can be offset by added overhead.",
+      "engineering_relevance": "This work suggests a learned preconditioner design that is more structured than single-level GNN approaches, making it relevant for accelerating large-scale scientific simulations on difficult sparse linear systems.",
       "method": [
-        "Use an AMG-like multilevel hierarchy as a structural prior",
-        "Learn smoothing, restriction, and interpolation operators with a GNN",
-        "Deploy as a preconditioner for standard iterative Krylov methods"
+        "Uses an algebraic multigrid-like hierarchy as a structural prior.",
+        "Learns smoothing, restriction, and interpolation operators with a graph neural network.",
+        "Deploys as a drop-in preconditioner for standard Krylov iterative solvers."
       ],
-      "evidence_signal": "The authors evaluate the method on more than 800 sparse matrices and compare it against classical AMG, ILUT, and state-of-the-art GNN preconditioners.",
-      "watch_item": "The multilevel learned hierarchy can add overhead and may underperform strong single-level methods on some problem classes, so runtime and robustness should be checked carefully.",
+      "evidence_signal": "The authors evaluate on more than 800 sparse matrices and compare against classical AMG, ILUT, and state-of-the-art GNN preconditioners to measure convergence and overhead tradeoffs.",
+      "watch_item": "The multilevel learned preconditioner may introduce extra cost and its robustness can vary across indefinite or nonsymmetric matrices, so implementation efficiency and matrix-dependent behavior are important concerns.",
       "hashtags": [
         "#GraphNeuralNetworks",
         "#Preconditioning",
+        "#AlgebraicMultigrid",
         "#IterativeSolvers",
-        "#SparseLinearAlgebra",
         "#ScientificComputing"
       ],
       "paper_id": "2026-07-30-arxiv-graph_neural_multilevel_preconditioners_for_iterative_solvers",
       "paper_title": "Graph Neural Multilevel Preconditioners for Iterative Solvers",
       "paper_date": "2026-07-30",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-08-02T14:28:20",
+      "generated_at": "2026-08-01T14:25:13",
       "generator": "openai"
     }
   },
@@ -542,29 +542,29 @@
         "url": "https://arxiv.org/pdf/2607.28408v1"
       }
     ],
-    "score": 67,
+    "score": 72,
     "infographic": {
-      "key_insight": "Large action spaces make contextual bandit learning fragile, so the paper reduces complexity by sharing structure across actions and by using pessimistic, optimizable objectives for logged-data learning.",
-      "engineering_relevance": "These methods improve decision-making in high-dimensional control, recommendation, and adaptive optimization systems where only sparse feedback or offline logs are available.",
+      "key_insight": "The thesis shows that in very large action spaces, sharing structure across actions is crucial for making both exploration and off-policy learning tractable and reliable.",
+      "engineering_relevance": "The methods offer practical design patterns for recommender systems, decision support, and other interactive ML systems where action catalogs are huge and feedback is sparse.",
       "method": [
-        "On-policy: structured Bayesian exploration via meTS (mixed effects) and dTS (diffusion-inspired priors) to transfer information across actions.",
-        "Off-policy: sDM latent-variable direct modeling plus concave policy-weighted log-likelihood objectives for efficient optimization.",
-        "Pessimistic learning: differentiable exponential-smoothing and PAC-Bayesian regularization to balance bias and variance in importance-sampling estimators."
+        "meTS: a mixed-effect Thompson sampling method that transfers information across similar actions.",
+        "dTS: a diffusion-inspired Bayesian prior that captures dependence between actions to reduce regret.",
+        "sDM and pessimistic policy objectives: structured off-policy learning with latent variables, concave optimization, and regularized importance-sampling control."
       ],
-      "evidence_signal": "The abstract reports regret guarantees for the on-policy methods and highlights that in large action spaces optimization error can dominate estimation error for off-policy learning.",
-      "watch_item": "Performance depends on how well the chosen action structure or latent assumptions match the true problem; otherwise shared priors and pessimistic regularization may bias learning.",
+      "evidence_signal": "The abstract reports theoretical regret guarantees, optimization analyses, and PAC-Bayesian bounds rather than a single experimental dataset.",
+      "watch_item": "Large action spaces can make optimization error, extrapolation bias, and importance-weight variance dominate, so careful regularization and stable optimization are essential.",
       "hashtags": [
         "#ContextualBandits",
-        "#ReinforcementLearning",
         "#OffPolicyLearning",
         "#ThompsonSampling",
-        "#PACBayes"
+        "#ImportanceSampling",
+        "#LargeActionSpaces"
       ],
       "paper_id": "2026-07-30-arxiv-on_policy_and_off_policy_learning_for_large_action_spaces",
       "paper_title": "On-Policy and Off-Policy Learning for Large Action Spaces",
       "paper_date": "2026-07-30",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-08-02T14:28:23",
+      "generated_at": "2026-08-01T14:25:15",
       "generator": "openai"
     }
   },
@@ -593,29 +593,29 @@
         "url": "https://arxiv.org/pdf/2607.27169v1"
       }
     ],
-    "score": 64,
+    "score": 69,
     "infographic": {
-      "key_insight": "Learned diffusion proposals help constraint solving only in a narrow regime; for many continuous algebraic systems, simple random multi-start plus the same refinement/checking pipeline matches or beats them.",
-      "engineering_relevance": "For practical solver design, the biggest gains come from where to spend search budget and from learned repair ranking on discrete augmentations, not from replacing classical multi-start on the continuous assignment step.",
+      "key_insight": "Learned diffusion proposals help constraint solving mainly when random multi-start is weak; otherwise, classical restart plus exact polishing often matches or beats them.",
+      "engineering_relevance": "For continuous algebraic solvers, the biggest practical gain may come from smarter discrete repair/augmentation selection, while value proposals should be benchmarked against budget-matched random restarts.",
       "method": [
-        "Compare learned diffusion proposals against random multi-start under identical refinement and symbolic checking budgets.",
-        "Use a factor-graph diffusion denoiser to propose assignments, then polish with exact algebraic descent and certify with a symbolic checker.",
-        "Evaluate a candidate-conditioned repair ranker for structural augmentations against exhaustive and budget-matched baselines."
+        "Turn the constraint system into a factor graph and use a GNN diffusion denoiser to propose assignments.",
+        "Polish proposals with exact computer-algebra descent and verify them with a symbolic checker.",
+        "For augmentation selection, use a candidate-conditioned repair ranker over K options instead of exhaustive enumeration."
       ],
-      "evidence_signal": "The repair ranker reached near-exhaustive performance on balanced nonlinear menu selection (0.997 vs 0.236 random, p < 10^-70), while random multi-start followed the exact success curve 1-(1-q(n))^K with mean absolute error 0.012 and often matched learned proposals.",
-      "watch_item": "Results depend strongly on the system regime and on sharing the same refinement/checker pipeline, so gains from learned proposals may disappear once variables are coupled or when the baseline uses enough random restarts.",
+      "evidence_signal": "Across synthetic families and eight real systems, learned proposals only beat random multi-start in a narrow high-dimensional regime; best-of-K random restart followed the exact curve 1-(1-q(n))^K with mean absolute error 0.012.",
+      "watch_item": "Reported gains depend strongly on the problem regime, so fair evaluation must include the same refinement budget and a random multi-start control.",
       "hashtags": [
         "#SymbolicComputation",
         "#ConstraintSolving",
         "#DiffusionModels",
         "#GraphNeuralNetworks",
-        "#ScientificML"
+        "#AlgorithmicBenchmarking"
       ],
       "paper_id": "2026-07-29-arxiv-when_do_learned_diffusion_proposals_help_constraint_solving_a_controlled_study_on_continuo",
       "paper_title": "When Do Learned Diffusion Proposals Help Constraint Solving? A Controlled Study on Continuous Algebraic Systems",
       "paper_date": "2026-07-29",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-08-02T14:28:27",
+      "generated_at": "2026-08-01T14:25:17",
       "generator": "openai"
     }
   },
@@ -646,29 +646,29 @@
         "url": "https://arxiv.org/pdf/2607.27000v1"
       }
     ],
-    "score": 64,
+    "score": 69,
     "infographic": {
-      "key_insight": "Allowing a small positive training error at finite temperature preserves wide, accessible solution regions and extends the overlap-gap threshold beyond the zero-temperature limit.",
-      "engineering_relevance": "For neural network optimization, controlled thermal noise can make otherwise hard non-convex regimes more searchable while still supporting good generalization.",
+      "key_insight": "Allowing finite training error and thermal noise reveals that robust, wide solution regions persist in non-convex neural networks beyond the zero-temperature OGP barrier.",
+      "engineering_relevance": "This suggests that adding controlled stochasticity or relaxed losses can make hard training regimes more searchable while still supporting useful generalization.",
       "method": [
-        "Analyze the finite-temperature Gibbs measure for binary perceptrons.",
-        "Derive a criterion for when smoothing the loss near the decision boundary removes freezing.",
-        "Extend the OGP construction to finite energy and test a message-passing solver numerically."
+        "Extended the frozen 1RSB picture from zero temperature to finite temperature.",
+        "Derived a smoothness-based criterion for when finite-temperature loss relaxations eliminate freezing.",
+        "Generalized the overlap gap property to finite-energy configurations and analyzed teacher-student generalization."
       ],
-      "evidence_signal": "The abstract reports a finite-energy message-passing algorithm that numerically demonstrates effective generalization in the regime where zero-temperature solution recovery is computationally hard.",
-      "watch_item": "The benefits depend on the loss smoothness and allowed error level, so the approach may not transfer unchanged to models with different boundaries or training objectives.",
+      "evidence_signal": "The abstract reports a finite-energy message-passing algorithm used in numerical experiments showing that thermal noise improves generalization in regimes where zero-temperature recovery is computationally hard.",
+      "watch_item": "The guarantees depend on the model's loss smoothness and finite-temperature assumptions, so the effect may not transfer directly to architectures with different geometry or optimization dynamics.",
       "hashtags": [
         "#NeuralNetworks",
         "#NonConvexOptimization",
-        "#TheoremProving",
-        "#OverlapGapProperty",
-        "#StatisticalPhysics"
+        "#Generalization",
+        "#StatisticalPhysics",
+        "#MessagePassing"
       ],
       "paper_id": "2026-07-29-arxiv-on_the_robustness_of_noisy_solutions_in_non_convex_neural_networks",
       "paper_title": "On the robustness of noisy solutions in non-convex neural networks",
       "paper_date": "2026-07-29",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-08-02T14:28:29",
+      "generated_at": "2026-08-01T14:25:19",
       "generator": "openai"
     }
   },
@@ -701,29 +701,29 @@
         "url": "https://arxiv.org/pdf/2607.25091v1"
       }
     ],
-    "score": 64,
+    "score": 69,
     "infographic": {
-      "key_insight": "Stable RL alignment for small language models depends more on a strong supervised starting point and a reliable reward signal than on raw parameter count.",
-      "engineering_relevance": "The paper identifies concrete PPO failure modes and simple fixes that make reinforcement learning practical for 70M–500M parameter agents in real training pipelines.",
+      "key_insight": "Stable reinforcement learning for small language model agents is achievable when the supervised model is fluent and the reward signal is reliable, rather than merely when the model is larger.",
+      "engineering_relevance": "The paper identifies practical PPO failure modes and fixes that can directly improve robustness, reproducibility, and training efficiency in SLM alignment pipelines.",
       "method": [
-        "Diagnosed three failure modes: silent LoRA freezing, bfloat16 importance-ratio overflow, and reward-model-driven policy collapse.",
+        "Diagnosed three failure modes: LoRA parameter freezing, bfloat16 importance-ratio overflow, and reward-model-driven policy collapse.",
         "Applied merge-and-reinitialize adapters, float32 PPO updates, and a safety stack with reward whitening, ratio guarding, and rollback.",
-        "Framed success with a capacity-headroom hypothesis: fluent SFT model plus informative reward signal."
+        "Tested PPO across 15 model–corpus configurations spanning Pythia and SmolLM2 models on TinyStories, CNN/DailyMail, and Wikitext-103."
       ],
-      "evidence_signal": "Across 15 model–corpus PPO configurations, the stabilized system converged reliably and improved preference win rate over SFT baselines, with extra gains over instruction-tuned baselines in settings that had both fluency and reward quality.",
-      "watch_item": "The approach still depends on having a sufficiently fluent supervised model and a trustworthy reward model; weak priors or noisy rewards may limit gains.",
+      "evidence_signal": "Across the reported experiments, the corrected pipeline converged stably and improved preference win rate over the SFT baseline when a fluent prior and informative reward were present.",
+      "watch_item": "The approach depends on both a sufficiently fluent SFT checkpoint and a trustworthy reward model, so weak priors or noisy rewards may still limit gains.",
       "hashtags": [
         "#ReinforcementLearning",
         "#SmallLanguageModels",
         "#PPO",
-        "#Alignment",
-        "#MachineLearningEngineering"
+        "#AIAlignment",
+        "#RobustTraining"
       ],
       "paper_id": "2026-07-27-arxiv-towards_robust_reinforcement_learning_for_small_scale_language_model_agents",
       "paper_title": "Towards Robust Reinforcement Learning for Small-Scale Language Model Agents",
       "paper_date": "2026-07-27",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-08-02T14:28:32",
+      "generated_at": "2026-08-01T14:25:21",
       "generator": "openai"
     }
   },
@@ -753,29 +753,29 @@
         "url": "https://arxiv.org/pdf/2607.26862v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "GRPO can narrow reasoning diversity by over-rewarding already likely responses and tokens, while ReCo reweights both effects to preserve broader coverage of solution paths.",
-      "engineering_relevance": "For post-training math LMs, ReCo offers a drop-in training adjustment that better maintains Pass@k at large k without sacrificing small-k performance.",
+      "key_insight": "GRPO can narrow reasoning diversity by over-amplifying responses and tokens the base model already prefers; ReCo reweights both effects to preserve broader solution coverage.",
+      "engineering_relevance": "For training math-oriented LMs, ReCo is a practical update rule that aims to improve large-k reasoning performance without sacrificing small-k behavior, making it useful when solution diversity matters.",
       "method": [
         "Normalize each response’s contribution by its expected frequency in the rollout group.",
-        "Replace token-level importance ratios with a variance-based ratio that amplifies non-saturated decision points.",
-        "Target both repeated-response dominance and token-scale reinforcement in the GRPO update."
+        "Replace token-level importance ratio scaling with a variance-based ratio that boosts non-saturated decision points.",
+        "Target both response-level repetition and token-level reinforcement to reduce distributional concentration."
       ],
-      "evidence_signal": "Across Qwen2.5-Math-1.5B/7B and Llama-3.1-8B-Instruct on five math benchmarks, ReCo improved large-k Pass@k and matched GRPO at small k.",
-      "watch_item": "The variance-based reweighting may be sensitive to rollout statistics and implementation details, so training stability should be checked carefully.",
+      "evidence_signal": "Across Qwen2.5-Math-1.5B/7B and Llama-3.1-8B-Instruct on five math benchmarks, ReCo improves Pass@k for large k and remains comparable to GRPO for small k.",
+      "watch_item": "The variance-based reweighting may be sensitive to how saturation is estimated and could require careful tuning to avoid destabilizing updates.",
       "hashtags": [
+        "#ReinforcementLearning",
+        "#LLMs",
+        "#MathReasoning",
         "#GRPO",
-        "#ReCo",
-        "#MathematicalReasoning",
-        "#LLMTraining",
-        "#Pass@k"
+        "#PolicyOptimization"
       ],
       "paper_id": "2026-07-29-arxiv-reco_reweighting_grpo_against_distributional_concentration",
       "paper_title": "ReCo: Reweighting GRPO Against Distributional Concentration",
       "paper_date": "2026-07-29",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-08-02T14:28:34",
+      "generated_at": "2026-08-01T14:25:23",
       "generator": "openai"
     }
   },
@@ -805,17 +805,17 @@
         "url": "https://arxiv.org/pdf/2607.25956v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "A solver-guided LLM can learn to choose the best MIP formulation for each inventory-allocation instance, rather than relying on one fixed formulation for all cases.",
-      "engineering_relevance": "This enables more adaptive warehouse planning by matching OR model structure to instance-specific conditions like demand concentration, imbalance, and forecast volatility.",
+      "key_insight": "A solver-guided LLM can learn to choose the best MIP formulation for each multi-warehouse inventory allocation instance, rather than relying on one fixed formulation.",
+      "engineering_relevance": "This enables faster, higher-quality inventory decisions in real retail systems by matching each instance to the formulation most likely to optimize allocation performance.",
       "method": [
-        "Build a candidate library of solver-executable MIP formulations, each representing a different allocation priority.",
-        "Train the selector with balanced expert-conditioned supervised fine-tuning, then add solver-informed IPO preferences and GRPO rewards from historical instance quality gaps.",
-        "Use per-instance expert-score metadata to reward sampled responses during policy optimization."
+        "Build a candidate library of OR experts, each encoding a different allocation priority as a MIP formulation.",
+        "Create balanced supervised fine-tuning data for schema learning, then turn solver-evaluated quality gaps into margin-weighted IPO preferences.",
+        "Use GRPO with per-instance expert-score rewards to train the selector to pick the best formulation."
       ],
-      "evidence_signal": "On JD.com multi-warehouse inventory allocation instances, GRPO raised Hit Ratio@1 from 21.45% to 50.42% and Hit Ratio@2 from 70.47% to 82.31%, improving allocation accuracy by 12.57 percentage points over the incumbent baseline.",
-      "watch_item": "Performance depends on reliable solver evaluations and a well-curated expert library, so deployment may be sensitive to data shift or missing formulation coverage.",
+      "evidence_signal": "On JD.com inventory allocation instances, GRPO improved Hit Ratio@1 from 21.45% to 50.42% and Hit Ratio@2 from 70.47% to 82.31%, while reducing the gap to the ex-post oracle to 4.85 percentage points.",
+      "watch_item": "The approach depends on high-quality solver feedback and a curated expert library, so performance may degrade if the candidate formulations or historical labels do not cover new instance regimes.",
       "hashtags": [
         "#OperationsResearch",
         "#LargeLanguageModels",
@@ -827,7 +827,7 @@
       "paper_title": "Large Language Model for Operations Research Formulation Selection in Multi-Warehouse Inventory Allocation",
       "paper_date": "2026-07-28",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-08-02T14:28:37",
+      "generated_at": "2026-08-01T14:25:25",
       "generator": "openai"
     }
   },
@@ -857,21 +857,21 @@
         "url": "https://arxiv.org/pdf/2607.28457v1"
       }
     ],
-    "score": 61,
+    "score": 66,
     "infographic": {
-      "key_insight": "SVR teaches a model to self-verifiy its own answers and decide when to stop, turning test-time compute into a learned adaptive policy instead of a fixed budget.",
-      "engineering_relevance": "This is useful for reasoning systems that need better accuracy-per-compute by spending extra turns only on hard problems while keeping easy ones cheap.",
+      "key_insight": "SVR learns to use its own verdict and confidence as an internal control signal, so the model keeps refining only when it is not yet confident in a correct answer.",
+      "engineering_relevance": "This enables adaptive test-time compute, reducing wasted reasoning steps on easy inputs while preserving accuracy without relying on external verifier feedback at inference.",
       "method": [
-        "Multi-turn RL with GRPO trains the model to output a solution, a discrete correctness verdict, and a confidence score at each turn.",
-        "The model keeps an answer only when the verdict is Correct and confidence is above a threshold; otherwise it continues refining with its own self-verification.",
-        "Ground-truth labels are used only for training rewards, not as verifier feedback during refinement or inference."
+        "Each turn: generate an answer plus a discrete correctness verdict and confidence score.",
+        "Retain the answer only if verdict = Correct and confidence exceeds a threshold; otherwise continue self-refinement.",
+        "Train with GRPO on fixed-horizon trajectories using rewards for correctness, calibration-aware self-verification, and stop-ready correct states."
       ],
-      "evidence_signal": "On seven math reasoning benchmarks with Qwen3.5-2B, SVR reached 0.563 macro-average accuracy using only 2.99 turns on average.",
-      "watch_item": "Performance depends on learned calibration of verdict and confidence, so miscalibration or threshold sensitivity could reduce the benefit of adaptive stopping.",
+      "evidence_signal": "On seven mathematical reasoning benchmarks with Qwen3.5-2B, SVR reached a macro-average accuracy of 0.563 with just 2.99 inference turns on average.",
+      "watch_item": "Performance depends on well-calibrated self-verification and thresholding, so miscalibration could cause premature stopping or unnecessary extra turns.",
       "hashtags": [
         "#TestTimeCompute",
-        "#ReinforcementLearning",
         "#MathReasoning",
+        "#ReinforcementLearning",
         "#SelfVerification",
         "#AdaptiveInference"
       ],
@@ -879,7 +879,7 @@
       "paper_title": "SVR: Self-Verifying Refinement via Joint Verdict-Confidence Reinforcement Learning for Adaptive Test-Time Compute",
       "paper_date": "2026-07-30",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-08-02T14:28:39",
+      "generated_at": "2026-08-01T14:25:27",
       "generator": "openai"
     }
   },
@@ -910,29 +910,29 @@
         "url": "https://arxiv.org/pdf/2607.27731v1"
       }
     ],
-    "score": 61,
+    "score": 66,
     "infographic": {
-      "key_insight": "The paper shows that learning rate and batch size should be co-designed, and derives a closed-form optimal batch size schedule for any given learning rate schedule.",
-      "engineering_relevance": "For large-scale training, dynamic batch sizing can improve efficiency and performance over static batch-size baselines, especially in large language model training.",
+      "key_insight": "The paper derives a joint loss characterization for learning rate and batch size, enabling a closed-form optimal batch size schedule that improves training over static batching.",
+      "engineering_relevance": "For large-scale model training, this suggests batch size should be scheduled dynamically alongside the learning rate rather than held fixed.",
       "method": [
-        "Model training dynamics using a convex-optimization lens.",
-        "Derive a joint loss characterization in terms of learning-rate and batch-size schedules.",
-        "Obtain closed-form optimal batch-size schedules and joint scaling laws for general optimizers and architectures."
+        "Model deep learning training through convex optimization dynamics.",
+        "Derive a joint characterization of loss as a function of learning-rate and batch-size schedules.",
+        "Use the characterization to compute a closed-form optimal batch-size schedule for any chosen learning-rate schedule."
       ],
-      "evidence_signal": "The abstract reports that the proposed joint scaling laws consistently outperform static batch-size baselines.",
-      "watch_item": "The practical benefit depends on correctly implementing and tuning dynamic batch-size schedules alongside the chosen learning-rate schedule.",
+      "evidence_signal": "The abstract reports that the resulting joint scaling laws consistently outperform static batch-size baselines.",
+      "watch_item": "Practical gains may depend on accurately matching the assumed optimizer/dynamics and on the implementation complexity of changing batch size during training.",
       "hashtags": [
         "#DeepLearning",
         "#Optimization",
-        "#BatchSizeScheduling",
         "#ScalingLaws",
+        "#BatchSizeScheduling",
         "#LLMTraining"
       ],
       "paper_id": "2026-07-30-arxiv-towards_joint_scaling_laws_with_optimal_batch_size_schedules",
       "paper_title": "Towards joint scaling laws with optimal batch size schedules",
       "paper_date": "2026-07-30",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-08-02T14:28:41",
+      "generated_at": "2026-08-01T14:25:29",
       "generator": "openai"
     }
   },
@@ -962,29 +962,29 @@
         "url": "https://arxiv.org/pdf/2607.28259v1"
       }
     ],
-    "score": 60,
+    "score": 65,
     "infographic": {
-      "key_insight": "TopoFormer turns graph topology into short token sequences that a Transformer can learn from, combining topological structure with attention in a scalable way.",
-      "engineering_relevance": "It offers a practical graph-learning pipeline that is parallelizable, lightweight, and easy to plug into standard deep-learning workflows for classification and molecular prediction.",
+      "key_insight": "TopoFormer turns graph topology into short token sequences that a Transformer can read, combining topological structure with attention in a lightweight, scalable way.",
+      "engineering_relevance": "It offers a parallelizable alternative to persistent homology pipelines for graph and molecular learning, with predictable compute and easy integration into standard deep learning stacks.",
       "method": [
         "Topo-Scan slices node or edge filtrations into ordered topological tokens.",
-        "A Transformer encodes these sequences into graph-level embeddings.",
-        "The design avoids expensive persistent homology diagram computation while preserving multi-scale structure."
+        "A Transformer processes the resulting sequence to learn graph-level embeddings.",
+        "The design captures multi-scale structure while avoiding costly diagram computations."
       ],
-      "evidence_signal": "The abstract reports state-of-the-art results across graph classification and molecular property prediction benchmarks, outperforming or matching strong GNN and topology-based baselines.",
-      "watch_item": "Performance may depend on how filtrations and token ordering are chosen, so implementation details could affect stability and downstream accuracy.",
+      "evidence_signal": "The abstract reports state-of-the-art results on graph classification and molecular property prediction benchmarks, matching or exceeding strong GNN and topology-based baselines.",
+      "watch_item": "The approach depends on how filtration slicing and token ordering are defined, so performance and stability may be sensitive to implementation choices.",
       "hashtags": [
         "#GraphLearning",
         "#TopologicalDataAnalysis",
         "#Transformers",
-        "#GeometryAndTopology",
-        "#MachineLearning"
+        "#GraphNeuralNetworks",
+        "#MolecularPropertyPrediction"
       ],
       "paper_id": "2026-07-30-arxiv-topoformer_topology_meets_attention_for_graph_learning",
       "paper_title": "TopoFormer: Topology Meets Attention for Graph Learning",
       "paper_date": "2026-07-30",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-08-02T14:28:43",
+      "generated_at": "2026-08-01T14:25:31",
       "generator": "openai"
     }
   },
@@ -1014,29 +1014,29 @@
         "url": "https://arxiv.org/pdf/2607.26230v1"
       }
     ],
-    "score": 60,
+    "score": 65,
     "infographic": {
-      "key_insight": "The paper builds a Lean 4 certification framework for proving number field invariants such as discriminant, signature, unit groups, and class groups with machine-checked proofs.",
-      "engineering_relevance": "It strengthens computer algebra workflows by turning expensive invariant computations into formally verified certificates that can be checked inside proof assistants and reused across systems.",
+      "key_insight": "The paper formalizes a Lean 4 certification framework for proving key arithmetic invariants of number fields, extending verified computation from rings of integers to discriminants, signatures, unit groups modulo p-th powers, and class groups.",
+      "engineering_relevance": "It provides a pathway for trustworthy computer algebra pipelines by turning high-level number-theoretic computations into machine-checked proofs, which is valuable for CAS, databases, and verified symbolic computation.",
       "method": [
-        "Extend prior certified rings-of-integers work to cover more invariants of number fields.",
-        "Formalize supporting mathematics, including real closed fields, pseudo-remainder sequences, and ideal arithmetic structures.",
-        "Use SageMath to compute certificates and generate Lean proofs for verification."
+        "Build reusable Lean 4 structures for certified arithmetic on algebraic objects, including ideal arithmetic.",
+        "Extend certification to invariants such as signature, unit groups modulo p-th powers, class group, and improved discriminant verification.",
+        "Use a SageMath script to compute certificates and generate Lean proofs automatically."
       ],
-      "evidence_signal": "The framework was used to verify hundreds of LMFDB entries involving discriminant, signature, class number, and class group structure.",
-      "watch_item": "The approach depends on certificate generation and proof translation tooling, so scalability and integration with external CAS computations may be a practical bottleneck.",
+      "evidence_signal": "The framework was used to verify hundreds of LMFDB entries covering discriminant, signature, class number, and class group structure.",
+      "watch_item": "Certificate generation depends on external SageMath computations and careful translation into Lean proofs, so automation and scalability may still be sensitive to implementation details.",
       "hashtags": [
         "#Lean4",
         "#NumberTheory",
         "#FormalVerification",
         "#ComputerAlgebra",
-        "#LMFDB"
+        "#ClassGroup"
       ],
       "paper_id": "2026-07-28-arxiv-formally_certifying_number_field_invariants",
       "paper_title": "Formally certifying number field invariants",
       "paper_date": "2026-07-28",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-08-02T14:28:45",
+      "generated_at": "2026-08-01T14:25:33",
       "generator": "openai"
     }
   }

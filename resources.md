@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-08-01
+Generated: 2026-08-02
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems

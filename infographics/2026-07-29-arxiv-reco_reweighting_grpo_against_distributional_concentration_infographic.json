@@ -1,24 +1,24 @@
 {
-  "key_insight": "GRPO can narrow reasoning diversity by over-amplifying responses and tokens the base model already prefers; ReCo reweights both effects to preserve broader solution coverage.",
-  "engineering_relevance": "For training math-oriented LMs, ReCo is a practical update rule that aims to improve large-k reasoning performance without sacrificing small-k behavior, making it useful when solution diversity matters.",
+  "key_insight": "GRPO can narrow reasoning diversity by over-rewarding already likely responses and tokens, while ReCo reweights both effects to preserve broader coverage of solution paths.",
+  "engineering_relevance": "For post-training math LMs, ReCo offers a drop-in training adjustment that better maintains Pass@k at large k without sacrificing small-k performance.",
   "method": [
     "Normalize each response’s contribution by its expected frequency in the rollout group.",
-    "Replace token-level importance ratio scaling with a variance-based ratio that boosts non-saturated decision points.",
-    "Target both response-level repetition and token-level reinforcement to reduce distributional concentration."
+    "Replace token-level importance ratios with a variance-based ratio that amplifies non-saturated decision points.",
+    "Target both repeated-response dominance and token-scale reinforcement in the GRPO update."
   ],
-  "evidence_signal": "Across Qwen2.5-Math-1.5B/7B and Llama-3.1-8B-Instruct on five math benchmarks, ReCo improves Pass@k for large k and remains comparable to GRPO for small k.",
-  "watch_item": "The variance-based reweighting may be sensitive to how saturation is estimated and could require careful tuning to avoid destabilizing updates.",
+  "evidence_signal": "Across Qwen2.5-Math-1.5B/7B and Llama-3.1-8B-Instruct on five math benchmarks, ReCo improved large-k Pass@k and matched GRPO at small k.",
+  "watch_item": "The variance-based reweighting may be sensitive to rollout statistics and implementation details, so training stability should be checked carefully.",
   "hashtags": [
-    "#ReinforcementLearning",
-    "#LLMs",
-    "#MathReasoning",
     "#GRPO",
-    "#PolicyOptimization"
+    "#ReCo",
+    "#MathematicalReasoning",
+    "#LLMTraining",
+    "#Pass@k"
   ],
   "paper_id": "2026-07-29-arxiv-reco_reweighting_grpo_against_distributional_concentration",
   "paper_title": "ReCo: Reweighting GRPO Against Distributional Concentration",
   "paper_date": "2026-07-29",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-08-01T14:25:23",
+  "generated_at": "2026-08-02T14:28:34",
   "generator": "openai"
 }

@@ -1,24 +1,24 @@
 {
-  "key_insight": "LSPO recovers missing reinforcement-learning signal on \"cliff\" prompts by briefly adding a low-rank supervised adapter, re-sampling successful answers, and then updating the base model with GRPO.",
-  "engineering_relevance": "It offers a practical way to improve math-reasoning RL when many frontier prompts produce zero reward, without permanently changing the deployed model architecture.",
+  "key_insight": "LSPO recovers otherwise missing reinforcement-learning signal on “cliff” math prompts by briefly adding a low-rank LoRA scaffold during sampling, then training the base model on the improved rollouts.",
+  "engineering_relevance": "It is a practical way to stabilize RLVR for frontier reasoning tasks without keeping the adapter at deployment, since the final model remains base-only.",
   "method": [
-    "Detect zero-reward \"cliff\" prompts during RL.",
-    "Fit a small LoRA adapter on ground-truth solutions for those prompts.",
-    "Re-roll completions with base+adapter, splice successes into the RL batch with importance-sampling correction, and discard the adapter at checkpoint."
+    "Detect zero-reward cliff prompts in each RL batch.",
+    "Fit a small LoRA adapter with a short supervised step on ground-truth solutions.",
+    "Re-sample those prompts with base+adapter, splice successful rollouts back into GRPO with importance correction, and discard the adapter after checkpointing."
   ],
-  "evidence_signal": "In DeepMath-103K with DeepSeek-R1-Distill-Qwen-1.5B over 5 paired seeds and a matched 1000-step horizon, LSPO matched or beat DAPO on all 16 benchmark/pass@k cells, with an average gain of +3.8 points.",
-  "watch_item": "The approach depends on having ground-truth solutions available for cliff prompts and adds an extra supervised fitting/sampling stage that may increase training complexity.",
+  "evidence_signal": "On DeepMath-103K with DeepSeek-R1-Distill-Qwen-1.5B, evaluated over five paired seeds and a matched 1000-step horizon, LSPO beat or matched DAPO in all 16 benchmark/pass@k cells, with up to +10.7 points on AIME24/pass@4.",
+  "watch_item": "The approach adds extra online sampling and a supervised adapter fit each RL step, so compute overhead and stability of the cliff-detection/resampling loop are important implementation concerns.",
   "hashtags": [
     "#ReinforcementLearning",
-    "#MathReasoning",
+    "#LLMReasoning",
     "#LoRA",
-    "#LLMTraining",
-    "#RLVR"
+    "#MathAI",
+    "#DeepLearning"
   ],
   "paper_id": "2026-07-30-arxiv-lora_scaffolded_policy_optimization_lspo_a_sampling_time_low_rank_scaffold_for_recovering",
   "paper_title": "LoRA Scaffolded Policy Optimization (LSPO): A Sampling-Time Low-Rank Scaffold for Recovering Reinforcement-Learning Gradient on Zero-Reward Cliff Prompts",
   "paper_date": "2026-07-30",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-08-01T14:25:08",
+  "generated_at": "2026-08-02T14:28:14",
   "generator": "openai"
 }

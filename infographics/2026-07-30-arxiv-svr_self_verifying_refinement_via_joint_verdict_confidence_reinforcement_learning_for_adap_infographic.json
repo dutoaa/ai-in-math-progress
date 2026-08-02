@@ -1,17 +1,17 @@
 {
-  "key_insight": "SVR learns to use its own verdict and confidence as an internal control signal, so the model keeps refining only when it is not yet confident in a correct answer.",
-  "engineering_relevance": "This enables adaptive test-time compute, reducing wasted reasoning steps on easy inputs while preserving accuracy without relying on external verifier feedback at inference.",
+  "key_insight": "SVR teaches a model to self-verifiy its own answers and decide when to stop, turning test-time compute into a learned adaptive policy instead of a fixed budget.",
+  "engineering_relevance": "This is useful for reasoning systems that need better accuracy-per-compute by spending extra turns only on hard problems while keeping easy ones cheap.",
   "method": [
-    "Each turn: generate an answer plus a discrete correctness verdict and confidence score.",
-    "Retain the answer only if verdict = Correct and confidence exceeds a threshold; otherwise continue self-refinement.",
-    "Train with GRPO on fixed-horizon trajectories using rewards for correctness, calibration-aware self-verification, and stop-ready correct states."
+    "Multi-turn RL with GRPO trains the model to output a solution, a discrete correctness verdict, and a confidence score at each turn.",
+    "The model keeps an answer only when the verdict is Correct and confidence is above a threshold; otherwise it continues refining with its own self-verification.",
+    "Ground-truth labels are used only for training rewards, not as verifier feedback during refinement or inference."
   ],
-  "evidence_signal": "On seven mathematical reasoning benchmarks with Qwen3.5-2B, SVR reached a macro-average accuracy of 0.563 with just 2.99 inference turns on average.",
-  "watch_item": "Performance depends on well-calibrated self-verification and thresholding, so miscalibration could cause premature stopping or unnecessary extra turns.",
+  "evidence_signal": "On seven math reasoning benchmarks with Qwen3.5-2B, SVR reached 0.563 macro-average accuracy using only 2.99 turns on average.",
+  "watch_item": "Performance depends on learned calibration of verdict and confidence, so miscalibration or threshold sensitivity could reduce the benefit of adaptive stopping.",
   "hashtags": [
     "#TestTimeCompute",
-    "#MathReasoning",
     "#ReinforcementLearning",
+    "#MathReasoning",
     "#SelfVerification",
     "#AdaptiveInference"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "SVR: Self-Verifying Refinement via Joint Verdict-Confidence Reinforcement Learning for Adaptive Test-Time Compute",
   "paper_date": "2026-07-30",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-08-01T14:25:27",
+  "generated_at": "2026-08-02T14:28:39",
   "generator": "openai"
 }

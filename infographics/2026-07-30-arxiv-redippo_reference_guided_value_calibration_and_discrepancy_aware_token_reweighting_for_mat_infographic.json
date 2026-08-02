@@ -1,17 +1,17 @@
 {
-  "key_insight": "ReDiPPO improves mathematical reasoning by using a reference-guided critic for better value estimates and a discrepancy signal to reweight token-level training advantages.",
-  "engineering_relevance": "The method targets a core RL failure mode in long-horizon reasoning—noisy credit assignment—making PPO-style training more reliable for LLMs on math tasks.",
+  "key_insight": "ReDiPPO improves mathematical reasoning by using a reference-guided critic to calibrate value estimates and a discrepancy signal to reweight token-level advantages during PPO.",
+  "engineering_relevance": "The method is relevant for training large language models on long-horizon reasoning tasks where sparse rewards make standard token credit assignment unreliable.",
   "method": [
-    "Train a reference-guided critic using privileged reference answers during training.",
-    "Keep a standard critic and measure the discrepancy between reference-guided and standard value estimates.",
-    "Use this discrepancy to reweight token-level advantages in PPO, emphasizing harder reasoning states."
+    "Train a reference-guided critic using reference answers as privileged supervision.",
+    "Keep a standard critic and measure token-level discrepancy between the two value estimates.",
+    "Use discrepancy-aware reweighting to emphasize difficult reasoning tokens during PPO updates."
   ],
   "evidence_signal": "The abstract reports extensive experiments on diverse mathematical reasoning benchmarks, with ReDiPPO improving value-estimation accuracy and outperforming PPO, DAPO, and GSPO in final reasoning performance.",
-  "watch_item": "Because the approach relies on reference answers as training-time privileged signals, its setup may be harder to apply when high-quality references are unavailable or noisy.",
+  "watch_item": "The approach depends on access to reference answers during training and adds extra critic machinery, which may increase training complexity and deployment mismatch.",
   "hashtags": [
-    "#LLMReasoning",
-    "#PPO",
     "#MathematicalReasoning",
+    "#PPO",
+    "#LLMs",
     "#ReinforcementLearning",
     "#ValueEstimation"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "ReDiPPO: Reference-Guided Value Calibration and Discrepancy-Aware Token Reweighting for Mathematical Reasoning",
   "paper_date": "2026-07-30",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-08-01T14:24:59",
+  "generated_at": "2026-08-02T14:28:04",
   "generator": "openai"
 }

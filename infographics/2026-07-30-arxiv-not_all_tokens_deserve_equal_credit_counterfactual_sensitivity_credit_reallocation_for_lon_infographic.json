@@ -1,24 +1,24 @@
 {
-  "key_insight": "Token-level credit in long-CoT RL is not uniform: highly sensitive tokens often shift without providing reliable answer-aligned learning signal, so credit should be reallocated rather than broadcast equally.",
-  "engineering_relevance": "For training reasoning LLMs with RLVR, CSCR offers a low-overhead drop-in improvement over GRPO that preserves verifier direction while reducing wasted or misleading updates.",
+  "key_insight": "Token-level credit in long-CoT RLVR is highly uneven: large likelihood shifts mostly reflect counterfactual sensitivity of surface-form tokens, not reliable answer-aligned learning signals.",
+  "engineering_relevance": "For reasoning-model training, CSCR improves upon uniform token credit assignment in GRPO by downweighting sensitive tokens while preserving verifier-determined update direction and total credit budget.",
   "method": [
-    "Measure each sampled trajectory under both correct and incorrect counterfactual outcomes.",
-    "Identify tokens with large, low-value sensitivity shifts and downweight their credit.",
-    "Renormalize token advantages to keep the original credit budget and update direction."
+    "Re-score each sampled trajectory under two opposite outcomes: correct vs incorrect.",
+    "Measure token sensitivity from the induced likelihood shifts and reduce credit for highly sensitive tokens.",
+    "Renormalize token advantages so the original credit budget and RL signal direction are preserved."
   ],
-  "evidence_signal": "The authors evaluate on long-CoT mathematical reasoning benchmarks and report that CSCR consistently outperforms GRPO with the same number of policy updates, with ablations showing moderate downweighting works best.",
-  "watch_item": "Over-modulating token credits can destabilize optimization, so the downweighting strength needs careful tuning.",
+  "evidence_signal": "The authors test fixed trajectories under opposing outcome conditions and evaluate CSCR on long-CoT mathematical reasoning benchmarks, where it consistently outperforms GRPO with the same number of policy updates.",
+  "watch_item": "Over-downweighting sensitive tokens can destabilize optimization, so the credit modulation strength needs careful tuning.",
   "hashtags": [
-    "#LLMReasoning",
     "#RLVR",
     "#LongCoT",
-    "#CreditAssignment",
-    "#MathematicalReasoning"
+    "#MathematicalReasoning",
+    "#LLMTraining",
+    "#CreditAssignment"
   ],
   "paper_id": "2026-07-30-arxiv-not_all_tokens_deserve_equal_credit_counterfactual_sensitivity_credit_reallocation_for_lon",
   "paper_title": "Not All Tokens Deserve Equal Credit: Counterfactual Sensitivity Credit Reallocation for Long-CoT Reasoning",
   "paper_date": "2026-07-30",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-08-01T14:24:57",
+  "generated_at": "2026-08-02T14:28:01",
   "generator": "openai"
 }
