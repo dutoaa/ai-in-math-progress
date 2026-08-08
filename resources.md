@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-08-07
+Generated: 2026-08-08
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Large language models for partial differential equation workflows
