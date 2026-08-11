@@ -1,17 +1,65 @@
 # AI math Progress Public Resources
 
-Generated: 2026-08-10
+Generated: 2026-08-11
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. Kastor: An efficient fine-tuning strategy for generative emulation of PDE simulations
+## 1. SR-OPSD: Self-Referenced On-Policy Self-Distillation
 
-- Date: 2026-08-06
+- Date: 2026-08-10
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.06107v1
-- PDF: https://arxiv.org/pdf/2608.06107v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-06-arxiv-kastor_an_efficient_fine_tuning_strategy_for_generative_emulation_of_pde_simulations_infographic.json
+- arXiv: https://arxiv.org/abs/2608.09745v1
+- PDF: https://arxiv.org/pdf/2608.09745v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-10-arxiv-sr_opsd_self_referenced_on_policy_self_distillation_infographic.json
 
-## 2. A Domain-Specific Harness for End-to-End Automation of Optimization Research
+## 2. Motif 3: Technical Report
+
+- Date: 2026-08-10
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2608.09119v1
+- PDF: https://arxiv.org/pdf/2608.09119v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-10-arxiv-motif_3_technical_report_infographic.json
+
+## 3. Parameter Exploration for RLVR via Variational Learning
+
+- Date: 2026-08-10
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2608.09805v1
+- PDF: https://arxiv.org/pdf/2608.09805v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-10-arxiv-parameter_exploration_for_rlvr_via_variational_learning_infographic.json
+
+## 4. Defining Decentralization: An Ontological Perspective
+
+- Date: 2026-08-10
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2608.09748v1
+- PDF: https://arxiv.org/pdf/2608.09748v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-10-arxiv-defining_decentralization_an_ontological_perspective_infographic.json
+
+## 5. Safe Start: Configuring Optimization Algorithms for Decision-Making under Extreme Risks
+
+- Date: 2026-08-10
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2608.09872v1
+- PDF: https://arxiv.org/pdf/2608.09872v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-10-arxiv-safe_start_configuring_optimization_algorithms_for_decision_making_under_extreme_risks_infographic.json
+
+## 6. Improving Constraint Models with LLM Agents
+
+- Date: 2026-08-08
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.08127v1
+- PDF: https://arxiv.org/pdf/2608.08127v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-08-arxiv-improving_constraint_models_with_llm_agents_infographic.json
+
+## 7. Machine-Guided Recurrence Boundary Theory for Nahm Sums
+
+- Date: 2026-08-08
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2608.08347v1
+- PDF: https://arxiv.org/pdf/2608.08347v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-08-arxiv-machine_guided_recurrence_boundary_theory_for_nahm_sums_infographic.json
+
+## 8. A Domain-Specific Harness for End-to-End Automation of Optimization Research
 
 - Date: 2026-08-07
 - Category: Theorem Proving
@@ -19,146 +67,98 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.07407v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-07-arxiv-a_domain_specific_harness_for_end_to_end_automation_of_optimization_research_infographic.json
 
-## 3. Alternating Levenberg-Marquardt Training of Physics-Informed Neural Networks with Fourier-Enhanced Features
+## 9. Walk-on-Spheres Monte Carlo and deep neural network approximations of elliptic PDEs with drift and killing
 
-- Date: 2026-08-06
+- Date: 2026-08-10
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.05892v1
-- PDF: https://arxiv.org/pdf/2608.05892v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-06-arxiv-alternating_levenberg_marquardt_training_of_physics_informed_neural_networks_with_fourier_infographic.json
+- arXiv: https://arxiv.org/abs/2608.09494v1
+- PDF: https://arxiv.org/pdf/2608.09494v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-10-arxiv-walk_on_spheres_monte_carlo_and_deep_neural_network_approximations_of_elliptic_pdes_with_d_infographic.json
 
-## 4. On MUON optimization: From non-convergence to an error analysis with Polar Express and the Newton-Schulz polynomial from implementations
+## 10. Math-Vision Diagrams: A Comprehensive Benchmark for Evaluating LLM Mathematical Diagram Generation Capabilities
 
-- Date: 2026-08-05
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.04607v1
-- PDF: https://arxiv.org/pdf/2608.04607v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-05-arxiv-on_muon_optimization_from_non_convergence_to_an_error_analysis_with_polar_express_and_the_infographic.json
-
-## 5. IB-RL: Isolated Bilateral Reinforcement Learning for Strategic Dialogue Agents
-
-- Date: 2026-08-07
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.06735v1
-- PDF: https://arxiv.org/pdf/2608.06735v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-07-arxiv-ib_rl_isolated_bilateral_reinforcement_learning_for_strategic_dialogue_agents_infographic.json
-
-## 6. Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging
-
-- Date: 2026-08-06
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.05541v1
-- PDF: https://arxiv.org/pdf/2608.05541v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-06-arxiv-hyper_es_effective_evolution_strategies_for_llm_reasoning_via_descent_direction_merging_infographic.json
-
-## 7. Inverse reinforcement learning for indefinite mean-field social optimization with multiplicative noise
-
-- Date: 2026-08-07
+- Date: 2026-08-09
 - Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2608.07252v1
-- PDF: https://arxiv.org/pdf/2608.07252v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-07-arxiv-inverse_reinforcement_learning_for_indefinite_mean_field_social_optimization_with_multipli_infographic.json
+- arXiv: https://arxiv.org/abs/2608.08964v1
+- PDF: https://arxiv.org/pdf/2608.08964v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-09-arxiv-math_vision_diagrams_a_comprehensive_benchmark_for_evaluating_llm_mathematical_diagram_gen_infographic.json
 
-## 8. An Inertial Block Proximal Linearized Method with Adaptive Momentum for Nonconvex and Nonsmooth Optimization
+## 11. Mismatch Matters: On-Policy Distillation Beyond Token Agreement
 
-- Date: 2026-08-06
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.05502v1
-- PDF: https://arxiv.org/pdf/2608.05502v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-06-arxiv-an_inertial_block_proximal_linearized_method_with_adaptive_momentum_for_nonconvex_and_nons_infographic.json
-
-## 9. Can Open-Weight LLMs Produce Kernel-Verified Coq Proofs? A Pilot Study
-
-- Date: 2026-08-05
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2608.05420v1
-- PDF: https://arxiv.org/pdf/2608.05420v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-05-arxiv-can_open_weight_llms_produce_kernel_verified_coq_proofs_a_pilot_study_infographic.json
-
-## 10. RP-OPSD: Reasoning-Pivot-Guided On-Policy Self-Distillation for Multilingual Reasoning Transfer
-
-- Date: 2026-08-06
+- Date: 2026-08-10
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.06347v1
-- PDF: https://arxiv.org/pdf/2608.06347v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-06-arxiv-rp_opsd_reasoning_pivot_guided_on_policy_self_distillation_for_multilingual_reasoning_tran_infographic.json
+- arXiv: https://arxiv.org/abs/2608.09836v1
+- PDF: https://arxiv.org/pdf/2608.09836v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-10-arxiv-mismatch_matters_on_policy_distillation_beyond_token_agreement_infographic.json
 
-## 11. Stochastic Dynamics on Persistence Diagram Space via Reinforcement Learning
+## 12. Neurosymbolic Discovery of Algebraic Graph Constructions
 
-- Date: 2026-08-06
+- Date: 2026-08-08
 - Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2608.06276v1
-- PDF: https://arxiv.org/pdf/2608.06276v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-06-arxiv-stochastic_dynamics_on_persistence_diagram_space_via_reinforcement_learning_infographic.json
+- arXiv: https://arxiv.org/abs/2608.08118v1
+- PDF: https://arxiv.org/pdf/2608.08118v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-08-arxiv-neurosymbolic_discovery_of_algebraic_graph_constructions_infographic.json
 
-## 12. Learning Suffers More Than the Policy Class Under Partial Observability: A Closed-Form Analysis
+## 13. ADEx-FNO: A Unified Ambient-Domain Framework for Fourier Neural Operators on Varying Geometries
 
-- Date: 2026-08-07
-- Category: AI math
-- arXiv: https://arxiv.org/abs/2608.07228v1
-- PDF: https://arxiv.org/pdf/2608.07228v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-07-arxiv-learning_suffers_more_than_the_policy_class_under_partial_observability_a_closed_form_anal_infographic.json
-
-## 13. Theoretical Foundations of Communication-Efficient, Robust, and Practical Distributed and Federated Optimization
-
-- Date: 2026-08-06
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.06563v1
-- PDF: https://arxiv.org/pdf/2608.06563v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-06-arxiv-theoretical_foundations_of_communication_efficient_robust_and_practical_distributed_and_fe_infographic.json
-
-## 14. DASH: Divergence-Adaptive Supervision Horizons for On-Policy Self-Distillation of Reasoning Models
-
-- Date: 2026-08-06
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.06243v2
-- PDF: https://arxiv.org/pdf/2608.06243v2
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-06-arxiv-dash_divergence_adaptive_supervision_horizons_for_on_policy_self_distillation_of_reasoning_infographic.json
-
-## 15. Uncovering expert objectives in production planning via inverse optimization: An industrial case study
-
-- Date: 2026-08-07
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2608.07398v1
-- PDF: https://arxiv.org/pdf/2608.07398v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-07-arxiv-uncovering_expert_objectives_in_production_planning_via_inverse_optimization_an_industrial_infographic.json
-
-## 16. The Equations of Reduced Magnetohydrodynamics in Dipole Coordinates
-
-- Date: 2026-08-06
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2608.06617v1
-- PDF: https://arxiv.org/pdf/2608.06617v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-06-arxiv-the_equations_of_reduced_magnetohydrodynamics_in_dipole_coordinates_infographic.json
-
-## 17. Strong error analysis for the stochastic momentum optimizer
-
-- Date: 2026-08-04
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.04245v1
-- PDF: https://arxiv.org/pdf/2608.04245v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-04-arxiv-strong_error_analysis_for_the_stochastic_momentum_optimizer_infographic.json
-
-## 18. From the Dirichlet Integral to Lobachevsky's Formula: A Formalization in Lean 4
-
-- Date: 2026-08-07
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2608.07366v1
-- PDF: https://arxiv.org/pdf/2608.07366v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-07-arxiv-from_the_dirichlet_integral_to_lobachevsky_s_formula_a_formalization_in_lean_4_infographic.json
-
-## 19. A proximal subgradient method for nonconvex stochastic optimization under the Kurdyka-Łojasiewicz condition
-
-- Date: 2026-08-05
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.05460v1
-- PDF: https://arxiv.org/pdf/2608.05460v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-05-arxiv-a_proximal_subgradient_method_for_nonconvex_stochastic_optimization_under_the_kurdyka_ojas_infographic.json
-
-## 20. Incremental Aggregation on the Grassmannian for Asynchronous Eigenspace Computation
-
-- Date: 2026-08-05
+- Date: 2026-08-09
 - Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2608.04406v1
-- PDF: https://arxiv.org/pdf/2608.04406v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-05-arxiv-incremental_aggregation_on_the_grassmannian_for_asynchronous_eigenspace_computation_infographic.json
+- arXiv: https://arxiv.org/abs/2608.08608v1
+- PDF: https://arxiv.org/pdf/2608.08608v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-09-arxiv-adex_fno_a_unified_ambient_domain_framework_for_fourier_neural_operators_on_varying_geomet_infographic.json
+
+## 14. Distributed Optimization with Streaming Data: A Temporal Weighting Perspective
+
+- Date: 2026-08-10
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.09565v1
+- PDF: https://arxiv.org/pdf/2608.09565v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-10-arxiv-distributed_optimization_with_streaming_data_a_temporal_weighting_perspective_infographic.json
+
+## 15. Two-Step MV-DeepONet: Probabilistic Operator Learning for Uncertainty Propagation Driven by Random Input Fields
+
+- Date: 2026-08-10
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.09071v1
+- PDF: https://arxiv.org/pdf/2608.09071v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-10-arxiv-two_step_mv_deeponet_probabilistic_operator_learning_for_uncertainty_propagation_driven_by_infographic.json
+
+## 16. Mass Lumping and Numerical Quadrature for Approximation of Fractional Elliptic Differential Equations Driven by Gaussian White Noise
+
+- Date: 2026-08-09
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2608.08658v1
+- PDF: https://arxiv.org/pdf/2608.08658v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-09-arxiv-mass_lumping_and_numerical_quadrature_for_approximation_of_fractional_elliptic_differentia_infographic.json
+
+## 17. Exact Rank-Space KL Projection for Shared-Marginal Low-Rank Factors: Application to Doubly Stochastic Clustering
+
+- Date: 2026-08-09
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2608.08642v1
+- PDF: https://arxiv.org/pdf/2608.08642v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-09-arxiv-exact_rank_space_kl_projection_for_shared_marginal_low_rank_factors_application_to_doubly_infographic.json
+
+## 18. PRISM: A Predictive Protocol for Permutation Optimization via Landscape Diagnostics
+
+- Date: 2026-08-08
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2608.08344v1
+- PDF: https://arxiv.org/pdf/2608.08344v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-08-arxiv-prism_a_predictive_protocol_for_permutation_optimization_via_landscape_diagnostics_infographic.json
+
+## 19. Regret, equilibrium, and learning in games: A guided tour
+
+- Date: 2026-08-10
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2608.09389v1
+- PDF: https://arxiv.org/pdf/2608.09389v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-10-arxiv-regret_equilibrium_and_learning_in_games_a_guided_tour_infographic.json
+
+## 20. Test-Time Augmentation for LLMs: When Input Diversity Beats Output Diversity at Matched Compute
+
+- Date: 2026-08-10
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2608.09351v1
+- PDF: https://arxiv.org/pdf/2608.09351v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-10-arxiv-test_time_augmentation_for_llms_when_input_diversity_beats_output_diversity_at_matched_com_infographic.json
