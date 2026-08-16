@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-08-15
+Generated: 2026-08-16
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. GCPO: Diagnosing and Constraining Subspace Geometry in Rollout RL for LLMs
