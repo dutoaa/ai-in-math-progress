@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-08-21
+Generated: 2026-08-22
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Grading the Graders: Verification Autonomy Levels (L0-L5) for LLM Reasoning
@@ -75,7 +75,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.19615v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-20-arxiv-evo_gtransnet_for_parabolic_pdes_a_fixed_feature_galerkin_method_of_lines_with_quadrature_infographic.json
 
-## 10. Self-supervised In-context Operator Learning for Stochastic Mean-Field Control
+## 10. On the Slow Convergence to Trivial Solutions of Algorithms for Hard Optimization Problems
+
+- Date: 2026-08-19
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2608.18910v1
+- PDF: https://arxiv.org/pdf/2608.18910v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-19-arxiv-on_the_slow_convergence_to_trivial_solutions_of_algorithms_for_hard_optimization_problems_infographic.json
+
+## 11. Self-supervised In-context Operator Learning for Stochastic Mean-Field Control
 
 - Date: 2026-08-18
 - Category: Number Theory and Algebra
@@ -83,7 +91,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.18282v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-18-arxiv-self_supervised_in_context_operator_learning_for_stochastic_mean_field_control_infographic.json
 
-## 11. Function-On-Function Regression Through Separable Neural Operators
+## 12. Function-On-Function Regression Through Separable Neural Operators
 
 - Date: 2026-08-19
 - Category: Symbolic Computation
@@ -91,7 +99,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.19070v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-19-arxiv-function_on_function_regression_through_separable_neural_operators_infographic.json
 
-## 12. Diffusion Models for High-Dimensional Clustered Data: Intrinsic-Dimension Adaptivity via Bayesian Classification
+## 13. Diffusion Models for High-Dimensional Clustered Data: Intrinsic-Dimension Adaptivity via Bayesian Classification
 
 - Date: 2026-08-19
 - Category: Geometry and Topology
@@ -99,7 +107,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.19067v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-19-arxiv-diffusion_models_for_high_dimensional_clustered_data_intrinsic_dimension_adaptivity_via_ba_infographic.json
 
-## 13. Rethinking Privileged Information in On-Policy Self-Distillation
+## 14. Rethinking Privileged Information in On-Policy Self-Distillation
 
 - Date: 2026-08-18
 - Category: Mathematical Reasoning
@@ -107,21 +115,13 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.18271v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-18-arxiv-rethinking_privileged_information_in_on_policy_self_distillation_infographic.json
 
-## 14. Direct vs. Indirect Data-Driven Control: Case-study of Switching Systems Stability
+## 15. Direct vs. Indirect Data-Driven Control: Case-study of Switching Systems Stability
 
 - Date: 2026-08-20
 - Category: AI math
 - arXiv: https://arxiv.org/abs/2608.20207v1
 - PDF: https://arxiv.org/pdf/2608.20207v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-20-arxiv-direct_vs_indirect_data_driven_control_case_study_of_switching_systems_stability_infographic.json
-
-## 15. On the Slow Convergence to Trivial Solutions of Algorithms for Hard Optimization Problems
-
-- Date: 2026-08-19
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2608.18910v1
-- PDF: https://arxiv.org/pdf/2608.18910v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-19-arxiv-on_the_slow_convergence_to_trivial_solutions_of_algorithms_for_hard_optimization_problems_infographic.json
 
 ## 16. Learning Topological Features of $\widehat Z$-invariants
 
