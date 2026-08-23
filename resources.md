@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-08-22
+Generated: 2026-08-23
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Grading the Graders: Verification Autonomy Levels (L0-L5) for LLM Reasoning
