@@ -1,9 +1,81 @@
 # AI math Progress Public Resources
 
-Generated: 2026-08-24
+Generated: 2026-08-25
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. Advanced Linear Algebra with Applications - Part I (Numerical linear algebra for PDEs, machine learning, and data assimilation)
+## 1. SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning
+
+- Date: 2026-08-24
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2608.23493v1
+- PDF: https://arxiv.org/pdf/2608.23493v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-srpo_self_reflective_policy_optimization_for_long_horizon_reasoning_infographic.json
+
+## 2. How to Train a Critic Stably and Efficiently
+
+- Date: 2026-08-24
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2608.23566v1
+- PDF: https://arxiv.org/pdf/2608.23566v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-how_to_train_a_critic_stably_and_efficiently_infographic.json
+
+## 3. Beyond the Stability-Exploration Dilemma: Environmental Regularization for LLM Policy Optimization
+
+- Date: 2026-08-24
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2608.23311v1
+- PDF: https://arxiv.org/pdf/2608.23311v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-beyond_the_stability_exploration_dilemma_environmental_regularization_for_llm_policy_optim_infographic.json
+
+## 4. Two-level domain-decomposition AdaGrad method for scalable training of graph neural networks
+
+- Date: 2026-08-23
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2608.22575v1
+- PDF: https://arxiv.org/pdf/2608.22575v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-23-arxiv-two_level_domain_decomposition_adagrad_method_for_scalable_training_of_graph_neural_networ_infographic.json
+
+## 5. Zeroth-Order Nonsmooth Nonconvex Optimization with Convex Liftings and Its Application to State-Feedback $H_\infty$ Policy Optimization
+
+- Date: 2026-08-24
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.23178v1
+- PDF: https://arxiv.org/pdf/2608.23178v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-zeroth_order_nonsmooth_nonconvex_optimization_with_convex_liftings_and_its_application_to_infographic.json
+
+## 6. Dual-Grained Agent Memory and Shapley Context Attribution for Multimodal Agentic Learner
+
+- Date: 2026-08-24
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2608.23268v1
+- PDF: https://arxiv.org/pdf/2608.23268v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-dual_grained_agent_memory_and_shapley_context_attribution_for_multimodal_agentic_learner_infographic.json
+
+## 7. Hazel Prover: A Classroom Proof Assistant for Learning Structural Induction
+
+- Date: 2026-08-24
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2608.23309v1
+- PDF: https://arxiv.org/pdf/2608.23309v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-hazel_prover_a_classroom_proof_assistant_for_learning_structural_induction_infographic.json
+
+## 8. DIAG: Diagnostic Iterative Alignment and Generation for Data-Efficient Mathematical Preference Distillation
+
+- Date: 2026-08-24
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2608.22806v1
+- PDF: https://arxiv.org/pdf/2608.22806v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-diag_diagnostic_iterative_alignment_and_generation_for_data_efficient_mathematical_prefere_infographic.json
+
+## 9. Perturb the Thought, Not the Pixels: Latent-Space Rollout Diversification for Reinforcement Learning of Vision-Language Models
+
+- Date: 2026-08-21
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2608.21595v1
+- PDF: https://arxiv.org/pdf/2608.21595v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-21-arxiv-perturb_the_thought_not_the_pixels_latent_space_rollout_diversification_for_reinforcement_infographic.json
+
+## 10. Advanced Linear Algebra with Applications - Part I (Numerical linear algebra for PDEs, machine learning, and data assimilation)
 
 - Date: 2026-08-21
 - Category: Number Theory and Algebra
@@ -11,15 +83,63 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.21234v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-21-arxiv-advanced_linear_algebra_with_applications_part_i_numerical_linear_algebra_for_pdes_machine_infographic.json
 
-## 2. Grading the Graders: Verification Autonomy Levels (L0-L5) for LLM Reasoning
+## 11. Inertial Manifold Neural Operator for Dissipative Time-Dependent Partial Differential Equations
 
-- Date: 2026-08-19
+- Date: 2026-08-24
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.23546v1
+- PDF: https://arxiv.org/pdf/2608.23546v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-inertial_manifold_neural_operator_for_dissipative_time_dependent_partial_differential_equa_infographic.json
+
+## 12. Walking on the DARKSIDE
+
+- Date: 2026-08-24
 - Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2608.19009v2
-- PDF: https://arxiv.org/pdf/2608.19009v2
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-19-arxiv-grading_the_graders_verification_autonomy_levels_l0_l5_for_llm_reasoning_infographic.json
+- arXiv: https://arxiv.org/abs/2608.23370v1
+- PDF: https://arxiv.org/pdf/2608.23370v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-walking_on_the_darkside_infographic.json
 
-## 3. Learning piecewise-smooth dynamical systems
+## 13. A Momentum-Based Variance-Reduced Algorithm for Federated Multiobjective Optimization
+
+- Date: 2026-08-24
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.22945v1
+- PDF: https://arxiv.org/pdf/2608.22945v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-a_momentum_based_variance_reduced_algorithm_for_federated_multiobjective_optimization_infographic.json
+
+## 14. Geometric Structures on Graphs: a Holonomy-Based Discretization of Curvature
+
+- Date: 2026-08-23
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2608.22453v1
+- PDF: https://arxiv.org/pdf/2608.22453v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-23-arxiv-geometric_structures_on_graphs_a_holonomy_based_discretization_of_curvature_infographic.json
+
+## 15. On the extreme eigenvalues of the Gram Matrix in Physics-Informed Neural Networks for the Poisson Equation
+
+- Date: 2026-08-23
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2608.22426v1
+- PDF: https://arxiv.org/pdf/2608.22426v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-23-arxiv-on_the_extreme_eigenvalues_of_the_gram_matrix_in_physics_informed_neural_networks_for_the_infographic.json
+
+## 16. A Hybrid Physics-Informed Neural Network Framework for Computing Dispersion Relations of SH Waves in Generalized Hetrogeneous Layered Media with Applications
+
+- Date: 2026-08-23
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2608.22353v1
+- PDF: https://arxiv.org/pdf/2608.22353v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-23-arxiv-a_hybrid_physics_informed_neural_network_framework_for_computing_dispersion_relations_of_s_infographic.json
+
+## 17. More Accurate or More Efficient? Evaluating Locally Deployed Compact Open-Weight Language Models for Mathematical Reasoning
+
+- Date: 2026-08-22
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2608.22048v1
+- PDF: https://arxiv.org/pdf/2608.22048v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-22-arxiv-more_accurate_or_more_efficient_evaluating_locally_deployed_compact_open_weight_language_m_infographic.json
+
+## 18. Learning piecewise-smooth dynamical systems
 
 - Date: 2026-08-20
 - Category: Symbolic Computation
@@ -27,138 +147,18 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.19785v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-20-arxiv-learning_piecewise_smooth_dynamical_systems_infographic.json
 
-## 4. Continuous-Time Reinforcement Learning for Controlled Hawkes Jump-Diffusions
+## 19. SGHA: A Single-Loop Fully First-Order Algorithm for Nonconvex-Strongly-Convex Bilevel Optimization
 
-- Date: 2026-08-19
+- Date: 2026-08-24
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.19151v1
-- PDF: https://arxiv.org/pdf/2608.19151v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-19-arxiv-continuous_time_reinforcement_learning_for_controlled_hawkes_jump_diffusions_infographic.json
+- arXiv: https://arxiv.org/abs/2608.23211v1
+- PDF: https://arxiv.org/pdf/2608.23211v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-sgha_a_single_loop_fully_first_order_algorithm_for_nonconvex_strongly_convex_bilevel_optim_infographic.json
 
-## 5. SignalReasoner: Assessing the Upper Bound of 3B Models for Signal Mathematical Reasoning
+## 20. LongWoF-Bench: Evaluating EvoMap Genes for Verifiable Long-Workflow Tasks
 
-- Date: 2026-08-18
+- Date: 2026-08-24
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.17301v1
-- PDF: https://arxiv.org/pdf/2608.17301v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-18-arxiv-signalreasoner_assessing_the_upper_bound_of_3b_models_for_signal_mathematical_reasoning_infographic.json
-
-## 6. Primal Acceleration of Newton's Method
-
-- Date: 2026-08-21
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2608.21359v1
-- PDF: https://arxiv.org/pdf/2608.21359v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-21-arxiv-primal_acceleration_of_newton_s_method_infographic.json
-
-## 7. Physics-Informed Bayesian Optimization Warm-Starts for Sequential Convex Programming in Asteroid Surface Hopping
-
-- Date: 2026-08-21
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2608.20662v1
-- PDF: https://arxiv.org/pdf/2608.20662v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-21-arxiv-physics_informed_bayesian_optimization_warm_starts_for_sequential_convex_programming_in_as_infographic.json
-
-## 8. Kähler landscapes for complex neural network descents and guarantees including a search and destroy of the Calabi-Yau manifold
-
-- Date: 2026-08-20
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2608.19584v1
-- PDF: https://arxiv.org/pdf/2608.19584v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-20-arxiv-k_hler_landscapes_for_complex_neural_network_descents_and_guarantees_including_a_search_an_infographic.json
-
-## 9. Anchored Regularized Direct Least Squares (ARDLS): Integrating Established Prioritization Operators for Priority Elicitation in the Analytic Hierarchy Process
-
-- Date: 2026-08-21
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.21187v1
-- PDF: https://arxiv.org/pdf/2608.21187v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-21-arxiv-anchored_regularized_direct_least_squares_ardls_integrating_established_prioritization_ope_infographic.json
-
-## 10. Modeling of an ODE-constrained optimization problem describing tumor dynamics, and numerical approximation via sequential physics-informed neural networks
-
-- Date: 2026-08-19
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2608.18974v1
-- PDF: https://arxiv.org/pdf/2608.18974v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-19-arxiv-modeling_of_an_ode_constrained_optimization_problem_describing_tumor_dynamics_and_numerica_infographic.json
-
-## 11. AI with Authority, from Application to Silicon
-
-- Date: 2026-08-21
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2608.21356v1
-- PDF: https://arxiv.org/pdf/2608.21356v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-21-arxiv-ai_with_authority_from_application_to_silicon_infographic.json
-
-## 12. Exact Algebraic Computation of Learning Coefficients for Two-Dimensional Singular Models
-
-- Date: 2026-08-20
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2608.20183v1
-- PDF: https://arxiv.org/pdf/2608.20183v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-20-arxiv-exact_algebraic_computation_of_learning_coefficients_for_two_dimensional_singular_models_infographic.json
-
-## 13. Evo-GTransNet for Parabolic PDEs: A Fixed-Feature Galerkin Method of Lines with Quadrature-Mass Orthonormalization
-
-- Date: 2026-08-20
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.19615v1
-- PDF: https://arxiv.org/pdf/2608.19615v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-20-arxiv-evo_gtransnet_for_parabolic_pdes_a_fixed_feature_galerkin_method_of_lines_with_quadrature_infographic.json
-
-## 14. Self-supervised In-context Operator Learning for Stochastic Mean-Field Control
-
-- Date: 2026-08-18
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2608.18282v1
-- PDF: https://arxiv.org/pdf/2608.18282v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-18-arxiv-self_supervised_in_context_operator_learning_for_stochastic_mean_field_control_infographic.json
-
-## 15. ResiliFlow: An Open Transport World Model for Infrastructure Perception and Disaster Resilience
-
-- Date: 2026-08-21
-- Category: AI math
-- arXiv: https://arxiv.org/abs/2608.20709v1
-- PDF: https://arxiv.org/pdf/2608.20709v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-21-arxiv-resiliflow_an_open_transport_world_model_for_infrastructure_perception_and_disaster_resili_infographic.json
-
-## 16. Function-On-Function Regression Through Separable Neural Operators
-
-- Date: 2026-08-19
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2608.19070v1
-- PDF: https://arxiv.org/pdf/2608.19070v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-19-arxiv-function_on_function_regression_through_separable_neural_operators_infographic.json
-
-## 17. Diffusion Models for High-Dimensional Clustered Data: Intrinsic-Dimension Adaptivity via Bayesian Classification
-
-- Date: 2026-08-19
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2608.19067v1
-- PDF: https://arxiv.org/pdf/2608.19067v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-19-arxiv-diffusion_models_for_high_dimensional_clustered_data_intrinsic_dimension_adaptivity_via_ba_infographic.json
-
-## 18. Rethinking Privileged Information in On-Policy Self-Distillation
-
-- Date: 2026-08-18
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.18271v1
-- PDF: https://arxiv.org/pdf/2608.18271v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-18-arxiv-rethinking_privileged_information_in_on_policy_self_distillation_infographic.json
-
-## 19. Memory Augmentation Unlocks Efficient Chain-of-Thought Reasoning
-
-- Date: 2026-08-21
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.21265v1
-- PDF: https://arxiv.org/pdf/2608.21265v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-21-arxiv-memory_augmentation_unlocks_efficient_chain_of_thought_reasoning_infographic.json
-
-## 20. DirEAG: Dirichlet Evidence Aggregation for Calibrating Verbalized Confidence in Mathematical Reasoning
-
-- Date: 2026-08-21
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.20717v1
-- PDF: https://arxiv.org/pdf/2608.20717v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-21-arxiv-direag_dirichlet_evidence_aggregation_for_calibrating_verbalized_confidence_in_mathematica_infographic.json
+- arXiv: https://arxiv.org/abs/2608.23200v1
+- PDF: https://arxiv.org/pdf/2608.23200v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-longwof_bench_evaluating_evomap_genes_for_verifiable_long_workflow_tasks_infographic.json
