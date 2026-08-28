@@ -1,9 +1,25 @@
 # AI math Progress Public Resources
 
-Generated: 2026-08-27
+Generated: 2026-08-28
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. FLARE: Verifying MILP Reformulations with LLM-Based Theorem Proving
+## 1. Physics-Informed Stochastic Configuration Machine: A Backpropagation-Free Neural Network with Fast Training for Nonlinear Differential Equations
+
+- Date: 2026-08-27
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.26549v1
+- PDF: https://arxiv.org/pdf/2608.26549v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-physics_informed_stochastic_configuration_machine_a_backpropagation_free_neural_network_wi_infographic.json
+
+## 2. Physics-Informed Neural Networks for Biot's Model via Fixed-Stress Splitting and Energy Natural Gradient Descent
+
+- Date: 2026-08-26
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.26303v1
+- PDF: https://arxiv.org/pdf/2608.26303v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-physics_informed_neural_networks_for_biot_s_model_via_fixed_stress_splitting_and_energy_na_infographic.json
+
+## 3. FLARE: Verifying MILP Reformulations with LLM-Based Theorem Proving
 
 - Date: 2026-08-25
 - Category: Theorem Proving
@@ -11,7 +27,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.25220v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-flare_verifying_milp_reformulations_with_llm_based_theorem_proving_infographic.json
 
-## 2. Parason: Revealing Subtask and Trial Parallelism in LLM Reasoning
+## 4. Parason: Revealing Subtask and Trial Parallelism in LLM Reasoning
 
 - Date: 2026-08-25
 - Category: Mathematical Reasoning
@@ -19,7 +35,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.24658v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-parason_revealing_subtask_and_trial_parallelism_in_llm_reasoning_infographic.json
 
-## 3. ROMNet: a hybrid reduced order modeling and machine learning approach to waveform inversion
+## 5. Enforcing Dirichlet Boundary Conditions in Operator Learning
+
+- Date: 2026-08-27
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.27256v1
+- PDF: https://arxiv.org/pdf/2608.27256v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-enforcing_dirichlet_boundary_conditions_in_operator_learning_infographic.json
+
+## 6. ROMNet: a hybrid reduced order modeling and machine learning approach to waveform inversion
 
 - Date: 2026-08-25
 - Category: Number Theory and Algebra
@@ -27,7 +51,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.25160v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-romnet_a_hybrid_reduced_order_modeling_and_machine_learning_approach_to_waveform_inversion_infographic.json
 
-## 4. Robust training and rigorous error analysis of physics-informed neural networks for the $p$-Laplace equation
+## 7. Robust training and rigorous error analysis of physics-informed neural networks for the $p$-Laplace equation
 
 - Date: 2026-08-25
 - Category: Symbolic Computation
@@ -35,7 +59,31 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.24205v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-robust_training_and_rigorous_error_analysis_of_physics_informed_neural_networks_for_the_p_infographic.json
 
-## 5. Contrastive Branch Policy Optimization
+## 8. TTPO: Test-Time Policy Optimization
+
+- Date: 2026-08-27
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2608.27448v1
+- PDF: https://arxiv.org/pdf/2608.27448v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-ttpo_test_time_policy_optimization_infographic.json
+
+## 9. Reinforcement Learning-Based Control of CAV Platoon Joining Maneuvers in Mixed Traffic
+
+- Date: 2026-08-27
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2608.26860v1
+- PDF: https://arxiv.org/pdf/2608.26860v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-reinforcement_learning_based_control_of_cav_platoon_joining_maneuvers_in_mixed_traffic_infographic.json
+
+## 10. From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities
+
+- Date: 2026-08-27
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2608.26950v1
+- PDF: https://arxiv.org/pdf/2608.26950v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-from_atomic_to_agentic_towards_interpretable_evaluation_of_llms_agentic_mathematical_capab_infographic.json
+
+## 11. Contrastive Branch Policy Optimization
 
 - Date: 2026-08-25
 - Category: Number Theory and Algebra
@@ -43,15 +91,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.24300v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-contrastive_branch_policy_optimization_infographic.json
 
-## 6. SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning
+## 12. Heat equations in spectral Barron spaces
 
-- Date: 2026-08-24
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.23493v1
-- PDF: https://arxiv.org/pdf/2608.23493v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-srpo_self_reflective_policy_optimization_for_long_horizon_reasoning_infographic.json
+- Date: 2026-08-27
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.26657v1
+- PDF: https://arxiv.org/pdf/2608.26657v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-heat_equations_in_spectral_barron_spaces_infographic.json
 
-## 7. The Gold Rush in AI4Math: Where Are We Now?
+## 13. The Gold Rush in AI4Math: Where Are We Now?
 
 - Date: 2026-08-25
 - Category: Geometry and Topology
@@ -59,7 +107,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.24961v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-the_gold_rush_in_ai4math_where_are_we_now_infographic.json
 
-## 8. ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs
+## 14. ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs
 
 - Date: 2026-08-26
 - Category: Mathematical Reasoning
@@ -67,7 +115,23 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.25992v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-progrouter_online_progress_guided_orchestration_for_multi_agent_llm_workflows_under_qualit_infographic.json
 
-## 9. Best Practice Critic Optimization
+## 15. Gromov-Monge Flow Matching for Equivariant Graph Generation
+
+- Date: 2026-08-27
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2608.26961v1
+- PDF: https://arxiv.org/pdf/2608.26961v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-gromov_monge_flow_matching_for_equivariant_graph_generation_infographic.json
+
+## 16. Sequential and distributive dual futile cycle: Hopf bifurcation can occur under parameter-rich kinetics but cannot occur under mass action kinetics
+
+- Date: 2026-08-27
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2608.27081v1
+- PDF: https://arxiv.org/pdf/2608.27081v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-sequential_and_distributive_dual_futile_cycle_hopf_bifurcation_can_occur_under_parameter_r_infographic.json
+
+## 17. Best Practice Critic Optimization
 
 - Date: 2026-08-24
 - Category: Number Theory and Algebra
@@ -75,7 +139,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.23566v2
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-best_practice_critic_optimization_infographic.json
 
-## 10. Generalization, memorization, and overfitting for diffusion models trained in the lazy high-dimensional regime
+## 18. Generalization, memorization, and overfitting for diffusion models trained in the lazy high-dimensional regime
 
 - Date: 2026-08-25
 - Category: Number Theory and Algebra
@@ -83,82 +147,18 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.23938v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-generalization_memorization_and_overfitting_for_diffusion_models_trained_in_the_lazy_high_infographic.json
 
-## 11. A Control-Theoretic Approach for Resource-Aware Consensus in Multi-Agent AI
+## 19. Muon with Finite Newton-Schulz: The Smoothing Benefit in Nonsmooth Nonconvex Optimization
 
-- Date: 2026-08-25
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.25099v1
-- PDF: https://arxiv.org/pdf/2608.25099v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-a_control_theoretic_approach_for_resource_aware_consensus_in_multi_agent_ai_infographic.json
-
-## 12. Beyond the Stability-Exploration Dilemma: Environmental Regularization for LLM Policy Optimization
-
-- Date: 2026-08-24
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.23311v2
-- PDF: https://arxiv.org/pdf/2608.23311v2
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-beyond_the_stability_exploration_dilemma_environmental_regularization_for_llm_policy_optim_infographic.json
-
-## 13. Zeroth-Order Nonsmooth Nonconvex Optimization with Convex Liftings and Its Application to State-Feedback $H_\infty$ Policy Optimization
-
-- Date: 2026-08-24
+- Date: 2026-08-26
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.23178v1
-- PDF: https://arxiv.org/pdf/2608.23178v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-zeroth_order_nonsmooth_nonconvex_optimization_with_convex_liftings_and_its_application_to_infographic.json
+- arXiv: https://arxiv.org/abs/2608.26288v1
+- PDF: https://arxiv.org/pdf/2608.26288v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-muon_with_finite_newton_schulz_the_smoothing_benefit_in_nonsmooth_nonconvex_optimization_infographic.json
 
-## 14. Why and When Neural Networks Improve Local Approximation in Optimization
+## 20. High Probability Derivative Bounds for Random tanh Neural Networks on a Hypercube
 
-- Date: 2026-08-25
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2608.24963v1
-- PDF: https://arxiv.org/pdf/2608.24963v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-why_and_when_neural_networks_improve_local_approximation_in_optimization_infographic.json
-
-## 15. The Shadow Price of Intelligence: Quality Degradation in LLM Inference as a Supply Chain Problem
-
-- Date: 2026-08-25
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.23986v1
-- PDF: https://arxiv.org/pdf/2608.23986v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-the_shadow_price_of_intelligence_quality_degradation_in_llm_inference_as_a_supply_chain_pr_infographic.json
-
-## 16. One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation
-
-- Date: 2026-08-26
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.25936v1
-- PDF: https://arxiv.org/pdf/2608.25936v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-one_symptom_three_levers_a_critical_review_of_on_policy_self_distillation_infographic.json
-
-## 17. Beyond Optimal Rates in Stochastic Optimization: Trajectory-Adaptive Stopping Rules
-
-- Date: 2026-08-26
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2608.25551v1
-- PDF: https://arxiv.org/pdf/2608.25551v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-beyond_optimal_rates_in_stochastic_optimization_trajectory_adaptive_stopping_rules_infographic.json
-
-## 18. MathAdv: What Theorem Provers Know, Reason, Formalize, and Generalize
-
-- Date: 2026-08-26
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2608.25449v1
-- PDF: https://arxiv.org/pdf/2608.25449v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-mathadv_what_theorem_provers_know_reason_formalize_and_generalize_infographic.json
-
-## 19. Provable Non-Acceleration of Standard Strang Splittings of Kinetic Langevin Dynamics
-
-- Date: 2026-08-26
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2608.25279v1
-- PDF: https://arxiv.org/pdf/2608.25279v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-provable_non_acceleration_of_standard_strang_splittings_of_kinetic_langevin_dynamics_infographic.json
-
-## 20. A Multi-View Coupled Tensor Decomposition for Lightweight Online Adaptive Traffic Prediction
-
-- Date: 2026-08-26
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2608.25498v1
-- PDF: https://arxiv.org/pdf/2608.25498v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-a_multi_view_coupled_tensor_decomposition_for_lightweight_online_adaptive_traffic_predicti_infographic.json
+- Date: 2026-08-27
+- Category: AI math
+- arXiv: https://arxiv.org/abs/2608.26526v1
+- PDF: https://arxiv.org/pdf/2608.26526v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-high_probability_derivative_bounds_for_random_tanh_neural_networks_on_a_hypercube_infographic.json
