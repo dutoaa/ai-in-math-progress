@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-08-29
+Generated: 2026-08-30
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Physics-Informed Neural Networks for Biot's Model via Fixed-Stress Splitting and Energy Natural Gradient Descent
