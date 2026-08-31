@@ -1,17 +1,9 @@
 # AI math Progress Public Resources
 
-Generated: 2026-08-30
+Generated: 2026-08-31
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. Physics-Informed Neural Networks for Biot's Model via Fixed-Stress Splitting and Energy Natural Gradient Descent
-
-- Date: 2026-08-26
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.26303v1
-- PDF: https://arxiv.org/pdf/2608.26303v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-physics_informed_neural_networks_for_biot_s_model_via_fixed_stress_splitting_and_energy_na_infographic.json
-
-## 2. Physics-Informed Stochastic Configuration Machine: A Backpropagation-Free Neural Network with Fast Training for Nonlinear Differential Equations
+## 1. Physics-Informed Stochastic Configuration Machine: A Backpropagation-Free Neural Network with Fast Training for Nonlinear Differential Equations
 
 - Date: 2026-08-27
 - Category: Optimization and PDEs
@@ -19,7 +11,31 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.26549v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-physics_informed_stochastic_configuration_machine_a_backpropagation_free_neural_network_wi_infographic.json
 
-## 3. FLARE: Verifying MILP Reformulations with LLM-Based Theorem Proving
+## 2. Physics-Informed Neural Networks for Biot's Model via Fixed-Stress Splitting and Energy Natural Gradient Descent
+
+- Date: 2026-08-26
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.26303v1
+- PDF: https://arxiv.org/pdf/2608.26303v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-physics_informed_neural_networks_for_biot_s_model_via_fixed_stress_splitting_and_energy_na_infographic.json
+
+## 3. Learning to Use Tools: Reinforcement Learning for Tool-Integrated Mathematical Reasoning
+
+- Date: 2026-08-28
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2608.28447v1
+- PDF: https://arxiv.org/pdf/2608.28447v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-28-arxiv-learning_to_use_tools_reinforcement_learning_for_tool_integrated_mathematical_reasoning_infographic.json
+
+## 4. INSPIRE: An Internalize-Then-Improve Approach for Example-Driven Mathematical Reasoning
+
+- Date: 2026-08-27
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2608.27501v1
+- PDF: https://arxiv.org/pdf/2608.27501v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-inspire_an_internalize_then_improve_approach_for_example_driven_mathematical_reasoning_infographic.json
+
+## 5. FLARE: Verifying MILP Reformulations with LLM-Based Theorem Proving
 
 - Date: 2026-08-25
 - Category: Theorem Proving
@@ -27,7 +43,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.25220v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-flare_verifying_milp_reformulations_with_llm_based_theorem_proving_infographic.json
 
-## 4. ROMNet: a hybrid reduced order modeling and machine learning approach to waveform inversion
+## 6. ROMNet: a hybrid reduced order modeling and machine learning approach to waveform inversion
 
 - Date: 2026-08-25
 - Category: Number Theory and Algebra
@@ -35,15 +51,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.25160v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-romnet_a_hybrid_reduced_order_modeling_and_machine_learning_approach_to_waveform_inversion_infographic.json
 
-## 5. TTPO: Test-Time Policy Optimization
+## 7. Prove2Me: An Open Collaborative Platform for Scaling Math Formalization
 
-- Date: 2026-08-27
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.27448v1
-- PDF: https://arxiv.org/pdf/2608.27448v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-ttpo_test_time_policy_optimization_infographic.json
+- Date: 2026-08-28
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2608.28433v1
+- PDF: https://arxiv.org/pdf/2608.28433v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-28-arxiv-prove2me_an_open_collaborative_platform_for_scaling_math_formalization_infographic.json
 
-## 6. Parason: Revealing Subtask and Trial Parallelism in LLM Reasoning
+## 8. Parason: Revealing Subtask and Trial Parallelism in LLM Reasoning
 
 - Date: 2026-08-25
 - Category: Mathematical Reasoning
@@ -51,7 +67,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.24658v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-parason_revealing_subtask_and_trial_parallelism_in_llm_reasoning_infographic.json
 
-## 7. Enforcing Dirichlet Boundary Conditions in Operator Learning
+## 9. Enforcing Dirichlet Boundary Conditions in Operator Learning
 
 - Date: 2026-08-27
 - Category: Optimization and PDEs
@@ -59,15 +75,23 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.27256v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-enforcing_dirichlet_boundary_conditions_in_operator_learning_infographic.json
 
-## 8. Robust training and rigorous error analysis of physics-informed neural networks for the $p$-Laplace equation
+## 10. NL2AGBench: Benchmarking LLM Auto-Formalization for AlphaGeometry
 
-- Date: 2026-08-25
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2608.24205v1
-- PDF: https://arxiv.org/pdf/2608.24205v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-robust_training_and_rigorous_error_analysis_of_physics_informed_neural_networks_for_the_p_infographic.json
+- Date: 2026-08-28
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2608.28481v1
+- PDF: https://arxiv.org/pdf/2608.28481v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-28-arxiv-nl2agbench_benchmarking_llm_auto_formalization_for_alphageometry_infographic.json
 
-## 9. Reinforcement Learning-Based Control of CAV Platoon Joining Maneuvers in Mixed Traffic
+## 11. TTPO: Test-Time Policy Optimization
+
+- Date: 2026-08-27
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2608.27448v1
+- PDF: https://arxiv.org/pdf/2608.27448v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-ttpo_test_time_policy_optimization_infographic.json
+
+## 12. Reinforcement Learning-Based Control of CAV Platoon Joining Maneuvers in Mixed Traffic
 
 - Date: 2026-08-27
 - Category: Number Theory and Algebra
@@ -75,7 +99,31 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.26860v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-reinforcement_learning_based_control_of_cav_platoon_joining_maneuvers_in_mixed_traffic_infographic.json
 
-## 10. From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities
+## 13. QGPINNs: A Physics-Informed Neural Network Framework for Nonlocal Differential Equations on Quantum Graphs
+
+- Date: 2026-08-28
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2608.28589v1
+- PDF: https://arxiv.org/pdf/2608.28589v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-28-arxiv-qgpinns_a_physics_informed_neural_network_framework_for_nonlocal_differential_equations_on_infographic.json
+
+## 14. Beyond Procrustes distances: a multilinear Gromov-Wasserstein distance capturing chirality
+
+- Date: 2026-08-27
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2608.27774v1
+- PDF: https://arxiv.org/pdf/2608.27774v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-beyond_procrustes_distances_a_multilinear_gromov_wasserstein_distance_capturing_chirality_infographic.json
+
+## 15. On the Computational and Statistical Efficiency of the Empirical Maximum Entropy on the Mean Method
+
+- Date: 2026-08-27
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2608.27705v1
+- PDF: https://arxiv.org/pdf/2608.27705v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-on_the_computational_and_statistical_efficiency_of_the_empirical_maximum_entropy_on_the_me_infographic.json
+
+## 16. From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities
 
 - Date: 2026-08-27
 - Category: Mathematical Reasoning
@@ -83,39 +131,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.26950v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-from_atomic_to_agentic_towards_interpretable_evaluation_of_llms_agentic_mathematical_capab_infographic.json
 
-## 11. Contrastive Branch Policy Optimization
-
-- Date: 2026-08-25
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2608.24300v1
-- PDF: https://arxiv.org/pdf/2608.24300v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-contrastive_branch_policy_optimization_infographic.json
-
-## 12. Best Practice Critic Optimization
-
-- Date: 2026-08-24
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2608.23566v2
-- PDF: https://arxiv.org/pdf/2608.23566v2
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-24-arxiv-best_practice_critic_optimization_infographic.json
-
-## 13. Heat equations in spectral Barron spaces
+## 17. Heat equations in spectral Barron spaces
 
 - Date: 2026-08-27
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.26657v1
-- PDF: https://arxiv.org/pdf/2608.26657v1
+- arXiv: https://arxiv.org/abs/2608.26657v2
+- PDF: https://arxiv.org/pdf/2608.26657v2
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-heat_equations_in_spectral_barron_spaces_infographic.json
 
-## 14. The Gold Rush in AI4Math: Where Are We Now?
-
-- Date: 2026-08-25
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2608.24961v1
-- PDF: https://arxiv.org/pdf/2608.24961v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-the_gold_rush_in_ai4math_where_are_we_now_infographic.json
-
-## 15. ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs
+## 18. ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs
 
 - Date: 2026-08-26
 - Category: Mathematical Reasoning
@@ -123,42 +147,18 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2608.25992v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-progrouter_online_progress_guided_orchestration_for_multi_agent_llm_workflows_under_qualit_infographic.json
 
-## 16. Muon with Finite Newton-Schulz: The Smoothing Benefit in Nonsmooth Nonconvex Optimization
+## 19. On Nonsmooth and Relatively Weakly Convex Minimization
 
-- Date: 2026-08-26
+- Date: 2026-08-28
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2608.26288v1
-- PDF: https://arxiv.org/pdf/2608.26288v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-muon_with_finite_newton_schulz_the_smoothing_benefit_in_nonsmooth_nonconvex_optimization_infographic.json
+- arXiv: https://arxiv.org/abs/2608.28530v1
+- PDF: https://arxiv.org/pdf/2608.28530v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-28-arxiv-on_nonsmooth_and_relatively_weakly_convex_minimization_infographic.json
 
-## 17. Gromov-Monge Flow Matching for Equivariant Graph Generation
-
-- Date: 2026-08-27
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2608.26961v1
-- PDF: https://arxiv.org/pdf/2608.26961v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-gromov_monge_flow_matching_for_equivariant_graph_generation_infographic.json
-
-## 18. Sequential and distributive dual futile cycle: Hopf bifurcation can occur under parameter-rich kinetics but cannot occur under mass action kinetics
+## 20. An Adaptive Augmented Lagrangian Method for Deterministic and Stochastic Nonconvex Optimization
 
 - Date: 2026-08-27
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2608.27081v1
-- PDF: https://arxiv.org/pdf/2608.27081v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-sequential_and_distributive_dual_futile_cycle_hopf_bifurcation_can_occur_under_parameter_r_infographic.json
-
-## 19. A Control-Theoretic Approach for Resource-Aware Consensus in Multi-Agent AI
-
-- Date: 2026-08-25
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2608.25099v1
-- PDF: https://arxiv.org/pdf/2608.25099v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-25-arxiv-a_control_theoretic_approach_for_resource_aware_consensus_in_multi_agent_ai_infographic.json
-
-## 20. Redwood: A Frontier AI Accelerator Designed, Verified, and Deployed from Scratch in 2 Weeks by AI
-
-- Date: 2026-08-26
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2608.26418v1
-- PDF: https://arxiv.org/pdf/2608.26418v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-26-arxiv-redwood_a_frontier_ai_accelerator_designed_verified_and_deployed_from_scratch_in_2_weeks_b_infographic.json
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2608.27676v1
+- PDF: https://arxiv.org/pdf/2608.27676v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-27-arxiv-an_adaptive_augmented_lagrangian_method_for_deterministic_and_stochastic_nonconvex_optimiz_infographic.json
