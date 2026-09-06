@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-09-05
+Generated: 2026-09-06
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. A Stochastic Riemannian Alternating Descent Ascent Method for Nonsmooth Composite Expectation Optimization on Riemannian Manifolds
