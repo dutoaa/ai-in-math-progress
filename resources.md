@@ -1,9 +1,49 @@
 # AI math Progress Public Resources
 
-Generated: 2026-09-06
+Generated: 2026-09-07
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. A Stochastic Riemannian Alternating Descent Ascent Method for Nonsmooth Composite Expectation Optimization on Riemannian Manifolds
+## 1. Extremely Sparse Supervision Incentivizes Reasoning Ability
+
+- Date: 2026-09-03
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2609.04565v1
+- PDF: https://arxiv.org/pdf/2609.04565v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-extremely_sparse_supervision_incentivizes_reasoning_ability_infographic.json
+
+## 2. Ask Before You Optimize: Dynamic Pre-Formulation Clarification for Interactive Optimization
+
+- Date: 2026-09-04
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2609.05258v1
+- PDF: https://arxiv.org/pdf/2609.05258v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-04-arxiv-ask_before_you_optimize_dynamic_pre_formulation_clarification_for_interactive_optimization_infographic.json
+
+## 3. First Things First: Teaching LLM-Based Agents to Prioritize Must-Haves before Nice-to-Haves
+
+- Date: 2026-09-04
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2609.05224v1
+- PDF: https://arxiv.org/pdf/2609.05224v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-04-arxiv-first_things_first_teaching_llm_based_agents_to_prioritize_must_haves_before_nice_to_haves_infographic.json
+
+## 4. PRICE: A Systematic Study of LLM Adaptation Choices for Bitcoin Price Forecasting
+
+- Date: 2026-09-04
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2609.05235v1
+- PDF: https://arxiv.org/pdf/2609.05235v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-04-arxiv-price_a_systematic_study_of_llm_adaptation_choices_for_bitcoin_price_forecasting_infographic.json
+
+## 5. AxQM: A Textbook-Scale Benchmark for Formal Proof Synthesis in a Library of Finite-Dimensional Quantum Mechanics
+
+- Date: 2026-09-04
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2609.05157v1
+- PDF: https://arxiv.org/pdf/2609.05157v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-04-arxiv-axqm_a_textbook_scale_benchmark_for_formal_proof_synthesis_in_a_library_of_finite_dimensio_infographic.json
+
+## 6. A Stochastic Riemannian Alternating Descent Ascent Method for Nonsmooth Composite Expectation Optimization on Riemannian Manifolds
 
 - Date: 2026-09-03
 - Category: Geometry and Topology
@@ -11,15 +51,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.04116v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-a_stochastic_riemannian_alternating_descent_ascent_method_for_nonsmooth_composite_expectat_infographic.json
 
-## 2. No-Regret Bayesian Optimization with Finite-Library Input-Warped Kernels
-
-- Date: 2026-09-02
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2609.02993v1
-- PDF: https://arxiv.org/pdf/2609.02993v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-02-arxiv-no_regret_bayesian_optimization_with_finite_library_input_warped_kernels_infographic.json
-
-## 3. Lost in Reordering: Structural Sensitivity of Multilingual LLMs under Semantics-Preserving Perturbations
+## 7. Lost in Reordering: Structural Sensitivity of Multilingual LLMs under Semantics-Preserving Perturbations
 
 - Date: 2026-09-03
 - Category: Mathematical Reasoning
@@ -27,7 +59,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.03511v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-lost_in_reordering_structural_sensitivity_of_multilingual_llms_under_semantics_preserving_infographic.json
 
-## 4. Headroom-Drift Replay: A Primitive for Principled Replay Control in GRPO
+## 8. Headroom-Drift Replay: A Primitive for Principled Replay Control in GRPO
 
 - Date: 2026-09-03
 - Category: Number Theory and Algebra
@@ -35,7 +67,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.03941v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-headroom_drift_replay_a_primitive_for_principled_replay_control_in_grpo_infographic.json
 
-## 5. Adapting to Evolving Requirements: Agentic AI for Retail Supply Chain Operations
+## 9. Adapting to Evolving Requirements: Agentic AI for Retail Supply Chain Operations
 
 - Date: 2026-09-03
 - Category: Geometry and Topology
@@ -43,15 +75,23 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.03860v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-adapting_to_evolving_requirements_agentic_ai_for_retail_supply_chain_operations_infographic.json
 
-## 6. Neural Symbollic Regression Using Deep Learning and Sparse Modelling
+## 10. No-Regret Bayesian Optimization with Finite-Library Input-Warped Kernels
 
-- Date: 2026-09-01
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2609.01102v1
-- PDF: https://arxiv.org/pdf/2609.01102v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-01-arxiv-neural_symbollic_regression_using_deep_learning_and_sparse_modelling_infographic.json
+- Date: 2026-09-02
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2609.02993v1
+- PDF: https://arxiv.org/pdf/2609.02993v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-02-arxiv-no_regret_bayesian_optimization_with_finite_library_input_warped_kernels_infographic.json
 
-## 7. Residual neural networks overcome the curse of dimensionality for semilinear heat equations
+## 11. Faster Learning under Relaxed Local Differential Privacy
+
+- Date: 2026-09-04
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2609.05034v1
+- PDF: https://arxiv.org/pdf/2609.05034v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-04-arxiv-faster_learning_under_relaxed_local_differential_privacy_infographic.json
+
+## 12. Residual neural networks overcome the curse of dimensionality for semilinear heat equations
 
 - Date: 2026-09-03
 - Category: Optimization and PDEs
@@ -59,7 +99,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.03626v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-residual_neural_networks_overcome_the_curse_of_dimensionality_for_semilinear_heat_equation_infographic.json
 
-## 8. Learning Informative Prior with Infinite-Dimensional Continuous Normalizing Flow for Bayesian Inverse Problem
+## 13. Learning Informative Prior with Infinite-Dimensional Continuous Normalizing Flow for Bayesian Inverse Problem
 
 - Date: 2026-09-03
 - Category: Symbolic Computation
@@ -67,7 +107,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.03343v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-learning_informative_prior_with_infinite_dimensional_continuous_normalizing_flow_for_bayes_infographic.json
 
-## 9. Gradient-Free Optimization for Matrix functions
+## 14. Gradient-Free Optimization for Matrix functions
 
 - Date: 2026-09-02
 - Category: Optimization and PDEs
@@ -75,15 +115,23 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.03170v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-02-arxiv-gradient_free_optimization_for_matrix_functions_infographic.json
 
-## 10. DREAM: Deep-Reparametrization of Adaptive Regularization Maps for Fast Zero-Shot Self-Supervised Learning
+## 15. RISE: Recursive Improvement via Self-Extrapolating Policy Distillation
+
+- Date: 2026-09-04
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2609.05295v1
+- PDF: https://arxiv.org/pdf/2609.05295v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-04-arxiv-rise_recursive_improvement_via_self_extrapolating_policy_distillation_infographic.json
+
+## 16. Learning Memory-Dependent Neural Network Correlation Potentials for Accurate Electron Dynamics
 
 - Date: 2026-09-03
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2609.04019v1
-- PDF: https://arxiv.org/pdf/2609.04019v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-dream_deep_reparametrization_of_adaptive_regularization_maps_for_fast_zero_shot_self_super_infographic.json
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2609.04527v1
+- PDF: https://arxiv.org/pdf/2609.04527v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-learning_memory_dependent_neural_network_correlation_potentials_for_accurate_electron_dyna_infographic.json
 
-## 11. A computational approach to maximum likelihood thresholds for colored Gaussian graphical models
+## 17. A computational approach to maximum likelihood thresholds for colored Gaussian graphical models
 
 - Date: 2026-09-02
 - Category: Geometry and Topology
@@ -91,15 +139,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.02382v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-02-arxiv-a_computational_approach_to_maximum_likelihood_thresholds_for_colored_gaussian_graphical_m_infographic.json
 
-## 12. WHALE: A Simple Recipe for Joint Harness-Weight Optimization
+## 18. Do LLMs Exhibit Coherent Knowledge Structures in Mathematical Reasoning? A Perspective from Knowledge Space Theory
 
-- Date: 2026-08-31
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2609.00196v1
-- PDF: https://arxiv.org/pdf/2609.00196v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-08-31-arxiv-whale_a_simple_recipe_for_joint_harness_weight_optimization_infographic.json
+- Date: 2026-09-04
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2609.05245v1
+- PDF: https://arxiv.org/pdf/2609.05245v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-04-arxiv-do_llms_exhibit_coherent_knowledge_structures_in_mathematical_reasoning_a_perspective_from_infographic.json
 
-## 13. A variational quantum eigensolver-based cutting plane framework for semidefinite programming problems
+## 19. A variational quantum eigensolver-based cutting plane framework for semidefinite programming problems
 
 - Date: 2026-09-02
 - Category: Number Theory and Algebra
@@ -107,58 +155,10 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.02139v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-02-arxiv-a_variational_quantum_eigensolver_based_cutting_plane_framework_for_semidefinite_programmi_infographic.json
 
-## 14. FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience
+## 20. FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience
 
 - Date: 2026-09-03
 - Category: Mathematical Reasoning
 - arXiv: https://arxiv.org/abs/2609.03241v1
 - PDF: https://arxiv.org/pdf/2609.03241v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-flowbalance_verifier_grounded_self_improvement_from_on_policy_reasoning_experience_infographic.json
-
-## 15. Extending concurrent separation logic to the hardware level to verify the xv6 OS kernel on RISC-V with AI agents
-
-- Date: 2026-09-03
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2609.04043v1
-- PDF: https://arxiv.org/pdf/2609.04043v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-extending_concurrent_separation_logic_to_the_hardware_level_to_verify_the_xv6_os_kernel_on_infographic.json
-
-## 16. Spectral Convergence of Random Feature Method in Multiple Dimensions
-
-- Date: 2026-09-03
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2609.03401v1
-- PDF: https://arxiv.org/pdf/2609.03401v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-spectral_convergence_of_random_feature_method_in_multiple_dimensions_infographic.json
-
-## 17. SkillGLoW: Procedural-Family Skill Consolidation for Self-Improving Agents on Long-Horizon Task Streams
-
-- Date: 2026-09-02
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2609.02217v1
-- PDF: https://arxiv.org/pdf/2609.02217v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-02-arxiv-skillglow_procedural_family_skill_consolidation_for_self_improving_agents_on_long_horizon_infographic.json
-
-## 18. Projected Riemannian Gradient Descent for the Bures-Wasserstein Barycenter: Dimension-Independent Linear Convergence at Unit Step Size
-
-- Date: 2026-09-03
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2609.03762v1
-- PDF: https://arxiv.org/pdf/2609.03762v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-projected_riemannian_gradient_descent_for_the_bures_wasserstein_barycenter_dimension_indep_infographic.json
-
-## 19. Influence of Extruded Filament Shape on Buildability in 3D Concrete Printing: A Geometry-Informed Deep Learning-FEM Approach
-
-- Date: 2026-09-03
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2609.04028v1
-- PDF: https://arxiv.org/pdf/2609.04028v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-influence_of_extruded_filament_shape_on_buildability_in_3d_concrete_printing_a_geometry_in_infographic.json
-
-## 20. Automated Priority Rule Design for the Resource-Constrained Project Scheduling Problem: A Large Language Model-Guided Population-Based Search
-
-- Date: 2026-09-03
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2609.03754v1
-- PDF: https://arxiv.org/pdf/2609.03754v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-automated_priority_rule_design_for_the_resource_constrained_project_scheduling_problem_a_l_infographic.json
