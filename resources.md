@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-09-07
+Generated: 2026-09-08
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Extremely Sparse Supervision Incentivizes Reasoning Ability
@@ -19,7 +19,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.05258v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-04-arxiv-ask_before_you_optimize_dynamic_pre_formulation_clarification_for_interactive_optimization_infographic.json
 
-## 3. First Things First: Teaching LLM-Based Agents to Prioritize Must-Haves before Nice-to-Haves
+## 3. A Stochastic Riemannian Alternating Descent Ascent Method for Nonsmooth Composite Expectation Optimization on Riemannian Manifolds
+
+- Date: 2026-09-03
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2609.04116v1
+- PDF: https://arxiv.org/pdf/2609.04116v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-a_stochastic_riemannian_alternating_descent_ascent_method_for_nonsmooth_composite_expectat_infographic.json
+
+## 4. First Things First: Teaching LLM-Based Agents to Prioritize Must-Haves before Nice-to-Haves
 
 - Date: 2026-09-04
 - Category: Mathematical Reasoning
@@ -27,7 +35,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.05224v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-04-arxiv-first_things_first_teaching_llm_based_agents_to_prioritize_must_haves_before_nice_to_haves_infographic.json
 
-## 4. PRICE: A Systematic Study of LLM Adaptation Choices for Bitcoin Price Forecasting
+## 5. PRICE: A Systematic Study of LLM Adaptation Choices for Bitcoin Price Forecasting
 
 - Date: 2026-09-04
 - Category: Mathematical Reasoning
@@ -35,21 +43,13 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.05235v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-04-arxiv-price_a_systematic_study_of_llm_adaptation_choices_for_bitcoin_price_forecasting_infographic.json
 
-## 5. AxQM: A Textbook-Scale Benchmark for Formal Proof Synthesis in a Library of Finite-Dimensional Quantum Mechanics
+## 6. AxQM: A Textbook-Scale Benchmark for Formal Proof Synthesis in a Library of Finite-Dimensional Quantum Mechanics
 
 - Date: 2026-09-04
 - Category: Theorem Proving
 - arXiv: https://arxiv.org/abs/2609.05157v1
 - PDF: https://arxiv.org/pdf/2609.05157v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-04-arxiv-axqm_a_textbook_scale_benchmark_for_formal_proof_synthesis_in_a_library_of_finite_dimensio_infographic.json
-
-## 6. A Stochastic Riemannian Alternating Descent Ascent Method for Nonsmooth Composite Expectation Optimization on Riemannian Manifolds
-
-- Date: 2026-09-03
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2609.04116v1
-- PDF: https://arxiv.org/pdf/2609.04116v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-03-arxiv-a_stochastic_riemannian_alternating_descent_ascent_method_for_nonsmooth_composite_expectat_infographic.json
 
 ## 7. Lost in Reordering: Structural Sensitivity of Multilingual LLMs under Semantics-Preserving Perturbations
 
