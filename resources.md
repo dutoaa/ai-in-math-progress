@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-09-11
+Generated: 2026-09-12
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. A Systematic Analysis of Automatic Differentiation versus Discretization-based Constraints for Physics-Informed PDE Solvers
@@ -115,7 +115,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.07254v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-07-arxiv-mathematical_programming_in_machine_learning_and_artificial_intelligence_a_unified_taxonom_infographic.json
 
-## 15. Stable Singularity of the Euler Equations on $\mathbb{R}^3$
+## 15. Sparsity Regularized and Robust Mean Variance Portfolio Selection Under Ellipsoidal Uncertainty
+
+- Date: 2026-09-10
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2609.11749v1
+- PDF: https://arxiv.org/pdf/2609.11749v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-10-arxiv-sparsity_regularized_and_robust_mean_variance_portfolio_selection_under_ellipsoidal_uncert_infographic.json
+
+## 16. Stable Singularity of the Euler Equations on $\mathbb{R}^3$
 
 - Date: 2026-09-09
 - Category: Symbolic Computation
@@ -123,7 +131,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.10867v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-09-arxiv-stable_singularity_of_the_euler_equations_on_mathbb_r_3_infographic.json
 
-## 16. AdamX: Cosine similarity meets gradient descent
+## 17. AdamX: Cosine similarity meets gradient descent
 
 - Date: 2026-09-10
 - Category: Number Theory and Algebra
@@ -131,7 +139,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.11867v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-10-arxiv-adamx_cosine_similarity_meets_gradient_descent_infographic.json
 
-## 17. Convex Optimization with Nested Evolving Feasible Sets (CONES) under Time-Varying Loss Functions
+## 18. Convex Optimization with Nested Evolving Feasible Sets (CONES) under Time-Varying Loss Functions
 
 - Date: 2026-09-10
 - Category: Number Theory and Algebra
@@ -139,7 +147,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.11207v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-10-arxiv-convex_optimization_with_nested_evolving_feasible_sets_cones_under_time_varying_loss_funct_infographic.json
 
-## 18. Beyond Verified Answers: Solver-Informed Self-Distillation for Bootstrapping Operations Research Language Models
+## 19. Beyond Verified Answers: Solver-Informed Self-Distillation for Bootstrapping Operations Research Language Models
 
 - Date: 2026-09-09
 - Category: Number Theory and Algebra
@@ -147,18 +155,10 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2609.09957v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-09-arxiv-beyond_verified_answers_solver_informed_self_distillation_for_bootstrapping_operations_res_infographic.json
 
-## 19. Online Inverse Integer Linear Optimization via Small-Gradient Skipping: Constant Regret and Finite Mistakes
+## 20. Online Inverse Integer Linear Optimization via Small-Gradient Skipping: Constant Regret and Finite Mistakes
 
 - Date: 2026-09-09
 - Category: Optimization and PDEs
 - arXiv: https://arxiv.org/abs/2609.09809v1
 - PDF: https://arxiv.org/pdf/2609.09809v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-09-arxiv-online_inverse_integer_linear_optimization_via_small_gradient_skipping_constant_regret_and_infographic.json
-
-## 20. Primal-Dual Inexact Newton-MR for Nonconvex Optimization with Equality Constraints
-
-- Date: 2026-09-09
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2609.09683v1
-- PDF: https://arxiv.org/pdf/2609.09683v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-09-09-arxiv-primal_dual_inexact_newton_mr_for_nonconvex_optimization_with_equality_constraints_infographic.json
