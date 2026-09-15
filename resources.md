@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-09-14
+Generated: 2026-09-15
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. A Systematic Analysis of Automatic Differentiation versus Discretization-based Constraints for Physics-Informed PDE Solvers

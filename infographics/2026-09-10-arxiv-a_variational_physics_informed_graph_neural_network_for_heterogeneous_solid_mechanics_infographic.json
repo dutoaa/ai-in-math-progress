@@ -1,24 +1,24 @@
 {
-  "key_insight": "A variational, label-free graph neural network can model heterogeneous solid mechanics by encoding material interfaces in the mesh and minimizing discrete total potential energy, avoiding penalty terms and prescribed interface widths.",
-  "engineering_relevance": "This makes the method robust for parametric surrogate modeling and inverse identification in multi-material elasticity and hyperelasticity, especially when stiffness contrast is high.",
+  "key_insight": "The paper replaces interface-handling tricks in PINNs with a variational graph formulation that lets heterogeneity live in the mesh, not in the neural trial field.",
+  "engineering_relevance": "This yields a penalty-free, label-free surrogate for heterogeneous solid mechanics that is robust to large stiffness contrasts and useful for parametric studies or inverse identification.",
   "method": [
-    "Uses a conforming adaptive mesh graph with element-wise constitutive laws.",
-    "Trains by minimizing the discrete FE-equivalent potential energy with only first derivatives.",
-    "Enforces Dirichlet boundary conditions by construction, with no interface penalty or regularization width."
+    "Builds a conforming adaptive mesh graph with element-wise constitutive laws.",
+    "Minimizes the discrete total potential energy, matching the FE Ritz functional for piecewise-linear elements.",
+    "Enforces Dirichlet boundary conditions by construction, avoiding interface weights and transition-width tuning."
   ],
-  "evidence_signal": "Across stiffness contrasts from E_inc/E_mat = 10^-2 to 10^2, the PI-GNN kept von Mises error below 3.58% and achieved 0.49% displacement error versus 7.66% for a strong-form PINN.",
-  "watch_item": "The approach is computationally more expensive than a single finite-element solve, so its main value is as a surrogate or inverse solver rather than a replacement for one-off analysis.",
+  "evidence_signal": "Across stiffness contrasts from E_inc/E_mat in [10^-2, 10^2], the PI-GNN kept von Mises error below 3.58% and outperformed strong-form/energy-based PINN baselines on displacement and stress error.",
+  "watch_item": "Training is substantially more expensive than a single finite-element solve, so the method is best viewed as a surrogate or inverse-design tool rather than a replacement for one-off FE analysis.",
   "hashtags": [
-    "#PhysicsInformedGNN",
+    "#PhysicsInformedNN",
+    "#GraphNeuralNetworks",
     "#SolidMechanics",
-    "#FiniteElementMethods",
-    "#VariationalMethods",
-    "#HeterogeneousMaterials"
+    "#FiniteElementMethod",
+    "#VariationalMethods"
   ],
   "paper_id": "2026-09-10-arxiv-a_variational_physics_informed_graph_neural_network_for_heterogeneous_solid_mechanics",
   "paper_title": "A variational physics-informed graph neural network for heterogeneous solid mechanics",
   "paper_date": "2026-09-10",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-09-14T18:25:39",
+  "generated_at": "2026-09-15T17:33:29",
   "generator": "openai"
 }
