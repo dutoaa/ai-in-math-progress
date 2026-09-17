@@ -1,24 +1,24 @@
 {
-  "key_insight": "lPINN pretrains a nonlinear neural basis offline and solves new PDE or inverse problems online with only a final linear fit, combining reduced-order efficiency with physics-informed accuracy.",
-  "engineering_relevance": "This makes physics-informed modeling much faster at deployment while retaining differentiability and compatibility with forward, inverse, and cross-resolution scientific computing tasks.",
+  "key_insight": "lPINN freezes a pretrained nonlinear neural basis offline and solves new PDE instances online with only a linear layer, combining reduced-order efficiency with physics-informed accuracy.",
+  "engineering_relevance": "This enables much faster forward and inverse simulation for differential equations while preserving differentiable, mesh-transferable solutions useful in scientific computing workflows.",
   "method": [
-    "Learn continuous neural basis functions from an ensemble of solution data offline.",
-    "Pretrain the hidden layers using derivatives or physics residuals so the basis is operator-compatible.",
-    "Freeze the basis for each new case and optimize only the linear output layer using governing-equation, boundary, initial, and observation terms."
+    "Pretrain continuous neural basis functions on an ensemble of solution data with derivatives or physics residuals.",
+    "Freeze the hidden layers and infer each new case by minimizing governing-equation, boundary/initial, and data-regularization losses.",
+    "Use automatic differentiation so the learned basis remains compatible with PDE residual evaluation on different meshes."
   ],
-  "evidence_signal": "The abstract reports tests on advection-diffusion, Burgers', and nonlinear pendulum problems, with lower errors than vanilla PINNs and online speedups from about 10x to over 100x, especially when residual or measurement data are scarce.",
-  "watch_item": "Performance depends on the quality and representativeness of the offline training ensemble, so basis transfer may degrade if new problems differ substantially from the pretrained regime.",
+  "evidence_signal": "The paper reports tests on advection-diffusion, Burgers', and nonlinear pendulum problems, with lower solution and parameter errors than vanilla PINNs and online speedups from about 10x to over 1000x.",
+  "watch_item": "Performance depends on the quality and representativeness of the offline training ensemble, so poor basis coverage may limit generalization to new regimes.",
   "hashtags": [
-    "#PINN",
-    "#PhysicsInformedML",
+    "#PhysicsInformedNN",
     "#ReducedOrderModeling",
-    "#ScientificComputing",
-    "#InverseProblems"
+    "#ScientificMachineLearning",
+    "#PDEs",
+    "#ComputationalScience"
   ],
   "paper_id": "2026-09-14-arxiv-linearized_pinn_with_pretrained_nonlinear_layers",
   "paper_title": "Linearized PINN with pretrained nonlinear layers",
   "paper_date": "2026-09-14",
   "paper_category": "Symbolic Computation",
-  "generated_at": "2026-09-16T17:29:25",
+  "generated_at": "2026-09-17T17:28:38",
   "generator": "openai"
 }

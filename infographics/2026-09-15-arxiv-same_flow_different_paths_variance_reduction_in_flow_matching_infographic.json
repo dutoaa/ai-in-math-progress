@@ -1,24 +1,24 @@
 {
-  "key_insight": "Different transport paths can produce the exact same flow matching objective, yet dramatically change SGD variance and convergence speed; path choice is an optimization knob, not just a modeling detail.",
-  "engineering_relevance": "For practical generative modeling, selecting a lower-variance path can reduce training cost and improve stability without changing the underlying FM problem.",
+  "key_insight": "Different flow paths can produce the same flow-matching objective but very different SGD variance, so path choice directly affects optimization speed.",
+  "engineering_relevance": "For practical generative modeling, selecting a variance-reducing path can lower training cost and improve convergence without changing the target distribution.",
   "method": [
-    "Analyze SGD variance under different path families that share the same marginal distributions and velocity field.",
-    "Derive a tight iteration-complexity bound for linear velocity models with 1D Gaussian data and identify an optimal linear path.",
-    "Formulate PathOpt_θ to minimize variance under the same-flow constraint, then convert it into a sample-estimable constrained problem for numerical search."
+    "Analyze stochastic-gradient variance induced by different paths $g_t$ in flow matching.",
+    "Solve an optimal path-selection problem (PathOpt$_\\theta$) under the constraint that paths preserve the same marginals and velocity field.",
+    "Derive a sample-estimable equivalent constraint set so candidate paths can be found numerically."
   ],
-  "evidence_signal": "The paper validates the theory with experiments on Gaussian data, Gaussian mixture models, and real datasets.",
-  "watch_item": "Variance reduction must respect the constraint g_t ∈ G(p_t, v_t^*); ignoring it can lower variance locally but slow overall convergence.",
+  "evidence_signal": "The abstract reports theory plus experiments on Gaussian data, Gaussian mixtures, and real datasets, with an analytically optimal path found for a one-dimensional Gaussian case.",
+  "watch_item": "Variance reduction must respect the fixed $G(p_t,v_t^\\star)$ constraint; otherwise a lower-variance path can actually slow convergence.",
   "hashtags": [
     "#FlowMatching",
     "#VarianceReduction",
-    "#StochasticOptimization",
+    "#StochasticGradient",
     "#GenerativeModels",
-    "#MachineLearningTheory"
+    "#Optimization"
   ],
   "paper_id": "2026-09-15-arxiv-same_flow_different_paths_variance_reduction_in_flow_matching",
   "paper_title": "Same Flow, Different Paths: Variance Reduction in Flow Matching",
   "paper_date": "2026-09-15",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-09-16T17:28:52",
+  "generated_at": "2026-09-17T17:28:08",
   "generator": "openai"
 }
