@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-09-17
+Generated: 2026-09-18
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Physics Informed Random Feature Neural Networks for Solving PDEs
