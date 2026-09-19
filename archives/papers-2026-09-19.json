@@ -27,27 +27,27 @@
     ],
     "score": 97,
     "infographic": {
-      "key_insight": "Physics-informed random feature neural networks reduce spectral bias in PDE solvers while retaining the physics-informed training paradigm, enabling better approximation for certain PDE classes.",
-      "engineering_relevance": "This approach can lower the number of collocation points needed for training, reducing computational cost in scientific computing workflows for PDE simulation and inverse problems.",
+      "key_insight": "Physics-informed random feature neural networks replace much of the trainable depth in PINNs with randomized features to reduce spectral bias and improve PDE approximation efficiency.",
+      "engineering_relevance": "This offers a potentially cheaper PDE solver for engineering simulation workflows where standard PINNs need many collocation points and struggle with high-frequency solution components.",
       "method": [
-        "Use random feature networks as a randomized neural approximation of kernel methods.",
-        "Embed the PDE residual and boundary/initial conditions into the loss to make the model physics-informed.",
-        "Derive high-probability H1 error bounds to quantify approximation quality."
+        "Use random features as a specialized randomized neural network to approximate PDE solutions.",
+        "Enforce physics constraints through the PDE residual and boundary/initial conditions.",
+        "Derive approximation and high-probability error bounds in the H1 norm."
       ],
-      "evidence_signal": "The abstract reports rigorous error analysis plus extensive numerical tests showing error decay rates and comparisons that demonstrate improved ability to combat spectral bias.",
-      "watch_item": "Performance is likely problem-dependent, so the method may still require careful feature sampling and tuning to achieve the stated error guarantees.",
+      "evidence_signal": "The abstract reports extensive numerical tests showing expected error decay rates and comparison experiments demonstrating reduced spectral bias.",
+      "watch_item": "Performance depends on the PDE class and feature design, so the randomized approximation may still require careful tuning to avoid poor accuracy on harder problems.",
       "hashtags": [
-        "#PhysicsInformedML",
+        "#PINN",
         "#PDEs",
         "#RandomFeatures",
-        "#SpectralBias",
-        "#ScientificComputing"
+        "#ScientificML",
+        "#SpectralBias"
       ],
       "paper_id": "2026-09-14-arxiv-physics_informed_random_feature_neural_networks_for_solving_pdes",
       "paper_title": "Physics Informed Random Feature Neural Networks for Solving PDEs",
       "paper_date": "2026-09-14",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-09-19T16:13:48",
+      "generated_at": "2026-09-18T16:56:47",
       "generator": "openai"
     }
   },
@@ -78,27 +78,27 @@
     ],
     "score": 86,
     "infographic": {
-      "key_insight": "RL-trained LLM agents can learn spurious tool-use shortcuts, calling tools from superficial cues instead of real task need, but a tool-necessity reward can suppress this behavior.",
-      "engineering_relevance": "For agentic systems, tool routing should be trained and audited as a safety-critical policy because competence with a tool can itself trigger cue-driven misuse.",
+      "key_insight": "RL-trained LLM agents can learn to trigger tools from superficial cues instead of true task need, but a tool-necessity reward can reduce this shortcut behavior.",
+      "engineering_relevance": "For reliable agentic systems, tool-routing policies should be evaluated and rewarded at the decision level to prevent brittle cue-driven actions.",
       "method": [
-        "Built controlled synthetic QA and math environments with cue-to-tool correlations during training.",
-        "Tested counterfactual cases where cues remained but tools were unnecessary, measuring shortcut tool invocation.",
-        "Added a dense decision-level reward from an LLM judge to score whether each tool call was actually needed."
+        "Built controlled synthetic QA and math environments with cue–tool correlations during training.",
+        "Tested counterfactual cases where cues appeared but the associated tool was unnecessary.",
+        "Added dense LLM-judge reward for each tool call to score tool necessity."
       ],
-      "evidence_signal": "Across counterfactual evaluations, spurious tool invocation increased by up to 39%, and shortcut behavior appeared mainly after the agent had already learned the tool reliably.",
-      "watch_item": "An LLM-judge reward can reduce shortcut use, but its effectiveness depends on the judge’s accuracy and consistency in judging tool necessity.",
+      "evidence_signal": "Across counterfactual evaluations, spurious tool invocation rose by up to 39% under shortcut learning, and the failure appeared mainly after the agent had already learned the target tool well.",
+      "watch_item": "An LLM-based necessity judge may itself introduce cost, latency, or bias, so its reliability must be validated carefully in deployment.",
       "hashtags": [
         "#LLMAgents",
-        "#ToolUse",
         "#ReinforcementLearning",
-        "#MathReasoning",
+        "#ToolUse",
+        "#MathematicalReasoning",
         "#AIAlignment"
       ],
       "paper_id": "2026-09-14-arxiv-spurious_tool_use_when_rl_agents_learn_the_wrong_reason_to_act",
       "paper_title": "Spurious Tool Use: When RL Agents Learn the Wrong Reason to Act",
       "paper_date": "2026-09-14",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-09-19T16:13:51",
+      "generated_at": "2026-09-18T16:56:49",
       "generator": "openai"
     }
   },
@@ -131,27 +131,27 @@
     ],
     "score": 86,
     "infographic": {
-      "key_insight": "Bellman Policy Optimization (BPO) converts policy mirror descent into a trajectory-level objective using Bellman equations, removing the need to estimate intermediate state values while preserving the same unique optimum.",
-      "engineering_relevance": "This offers a simpler critic-free training recipe for RL with verifiable rewards in LLM reasoning, potentially reducing complexity and instability in practical alignment pipelines.",
+      "key_insight": "Bellman Policy Optimization (BPO) turns Policy Mirror Descent into a trajectory-level reinforcement learning objective for autoregressive LLMs, avoiding intermediate state-value estimation while preserving the same unique optimum.",
+      "engineering_relevance": "This offers a simpler critic-free training recipe for reward-verifiable reasoning models, reducing implementation complexity in math-focused LLM optimization.",
       "method": [
-        "Derive a trajectory-level objective from PMD via Bellman equations for autoregressive, terminal-reward settings.",
-        "Avoid intermediate state-value estimation by optimizing directly over full trajectories.",
-        "Use a practical BPO loss with a mismatch-correction weight given by a smoothed ratio of complementary token probabilities."
+        "Derive a trajectory-level objective from Bellman equations for terminal-reward generation.",
+        "Approximate the objective to obtain a practical BPO loss.",
+        "Use a smoothed ratio of complementary token probabilities as the mismatch-correction weight."
       ],
-      "evidence_signal": "The abstract reports experiments on mathematical reasoning benchmarks, where BPO is shown to be effective.",
-      "watch_item": "The practical loss is an approximation of the ideal objective, so performance may depend on the quality of the smoothing and mismatch-correction design.",
+      "evidence_signal": "The abstract reports experiments on mathematical reasoning benchmarks showing that BPO is effective.",
+      "watch_item": "The practical gain depends on how well the objective approximation and mismatch-correction weight behave during training, so stability and sensitivity may need careful tuning.",
       "hashtags": [
         "#ReinforcementLearning",
-        "#LLMs",
+        "#LLMReasoning",
+        "#PolicyMirrorDescent",
         "#MathematicalReasoning",
-        "#PolicyOptimization",
-        "#BellmanEquations"
+        "#RewardModeling"
       ],
       "paper_id": "2026-09-14-arxiv-bellman_policy_optimization",
       "paper_title": "Bellman Policy Optimization",
       "paper_date": "2026-09-14",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-09-19T16:13:54",
+      "generated_at": "2026-09-18T16:56:52",
       "generator": "openai"
     }
   },
@@ -183,27 +183,27 @@
     ],
     "score": 83,
     "infographic": {
-      "key_insight": "CIDERS frames cloud-edge LLM collaboration as a personalized bilevel optimization problem, using consensus-variate correction to jointly preserve global knowledge transfer and local edge personalization.",
-      "engineering_relevance": "It provides a practical solver for deploying LLMs on cloud-edge systems where shared backbone knowledge must be adapted efficiently to edge-specific tasks.",
+      "key_insight": "CIDERS turns cloud-edge LLM collaboration into a personalized bilevel optimization problem, using consensus-corrected local updates to balance global knowledge sharing with edge-specific adaptation.",
+      "engineering_relevance": "The method provides a practical blueprint for deploying LLMs on cloud-edge systems where communication is constrained but both shared performance and domain personalization are required.",
       "method": [
-        "Split the model into a learnable backbone and a messenger.",
-        "Use a bilevel objective: edge-side personalization at the upper level, cloud-side knowledge transfer at the lower level.",
-        "Inject global trajectory information into each local update via consensus-variate correction."
+        "Splits the system into a learnable backbone and a messenger for efficient cloud-to-edge knowledge transfer.",
+        "Injects global trajectory information into each local step via consensus-variate correction.",
+        "Provides convergence analysis and a geometric view of local trajectories to explain the personalization–consensus trade-off."
       ],
-      "evidence_signal": "Experiments show CIDERS outperforms baselines on compressed edge benchmarks, with 3.1x gains in mathematical reasoning, 1.7x in code generation, and a 10% relative improvement on instruction metrics.",
-      "watch_item": "The approach relies on coordinated cloud-edge optimization, so communication overhead and stability under heterogeneous edge workloads may be important implementation concerns.",
+      "evidence_signal": "Experiments on compressed edge settings report 3.1× gains for mathematical reasoning, 1.7× gains for code generation, and a 10% relative improvement on instruction metrics over baselines.",
+      "watch_item": "The approach adds optimization and coordination complexity, so its stability and communication overhead may be sensitive to edge-device resource limits.",
       "hashtags": [
-        "#LLMSystems",
-        "#CloudEdgeAI",
+        "#CloudEdgeLLM",
         "#BilevelOptimization",
-        "#Personalization",
-        "#TheoremProving"
+        "#PersonalizedLearning",
+        "#TheoremProving",
+        "#LLMSystems"
       ],
       "paper_id": "2026-09-14-arxiv-ciders_cloud_edge_llm_collaborative_learning_via_accelerating_personalized_bilevel_optimiz",
       "paper_title": "CIDERS: Cloud-Edge LLM Collaborative Learning via Accelerating Personalized Bilevel Optimization",
       "paper_date": "2026-09-14",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-09-19T16:13:56",
+      "generated_at": "2026-09-18T16:56:55",
       "generator": "openai"
     }
   },
@@ -237,27 +237,27 @@
     ],
     "score": 78,
     "infographic": {
-      "key_insight": "AlgoRAG shows that a domain-tuned RAG system can deliver correct, pedagogically useful explanations for theoretical computer science topics where proof style and notation vary widely.",
-      "engineering_relevance": "This work suggests a practical blueprint for building AI tutoring systems that combine curated technical corpora, notation-aware retrieval, and pedagogical ranking for difficult STEM subjects.",
+      "key_insight": "AlgoRAG shows that a retrieval-augmented LLM can deliver correct, pedagogically useful explanations for highly abstract theoretical computer science topics by combining curated sources with notation-aware retrieval.",
+      "engineering_relevance": "The work suggests RAG is a practical architecture for building domain-specific tutoring systems in computational science, especially where formal proofs and algorithm analysis require adaptive, context-rich guidance.",
       "method": [
-        "Built a TCS-specific knowledge base from textbooks, 847 lecture slides, 312 solved problems, 156 proof templates, and 89 worksheets.",
-        "Used mathematical entity recognition, notation-aware retrieval, and pedagogical re-ranking to improve answer quality.",
-        "Evaluated on 179 exam-style questions across asymptotic analysis, recurrences, DP, graph algorithms, NP-completeness, sorting, and divide-and-conquer."
+        "Curated knowledge base: textbooks, lecture slides, practice problems, proof templates, and worksheets.",
+        "Domain-specific retrieval: mathematical entity recognition, notation-aware matching, and pedagogical re-ranking.",
+        "Evaluation on exam-style TCS questions across asymptotic analysis, DP, graphs, NP-completeness, sorting, and divide-and-conquer."
       ],
-      "evidence_signal": "On 179 curated questions, AlgoRAG reported 100% success, 38.0 s mean response time, ROUGE-1 F1 of 0.0963, ROUGE-L F1 of 0.0683, and pedagogical quality of 0.7620.",
-      "watch_item": "BLEU-4 was zero and the system appears to rely on curated domain resources, so results may not generalize well to broader or less-structured theory topics without further validation.",
+      "evidence_signal": "The system was evaluated on 179 curated questions and achieved 100% success with mean response time of 38.0 seconds, alongside ROUGE-1 F1 of 0.0963 and pedagogical quality of 0.7620.",
+      "watch_item": "BLEU-4 is zero and the reported metrics rely on surface overlap, so the main concern is that n-gram scores may understate correct but differently phrased mathematical reasoning and the system’s robustness depends on high-quality curated retrieval sources.",
       "hashtags": [
         "#RAG",
         "#TheoreticalCS",
-        "#AIforEducation",
-        "#ComplexityTheory",
-        "#AlgorithmAnalysis"
+        "#AIEducation",
+        "#AlgorithmAnalysis",
+        "#ComplexityTheory"
       ],
       "paper_id": "2026-09-13-arxiv-algorag_retrieval_augmented_generation_for_theoretical_computer_science_education_a_compre",
       "paper_title": "AlgoRAG: Retrieval-Augmented Generation for Theoretical Computer Science Education -- A Comprehensive Evaluation Framework for Algorithm Analysis and Complexity Theory",
       "paper_date": "2026-09-13",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-09-19T16:14:00",
+      "generated_at": "2026-09-18T16:56:57",
       "generator": "openai"
     }
   },
@@ -289,27 +289,27 @@
     ],
     "score": 77,
     "infographic": {
-      "key_insight": "The paper argues that AI safety needs new mathematics to make AI systems legible, steerable, and cooperative with humans, with different mathematical fields offering complementary tools.",
-      "engineering_relevance": "For AI systems engineering, it suggests a field-by-field research agenda spanning logic, probability, algebra, and geometry to improve alignment, interpretability, and training behavior.",
+      "key_insight": "The paper argues that AI safety needs new mathematics to make systems legible, steerable, and cooperative with humans, with different core problems mapped to different branches of math.",
+      "engineering_relevance": "For AI engineers, this frames safety as a design and verification problem spanning cooperation, world-modeling, feature representation, and training stability rather than a single model-alignment technique.",
       "method": [
-        "Uses a survey-style organization by mathematical discipline.",
-        "Maps logic and game theory to cooperation and incentives.",
-        "Links probability to agency and world-models, algebra/representation theory to learned features, and analysis/geometry to generalization and training dynamics."
+        "Logic and game theory for cooperation",
+        "Probability for agency and world-models",
+        "Algebra, representation theory, analysis, and geometry for learned features, generalization, and training dynamics"
       ],
-      "evidence_signal": "The abstract is a conceptual invitation rather than an empirical study; its support comes from a structured taxonomy of open problems rather than dataset results or benchmark evaluation.",
-      "watch_item": "The proposed mathematics is exploratory and may not translate directly into practical AI safety methods without careful problem selection and validation.",
+      "evidence_signal": "The abstract describes a field-organized conceptual survey with accessible open problems, but does not report experiments, datasets, or quantitative evaluation.",
+      "watch_item": "The ideas are high-level and mathematically broad, so practical impact depends on translating open-ended theory into testable AI safety methods.",
       "hashtags": [
         "#AISafety",
-        "#Mathematics",
-        "#MachineLearning",
-        "#Interpretability",
-        "#GameTheory"
+        "#MathForAI",
+        "#GameTheory",
+        "#RepresentationTheory",
+        "#Optimization"
       ],
       "paper_id": "2026-09-14-arxiv-math_for_ai_safety_an_invitation_for_mathematicians",
       "paper_title": "Math for AI safety: an invitation for mathematicians",
       "paper_date": "2026-09-14",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-09-19T16:14:02",
+      "generated_at": "2026-09-18T16:57:00",
       "generator": "openai"
     }
   },
@@ -340,27 +340,27 @@
     ],
     "score": 76,
     "infographic": {
-      "key_insight": "The paper compares direct and indirect PINN formulations for Dirichlet boundary control of semilinear parabolic PDEs and provides a conditional error analysis for the indirect approach.",
-      "engineering_relevance": "This offers a principled way to train PINNs for PDE-constrained control problems while quantifying when residual-based predictions can be trusted.",
+      "key_insight": "The paper compares direct and indirect PINN formulations for semilinear parabolic Dirichlet boundary control and provides a conditional error analysis for the indirect approach.",
+      "engineering_relevance": "This gives engineers a principled way to train PINNs for PDE-constrained control problems while estimating how approximation, optimization, quadrature, and soft-constraint errors affect solution quality.",
       "method": [
-        "Direct PINN: separate networks for state and control, optimized on a penalized tracking objective.",
-        "Indirect PINN: jointly learn state, adjoint, and control by enforcing the first-order optimality system.",
-        "Derive a conditional error decomposition and a computable residual indicator that accounts for approximation, optimization, quadrature, and soft-constraint errors."
+        "Direct PINN: separate state and control networks minimize a penalized tracking objective.",
+        "Indirect PINN: joint networks for state, adjoint, and control enforce the optimality system with soft penalties for coupling and terminal/boundary constraints.",
+        "Derive linearized stability and residual-to-error estimates plus a computable residual indicator with conditional reliability."
       ],
-      "evidence_signal": "The methods are evaluated on two manufactured test problems: a cubic reaction-diffusion equation and a linear problem with nontrivial boundary control and adjoint.",
-      "watch_item": "The reliability guarantees are conditional on regularity, neighborhood assumptions, and soft boundary/terminal constraints being sufficiently controlled, so implementation quality can strongly affect validity.",
+      "evidence_signal": "The abstract reports numerical experiments on two manufactured test problems, including a cubic reaction-diffusion equation and a linear benchmark with nontrivial boundary control and adjoint.",
+      "watch_item": "The error guarantees are conditional on regularity, compatibility, neighborhood assumptions, and controlled soft-constraint residuals, so practical reliability may degrade if training leaves that regime.",
       "hashtags": [
         "#PINNs",
         "#PDEControl",
-        "#ParabolicPDE",
+        "#DirichletBoundaryControl",
         "#ErrorAnalysis",
-        "#ScientificMachineLearning"
+        "#ComputationalScience"
       ],
       "paper_id": "2026-09-13-arxiv-direct_and_indirect_physics_informed_neural_networks_for_dirichlet_boundary_control_of_sem",
       "paper_title": "Direct and Indirect Physics-Informed Neural Networks for Dirichlet Boundary Control of Semilinear Parabolic Equations: A Conditional Error Analysis",
       "paper_date": "2026-09-13",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-09-19T16:14:04",
+      "generated_at": "2026-09-18T16:57:02",
       "generator": "openai"
     }
   },
@@ -392,27 +392,27 @@
     ],
     "score": 74,
     "infographic": {
-      "key_insight": "Different flow paths can produce the same flow-matching objective but very different gradient variance, so path choice can materially speed up or slow down SGD.",
-      "engineering_relevance": "For practical diffusion/flow-matching training, optimizing the interpolation/path construction can reduce training cost without changing the target distribution or model objective.",
+      "key_insight": "Different flow-matching paths can produce the exact same objective yet lead to very different SGD variance and convergence rates, so path choice is an optimization lever, not just a modeling detail.",
+      "engineering_relevance": "For scalable generative modeling, selecting or learning a variance-reducing path can lower training cost and improve convergence without changing the target FM problem.",
       "method": [
-        "Analyze SGD variance for flow matching under a family of paths that preserve the same marginals and velocity field.",
-        "Derive a tight iteration-complexity bound for a linear velocity model with 1D Gaussian data and identify an optimal linear path.",
-        "Formulate a constrained path-selection problem (PathOpt_θ) and convert it into sample-estimable constraints for numerical search."
+        "Analyzed gradient variance across the class of paths that preserve the same marginal distributions and velocity field.",
+        "Derived a tight SGD iteration-complexity bound for a 1D Gaussian linear model and identified an optimal linear path.",
+        "Formulated PathOpt_θ with constraints that preserve the FM objective and showed how to rewrite them using sample-estimable quantities."
       ],
-      "evidence_signal": "The paper reports theoretical variance/complexity analysis and validates it experimentally on Gaussian data, Gaussian mixture models, and real datasets.",
-      "watch_item": "Variance reduction alone is not sufficient; the path must stay in the equivalence class G(p_t, v*_t), which is generally hard to verify exactly.",
+      "evidence_signal": "The abstract reports supporting experiments on Gaussian data, Gaussian mixture models, and real datasets, validating the theory empirically.",
+      "watch_item": "Variance reduction alone is not sufficient; paths must satisfy the same-marginal constraint G(p_t, v_t^*) or convergence can get worse.",
       "hashtags": [
         "#FlowMatching",
-        "#VarianceReduction",
-        "#StochasticGradientDescent",
         "#GenerativeModels",
+        "#SGD",
+        "#VarianceReduction",
         "#Optimization"
       ],
       "paper_id": "2026-09-15-arxiv-same_flow_different_paths_variance_reduction_in_flow_matching",
       "paper_title": "Same Flow, Different Paths: Variance Reduction in Flow Matching",
       "paper_date": "2026-09-15",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-09-19T16:14:07",
+      "generated_at": "2026-09-18T16:57:05",
       "generator": "openai"
     }
   },
@@ -444,27 +444,27 @@
     ],
     "score": 74,
     "infographic": {
-      "key_insight": "HISPO improves RLVR for mathematical reasoning by assigning credit at an intermediate segment level, using entropy-derived contiguous segments with soft saliency weights and clipped importance sampling.",
-      "engineering_relevance": "For engineers building reasoning models, HISPO offers a practical granularity between token-level and sequence-level updates that can better handle long-form credit assignment in training.",
+      "key_insight": "HISPO improves long-form mathematical reasoning by applying importance-sampling correction at an intermediate segment level, balancing token-level and sequence-level credit assignment.",
+      "engineering_relevance": "For RLVR systems, segment-level policy optimization offers a practical way to better allocate credit in long answers and potentially improve training stability and final reasoning accuracy.",
       "method": [
-        "Split each rollout into contiguous segments based on entropy.",
-        "Weight segments with soft entropy-derived saliency scores.",
-        "Apply clipped importance-sampling correction at the segment level."
+        "Build contiguous response segments from rollout-time entropy signals.",
+        "Assign soft saliency weights from segment entropy.",
+        "Apply clipped importance-sampling correction at the segment granularity."
       ],
-      "evidence_signal": "The authors fine-tuned Qwen3-1.7B-Base and report gains across six math benchmarks, with HISPO improving AIME25 by +3.75 Acc@8 and +3.78 Pass@8 over GRPO.",
-      "watch_item": "Entropy-based segmenting adds extra design choices and may be sensitive to segmentation quality or training stability in longer completions.",
+      "evidence_signal": "Fine-tuning Qwen3-1.7B-Base on six math benchmarks, HISPO improved Pass@8 on all benchmarks and achieved stronger or equal Acc@8 on five, including AIME25 gains over GRPO and GSPO.",
+      "watch_item": "Entropy-derived segmentation adds an extra design choice, so performance may depend on segmentation quality and the chosen clipping/saliency settings.",
       "hashtags": [
         "#ReinforcementLearning",
-        "#MathReasoning",
+        "#MathematicalReasoning",
+        "#LLMOptimization",
         "#ImportanceSampling",
-        "#LanguageModels",
         "#RLVR"
       ],
       "paper_id": "2026-09-14-arxiv-hispo_hierarchical_importance_sampling_policy_optimization_with_entropy_derived_segments",
       "paper_title": "HISPO: Hierarchical Importance-Sampling Policy Optimization with Entropy-Derived Segments",
       "paper_date": "2026-09-14",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-09-19T16:14:10",
+      "generated_at": "2026-09-18T16:57:07",
       "generator": "openai"
     }
   },
@@ -495,27 +495,27 @@
     ],
     "score": 73,
     "infographic": {
-      "key_insight": "Func-R1 addresses a modality-interference problem in MLLMs by jointly enforcing accurate visual perception and rigorous mathematical reasoning for function-based tasks.",
-      "engineering_relevance": "The approach suggests a practical training recipe for building multimodal systems that must reliably use diagrams, plots, or other visual cues in symbolic reasoning workflows.",
+      "key_insight": "Func-R1 improves multimodal mathematical function reasoning by explicitly separating visual perception from symbolic reasoning and training the model to attend to the right visual evidence.",
+      "engineering_relevance": "The paper shows that carefully designed post-training can reduce modality interference in MLLMs, which is important for building reliable AI assistants for STEM tasks involving charts, formulas, and diagrams.",
       "method": [
-        "Decoupled architecture separates perception from reasoning.",
-        "Hierarchical post-training first identifies critical visual evidence, then deepens theoretical reasoning.",
-        "PATO updates the policy to internalize function theory while correcting visual information during reasoning."
+        "Uses an explicitly decoupled architecture to separate perception from reasoning.",
+        "Applies a hierarchical post-training pipeline to first identify critical visual evidence, then perform deeper theoretical reasoning.",
+        "Introduces Perception-Aligned Theoretic Optimization (PATO) to align policy updates with mathematical properties while correcting visual input errors during reasoning."
       ],
-      "evidence_signal": "The abstract reports extensive benchmark evaluation, with Func-R1 achieving the best open-source MLLM performance and an 8.4% gain over GPT-5 on MathVerse function-oriented tasks.",
-      "watch_item": "The method may depend on careful stage-wise training and robust visual evidence selection, which could be sensitive to benchmark shift or noisy visual inputs.",
+      "evidence_signal": "The method was evaluated on diverse benchmarks and is reported to achieve the best performance among open-source MLLMs, including an 8.4% gain over GPT-5 on MathVerse function-oriented tasks.",
+      "watch_item": "The approach likely depends on high-quality visual cue extraction, so performance may degrade when inputs are noisy, ambiguous, or visually complex.",
       "hashtags": [
         "#MultimodalLLM",
-        "#MathReasoning",
-        "#FunctionReasoning",
+        "#MathematicalReasoning",
         "#VisualGrounding",
-        "#PostTraining"
+        "#PostTraining",
+        "#STEMAI"
       ],
       "paper_id": "2026-09-13-arxiv-func_r1_incentivizing_mathematical_function_reasoning_in_multimodal_large_language_models",
       "paper_title": "Func-R1: Incentivizing Mathematical Function Reasoning in Multimodal Large Language Models",
       "paper_date": "2026-09-13",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-09-19T16:14:12",
+      "generated_at": "2026-09-18T16:57:09",
       "generator": "openai"
     }
   },
@@ -549,27 +549,27 @@
     ],
     "score": 73,
     "infographic": {
-      "key_insight": "Encoder–decoder operator learning can be analyzed in a resolution-independent way by passing to a limiting kernel, which cleanly separates encoding effects, optimization error, and regularization error.",
-      "engineering_relevance": "This gives a practical recipe for designing and scaling operator-learning models across discretizations, with guarantees for kernel methods and wide encoder–decoder neural networks when input/output resolutions change.",
+      "key_insight": "Encoder–decoder operator learning can be analyzed resolution-independently by passing to a limiting kernel, so generalization and regularization effects can be separated from encoding effects.",
+      "engineering_relevance": "This gives practical error and complexity guidance for building scalable operator-learning models from discretized data, including neural network and kernel-based encoder–decoder systems.",
       "method": [
-        "Construct an operator-valued kernel on the original function spaces from a matrix-valued kernel on the encoded space.",
+        "Model the encoded data with a matrix-valued kernel that induces an operator-valued kernel on the original function spaces.",
         "Prove convergence of the induced kernels to a limiting kernel via operator-norm convergence of their integral operators.",
-        "Derive SGD and NTK generalization/error bounds that isolate encoding-induced terms, optimization decay, and finite-width effects."
+        "Derive upper and lower error bounds for regularized SGD and extend the analysis to encoder–decoder networks through the limiting NTK."
       ],
-      "evidence_signal": "The abstract reports upper and lower error bounds, plus polynomial parameter and sample complexity guarantees, for regularized SGD and wide encoder–decoder networks under algebraically decaying encoding errors.",
-      "watch_item": "The guarantees rely on asymptotic resolution growth and kernel/NTK assumptions, so finite-resolution implementations may still see non-negligible encoding error or width effects.",
+      "evidence_signal": "The abstract reports upper and lower convergence/error bounds, including terms of order t^{-θ} and T^{-θ′}, plus polynomial parameter and sample complexity guarantees under algebraically decaying encoding errors.",
+      "watch_item": "The bounds depend on how quickly encoding errors decay, so coarse discretizations or slow-decaying encodings may dominate performance and limit the practical benefit of the theory.",
       "hashtags": [
         "#OperatorLearning",
         "#KernelMethods",
         "#NeuralTangentKernel",
-        "#EncoderDecoder",
-        "#ScientificML"
+        "#ScientificComputing",
+        "#ApproximationTheory"
       ],
       "paper_id": "2026-09-12-arxiv-resolution_independent_analysis_of_encoder_decoder_operator_learning_via_limiting_kernels",
       "paper_title": "Resolution-Independent Analysis of Encoder--Decoder Operator Learning via Limiting Kernels",
       "paper_date": "2026-09-12",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-09-19T16:14:14",
+      "generated_at": "2026-09-18T16:57:11",
       "generator": "openai"
     }
   },
@@ -601,27 +601,27 @@
     ],
     "score": 73,
     "infographic": {
-      "key_insight": "Fixed orthogonalized momentum can fail on nonsmooth convex optimization, but making the momentum adaptive restores convergence and leads to a practical method called MAGD.",
-      "engineering_relevance": "For matrix-valued optimization problems in deep learning, this work shows when Muon-style updates are unreliable and provides a safer drop-in alternative with provable guarantees.",
+      "key_insight": "Orthogonalized momentum can fail on nonsmooth convex problems when momentum is fixed, but becomes reliable when momentum is adaptive and coupled with vanishing steps.",
+      "engineering_relevance": "For matrix-valued optimization in deep learning and LLM training, the paper suggests a practical alternative to standard momentum that preserves geometry-aware updates while improving convergence guarantees.",
       "method": [
-        "Analyze Muon under locally Lipschitz, nonsmooth objectives using a generalized derivative framework.",
-        "Construct a failure case showing fixed-momentum orthogonalization may miss the global optimum even with bounded iterates.",
-        "Introduce MAGD, which blends orthogonalized momentum with gradients using progress-based weighting and adaptive momentum."
+        "Proves fixed-momentum Muon can miss the global optimum on convex Lipschitz objectives for almost all initializations.",
+        "Shows asymptotic convergence is recovered when momentum adapts toward 1 with a vanishing step size.",
+        "Introduces MAGD, which blends orthogonalized momentum with gradient updates using relative-progress weighting and achieves optimal dimension dependence in convex settings."
       ],
-      "evidence_signal": "The abstract reports theoretical convergence analysis, an O(min{m,n} ε^-2) convex rate with a matching lower bound, and experiments on synthetic tasks, image classification, and LLM pretraining.",
-      "watch_item": "Performance and guarantees depend on boundedness/regularity assumptions and on carefully tuning adaptive momentum and vanishing step sizes.",
+      "evidence_signal": "The abstract reports experiments on synthetic problems, image classification, and LLM pretraining, supporting MAGD as a simple practical alternative to Muon.",
+      "watch_item": "The guarantees rely on boundedness and regularity assumptions, so behavior may degrade if iterates or gradients are highly unstable in practice.",
       "hashtags": [
         "#Optimization",
-        "#Muon",
         "#NonsmoothOptimization",
+        "#MatrixOptimization",
         "#DeepLearning",
-        "#MatrixValuedParameters"
+        "#MachineLearning"
       ],
       "paper_id": "2026-09-12-arxiv-nonsmooth_optimization_via_orthogonalized_momentum",
       "paper_title": "Nonsmooth Optimization via Orthogonalized Momentum",
       "paper_date": "2026-09-12",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-09-19T16:14:17",
+      "generated_at": "2026-09-18T16:57:14",
       "generator": "openai"
     }
   },
@@ -655,19 +655,19 @@
     ],
     "score": 72,
     "infographic": {
-      "key_insight": "Coupled Calibration and Learning (CCL) reduces teacher bias in LLM distillation by alternately calibrating the teacher on source feedback and training the student on target questions, achieving convergence to the oracle student without target-domain reward feedback.",
-      "engineering_relevance": "This offers a practical distillation strategy for domain-shifted LLM deployment, where target rewards are unavailable but robust student performance is still needed.",
+      "key_insight": "CCL alternates source-domain teacher calibration with target-domain student learning so the student can recover an oracle-like policy and reduce teacher bias without target reward feedback.",
+      "engineering_relevance": "This offers a practical distillation recipe for deploying smaller LLMs under distribution shift when target labels or rewards are unavailable.",
       "method": [
-        "Calibrate the teacher using token-level branching and reward feedback only from source questions.",
-        "Train the student on target questions with the calibrated teacher as the supervisory signal.",
-        "Feed the updated student back into later calibration steps to progressively reduce bias."
+        "Calibrate the teacher on source questions using reward feedback only.",
+        "Train the student on target questions with the calibrated teacher via token-level branching.",
+        "Iterate: use the updated student to improve the next calibration step in an autoregressive policy framework."
       ],
-      "evidence_signal": "In an autoregressive policy framework, the paper proves that the student's expected average KL divergence to the oracle student converges to zero at a polynomial rate, and shows direct matching can remain suboptimal even when the teacher outperforms all students on target reward.",
-      "watch_item": "The guarantee depends on the autoregressive policy setting and source-only feedback, so implementation may be sensitive to calibration quality and how well source feedback transfers under shift.",
+      "evidence_signal": "The abstract reports a theoretical convergence result: the student's expected average KL divergence to the oracle student goes to zero at a polynomial rate, and it also shows direct matching can remain error-bounded away from zero.",
+      "watch_item": "The guarantee is theoretical and depends on iterative calibration, projected gradient updates, and an autoregressive policy setting, so performance may be sensitive to approximation error and optimization stability in practice.",
       "hashtags": [
         "#LLMDistillation",
-        "#TeacherBias",
-        "#DomainShift",
+        "#TeacherStudentLearning",
+        "#CovariateShift",
         "#Calibration",
         "#ReinforcementLearning"
       ],
@@ -675,7 +675,7 @@
       "paper_title": "Coupled Calibration and Learning: Mitigating Teacher Bias in LLM Distillation without Target-Domain Reward Feedback",
       "paper_date": "2026-09-15",
       "paper_category": "AI math",
-      "generated_at": "2026-09-19T16:14:19",
+      "generated_at": "2026-09-18T16:57:16",
       "generator": "openai"
     }
   },
@@ -707,27 +707,27 @@
     ],
     "score": 72,
     "infographic": {
-      "key_insight": "RS-MFBO combines sensitivity-based dimension reduction with multi-fidelity Bayesian optimization to cut expensive simulator calls while preserving strong optimization performance.",
-      "engineering_relevance": "This is useful for industrial process design because it can reduce runtime and cost when tuning complex flowsheets with many variables and costly evaluations.",
+      "key_insight": "RS-MFBO combines sensitivity-based dimension reduction with multi-fidelity Bayesian optimization to efficiently search expensive, high-dimensional process models.",
+      "engineering_relevance": "It helps engineers optimize industrial flowsheets with far fewer high-fidelity simulator runs, cutting computational cost while preserving solution quality.",
       "method": [
-        "Use Global Sensitivity Analysis to identify and keep the most influential design variables.",
-        "Train a fidelity-augmented Gaussian process to link cheap approximations with expensive high-fidelity simulations.",
+        "Use Global Sensitivity Analysis to identify and retain the most influential design variables.",
+        "Fit a fidelity-augmented Gaussian process that links cheap approximations with expensive simulations.",
         "Apply a cost-aware acquisition rule with cooldown and promotion to balance exploration across fidelities."
       ],
-      "evidence_signal": "The framework was tested on two industrial simulators—plasmid DNA bioprocessing in SuperPro Designer and green fuel synthesis in Aspen HYSYS—showing fewer high-fidelity evaluations while staying competitive with single-fidelity baselines.",
-      "watch_item": "Performance depends on having meaningful low-fidelity models and reliable sensitivity estimates; poor surrogate correlation or misidentified variables could reduce the benefit.",
+      "evidence_signal": "The framework was tested on two industrial simulators—plasmid DNA bioprocess and green fuel synthesis—showing fewer high-fidelity evaluations while remaining competitive with single-fidelity baselines.",
+      "watch_item": "Performance depends on the quality of sensitivity screening and low-/high-fidelity correlation; weak surrogate fidelity alignment could reduce gains.",
       "hashtags": [
         "#BayesianOptimization",
         "#MultiFidelity",
-        "#GlobalSensitivityAnalysis",
+        "#SensitivityAnalysis",
         "#ProcessSimulation",
-        "#IndustrialOptimization"
+        "#Optimization"
       ],
       "paper_id": "2026-09-15-arxiv-reduced_space_multi_fidelity_bayesian_optimization_of_process_simulation_models",
       "paper_title": "Reduced-Space Multi-Fidelity Bayesian Optimization of Process Simulation Models",
       "paper_date": "2026-09-15",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-09-19T16:14:22",
+      "generated_at": "2026-09-18T16:57:17",
       "generator": "openai"
     }
   },
@@ -759,27 +759,27 @@
     ],
     "score": 72,
     "infographic": {
-      "key_insight": "The paper proposes Structure-Driven Inversion (SDI), a new paradigm that solves inverse problems by exploiting inherent mathematical or physical structure instead of relying on iterative objective minimization.",
-      "engineering_relevance": "SDI could improve efficiency, interpretability, and multi-parameter decoupling in inverse-problem workflows used in imaging, PDE-based reconstruction, and scientific machine learning.",
+      "key_insight": "The paper proposes Structure-Driven Inversion (SDI), which solves inverse problems by exploiting intrinsic mathematical or physical structure instead of relying only on iterative objective minimization.",
+      "engineering_relevance": "SDI could improve inversion efficiency, interpretability, and multi-parameter decoupling in computational science and engineering workflows such as imaging and PDE-based inverse problems.",
       "method": [
-        "MSDI: use mathematical structure to build a pseudo-inverse in the spectral domain via unitary diagonalization.",
-        "PSDI: use physical structure to drive inversion through virtual-source projection (PSDWII) or physical-system analogy (PSDBP).",
-        "Positions SDI as a complement and extension to traditional optimization-driven inversion, not a replacement."
+        "MSDI: builds a pseudo-inverse in the spectral domain using unitary diagonalization.",
+        "PSDI: uses physical structure via virtual-source projection for waveform inversion imaging.",
+        "PSDBP: applies three structural projections to deep neural networks through a physical-system analogy."
       ],
-      "evidence_signal": "The abstract is conceptual and paradigm-setting; it presents representative methods but does not report experimental metrics or benchmark results.",
-      "watch_item": "The approach may depend on strong problem structure and carefully chosen spectral/physical assumptions, which could limit robustness on noisy or weakly structured inverse problems.",
+      "evidence_signal": "The abstract is conceptual and taxonomy-focused; it does not report experiments, benchmarks, or quantitative results.",
+      "watch_item": "The framework is new and currently supported by representative methods, so practical robustness and scalability across diverse inverse problems still need validation.",
       "hashtags": [
         "#InverseProblems",
         "#Optimization",
         "#PDEs",
-        "#ScientificComputing",
-        "#MachineLearning"
+        "#ComputationalScience",
+        "#ScientificMachineLearning"
       ],
       "paper_id": "2026-09-15-arxiv-structure_driven_inversion_a_new_paradigm_for_solving_inverse_problems",
       "paper_title": "Structure-Driven Inversion: A New Paradigm for Solving Inverse Problems",
       "paper_date": "2026-09-15",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-09-19T16:14:24",
+      "generated_at": "2026-09-18T16:57:19",
       "generator": "openai"
     }
   },
@@ -812,27 +812,27 @@
     ],
     "score": 71,
     "infographic": {
-      "key_insight": "The classical 2-dimensional Weisfeiler-Leman algorithm stabilizes in linear time, with a proven upper bound of 5(n−1) rounds, matching the known Ω(n) lower bound up to constants.",
-      "engineering_relevance": "This gives a sharper worst-case guarantee for graph isomorphism refinement and related symmetry-detection pipelines, improving predictability for combinatorial and machine-learning graph methods.",
+      "key_insight": "The classical 2-dimensional Weisfeiler-Leman algorithm stabilizes in linear time, with a proven worst-case bound of 5(n−1) rounds, matching the known Ω(n) lower bound up to constants.",
+      "engineering_relevance": "This sharpens the theoretical runtime guarantees for graph refinement methods used in graph isomorphism, algebraic graph theory, and machine-learning pipelines.",
       "method": [
-        "Analyze stabilization rounds of the classical 2D Weisfeiler-Leman color refinement process.",
-        "Prove a new linear upper bound of 5(n−1), improving the prior O(n log n) bound.",
-        "Extend the argument to k-dimensional WL for k≥3, yielding an improved O(n^(k−1)/(k−2)! + n^(k−2)) bound."
+        "Prove a new upper bound on stabilization rounds for the classical 2-WL algorithm.",
+        "Extend the argument to k-WL for every k≥3, yielding improved iteration bounds.",
+        "Generalize the proof to a broader class of tuple-coloring refinement sequences."
       ],
-      "evidence_signal": "The result is theoretical, derived from worst-case iteration analysis rather than experiments, and it improves the best known upper bound while asymptotically matching the lower bound.",
-      "watch_item": "The guarantee concerns iteration count only; practical runtime still depends on implementation details and per-round cost, especially for larger k.",
+      "evidence_signal": "The paper gives a theoretical worst-case analysis and improves the previous O(n log n) upper bound to 5(n−1), with corresponding improved bounds for k-WL.",
+      "watch_item": "The bound is about number of refinement rounds, not total wall-clock cost, so practical implementation speed still depends on per-round work and graph size.",
       "hashtags": [
         "#WeisfeilerLeman",
         "#GraphIsomorphism",
         "#AlgorithmAnalysis",
-        "#CombinatorialAlgorithms",
+        "#CombinatorialOptimization",
         "#TheoreticalCS"
       ],
       "paper_id": "2026-09-15-arxiv-the_classical_weisfeiler_leman_algorithm_stabilizes_in_o_n_rounds",
       "paper_title": "The Classical Weisfeiler-Leman Algorithm Stabilizes in $O(n)$ Rounds",
       "paper_date": "2026-09-15",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-09-19T16:14:26",
+      "generated_at": "2026-09-18T16:57:22",
       "generator": "openai"
     }
   },
@@ -864,27 +864,27 @@
     ],
     "score": 70,
     "infographic": {
-      "key_insight": "The paper shows that many common similarity assumptions are too weak to close the optimization-time gap between homogeneous and heterogeneous asynchronous training, and identifies a stronger minimal assumption pair that does.",
-      "engineering_relevance": "For distributed ML systems, this clarifies when asynchronous training can achieve homogeneous-style speedups and when heterogeneity fundamentally limits wall-clock performance.",
+      "key_insight": "The paper shows that the usual assumptions used to relate homogeneous and heterogeneous asynchronous optimization are too weak to close the time-complexity gap, and that only a stronger combined assumption set can recover the best-known homogeneous-style scaling.",
+      "engineering_relevance": "For distributed ML systems, this clarifies when asynchronous training can safely rely on faster heterogeneous workers without paying an unavoidable theoretical penalty in wall-clock convergence time.",
       "method": [
-        "Proves impossibility results under first- and second-order similarity assumptions for randomized algorithms",
-        "Tests the interpolation regime and shows weak interpolation alone still cannot close the gap",
-        "Introduces strong interpolation plus a local Polyak–Lojasiewicz condition to obtain a sharper time-complexity bound"
+        "Proves impossibility results under standard first- and second-order similarity assumptions for any randomized algorithm.",
+        "Tests the interpolation regime and shows weak interpolation alone still cannot bridge the gap.",
+        "Introduces a minimal combination of strong interpolation and the local Polyak-Lojasiewicz condition to obtain a sharper time-complexity bound."
       ],
-      "evidence_signal": "The abstract reports theoretical analysis and complexity bounds rather than experiments, using comparison to known optimal results in homogeneous and heterogeneous settings.",
-      "watch_item": "The new guarantee depends on stronger structural assumptions, so its practical applicability may be limited if real worker data are only weakly aligned.",
+      "evidence_signal": "The abstract reports theoretical complexity analysis and lower-bound/impossibility proofs rather than empirical experiments or dataset-based evaluation.",
+      "watch_item": "The improved bound depends on stronger structural assumptions, so it may not apply to real systems with highly nonuniform data or weak local optimization geometry.",
       "hashtags": [
         "#AsynchronousOptimization",
         "#DistributedML",
         "#OptimizationTheory",
-        "#HeterogeneousData",
+        "#HeterogeneousComputing",
         "#ConvergenceBounds"
       ],
       "paper_id": "2026-09-15-arxiv-bridging_the_gap_between_homogeneous_and_heterogeneous_asynchronous_optimization_is_surpri",
       "paper_title": "Bridging the Gap Between Homogeneous and Heterogeneous Asynchronous Optimization Is Surprisingly Difficult",
       "paper_date": "2026-09-15",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-09-19T16:14:29",
+      "generated_at": "2026-09-18T16:57:24",
       "generator": "openai"
     }
   },
@@ -915,15 +915,15 @@
     ],
     "score": 69,
     "infographic": {
-      "key_insight": "Aeneas translates ownership-safe Rust into Lean, enabling scalable machine-checked proofs of cryptographic software without low-level aliasing and liveness reasoning.",
-      "engineering_relevance": "The approach shows that production-oriented verified Rust can deliver safety, panic-freedom, correctness, portability, and performance for real cryptographic libraries across x86-64 and ARM.",
+      "key_insight": "Aeneas lets Lean verify real Rust cryptographic code by extracting a pure model from Rust’s ownership discipline, making large-scale correctness proofs tractable.",
+      "engineering_relevance": "The approach shows that production-grade, performance-oriented crypto software can be verified without sacrificing portability, maintainability, or deployment fit.",
       "method": [
-        "Extract pure Rust models into Lean via Aeneas",
-        "Use Lean tactics and libraries to prove functional correctness over extracted code",
-        "Apply AI agents to draft proofs and assist with standards/intrinsics formalization"
+        "Translate Rust code into a pure Lean model via Aeneas.",
+        "Use Lean tactics and libraries to automate proofs over extracted code.",
+        "Leverage AI agents to draft formal proofs while Lean independently checks them."
       ],
-      "evidence_signal": "The authors report a 237KLOC Lean development verifying 16.7KLOC of Rust, covering safety, panic-freedom, and functional correctness for post-quantum cipher suites on x86-64 and ARM.",
-      "watch_item": "Formalizing cryptographic standards and platform-specific intrinsics still needs expert design and review, so automation does not eliminate specification risk.",
+      "evidence_signal": "The project reports a 237KLOC Lean development proving safety, panic-freedom, and functional correctness for 16.7KLOC of Rust across post-quantum cipher suites on x86-64 and ARM.",
+      "watch_item": "The hardest parts still require expert review, especially formalizing cryptographic standards and platform-specific intrinsics.",
       "hashtags": [
         "#TheoremProving",
         "#Rust",
@@ -935,7 +935,7 @@
       "paper_title": "Scaling Verification of Cryptographic Software with Aeneas, Rust, and Lean",
       "paper_date": "2026-09-14",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-09-19T16:14:31",
+      "generated_at": "2026-09-18T16:57:26",
       "generator": "openai"
     }
   },
@@ -966,27 +966,27 @@
     ],
     "score": 67,
     "infographic": {
-      "key_insight": "ProIQA assesses math item quality by modeling the full reasoning process, not just the problem stem, to better capture knowledge, difficulty, and competency signals.",
-      "engineering_relevance": "It offers a scalable data-driven framework for educational AI systems that need reliable automatic filtering and evaluation of generated math items.",
+      "key_insight": "ProIQA evaluates math item quality by modeling the solving process, not just the problem stem, to assess educational value more faithfully.",
+      "engineering_relevance": "It offers a scalable pipeline for automated quality control of generated math questions in intelligent tutoring and AIG systems.",
       "method": [
-        "Builds process-enhanced item data by converting raw solutions into structured reasoning trees.",
-        "Uses Large Language Models to generate hierarchical reasoning trees and Graph Neural Networks to encode their topology and procedural semantics.",
-        "Fuses stem semantics with solving-process representations in a dual-view \"Stem + Solving\" architecture."
+        "Builds a process-enhanced IQA dataset by adding structured reasoning trees to original items",
+        "Uses LLMs to extract hierarchical solution trees from raw solutions",
+        "Encodes process structure with GNNs and fuses it with stem semantics in a dual-view model"
       ],
-      "evidence_signal": "The abstract reports extensive experiments on K12 math datasets, showing the method effectively captures process-oriented features for fine-grained quality assessment.",
-      "watch_item": "The approach depends on high-quality solution traces and LLM-generated reasoning trees, which may introduce noise or extra cost in real deployment.",
+      "evidence_signal": "Experiments on K12 math datasets show the framework captures process-oriented features and supports fine-grained assessment across knowledge, difficulty, and competencies.",
+      "watch_item": "Performance may depend on the quality of LLM-generated reasoning trees and the reliability of structured solution parsing.",
       "hashtags": [
-        "#AIG",
-        "#MathReasoning",
+        "#MathAI",
         "#ItemQualityAssessment",
+        "#AutomaticItemGeneration",
         "#GraphNeuralNetworks",
-        "#EdTech"
+        "#EducationalAI"
       ],
       "paper_id": "2026-09-14-arxiv-proiqa_a_process_based_framework_for_fine_grained_math_item_quality_assessment",
       "paper_title": "ProIQA: A Process-Based Framework for Fine-Grained Math Item Quality Assessment",
       "paper_date": "2026-09-14",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-09-19T16:14:33",
+      "generated_at": "2026-09-18T16:57:29",
       "generator": "openai"
     }
   },
@@ -1018,27 +1018,27 @@
     ],
     "score": 67,
     "infographic": {
-      "key_insight": "lPINN shifts most learning offline by pretraining a differentiable neural basis, then solves each new PDE instance online with only a linear output layer constrained by physics.",
-      "engineering_relevance": "This can cut inference cost dramatically while improving accuracy for forward and inverse PDE problems, making it attractive for fast scientific simulation and parameter estimation.",
+      "key_insight": "lPINN shifts most of PINN training offline by pretraining nonlinear basis functions, then solves new PDE instances online with only a linear layer over frozen, physics-compatible features.",
+      "engineering_relevance": "This can greatly accelerate forward and inverse PDE solving while preserving physics constraints, making it attractive for repeated simulation, calibration, and sparse-data inference workflows.",
       "method": [
-        "Learn continuous operator-compatible basis functions from an ensemble of numerical solutions using data plus derivatives or physics residuals.",
-        "Freeze the pretrained nonlinear hidden layers for new problems and optimize only the final linear layer under governing-equation, boundary/initial, regularization, and observation losses.",
-        "Use automatic differentiation so the learned basis remains differentiable and can be evaluated on finer meshes without retraining."
+        "Offline learn continuous neural basis functions from solution ensembles",
+        "Pretrain basis using derivatives or physics residuals to make them operator-compatible",
+        "Online freeze the basis and fit only the final linear layer with PDE, boundary, initial, and data terms"
       ],
-      "evidence_signal": "The paper reports tests on advection-diffusion, Burgers', and nonlinear pendulum problems, with lower solution/parameter errors than vanilla PINNs and online speedups from about 10x to over 1000x, especially with limited residual or measurement data.",
-      "watch_item": "Performance depends on the quality and coverage of the offline training ensemble, so extrapolation to poorly represented regimes may be less reliable.",
+      "evidence_signal": "Evaluated on advection-diffusion, Burgers, and nonlinear pendulum problems, lPINN reduced solution/parameter errors versus vanilla PINNs and cut online inference time by about 1 to over 3 orders of magnitude, especially with limited residual or measurement data.",
+      "watch_item": "Performance depends on the quality and coverage of offline training solutions, so poor basis learning may limit generalization to new parameter regimes or PDE settings.",
       "hashtags": [
         "#PINN",
-        "#ScientificML",
+        "#PhysicsInformedML",
         "#ReducedOrderModeling",
-        "#PDEs",
-        "#InverseProblems"
+        "#ScientificML",
+        "#DifferentialEquations"
       ],
       "paper_id": "2026-09-14-arxiv-linearized_pinn_with_pretrained_nonlinear_layers",
       "paper_title": "Linearized PINN with pretrained nonlinear layers",
       "paper_date": "2026-09-14",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-09-19T16:14:36",
+      "generated_at": "2026-09-18T16:57:31",
       "generator": "openai"
     }
   }

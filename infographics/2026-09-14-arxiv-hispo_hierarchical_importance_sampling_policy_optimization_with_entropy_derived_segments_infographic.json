@@ -1,24 +1,24 @@
 {
-  "key_insight": "HISPO improves long-form mathematical reasoning by applying importance-sampling correction at an intermediate segment level, balancing token-level and sequence-level credit assignment.",
-  "engineering_relevance": "For RLVR systems, segment-level policy optimization offers a practical way to better allocate credit in long answers and potentially improve training stability and final reasoning accuracy.",
+  "key_insight": "HISPO improves RLVR for mathematical reasoning by assigning credit at an intermediate segment level, using entropy-derived contiguous segments with soft saliency weights and clipped importance sampling.",
+  "engineering_relevance": "For engineers building reasoning models, HISPO offers a practical granularity between token-level and sequence-level updates that can better handle long-form credit assignment in training.",
   "method": [
-    "Build contiguous response segments from rollout-time entropy signals.",
-    "Assign soft saliency weights from segment entropy.",
-    "Apply clipped importance-sampling correction at the segment granularity."
+    "Split each rollout into contiguous segments based on entropy.",
+    "Weight segments with soft entropy-derived saliency scores.",
+    "Apply clipped importance-sampling correction at the segment level."
   ],
-  "evidence_signal": "Fine-tuning Qwen3-1.7B-Base on six math benchmarks, HISPO improved Pass@8 on all benchmarks and achieved stronger or equal Acc@8 on five, including AIME25 gains over GRPO and GSPO.",
-  "watch_item": "Entropy-derived segmentation adds an extra design choice, so performance may depend on segmentation quality and the chosen clipping/saliency settings.",
+  "evidence_signal": "The authors fine-tuned Qwen3-1.7B-Base and report gains across six math benchmarks, with HISPO improving AIME25 by +3.75 Acc@8 and +3.78 Pass@8 over GRPO.",
+  "watch_item": "Entropy-based segmenting adds extra design choices and may be sensitive to segmentation quality or training stability in longer completions.",
   "hashtags": [
     "#ReinforcementLearning",
-    "#MathematicalReasoning",
-    "#LLMOptimization",
+    "#MathReasoning",
     "#ImportanceSampling",
+    "#LanguageModels",
     "#RLVR"
   ],
   "paper_id": "2026-09-14-arxiv-hispo_hierarchical_importance_sampling_policy_optimization_with_entropy_derived_segments",
   "paper_title": "HISPO: Hierarchical Importance-Sampling Policy Optimization with Entropy-Derived Segments",
   "paper_date": "2026-09-14",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-09-18T16:57:07",
+  "generated_at": "2026-09-19T16:14:10",
   "generator": "openai"
 }

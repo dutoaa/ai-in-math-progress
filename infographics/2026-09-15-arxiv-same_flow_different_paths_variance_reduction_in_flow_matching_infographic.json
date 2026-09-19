@@ -1,24 +1,24 @@
 {
-  "key_insight": "Different flow-matching paths can produce the exact same objective yet lead to very different SGD variance and convergence rates, so path choice is an optimization lever, not just a modeling detail.",
-  "engineering_relevance": "For scalable generative modeling, selecting or learning a variance-reducing path can lower training cost and improve convergence without changing the target FM problem.",
+  "key_insight": "Different flow paths can produce the same flow-matching objective but very different gradient variance, so path choice can materially speed up or slow down SGD.",
+  "engineering_relevance": "For practical diffusion/flow-matching training, optimizing the interpolation/path construction can reduce training cost without changing the target distribution or model objective.",
   "method": [
-    "Analyzed gradient variance across the class of paths that preserve the same marginal distributions and velocity field.",
-    "Derived a tight SGD iteration-complexity bound for a 1D Gaussian linear model and identified an optimal linear path.",
-    "Formulated PathOpt_θ with constraints that preserve the FM objective and showed how to rewrite them using sample-estimable quantities."
+    "Analyze SGD variance for flow matching under a family of paths that preserve the same marginals and velocity field.",
+    "Derive a tight iteration-complexity bound for a linear velocity model with 1D Gaussian data and identify an optimal linear path.",
+    "Formulate a constrained path-selection problem (PathOpt_θ) and convert it into sample-estimable constraints for numerical search."
   ],
-  "evidence_signal": "The abstract reports supporting experiments on Gaussian data, Gaussian mixture models, and real datasets, validating the theory empirically.",
-  "watch_item": "Variance reduction alone is not sufficient; paths must satisfy the same-marginal constraint G(p_t, v_t^*) or convergence can get worse.",
+  "evidence_signal": "The paper reports theoretical variance/complexity analysis and validates it experimentally on Gaussian data, Gaussian mixture models, and real datasets.",
+  "watch_item": "Variance reduction alone is not sufficient; the path must stay in the equivalence class G(p_t, v*_t), which is generally hard to verify exactly.",
   "hashtags": [
     "#FlowMatching",
-    "#GenerativeModels",
-    "#SGD",
     "#VarianceReduction",
+    "#StochasticGradientDescent",
+    "#GenerativeModels",
     "#Optimization"
   ],
   "paper_id": "2026-09-15-arxiv-same_flow_different_paths_variance_reduction_in_flow_matching",
   "paper_title": "Same Flow, Different Paths: Variance Reduction in Flow Matching",
   "paper_date": "2026-09-15",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-09-18T16:57:05",
+  "generated_at": "2026-09-19T16:14:07",
   "generator": "openai"
 }
