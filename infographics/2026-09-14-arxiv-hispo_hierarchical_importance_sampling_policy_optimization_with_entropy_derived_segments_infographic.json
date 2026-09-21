@@ -1,24 +1,24 @@
 {
-  "key_insight": "HISPO introduces a middle-ground RLVR update rule that assigns credit at the segment level using entropy-derived contiguous chunks, aiming to better handle long mathematical solutions than token- or sequence-level correction.",
-  "engineering_relevance": "For language-model training pipelines, HISPO suggests a practical way to improve long-form reasoning quality by making importance sampling more aligned with meaningful subproblem boundaries.",
+  "key_insight": "HISPO improves reinforcement-learning credit assignment for long math solutions by using entropy-derived segments as an intermediate granularity between token-level and sequence-level updates.",
+  "engineering_relevance": "For large language model training, segment-level importance sampling offers a practical way to stabilize optimization and better target where reasoning quality is gained or lost in long completions.",
   "method": [
-    "Build rollout-time contiguous segments from entropy signals",
-    "Assign soft saliency weights to segments using entropy-derived importance",
-    "Apply clipped importance-sampling correction at the segment granularity"
+    "Build contiguous response segments from rollout-time entropy signals",
+    "Assign soft saliency weights to segments based on entropy",
+    "Apply clipped importance-sampling policy optimization at the segment level"
   ],
-  "evidence_signal": "The paper fine-tunes Qwen3-1.7B-Base and reports results across six benchmarks, with HISPO improving Pass@8 on all of them and matching or exceeding the best baseline in Acc@8 on five.",
-  "watch_item": "Entropy-based segmentation may be sensitive to rollout quality and hyperparameter choices, so gains could depend on how well the segments align with true reasoning substructure.",
+  "evidence_signal": "Fine-tuning Qwen3-1.7B-Base on six math benchmarks, HISPO outperformed the strongest baseline in Pass@8 on all benchmarks and in Acc@8 on five, including AIME25 gains of +3.75 Acc@8 and +3.78 Pass@8 over GRPO.",
+  "watch_item": "Segment construction depends on entropy quality and segmentation heuristics, so results may be sensitive to implementation details and may not transfer equally to other model sizes or reward settings.",
   "hashtags": [
-    "#RLVR",
+    "#ReinforcementLearning",
     "#MathReasoning",
-    "#PolicyOptimization",
+    "#LLMTraining",
     "#ImportanceSampling",
-    "#LLMTraining"
+    "#RLVR"
   ],
   "paper_id": "2026-09-14-arxiv-hispo_hierarchical_importance_sampling_policy_optimization_with_entropy_derived_segments",
   "paper_title": "HISPO: Hierarchical Importance-Sampling Policy Optimization with Entropy-Derived Segments",
   "paper_date": "2026-09-14",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-09-20T16:41:20",
+  "generated_at": "2026-09-21T18:29:01",
   "generator": "openai"
 }
