@@ -1,24 +1,24 @@
 {
-  "key_insight": "HISPO improves reinforcement-learning credit assignment for long math solutions by using entropy-derived segments as an intermediate granularity between token-level and sequence-level updates.",
-  "engineering_relevance": "For large language model training, segment-level importance sampling offers a practical way to stabilize optimization and better target where reasoning quality is gained or lost in long completions.",
+  "key_insight": "HISPO introduces a middle-ground RLVR update granularity: it splits long reasoning traces into entropy-derived segments and applies importance-sampling correction at the segment level to improve credit assignment.",
+  "engineering_relevance": "For math-focused language models, segment-level optimization offers a practical way to better train long-form reasoning traces without relying solely on token-level or full-sequence corrections.",
   "method": [
-    "Build contiguous response segments from rollout-time entropy signals",
-    "Assign soft saliency weights to segments based on entropy",
-    "Apply clipped importance-sampling policy optimization at the segment level"
+    "Build rollout-time contiguous segments using entropy-derived saliency.",
+    "Apply soft entropy-based weights to segments.",
+    "Use clipped importance-sampling correction at the segment granularity between GRPO/DAPO and GSPO."
   ],
-  "evidence_signal": "Fine-tuning Qwen3-1.7B-Base on six math benchmarks, HISPO outperformed the strongest baseline in Pass@8 on all benchmarks and in Acc@8 on five, including AIME25 gains of +3.75 Acc@8 and +3.78 Pass@8 over GRPO.",
-  "watch_item": "Segment construction depends on entropy quality and segmentation heuristics, so results may be sensitive to implementation details and may not transfer equally to other model sizes or reward settings.",
+  "evidence_signal": "Fine-tuning Qwen3-1.7B-Base on six math benchmarks, HISPO outperformed the strongest baseline on Pass@8 across all tasks and matched or exceeded it on Acc@8 in five, including gains on AIME25 over GRPO and GSPO.",
+  "watch_item": "Entropy-based segmentation may add implementation complexity and its gains could depend on stable segment construction and reward/entropy quality during rollout.",
   "hashtags": [
     "#ReinforcementLearning",
-    "#MathReasoning",
-    "#LLMTraining",
-    "#ImportanceSampling",
-    "#RLVR"
+    "#MathematicalReasoning",
+    "#LanguageModels",
+    "#PolicyOptimization",
+    "#CreditAssignment"
   ],
   "paper_id": "2026-09-14-arxiv-hispo_hierarchical_importance_sampling_policy_optimization_with_entropy_derived_segments",
   "paper_title": "HISPO: Hierarchical Importance-Sampling Policy Optimization with Entropy-Derived Segments",
   "paper_date": "2026-09-14",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-09-21T18:29:01",
+  "generated_at": "2026-09-22T17:31:29",
   "generator": "openai"
 }
