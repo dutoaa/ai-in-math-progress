@@ -1,24 +1,24 @@
 {
-  "key_insight": "lPINN turns a PINN into a reduced-order model by pretraining nonlinear basis functions offline and solving each new PDE instance by optimizing only a final linear layer under physics constraints.",
-  "engineering_relevance": "This can cut online inference cost by 10x to 1000x+ while improving accuracy for forward and inverse PDE problems, making physics-based ML more practical for fast simulation and parameter estimation.",
+  "key_insight": "lPINN moves most of the learning offline by pretraining a nonlinear neural basis and then solving each new PDE instance with only a fast online linear fit under the physics constraints.",
+  "engineering_relevance": "This can greatly cut inference cost for forward and inverse PDE problems while preserving accuracy, making it attractive for repeated simulation, parameter estimation, and data-limited scientific workflows.",
   "method": [
-    "Learn continuous neural basis functions from an ensemble of numerical solutions in an offline stage.",
-    "Pretrain basis functions using solution data plus derivative information or physics residuals.",
-    "Freeze the basis online and fit only the linear coefficients using governing-equation, boundary/initial, regularization, and observation terms."
+    "Pretrain continuous, differentiable basis functions from solution ensembles using derivative data or physics residuals.",
+    "Freeze the hidden layers for each new case and optimize only the final linear layer online.",
+    "Enforce governing-equation residuals plus initial, boundary, regularization, and observation terms."
   ],
-  "evidence_signal": "The abstract reports tests on advection-diffusion, Burgers', and nonlinear pendulum problems, with lower solution/parameter errors than vanilla PINNs and online speedups ranging from about one to more than three orders of magnitude, especially with limited data.",
-  "watch_item": "Performance depends on the quality and coverage of the offline training ensemble, so the learned basis may generalize less well if new problems differ substantially from the pretrained solution family.",
+  "evidence_signal": "Across advection-diffusion, Burgers', and nonlinear pendulum tests, lPINN reduced solution and parameter errors versus vanilla PINNs and cut online inference time by about 1 to more than 3 orders of magnitude, with strong gains when residual or measurement data were scarce.",
+  "watch_item": "Performance depends on the quality and coverage of offline training solutions, so poor basis pretraining could limit generalization to new regimes or geometries.",
   "hashtags": [
-    "#PINN",
-    "#PhysicsInformedML",
+    "#PhysicsInformedNN",
     "#ReducedOrderModeling",
-    "#ScientificComputing",
-    "#NeuralOperators"
+    "#ScientificMachineLearning",
+    "#PDEs",
+    "#InverseProblems"
   ],
   "paper_id": "2026-09-14-arxiv-linearized_pinn_with_pretrained_nonlinear_layers",
   "paper_title": "Linearized PINN with pretrained nonlinear layers",
   "paper_date": "2026-09-14",
   "paper_category": "Symbolic Computation",
-  "generated_at": "2026-09-24T17:45:08",
+  "generated_at": "2026-09-25T17:46:41",
   "generator": "openai"
 }
