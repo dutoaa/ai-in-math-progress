@@ -1,24 +1,24 @@
 {
-  "key_insight": "Coupling teacher calibration with student learning can remove persistent teacher bias in LLM distillation and drive the student toward the oracle policy even without target-domain reward feedback.",
-  "engineering_relevance": "This offers a practical distillation recipe for domain-shifted LLM deployment, enabling safer student models when target labels or rewards are unavailable.",
+  "key_insight": "Coupling teacher calibration with student learning can remove teacher bias in LLM distillation and drive the student toward the oracle student even without target-domain reward feedback.",
+  "engineering_relevance": "This offers a practical distillation strategy for domain-shifted deployment settings where labeled rewards are available only on source data but the student must generalize to target questions.",
   "method": [
-    "Calibrate the teacher on source-domain reward feedback using token-level branching.",
-    "Use the calibrated teacher to train the student on target questions.",
-    "Feed the updated student back into later calibration rounds to reduce bias over iterations."
+    "Calibrate the teacher using source-domain reward feedback at each iteration.",
+    "Train the student on target questions with token-level branching from the calibrated teacher.",
+    "Feed the updated student back into the next calibration step to progressively reduce bias."
   ],
-  "evidence_signal": "The abstract reports a theoretical convergence guarantee: the student’s expected average KL divergence to the oracle student goes to zero at a polynomial rate.",
-  "watch_item": "The guarantee relies on an autoregressive policy framework and source-domain reward feedback, so performance may depend on how well source calibration transfers under strong distribution shift.",
+  "evidence_signal": "The paper provides a polynomial-rate convergence proof showing the student’s expected average KL divergence to the oracle student goes to zero, and also shows direct matching can remain bounded away from the oracle.",
+  "watch_item": "The method depends on reliable source-domain reward feedback and iterative calibration, so performance may degrade if source rewards are noisy or the source-target shift is severe.",
   "hashtags": [
     "#LLMDistillation",
-    "#TeacherStudentLearning",
-    "#DomainShift",
     "#Calibration",
-    "#AITheory"
+    "#DomainShift",
+    "#PolicyOptimization",
+    "#AIResearch"
   ],
   "paper_id": "2026-09-15-arxiv-coupled_calibration_and_learning_mitigating_teacher_bias_in_llm_distillation_without_targe",
   "paper_title": "Coupled Calibration and Learning: Mitigating Teacher Bias in LLM Distillation without Target-Domain Reward Feedback",
   "paper_date": "2026-09-15",
   "paper_category": "AI math",
-  "generated_at": "2026-09-25T17:46:25",
+  "generated_at": "2026-09-26T16:52:42",
   "generator": "openai"
 }
