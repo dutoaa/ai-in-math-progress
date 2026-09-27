@@ -1,17 +1,17 @@
 {
-  "key_insight": "Different flow-matching paths can change SGD variance and convergence speed even when the underlying FM objective is exactly the same.",
-  "engineering_relevance": "Choosing the right path is a practical optimization lever for faster and more stable training of flow-matching generative models.",
+  "key_insight": "Different flow-matching paths can produce the same objective but very different SGD variance and convergence speed, so path choice is an optimization lever, not just a modeling detail.",
+  "engineering_relevance": "For practitioners training flow-matching generative models, selecting or learning a lower-variance path can reduce training cost and improve convergence without changing the target FM problem.",
   "method": [
-    "Analyze SGD variance induced by different paths in the same FM problem class G(p_t,v*_t).",
-    "Derive a tight iteration-complexity bound for a 1D Gaussian linear velocity model and find an optimal linear path.",
-    "Formulate PathOpt_θ and convert the path constraint into sample-estimable constraints for numerical search."
+    "Analyze SGD gradient variance as a function of the FM path.",
+    "Derive an optimal linear path for 1D Gaussian data under a linear velocity model.",
+    "Formulate PathOpt_θ with the constraint g_t ∈ G(p_t, v*_t) and give a sample-estimable equivalent formulation."
   ],
-  "evidence_signal": "The abstract reports theoretical bounds plus experiments on Gaussian data, Gaussian mixture models, and real datasets.",
-  "watch_item": "The path constraint g_t∈G(p_t,v*_t) is not directly verifiable in practice, so approximate constraints and estimation error can affect the chosen path.",
+  "evidence_signal": "The paper reports theoretical bounds plus experiments on Gaussian data, Gaussian mixture models, and real datasets to validate the variance-reduction effect.",
+  "watch_item": "Variance reduction must respect the constraint of preserving the same marginal distributions and velocity field; unconstrained path changes can look better locally but slow overall convergence.",
   "hashtags": [
     "#FlowMatching",
-    "#StochasticOptimization",
     "#VarianceReduction",
+    "#StochasticOptimization",
     "#GenerativeModels",
     "#MachineLearning"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Same Flow, Different Paths: Variance Reduction in Flow Matching",
   "paper_date": "2026-09-15",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-09-26T16:52:30",
+  "generated_at": "2026-09-27T17:30:13",
   "generator": "openai"
 }

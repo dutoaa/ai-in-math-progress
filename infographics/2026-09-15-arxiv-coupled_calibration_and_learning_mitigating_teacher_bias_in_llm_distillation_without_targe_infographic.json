@@ -1,24 +1,24 @@
 {
-  "key_insight": "Coupling teacher calibration with student learning can remove teacher bias in LLM distillation and drive the student toward the oracle student even without target-domain reward feedback.",
-  "engineering_relevance": "This offers a practical distillation strategy for domain-shifted deployment settings where labeled rewards are available only on source data but the student must generalize to target questions.",
+  "key_insight": "CCL reduces teacher bias in LLM distillation by alternately calibrating the teacher on source rewards and updating the student on target questions, yielding convergence toward the oracle student without target-domain reward feedback.",
+  "engineering_relevance": "This provides a practical distillation strategy for domain-shifted LLM deployment when target labels or rewards are unavailable, helping smaller models inherit useful behavior while limiting systematic teacher errors.",
   "method": [
-    "Calibrate the teacher using source-domain reward feedback at each iteration.",
-    "Train the student on target questions with token-level branching from the calibrated teacher.",
-    "Feed the updated student back into the next calibration step to progressively reduce bias."
+    "Calibrate the teacher using source-domain reward feedback only.",
+    "Use token-level branching to generate calibrated target-question supervision for the student.",
+    "Iterate student updates and teacher recalibration in a coupled loop under an autoregressive policy framework."
   ],
-  "evidence_signal": "The paper provides a polynomial-rate convergence proof showing the student’s expected average KL divergence to the oracle student goes to zero, and also shows direct matching can remain bounded away from the oracle.",
-  "watch_item": "The method depends on reliable source-domain reward feedback and iterative calibration, so performance may degrade if source rewards are noisy or the source-target shift is severe.",
+  "evidence_signal": "The theory shows the student’s expected average KL divergence to the oracle student converges to zero at a polynomial rate, and it proves a separation from direct matching that can stay suboptimal even when the teacher is better than all student policies.",
+  "watch_item": "The guarantee is theoretical and depends on iterative calibration quality, so practical performance may be sensitive to source-target shift, branching design, and optimization stability.",
   "hashtags": [
     "#LLMDistillation",
-    "#Calibration",
+    "#TeacherCalibration",
     "#DomainShift",
-    "#PolicyOptimization",
-    "#AIResearch"
+    "#ReinforcementLearning",
+    "#AITheory"
   ],
   "paper_id": "2026-09-15-arxiv-coupled_calibration_and_learning_mitigating_teacher_bias_in_llm_distillation_without_targe",
   "paper_title": "Coupled Calibration and Learning: Mitigating Teacher Bias in LLM Distillation without Target-Domain Reward Feedback",
   "paper_date": "2026-09-15",
   "paper_category": "AI math",
-  "generated_at": "2026-09-26T16:52:42",
+  "generated_at": "2026-09-27T17:30:23",
   "generator": "openai"
 }
