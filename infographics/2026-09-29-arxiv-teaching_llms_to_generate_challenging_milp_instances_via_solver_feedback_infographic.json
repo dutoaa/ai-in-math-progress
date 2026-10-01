@@ -1,17 +1,17 @@
 {
-  "key_insight": "The paper teaches LLMs to generate feasible MILP instances that are not just correct, but intentionally hard for solvers by using solver feedback as the reward.",
-  "engineering_relevance": "This can produce stronger benchmarks for optimization research and more challenging training data for solver-oriented learning systems without needing seed MILP instances.",
+  "key_insight": "An LLM can be trained with solver feedback to generate MILP instances that are not just feasible, but intentionally hard for branch-and-bound solvers.",
+  "engineering_relevance": "This offers a practical way to create stronger optimization benchmarks and stress-test solvers without requiring seed instances or manual parameter tuning.",
   "method": [
-    "Use a challenger-solver asymmetric self-play setup where the LLM proposes instances and the solver returns feasibility and hardness feedback.",
-    "Reward instances using solver-stage signals such as branch-and-bound node counts and post-cut relaxation gaps, rather than binary correctness alone.",
-    "Fine-tune Gemma-4-12B and Qwen3.5-4B with GRPO plus a size curriculum to obtain OptiScribe-12B and OptiScribe-4B."
+    "Use a challenger-solver self-play setup where the LLM proposes instances and the solver scores feasibility plus hardness.",
+    "Define rewards from solver signals such as branch-and-bound node counts and post-cut relaxation gaps.",
+    "Fine-tune Gemma-4-12B and Qwen3.5-4B with GRPO and a size curriculum to produce OptiScribe models."
   ],
-  "evidence_signal": "On capacitated facility location and max-cut, the models increase median SCIP search nodes by 1.7-5x for OptiScribe-12B and up to 15.6x for OptiScribe-4B, while also improving feasibility rates on facility location by 9-19 points.",
-  "watch_item": "The approach depends on solver-in-the-loop feedback and specific hardness metrics, so reward design and solver choice may affect transferability across problem families and sizes.",
+  "evidence_signal": "On capacitated facility location and max-cut, the trained models increased median SCIP nodes by 1.7-5x for OptiScribe-12B and up to 15.6x for OptiScribe-4B, while also improving feasibility and post-cut gaps.",
+  "watch_item": "The approach depends on solver-specific feedback, so generalization across solvers, formulations, and instance families may require careful retuning.",
   "hashtags": [
     "#MILP",
-    "#LLM",
     "#Optimization",
+    "#LLM",
     "#ReinforcementLearning",
     "#Benchmarking"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Teaching LLMs to Generate Challenging MILP Instances via Solver Feedback",
   "paper_date": "2026-09-29",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-09-30T18:17:08",
+  "generated_at": "2026-10-01T18:42:13",
   "generator": "openai"
 }
