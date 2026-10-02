@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI math Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-10-01. Ranked from recent arXiv AI math papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-10-02. Ranked from recent arXiv AI math papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -31,7 +31,64 @@
     </header>
     <section class="grid">
       <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>91</strong></div>
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>92</strong></div>
+        <p class="date">2026-10-01</p>
+        <h2>CARM: Cancellation-Aware Response Masking for LLM Reinforcement Learning</h2>
+        <p class="authors">Yafei Zhang, Songshuo Lu, Sicong Liao, Zhi Chen, Yaohua Tang</p>
+        <p class="abstract">Recent years have witnessed the rapid adoption of reinforcement learning (RL) in large language model (LLM) post-training, with substantial gains in mathematical reasoning and code generation. In practical systems, however, policy updates and differences between rollout and training engines can make sampled responses off-policy. Sequence-level masking addresses this mismatch by deciding whether an entire response should contribute to optimization. A common masking rule uses the length-normalized geometric mean of sampled token probability ratios. Its signed log-ratios can cancel across positions, concealing substantial bidirectional policy drift. We propose \emph{Cancellation-Aware Response Masking} (CARM), a sequence-level mask that takes the absolute value of each token log-ratio before averaging, preventing opposing probability changes from canceling. We prove that accepted responses satisfy a joint bound on the fraction of sampled-token ratios outside a prescribed band and their mean log-distance beyond its boundaries. Experiments on mathematical reasoning and code generation show that CARM improves mean@16 averaged over AIME 2024/2025/2026 and BeyondAIME by up to $3.13$ percentage points over geometric-mean masking, and increases average pass@1 across four code benchmarks by $2.88$ points over the strongest evaluated baseline. These findings support CARM as a theoretically grounded and effective method for response-level off-policy control in LLM reinforcement learning.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.02039v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.02039v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> CARM makes sequence-level RL masking cancellation-aware by averaging absolute token log-ratios, so opposing probability shifts cannot hide off-policy drift.</p>
+          <p><b>Engineering relevance:</b> This gives LLM training pipelines a more robust way to control rollout-policy mismatch during post-training, especially for math reasoning and code generation.</p>
+          <ul><li>Compute token log-ratios between sampled and training policies.</li><li>Average absolute log-ratios across the response to decide whether to accept or mask it.</li><li>Use a joint theoretical bound to control both out-of-band ratio frequency and average log-distance.</li></ul>
+          <p><b>Evidence signal:</b> On math benchmarks, CARM improves mean@16 by up to 3.13 points over geometric-mean masking, and on four code benchmarks it raises average pass@1 by 2.88 points over the strongest baseline.</p>
+          <p><b>Watch item:</b> Because it changes the masking criterion at the sequence level, performance may depend on threshold tuning and on how well the rollout and training engines are aligned.</p>
+          <div class="tags"><span>#LLMPostTraining</span> <span>#ReinforcementLearning</span> <span>#MathematicalReasoning</span> <span>#OffPolicyControl</span> <span>#ResponseMasking</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>88</strong></div>
+        <p class="date">2026-09-30</p>
+        <h2>Lingtai: What Concept Geometry Reveals--and Does Not Reveal--About LLM Inference</h2>
+        <p class="authors">Jiangang Chen</p>
+        <p class="abstract">Observing what a large language model computes during autoregressive inference--online and without training probes--remains difficult. We introduce Lingtai, a training-free concept telemetry layer: at each generation step, residual states are projected onto a domain-specific bank of named concept anchors, constructed without labeled concept examples, outcome labels, gradient fitting, or activation-space optimization, producing a structured per-step concept-coordinate signal. Across code generation and grade-school mathematical reasoning, this signal exhibits a robust association with predictive uncertainty: the association survives problem-identity and token-position controls and is not attributable to a single token type, is not explained by a simple correct/incorrect mixture on GSM8K, and is not reproduced by matched random anchors; it is markedly weaker or direction-inconsistent in K-means and PCA projections. Two structures emerge: a recurring uncertainty-linked activity signal whose functional geometry is task-conditioned (distinct activity-entropy shapes on HumanEval, MBPP, and GSM8K), and an execution-specific trajectory identity with strong local inertia but weak re-instantiation invariance--under completion-only elastic alignment, corruption at k=32 (approximately a median quarter of the completion) on the matched re-execution subset still retrieves the archived episode at 62.0%, while a fresh execution retrieves it only 11.7-16.0% of the time. Finally, a matched audit finds no evidence that the scalar concept-activity signal used here supplies a stable correctness coordinate under the tested protocol; we therefore treat correctness as externally supplied. Telemetry adds 0.7-1.6% per-token decode overhead for the 161-anchor code implementation, with unchanged generated tokens.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.00656v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.00656v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Lingtai shows that projection onto named concept anchors can reveal a meaningful uncertainty-linked geometry during LLM inference, but this geometry is task-conditioned and does not reliably expose correctness.</p>
+          <p><b>Engineering relevance:</b> The method offers a training-free telemetry layer for monitoring model behavior online, with modest decode overhead and potential use for uncertainty analysis in code and math generation.</p>
+          <ul><li>Project each residual stream state onto a domain-specific bank of named concept anchors.</li><li>Build anchors without labeled concept examples, outcome labels, gradient fitting, or activation-space optimization.</li><li>Track per-step concept coordinates and compare them against uncertainty, K-means/PCA baselines, and alignment across re-execution settings.</li></ul>
+          <p><b>Evidence signal:</b> Across HumanEval, MBPP, and GSM8K, the concept-activity signal correlates robustly with predictive uncertainty, survives identity/token-position controls, and outperforms random, K-means, and PCA projections in the reported tests.</p>
+          <p><b>Watch item:</b> The scalar concept-activity signal did not provide a stable correctness coordinate under the tested protocol, so correctness must be supplied externally.</p>
+          <div class="tags"><span>#LLMInference</span> <span>#ConceptGeometry</span> <span>#Uncertainty</span> <span>#CodeGeneration</span> <span>#MathematicalReasoning</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>86</strong></div>
+        <p class="date">2026-09-30</p>
+        <h2>Make Sparse Rewards Count: Density-Aware Reward Aggregation for Multi-Reward RL</h2>
+        <p class="authors">Tong Zheng, Skylar Zhai, Zhan Cheng, TianMing Sha, Youling Huang, Shuo Zhou</p>
+        <p class="abstract">Multi-reward reinforcement learning trains large language models to satisfy multiple behavioral objectives simultaneously. Reward-wise normalization, as used in GDPO, preserves reward-specific relative information within rollout groups, but different objectives can still exhibit uneven learning progress. We study this behavior through advantage energy, the sum of a reward&#x27;s squared advantages over a batch. Under idealized GDPO normalization, we show that this energy is proportional to active-group density: the fraction of rollout groups in which the reward provides nonzero relative advantages. This reveals a residual batch-level signal imbalance and provides a basis for calibrating reward contributions. Based on this relation, we propose Density-Aware Reward Aggregation (DARA). We derive an inverse-square-root density correction that gives greater weight to signals from less frequently active rewards. DARA computes its weights from each rollout batch, adapting to changes in reward activity throughout training without modifying the underlying policy optimization objective. Experiments on tool calling and mathematical reasoning show that DARA learns the targeted behaviors faster than GDPO, reaching high format compliance in up to 26% fewer training steps on tool calling and near-saturated length compliance in up to 65% fewer steps on mathematical reasoning, while remaining competitive in final performance. Our code is available at https://github.com/zhaihaotian/DARA.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.00574v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.00574v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Reward-wise normalization can still leave uneven batch-level learning because each reward’s advantage energy scales with how often that reward is active across rollout groups.</p>
+          <p><b>Engineering relevance:</b> DARA offers a simple batch-adaptive weighting rule that can speed up multi-objective RL training for LLMs without changing the underlying optimization objective.</p>
+          <ul><li>Measure each reward’s advantage energy after GDPO-style normalization.</li><li>Estimate active-group density: the fraction of rollout groups where a reward has nonzero relative advantages.</li><li>Apply inverse-square-root density correction so rarer active rewards receive more weight.</li></ul>
+          <p><b>Evidence signal:</b> On tool calling and mathematical reasoning, DARA reached target behaviors faster than GDPO, with up to 26% fewer training steps for format compliance and up to 65% fewer steps for length compliance.</p>
+          <p><b>Watch item:</b> The density-based weights depend on batch statistics, so noisy or small batches may make the correction unstable or less reliable.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#LLMAlignment</span> <span>#MultiObjectiveRL</span> <span>#RewardNormalization</span> <span>#MathematicalReasoning</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>86</strong></div>
         <p class="date">2026-09-30</p>
         <h2>Several Accelerated and Stable Pseudo-Energy-Dissipative Lagrange Multiplier Methods based on Second-order Flow and Variable Splitting</h2>
         <p class="authors">Xiaoli Li, Jianghua Liu, Zhiping Mao, Jingrong Wei, Xuan Zhao</p>
@@ -39,18 +96,56 @@
         <div class="links"><a href="https://arxiv.org/abs/2609.39695v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.39695v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper introduces accelerated second-order Lagrange-multiplier optimization schemes with pseudo-energy dissipation that are designed to converge stably to stationary points in non-convex problems.</p>
-          <p><b>Engineering relevance:</b> These methods can improve training robustness and solution quality for scientific machine learning and PDE-constrained modeling, including PINNs and DeepONets.</p>
-          <ul><li>Linear LM-based second-order flow for unconstrained non-convex optimization.</li><li>Linear LM-based variable and operator splitting method.</li><li>Relaxed and adaptive variants to prevent multiplier degeneration and auto-tune time step size.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports extensive numerical tests on function optimization and PDE benchmarks, showing improved escape from local minima, high accuracy, and strong robustness to the initial learning rate.</p>
-          <p><b>Watch item:</b> The methods add algorithmic complexity and may require careful tuning of splitting, relaxation, and step-size update rules in practical implementations.</p>
-          <div class="tags"><span>#Optimization</span> <span>#PDEs</span> <span>#ScientificML</span> <span>#PINNs</span> <span>#DeepONets</span></div>
+          <p><b>Key insight:</b> The paper introduces accelerated Lagrange-multiplier optimization flows that use second-order dynamics and variable splitting to maintain pseudo-energy dissipation while improving convergence on nonconvex problems.</p>
+          <p><b>Engineering relevance:</b> These methods can make training more stable and less sensitive to learning-rate choices in scientific machine learning, especially for PINNs and DeepONets solving PDE-related tasks.</p>
+          <ul><li>Linear LM-based second-order flow for unconstrained nonconvex optimization.</li><li>Linear LM-based variable/operator splitting to accelerate updates and improve stability.</li><li>Relaxed and adaptive variants to avoid multiplier degeneration and automatically adjust step size.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports extensive numerical experiments on function optimization and PDE benchmarks, including PINNs and DeepONets, showing better local-minima escape, high accuracy, and strong robustness to initial learning rate.</p>
+          <p><b>Watch item:</b> The approach relies on careful tuning of the second-order flow and multiplier updates, so implementation stability may depend on discretization choices and problem structure.</p>
+          <div class="tags"><span>#Optimization</span> <span>#NonconvexOptimization</span> <span>#LagrangeMultiplier</span> <span>#PINNs</span> <span>#DeepONets</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>86</strong></div>
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>85</strong></div>
+        <p class="date">2026-10-01</p>
+        <h2>Rethinking Probability-Based Reinforcement Learning From Posterior Concentration</h2>
+        <p class="authors">Shiu-Hong Kao, Yubo Zhao, Zhenyu Tian, Pengzhan Sun, Yicong Li, Angela Yao</p>
+        <p class="abstract">Verifier-free reinforcement learning with probability-based rewards offers a promising way to train LLMs on general reasoning tasks where external verifiers are unavailable. Yet the reliability of these rewards, especially in long-horizon reasoning, remains underexplored. This work identifies a length-dependent failure mode of probability rewards, which we call the Posterior Concentration Phenomenon (PCP). We show that the probability of a reference answer conditioned on a reasoning trace often collapses to a low-variance interval as the trace becomes lengthy. This phenomenon results in nearly indistinguishable rewards, which, under GRPO-based settings, makes probability-based policy optimization unstable and inefficient. Motivated by this, we propose Reinforcement Learning with Concentration-aware Posterior Rewards (RLCPR), a verifier-free RL framework to explicitly account for PCP for better optimization stability and token efficiency. It has two components: uncertainty-aware data sampling, which reduces concentration-prone rollouts before generation, and concentration-aware regularization, which penalizes unnecessarily long traces when posterior rewards collapse. Extensive experiments show that, alongside higher token efficiency, RLCPR outperforms the state-of-the-art verifier-free RL baseline by up to 4.0% on six of seven benchmarks, including general-domain and mathematical reasoning challenges.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.01458v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.01458v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Probability-based rewards can become nearly constant on long reasoning traces because the posterior collapses, making verifier-free reinforcement learning unstable and inefficient.</p>
+          <p><b>Engineering relevance:</b> For LLM training pipelines, RLCPR improves token efficiency and training stability by filtering concentration-prone samples and penalizing unnecessarily long traces when rewards stop differentiating solutions.</p>
+          <ul><li>Uncertainty-aware data sampling to reduce rollout trajectories likely to suffer posterior concentration.</li><li>Concentration-aware regularization to discourage gratuitously long traces when posterior rewards collapse.</li><li>Verifier-free RL framework designed for GRPO-style optimization under weak reward signals.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports experiments on six of seven benchmarks, with up to 4.0% improvement over the strongest verifier-free RL baseline and better token efficiency.</p>
+          <p><b>Watch item:</b> The method depends on detecting posterior concentration reliably, so thresholding and regularization strength may need careful tuning to avoid suppressing useful long-horizon reasoning.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#LLMAlignment</span> <span>#VerifierFreeRL</span> <span>#MathematicalReasoning</span> <span>#TokenEfficiency</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>82</strong></div>
+        <p class="date">2026-10-01</p>
+        <h2>On the Multi-Index, Multi-Rate, and Multi-Phase Dynamics of Decoder-Only Language Models: A Unified Hybrid Framework for Generative and Agentic Systems</h2>
+        <p class="authors">Ali Pakniyat</p>
+        <p class="abstract">Large language models (LLMs) are increasingly deployed as computational engines in autonomous decision-making and planning loops, yet their systems and control treatment remains hindered by architectural simplifications, index conflations, and informal descriptions of tool interactions. This paper presents a control-theoretic formulation of decoder-only language models as multi-index, multi-rate systems, and sets the stage for a stochastic hybrid systems framework to govern the multi-phase dynamics of agentic tool interaction. We formalize the architecture across three hierarchically coupled evolution indices: (i) an ultrafast feedforward cascade of transformer blocks across layer depth, where layer normalization is cast as a spherical projection and key--value caching is proven to be an exact internal state realization via causal prefix invariance; (ii) an uncontrolled stochastic difference recursion over token generation steps, where finite context truncation induces a time-homogeneous Markov chain; and (iii) an autonomous mode-switching mechanism governing transitions between token generation and tool execution regimes, where tool invocations are triggered upon trajectory arrival at switching manifolds, followed by exogenous state jump maps that augment the context string with external observations. By defining a prompt-dependent evaluator over successive evaluable claims, we obtain a task-level error process whose fault-free histories and expected error growth admit bounds under conditional fault-hazard and error-drift assumptions.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.01478v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.01478v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Decoder-only LLMs are modeled as a unified multi-index hybrid system spanning layerwise computation, token-level stochastic dynamics, and mode switching for tool use.</p>
+          <p><b>Engineering relevance:</b> This framework provides a control-theoretic basis for analyzing and designing agentic LLM systems with more precise reasoning about memory, timing, and external tool interaction.</p>
+          <ul><li>Treat transformer depth as an ultrafast feedforward cascade with layer normalization as spherical projection and KV caching as an exact state realization.</li><li>Model token generation as a finite-context Markov chain with stochastic difference recursion over decoding steps.</li><li>Represent tool use as a hybrid switching process with trigger manifolds, state jumps, and context augmentation by external observations.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports formal theoretical results and bounded error-growth guarantees for prompt-dependent evaluable claims, rather than empirical benchmark evaluation.</p>
+          <p><b>Watch item:</b> The framework relies on assumptions such as finite-context truncation, conditional hazard bounds, and idealized switching/jump maps, which may be difficult to validate in real deployed systems.</p>
+          <div class="tags"><span>#LLM</span> <span>#HybridSystems</span> <span>#ControlTheory</span> <span>#AgenticAI</span> <span>#TheoremProving</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>81</strong></div>
         <p class="date">2026-09-30</p>
         <h2>Fast Regularized Policy Mirror Descent with One-Step TD Updates</h2>
         <p class="authors">Qipei Chen, Wenye Li, Yule Sun, Ke Wei</p>
@@ -58,18 +153,132 @@
         <div class="links"><a href="https://arxiv.org/abs/2609.39837v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.39837v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A policy mirror descent method can still converge linearly in regularized MDPs even when the critic is updated only once per step via TD, provided the analysis accounts for persistent critic error with a refined potential argument.</p>
-          <p><b>Engineering relevance:</b> This offers a more practical actor-critic template for large-scale reinforcement learning because it reduces dependence on exact policy evaluation, resets, and nested inner loops.</p>
-          <ul><li>Exact coordinate-wise Bellman updates prove global linear convergence for finite discounted MDPs.</li><li>A resolvent-based auxiliary distribution and decaying Bellman-violation correction control persistent critic error.</li><li>For stochastic off-policy learning, finite-batch TD with strongly convex mirror maps yields an \u03b5 value gap using constant stepsizes.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports an expected value gap of \u03b5 after ~O(1/((1-\u03b3)^5 \u03c3~_b \u03b5)) transitions and says numerical results match the convergence theory.</p>
-          <p><b>Watch item:</b> The stochastic guarantee depends on behavior-policy coverage and a finite-batch TD update, so performance may degrade if exploration coverage is weak or batches are too small.</p>
-          <div class="tags"><span>#PolicyMirrorDescent</span> <span>#ActorCritic</span> <span>#TDLearning</span> <span>#MDP</span> <span>#ReinforcementLearning</span></div>
+          <p><b>Key insight:</b> A regularized policy mirror descent method can converge quickly even when the critic is updated with only one TD step, and this extends to a stochastic off-policy setting with provable sample complexity.</p>
+          <p><b>Engineering relevance:</b> This suggests more practical reinforcement-learning solvers for large MDPs by avoiding expensive exact policy evaluation, nested loops, and trajectory resets.</p>
+          <ul><li>Use policy mirror descent with a persistent critic updated by one TD step per iteration.</li><li>For the deterministic case, combine a resolvent-based auxiliary distribution with a decaying Bellman-violation correction.</li><li>For the stochastic case, analyze off-policy TD-PMD with strong convex mirror maps, finite-batch TD updates, and visitation-weighted error propagation.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports global linear convergence for exact coordinate-wise Bellman updates and an O~(1/((1-[3bg)^5 _b ))~ transition complexity to reach expected value gap 0 from a single off-policy trajectory.</p>
+          <p><b>Watch item:</b> Performance depends on coverage of the behavior policy and carefully chosen constant stepsizes; weak visitation can degrade the inverse-coverage guarantee.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#PolicyOptimization</span> <span>#MirrorDescent</span> <span>#TemporalDifferenceLearning</span> <span>#MarkovDecisionProcesses</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>83</strong></div>
+        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>80</strong></div>
+        <p class="date">2026-10-01</p>
+        <h2>Graph Representation via Elements of Discrete Morse and Cobordism Theories</h2>
+        <p class="authors">Jennifer Rozenblit, Chenguang Yang, Yuxin Liu, Yuzhou Chen, Yulia Gel</p>
+        <p class="abstract">Topology is, by its nature and design, suited to structure that is nonlinear, multiscale, and nonstationary - however, within machine learning, its use remains largely confined to topological data analysis. We advocate that tools from low-dimensional topology which have remained almost exclusively contained within the domain of pure mathematics (such as Morse theory) offer a strong, complementary, and yet virtually unexplored perspective on the hidden structure of data-generating processes and learning tasks built upon them. Here we introduce concepts from cobordism theory and harness tools from discrete Morse theory to improve the performance of graph diffusion models through our pipeline MG-Diff. Further, we derive theoretical guarantees and sufficient conditions so that under a positive decision-gap, the Morse-theoretic tools and their application for induced diffusion guidance are stable under small perturbations. Finally, we illustrate the utility of discrete Morse theory in application to graph diffusion models for spatio-temporal graph forecasting and graph regeneration, and argue that these applications are only a small window into the part of what low-dimensional topology can offer to the field of machine learning.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.01937v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.01937v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper introduces MG-Diff, a graph diffusion pipeline that uses discrete Morse theory and cobordism-inspired ideas to guide learning with topology-aware structure.</p>
+          <p><b>Engineering relevance:</b> This provides a new, theoretically grounded way to improve graph-based forecasting and regeneration models, especially for complex spatio-temporal data.</p>
+          <ul><li>Extract topology-aware structure from graphs using discrete Morse-theoretic tools</li><li>Use cobordism-theory concepts to inform diffusion guidance in MG-Diff</li><li>Prove stability guarantees under small perturbations when a positive decision gap holds</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports utility on graph diffusion tasks for spatio-temporal graph forecasting and graph regeneration, alongside theoretical stability results.</p>
+          <p><b>Watch item:</b> The guarantees rely on a positive decision gap, so performance and stability may weaken when graph structure is noisy or ambiguous.</p>
+          <div class="tags"><span>#GraphDiffusion</span> <span>#DiscreteMorseTheory</span> <span>#Cobordism</span> <span>#TopologicalML</span> <span>#SpatiotemporalForecasting</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>79</strong></div>
+        <p class="date">2026-10-01</p>
+        <h2>The Missing Primitive: Diagnosing and Repairing Mathematical Reasoning in Large Language Models</h2>
+        <p class="authors">Shuo Xing, Zilin Dai, Chengyuan Qian, Fangzhou Lin, Wenjing Chen, Ping He</p>
+        <p class="abstract">While Large Language Models (LLMs) have demonstrated striking capabilities on frontier mathematical problems, it remains unclear whether they possess the structural mathematical understanding underlying their solutions. In this paper, we take a first step toward systematically studying mathematical understanding in LLMs, from diagnosing its distinct capabilities to leveraging these findings to improve post-training. First, we introduce the notion of Mathematical Primitive to probe structural mathematical understanding and propose \hlei{}, a novel benchmark that evaluates mathematical reasoning along four distinct dimensions: Discovery, Generation, Digestion, and Execution. Second, our systematic diagnosis shows that solution accuracy masks distinct capability profiles, primitives unlock substantial latent execution capacity, and Discovery is the dominant bottleneck in mathematical reasoning. Our post-training analysis further shows that discovery-limited failures are particularly amenable to repair. Finally, building on these findings, we introduce \abs{}, a primitive-privileged self-distillation framework that selectively transfers primitive-guided reasoning into the student model. Extensive experiments demonstrate that \abs{} consistently improves mathematical reasoning over baselines across model scales and challenging benchmarks.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.02191v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.02191v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper argues that strong final-answer accuracy can hide weak structural mathematical understanding, and that “Discovery” is the main bottleneck in LLM math reasoning.</p>
+          <p><b>Engineering relevance:</b> For math-capable LLM systems, targeting primitive-level reasoning during post-training can improve performance more effectively than optimizing answer accuracy alone.</p>
+          <ul><li>Introduces the concept of Mathematical Primitive to probe structural understanding.</li><li>Proposes HLEI, a benchmark covering Discovery, Generation, Digestion, and Execution.</li><li>Builds ABS, a primitive-privileged self-distillation framework that transfers guided reasoning into a student model.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports systematic diagnosis across four reasoning dimensions, showing that primitives reveal latent execution capacity and that Discovery-limited failures are especially repairable.</p>
+          <p><b>Watch item:</b> Results may depend on how primitives are defined and detected, so benchmark design and annotation quality are important implementation risks.</p>
+          <div class="tags"><span>#LLMs</span> <span>#MathematicalReasoning</span> <span>#SelfDistillation</span> <span>#Benchmarking</span> <span>#PostTraining</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>78</strong></div>
+        <p class="date">2026-10-01</p>
+        <h2>Trust the Direction, Search the Step: Zero-and-First-Order Methods for LLM Fine-Tuning</h2>
+        <p class="authors">Cristian McGee, El Houcine Bergou, Aritra Dutta</p>
+        <p class="abstract">Step-size selection remains a central challenge in large-scale neural network optimization; conservative steps slow convergence, while aggressive steps can destabilize it. We combine \textbf{Z}ero-and-\textbf{F}irst-\textbf{O}rder optimization~(ZFO) and propose a lightweight framework that decouples direction selection from step-size. ZFO uses a trusted first-order optimizer to determine the direction and performs zeroth-order evaluations only along this one-dimensional subspace to choose how far to move. Using the current {gradient information} and two additional objective function evaluations, ZFO instances construct a local model of the objective function along the proposed direction and select a curvature-aware step within a bounded search interval. This yields an adaptive step-selection mechanism that costs less than a full line search. We provide theoretical guarantees to show that shared-sample evaluations produce reliable finite-difference curvature estimates, that the induced local model selects a near-optimal step along the search interval, and that ZFO converges to a neighborhood of a stationary point. Across the evaluated settings, language models and datasets, ZFO frequently improves optimization and final performance relative to fixed-step first-order baselines, with the magnitude and preferred local model depending on the objective. Our code is publicly available at: https://github.com/nizswan/Zeroth-First-Order-Framework.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.02190v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.02190v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> ZFO separates &quot;where to go&quot; from &quot;how far to go&quot;: it uses a trusted first-order direction and a cheap zeroth-order search to adapt the step size along that direction.</p>
+          <p><b>Engineering relevance:</b> This can improve LLM fine-tuning stability and efficiency by avoiding overly conservative fixed steps and reducing the cost of full line search.</p>
+          <ul><li>Use a first-order optimizer to get the descent direction.</li><li>Evaluate the objective at two extra points along that direction.</li><li>Fit a local 1D model and choose a curvature-aware step within a bounded interval.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports that across evaluated language models and datasets, ZFO often improves optimization and final performance over fixed-step first-order baselines.</p>
+          <p><b>Watch item:</b> Performance depends on the quality of the chosen direction and the local model; noisy objective estimates or poor interval settings could weaken the step selection.</p>
+          <div class="tags"><span>#LLMFineTuning</span> <span>#Optimization</span> <span>#ZeroOrderOptimization</span> <span>#FirstOrderMethods</span> <span>#MachineLearning</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>78</strong></div>
+        <p class="date">2026-10-01</p>
+        <h2>Function-Structured Reinforcement Learning with Executable Verifiers for Mathematical Reasoning</h2>
+        <p class="authors">Zihan Liu, Xurong Xie</p>
+        <p class="abstract">Algorithmic mathematical reasoning requires reliable decomposition, computation, and aggregation. Final-answer rewards provide limited guidance on intermediate errors, while successful execution does not guarantee mathematical correctness. This work proposes Function-Structured Graph Reinforcement Learning (FSG-RL), connecting subproblem graphs and Python implementations with multi-verifier feedback. The policy first learns to generate code from function graphs through supervised fine-tuning (SFT). Group Relative Policy Optimization (GRPO) then optimizes the policy using answer-gated rewards and span-level credit assignment. The framework also supports teacher supervision and structured memory. A benchmark curated from Grade School Math 8K (GSM8K), MathQA, MATH, and Omni-MATH pairs public function graphs with private verification specifications. Under a unified evaluation protocol, GRPO improves final-answer accuracy from 43.25% to 67.50% and full solution success from 32.25% to 52.25% over SFT. Continued reinforcement learning (RL) with teacher supervision yields additional gains. The gains extend beyond producing correctly formatted code, supporting verifier-guided reinforcement learning for mathematical reasoning. Code is available at https://github.com/ZihanLiummyycc/FSG-RL.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.01729v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.01729v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Function-Structured Graph RL combines subproblem graphs, executable Python code, and multiple verifiers to improve mathematical reasoning beyond final-answer rewards.</p>
+          <p><b>Engineering relevance:</b> This suggests a practical training recipe for reasoning systems where structured decomposition, executable checks, and credit assignment can materially boost solver reliability.</p>
+          <ul><li>SFT trains the policy to translate function graphs into code.</li><li>GRPO optimizes with answer-gated rewards and span-level credit assignment.</li><li>Teacher supervision and structured memory can be added during continued RL.</li></ul>
+          <p><b>Evidence signal:</b> The benchmark spans GSM8K, MathQA, MATH, and Omni-MATH, and under the unified protocol GRPO raises final-answer accuracy from 43.25% to 67.50% and full-solution success from 32.25% to 52.25%.</p>
+          <p><b>Watch item:</b> Execution-based verification can still miss mathematical correctness, so verifier design and private specification coverage are critical implementation risks.</p>
+          <div class="tags"><span>#MathReasoning</span> <span>#ReinforcementLearning</span> <span>#ProgramSynthesis</span> <span>#ExecutableVerification</span> <span>#LLMTraining</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>78</strong></div>
+        <p class="date">2026-10-01</p>
+        <h2>OrbitTAMP: Grounding Language Models for Task and Motion Planning in Spacecraft Rendezvous</h2>
+        <p class="authors">Yuji Takubo, Daniele Gammelli, Marco Pavone, Simone D&#x27;Amico</p>
+        <p class="abstract">Spacecraft rendezvous and proximity operations (RPO) are currently planned through an expertise-intensive process in which engineers translate high-level operational intent into safe, dynamically feasible trajectories, creating a bottleneck to scalable operations. Large language model (LLM)-based agents could offer an intuitive interface for this process, although their outputs are not inherently grounded in orbital dynamics, operational constraints, or the structure of admissible spacecraft maneuvers. To exploit their semantic reasoning while ensuring the generated plan&#x27;s physical validity, this paper presents a hierarchical framework for spacecraft task-and-motion planning (TAMP) that grounds LLM reasoning in a graph of reusable behaviors and domain-specific planning modules. Within this framework, a pretrained LLM maps a natural-language command to a partial mission specification. The associated planners then resolve unspecified decisions within the admissible operational space. Finally, trajectory optimization converts the completed mission specification into a dynamically feasible trajectory. Numerical experiments demonstrate that this architecture substantially improves intent recovery over direct LLM generation, achieving 98% exact recovery of partial mission specifications across all evaluated splits when backed by frontier LLMs. Additional test-time-compute experiments show that, for a compact 9B model, verifier-guided revision increases exact recovery from 75% to 88%, while broader behavior-plan search independently improves selection among admissible trajectory realizations. Overall, these results establish a scalable and auditable foundation for language-driven agentic planning of spacecraft RPO.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.01093v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.01093v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> OrbitTAMP grounds language-model intent in a hierarchical task-and-motion planning stack so spacecraft rendezvous plans stay physically valid while still accepting natural-language commands.</p>
+          <p><b>Engineering relevance:</b> This offers a scalable, auditable interface for spacecraft RPO mission planning that can reduce expert translation effort and improve operational consistency.</p>
+          <ul><li>LLM converts a command into a partial mission specification.</li><li>Planning modules fill in missing decisions using admissible spacecraft behaviors and constraints.</li><li>Trajectory optimization turns the completed spec into a dynamically feasible trajectory.</li></ul>
+          <p><b>Evidence signal:</b> Across evaluated splits, frontier LLMs achieved 98% exact recovery of partial mission specifications, and a 9B model improved from 75% to 88% with verifier-guided revision.</p>
+          <p><b>Watch item:</b> Performance depends on the quality of the behavior graph, planners, and verification loop, so incomplete domain modeling could still lead to invalid or suboptimal plans.</p>
+          <div class="tags"><span>#SpacecraftRendezvous</span> <span>#TaskAndMotionPlanning</span> <span>#LargeLanguageModels</span> <span>#TrajectoryOptimization</span> <span>#AerospaceAI</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>78</strong></div>
+        <p class="date">2026-10-01</p>
+        <h2>OR for AI That Does OR: Routing LLMs up the Escalator inside the OSCAR Framework</h2>
+        <p class="authors">Jinzhi Bu, Haixin Tang, Huanan Zhang</p>
+        <p class="abstract">Large language models can translate business descriptions into optimization models, but executable code may misrepresent constraints or objectives. A solver can then return an optimal solution to the wrong problem. Even when the solution satisfies the intended operating rules, a better plan may exist. For organizations that repeatedly use optimization modeling, an LLM-based framework should produce accurate formulations at low cost and, ideally, run locally. We study how to verify improvements and allocate attempts across LLMs that differ in price and capability. We develop OSCAR (Optimization modeling by Simulator, Coder, And Reviewer), which uses an offline Simulator certified against labeled decision examples to compare candidates and continues searching beyond feasibility. We model the search for the next certified improvement as sequential decisions under unobserved difficulty: which LLMs to call and when to stop. In a simplified known-prior setting, we give conditions under which cost-ordered escalation is optimal. For general menus, we derive a prior-free competitive guarantee. On five benchmark problems, OSCAR achieves 95% to 100% accuracy at the reported settings using two small open-weight LLMs, each deployable locally on a single GPU. Their single-attempt accuracies average 29% and 48%. In five runs per problem, Codex and Claude Code incur average token costs 3.1 and 5.8 times OSCAR&#x27;s, respectively. OSCAR supports open-weight models locally or in the cloud, depending on budget and confidentiality requirements. Firms should maintain labeled decision examples of feasible and infeasible decisions to clarify plain-language operating rules. OSCAR follows these labels when an LLM&#x27;s interpretation conflicts with them. As LLM capabilities and prices change, OSCAR&#x27;s simple operating rules and adjustable settings help firms adapt their model choices and benefit from these advances.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.00912v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.00912v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> OSCAR turns LLM-based optimization modeling into a staged search process: generate, simulate, and escalate to stronger models only when needed to certify better solutions.</p>
+          <p><b>Engineering relevance:</b> It offers a practical way to produce locally runnable, lower-cost optimization formulations while reducing the risk that an LLM returns a correct answer to the wrong problem.</p>
+          <ul><li>Simulator validates candidates against labeled feasible/infeasible decision examples.</li><li>Coder and Reviewer roles generate and check formulations, then search beyond mere feasibility for certified improvement.</li><li>Cost-ordered escalation allocates attempts across models and stopping rules to balance price, capability, and confidence.</li></ul>
+          <p><b>Evidence signal:</b> On five benchmark problems, OSCAR reached 95%–100% accuracy with two small open-weight local models, while single-attempt accuracies averaged 29% and 48%; Codex and Claude Code used 3.1× and 5.8× more tokens on average over five runs.</p>
+          <p><b>Watch item:</b> Performance depends on having labeled decision examples and a reliable simulator, so setup effort and label quality may limit deployment in new domains.</p>
+          <div class="tags"><span>#LLMOptimization</span> <span>#OperationsResearch</span> <span>#ModelVerification</span> <span>#CostAwareAI</span> <span>#LocalAI</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>78</strong></div>
         <p class="date">2026-09-30</p>
         <h2>Open Capacity Pooling in Agentic Supply Chains: Coordination-Directed LLM Discovery and Distributed Re-optimization</h2>
         <p class="authors">Yujia Xu, Walid Klibi, Benoit Montreuil</p>
@@ -77,18 +286,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2609.40296v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.40296v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper turns disruption response in supply chains into an open capacity pooling problem, where ADMM coordinates incumbents and an LLM-guided search helps discover outside capacity offers without sharing private models.</p>
-          <p><b>Engineering relevance:</b> This offers a practical framework for resilient supply-chain re-optimization under capacity shortages, combining privacy-preserving coordination with automated provider discovery and screening.</p>
-          <ul><li>Use ADMM to coordinate incumbent supply-chain decisions without exposing full models.</li><li>Search provider profiles with an LLM to rank likely compatible capacity offers from residual gaps.</li><li>Verify offers, screen by reduced cost, then warm-start ADMM for re-optimization.</li></ul>
-          <p><b>Evidence signal:</b> Across 200 synthetic episodes, full-information opening recovered 24.6% of capacity-scarcity cost, while 40-contact coordination-directed LLM search captured 32.0% of that value versus 4.7% for undirected contact.</p>
-          <p><b>Watch item:</b> The approach is only optimal when every eligible offer is revealed at exact prices; performance is heuristic when offer disclosure is incomplete or profiles omit key capacity details.</p>
-          <div class="tags"><span>#SupplyChain</span> <span>#ADMM</span> <span>#LLM</span> <span>#Optimization</span> <span>#Resilience</span></div>
+          <p><b>Key insight:</b> The paper shows that disruption-driven supply chain capacity can be unlocked by combining ADMM-based distributed re-optimization with LLM-guided search over external providers.</p>
+          <p><b>Engineering relevance:</b> This is relevant for resilient logistics platforms because it offers a practical way to find and integrate spare capacity without exposing proprietary network models.</p>
+          <ul><li>Use ADMM to coordinate incumbent firms while keeping their models private.</li><li>Use residual capacity gaps to guide LLM-based retrieval and ranking of provider profiles.</li><li>Verify, screen by reduced cost, then warm-start re-optimization after promising offers are revealed.</li></ul>
+          <p><b>Evidence signal:</b> In 200 synthetic episodes, full-information opening recovered 24.6% of capacity-scarcity cost, and with 40 contacts the coordinated LLM approach captured 32.0% of that value versus 4.7% for undirected contact.</p>
+          <p><b>Watch item:</b> The approach is only guaranteed optimal when every eligible offer is revealed at exact prices; incomplete or imprecise profile data makes it heuristic and the exact capacity covered by offers remains a key missing detail.</p>
+          <div class="tags"><span>#SupplyChainResilience</span> <span>#ADMM</span> <span>#LLMSearch</span> <span>#Optimization</span> <span>#DistributedSystems</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>81</strong></div>
+        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>76</strong></div>
+        <p class="date">2026-09-30</p>
+        <h2>Exploring More, Reasoning Better: Stepwise Risk-Sensitive GRPO for Diffusion Language Models</h2>
+        <p class="authors">Yue YU, Bowen Zuo, David Crandall, Yinglun Zhu, Dongruo Zhou</p>
+        <p class="abstract">Diffusion large language models (dLLMs) generate text by denoising a sequence or successive blocks, allowing several tokens to be revealed in parallel. Reinforcement learning with verifiable rewards (RLVR) reuses terminal feedback across these decisions, even as their conditioning context changes. We propose stepwise risk-sensitive GRPO (StepRS-GRPO), which varies the risk coefficient of the group-advantage transformation across denoising states while retaining the underlying trainer. For binary rewards, we show that this transformation is exactly a prompt- and state-dependent rescaling of centered outcome advantages. A capability-based calibration suggests a coefficient scale, while endpoint and interpolation ablations guide schedule selection. Across multiple dLLM backbones and mathematical reasoning benchmarks, StepRS-GRPO improves both pass@1 accuracy and pass@k coverage over centered GRPO, while increasing answer diversity. In our ablation studies, mass-matched controls support the contributions of state allocation and schedule direction, and the gains persist after matching the root mean square (RMS) of the advantages to that of centered GRPO. Reasoning-trace diagnostics further show that the diversity gains from StepRS-GRPO extend beyond final-answer strings.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.00661v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.00661v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> StepRS-GRPO makes reinforcement learning for diffusion LLMs more effective by adjusting risk sensitivity across denoising steps, improving both accuracy and answer diversity on math reasoning tasks.</p>
+          <p><b>Engineering relevance:</b> For practitioners building dLLM training pipelines, the method offers a drop-in way to better allocate learning signal over generation states without changing the underlying GRPO trainer.</p>
+          <ul><li>Vary the risk coefficient of the group-advantage transform across denoising states.</li><li>Use a capability-based calibration to set the coefficient scale.</li><li>Test endpoint and interpolation schedules, while keeping the core RLVR/GRPO framework unchanged.</li></ul>
+          <p><b>Evidence signal:</b> Across multiple dLLM backbones and mathematical reasoning benchmarks, StepRS-GRPO improves pass@1 and pass@k over centered GRPO, with ablations showing gains persist after RMS-matching and diversity increases in reasoning traces.</p>
+          <p><b>Watch item:</b> Performance depends on the chosen state-wise schedule and calibration, so careful tuning is needed to avoid gains coming from a poorly matched risk allocation.</p>
+          <div class="tags"><span>#DiffusionLLM</span> <span>#ReinforcementLearning</span> <span>#MathReasoning</span> <span>#GRPO</span> <span>#AIResearch</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>76</strong></div>
         <p class="date">2026-09-30</p>
         <h2>Deep Truncated FBSDE Method: A Robust Solver for High-Dimensional Nonlinear PDEs and Fully Coupled FBSDEs</h2>
         <p class="authors">Xinyu Cheng, Yunzhang Li, Weiran Xiong</p>
@@ -96,316 +324,88 @@
         <div class="links"><a href="https://arxiv.org/abs/2609.39616v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.39616v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A deep truncated FBSDE solver stabilizes high-dimensional nonlinear PDE learning by decoupling strongly coupled forward-backward dynamics with gradient truncation, fictitious-play averaging, and pathwise consistency shortcuts.</p>
-          <p><b>Engineering relevance:</b> This offers a more robust numerical tool for convection-dominated and strongly coupled PDEs that are difficult for standard deep-learning FBSDE solvers to train reliably.</p>
-          <ul><li>Gradient-truncated iterative decoupling to reduce unstable feedback from parameter-dependent forward paths</li><li>Fictitious-play averaging to preserve coupled dynamics while improving optimization stability</li><li>Pathwise consistency loss to provide explicit local gradient shortcuts and help mitigate vanishing gradients</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports improved accuracy and stability in low- and high-dimensional tests, with strong performance on fully coupled and convection-dominated problems.</p>
-          <p><b>Watch item:</b> The method’s convergence guarantees are conditional, and the pathwise consistency loss is not required in the fully discrete theory, so practical performance may depend on tuning and problem structure.</p>
-          <div class="tags"><span>#FBSDE</span> <span>#PDEs</span> <span>#DeepLearning</span> <span>#NumericalAnalysis</span> <span>#ScientificComputing</span></div>
+          <p><b>Key insight:</b> A deep truncated FBSDE solver stabilizes high-dimensional nonlinear PDE solving by decoupling strong forward-backward coupling with gradient truncation, fictitious-play averaging, and pathwise consistency shortcuts.</p>
+          <p><b>Engineering relevance:</b> The method offers a more robust numerical tool for convection-dominated and strongly coupled PDE/FBSDE systems where standard deep solvers can become unstable or suffer from vanishing gradients.</p>
+          <ul><li>Gradient-truncated iterative decoupling to reduce unstable feedback from parameter-dependent forward paths.</li><li>Fictitious-play averaging to preserve coupled dynamics while improving optimization stability.</li><li>Pathwise consistency loss to add local gradient shortcuts and mitigate vanishing gradients.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports improved accuracy and stability in low- and high-dimensional experiments, including robust performance on strongly coupled problems, along with a residual-based error estimate and conditional convergence results.</p>
+          <p><b>Watch item:</b> The convergence guarantee is conditional and the pathwise consistency term is not required for the theoretical fully discrete convergence, so implementation choices and training stability may depend on problem structure.</p>
+          <div class="tags"><span>#FBSDE</span> <span>#PDEs</span> <span>#DeepLearning</span> <span>#NumericalMethods</span> <span>#ScientificComputing</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>79</strong></div>
-        <p class="date">2026-09-29</p>
-        <h2>Privy to the Foil: Recasting Value Estimation with a Self-Privileged Critic for RLVR</h2>
-        <p class="authors">Kun Liang, Chenming Tang, Clive Bai, Weijie Liu, Zeyuan Liu, Qingyang Zhang</p>
-        <p class="abstract">Assigning credit to intermediate steps remains a central challenge in training Large Language Models (LLMs) on multi-step reasoning tasks with sparse terminal rewards, and actor-critic methods such as PPO address this by learning value functions to construct token-level advantages. Their effectiveness, however, hinges on reliable value estimation, a difficult task requiring the critic to both assess progress toward a correct solution and anticipate an evolving policy&#x27;s future behavior; errors in either can compromise credit assignment and destabilize online training. In this paper, we revisit the standard state-only formulation of value estimation and propose $π$PPO, a self-privileged actor-critic framework. By reusing verified same-prompt rollouts as contrastive evidence, $π$PPO helps the critic assess intermediate reasoning against successful and failed attempts, while preserving standard policy optimization and the deployment interface. Experiments show that $π$PPO consistently improves value-estimation quality by a substantial margin and outperforms representative actor-critic and critic-free RLVR baselines on challenging mathematical reasoning benchmarks, while remaining effective even when paired with substantially smaller asymmetric critics.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.37825v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.37825v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>74</strong></div>
+        <p class="date">2026-10-01</p>
+        <h2>Kolmogorov-Arnold Networks for Free-Boundary Partial Differential Equations</h2>
+        <p class="authors">Tan Phuong Dong Le</p>
+        <p class="abstract">We study free-boundary problems within a physics-informed framework using Kolmogorov-Arnold network (KAN) approximations. The proposed approach incorporates obstacle constraints, partial differential equation (PDE) inequalities, complementarity conditions, and boundary conditions through residual-based loss functions. We consider a linear elliptic obstacle problem, a nonlinear $p$-Laplacian obstacle problem, and a time-dependent one-phase Stefan problem. The proposed KAN solver is compared with physics-informed neural network (PINN) and residual-network baselines. Numerical experiments show that KANs achieve low relative $L^2$ and $L^\infty$ errors while accurately resolving contact regions and moving interfaces. The results indicate that KAN representations provide an effective alternative for solving free-boundary PDEs.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.02084v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.02084v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> c0PPO improves value estimation for multi-step math reasoning by letting the critic compare a rollout against verified same-prompt successes and failures, instead of relying only on the current state.</p>
-          <p><b>Engineering relevance:</b> This gives RLVR training a more reliable credit-assignment signal for LLM reasoning, which can stabilize online optimization without changing the deployment-time policy interface.</p>
-          <ul><li>Reuse verified same-prompt rollouts as contrastive evidence for the critic</li><li>Keep standard actor-critic policy optimization unchanged</li><li>Use the self-privileged setup even with smaller asymmetric critics</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports that c0PPO substantially improves value-estimation quality and outperforms representative actor-critic and critic-free RLVR baselines on challenging mathematical reasoning benchmarks.</p>
-          <p><b>Watch item:</b> The approach depends on access to verified same-prompt rollouts, so training cost and data generation/selection quality may become practical bottlenecks.</p>
-          <div class="tags"><span>#LLMReasoning</span> <span>#RLVR</span> <span>#ActorCritic</span> <span>#ValueEstimation</span> <span>#MathematicalReasoning</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>78</strong></div>
-        <p class="date">2026-09-30</p>
-        <h2>Mesh-Free Numerical Approximation of the Biharmonic Equation via Optimized Kolmogorov--Arnold Neural Networks</h2>
-        <p class="authors">B. Veena S. N. Rao</p>
-        <p class="abstract">A mesh-free numerical framework based on \textit{Kolmogorov--Arnold Physics-Informed Neural Networks} (KAN-PINNs) is developed for the approximation of fourth-order elliptic boundary value problems, with specific application to the biharmonic equation governing thin plate deflection. Unlike conventional Multi-Layer Perceptrons relying on fixed nodal activations, learnable univariate functions parameterized via radial basis functions are deployed on network edges, while high-order differentiability is preserved through hyperbolic tangent activation mappings. The severe numerical stiffness inherent to fourth-order differential operators and fully clamped boundary conditions is addressed through a direct normalized residual formulation coupled with a hybrid, multi-stage AdamW-to-L-BFGS optimization pipeline. An automated \textit{24/7 hill-climbing search protocol} is implemented to systematically calibrate boundary penalty weights and optimization schedules. When evaluated on a smooth manufactured benchmark on the unit square, an error reduction factor exceeding $150\times$ is attained over successive iterations, culminating in a final relative $L_2$ error of $1.593 \times 10^{-5}$ ($0.00159\%$) and a training loss of $3.065 \times 10^{-6}$ utilizing only $7,801$ trainable parameters. These results demonstrate that high-order PDE problems can be accurately resolved using compact, mesh-free KAN-PINNs architecture without requiring auxiliary variable transformations or discrete mesh generation.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.39469v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.39469v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A compact mesh-free Kolmogorov--Arnold PINN with learnable edge functions and staged optimization can accurately solve the biharmonic equation without meshing or auxiliary variables.</p>
-          <p><b>Engineering relevance:</b> This offers a practical high-order PDE solver for thin-plate and other fourth-order boundary-value problems where mesh generation and stiff optimization are major bottlenecks.</p>
-          <ul><li>KAN edges use learnable univariate functions parameterized by radial basis functions.</li><li>High-order differentiability is maintained with tanh activations and a normalized residual loss.</li><li>Training is automated with AdamW followed by L-BFGS plus hill-climbing search for penalty and schedule tuning.</li></ul>
-          <p><b>Evidence signal:</b> On a manufactured unit-square benchmark, the model reached a relative L2 error of 1.593×10^-5 and training loss of 3.065×10^-6 using 7,801 trainable parameters, with more than 150× error reduction across iterations.</p>
-          <p><b>Watch item:</b> Performance is shown on a smooth benchmark, so robustness to irregular geometries, noisy data, and harder real-world biharmonic cases still needs validation.</p>
-          <div class="tags"><span>#PhysicsInformedNets</span> <span>#KAN</span> <span>#BiharmonicEquation</span> <span>#MeshFreeMethods</span> <span>#Optimization</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>78</strong></div>
-        <p class="date">2026-09-29</p>
-        <h2>Prompt2Skill: Unsupervised Skill Optimization From Natural Language Instructions</h2>
-        <p class="authors">Bo Ni, Li Li, Ryan A. Rossi, Franck Dernoncourt, Tyler Derr</p>
-        <p class="abstract">Skills are external artifacts that Large Language Models (LLMs) consume at inference time to improve their performance on specialized domains by incorporating relevant procedural and domain knowledge. Expert-authored skills are expensive to produce, and the resulting artifacts are not optimized for the specific model that consumes them, whose failure modes can vary with version, scale and training. In addition, emerging tasks may fall outside the scope of existing skill libraries, creating a need to develop new skills before curated training data become available. Recent works have explored automated skill optimization through reflection, but they require a curated, in-distribution training set, which users might not always have. To address these limitations, we present Prompt2Skill, a framework that builds skills from natural-language task description alone. From the prompt, the system derives a task specification, discovers or synthesizes datasets, and refines the skill in a closed loop of reflective editing. Across four domains spanning question answering, reading comprehension, spreadsheet manipulation, and mathematical reasoning, Prompt2Skill consistently outperforms the direct prompting baseline, achieving an average improvement of 10.8 across open-source and frontier models.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.38593v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.38593v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Prompt2Skill can generate and refine model-specific skills directly from a natural-language task description, avoiding the need for expert-authored skills or curated training data.</p>
-          <p><b>Engineering relevance:</b> This offers a practical way to bootstrap specialized LLM behaviors for new or shifting tasks, especially when domain data is scarce or model failure modes differ across versions.</p>
-          <ul><li>Derive a task specification from the user prompt.</li><li>Discover or synthesize datasets when curated data are unavailable.</li><li>Refine the skill through a closed-loop reflective editing process.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports results across four domains and says Prompt2Skill outperforms direct prompting by an average of 10.8 on open-source and frontier models.</p>
-          <p><b>Watch item:</b> Performance depends on the quality of task specification, synthetic data, and reflective edits, so weak prompt interpretation or noisy synthesized datasets could limit reliability.</p>
-          <div class="tags"><span>#LLM</span> <span>#PromptEngineering</span> <span>#SkillOptimization</span> <span>#MathematicalReasoning</span> <span>#AIResearch</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>75</strong></div>
-        <p class="date">2026-09-29</p>
-        <h2>Mixture of Self-Improving Branches For Agent Harness Optimization</h2>
-        <p class="authors">Haoyu Dong, Yuhang Zhou, Zihao Lin, Yifan Wu, Bo Peng, Mingyi Wang</p>
-        <p class="abstract">Harness optimization provides a practical setting for recursive self-improvement (RSI), where agent-generated modifications inform subsequent changes through execution feedback. Recent work such as Meta-Harness implements this process through iterative code generation and evaluation, but retains a fixed development set and proposal policy. These constraints channel evolution along a single search trajectory, increasing the risk of converging to a local optimum. We make the improvement process itself adaptive by organizing search into branches with evolving development subsets and proposal policies. Each branch retains development cases solved by more of its leading harnesses than by those of other branches, drops cases solved by every leading harness across all branches, and revises its proposal policy using its own search history. To deploy the resulting complementary harnesses, we propose a router to select one development-selected branch head for each new input before execution. Across mathematical reasoning and agentic coding benchmarks, our system achieves relative improvements over Meta-Harness of 34.8% on Olympiad-level mathematical reasoning, 11.6% on Terminal-Bench 2.0, and 3.8% on SWE-bench Lite, with harness selection and router configuration based solely on development data. These results show that evolving branch objectives and proposal policies can yield complementary harnesses whose strengths a router combines without access to test outcomes.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.37834v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.37834v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Instead of optimizing one harness along a fixed path, the paper grows multiple self-improving branches with evolving development sets and proposal policies, then routes each input to the most suitable branch head.</p>
-          <p><b>Engineering relevance:</b> This offers a more robust way to tune agent harnesses for math reasoning and coding, reducing local-optimum drift and improving deployment by selecting among complementary specialists.</p>
-          <ul><li>Split search into branches with different evolving development subsets.</li><li>Keep cases solved by more of a branch’s leading harnesses and drop universally solved cases.</li><li>Use branch-specific search histories to revise proposal policies, then add a router that selects one branch head per new input.</li></ul>
-          <p><b>Evidence signal:</b> Using only development data for harness selection and routing, the system reports relative gains over Meta-Harness of 34.8% on Olympiad-level math reasoning, 11.6% on Terminal-Bench 2.0, and 3.8% on SWE-bench Lite.</p>
-          <p><b>Watch item:</b> Performance depends on a development-driven router and branch management, so gains may be sensitive to how branches, selection rules, and search histories are constructed.</p>
-          <div class="tags"><span>#RecursiveSelfImprovement</span> <span>#AgentHarness</span> <span>#MathReasoning</span> <span>#ProgramSynthesis</span> <span>#LLMSystems</span></div>
+          <p><b>Key insight:</b> Kolmogorov-Arnold Networks can be used as physics-informed solvers for free-boundary PDEs by enforcing obstacle, complementarity, and boundary constraints directly in the loss.</p>
+          <p><b>Engineering relevance:</b> This offers a flexible alternative to standard PINNs for engineering problems with contact zones or moving interfaces, such as phase change and obstacle-type mechanics.</p>
+          <ul><li>Use KAN approximators inside a physics-informed residual loss.</li><li>Encode PDE inequalities, obstacle constraints, complementarity, and boundary conditions as penalties.</li><li>Test on linear obstacle, nonlinear p-Laplacian obstacle, and one-phase Stefan problems.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports numerical experiments showing low relative L2 and L-infinity errors and good recovery of contact regions and moving interfaces, compared with PINN and residual-network baselines.</p>
+          <p><b>Watch item:</b> Performance may depend on careful loss balancing and interface resolution, which can be challenging in free-boundary problems.</p>
+          <div class="tags"><span>#KolmogorovArnoldNetworks</span> <span>#PhysicsInformedLearning</span> <span>#FreeBoundaryPDEs</span> <span>#PINNs</span> <span>#ComputationalScience</span></div>
         </section>
       </article>
     
 
       <article class="paper">
         <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>74</strong></div>
+        <p class="date">2026-10-01</p>
+        <h2>Reachability-Informed Reinforcement Learning for Multi-Impulse Interplanetary Transfers</h2>
+        <p class="authors">Yashdeep Chaudhary, Roberto Armellin, Harry Holt</p>
+        <p class="abstract">Reinforcement learning offers the prospect of a reusable sequential decision-making mechanism for spacecraft trajectory design, motivating policy interfaces that connect learned decisions to the underlying maneuver geometry. This paper develops Reachability Analysis-Informed Reinforcement Learning (RARL) for deterministic multi-impulse interplanetary transfers, placing intermediate waypoint selection at the center of the learned decision process. Local first-order reachability maps bounded velocity perturbations into an ellipsoidal set of next-node positions, within which the policy selects its waypoint. Lambert reconstruction then determines the corresponding maneuver to reach this selected waypoint along a dynamically consistent ballistic arc, coupling learned transfer-geometry selection with classical astrodynamics. A terminal two-impulse reconstruction completes the rendezvous, supported by a linear maneuver-demand assessment used for reward shaping. Numerical studies characterize this interface on a two-body Earth-Mars benchmark. Across three independent training runs, RARL achieves a mean maneuver cost of 10.23 km/s, 1.72% above a validated local sequential convex programming reference. Training over dispersed initial states extends policy reuse across a departure family with fixed target state and transfer duration. Each of the three independently trained multi-state policies completes all 10,000 held-out Monte Carlo departures without impulse-cap violations, compared with a mean feasibility rate of 6.49% for single-state policies. This broader sampled feasibility is accompanied by a 0.61% increase in mean nominal maneuver cost, without further training across departures. These results demonstrate that a reachability-informed decision interface supports benchmark-quality trajectory construction and policy reuse across dispersed departure conditions.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.01344v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.01344v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> RARL uses reachability-informed waypoint selection to connect reinforcement learning decisions directly to spacecraft transfer geometry for multi-impulse interplanetary trajectories.</p>
+          <p><b>Engineering relevance:</b> The method offers a reusable policy for planning Earth–Mars transfers with strong feasibility across many departure states while staying close to classical astrodynamics performance.</p>
+          <ul><li>Compute local first-order reachability maps that convert bounded velocity perturbations into an ellipsoidal next-node position set.</li><li>Have the policy choose an intermediate waypoint inside this reachable set, then use Lambert reconstruction to form the ballistic transfer arc.</li><li>Finish the rendezvous with a terminal two-impulse reconstruction and use linear maneuver-demand estimates for reward shaping.</li></ul>
+          <p><b>Evidence signal:</b> Across three training runs on a two-body Earth–Mars benchmark, RARL achieved a mean cost of 10.23 km/s and completed all 10,000 held-out Monte Carlo departures for multi-state policies, versus only 6.49% feasibility for single-state policies.</p>
+          <p><b>Watch item:</b> The approach relies on local first-order reachability and a two-body benchmark, so performance may degrade for higher-fidelity dynamics or strongly nonlinear mission scenarios.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#Astrodynamics</span> <span>#TrajectoryOptimization</span> <span>#ReachabilityAnalysis</span> <span>#SpaceMissionDesign</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>73</strong></div>
         <p class="date">2026-09-30</p>
-        <h2>T-ARC: Topology-Aware Randomized Clustering via Distributionally Robust Stochastic Block Models</h2>
-        <p class="authors">Serena Grazia De Benedictis, Andersen Ang, Nicoletta Del Buono, Flavia Esposito, Laura Selicato</p>
-        <p class="abstract">In this work, we introduce a new clustering method, namely T-ARC (Topology-Aware Randomized Clustering), that corrects the geometric bias of K-means by embedding topological information directly into the optimization objective. Building on the assumption that the data admits an underlying hidden structure modeled via a latent graph, the idea is to uncover this information through the interplay between the standard K-means data-fidelity term and a graph-cut penalty, which discourages cluster assignments inconsistent with the connectivity structure of the data. To render this coupling tractable, the latent graph is modeled as a random realization from a Stochastic Block Model (SBM), whose scalar parameter is optimized within a Distributionally Robust Optimization (DRO) framework, yielding a closed-form proximal update. Both SBM and DRO are informed by a persistence-based similarity matrix derived from zero-dimensional persistent homology ($H_0$), which translates the multiscale connectivity structure of the data into a pairwise topological prior. The overall optimization proceeds via Block Coordinate Descent; convergence is established through a global Lyapunov functional: the deterministic blocks satisfy monotonic descent, while the stochastic graph update satisfies descent in expectation, so that the expected energy converges. Experiments on synthetic datasets with non-convex geometries and on random subsets of Fashion-MNIST show that T-ARC recovers latent topological structures where K-means fails, achieving the highest accuracy on curved and interleaved clusters while remaining competitive, and markedly more stable than K-means, on real data.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.39466v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.39466v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <h2>Training-Aware Target Coverage for Synthetic Data Selection</h2>
+        <p class="authors">Yang Ba, Michelle V. Mancenido, Rong Pan</p>
+        <p class="abstract">Synthetic data are increasingly used to scale LLM training, yet more synthetic data do not necessarily produce better models. Useful synthetic data must add information relevant to the target task without introducing errors that offset their benefit, and the value of an example can change as the training set grows. We develop a linear theory that characterizes this tradeoff and determines where synthetic data are useful, how much should be added, and the marginal value of adding one example to an existing set. The analysis shows the conditions when input coverage alone is sufficient and when synthetic errors must also be considered. Guided by these results, we introduce \emph{Training-Aware Target Coverage} (TATC), a synthetic data selection method for LLM fine-tuning. TATC identifies candidates whose training effects are beneficial to the target task and selects among them to expand coverage of target-relevant directions not already represented by the available data. Experiments on text and image data verify the linear theory. With mathematical reasoning tasks, TATC selects synthetic solutions for fine-tuning Qwen2.5-Math-1.5B-Instruct and outperforms alternative synthetic-data selection methods on GSM8K across selection budgets. In summary, we provide a principled approach to synthetic data selection by quantifying and maximizing its value to the target task.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.00814v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.00814v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> T-ARC improves clustering by combining K-means with a topology-aware graph-cut prior built from persistent homology and a distributionally robust stochastic block model.</p>
-          <p><b>Engineering relevance:</b> It offers a practical way to make unsupervised clustering more reliable on non-convex, connected, or interleaved data where Euclidean geometry alone is misleading.</p>
-          <ul><li>Uses a K-means data-fidelity term plus a graph-cut penalty to enforce connectivity-consistent assignments.</li><li>Builds a latent graph with a stochastic block model and updates its parameter via distributionally robust optimization.</li><li>Derives a persistence-based similarity matrix from H0 persistent homology to encode multiscale topological structure.</li></ul>
-          <p><b>Evidence signal:</b> The paper reports strong results on synthetic non-convex datasets and competitive, more stable performance on random Fashion-MNIST subsets, with the highest accuracy on curved and interleaved clusters.</p>
-          <p><b>Watch item:</b> The method adds topological preprocessing, graph modeling, and block-coordinate optimization, so performance may depend on the quality and computational cost of the persistence-based graph construction.</p>
-          <div class="tags"><span>#TopologicalDataAnalysis</span> <span>#Clustering</span> <span>#KMeans</span> <span>#StochasticBlockModel</span> <span>#RobustOptimization</span></div>
+          <p><b>Key insight:</b> Synthetic data help only when they add target-relevant coverage without introducing training errors that outweigh their benefit, and their value changes as the training set grows.</p>
+          <p><b>Engineering relevance:</b> For LLM fine-tuning, the paper gives a principled way to choose which synthetic examples to add so selection budgets are spent on examples most likely to improve downstream task performance.</p>
+          <ul><li>Derive a linear theory for the marginal value of synthetic examples during training.</li><li>Define Training-Aware Target Coverage (TATC) to pick candidates with beneficial training effects.</li><li>Select examples that expand coverage of target-relevant directions already underrepresented in the available data.</li></ul>
+          <p><b>Evidence signal:</b> Experiments on text and image data validate the linear theory, and on GSM8K TATC improves Qwen2.5-Math-1.5B-Instruct over alternative synthetic-data selection methods across selection budgets.</p>
+          <p><b>Watch item:</b> The method depends on the assumptions of the linear theory, so performance may shift when training dynamics or synthetic error patterns depart from that regime.</p>
+          <div class="tags"><span>#SyntheticData</span> <span>#LLMTraining</span> <span>#DataSelection</span> <span>#MathematicalReasoning</span> <span>#FineTuning</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>74</strong></div>
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>73</strong></div>
         <p class="date">2026-09-30</p>
-        <h2>Generalized Geometry Block Proximal Linearized Method for Multiblock Nonconvex and Nonsmooth Optimization</h2>
-        <p class="authors">Weifeng Yang</p>
-        <p class="abstract">This paper considers a class of multiblock nonconvex and nonsmooth optimization problems arising in many applications. Existing methods construct proximal linearized operators or their variants within standard Euclidean geometry to solve this class of problems, forcing their block variable updates to rely on the standard inner product and its induced norm. Nevertheless, this construction fails to capture the geometric structure of the target problem, leading to low numerical efficiency. To overcome these drawbacks, we propose a generalized geometry proximal linearized operator for updating block variables, and develop the Generalized Geometry Block Proximal Linearized (GGBPL) method based on this operator. Compared with existing proximal linearized operators, the proposed operator allows the block surrogate functions to be constructed using arbitrary inner products and general admissible metrics, thereby enabling the GGBPL method to adapt its updates to the geometric structure of various problems. We also introduce the inertial version of GGBPL, named the inertial GGBPL (iGGBPL) method. We further establish a new unified convergence framework under this generalized geometry, within which we prove that our methods guarantee convergence of the objective function values, establish global convergence of the generated sequence to a critical point, and derive the convergence rate of our methods. We also establish an $\mathcal{O}(\varepsilon^{-2})$ iteration complexity bound for obtaining an $\varepsilon$-stationary point. We apply our methods to two nonconvex and nonsmooth problems: sparse nonnegative matrix factorization with $\ell_0$-constraints and sparse nonnegative CP decomposition with $\ell_0$-constraints. Numerical results demonstrate the superior numerical performance of our proposed methods over several state-of-the-art methods.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.39301v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.39301v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <h2>LeanSide: A Formally Verified Co-Reasoning System for Natural-language Proofs</h2>
+        <p class="authors">Chenjun Guo, Manooshree Patel, Arnav Mehta, Krishiv Kothari, Thomas Lu, Niels Voss</p>
+        <p class="abstract">Large language models are increasingly used as collaborators on deductive-reasoning tasks, but their outputs can hallucinate or pull users away from intended reasoning. Formal proof assistants provide machine-checked verification, but have a steep learning curve and require more granular reasoning than human written proofs. We explore an interface that combines these strengths, allowing users to write and revise free-form natural-language proofs while a verified backend checks their reasoning and returns feedback at the user&#x27;s granularity. We study this interface in the context of undergraduate mathematics education by developing LeanSide, a formally verified co-reasoning system, which auto-formalizes student reasoning into Lean and informalizes verifier output into understandable feedback. We conducted user studies through classroom deployment and analyzed which system properties helped students make progress and which caused them to get stuck. We use these findings to derive design implications for using a formally verified backend in human-AI co-reasoning systems.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2610.00760v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.00760v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper generalizes proximal linearized block updates to arbitrary inner-product geometries, improving how multiblock nonconvex nonsmooth problems are solved.</p>
-          <p><b>Engineering relevance:</b> This lets optimization algorithms match the problem’s geometry more closely, which can improve numerical efficiency in large-scale engineering and data science applications.</p>
-          <ul><li>Define a generalized geometry proximal linearized operator using arbitrary inner products and admissible metrics.</li><li>Build the GGBPL method and an inertial variant (iGGBPL) for multiblock updates.</li><li>Prove convergence, global convergence to a critical point, and an O(epsilon^-2) complexity bound.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports numerical tests on sparse nonnegative matrix factorization and sparse nonnegative CP decomposition with l0-constraints, showing superior performance versus several state-of-the-art methods.</p>
-          <p><b>Watch item:</b> Performance gains may depend on choosing a suitable geometry/metric for each problem, so implementation requires careful metric design and tuning.</p>
-          <div class="tags"><span>#NonconvexOptimization</span> <span>#NonsmoothOptimization</span> <span>#ProximalMethods</span> <span>#MatrixFactorization</span> <span>#TensorDecomposition</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>74</strong></div>
-        <p class="date">2026-09-30</p>
-        <h2>Smaller Models, Better Rejects: Preference Distillation Scaling</h2>
-        <p class="authors">Rui Cai, Wenhui Zhu, Xiwen Chen, Jincheng Cao, Han Yu, Shayan Mohajer Hamidi</p>
-        <p class="abstract">Preference distillation typically treats a teacher response as preferred and the student&#x27;s own response as rejected. This assumes that self-generated failures are the most informative negatives and that rejects must come from a model at least as large as the student, making generation costly at scale. We find neither assumption holds: across students from 7B to 72B, smaller frozen models generate rejects with less inference compute yet train stronger students than self-generated rejects, before and after sequence-level knowledge distillation, on code generation and mathematical reasoning. To explain this result, we derive a finite-horizon utility bound for Direct Preference Optimization in a linearized feature model. The bound characterizes favorable reject distributions and motivates three interventions. First, mixing rejects from smaller and student-scale models improves performance as the smaller model&#x27;s share increases. Second, reassigning rejects to other prompts and shuffling their code tokens still outperform length-matched gibberish, showing that task structure contributes to reject utility. Third, selecting candidates with lower likelihood under the reference policy improves net transfer when higher-likelihood candidates provide less useful contrast. Lower-likelihood selections outperform higher-likelihood ones for every source. These results suggest that effective rejects preserve task structure while limiting coupling to the reference policy, and that smaller frozen models can provide them at low cost.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.38987v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.38987v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Smaller frozen models can generate better rejection samples than a student’s own outputs, improving preference distillation while using less inference compute.</p>
-          <p><b>Engineering relevance:</b> For large-scale training, reject data need not come from larger or self-generated models, enabling cheaper and more scalable preference optimization pipelines.</p>
-          <ul><li>Derived a finite-horizon utility bound for DPO in a linearized feature model to characterize useful reject distributions.</li><li>Tested mixed reject sources from smaller and student-scale models, plus prompt shuffling and token shuffling ablations.</li><li>Compared lower-likelihood vs higher-likelihood candidate selection under the reference policy.</li></ul>
-          <p><b>Evidence signal:</b> Across student models from 7B to 72B, smaller frozen-model rejects trained stronger students than self-generated rejects on code generation and mathematical reasoning, before and after sequence-level KD.</p>
-          <p><b>Watch item:</b> The benefit depends on preserving task structure and avoiding over-coupling to the reference policy, so naive noise or mismatched rejects may reduce utility.</p>
-          <div class="tags"><span>#PreferenceDistillation</span> <span>#DirectPreferenceOptimization</span> <span>#MathematicalReasoning</span> <span>#LLMTraining</span> <span>#ModelScaling</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>73</strong></div>
-        <p class="date">2026-09-30</p>
-        <h2>Scalable Cox Regression via Grouped Risk Sets and Sharper LogSumExp Rates</h2>
-        <p class="authors">Elizaveta Iashchinskaia, Egor Gladin</p>
-        <p class="abstract">Motivated by the computational challenges of large-scale Cox regression, we study stochastic minimization of LogSumExp objectives over large sets. Mini-batch normalizer estimates generally yield biased gradients. We instead use a softplus surrogate that introduces one auxiliary scalar per normalizer and admits unbiased single-sample gradients. For smooth convex LogSumExp objectives, we prove an $O(T^{-1/2})$ averaged objective bound, improving the previous $T^{-1/4}$ analysis. With a strongly convex regularizer on the original variable, we also obtain a last-iterate squared-error rate of $\widetilde{O}(T^{-1})$ without strong convexity in the auxiliary variables. For Cox regression, the normalizers are defined over nested risk sets. We exploit this structure by grouping neighboring failures and sharing one auxiliary variable per group. The resulting compressed objective admits uniform score and curvature bounds that control the errors from grouping and softplus approximation. Together with the general optimization result, these bounds give a mean-square rate of $T^{-4/5}$, up to logarithmic factors, relative to the full Cox solution. The compressed estimator also matches the full estimator&#x27;s asymptotic distribution. Experiments on synthetic and real survival datasets with slowly decreasing risk sets show a favorable performance relative to stochastic baselines.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.40120v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.40120v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper replaces biased mini-batch normalizers in large-scale Cox regression with a softplus-based surrogate that enables unbiased single-sample gradients and sharper convergence guarantees.</p>
-          <p><b>Engineering relevance:</b> It offers a practical way to scale survival-model training on large datasets while preserving statistical fidelity, including asymptotic agreement with the full Cox estimator.</p>
-          <ul><li>Introduce one auxiliary scalar per LogSumExp normalizer and optimize a softplus surrogate with unbiased stochastic gradients.</li><li>Prove improved optimization rates for smooth convex objectives: O(T^-1/2) averaged objective error and ~O(T^-1) last-iterate squared error with a strongly convex regularizer.</li><li>For Cox regression, group neighboring failures and share one auxiliary variable per group to exploit nested risk-set structure and control approximation error.</li></ul>
-          <p><b>Evidence signal:</b> Experiments on synthetic and real survival datasets with slowly decreasing risk sets show favorable performance compared with stochastic baselines.</p>
-          <p><b>Watch item:</b> Accuracy depends on how well grouped risk sets and the softplus approximation capture the full Cox normalizers, so grouping granularity may need careful tuning.</p>
-          <div class="tags"><span>#CoxRegression</span> <span>#SurvivalAnalysis</span> <span>#StochasticOptimization</span> <span>#LogSumExp</span> <span>#ScalableML</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>73</strong></div>
-        <p class="date">2026-09-29</p>
-        <h2>A Parameter-Free Zeroth-Order Method with Covariance Matrix Adaptation and Effective Dimension</h2>
-        <p class="authors">Alexander Sholokhov, Alexander Rogozin</p>
-        <p class="abstract">Zeroth-order optimization methods are essential for solving black-box problems where gradient information is unavailable or expensive to compute. This paper presents POEM-CMA, a novel parameter-free stochastic zeroth-order algorithm that extends the recent POEM method by integrating covariance matrix alignment and the notion of effective dimension. In contrast to traditional zeroth-order approaches that rely on isotropic random directions, POEM-CMA performs anisotropic sampling by constructing a covariance matrix from gradient estimates. This enables the algorithm to focus sampling efforts on the most informative directions. We introduce the use of the empirical effective dimension $d^* = \frac{\operatorname{tr}(\hatΣ)}{λ_{\max}(\hatΣ)}$, which reflects the intrinsic dimensionality of the problem and replaces the ambient dimension in both sampling and complexity analysis. We prove that POEM-CMA achieves a near-optimal convergence rate, requiring only $\tilde{\mathcal{O}}\left(\frac{d^* κ(\hatΣ) L^2 D_{\mathcal{X}}^2}{\varepsilon^2}\right)$ stochastic zeroth-order oracle queries. The method remains fully parameter-free and demonstrates significant improvements over the original POEM in problems with low-rank structure where $d^* \ll d$. Numerical experiments on hinge-loss binary classification tasks using LibSVM datasets confirm the practical superiority of the proposed approach.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.38561v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.38561v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> POEM-CMA makes zeroth-order optimization more efficient by adapting its sampling covariance to the problem’s geometry and replacing ambient dimension with an effective dimension estimate.</p>
-          <p><b>Engineering relevance:</b> This is useful for black-box engineering optimization where gradients are unavailable, especially when the objective has low-rank or anisotropic structure.</p>
-          <ul><li>Builds a covariance matrix from gradient estimates to sample search directions anisotropically.</li><li>Uses empirical effective dimension d* = tr(Σ̂)/λ_max(Σ̂) in sampling and complexity.</li><li>Remains parameter-free while targeting near-optimal stochastic zeroth-order query complexity.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports experiments on hinge-loss binary classification with LibSVM datasets, showing better performance than the original POEM, especially when d* ≪ d.</p>
-          <p><b>Watch item:</b> Performance depends on estimating covariance/gradient structure reliably, so noisy or poorly conditioned problems may reduce the benefit of the adaptive sampling.</p>
-          <div class="tags"><span>#ZerothOrderOptimization</span> <span>#BlackBoxOptimization</span> <span>#CovarianceAdaptation</span> <span>#EffectiveDimension</span> <span>#MachineLearningOptimization</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>73</strong></div>
-        <p class="date">2026-09-29</p>
-        <h2>Teaching LLMs to Generate Challenging MILP Instances via Solver Feedback</h2>
-        <p class="authors">Jitin Singla, Parikshit Pareek, Pratik Jawanpuria, Parag Singla</p>
-        <p class="abstract">Generating optimization instances that are both feasible and computationally challenging is crucial for benchmarking solvers and training learning-based optimization algorithms. Existing non-LLM generators rely on seed instances or parameter tuning, resulting in high test-time computational cost, while existing LLM generators lack explicit hardness measures. Recent reinforcement learning methods with verifier feedback evaluate only binary correctness, which is misaligned with generating challenging problems. We note that an optimization solver reports the cost of solving at several stages of its pipeline, and leverage this to design a reward that scores both the solvability and the hardness of generated problems, measured by branch-and-bound nodes and post-cut relaxation gaps. Our key idea is a challenger-solver asymmetric self-play approach, where an LLM challenger generates progressively harder instances and the solver verifies feasibility and hardness, so no seed or training MILP instances are required. We fine-tune Gemma-4-12B and Qwen3.5-4B with GRPO and a size curriculum into OptiScribe-12B and OptiScribe-4B, which generate feasible yet challenging MILP problems from natural language instructions. On capacitated facility location and max-cut, OptiScribe-12B raises median SCIP search nodes by 1.7-5x and post-cut gaps by 1.1-1.7x over its base model and improves the feasibility rate on facility location by 9-19 points, while OptiScribe-4B raises median nodes by up to 15.6x. The problems cover a wider difficulty range than public benchmarks of the same size, follow instructions on density and difficulty, and can tune solver settings for families that public libraries lack. These results indicate that optimization-specific rewards, used in self-play mode, can teach LLMs to generate high-difficulty optimization benchmarks. We will release our code and models publicly on acceptance.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.37356v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.37356v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> An LLM can be trained with solver feedback to generate MILP instances that are not just feasible, but intentionally hard for branch-and-bound solvers.</p>
-          <p><b>Engineering relevance:</b> This offers a practical way to create stronger optimization benchmarks and stress-test solvers without requiring seed instances or manual parameter tuning.</p>
-          <ul><li>Use a challenger-solver self-play setup where the LLM proposes instances and the solver scores feasibility plus hardness.</li><li>Define rewards from solver signals such as branch-and-bound node counts and post-cut relaxation gaps.</li><li>Fine-tune Gemma-4-12B and Qwen3.5-4B with GRPO and a size curriculum to produce OptiScribe models.</li></ul>
-          <p><b>Evidence signal:</b> On capacitated facility location and max-cut, the trained models increased median SCIP nodes by 1.7-5x for OptiScribe-12B and up to 15.6x for OptiScribe-4B, while also improving feasibility and post-cut gaps.</p>
-          <p><b>Watch item:</b> The approach depends on solver-specific feedback, so generalization across solvers, formulations, and instance families may require careful retuning.</p>
-          <div class="tags"><span>#MILP</span> <span>#Optimization</span> <span>#LLM</span> <span>#ReinforcementLearning</span> <span>#Benchmarking</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>72</strong></div>
-        <p class="date">2026-09-29</p>
-        <h2>EvoSteer: Online Self-Evolving Graph Orchestration via Reference-Anchored Credit Assignment</h2>
-        <p class="authors">Mingda Zhang, Hanwen Zhang, Qiang Huang, Zijia Wang, Pengfei Guo, Yuchen Zhang</p>
-        <p class="abstract">In recent years, LLM-based multi-agent systems have been widely applied to orchestrate tool-using agents into executable communication graphs. However, existing self-evolving orchestration still faces key challenges, including post-hoc evolution that revises the team only after the trajectory ends, credit diffusion that gives every action the same terminal advantage under confounded baselines, and skill admission that is uncalibrated and never retired. To address these challenges, we propose EvoSteer, a new paradigm of Online Self-Evolving Graph Orchestration -- the orchestrator builds a running team and repairs its plausible but failing steps from execution features and a learned value estimate. To support this paradigm, we introduce Anchored Trajectory Balance (AnchorTB), a regression-style flow-matching loss that assigns each orchestration action a coefficient by balancing subtrajectories against a frozen reference. Built on the learned flow, we further propose Validated Skill Admission, in which a candidate skill is tried before promotion and promoted only if paired evidence passes a sequential test under a shared nominal testing budget. Moreover, AnchorTB combines measured task-level reference reward statistics with prefix-dependent corrections. Experimental results on twelve datasets show that EvoSteer significantly outperforms baselines across question answering, mathematical reasoning, code generation, and interactive decision making. Our code is available at https://github.com/beita6969/evosteer.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.38661v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.38661v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> EvoSteer turns multi-agent orchestration into an online, self-repairing process by using reference-anchored credit assignment to decide how each action should be evaluated and evolved during execution.</p>
-          <p><b>Engineering relevance:</b> This is relevant for building adaptive agentic systems that can update tool-using workflows on the fly instead of waiting until a failed run finishes.</p>
-          <ul><li>Online self-evolving graph orchestration with step-level repair from execution features and learned value estimates.</li><li>Anchored Trajectory Balance (AnchorTB) to assign action coefficients by balancing subtrajectories against a frozen reference.</li><li>Validated Skill Admission to trial candidates first and promote only skills that pass a sequential evidence test under a shared budget.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports experiments on twelve datasets, with gains across question answering, mathematical reasoning, code generation, and interactive decision making.</p>
-          <p><b>Watch item:</b> The online admission and repair mechanism adds algorithmic complexity, so calibration of the sequential test and stability of the learned flow will likely be important in practice.</p>
-          <div class="tags"><span>#MultiAgentSystems</span> <span>#LLMOrchestration</span> <span>#GraphLearning</span> <span>#CreditAssignment</span> <span>#MathematicalReasoning</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>72</strong></div>
-        <p class="date">2026-09-29</p>
-        <h2>Hybrid Joint-Selective Optimization: Reduced-Space Levenberg-Marquardt Refinement of Low-Dimensional Parameters of Interest</h2>
-        <p class="authors">Muhammad Luthfi Shahab, Gabriella Alfa Indahsari, Imam Mukhlash, Hadi Susanto</p>
-        <p class="abstract">This paper introduces a hybrid joint-selective optimization (HJSO) framework for large-scale numerical problems in which a small subset of trainable quantities is of primary interest. We partition the full parameter vector into a high-dimensional remaining block and a low-dimensional block of parameters of interest (POIs), perform joint first-order optimization over the full parameter set, and then freeze the remaining variables while applying a reduced-space Levenberg-Marquardt (LM) refinement to the POIs. The method is designed for settings in which the POIs are low-dimensional but strongly influence the quality of the computed solution, while the full parameter space remains too large for full-space second-order methods. The framework is evaluated on three representative problems: a matrix eigenvalue problem, an inverse Bratu problem solved with a physics-informed neural network, and a 100-dimensional nonlinear Black-Scholes problem solved with the DeepBSDE method. In each test, HJSO reaches prescribed POI-error thresholds faster than the corresponding joint first-order baseline and improves the final POI accuracy for the reported solver configurations. The contribution is therefore not a universal optimizer, but a practical reduced-space strategy for problems with known low-dimensional parameters of interest and expensive high-dimensional training variables.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.37308v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.37308v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper proposes a hybrid optimization strategy that first trains all parameters jointly, then refines only the low-dimensional parameters of interest with reduced-space Levenberg-Marquardt for faster and more accurate targeted recovery.</p>
-          <p><b>Engineering relevance:</b> This is useful when a model has many expensive variables but only a few critical quantities must be estimated accurately, as in PDE-constrained inverse problems and scientific machine learning.</p>
-          <ul><li>Partition parameters into a high-dimensional remainder block and a low-dimensional POI block.</li><li>Run joint first-order optimization over the full parameter set.</li><li>Freeze the remaining variables and apply reduced-space LM only to the POIs.</li></ul>
-          <p><b>Evidence signal:</b> Across a matrix eigenvalue problem, an inverse Bratu PINN, and a 100-dimensional nonlinear Black-Scholes DeepBSDE test, HJSO reached POI-error thresholds faster than the joint first-order baseline and improved final POI accuracy.</p>
-          <p><b>Watch item:</b> The approach depends on knowing which variables are the true POIs and may not help if the POIs are not well separated from the rest of the parameter space.</p>
-          <div class="tags"><span>#Optimization</span> <span>#LevenbergMarquardt</span> <span>#InverseProblems</span> <span>#ScientificMachineLearning</span> <span>#PDEs</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>71</strong></div>
-        <p class="date">2026-09-30</p>
-        <h2>Growing an Agent/Prover Interface: Evolutionary Tool Design for Cost-Efficient Theorem Proving in Rocq and Lean</h2>
-        <p class="authors">Jules Viennot, Guillaume Baudart, Marc Lelarge</p>
-        <p class="abstract">Recent achievements in AI-assisted mathematics require intensive interaction of agents with proof assistants to generate machine-checked proof certificates. Agents interact with proof assistants such as Rocq or Lean through an interface that controls what the agent receives from the prover and the cost of these interactions. Today, these interfaces are adapted from tools designed for humans and not optimized for agents. We propose an evolutionary method where a frontier model incrementally proposes new features and only keeps the ones that improve the overall performance of smaller models. We demonstrate the effectiveness of our method by growing, on a curated set of mathematical problems, \rme, a new MCP server for the Rocq prover. On the held-out \texttt{test} split of miniF2F-Rocq, an agent equipped with \rme outperforms both the baseline that only exposes the Rocq compiler and an established MCP server, across four models from two families, in success rate, cost per solve, and time per solve. Although evolved for Rocq, the resulting server transfers to Lean, improving cost and time per solve on a subset of PutnamBench. We release \rme and its port to Lean.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.39544v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.39544v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> An evolutionary, model-guided process can automatically grow a proof-assistant interface that is better optimized for AI agents than human-designed tools.</p>
-          <p><b>Engineering relevance:</b> For theorem-proving systems, the interface itself becomes a tunable component that can reduce solve cost and latency while improving success rates across different models.</p>
-          <ul><li>Start with a baseline prover interface and let a frontier model propose new interface features.</li><li>Keep only features that improve end-to-end performance of smaller agent models on curated math problems.</li><li>Deploy the evolved server as an MCP interface for Rocq, then port the same design to Lean.</li></ul>
-          <p><b>Evidence signal:</b> On the held-out miniF2F-Rocq test split, the evolved Rocq MCP server outperformed both a compiler-only baseline and an established MCP server across four models from two families in success rate, cost per solve, and time per solve; it also improved cost and time on a subset of PutnamBench when transferred to Lean.</p>
-          <p><b>Watch item:</b> Results are demonstrated on curated benchmarks and a transferred subset, so real-world gains may depend on problem distribution and careful integration with each prover’s tooling.</p>
-          <div class="tags"><span>#TheoremProving</span> <span>#AIforMath</span> <span>#Lean</span> <span>#Rocq</span> <span>#MCP</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>71</strong></div>
-        <p class="date">2026-09-29</p>
-        <h2>TACIT: Optimization Models that Learn from Their Mistakes</h2>
-        <p class="authors">Maxime Bouscary, Marco Molinaro, Sirui Li, Saurabh Amin, Ishai Menache, Konstantina Mellou</p>
-        <p class="abstract">Real-world optimization problems are difficult to model accurately because many objectives and constraints reside in domain experts&#x27; tacit knowledge, making them hard to formalize. As a result, optimization models often contain miscalibrated objectives, missing constraints, or omitted decision variables, leading to solutions that fail to reflect operational realities. We address this challenge by automatically repairing misspecified formulations using historical data consisting of past solutions and subsequent user overrides. Traditional approaches such as inverse optimization and constraint learning tend to overfit sparse data and produce complex formulations. Our central idea is to combine the reasoning capabilities and prior knowledge of LLMs with the formal grounding provided by optimization. We realize this idea through two complementary paradigms. Top-down, an LLM proposes structural repairs, including new constraints and variables, whose numerical parameters are calibrated and validated through optimization. Bottom-up, optimization infers cuts from observed decisions, which the LLM contextualizes into interpretable, generalizable modeling constraints. We evaluate our approach on 38 misspecification scenarios spanning nine classes of optimization problems, several drawn from real-world applications, and show that TACIT can repair 78.9% of them (vs. 60.5% for the best baseline).</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.38434v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.38434v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> TACIT repairs misspecified optimization models by combining LLM-guided structural reasoning with optimization-based validation and inference, so models can learn from past mistakes instead of overfitting sparse correction data.</p>
-          <p><b>Engineering relevance:</b> This gives engineers a practical way to recover missing constraints, variables, and objectives in operational optimization models when expert knowledge is tacit and hard to formalize.</p>
-          <ul><li>Top-down: an LLM proposes candidate repairs such as new constraints or variables.</li><li>Optimization then calibrates parameters and checks whether the proposed repair fits historical solution/override data.</li><li>Bottom-up: optimization extracts cuts from observed decisions, and the LLM turns them into interpretable modeling rules.</li></ul>
-          <p><b>Evidence signal:</b> Across 38 misspecification scenarios spanning nine optimization problem classes, TACIT repaired 78.9% of cases, outperforming the best baseline at 60.5%.</p>
-          <p><b>Watch item:</b> Because repairs are learned from historical overrides, the approach may depend on data quality and still requires careful human review to avoid introducing plausible but incorrect constraints.</p>
-          <div class="tags"><span>#Optimization</span> <span>#LLM</span> <span>#InverseOptimization</span> <span>#ConstraintLearning</span> <span>#AIforOperations</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>70</strong></div>
-        <p class="date">2026-09-30</p>
-        <h2>Advancing Entropy-Level Credit Assignment in RLVR via Proximal Entropy Policy Optimization</h2>
-        <p class="authors">Yun Kim, Nojun Kwak</p>
-        <p class="abstract">Value-model-free RLVR methods such as GRPO assign uniform advantages to all tokens in a rollout, ignoring that tokens contribute unequally. Recent methods use token entropy as an importance proxy but compute it globally across the batch, conflating importance with prompt difficulty and positional trends. We argue that importance should instead be measured relative to the local context of each token. We introduce proximal entropy, a local measure of token importance relative to neighboring tokens, and prove it is invariant to both confounders. Proximal Entropy Policy Optimization (PEPO) uses it to weight per-token advantages and outperforms GRPO and entropy-based baselines on mathematical reasoning across Qwen3-1.7B, Qwen3-4B, and Llama-3.2-3B-Instruct. We also show the formulation generalizes to other algorithms where substituting proximal entropy into existing methods improves, and applying it to single-stream RL succeeds where global entropy fails.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.39402v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.39402v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> PEPO replaces uniform token credit in RLVR with proximal entropy, a local importance measure that better captures which tokens actually matter for learning.</p>
-          <p><b>Engineering relevance:</b> For reasoning-model training, this yields a drop-in way to assign token-level rewards more accurately than global entropy or uniform advantages, improving optimization without changing the base RL framework.</p>
-          <ul><li>Compute proximal entropy from neighboring tokens rather than the full batch.</li><li>Use proximal entropy to weight per-token advantages in Proximal Entropy Policy Optimization (PEPO).</li><li>Show the same local-entropy idea can substitute into other RL methods and even single-stream RL.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports consistent gains on mathematical reasoning across Qwen3-1.7B, Qwen3-4B, and Llama-3.2-3B-Instruct, outperforming GRPO and entropy-based baselines.</p>
-          <p><b>Watch item:</b> Because PEPO adds token-level weighting, implementation quality and hyperparameter sensitivity may matter when integrating it into existing RL training pipelines.</p>
-          <div class="tags"><span>#ReinforcementLearning</span> <span>#LLMTraining</span> <span>#MathReasoning</span> <span>#TokenCreditAssignment</span> <span>#EntropyOptimization</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>70</strong></div>
-        <p class="date">2026-09-29</p>
-        <h2>Unified Optimality Conditions for Stochastic Optimal Control in the Rough Path and Itô Frameworks</h2>
-        <p class="authors">Thomas Lew</p>
-        <p class="abstract">Stochastic differential equations (SDEs) can be studied via Itô calculus and rough path theory. For stochastic optimal control, these two frameworks give distinct Pontryagin Maximum Principle (PMP) optimality conditions with forward-backward SDEs (FBSDEs) or rough differential equations. We show that the adjoint equations of the Itô and rough PMPs are connected via the conditional expectation $p_t^{\text{Itô}}=\mathbb{E}[p_t^{\text{rough}} \mid \mathcal{F}_t]$, where $\mathcal{F}_t$ represents information available at time $t$. First, we derive a rough stochastic PMP for problems with adapted controls that does not use FBSDEs. Its proof extends the rough stochastic PMP over deterministic controls by considering stochastic needle variations. Second, we derive a unified PMP connecting the Itô and rough PMPs, using Itô-Stratonovich conversion formulas and duality identities between the forward tangent and backward adjoint SDEs. As a first application, we rederive the adjoint matching method for fine-tuning generative models. As a second application, we propose an indirect shooting method for a class of feedback problems. Overall, these results give a new conditional bridge connecting two popular frameworks for stochastic optimal control.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2609.38395v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2609.38395v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper shows that the optimality conditions for stochastic control in Itô and rough path formalisms are linked by a conditional expectation bridge, making the two PMP adjoint systems mathematically compatible.</p>
-          <p><b>Engineering relevance:</b> This unification can simplify how engineers derive and implement stochastic control algorithms, including learning-based model fine-tuning and indirect shooting for feedback control.</p>
-          <ul><li>Derives a rough-path stochastic Pontryagin Maximum Principle for adapted controls without forward-backward SDEs</li><li>Uses stochastic needle variations to extend rough-control optimality theory</li><li>Connects Itô and rough adjoints via Itô–Stratonovich conversion and forward/backward duality identities</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports two concrete applications—adjoint matching for generative model fine-tuning and an indirect shooting method for feedback problems—as validation of the theory.</p>
-          <p><b>Watch item:</b> The bridge relies on conditional expectations and framework-specific regularity assumptions, so practical use may be sensitive to filtration, adaptiveness, and numerical approximation details.</p>
-          <div class="tags"><span>#StochasticControl</span> <span>#RoughPaths</span> <span>#ItoCalculus</span> <span>#PontryaginMaximumPrinciple</span> <span>#OptimalControl</span></div>
+          <p><b>Key insight:</b> LeanSide lets students write natural-language proofs while a verified Lean backend checks each step and translates feedback back into human-friendly language.</p>
+          <p><b>Engineering relevance:</b> It shows how formal verification can be wrapped in an educational co-reasoning interface to improve trust, guidance, and usability for theorem-proving systems.</p>
+          <ul><li>Built a co-reasoning loop that auto-formalizes student proof text into Lean.</li><li>Uses a verified backend to check reasoning and informally explain errors or next-step feedback.</li><li>Studied the system through classroom deployment with undergraduate mathematics students.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports user studies from classroom deployment analyzing which system properties helped students progress and which caused them to get stuck.</p>
+          <p><b>Watch item:</b> A key implementation concern is that the auto-formalization/feedback pipeline may still misalign with student intent, causing users to stall despite verification.</p>
+          <div class="tags"><span>#TheoremProving</span> <span>#FormalMethods</span> <span>#Lean</span> <span>#AIEducation</span> <span>#HumanAIInteraction</span></div>
         </section>
       </article>
     </section>
