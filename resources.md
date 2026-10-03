@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-10-02
+Generated: 2026-10-03
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. CARM: Cancellation-Aware Response Masking for LLM Reinforcement Learning

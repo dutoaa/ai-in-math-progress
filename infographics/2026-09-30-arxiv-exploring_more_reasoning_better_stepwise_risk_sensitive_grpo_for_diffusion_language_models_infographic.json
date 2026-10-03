@@ -1,24 +1,24 @@
 {
-  "key_insight": "StepRS-GRPO makes reinforcement learning for diffusion LLMs more effective by adjusting risk sensitivity across denoising steps, improving both accuracy and answer diversity on math reasoning tasks.",
-  "engineering_relevance": "For practitioners building dLLM training pipelines, the method offers a drop-in way to better allocate learning signal over generation states without changing the underlying GRPO trainer.",
+  "key_insight": "StepRS-GRPO improves diffusion LLM reasoning by changing the risk sensitivity of GRPO across denoising steps, rather than using one fixed advantage transformation.",
+  "engineering_relevance": "For practical RLVR training of dLLMs, the method offers a simple way to better allocate learning signal across generation states, improving accuracy, coverage, and diversity without replacing the underlying trainer.",
   "method": [
-    "Vary the risk coefficient of the group-advantage transform across denoising states.",
-    "Use a capability-based calibration to set the coefficient scale.",
-    "Test endpoint and interpolation schedules, while keeping the core RLVR/GRPO framework unchanged."
+    "Vary the GRPO risk coefficient stepwise across denoising states.",
+    "Use a binary-reward analysis showing centered advantages are rescaled in a prompt- and state-dependent way.",
+    "Select schedules using capability calibration plus endpoint/interpolation ablations."
   ],
-  "evidence_signal": "Across multiple dLLM backbones and mathematical reasoning benchmarks, StepRS-GRPO improves pass@1 and pass@k over centered GRPO, with ablations showing gains persist after RMS-matching and diversity increases in reasoning traces.",
-  "watch_item": "Performance depends on the chosen state-wise schedule and calibration, so careful tuning is needed to avoid gains coming from a poorly matched risk allocation.",
+  "evidence_signal": "Across multiple dLLM backbones and math reasoning benchmarks, StepRS-GRPO improved pass@1 and pass@k over centered GRPO and increased answer diversity, with gains persisting after RMS matching.",
+  "watch_item": "Performance depends on choosing a good risk-coefficient schedule, so calibration and ablation-guided tuning may be needed for new backbones or tasks.",
   "hashtags": [
     "#DiffusionLLM",
-    "#ReinforcementLearning",
-    "#MathReasoning",
+    "#RLVR",
     "#GRPO",
-    "#AIResearch"
+    "#MathReasoning",
+    "#ReinforcementLearning"
   ],
   "paper_id": "2026-09-30-arxiv-exploring_more_reasoning_better_stepwise_risk_sensitive_grpo_for_diffusion_language_models",
   "paper_title": "Exploring More, Reasoning Better: Stepwise Risk-Sensitive GRPO for Diffusion Language Models",
   "paper_date": "2026-09-30",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-10-02T18:12:52",
+  "generated_at": "2026-10-03T17:04:37",
   "generator": "openai"
 }
