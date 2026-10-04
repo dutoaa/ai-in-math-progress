@@ -1,24 +1,24 @@
 {
-  "key_insight": "CARM masks entire LLM responses by averaging the absolute token log-ratios, so opposite policy shifts cannot cancel and hide off-policy drift.",
-  "engineering_relevance": "This gives RL practitioners a more reliable sequence-level filter for post-training updates when rollout and training engines differ, helping stabilize mathematical reasoning and code-generation optimization.",
+  "key_insight": "CARM prevents token-level probability changes from canceling out, giving a more reliable sequence-level mask for off-policy LLM RL updates.",
+  "engineering_relevance": "It offers a practical control mechanism for keeping rollout responses closer to the training policy in mathematical reasoning and code-generation systems.",
   "method": [
-    "Compute per-token log probability ratios between sampled and training policies.",
-    "Take absolute values before length-normalized averaging to prevent cancellation.",
-    "Accept only responses that satisfy the proposed band-based drift bounds."
+    "Take the absolute value of each token log-ratio before averaging across a sampled response.",
+    "Use the resulting cancellation-aware score to decide whether the whole response is accepted for optimization.",
+    "Prove accepted responses satisfy a joint bound on out-of-band ratio mass and mean log-distance beyond the band."
   ],
-  "evidence_signal": "In the abstract, CARM improves mean@16 on AIME 2024/2025/2026 and BeyondAIME by up to 3.13 points, and boosts average pass@1 on four code benchmarks by 2.88 points over the strongest baseline.",
-  "watch_item": "Because CARM is sequence-level and threshold-based, its effectiveness may depend on careful tuning of the masking band and consistent probability calibration across engines.",
+  "evidence_signal": "On math benchmarks, CARM improved mean@16 by up to 3.13 points over geometric-mean masking, and on four code benchmarks it raised average pass@1 by 2.88 points over the strongest baseline.",
+  "watch_item": "Because the mask is sequence-level and depends on ratio statistics, it may be sensitive to how rollout and training engines differ or to threshold/band tuning.",
   "hashtags": [
-    "#LLMRL",
-    "#MathematicalReasoning",
+    "#LLMReinforcementLearning",
     "#OffPolicyControl",
-    "#ResponseMasking",
-    "#CodeGeneration"
+    "#MathematicalReasoning",
+    "#CodeGeneration",
+    "#ResponseMasking"
   ],
   "paper_id": "2026-10-01-arxiv-carm_cancellation_aware_response_masking_for_llm_reinforcement_learning",
   "paper_title": "CARM: Cancellation-Aware Response Masking for LLM Reinforcement Learning",
   "paper_date": "2026-10-01",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-03T17:04:13",
+  "generated_at": "2026-10-04T17:17:37",
   "generator": "openai"
 }

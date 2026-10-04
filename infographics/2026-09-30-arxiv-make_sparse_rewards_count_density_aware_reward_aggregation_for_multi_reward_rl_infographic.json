@@ -1,24 +1,24 @@
 {
-  "key_insight": "Reward-wise normalization in multi-reward RL can still leave a batch-level imbalance, and the paper shows that a reward’s advantage energy scales with how often it is active across rollout groups.",
-  "engineering_relevance": "Density-Aware Reward Aggregation (DARA) automatically reweights sparse rewards during training, helping LLMs learn multiple behaviors faster without changing the underlying policy optimization objective.",
+  "key_insight": "Reward-wise normalization can still leave sparse objectives underpowered; DARA fixes this by upweighting rewards that are active in fewer rollout groups using an inverse-square-root density correction.",
+  "engineering_relevance": "For multi-reward RL systems, DARA offers a simple batch-level weighting rule that improves learning balance across objectives without changing the underlying policy optimization objective.",
   "method": [
-    "Defines advantage energy as the sum of squared advantages for each reward over a batch.",
-    "Shows that, under idealized GDPO normalization, this energy is proportional to active-group density.",
-    "Uses an inverse-square-root density correction to upweight less frequently active rewards on the fly."
+    "Measure each reward’s active-group density from the current rollout batch.",
+    "Use the density to compute an inverse-square-root correction for reward aggregation.",
+    "Reweight rewards adaptively during training while preserving GDPO-style reward-wise normalization."
   ],
-  "evidence_signal": "The abstract reports faster learning on tool calling and mathematical reasoning, including up to 26% fewer steps for high format compliance and up to 65% fewer steps for near-saturated length compliance, while staying competitive in final performance.",
-  "watch_item": "Because DARA estimates reward density from each rollout batch, noisy or highly variable batch statistics could affect weight stability in practice.",
+  "evidence_signal": "On tool calling, DARA reached high format compliance up to 26% fewer training steps than GDPO, and on mathematical reasoning it reached near-saturated length compliance up to 65% fewer steps while remaining competitive in final performance.",
+  "watch_item": "Because weights are computed from each rollout batch, performance may depend on stable density estimates and could be sensitive when reward activity is very noisy or extremely rare.",
   "hashtags": [
     "#ReinforcementLearning",
-    "#LargeLanguageModels",
-    "#MultiObjectiveOptimization",
-    "#SparseRewards",
-    "#MathAI"
+    "#LLMAlignment",
+    "#MultiObjectiveRL",
+    "#RewardNormalization",
+    "#SparseRewards"
   ],
   "paper_id": "2026-09-30-arxiv-make_sparse_rewards_count_density_aware_reward_aggregation_for_multi_reward_rl",
   "paper_title": "Make Sparse Rewards Count: Density-Aware Reward Aggregation for Multi-Reward RL",
   "paper_date": "2026-09-30",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-03T17:04:16",
+  "generated_at": "2026-10-04T17:17:44",
   "generator": "openai"
 }

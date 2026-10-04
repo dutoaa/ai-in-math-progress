@@ -1,0 +1,24 @@
+{
+  "key_insight": "TACO achieves near-zero optimizer-state memory for LLM fine-tuning by using a column-wise one-sparse steepest-descent update under a dimension-normalized 1→1 operator norm.",
+  "engineering_relevance": "It makes full-parameter fine-tuning of much larger models feasible on a single GPU by sharply reducing memory without sacrificing accuracy or runtime.",
+  "method": [
+    "Selects the sign of the largest-magnitude entry in each column of 2D weight matrices.",
+    "Retains first-order gradients while storing only a small set of low-precision gradient components per column.",
+    "Follows Muon’s operator-norm steepest-descent view but further compresses the update geometry."
+  ],
+  "evidence_signal": "On OPT-13B, TACO reduced persistent optimizer state from 27.7 GB to 0.16 GB and peak training memory from 80.6 GB to 27.5 GB, with comparable accuracy and runtime, and enabled fine-tuning of 30–32B models on a single 80 GB H100.",
+  "watch_item": "The method is geometry-specific and relies on column-wise matrix structure, so implementation details and performance may vary for layers or training setups that do not fit this assumption.",
+  "hashtags": [
+    "#LLMFineTuning",
+    "#OptimizerMemory",
+    "#DeepLearningSystems",
+    "#EfficientTraining",
+    "#LargeLanguageModels"
+  ],
+  "paper_id": "2026-10-01-arxiv-taco_ternary_absolute_max_column_wise_one_sparse_optimizer_for_llm_fine_tuning",
+  "paper_title": "TACO: Ternary Absolute-max Column-wise One-sparse Optimizer for LLM Fine-Tuning",
+  "paper_date": "2026-10-01",
+  "paper_category": "Geometry and Topology",
+  "generated_at": "2026-10-04T17:18:15",
+  "generator": "openai"
+}

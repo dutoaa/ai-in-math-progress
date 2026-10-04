@@ -1,24 +1,24 @@
 {
-  "key_insight": "Lingtai shows that projecting LLM residual states onto unlabeled concept anchors yields a per-step telemetry signal that tracks uncertainty well, but it does not reliably recover a stable correctness coordinate or task-invariant concept geometry.",
-  "engineering_relevance": "This offers a training-free way to monitor inference dynamics and uncertainty in code and math models with modest decode overhead, but it should be treated as observability rather than a dependable correctness detector.",
+  "key_insight": "Lingtai shows that projecting LLM residual states onto named concept anchors can reveal a per-step concept signal that tracks predictive uncertainty, while also exposing that this geometry is only weakly stable across re-executions and not a reliable correctness coordinate.",
+  "engineering_relevance": "This suggests a training-free telemetry layer for monitoring inference-time uncertainty and trajectory behavior in code and math models, with modest decode overhead and no change to generated tokens.",
   "method": [
-    "Project residual states at each generation step onto a domain-specific bank of named concept anchors.",
-    "Construct anchors without labels, probes, gradient fitting, or activation optimization.",
-    "Compare the resulting concept-activity signal against uncertainty, random anchors, PCA/K-means baselines, and re-execution alignment tests."
+    "Project residual states at each generation step onto a bank of named concept anchors built without labels, probes, gradients, or activation optimization.",
+    "Compare the resulting concept-activity signal against uncertainty, random anchors, K-means/PCA baselines, and control conditions across tasks.",
+    "Measure trajectory identity and re-instantiation under completion-only elastic alignment and corrupted re-execution tests."
   ],
-  "evidence_signal": "Across HumanEval, MBPP, and GSM8K, the concept-activity signal correlates robustly with predictive uncertainty and outperforms random, PCA, and K-means projections under controls for problem identity and token position.",
-  "watch_item": "The paper finds no stable correctness coordinate from the scalar concept-activity signal under the tested protocol, and the execution identity is only weakly reproducible under fresh re-execution.",
+  "evidence_signal": "Across HumanEval, MBPP, and GSM8K, the concept signal correlates with uncertainty, survives problem-identity and token-position controls, and reaches 62.0% retrieval under matched re-execution at corruption k=32 versus 11.7-16.0% for fresh executions.",
+  "watch_item": "The paper finds no stable correctness coordinate from the scalar concept-activity signal under the tested protocol, so correctness must be supplied externally and the geometry should not be treated as a direct accuracy proxy.",
   "hashtags": [
     "#LLMInference",
     "#ConceptGeometry",
     "#UncertaintyEstimation",
     "#MathematicalReasoning",
-    "#AIObservability"
+    "#Telemetry"
   ],
   "paper_id": "2026-09-30-arxiv-lingtai_what_concept_geometry_reveals_and_does_not_reveal_about_llm_inference",
   "paper_title": "Lingtai: What Concept Geometry Reveals--and Does Not Reveal--About LLM Inference",
   "paper_date": "2026-09-30",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-03T17:04:15",
+  "generated_at": "2026-10-04T17:17:41",
   "generator": "openai"
 }
