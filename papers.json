@@ -25,29 +25,234 @@
         "url": "https://arxiv.org/pdf/2610.06348v1"
       }
     ],
-    "score": 104,
+    "score": 99,
     "infographic": {
-      "key_insight": "IGA-KAN improves isogeometric PDE solves by fitting local Kolmogorov-Arnold ridge models in closed form on top of an IGA Galerkin solution, rather than replacing the solver.",
-      "engineering_relevance": "The approach keeps exact CAD geometry and Galerkin structure while boosting accuracy with a non-iterative, error-controlled correction that is attractive for forward and inverse PDE workflows.",
+      "key_insight": "IGA-KAN boosts isogeometric PDE solves by fitting local closed-form Kolmogorov-Arnold ridge models to the IGA solution and PDE residuals, then blending them only where they help.",
+      "engineering_relevance": "It offers a mesh-based, error-controlled way to improve forward and inverse PDE accuracy without neural-network training instability or extra Galerkin unknowns.",
       "method": [
-        "Compute a baseline IGA Galerkin solution u_h on exact NURBS geometry.",
-        "Fit local Kolmogorov-Arnold ridge models on knot-vertex patches using the strong form, boundary data, and u_h via batched linear least squares.",
-        "Blend local corrections with IGA hat functions and activate them only where an a posteriori safeguard indicates improvement."
+        "Run a standard IGA Galerkin solve to obtain baseline u_h on exact NURBS geometry.",
+        "On each knot-vertex patch, fit a closed-form local KAN ridge model to the strong-form PDE, boundary data, and u_h using one batched linear least-squares solve.",
+        "Blend local corrections with IGA hat functions and use an a posteriori safeguard to keep the original IGA solution where the local model is not reliable."
       ],
-      "evidence_signal": "On eight benchmark problems, the method reduced IGA error by 4.2-90x in L^2 and 4.1-220x in H^1, and recovered an unknown constant source 167x more accurately than IGA in an inverse test.",
-      "watch_item": "Performance depends on patchwise fitting and safeguard selection, so robustness may vary with mesh resolution, problem smoothness, and the choice of fixed inner functions.",
+      "evidence_signal": "Across eight benchmark PDEs, the method reduced IGA errors by factors of 4.2–90 in L^2 and 4.1–220 in H^1, and in one inverse problem it recovered an unknown source 167× more accurately than IGA.",
+      "watch_item": "Performance depends on patchwise model fitting and the a posteriori selection rule, so robustness may vary if the local least-squares system is ill-conditioned or the safeguard is too conservative.",
       "hashtags": [
         "#IsogeometricAnalysis",
-        "#KolmogorovArnoldNetwork",
         "#PDEs",
-        "#ScientificML",
+        "#KolmogorovArnoldNetworks",
+        "#ScientificComputing",
         "#InverseProblems"
       ],
       "paper_id": "2026-10-05-arxiv-iga_kan_isogeometric_analysis_with_physics_informed_closed_form_kolmogorov_arnold_networks",
       "paper_title": "IGA-KAN: Isogeometric Analysis with Physics-Informed Closed-Form Kolmogorov-Arnold Networks for Forward and Inverse PDEs",
       "paper_date": "2026-10-05",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-06T18:46:10",
+      "generated_at": "2026-10-07T19:12:15",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-learning_pde_solution_operators_with_variable_initial_conditions_via_latent_dynamics_netwo",
+    "arxiv_id": "2610.08475v1",
+    "date": "2026-10-06",
+    "title": "Learning PDE solution operators with variable initial conditions via Latent Dynamics Networks",
+    "authors": "Stefano Maria Pizzamiglio, Stefano Pagani, Francesco Regazzoni",
+    "abstract": "In many-query scenarios, data-driven surrogate models provide an efficient alternative to high-fidelity solvers for simulating physical systems governed by Partial Differential Equations (PDEs). In this context, the Latent Dynamics Network (LDNet) has recently demonstrated remarkable performance in predicting the response of spatio-temporal systems, combining Neural Ordinary Differential Equations with nonlinear dimensionality reduction. However, the original formulation assumes a fixed initial condition, limiting its applicability to many real-world applications where a system evolves from varying starting states. In this work, we overcome this limitation while keeping the end-to-end training procedure of the original LDNet and its encoder-free nature, which preserves its intrinsic independence from spatial resolution and grid topology. We infer the initial latent state directly from a small set of early-time observations, treating latent-state initialization as an adaptation problem, and investigate two strategies: an auto-decoding formulation and a meta-learning approach in which the initial latent state acts as a task-specific context variable. We demonstrate the accuracy of the proposed methods across diverse physical phenomena, spanning advection-diffusion, fluid dynamics, and solid mechanics. Meta-learning markedly accelerates latent-state inference and induces smoother, better-conditioned optimization landscapes, and spontaneously organizes the latent space into a structured representation that reflects physically meaningful features of the underlying dynamics. The coordinate-based decoder enables training from spatially subsampled data while recovering high-resolution solution fields at inference. The resulting approach provides an efficient and resolution-independent surrogate modeling framework for many-query simulations of time-dependent PDEs with varying initial conditions.",
+    "category": "Optimization and PDEs",
+    "source": "arXiv",
+    "published": "2026-10-06T14:55:39Z",
+    "updated": "2026-10-06T14:55:39Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.08475v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.08475v1"
+      }
+    ],
+    "score": 90,
+    "infographic": {
+      "key_insight": "The paper extends Latent Dynamics Networks to handle variable initial conditions by inferring the initial latent state from a few early observations, enabling resolution-independent PDE surrogate modeling.",
+      "engineering_relevance": "This gives engineers a fast surrogate for many-query time-dependent PDE simulations across changing starting states, with high-resolution field prediction from sparse data.",
+      "method": [
+        "Keep the encoder-free LDNet backbone: nonlinear latent dynamics + coordinate-based decoder.",
+        "Infer the initial latent state from early-time snapshots using either auto-decoding or meta-learning.",
+        "Use the latent-state initialization as a task-specific adaptation problem while preserving grid/topology independence."
+      ],
+      "evidence_signal": "The abstract reports successful evaluation on diverse PDE problems, including advection-diffusion, fluid dynamics, and solid mechanics, with meta-learning improving latent-state inference and optimization stability.",
+      "watch_item": "Performance depends on having enough early-time observations to reliably infer the initial latent state, and the adaptation step may add inference-time optimization overhead.",
+      "hashtags": [
+        "#PDEs",
+        "#SurrogateModeling",
+        "#LatentDynamics",
+        "#MetaLearning",
+        "#ScientificMachineLearning"
+      ],
+      "paper_id": "2026-10-06-arxiv-learning_pde_solution_operators_with_variable_initial_conditions_via_latent_dynamics_netwo",
+      "paper_title": "Learning PDE solution operators with variable initial conditions via Latent Dynamics Networks",
+      "paper_date": "2026-10-06",
+      "paper_category": "Optimization and PDEs",
+      "generated_at": "2026-10-07T19:12:17",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-oopmas_object_oriented_multi_agent_systems_for_query_level_workflow_generation",
+    "arxiv_id": "2610.07787v1",
+    "date": "2026-10-06",
+    "title": "OOPMAS: Object-Oriented Multi-Agent Systems for Query-Level Workflow Generation",
+    "authors": "Qi Cheng, Shengyu Chen, Wei Cheng, Yiqun Xie, Xiaowei Jia, Haoyu Wang",
+    "abstract": "Multi-agent systems (MAS) powered by large language models have shown strong performance across code generation, mathematical reasoning, and question answering. However, existing methods for automating MAS design mostly operate at the task level, producing a single fixed workflow per benchmark that is applied uniformly to all queries. This assumption fails under realistic conditions. Query difficulty varies widely within a task, and real-world workloads mix heterogeneous task types. We introduce OOPMAS, a training-free framework that generates both the agent set and the coordination workflow at the granularity of individual queries. Agents are represented as object-oriented class definitions with dedicated roles, tools, and persistent state, and workflows are expressed as executable main functions over these agent objects. A dynamic skill library accumulates structured lessons from execution feedback across optimization rounds, enabling in-context improvement without any gradient updates or fine-tuning. On a mixed-task benchmark of queries spanning code, math, and QA, OOPMAS achieves 89.6% accuracy, outperforming the strongest baseline by 18.1 percentage points. A model-swap study across four LLM backbones shows consistent scaling, reaching 92.4% with the strongest model.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-06T05:31:29Z",
+    "updated": "2026-10-06T05:31:29Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07787v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07787v1"
+      }
+    ],
+    "score": 90,
+    "infographic": {
+      "key_insight": "OOPMAS generates the agent roles and workflow for each individual query, using object-oriented agents and a dynamic skill library to adapt multi-agent coordination without training.",
+      "engineering_relevance": "It offers a practical way to deploy mixed-task LLM systems that can self-configure per request, which is useful for real-world pipelines with varying difficulty and task types.",
+      "method": [
+        "Represents each agent as a class with role, tools, and persistent state.",
+        "Builds the workflow as an executable main function over agent objects.",
+        "Stores execution feedback as structured lessons in a dynamic skill library for in-context improvement."
+      ],
+      "evidence_signal": "On a mixed benchmark covering code, math, and QA, OOPMAS reaches 89.6% accuracy, beating the strongest baseline by 18.1 points and scaling to 92.4% with the strongest backbone.",
+      "watch_item": "Performance depends on reliable execution feedback and prompt-based skill accumulation, so results may vary with backbone quality, tool availability, and workflow complexity.",
+      "hashtags": [
+        "#MultiAgentSystems",
+        "#LLM",
+        "#MathematicalReasoning",
+        "#WorkflowGeneration",
+        "#AIResearch"
+      ],
+      "paper_id": "2026-10-06-arxiv-oopmas_object_oriented_multi_agent_systems_for_query_level_workflow_generation",
+      "paper_title": "OOPMAS: Object-Oriented Multi-Agent Systems for Query-Level Workflow Generation",
+      "paper_date": "2026-10-06",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-07T19:12:20",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-dhcg_dynamic_construction_of_hierarchical_collaboration_graphs_for_llm_based_multi_agent_r",
+    "arxiv_id": "2610.07835v1",
+    "date": "2026-10-06",
+    "title": "DHCG: Dynamic Construction of Hierarchical Collaboration Graphs for LLM-Based Multi-Agent Reasoning",
+    "authors": "Jie Ren, Jiakang Yuan, Chenyu Huang, Hezeer Ma, Jiayuan Fan, Tao Chen",
+    "abstract": "LLM-based multi-agent systems (MAS) have demonstrated strong capabilities in solving complex problems across diverse domains. Recently, the dynamic orchestration of agent systems has become an important research direction. However, existing methods suffer from limited composition, misaligned dependencies, and inflexible scale, restricting their ability to adapt to reasoning requirements during execution. To address these limitations, we reframe MAS design as a partially observable Markov decision process, in which both the composition and scale of the MAS are dynamically determined. We propose DHCG, a novel framework that coordinates three modules (Planner, Worker, and Generator) to progressively construct a dynamic hierarchical collaboration graph from scratch based on the query and evolving execution feedback. At each step, guided by feedback, the Planner generates a set of distinct and complementary roles tailored to the current reasoning needs and selectively routes relevant information to each role. It can also finalize the hierarchical collaboration graph early or progressively expand it when additional reasoning is required. We further introduce action-aware preference optimization to train the Planner to make more effective decisions when constructing hierarchical collaboration graphs. We systematically evaluate DHCG across code generation, mathematical reasoning, and domain-specific reasoning benchmarks. DHCG achieves state-of-the-art average performance among the compared methods, improving over the single-agent baseline by 13.06 points and outperforming both static and dynamic MAS baselines by 2.77-8.02 points. Additional experiments further demonstrate its generalization across different Planner backbones and unseen Worker models.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-06T06:33:40Z",
+    "updated": "2026-10-06T06:33:40Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07835v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07835v1"
+      }
+    ],
+    "score": 86,
+    "infographic": {
+      "key_insight": "DHCG dynamically builds a hierarchical multi-agent collaboration graph during execution, letting an LLM system adapt its roles, routing, and scale to the reasoning needs of each query.",
+      "engineering_relevance": "This offers a practical control strategy for more reliable agentic AI pipelines in mathematical reasoning and other complex tasks where fixed agent compositions are too rigid.",
+      "method": [
+        "Reframes multi-agent system design as a partially observable Markov decision process to decide composition and scale on the fly.",
+        "Uses three modules—Planner, Worker, and Generator—to progressively construct a hierarchy from scratch based on query context and feedback.",
+        "Trains the Planner with action-aware preference optimization so it learns better graph-construction decisions over time."
+      ],
+      "evidence_signal": "The paper reports evaluation on code generation, mathematical reasoning, and domain-specific reasoning benchmarks, with DHCG improving over the single-agent baseline by 13.06 points and beating static/dynamic MAS baselines by 2.77-8.02 points on average.",
+      "watch_item": "The approach depends on the Planner’s ability to interpret feedback and manage dynamic graph expansion, which may add complexity and sensitivity when deploying across new backbones or worker models.",
+      "hashtags": [
+        "#LLMAgents",
+        "#MultiAgentSystems",
+        "#MathematicalReasoning",
+        "#DynamicPlanning",
+        "#AISystems"
+      ],
+      "paper_id": "2026-10-06-arxiv-dhcg_dynamic_construction_of_hierarchical_collaboration_graphs_for_llm_based_multi_agent_r",
+      "paper_title": "DHCG: Dynamic Construction of Hierarchical Collaboration Graphs for LLM-Based Multi-Agent Reasoning",
+      "paper_date": "2026-10-06",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-07T19:12:22",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-pluto_an_agentic_ai_tool_for_interactive_spacecraft_rendezvous_trajectory_design",
+    "arxiv_id": "2610.07573v1",
+    "date": "2026-10-06",
+    "title": "PLUTO: An Agentic AI Tool for Interactive Spacecraft Rendezvous Trajectory Design",
+    "authors": "Eleanor Brosius, Yuji Takubo, Daniele Gammelli, Simone D'Amico, Marco Pavone",
+    "abstract": "Modern space missions require trajectory design methods capable of efficiently adapting to diverse mission objectives and operational constraints. Despite the maturity of non-convex trajectory optimization techniques, their broader adoption remains limited by the substantial domain expertise required to tailor problem formulations across varying mission scenarios. Recent advances in large language model (LLM) reasoning and agentic AI coding capabilities offer a promising pathway to improving the accessibility of advanced trajectory optimization techniques. This paper introduces PLUTO (Plain Language Understanding for Trajectory Optimization), an interactive trajectory design framework that integrates agentic AI coding tools within a sequential convex programming (SCP) architecture. The proposed system maps high-level semantic inputs to well-defined mathematical constraints while preserving a structured representation suitable for SCP. These constraints are processed through an auto-convexification pipeline and incorporated directly into executable optimal control formulations, thereby systematically connecting user intent and trajectory generation. Visual constraint verification and scenario parameterization further support an intuitive environment for trajectory design across a wide range of application scenarios. Within an evaluation of 50 natural-language rendezvous mission prompts spanning 10 constraint types, PLUTO generated a trajectory for every prompt, and 94% of the resulting trajectories satisfied both the quantitative and qualitative requirements of the mission intent. Ultimately, this work explores the potential of agentic AI to bridge the gap between advanced optimization algorithms and engineer-focused trajectory design workflows.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-06T01:07:42Z",
+    "updated": "2026-10-06T01:07:42Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07573v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07573v1"
+      }
+    ],
+    "score": 84,
+    "infographic": {
+      "key_insight": "PLUTO uses agentic AI to translate plain-language spacecraft rendezvous goals into convex-optimization-ready constraints for interactive trajectory design.",
+      "engineering_relevance": "It lowers the expertise barrier for mission designers by linking natural-language intent directly to executable optimal control formulations within a sequential convex programming workflow.",
+      "method": [
+        "Maps user prompts to structured mathematical constraints via an LLM-based agentic coding pipeline.",
+        "Auto-convexifies the extracted constraints and injects them into an SCP trajectory optimizer.",
+        "Adds visual constraint verification and scenario parameterization for interactive mission design."
+      ],
+      "evidence_signal": "Across 50 natural-language rendezvous prompts spanning 10 constraint types, PLUTO produced a trajectory for every prompt and 94% met both quantitative and qualitative mission requirements.",
+      "watch_item": "Performance depends on correct prompt interpretation and constraint translation, so verification is still needed for safety-critical mission design.",
+      "hashtags": [
+        "#AIforSpace",
+        "#TrajectoryOptimization",
+        "#SequentialConvexProgramming",
+        "#AgenticAI",
+        "#RendezvousGuidance"
+      ],
+      "paper_id": "2026-10-06-arxiv-pluto_an_agentic_ai_tool_for_interactive_spacecraft_rendezvous_trajectory_design",
+      "paper_title": "PLUTO: An Agentic AI Tool for Interactive Spacecraft Rendezvous Trajectory Design",
+      "paper_date": "2026-10-06",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-07T19:12:24",
       "generator": "openai"
     }
   },
@@ -78,17 +283,17 @@
         "url": "https://arxiv.org/pdf/2610.06294v1"
       }
     ],
-    "score": 89,
+    "score": 84,
     "infographic": {
-      "key_insight": "Within physics-informed learning, B-spline representations can be compared fairly with neural networks and may offer better-behaved training and accuracy under the same PDE-solving framework.",
-      "engineering_relevance": "For PDE-based modeling, inverse design, and parametric simulation, the choice of representation can materially affect convergence speed, robustness, and required numerical precision.",
+      "key_insight": "Within physics-informed learning, B-splines and neural networks can be directly compared as function representations, and the paper shows that splines can offer clearer convergence and optimization behavior on PDE problems with known solutions.",
+      "engineering_relevance": "For PDE solvers, inverse design, and parametric modeling, the choice of representation affects training stability, sampling efficiency, and numerical precision requirements, not just final accuracy.",
       "method": [
-        "Compare neural networks and B-splines in a common physics-informed learning setup",
-        "Test both representations on four PDE problems with closed-form solutions",
-        "Analyze asymptotic convergence, sampling needs, loss minimization, and arithmetic precision"
+        "Set up a physics-informed learning framework using either neural networks or B-spline representations for PDE solutions.",
+        "Benchmark both representations on four closed-form test problems to compare accuracy, convergence, sampling needs, and loss minimization behavior.",
+        "Analyze asymptotic convergence rates and arithmetic precision sensitivity to isolate representation-driven effects."
       ],
-      "evidence_signal": "The abstract reports a numerical study on four closed-form benchmark problems to evaluate accuracy and efficiency across the two representations.",
-      "watch_item": "Results may depend on the selected benchmark PDEs and training setup, so performance gains should be validated on the target application before adoption.",
+      "evidence_signal": "The abstract reports numerical studies on four problems with closed-form solutions, evaluating accuracy, efficiency, convergence rates, sampling requirements, loss minimization, and required arithmetic precision.",
+      "watch_item": "Results are based on benchmark problems with known solutions, so performance on noisy, high-dimensional, or strongly nonlinear real-world PDEs may differ.",
       "hashtags": [
         "#PhysicsInformedLearning",
         "#PDEs",
@@ -100,58 +305,111 @@
       "paper_title": "Comparison of neural and spline representations for physics-informed learning",
       "paper_date": "2026-10-05",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-10-06T18:46:13",
+      "generated_at": "2026-10-07T19:12:28",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-10-04-arxiv-harnessing_llms_with_direction_scope_control_for_combinatorial_solver_refinement",
-    "arxiv_id": "2610.05221v1",
-    "date": "2026-10-04",
-    "title": "Harnessing LLMs with Direction-Scope Control for Combinatorial Solver Refinement",
-    "authors": "Yili Cao, Anqi Li, Haoran Li, Yongtang Shi, Zicheng Zhang",
-    "abstract": "Harnesses are increasingly unlocking the potential of large language model (LLM) agents by making their actions more controllable. In automatic heuristic design (AHD) for combinatorial optimization (CO), LLMs iteratively revise solvers using execution and verification feedback. However, these revisions often break previously validated solver behavior, making refinement unstable and costly. We characterize this pattern as feasibility oscillation and document it across CO benchmarks, AHD methods, and backbone LLMs. Tracing this oscillation, our analysis reveals that feasibility degradation often follows large solver revisions, while substantial feedback redundancy makes it harder to identify which failures deserve attention. Motivated by these findings, we introduce DiSH, a harness that jointly controls revision direction and scope. It selects representative failure evidence to guide each update and progressively narrows the revision scope as feasible behavior accumulates. Across nine CO benchmarks, DiSH consistently improves QYI scores and reduces feasibility oscillation, while roughly halving feedback token consumption relative to prior methods that use full feedback. These results establish DiSH as a strong baseline for solver refinement under harness control.",
-    "category": "Optimization and PDEs",
+    "id": "2026-10-06-arxiv-fosls_derhann_native_de_rham_neural_classes_for_h_div_and_h_curl_with_applications_to_firs",
+    "arxiv_id": "2610.08016v1",
+    "date": "2026-10-06",
+    "title": "FOSLS-deRhaNN: native de Rham neural classes for H(div) and H(curl) with applications to first-order system least-squares neural network methods for partial differential equations",
+    "authors": "Shun Zhang",
+    "abstract": "We construct neural approximation classes native to the graph spaces H(div) and H(curl), in two and three dimensions and, for H(div), in any dimension. Every realization lies in the space for all parameter values, and with kinked potentials, such as ReLU networks, the admissible jumps appear at finite width. The classes are images of scalar and componentwise networks under fixed operators of the de Rham complex, and do not involve a mesh or finite element emulation. For H(div) in R^n two native classes are given on an equal footing, with a skew-symmetric potential $A$: $\\mathrm{Div}\\,A+R_nq+\\mathbf{h}$, with the divergence $q$ as an explicit unknown, and $\\mathrm{Div}\\,A+\\mathbf{z}$ with an $H^1$ field $\\mathbf{z}$; for H(curl) the analogous classes are $\\mathrm{grad}\\,φ+Sr+\\mathbf{h}$ in two dimensions and $\\mathrm{grad}\\,φ+\\mathbf{z}$ in two and three dimensions. In all of them every interface jump of the field is carried by the potential term, $\\mathrm{Div}\\,A$ or $\\mathrm{grad}\\,φ$, while the remaining part has no interface jump (it is an $H^1$ field in the regular-decomposition classes); the classes with $\\mathbf{z}$ are the componentwise approach enriched by this term. Known or learned interface geometry enters the potential through factors with trainable amplitudes, and the remaining part if the divergence jumps. The classes lead to the FOSLS-deRhaNN method, first-order system least squares with de Rham neural networks, whose loss is the least-squares functional posed in the natural spaces of the weak formulation; for elliptic equations this includes $H^{-1}$ right-hand sides and $H^{1/2}$ Dirichlet data. Elliptic equations with discontinuous coefficients and curl-curl problems are treated as instances, with the functional equivalent to the error; linear transport with discontinuous solutions and conservation laws with shocks use the same flux classes.",
+    "category": "Geometry and Topology",
     "source": "arXiv",
-    "published": "2026-10-04T13:41:58Z",
-    "updated": "2026-10-04T13:41:58Z",
-    "primary_category": "math.OC",
+    "published": "2026-10-06T09:12:45Z",
+    "updated": "2026-10-06T09:12:45Z",
+    "primary_category": "math.NA",
     "categories": [
-      "math.OC"
+      "math.NA",
+      "cs.LG"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05221v1"
+        "url": "https://arxiv.org/abs/2610.08016v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05221v1"
+        "url": "https://arxiv.org/pdf/2610.08016v1"
       }
     ],
-    "score": 85,
+    "score": 82,
     "infographic": {
-      "key_insight": "DiSH stabilizes LLM-based solver refinement by controlling both the direction and scope of edits, reducing feasibility oscillation while improving optimization performance.",
-      "engineering_relevance": "For combinatorial optimization pipelines, DiSH offers a more reliable and token-efficient way to iteratively refine heuristics without repeatedly breaking previously validated behavior.",
+      "key_insight": "The paper builds neural network output classes that are inherently compatible with the PDE function spaces H(div) and H(curl), so the network always produces physically admissible vector fields while preserving jump discontinuities via de Rham operators.",
+      "engineering_relevance": "This gives a mesh-free way to solve PDEs with discontinuous coefficients, interface jumps, curl-curl systems, transport, and conservation laws using a least-squares loss formulated in the natural weak spaces.",
       "method": [
-        "Selects representative failure cases instead of using full feedback",
-        "Progressively narrows the revision scope as feasible solver behavior accumulates",
-        "Uses a harness to jointly control update direction and edit breadth"
+        "Map scalar/componentwise neural nets through fixed de Rham operators to create native H(div) and H(curl) classes.",
+        "Use skew-symmetric or scalar potentials to carry all interface jumps, while the remainder stays H^1-regular.",
+        "Train with a first-order system least-squares functional that matches the weak formulation and supports discontinuous solutions."
       ],
-      "evidence_signal": "Across nine combinatorial optimization benchmarks, DiSH improved QYI scores, reduced feasibility oscillation, and cut feedback token use by about half versus prior full-feedback methods.",
-      "watch_item": "Performance depends on good failure selection and scope control, so overly narrow revisions could miss important edge cases or slow recovery from deeper solver issues.",
+      "evidence_signal": "The abstract reports theoretical construction and problem instances rather than benchmark datasets, emphasizing space conformity and equivalence of the least-squares functional to the error for elliptic cases.",
+      "watch_item": "Performance depends on knowing or learning interface geometry well; if jump locations are poorly represented, the potential-based decomposition may be harder to train reliably.",
       "hashtags": [
-        "#LLMAgents",
-        "#CombinatorialOptimization",
-        "#HeuristicDesign",
-        "#SolverRefinement",
-        "#TokenEfficiency"
+        "#ScientificML",
+        "#PDEs",
+        "#NeuralOperators",
+        "#Hdiv",
+        "#Hcurl"
       ],
-      "paper_id": "2026-10-04-arxiv-harnessing_llms_with_direction_scope_control_for_combinatorial_solver_refinement",
-      "paper_title": "Harnessing LLMs with Direction-Scope Control for Combinatorial Solver Refinement",
-      "paper_date": "2026-10-04",
-      "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-06T18:46:16",
+      "paper_id": "2026-10-06-arxiv-fosls_derhann_native_de_rham_neural_classes_for_h_div_and_h_curl_with_applications_to_firs",
+      "paper_title": "FOSLS-deRhaNN: native de Rham neural classes for H(div) and H(curl) with applications to first-order system least-squares neural network methods for partial differential equations",
+      "paper_date": "2026-10-06",
+      "paper_category": "Geometry and Topology",
+      "generated_at": "2026-10-07T19:12:30",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-05-arxiv-triage_direction_aware_mismatch_stabilization_of_native_nvfp4_reinforcement_learning",
+    "arxiv_id": "2610.07043v1",
+    "date": "2026-10-05",
+    "title": "TRIAGE: Direction-Aware Mismatch Stabilization of Native NVFP4 Reinforcement Learning",
+    "authors": "Zhen Li, Shuai Zhang, Yanggan Gu, Yiming Zhang, Yang Yu, Mingfa Feng",
+    "abstract": "Low-precision execution can substantially accelerate reinforcement learning (RL) for large language models, but discrepancies between learner and sampler execution can destabilize policy optimization. In this paper, we characterize the interaction between mismatch and the policy-gradient direction, distinguishing locally amplifying from contracting update contributions that mismatch magnitude alone cannot identify. In native NVFP4 runs, we observe an early imbalance between the two amplifying regions, favoring negative-advantage, negative-gap updates. Their tail tokens become concentrated in a small fraction of response segments before mismatch spreads globally. Motivated by these findings, we introduce TRIAGE, a direction-aware stabilization method that uses segment-level diagnosis to selectively rebalance policy-gradient updates and applies bounded repair to residual severe mismatch. TRIAGE modifies the optimization objective while retaining native NVFP4 weight-and activation 4-bit (W4A4) forward execution on both the sampler and learner. Experiments on Qwen3-4B and Qwen3-30B-A3B show stable optimization throughout the evaluated training horizon and achieve full precision level performance across five mathematical reasoning benchmarks, while native NVFP4 with TRIAGE provides up to 2.3x higher rollout throughput than BF16.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-05T00:53:11Z",
+    "updated": "2026-10-05T00:53:11Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07043v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07043v1"
+      }
+    ],
+    "score": 80,
+    "infographic": {
+      "key_insight": "TRIAGE shows that NVFP4 training instability depends not just on mismatch size, but on whether policy-gradient updates are locally amplifying or contracting, so direction-aware correction can stabilize RL for LLM reasoning.",
+      "engineering_relevance": "It enables native 4-bit sampler/learner execution with much higher rollout throughput while preserving BF16-level benchmark performance, making low-precision RL more practical for large reasoning models.",
+      "method": [
+        "Diagnose mismatch at the segment level and separate amplifying from contracting update contributions.",
+        "Rebalance policy-gradient updates based on direction-aware signals rather than mismatch magnitude alone.",
+        "Apply bounded repair only to residual severe mismatch while keeping native W4A4 execution."
+      ],
+      "evidence_signal": "On Qwen3-4B and Qwen3-30B-A3B, TRIAGE stayed stable through the evaluated training horizon and matched full-precision performance on five mathematical reasoning benchmarks, with up to 2.3x higher rollout throughput than BF16.",
+      "watch_item": "The approach depends on segment-level mismatch diagnosis and bounded repair rules, so implementation complexity and sensitivity to diagnosis quality may be important in new RL pipelines.",
+      "hashtags": [
+        "#ReinforcementLearning",
+        "#LLMs",
+        "#LowPrecisionTraining",
+        "#NVFP4",
+        "#MathematicalReasoning"
+      ],
+      "paper_id": "2026-10-05-arxiv-triage_direction_aware_mismatch_stabilization_of_native_nvfp4_reinforcement_learning",
+      "paper_title": "TRIAGE: Direction-Aware Mismatch Stabilization of Native NVFP4 Reinforcement Learning",
+      "paper_date": "2026-10-05",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-07T19:12:32",
       "generator": "openai"
     }
   },
@@ -181,80 +439,80 @@
         "url": "https://arxiv.org/pdf/2610.06770v1"
       }
     ],
-    "score": 84,
+    "score": 79,
     "infographic": {
-      "key_insight": "Neural PDE solvers can approach the optimal solution while their parameters diverge, so the best fit may not exist within the original model class.",
-      "engineering_relevance": "For PDE optimization workflows, this means training can appear successful yet still fail to yield a finite, deployable parameterization unless the model class is completed appropriately.",
+      "key_insight": "Neural PDE solvers can drive the loss toward its optimum while their parameters diverge, revealing that some limiting solutions are not representable in the original finite network class.",
+      "engineering_relevance": "For PDE surrogate models, this means training may appear successful even when the model class cannot actually realize the best solution, so architecture design and convergence checks must account for missing limits.",
       "method": [
-        "Analyzes missing limits in deep tanh networks arising from unbounded hidden parameters or redundant neurons.",
-        "Characterizes the missing functions for translated-kernel models.",
-        "Restores attainability of the optimum by augmenting the model with kernel derivatives."
+        "Analyze deep tanh networks for singular parameter growth and redundant neurons.",
+        "Characterize the “missing” limit functions for translated-kernel models.",
+        "Complete the hypothesis space by adding kernel derivatives so the best approximation becomes attainable."
       ],
-      "evidence_signal": "The abstract reports numerical studies that track parameter growth and test how the proposed completion changes PDE optimization behavior.",
-      "watch_item": "Model completion may improve attainability, but it adds extra basis terms and implementation complexity that must be matched to the PDE architecture.",
+      "evidence_signal": "The abstract reports numerical studies that track parameter growth and test how model completion changes PDE optimization behavior.",
+      "watch_item": "Adding derivative-based completion can improve attainability, but it may increase model complexity and require careful numerical conditioning.",
       "hashtags": [
-        "#NeuralPDEs",
+        "#NeuralPDE",
+        "#ScientificMachineLearning",
         "#Optimization",
-        "#DeepLearning",
-        "#FunctionApproximation",
-        "#ScientificML"
+        "#DeepLearningTheory",
+        "#PDEs"
       ],
       "paper_id": "2026-10-05-arxiv-singular_parameters_and_missing_limits_in_neural_pde_solvers",
       "paper_title": "Singular parameters and missing limits in neural PDE solvers",
       "paper_date": "2026-10-05",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-06T18:46:19",
+      "generated_at": "2026-10-07T19:12:34",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-10-04-arxiv-fusion_is_the_new_mutation_bandit_guided_evolution_on_workflow_graphs",
-    "arxiv_id": "2610.05284v1",
-    "date": "2026-10-04",
-    "title": "Fusion is the New Mutation: Bandit-Guided Evolution on Workflow Graphs",
-    "authors": "Zhiwei Shang, Jiahang Sun, Mingrong Gong, Mingze Kong, Zikun Qu, Pingchen Lu",
-    "abstract": "Automated agentic workflow optimization relies on costly evaluations, making it essential to allocate a limited evaluation budget effectively. Multi-parent fusion can reuse designs from previously discovered workflows, but identifying promising parent combinations requires learning from limited fusion feedback. We introduce DAGO (Directed Acyclic Graph Optimization), a contextual-bandit-guided framework that learns which parent workflows to fuse under a limited evaluation budget. DAGO formulates each candidate parent combination as an arm, represented by pretrained embeddings of its constituent workflows' code and prompts. A diagonal LinUCB policy learns a shared reward model across arms and balances exploitation of arms with high predicted offspring quality against uncertainty-driven exploration. After an arm is selected, an LLM generates a child workflow through summary-guided fusion, and the child's validation score serves as the reward for updating the bandit. A shared directed acyclic graph maintains discovered workflows and their multi-parent lineage, providing an expanding pool of parents for subsequent arm proposals. Across six benchmarks covering mathematical reasoning, code generation, and question answering, DAGO achieves the highest macro-average score among the evaluated baselines. Under matched validation-evaluation budgets, it improves over AFlow from 80.3 to 81.7 while reducing aggregate search expenditure by 11.2%. Ablation studies show that LinUCB-guided arm selection outperforms both random selection and its exploration-free variant, supporting the value of feedback-driven selection and exploration-exploitation balance.",
+    "id": "2026-10-05-arxiv-learning_what_to_distill_bilevel_top_k_token_selection_for_self_distillation_in_large_lang",
+    "arxiv_id": "2610.07247v1",
+    "date": "2026-10-05",
+    "title": "Learning What to Distill: Bilevel Top-K Token Selection for Self-Distillation in Large Language Models",
+    "authors": "Heng Liang, Xinwen Zhang, Hongchang Gao",
+    "abstract": "Large language models have shown strong reasoning capabilities, but their high inference costs make knowledge distillation an important approach for transferring such capabilities to compact models in resource-constrained scenarios. On-policy self-distillation further reduces the reliance on external large teacher models while improving the reasoning ability of compact language models. However, existing methods typically either distill all token positions uniformly or select tokens using fixed heuristic criteria, assigning the same distillation strength to the selected positions rather than adaptively learning which tokens are most beneficial for distillation. To address these limitations, we propose BiToK-SD (Bilevel Top-K Token Selection for Self-Distillation), a bilevel-optimization-based token selection method that learns where distillation should be applied during on-policy self-distillation. Specifically, BiToK-SD is formulated as a bilevel optimization problem, where the lower-level problem models Top-K token selection as a differentiable threshold-based relaxation, allowing the selected positions to adapt as the student policy evolves, while the upper-level problem performs knowledge distillation on the selected positions. Experiments on mathematical reasoning benchmarks show that BiToK-SD achieves the best average performance among all compared methods while requiring only lightweight additional computation.",
     "category": "Mathematical Reasoning",
     "source": "arXiv",
-    "published": "2026-10-04T15:04:29Z",
-    "updated": "2026-10-04T15:04:29Z",
-    "primary_category": "cs.AI",
+    "published": "2026-10-05T18:48:00Z",
+    "updated": "2026-10-05T18:48:00Z",
+    "primary_category": "cs.LG",
     "categories": [
-      "cs.AI"
+      "cs.LG"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05284v1"
+        "url": "https://arxiv.org/abs/2610.07247v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05284v1"
+        "url": "https://arxiv.org/pdf/2610.07247v1"
       }
     ],
-    "score": 81,
+    "score": 75,
     "infographic": {
-      "key_insight": "DAGO treats workflow parent selection as a contextual bandit problem, using LinUCB to learn which multi-parent fusions are most likely to produce better child workflows under a tight evaluation budget.",
-      "engineering_relevance": "This offers a practical way to reduce expensive search in agentic workflow optimization by reusing and recombining successful designs instead of exploring blindly.",
+      "key_insight": "BiToK-SD learns which token positions to distill via bilevel Top-K selection, so self-distillation is applied where it is most useful rather than uniformly across all tokens.",
+      "engineering_relevance": "This offers a lightweight way to improve reasoning performance in compact LLMs without relying on external teacher models, making it attractive for resource-constrained deployment.",
       "method": [
-        "Represent each candidate parent set as a bandit arm using pretrained embeddings of workflow code and prompts.",
-        "Select arms with diagonal LinUCB to balance exploitation of promising fusions and exploration of uncertain ones.",
-        "Use an LLM to fuse selected parents into a child workflow, then update the bandit with the child’s validation score."
+        "Formulate self-distillation as a bilevel optimization problem.",
+        "Use a differentiable threshold-based relaxation to approximate Top-K token selection.",
+        "Apply distillation only on the learned selected positions as the student policy evolves."
       ],
-      "evidence_signal": "Across six benchmarks, DAGO achieved the best macro-average score and improved AFlow from 80.3 to 81.7 while reducing aggregate search expenditure by 11.2%.",
-      "watch_item": "Performance depends on the quality and stability of pretrained embeddings and LLM-generated fusion, so gains may be sensitive to representation choices and prompt design.",
+      "evidence_signal": "The method was evaluated on mathematical reasoning benchmarks and achieved the best average performance among compared methods with only lightweight extra computation.",
+      "watch_item": "The approach adds bilevel-optimization and selection hyperparameters, so stability and efficiency may depend on careful implementation and tuning.",
       "hashtags": [
-        "#ContextualBandit",
-        "#WorkflowOptimization",
-        "#LLMAgents",
-        "#MathematicalReasoning",
-        "#AIGraphSearch"
+        "#LLMDistillation",
+        "#SelfDistillation",
+        "#BilevelOptimization",
+        "#MathReasoning",
+        "#TokenSelection"
       ],
-      "paper_id": "2026-10-04-arxiv-fusion_is_the_new_mutation_bandit_guided_evolution_on_workflow_graphs",
-      "paper_title": "Fusion is the New Mutation: Bandit-Guided Evolution on Workflow Graphs",
-      "paper_date": "2026-10-04",
+      "paper_id": "2026-10-05-arxiv-learning_what_to_distill_bilevel_top_k_token_selection_for_self_distillation_in_large_lang",
+      "paper_title": "Learning What to Distill: Bilevel Top-K Token Selection for Self-Distillation in Large Language Models",
+      "paper_date": "2026-10-05",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-06T18:46:22",
+      "generated_at": "2026-10-07T19:12:36",
       "generator": "openai"
     }
   },
@@ -283,43 +541,43 @@
         "url": "https://arxiv.org/pdf/2610.05613v1"
       }
     ],
-    "score": 80,
+    "score": 75,
     "infographic": {
-      "key_insight": "The paper shows that LLM benchmark scores can be made more reliable by jointly modeling multiple domains with representation multi-task learning and item response theory.",
-      "engineering_relevance": "It offers a principled scoring framework for leaderboards, helping engineers compare models across heterogeneous tasks with less noisy domain-specific and overall evaluations.",
+      "key_insight": "The paper turns LLM benchmarking into a multi-task statistical estimation problem, using cross-domain information to improve both domain-specific and overall scores.",
+      "engineering_relevance": "It offers a more rigorous way to compare and rank LLMs across mixed benchmark suites, which is useful for leaderboard design and model selection in practice.",
       "method": [
-        "Model overall and domain-specific latent LLM traits with an Item Response Theory model.",
-        "Use representation Multi-task Learning to share information across benchmark domains.",
-        "Derive a computationally efficient estimator with provable minimax-optimality under asymptotic conditions."
+        "Model item-level benchmark responses with an Item Response Theory framework.",
+        "Use representation multi-task learning to share signal across domains while estimating latent LLM traits.",
+        "Derive an efficient estimator and prove minimax optimality under asymptotic settings."
       ],
-      "evidence_signal": "The method is evaluated on MMLU data from the Hugging Face Open LLM Leaderboard, spanning 4,272 LLMs, 13,232 items, and 56 subjects, with strong cross-domain dependence observed.",
-      "watch_item": "The estimator’s theoretical guarantees rely on specific asymptotic regimes, so practical performance may depend on benchmark coverage, domain balance, and response-data quality.",
+      "evidence_signal": "The approach is evaluated on MMLU leaderboard data covering 4,272 LLMs and 13,232 items across 56 subjects, with simulations showing improved performance over competing methods.",
+      "watch_item": "The strongest guarantees rely on asymptotic assumptions, so finite-sample behavior and benchmark shift may affect real-world reliability.",
       "hashtags": [
         "#LLMEvaluation",
         "#ItemResponseTheory",
         "#MultiTaskLearning",
         "#Benchmarking",
-        "#MathematicalReasoning"
+        "#MathAI"
       ],
       "paper_id": "2026-10-04-arxiv-llm_benchmarking_via_representation_multi_task_learning",
       "paper_title": "LLM Benchmarking via Representation Multi-task Learning",
       "paper_date": "2026-10-04",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-06T18:46:24",
+      "generated_at": "2026-10-07T19:12:38",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-10-04-arxiv-mesh_harness_self_improving_agent_harnesses_via_bandit_guided_compositional_evolution",
-    "arxiv_id": "2610.05300v1",
-    "date": "2026-10-04",
-    "title": "MESH-Harness: Self-Improving Agent Harnesses via Bandit-Guided Compositional Evolution",
-    "authors": "Zhiwei Shang, Yu Huo, Mingrong Gong, An Yan, Zikun Qu, Junhao Dong",
-    "abstract": "An agent harness is the code that organizes context, maintains state, and coordinates tool calls for a language model. We study how to improve the harness under a limited evaluation budget while keeping model weights fixed. Our method, MESH-Harness, organizes each harness into functional modules with explicit role-specific interfaces, allowing alternative implementations of each module to be substituted and recombined. It uses shared module representations and full-covariance LinUCB to score candidate combinations based on predicted performance and exploration value. Mixed-start coordinate ascent selects complete configurations for evaluation without enumerating the combinatorial space. Validation traces then guide local code edits, and the resulting candidates are incorporated into fixed-capacity role-specific pools for subsequent recombination. On text tasks, retrieval-augmented mathematical reasoning, code generation, and interactive scientific tasks, MESH-Harness outperforms Meta-Harness by 5.70, 7.01, 2.00, and 5.00 points, respectively, under matched candidate-evaluation budgets. Iterative harness optimization improves MESH-Harness by 5.63-7.79 points over its first-round configurations. For the reported configurations, aggregate test-time cost is 44.2% lower than that of Meta-Harness, while total cost including search is 14.6% lower. These results show that combining module-level design reuse with feedback-driven compositional search can systematically improve agent harnesses while keeping overall optimization cost under control.",
+    "id": "2026-10-06-arxiv-worldsolver_can_llm_agents_simulate_the_physical_dynamics_via_solver_generation",
+    "arxiv_id": "2610.08720v1",
+    "date": "2026-10-06",
+    "title": "WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?",
+    "authors": "Siru Jiang, Yongzhe Lyu, Shuo Lu, Yubin Wang, Yuxiang Zhang, Yue Liao",
+    "abstract": "LLM-based agents are increasingly advancing scientific and engineering problem solving, with physics simulation emerging as a challenging yet practical testbed for reproducing complex physical phenomena with application in embodied AI, games and films. As the workhorse of such simulation, a solver computes how the state of a dynamic system evolves over time. Building such solvers requires physical understanding to identify appropriate models, mathematical reasoning to formulate the underlying dynamics, and software engineering to implement them as executable code, yet this capability of LLM agents remains underexplored. To this end, we introduce WorldSolver, a benchmark of 168 simulation tasks derived from physical phenomena in 61 classic computer graphics papers, spanning 7 physical domains. Each task contains a code scaffold that provides a fixed simulation environment for the scene, with the solver implementation left for the agent to complete. Specifically, we evaluate them along three dimensions: Execution Checks for successful execution, Visual Fidelity for reproducing the intended dynamic behavior in the rendered simulation, and Physical Plausibility for physics-grounded verification of the generated dynamics. Experiments on frontier agents reveal that producing executable solvers is difficult itself, and satisfying visual and physical correctness is even harder. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better than the other evaluated agents, yet achieve overall scores of only 48.7% and 46.7%, respectively. WorldSolver is an early step toward agentic solver generation, and we hope it helps drive progress toward agents that can faithfully simulate the dynamic physical world. Code is available at https://github.com/sirujiang/WorldSolver.",
     "category": "Mathematical Reasoning",
     "source": "arXiv",
-    "published": "2026-10-04T15:22:23Z",
-    "updated": "2026-10-04T15:22:23Z",
+    "published": "2026-10-06T17:26:26Z",
+    "updated": "2026-10-06T17:26:26Z",
     "primary_category": "cs.AI",
     "categories": [
       "cs.AI"
@@ -327,89 +585,347 @@
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05300v1"
+        "url": "https://arxiv.org/abs/2610.08720v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05300v1"
+        "url": "https://arxiv.org/pdf/2610.08720v1"
       }
     ],
-    "score": 75,
+    "score": 72,
     "infographic": {
-      "key_insight": "MESH-Harness improves fixed-language-model agent performance by evolving the harness itself through modular recombination, bandit-guided selection, and feedback-driven edits.",
-      "engineering_relevance": "The paper shows that agent control logic can be optimized as an engineering artifact under tight evaluation budgets, reducing both search cost and test-time cost without changing model weights.",
+      "key_insight": "WorldSolver shows that LLM agents can sometimes generate physical simulation solvers, but achieving executable, visually accurate, and physically plausible dynamics remains very challenging.",
+      "engineering_relevance": "The benchmark targets a practical gap in scientific and graphics software: using LLM agents to automatically implement simulation code for dynamic physical systems.",
       "method": [
-        "Break the harness into role-specific modules with swappable implementations.",
-        "Score candidate module combinations with shared representations and full-covariance LinUCB.",
-        "Use mixed-start coordinate ascent plus validation-trace-guided local edits, then recycle strong modules into fixed-capacity pools."
+        "Built 168 simulation tasks from 61 classic computer graphics papers across 7 physical domains",
+        "Each task includes a fixed code scaffold; the agent must complete the solver implementation",
+        "Evaluated outputs on execution success, visual fidelity, and physical plausibility"
       ],
-      "evidence_signal": "Across text, mathematical reasoning, code generation, and interactive scientific tasks, MESH-Harness beats Meta-Harness by 2.00 to 7.01 points under matched evaluation budgets, with 44.2% lower aggregate test-time cost and 14.6% lower total cost including search.",
-      "watch_item": "The approach depends on careful module decomposition and pool management, so gains may be sensitive to how well the harness is factored and how representative the validation traces are.",
+      "evidence_signal": "Across frontier agents, GPT-5.6-Sol and Claude-Opus-5 were the strongest, but their overall scores were still only 48.7% and 46.7%, showing solver generation is far from solved.",
+      "watch_item": "A solver that executes correctly may still produce unrealistic or physically incorrect dynamics, so visual and physics-based checks are necessary.",
       "hashtags": [
-        "#AgentHarness",
-        "#BanditLearning",
-        "#CompositionalSearch",
-        "#LLMSystems",
+        "#LLMAgents",
+        "#PhysicsSimulation",
+        "#WorldSolver",
+        "#ComputerGraphics",
         "#MathematicalReasoning"
       ],
-      "paper_id": "2026-10-04-arxiv-mesh_harness_self_improving_agent_harnesses_via_bandit_guided_compositional_evolution",
-      "paper_title": "MESH-Harness: Self-Improving Agent Harnesses via Bandit-Guided Compositional Evolution",
-      "paper_date": "2026-10-04",
+      "paper_id": "2026-10-06-arxiv-worldsolver_can_llm_agents_simulate_the_physical_dynamics_via_solver_generation",
+      "paper_title": "WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?",
+      "paper_date": "2026-10-06",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-06T18:46:27",
+      "generated_at": "2026-10-07T19:12:40",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-10-04-arxiv-hamiltonian_metric_learning_and_energy_based_training_a_dissipative_geometric_framework_fo",
-    "arxiv_id": "2610.04969v1",
-    "date": "2026-10-04",
-    "title": "Hamiltonian Metric Learning and Energy-Based Training: A Dissipative Geometric Framework for Optimization",
-    "authors": "Sparsho Chakraborty, Mohammad Alamgir, Nishanth M, Akshit Nanda, Ram Prasad Padhy, Sayan Mukherjee",
-    "abstract": "Optimization in machine learning is usually expressed through iterative rules that update model parameters using information from the loss landscape. In this work, we study an alternative viewpoint in which parameter optimization is treated as the evolution of a dissipative dynamical system. The model parameters are regarded as generalized coordinates, the loss acts as a potential energy, and a positive-definite metric defines the local kinetic geometry of parameter space. Starting from a variational formulation, we derive the corresponding Hamiltonian dynamics, the geometric force generated by a position-dependent metric, and a metric-compatible Rayleigh dissipation law. The resulting continuous system satisfies a monotonic energy-dissipation relation, while its discrete form allows the influence of curvature on the optimization trajectory to be studied directly. We illustrate the framework using a controlled CIFAR-10 image-reconstruction problem for which the optimum is known analytically. With the image Hessian used as the metric, the curvature dependence of the quadratic modal dynamics is removed. We then reparameterize the same image as a matrix product state, producing a genuinely position-dependent metric and a nonzero geometric force. Poincaré return maps provide a complementary phase-space view of the resulting contraction dynamics. These examples establish HAMLET as a geometric, energy-based framework for studying optimization as dissipative motion in parameter space. On a five-seed MNIST MLP benchmark, HAMLET attains the highest mean test accuracy (97.95\\%) and the lowest mean test negative log-likelihood (0.0696) among the three evaluated optimizers.",
-    "category": "Optimization and PDEs",
+    "id": "2026-10-06-arxiv-enhancing_diffusion_language_models_with_autoregressive_post_training_weights",
+    "arxiv_id": "2610.08108v1",
+    "date": "2026-10-06",
+    "title": "Enhancing Diffusion Language Models with Autoregressive Post-Training Weights",
+    "authors": "Yiming Qin, Ke Wang, Amel Abdelraheem, Adam Hazimeh, Pascal Frossard",
+    "abstract": "Diffusion language models (dLLMs) have emerged as a promising alternative to autoregressive (AR) language models, offering flexible token-update orders and parallel decoding. Recent dLLMs are often initialized from pretrained AR models before diffusion conversion in order to inherit their learned representations. After the conversion, however, they typically ignore the extensive post-training ecosystem of their AR ancestors. In this work, we show that these existing AR post-training weight updates can instead be effectively recycled to enhance diffusion models. Despite the changes by AR-to-diffusion conversion, directly adding an AR post-training weight update to a diffusion base model remains effective, bringing its performance close to that achieved by direct diffusion post-training. Notably, AR and diffusion post-training updates are nearly orthogonal in weight space, yet induce substantially more aligned representation changes in the diffusion model. Their distinct updates are also complementary: composing their weights can retain gains from both regimes and further improve the post-trained diffusion model. Based on these findings, we propose A2D, a simple training-free framework for enhancing diffusion models with existing AR post-training resources. A2D can transfer capabilities from AR post-trained models to diffusion base models, and further improve already post-trained diffusion models by composing AR and diffusion post-training updates. Across various dLLMs, including Dream, DreamReasoner, DiffuCoder, Dream-Coder, Nemotron-Labs-Diffusion, and DiffusionGemma, A2D reliably improves instruction following, mathematical reasoning, and coding with both supervised fine-tuning and reinforcement learning updates, without additional training, or inference-time computation.",
+    "category": "Mathematical Reasoning",
     "source": "arXiv",
-    "published": "2026-10-04T05:33:45Z",
-    "updated": "2026-10-04T05:33:45Z",
+    "published": "2026-10-06T10:31:54Z",
+    "updated": "2026-10-06T10:31:54Z",
     "primary_category": "cs.LG",
     "categories": [
-      "cs.LG",
-      "math.OC",
-      "quant-ph"
+      "cs.LG"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.04969v1"
+        "url": "https://arxiv.org/abs/2610.08108v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.04969v1"
+        "url": "https://arxiv.org/pdf/2610.08108v1"
       }
     ],
-    "score": 75,
+    "score": 72,
     "infographic": {
-      "key_insight": "HAMLET reframes optimization as dissipative Hamiltonian motion, where loss is potential energy, geometry comes from a metric, and training follows energy-dissipating dynamics.",
-      "engineering_relevance": "This geometric view can improve optimizer design by exposing how curvature, dissipation, and parameterization affect convergence and stability in practical ML training.",
+      "key_insight": "AR post-training weight updates can be reused to improve diffusion language models, and combining AR and diffusion updates can further boost performance.",
+      "engineering_relevance": "A2D offers a training-free way to transfer existing post-training gains into diffusion LLMs, reducing retraining cost while improving instruction following, reasoning, and coding.",
       "method": [
-        "Formulate optimization as a variational Hamiltonian system with a positive-definite metric on parameter space.",
-        "Add metric-compatible Rayleigh dissipation to obtain monotonic energy decay during training.",
-        "Compare dynamics on a controlled CIFAR-10 reconstruction problem using an image Hessian metric and an MPS reparameterization to reveal geometric forces and contraction behavior."
+        "Add AR post-training weights directly to a diffusion base model after AR-to-diffusion conversion.",
+        "Compose AR and diffusion post-training weights to retain benefits from both update types.",
+        "Apply the same framework across supervised fine-tuning and reinforcement learning updates with no extra inference-time compute."
       ],
-      "evidence_signal": "In a five-seed MNIST MLP benchmark, HAMLET achieved the highest mean test accuracy (97.95%) and the lowest mean test negative log-likelihood (0.0696) among the three evaluated optimizers.",
-      "watch_item": "The framework depends on choosing or estimating a suitable metric, and position-dependent metrics may add computational and implementation complexity.",
+      "evidence_signal": "The abstract reports consistent gains across multiple dLLMs, including Dream, DreamReasoner, DiffuCoder, Dream-Coder, Nemotron-Labs-Diffusion, and DiffusionGemma, on instruction following, mathematical reasoning, and coding.",
+      "watch_item": "Weight composition may depend on how well the AR and diffusion checkpoints are aligned, so practical transfer quality could vary across model families and training setups.",
+      "hashtags": [
+        "#DiffusionLLM",
+        "#AutoregressiveModels",
+        "#PostTraining",
+        "#ModelTransfer",
+        "#MathematicalReasoning"
+      ],
+      "paper_id": "2026-10-06-arxiv-enhancing_diffusion_language_models_with_autoregressive_post_training_weights",
+      "paper_title": "Enhancing Diffusion Language Models with Autoregressive Post-Training Weights",
+      "paper_date": "2026-10-06",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-07T19:12:42",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-05-arxiv-minimal_witness_reinforcement_learning",
+    "arxiv_id": "2610.07226v1",
+    "date": "2026-10-05",
+    "title": "Minimal Witness Reinforcement Learning",
+    "authors": "T. Y. Tsui, Zihao Ye, Pengxiang Cai, Yanchao Li, Yuqiang Li, Zhehong Ai",
+    "abstract": "``What are the irreducible conditions that are sufficient to produce an outcome?'' is one of the most common questions that recur across computation and science. Its answers, the minimal sufficient witnesses, are what we mean by explanations, mechanisms and reasons. These problems usually ask for multiple minimal witnesses, yet standard RL methods may reveal only one solution or redundant ones. We formalize this problem as minimal-witness identification and introduce Minimal-Witness Reinforcement Learning (MWRL). MWRL takes the union of the sets certified by successful proposals sampled from the policy and credits each proposal for the coverage the group union would lose without that proposal. This credit assignment, derived directly from the problem definition, unifies the demands for minimality and recovery of alternatives from a single black-box verifier bit. Under this principle, we derive a value iteration planner that recovers the entire family of witnesses and a policy gradient method that can scale to large language models. Across different experimental settings, MWRL recovers most minimal witnesses, while other methods return redundant supersets or a single witness. By making witness families learnable from verifier feedback, MWRL expands the scope of reinforcement learning beyond single-solution optimization. Our code is available at https://github.com/TSUITUENYUE/MWRL.",
+    "category": "Theorem Proving",
+    "source": "arXiv",
+    "published": "2026-10-05T18:34:49Z",
+    "updated": "2026-10-05T18:34:49Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL",
+      "cs.LO"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07226v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07226v1"
+      }
+    ],
+    "score": 72,
+    "infographic": {
+      "key_insight": "Minimal-Witness Reinforcement Learning (MWRL) learns not just one valid solution, but the full family of minimal sufficient witnesses by assigning credit based on each proposal’s unique contribution to the union of successful outcomes.",
+      "engineering_relevance": "This matters for theorem proving and other verifier-driven systems because it can reduce redundant solutions and recover diverse minimal proofs or explanations from only binary verifier feedback.",
+      "method": [
+        "Treats minimal-witness search as a reinforcement learning problem over verifier-accepted proposals",
+        "Credits each proposal by how much coverage the group union would lose without it",
+        "Provides both a value-iteration planner for exhaustive witness recovery and a policy-gradient variant scalable to large language models"
+      ],
+      "evidence_signal": "The abstract reports experiments across multiple settings where MWRL recovers most minimal witnesses, while baselines often produce redundant supersets or only a single witness.",
+      "watch_item": "Performance depends on the quality and sparsity of verifier feedback, and the approach may still miss some witnesses when the search space is large or proposals are poorly explored.",
+      "hashtags": [
+        "#TheoremProving",
+        "#ReinforcementLearning",
+        "#LLM",
+        "#ProgramSynthesis",
+        "#FormalMethods"
+      ],
+      "paper_id": "2026-10-05-arxiv-minimal_witness_reinforcement_learning",
+      "paper_title": "Minimal Witness Reinforcement Learning",
+      "paper_date": "2026-10-05",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-10-07T19:12:44",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-05-arxiv-optimization_by_reparametrization_time_warped_mirror_flows_with_singular_geometry",
+    "arxiv_id": "2610.07040v1",
+    "date": "2026-10-05",
+    "title": "Optimization by Reparametrization: Time-Warped Mirror Flows with Singular Geometry",
+    "authors": "Cristian Vega, Cesare Molinari, Lorenzo Rosasco, Silvia Villa",
+    "abstract": "Solving data-driven problems requires defining complex models and fitting them to data, neural networks being a motivating example. The fitting procedure can be seen as an optimization problem, which is often non-convex, and hence optimization guarantees are hard to derive. An opportunity is provided by viewing the model of interest as a redundant reparameterization--an overparameterization--of some simpler model for which optimization results are easier to achieve. In this paper, after formalizing the above idea, we revisit some recent results and derive new ones. In particular, we consider the gradient flow of some classes of linear overparameterizations and show that they correspond to suitable mirror flows on the original parameters. Our main contribution relates to the study of the latter, for which we establish well-posedness and convergence. Several specific instances are provided, including fully connected linear networks and networks with weight normalization. The results yield insight into the role of overparameterization in optimization and corresponding implicit regularization properties.",
+    "category": "Theorem Proving",
+    "source": "arXiv",
+    "published": "2026-10-05T00:06:49Z",
+    "updated": "2026-10-05T00:06:49Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07040v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07040v1"
+      }
+    ],
+    "score": 72,
+    "infographic": {
+      "key_insight": "Redundant reparameterizations can turn difficult optimization dynamics into well-posed mirror flows on the original variables, revealing why overparameterization can improve convergence behavior.",
+      "engineering_relevance": "For training overparameterized models such as linear networks and weight-normalized networks, the result gives a principled way to analyze stability, convergence, and implicit regularization.",
+      "method": [
+        "Formalize linear overparameterizations as a change of variables for optimization.",
+        "Show that gradient flow in the overparameterized space induces mirror flow in the original parameters.",
+        "Prove well-posedness and convergence for these mirror flows, with examples including fully connected linear networks and weight normalization."
+      ],
+      "evidence_signal": "The paper is theoretical and derives convergence and well-posedness results from analysis of gradient/mirror flows rather than from empirical experiments.",
+      "watch_item": "The guarantees are for specific classes of linear overparameterizations and continuous-time flow analysis, so direct transfer to discrete training of nonlinear deep networks may require extra care.",
       "hashtags": [
         "#Optimization",
-        "#HamiltonianDynamics",
-        "#GeometricMachineLearning",
-        "#EnergyBasedModels",
-        "#DeepLearning"
+        "#Overparameterization",
+        "#MirrorDescent",
+        "#GradientFlow",
+        "#TheoremProving"
       ],
-      "paper_id": "2026-10-04-arxiv-hamiltonian_metric_learning_and_energy_based_training_a_dissipative_geometric_framework_fo",
-      "paper_title": "Hamiltonian Metric Learning and Energy-Based Training: A Dissipative Geometric Framework for Optimization",
-      "paper_date": "2026-10-04",
-      "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-06T18:46:30",
+      "paper_id": "2026-10-05-arxiv-optimization_by_reparametrization_time_warped_mirror_flows_with_singular_geometry",
+      "paper_title": "Optimization by Reparametrization: Time-Warped Mirror Flows with Singular Geometry",
+      "paper_date": "2026-10-05",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-10-07T19:12:46",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-wasd_wasserstein_based_knowledge_distillation_for_large_language_models",
+    "arxiv_id": "2610.07706v1",
+    "date": "2026-10-06",
+    "title": "WASD: Wasserstein-based Knowledge Distillation for Large Language Models",
+    "authors": "Byeonghu Na, Donghyeok Shin, Yeongmin Kim, Mina Kang, Il-Chul Moon",
+    "abstract": "Autoregressive large language models (LLMs) have rapidly advanced in capability, but their increasing scale comes with substantial computational and memory costs at inference time. Knowledge distillation (KD) offers a practical solution by transferring knowledge from a large teacher model to a smaller student model via alignment of discrete probability distributions. However, existing KD methods for LLMs primarily rely on divergences that evaluate discrepancies through probability values at each vocabulary index, without explicitly leveraging token-level semantic information. We propose Wasserstein-based knowledge distillation (WASD) for LLMs, which incorporates token-level semantic information via the Wasserstein-based distance with a cost matrix derived from token embeddings. To ensure computational tractability, we adopt the Sinkhorn divergence and derive a gradient-equivalent objective that can be efficiently optimized without introducing additional networks. Experiments across multiple LLM families and scales show that WASD consistently improves distillation performance on diverse tasks, including instruction following, mathematical reasoning, and code generation. Our results highlight the importance of semantic information encoded in the token space for effective distribution alignment in LLM distillation. The implementation is publicly available at https://github.com/aailab-kaist/WASD .",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-06T03:58:54Z",
+    "updated": "2026-10-06T03:58:54Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07706v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07706v1"
+      }
+    ],
+    "score": 71,
+    "infographic": {
+      "key_insight": "WASD improves knowledge distillation for LLMs by aligning teacher and student distributions with a Wasserstein distance that uses token embedding semantics instead of only vocabulary-index probabilities.",
+      "engineering_relevance": "This offers a more semantically informed and computationally tractable distillation objective for building smaller, cheaper LLMs without adding extra networks.",
+      "method": [
+        "Use a cost matrix derived from token embeddings to measure semantic distance between vocabulary tokens.",
+        "Optimize a Sinkhorn-divergence-based objective for tractable Wasserstein distillation.",
+        "Derive a gradient-equivalent formulation so the loss can be trained efficiently during LLM distillation."
+      ],
+      "evidence_signal": "Across multiple LLM families and scales, the method reportedly improves distillation performance on instruction following, mathematical reasoning, and code generation tasks.",
+      "watch_item": "Performance depends on the quality of token embeddings and the efficiency/stability of Sinkhorn optimization, which may add implementation sensitivity at scale.",
+      "hashtags": [
+        "#KnowledgeDistillation",
+        "#WassersteinDistance",
+        "#LargeLanguageModels",
+        "#SinkhornDivergence",
+        "#MathematicalReasoning"
+      ],
+      "paper_id": "2026-10-06-arxiv-wasd_wasserstein_based_knowledge_distillation_for_large_language_models",
+      "paper_title": "WASD: Wasserstein-based Knowledge Distillation for Large Language Models",
+      "paper_date": "2026-10-06",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-07T19:12:48",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-plados_a_parameter_free_landing_algorithm_for_decentralized_optimization_on_the_stiefel_ma",
+    "arxiv_id": "2610.07750v1",
+    "date": "2026-10-06",
+    "title": "PLADOS: A Parameter-free Landing Algorithm for Decentralized Optimization on the Stiefel Manifold",
+    "authors": "Shu Li, Jiang Hu",
+    "abstract": "Decentralized optimization on the Stiefel manifold has broad applications in machine learning and signal processing. We propose PLADOS, a parameter-free landing algorithm for decentralized optimization on the Stiefel manifold. Each iteration combines local stochastic gradient updates with a single retraction-free communication step over the communication graph. A key convex-like property of the intersection of the nonconvex Stiefel manifold and consensus constraints is characterized through a restricted secant inequality for the penalty-only scheme, ensuring local contraction of the manifold consensus error without introducing additional parameters that require tuning. For $n$ nodes using independent local batches of size $b$, we prove that PLADOS achieves linear speedup with respect to the number of nodes with an asymptotic convergence rate of $O(σ/\\sqrt{nbK}+(nξ^2)^{1/3}/K^{2/3})$ after $K$ iterations, where $σ^2>0$ is the sampling variance and $ξ^2$ quantifies gradient heterogeneity. Experiments demonstrate stability across tested stepsizes and networks, time efficiency, and linear speedup with respect to the number of nodes.",
+    "category": "Geometry and Topology",
+    "source": "arXiv",
+    "published": "2026-10-06T04:49:00Z",
+    "updated": "2026-10-06T04:49:00Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07750v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07750v1"
+      }
+    ],
+    "score": 69,
+    "infographic": {
+      "key_insight": "PLADOS enables decentralized optimization on the Stiefel manifold with a parameter-free, retraction-free landing scheme that achieves stable consensus and linear speedup.",
+      "engineering_relevance": "It offers a practical distributed optimization method for machine learning and signal processing settings where orthogonality-constrained models must be trained across networks.",
+      "method": [
+        "Local stochastic gradient updates on each node",
+        "Single communication step per iteration, without retraction",
+        "Penalty-only consensus mechanism with a restricted secant inequality to ensure local contraction"
+      ],
+      "evidence_signal": "The abstract reports an asymptotic convergence rate of O(σ/√(nbK) + (nξ²)^(1/3)/K^(2/3)) and experiments showing stability across stepsizes and networks, time efficiency, and linear speedup.",
+      "watch_item": "The guarantees are asymptotic and rely on local contraction assumptions, so performance may depend on problem structure, heterogeneity, and network conditions.",
+      "hashtags": [
+        "#StiefelManifold",
+        "#DecentralizedOptimization",
+        "#DistributedML",
+        "#ManifoldOptimization",
+        "#LinearSpeedup"
+      ],
+      "paper_id": "2026-10-06-arxiv-plados_a_parameter_free_landing_algorithm_for_decentralized_optimization_on_the_stiefel_ma",
+      "paper_title": "PLADOS: A Parameter-free Landing Algorithm for Decentralized Optimization on the Stiefel Manifold",
+      "paper_date": "2026-10-06",
+      "paper_category": "Geometry and Topology",
+      "generated_at": "2026-10-07T19:12:50",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-05-arxiv-an_overview_of_machine_learning_enhanced_iterative_methods_for_systems_of_linear_and_nonli",
+    "arxiv_id": "2610.07211v1",
+    "date": "2026-10-05",
+    "title": "An overview of machine learning-enhanced iterative methods for systems of linear and nonlinear equations",
+    "authors": "Yuhuang Meng, Jing Zhao, Alexander Heinlein",
+    "abstract": "Systems of equations arise in a wide range of scientific and engineering applications. The present work focuses on solvers for general systems of equations, including but not limited to those arising from partial differential equations. These systems can be broadly categorized into linear and nonlinear problems. For large linear systems, iterative solvers are generally preferred over direct methods due to the latter's superlinear growth of computational costs. Although convergence theory is well-developed under certain assumptions on the coefficient matrix, many classes of systems still pose open challenges. These difficulties become even more severe for systems of nonlinear equations, where nonlinear solvers typically rely on repeated linearization. For example, Newton's method may even converge quadratically near the solution; it can also converge slowly or diverge when the initial guess is not chosen appropriately. A wide range of solvers with diverse variants and hyperparameter settings exists, and the development of efficient and robust iterative methods remains an active area of research. Recently, machine learning (ML) techniques have been applied to enhance the efficiency of classical iterative methods while preserving their interpretability and reliability. We refer to these ML-enhanced iterative methods as hybrid iterative methods, in the sense that they combine classical iterative methods with ML. This paper provides a comprehensive overview of state-of-the-art approaches to constructing hybrid iterative methods for systems of both linear and nonlinear equations, while also discussing open challenges and outlining potential directions for future research.",
+    "category": "Symbolic Computation",
+    "source": "arXiv",
+    "published": "2026-10-05T18:25:32Z",
+    "updated": "2026-10-05T18:25:32Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07211v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07211v1"
+      }
+    ],
+    "score": 69,
+    "infographic": {
+      "key_insight": "The paper argues that machine learning can augment classical iterative solvers for linear and nonlinear systems, improving efficiency while retaining the interpretability and reliability of traditional methods.",
+      "engineering_relevance": "Hybrid iterative methods could make large-scale scientific and engineering simulations faster and more robust, especially where direct solvers are too costly and nonlinear convergence is challenging.",
+      "method": [
+        "Combine classical iterative solvers with machine learning components",
+        "Use ML to tune hyperparameters, guide updates, or improve convergence behavior",
+        "Focus on both linear systems and nonlinear methods such as Newton-type solvers"
+      ],
+      "evidence_signal": "This is an overview paper, so the evidence comes from surveying state-of-the-art methods rather than reporting a single benchmark or dataset.",
+      "watch_item": "Hybrid methods may be sensitive to problem class and training/validation conditions, so gains may not transfer reliably across different systems or initial guesses.",
+      "hashtags": [
+        "#MachineLearning",
+        "#IterativeMethods",
+        "#ScientificComputing",
+        "#NonlinearSystems",
+        "#HybridAlgorithms"
+      ],
+      "paper_id": "2026-10-05-arxiv-an_overview_of_machine_learning_enhanced_iterative_methods_for_systems_of_linear_and_nonli",
+      "paper_title": "An overview of machine learning-enhanced iterative methods for systems of linear and nonlinear equations",
+      "paper_date": "2026-10-05",
+      "paper_category": "Symbolic Computation",
+      "generated_at": "2026-10-07T19:12:54",
       "generator": "openai"
     }
   },
@@ -439,604 +955,81 @@
         "url": "https://arxiv.org/pdf/2610.05767v1"
       }
     ],
-    "score": 74,
+    "score": 69,
     "infographic": {
-      "key_insight": "The paper builds globally reliable and efficient computable error estimators for parametric monotone nonlinear PDEs, and shows they can be used directly as loss functions for neural approximations.",
-      "engineering_relevance": "This enables physics-informed training with mathematically certified error control for parameterized nonlinear PDE solvers in engineering workflows.",
+      "key_insight": "The paper builds globally reliable, computable error estimators for monotone parametric nonlinear PDEs that can also be used directly as loss functions for neural network surrogates.",
+      "engineering_relevance": "It enables certified training and assessment of physics-informed or operator-learning models by tying the loss value to the true solution error with explicit two-sided bounds.",
       "method": [
         "Split the nonlinear operator into a linear residual plus a strongly monotone closure term.",
-        "Estimate the linear part with a discrete dual norm and replace the intractable closure norm by a computable surrogate satisfying pairing and Lipschitz bounds.",
-        "Prove two-sided global error bounds for first-order system least-squares and discontinuous Petrov-Galerkin formulations."
+        "Approximate the closure’s dual norm with a computable surrogate satisfying pairing and Lipschitz bounds.",
+        "Instantiate the framework for first-order system least-squares and discontinuous Petrov-Galerkin formulations."
       ],
-      "evidence_signal": "The abstract reports theorem-level results with explicit constants, verified assumptions for a model flux class, and applicability to arbitrary trial inputs, not just near the exact solution.",
-      "watch_item": "The surrogate closure norm and all constants depend on the parameter range and must be implemented carefully to preserve the certified bounds.",
+      "evidence_signal": "The abstract reports theoretical two-sided global bounds, verified assumptions for a model class of nonlinear fluxes, and explicit constants tracked over the parameter range.",
+      "watch_item": "The approach depends on monotonicity and on constructing a surrogate dual norm that meets the required bounds, which may be nontrivial for more general nonlinearities or trial norms stronger than L2.",
       "hashtags": [
         "#PDEs",
         "#ErrorEstimation",
-        "#NeuralPDEs",
-        "#VariationalMethods",
+        "#NeuralNetworks",
+        "#OperatorLearning",
         "#ScientificComputing"
       ],
       "paper_id": "2026-10-05-arxiv-global_error_estimators_for_parametric_monotone_nonlinearities_and_neural_approximations",
       "paper_title": "Global error estimators for parametric monotone nonlinearities and neural approximations",
       "paper_date": "2026-10-05",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-06T18:46:33",
+      "generated_at": "2026-10-07T19:12:56",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-10-04-arxiv-aiprover_agentic_auto_formalization_of_mathematical_research_via_certificate_driven_evolvi",
-    "arxiv_id": "2610.05367v1",
-    "date": "2026-10-04",
-    "title": "AIProver: Agentic Auto-Formalization of Mathematical Research via Certificate-Driven Evolving Harness",
-    "authors": "Prithwish Jana, Viet Bach Hoang, Logan Luna, Viresh Pati, Akash Singirikonda, Cy Xie",
-    "abstract": "Proof auto-formalization translates natural-language (NL) theorems and proofs into a formal language (FL) such as Lean, enabling mechanical verification. Despite rapid progress, research-level proofs often depend on concepts missing from leading proof assistant libraries (e.g., Lean's Mathlib), and successful compilation does not guarantee that a translation preserves the theorem's meaning or the proof's reasoning. Furthermore, aligned NL-FL training data are scarce, and leading agents often rely on costly frontier models and manually engineered harnesses. To address the above issues, we present AIProver, an agentic framework for autonomous proof auto-formalization and proof synthesis (AFPS) that jointly post-trains a 119B open-weight language model and evolves its agentic, tool-calling harness with HarnessEvolve. Verifiers assess type correctness, proof completeness, and semantic correctness, returning rewards and diagnostic certificates that drive model fine-tuning and alternating reinforcement learning via symbolic feedback and HarnessEvolve, a certificate-driven evolutionary search over the whole harness control flow that re-tailors the harness to the updated model. For research-level training and evaluation, we introduce LoCoBench, 58.9k instances from Mathlib, CSLib, Mizar Math Library, and a bounded-arithmetic textbook, with a 771-instance validation split whose theorem-proof pairs have no public Lean formalization. Against 39 frameworks spanning AFPS agents, frontier LLMs, and coding agents, AIProver lifts pass@4 semantic correctness over its Leanstral-1.5 base from 15.7% to 36.7% and outperforms every other open-weight system and Aristotle. As a Claude Code and Codex skill, it lifts their semantic correctness from 41.9% and 34.1% to 79.8% and 62.4%, respectively. Further, it is also 24% cheaper than Numina-Lean-Agent, pushing the accuracy-cost frontier of research-level AFPS.",
+    "id": "2026-10-06-arxiv-mathematical_proof_assistants_for_teaching_logic_the_logikey_methodology",
+    "arxiv_id": "2610.08214v1",
+    "date": "2026-10-06",
+    "title": "Mathematical Proof Assistants for Teaching Logic: The LogiKEy Methodology",
+    "authors": "Christoph Benzmüller, David Fuenmayor, Luca Pasetto",
+    "abstract": "We report on an approach to teaching logic to mixed groups of computer science, mathematics, and philosophy students, based on the logico-pluralistic LogiKEy methodology, used for more than a decade in courses, summer schools, and tutorials. LogiKEy uses classical higher-order logic (HOL) as a universal metalogic in which object logics, classical and non-classical alike, are encoded by defining their semantics; through these semantical embeddings a single proof assistant (e.g. Isabelle/HOL), with its automated theorem provers and (counter-)model finders, becomes one environment in which students learn, experiment with, and compare logics. After making the pedagogical case for proof assistants in the logic classroom, we present a graded sequence of classroom examples, each transition motivated by a limitation of the preceding representation, by a need for more explicit modelling resources, or by a new application. A liars-and-truth-tellers puzzle leads from propositional to modal logic; the Wise Men puzzle leads on to dynamic epistemic logic; Boolos's curious inference illustrates what a higher-order meta-logic buys, even for automated proof search; Chisholm's paradox takes the sequence into deontic logic, and from standard to dyadic deontic logic; and Gödel's ontological argument brings it to a research-level metaphysical argument. We then rebut the objection that embedding everything in classical HOL is monism rather than pluralism, reflect on three years of teaching such a course, and sketch the portability of the approach beyond Isabelle.",
     "category": "Theorem Proving",
     "source": "arXiv",
-    "published": "2026-10-04T16:48:12Z",
-    "updated": "2026-10-04T16:48:12Z",
-    "primary_category": "cs.LO",
+    "published": "2026-10-06T12:07:39Z",
+    "updated": "2026-10-06T12:07:39Z",
+    "primary_category": "cs.AI",
     "categories": [
-      "cs.LO",
       "cs.AI",
-      "cs.LG"
+      "cs.LO"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05367v1"
+        "url": "https://arxiv.org/abs/2610.08214v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05367v1"
+        "url": "https://arxiv.org/pdf/2610.08214v1"
       }
     ],
-    "score": 73,
+    "score": 68,
     "infographic": {
-      "key_insight": "AIProver combines an evolving agentic harness with certificate-driven training to improve research-level theorem auto-formalization and proof synthesis beyond simple compilation.",
-      "engineering_relevance": "It shows that robust formal math automation needs both model adaptation and harness adaptation, not just a bigger language model or a fixed tool pipeline.",
+      "key_insight": "LogiKEy turns a single higher-order logic theorem prover into a classroom environment for comparing many object logics through semantic embeddings, making logic teaching interactive and pluralistic.",
+      "engineering_relevance": "For computational science education, the method shows how proof assistants can unify experimentation, automated proving, and countermodel checking across classical and non-classical logics.",
       "method": [
-        "Jointly post-trains a 119B open-weight model for natural-language to Lean formalization and proof synthesis.",
-        "Uses verifiers to check type correctness, proof completeness, and semantic correctness, producing diagnostic certificates.",
-        "Applies HarnessEvolve: evolutionary search over the agent/tool-control flow guided by certificate feedback."
+        "Use classical HOL as a universal metalogic.",
+        "Encode each target logic by defining its semantics inside HOL.",
+        "Teach via a staged set of puzzles and arguments that progressively expose modal, epistemic, deontic, and metaphysical logics."
       ],
-      "evidence_signal": "The paper introduces LoCoBench with 58.9k instances across multiple math sources and reports semantic correctness gains from 15.7% to 36.7% on the Leanstral-1.5 base, with stronger results when used as a skill in Claude Code and Codex.",
-      "watch_item": "Semantic correctness still depends on benchmark coverage and verifier quality, so unseen concepts or weak certificates could limit real-world reliability.",
+      "evidence_signal": "The abstract reports that the approach has been used for more than a decade in courses, summer schools, and tutorials, including a three-year teaching reflection.",
+      "watch_item": "The approach depends on carefully designed semantic embeddings, so portability and student accessibility may vary across proof assistants and logical formalisms.",
       "hashtags": [
         "#TheoremProving",
-        "#Lean",
-        "#FormalMethods",
-        "#LLMAgents",
-        "#SymbolicAI"
-      ],
-      "paper_id": "2026-10-04-arxiv-aiprover_agentic_auto_formalization_of_mathematical_research_via_certificate_driven_evolvi",
-      "paper_title": "AIProver: Agentic Auto-Formalization of Mathematical Research via Certificate-Driven Evolving Harness",
-      "paper_date": "2026-10-04",
-      "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-06T18:46:35",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-04-arxiv-curio_curiosity_driven_test_time_learning_for_open_ended_discovery",
-    "arxiv_id": "2610.04851v1",
-    "date": "2026-10-04",
-    "title": "CURIO: Curiosity-Driven Test-Time Learning for Open-Ended Discovery",
-    "authors": "Tao Feng, Fangxu Yu, Zijie Lei, Jiaru Zou, Changjiang Jiang, Yi Yan",
-    "abstract": "Open-ended discovery requires learning from repeated attempts while continuing to explore directions whose value is not yet apparent. Search with a frozen large language model (LLM) can reuse previous solutions in context, but cannot update the model from its successes and failures on the test problem. Reinforcement learning (RL) enables such adaptation; however, strongly favoring high-reward trajectories may suppress low-reward yet potentially promising directions too early. We introduce CURIO, a curiosity-driven test-time learning framework that complements task feedback with an Intrinsic Curiosity World Model (ICWM). The ICWM learns transitions in the policy's hidden-state representation and supplies prediction-error bonuses at sampled tokens outside the policy's top-k choices. Epoch normalization and an annealed weight regulate their contribution to the policy update. On six mathematical discovery tasks and single-cell denoising with Qwen3 backbones from 8B to 235B, three-run means improve over a matched task-only RL control on five mathematical objectives, match the best reported performance on Circle Packing, and improve denoising Score and mean squared error (MSE) on both held-out corpora at every tested scale. Relative gains reach 18.3% on Hadamard and 10.8% on denoising Score. Code-diversity measurements show greater structural variation among generated programs, supporting curiosity as a complementary exploration signal for learning in open-ended discovery.",
-    "category": "Number Theory and Algebra",
-    "source": "arXiv",
-    "published": "2026-10-04T01:30:47Z",
-    "updated": "2026-10-04T01:30:47Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "cs.CL"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.04851v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.04851v1"
-      }
-    ],
-    "score": 73,
-    "infographic": {
-      "key_insight": "CURIO augments test-time RL with intrinsic curiosity so an LLM can keep exploring promising but low-reward directions instead of over-committing to early high-reward paths.",
-      "engineering_relevance": "This offers a practical way to improve adaptive reasoning and discovery systems by balancing exploitation with exploration during inference-time learning.",
-      "method": [
-        "Add an Intrinsic Curiosity World Model (ICWM) that predicts transitions in the policy’s hidden-state space.",
-        "Use prediction-error bonuses for sampled tokens outside the policy’s top-k choices to encourage novel exploration.",
-        "Normalize bonuses by epoch and anneal their weight when updating the policy."
-      ],
-      "evidence_signal": "Across six math discovery tasks and single-cell denoising with Qwen3 backbones from 8B to 235B, CURIO outperforms a task-only RL control on most objectives, matches the best reported Circle Packing result, and improves denoising metrics at every tested scale.",
-      "watch_item": "Curiosity bonuses and top-k masking add tuning complexity, so the balance between exploration and task reward may be sensitive to hyperparameters and model scale.",
-      "hashtags": [
-        "#TestTimeLearning",
-        "#CuriosityDrivenRL",
-        "#LLMReasoning",
-        "#OpenEndedDiscovery",
-        "#MathAI"
-      ],
-      "paper_id": "2026-10-04-arxiv-curio_curiosity_driven_test_time_learning_for_open_ended_discovery",
-      "paper_title": "CURIO: Curiosity-Driven Test-Time Learning for Open-Ended Discovery",
-      "paper_date": "2026-10-04",
-      "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-06T18:46:38",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-05-arxiv-last_iterate_convergence_rate_of_normalized_gradient_descent_under_h_lder_smoothness",
-    "arxiv_id": "2610.06070v1",
-    "date": "2026-10-05",
-    "title": "Last-Iterate Convergence Rate of Normalized Gradient Descent under Hölder Smoothness",
-    "authors": "Yuki Takezawa, Eduard Gorbunov",
-    "abstract": "Normalized gradient descent is a widely studied adaptive optimization method. Most existing analyses focus on the best iterate or a weighted average of the iterates, whereas practical implementations typically return the last iterate. In this paper, we study the last-iterate convergence of normalized gradient descent for convex, $(ν,M_ν)$-Hölder-smooth objectives. For a constant stepsize, we establish an upper bound of $\\mathcal{O}\\bigl((\\log^2(T)/T)^{(1+ν)/2}\\bigr)$, which contains a logarithmic overhead relative to the known $\\mathcal{O}\\bigl(T^{-(1+ν)/2}\\bigr)$ guarantees for the best and weighted-average iterates. For $ν= 0$, this overhead is known to be unavoidable. We complement this analysis with numerical results based on the performance estimation problem (PEP), investigating the finite-horizon worst-case behavior in the smooth setting and whether the logarithmic overhead reflects an intrinsic limitation of constant-step normalized gradient descent. We then show that a linearly decreasing stepsize yields a last-iterate guarantee of $\\mathcal{O}\\bigl(T^{-(1+ν)/2}\\bigr)$, matching the order of the best-iterate/weighted-average guarantees without requiring knowledge of $ν$ and $M_ν$.",
-    "category": "Number Theory and Algebra",
-    "source": "arXiv",
-    "published": "2026-10-05T10:04:34Z",
-    "updated": "2026-10-05T10:04:34Z",
-    "primary_category": "math.OC",
-    "categories": [
-      "math.OC",
-      "cs.LG"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.06070v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.06070v1"
-      }
-    ],
-    "score": 72,
-    "infographic": {
-      "key_insight": "For normalized gradient descent on convex Hölder-smooth objectives, the last iterate converges more slowly than the best/averaged iterate under a constant stepsize, but a linearly decreasing stepsize removes the logarithmic gap.",
-      "engineering_relevance": "This gives a practical stepsize rule for optimization systems that report the final model iterate, especially when only weak smoothness assumptions are available.",
-      "method": [
-        "Analyze last-iterate convergence of normalized gradient descent for convex (ν,Mν)-Hölder-smooth objectives.",
-        "Prove a constant-stepsize bound of O((log^2(T)/T)^((1+ν)/2)) for the final iterate.",
-        "Show that a linearly decreasing stepsize achieves O(T^(-(1+ν)/2)) without needing ν or Mν."
-      ],
-      "evidence_signal": "The paper combines theory with finite-horizon worst-case numerical study via the performance estimation problem (PEP) to test whether the logarithmic overhead is intrinsic.",
-      "watch_item": "The improved rate uses a decreasing stepsize, so performance may depend on horizon-aware tuning and may be less convenient than a single fixed stepsize.",
-      "hashtags": [
-        "#Optimization",
-        "#GradientDescent",
-        "#HölderSmoothness",
-        "#LastIterate",
-        "#PEP"
-      ],
-      "paper_id": "2026-10-05-arxiv-last_iterate_convergence_rate_of_normalized_gradient_descent_under_h_lder_smoothness",
-      "paper_title": "Last-Iterate Convergence Rate of Normalized Gradient Descent under Hölder Smoothness",
-      "paper_date": "2026-10-05",
-      "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-06T18:46:41",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-05-arxiv-learning_to_solve_mixed_integer_nonlinear_programming_with_neural_networks_and_sequential",
-    "arxiv_id": "2610.05746v1",
-    "date": "2026-10-05",
-    "title": "Learning to Solve Mixed-Integer Nonlinear Programming with Neural Networks and Sequential Quadratic Programming Refinement",
-    "authors": "Viet-Anh Le, Rahul Mangharam",
-    "abstract": "We propose a learning-to-optimize framework for solving parametric mixed-integer nonlinear programs arising in model predictive control and trajectory optimization. The proposed method combines neural network prediction with a sequential quadratic programming (SQP) refinement layer. First, neural networks are trained using a combination of supervised and self-supervised losses to predict integer solutions together with compatible continuous warm starts. To account for prediction inaccuracies, the trained predictor generates multiple candidate integer solutions, each paired with a continuous initialization. The integer solutions are then fixed, and a differentiable SQP layer refines the associated continuous variables over a prescribed number of iterations. The SQP-layer parameters, including the curvature regularization and step size, are trained to improve both feasibility and objective value after every iteration. By separating integer prediction from continuous optimization-based refinement, the proposed framework improves robustness to imperfect neural predictions while maintaining a predictable computational budget. We demonstrate the proposed framework on contact and trajectory optimization for a planar box-pushing example.",
-    "category": "Optimization and PDEs",
-    "source": "arXiv",
-    "published": "2026-10-05T03:52:24Z",
-    "updated": "2026-10-05T03:52:24Z",
-    "primary_category": "math.OC",
-    "categories": [
-      "math.OC",
-      "eess.SY"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05746v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05746v1"
-      }
-    ],
-    "score": 70,
-    "infographic": {
-      "key_insight": "The paper combines neural integer prediction with differentiable SQP refinement to solve mixed-integer nonlinear programs more robustly than prediction alone.",
-      "engineering_relevance": "This is relevant for real-time model predictive control and trajectory optimization where a bounded compute budget and feasible solutions are critical.",
-      "method": [
-        "Train neural networks to predict integer decisions and compatible continuous warm starts using supervised and self-supervised losses.",
-        "Generate multiple candidate integer assignments to hedge against prediction errors.",
-        "Fix integers and apply a differentiable SQP layer for a fixed number of iterations, with learned step size and curvature regularization."
-      ],
-      "evidence_signal": "The abstract reports evaluation on contact and trajectory optimization for a planar box-pushing example, showing the approach is tested on a representative robotics control problem.",
-      "watch_item": "Performance may depend on the quality of candidate integer predictions, and the fixed-iteration SQP refinement can still struggle if the warm starts are far from feasible.",
-      "hashtags": [
-        "#MixedIntegerOptimization",
-        "#NeuralNetworks",
-        "#SequentialQuadraticProgramming",
-        "#ModelPredictiveControl",
-        "#TrajectoryOptimization"
-      ],
-      "paper_id": "2026-10-05-arxiv-learning_to_solve_mixed_integer_nonlinear_programming_with_neural_networks_and_sequential",
-      "paper_title": "Learning to Solve Mixed-Integer Nonlinear Programming with Neural Networks and Sequential Quadratic Programming Refinement",
-      "paper_date": "2026-10-05",
-      "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-06T18:46:43",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-03-arxiv-ceens_causality_enforced_evolutional_networks_for_solving_time_dependent_partial_different",
-    "arxiv_id": "2610.04405v1",
-    "date": "2026-10-03",
-    "title": "CEENs: Causality-enforced evolutional networks for solving time-dependent partial differential equations",
-    "authors": "Jeahan Jung, Heechang Kim, Hyomin Shin, Minseok Choi",
-    "abstract": "Despite the growing popularity of physics-informed neural networks (PINNs), their applicability in the long-time integration of partial differential equations (PDEs) remains constrained. We argue that this problem stems from the lack of consideration of temporal causality in the original PINN formulation, resulting in a bias towards satisfying governing equations at later times before learning the initial condition and hence leading to erroneous solutions. To this end, we propose a novel method that seamlessly integrates temporal causality into the training process. Drawing inspiration from classical numerical methods where the temporal causality is reflected, we divide the time domain into nonoverlapping subintervals, assign a unique neural network to each subinterval, and construct a loss function founded on the integral form of PDEs within these subintervals. The proposed networks undergo sequential training, beginning with the initial time step. Our method demonstrates significant improvement in accuracy for long-time simulations of various PDE problems where the original PINN method fails while it requires less computational cost and memory compared to the PINN method. A parallelization algorithm is provided to further enhance the computational efficiency, showing a significant speedup for solving time-dependent PDEs.",
-    "category": "Optimization and PDEs",
-    "source": "arXiv",
-    "published": "2026-10-03T09:51:16Z",
-    "updated": "2026-10-03T09:51:16Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.04405v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.04405v1"
-      }
-    ],
-    "score": 69,
-    "infographic": {
-      "key_insight": "CEENs improves long-time PDE solving by explicitly enforcing temporal causality during training, avoiding the late-time bias that can make standard PINNs fail.",
-      "engineering_relevance": "The method offers a more accurate and efficient neural solver for time-dependent PDEs, with potential value in simulation workflows that need stable long-horizon predictions.",
-      "method": [
-        "Split the time domain into nonoverlapping subintervals.",
-        "Assign one neural network to each subinterval and train them sequentially from the initial time.",
-        "Use an integral-form PDE loss on each subinterval to encode causality.",
-        "Provide a parallelization scheme to speed up training and inference."
-      ],
-      "evidence_signal": "The abstract reports significant accuracy gains on multiple long-time PDE problems where PINNs fail, along with lower computational cost and memory use.",
-      "watch_item": "Sequential subinterval training and network chaining may increase implementation complexity and require careful tuning to keep errors from propagating across time blocks.",
-      "hashtags": [
-        "#PINNs",
-        "#PDEs",
-        "#ScientificMachineLearning",
-        "#TimeDependentSimulation",
+        "#LogicEducation",
+        "#ProofAssistants",
+        "#HigherOrderLogic",
         "#ComputationalScience"
       ],
-      "paper_id": "2026-10-03-arxiv-ceens_causality_enforced_evolutional_networks_for_solving_time_dependent_partial_different",
-      "paper_title": "CEENs: Causality-enforced evolutional networks for solving time-dependent partial differential equations",
-      "paper_date": "2026-10-03",
-      "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-06T18:46:46",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-05-arxiv-adaptive_utilization_of_low_rank_adaptation_via_conditioned_gating",
-    "arxiv_id": "2610.05800v1",
-    "date": "2026-10-05",
-    "title": "Adaptive Utilization of Low-Rank Adaptation via Conditioned Gating",
-    "authors": "Guang Yang, Changhao Guan, Chao Huang, Yufeng Chen, Kaiyu Huang",
-    "abstract": "Low-Rank Adaptation (LoRA) achieves parameter-efficient fine-tuning by constraining model updates to a low-rank subspace and has been widely used in practice. However, LoRA typically employs a shared low-rank update across tokens, which limits its ability to fully exploit the adaptation subspace for tokens from different sequences. To address this issue, we propose an adaptive utilization of Low-Rank Adaptation (U-LoRA), which employs conditioned gating to explicitly learn effective token-level utilization of the limited low-rank adaptation subspace. Specifically, U-LoRA generates utilization coefficients along low-rank directions for each token and jointly coordinates and constrains them using sequence-level contextual information, thereby inducing more consistent adaptive patterns within a sentence. To further enhance training stability, we introduce a bias-corrected exponential moving average (EMA) historical prior that calibrates utilization signals across optimization steps, suppressing noise caused by batch-to-batch fluctuations. The effectiveness of our method arises from a better utilization of the existing low-rank subspace via input-conditioned strategies, rather than from expanding the subspace. Experiments on mathematical reasoning and natural language understanding benchmarks demonstrate that U-LoRA achieves competitive performance under comparable parameter budgets when with strong LoRA baselines and recent variants.",
-    "category": "Mathematical Reasoning",
-    "source": "arXiv",
-    "published": "2026-10-05T04:43:53Z",
-    "updated": "2026-10-05T04:43:53Z",
-    "primary_category": "cs.CL",
-    "categories": [
-      "cs.CL"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05800v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05800v1"
-      }
-    ],
-    "score": 68,
-    "infographic": {
-      "key_insight": "U-LoRA improves parameter-efficient fine-tuning by using conditioned, token-level gating to make better use of the existing low-rank adaptation subspace instead of enlarging it.",
-      "engineering_relevance": "This offers a practical way to boost fine-tuning performance in resource-constrained LLM deployments while keeping parameter and memory overhead close to standard LoRA.",
-      "method": [
-        "Generate utilization coefficients for each token along low-rank directions.",
-        "Use sequence-level context to coordinate and constrain token-wise gates for more consistent patterns.",
-        "Add a bias-corrected EMA historical prior to stabilize utilization signals across optimization steps."
-      ],
-      "evidence_signal": "The abstract reports competitive results on mathematical reasoning and natural language understanding benchmarks under comparable parameter budgets against strong LoRA baselines and recent variants.",
-      "watch_item": "Conditioned gating and EMA calibration add algorithmic complexity, so training stability and hyperparameter sensitivity may still matter in practice.",
-      "hashtags": [
-        "#LoRA",
-        "#ParameterEfficientFineTuning",
-        "#LLMAdaptation",
-        "#MathematicalReasoning",
-        "#EMA"
-      ],
-      "paper_id": "2026-10-05-arxiv-adaptive_utilization_of_low_rank_adaptation_via_conditioned_gating",
-      "paper_title": "Adaptive Utilization of Low-Rank Adaptation via Conditioned Gating",
-      "paper_date": "2026-10-05",
-      "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-06T18:46:49",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-03-arxiv-the_numerical_linear_algebra_of_large_language_models",
-    "arxiv_id": "2610.04631v1",
-    "date": "2026-10-03",
-    "title": "The Numerical Linear Algebra of Large Language Models",
-    "authors": "Abdelkader Baggag, Yousef Saad",
-    "abstract": "Numerical Linear Algebra (NLA) has consistently played a vital role in advancing science by providing tools to solve fundamental problems encountered in scientific and engineering applications. Over the decades, it has continually evolved to meet the demands driven by successive waves of scientific discovery. For instance, during the 1950s and 1960s, substantial efforts were devoted to developing methods for solving eigenvalue problems that emerged from the rapidly growing field of aerodynamics. This led to the discovery of the LR and QR algorithms. Later the attention turned to the solution of sparse linear systems that were common in applications like computational aerodynamics. Today we are experiencing yet another wave of major scientific advancement and NLA is once more at the heart of its development. This Machine Learning (ML) wave is proving to be utterly disruptive in science and engineering. Many tools in ML particularly Large Language Models (LLMs) are grounded in matrix and tensor methods. As we are approaching Artificial General Intelligence (AGI), it is clear that matrix methods will be called to play an even more significant role. For the numerical linear practitioner the speed of the current change makes it particularly challenging to adapt. This is a survey article that centers on machine learning techniques, with a particular focus on large language models. It has two main objectives. The first is to clarify the core concepts behind Large Language Models in a manner accessible to specialists in numerical methods. The second is to examine the key Numerical Linear Algebra concepts employed by LLM techniques, while also highlighting several significant recent contributions of NLA to the field.",
-    "category": "Number Theory and Algebra",
-    "source": "arXiv",
-    "published": "2026-10-03T16:16:36Z",
-    "updated": "2026-10-03T16:16:36Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.04631v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.04631v1"
-      }
-    ],
-    "score": 68,
-    "infographic": {
-      "key_insight": "Large language models are built on core numerical linear algebra operations, so advances in matrix and tensor methods directly shape their training, inference, and scalability.",
-      "engineering_relevance": "For computational scientists and engineers, understanding LLMs as linear-algebraic systems clarifies performance bottlenecks and points to more efficient and stable algorithms.",
-      "method": [
-        "Explains LLM fundamentals in numerical linear algebra terms",
-        "Maps attention, embeddings, and training to matrix/tensor computations",
-        "Surveys recent NLA contributions relevant to modern ML systems"
-      ],
-      "evidence_signal": "The paper is a survey and does not report new experiments; its support comes from synthesizing existing LLM and NLA methods and contributions.",
-      "watch_item": "Because the article is conceptual rather than benchmark-driven, practical gains from NLA ideas must still be validated on real LLM workloads and hardware.",
-      "hashtags": [
-        "#NumericalLinearAlgebra",
-        "#LargeLanguageModels",
-        "#MachineLearning",
-        "#MatrixComputations",
-        "#AIResearch"
-      ],
-      "paper_id": "2026-10-03-arxiv-the_numerical_linear_algebra_of_large_language_models",
-      "paper_title": "The Numerical Linear Algebra of Large Language Models",
-      "paper_date": "2026-10-03",
-      "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-06T18:46:51",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-05-arxiv-ramp_metering_control_via_hybrid_state_deep_reinforcement_learning_in_partially_observable",
-    "arxiv_id": "2610.06266v1",
-    "date": "2026-10-05",
-    "title": "Ramp Metering Control via Hybrid State Deep Reinforcement Learning in Partially Observable Connected Vehicle Environments",
-    "authors": "Youcef Mehamlia, Nadir Farhi, Meriem Bouali",
-    "abstract": "Freeway on-ramp merges are major sources of congestion, causing significant economic and environmental costs. While Deep Reinforcement Learning (DRL) offers a promising solution for ramp metering, existing approaches rely primarily on aggregated macroscopic data. Connected vehicles (CVs) provide vehicle-level observations that can complement aggregate traffic measurements, but their limited penetration produces incomplete microscopic information. This paper proposes a hybrid observation representation combining macroscopic traffic measurements with a two-channel grid encoding observed CV presence and speed. A Dueling Double Deep Q-Network processes these inputs to select ramp-metering green durations. The controller is trained under varying traffic demands and CV penetration rates and evaluated against ALINEA and macroscopic-only DRL variants in SUMO. Across 50 matched evaluation scenarios, the hybrid controller under partial CV visibility reduces the reported total travel time by 11.4 % and mean spillback duration by 84.9 % relative to ALINEA. Evaluating the same trained policy with full CV visibility yields a further travel-time reduction of approximately 1.6 %. Analysis across penetration rates suggests that the performance gap decreases as microscopic observations become more complete. These results support the use of complementary macroscopic and sparse microscopic observations for learning-based ramp metering. The source code implementation of the model is available at: https://github.com/youcefMehamlia/Multimodal-DRL-RMC",
-    "category": "Number Theory and Algebra",
-    "source": "arXiv",
-    "published": "2026-10-05T13:03:09Z",
-    "updated": "2026-10-05T13:03:09Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "cs.AI",
-      "math.OC"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.06266v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.06266v1"
-      }
-    ],
-    "score": 66,
-    "infographic": {
-      "key_insight": "Combining freeway-wide traffic measurements with sparse connected-vehicle observations lets deep reinforcement learning make better ramp-metering decisions under partial observability.",
-      "engineering_relevance": "The approach can reduce congestion, travel time, and spillback at on-ramps, making it relevant for real-world freeway traffic control systems with limited sensor coverage.",
-      "method": [
-        "Encode macroscopic traffic state plus a two-channel grid of connected-vehicle presence and speed.",
-        "Use a Dueling Double Deep Q-Network to choose ramp-metering green durations.",
-        "Train and test in SUMO across varying demand levels and CV penetration rates."
-      ],
-      "evidence_signal": "Across 50 matched scenarios, the hybrid controller reduced total travel time by 11.4% and mean spillback duration by 84.9% versus ALINEA, with an additional ~1.6% travel-time gain under full CV visibility.",
-      "watch_item": "Performance depends on CV penetration and reliable observation encoding, so results may weaken in low-connectivity deployments or when sensor/CV data are noisy.",
-      "hashtags": [
-        "#DeepReinforcementLearning",
-        "#RampMetering",
-        "#ConnectedVehicles",
-        "#TrafficControl",
-        "#SUMO"
-      ],
-      "paper_id": "2026-10-05-arxiv-ramp_metering_control_via_hybrid_state_deep_reinforcement_learning_in_partially_observable",
-      "paper_title": "Ramp Metering Control via Hybrid State Deep Reinforcement Learning in Partially Observable Connected Vehicle Environments",
-      "paper_date": "2026-10-05",
-      "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-06T18:46:54",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-05-arxiv-on_the_sequentially_semiseparable_structure_of_sde_induced_kernels_and_efficient_algorithm",
-    "arxiv_id": "2610.05856v1",
-    "date": "2026-10-05",
-    "title": "On the Sequentially Semiseparable Structure of SDE-Induced Kernels and Efficient Algorithms for Kernel-Based Estimation Problems",
-    "authors": "Mikkel Paltorp, Luigi Caglio, Tianshi Chen, Evangelos Katsanos, Martin S. Andersen",
-    "abstract": "We study kernel functions induced by a linear time-invariant (LTI) stochastic differential equation (SDE), an approach that embeds prior knowledge about the function to be estimated directly into the state-space description of the SDE. This kernel-design perspective is relevant across the many settings where kernels play a central role, including kernel methods in statistics, Gaussian process (GP) regression in machine learning, and kernel-based regularization methods in system identification. The resulting class of SDE-induced kernels includes several kernels of practical interest, such as Matérn kernels with half-integer smoothness, spline kernels, and related kernels used in system identification. In contrast to existing linear-time GP regression methods for these kernels, which are typically based on Kalman filtering and Rauch--Tung--Striebel smoothing on the latent state, we work directly with the SSS representation of the observed covariance matrix. This yields linear-complexity recursive algorithms for the matrix operations required in GP regression, including factorization, linear solves, log determinants, posterior covariance, log-marginal-likelihood gradients, and posterior sampling; the same generator-level recursions extend, with only minor modifications, to the analogous computations in kernel-based regularization methods for system identification. Compared with previous uses of SSS representations in GP regression, we derive efficient recursive algorithms for analytic marginal-likelihood gradients in three application-relevant cases, and we develop new recursions for posterior computations and Matheron-type sampling. Numerical experiments verify the accuracy of the proposed recursions and illustrate posterior inference and sampling for representative SDE-induced kernels.",
-    "category": "Symbolic Computation",
-    "source": "arXiv",
-    "published": "2026-10-05T06:18:29Z",
-    "updated": "2026-10-05T06:18:29Z",
-    "primary_category": "stat.ML",
-    "categories": [
-      "stat.ML",
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05856v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05856v1"
-      }
-    ],
-    "score": 66,
-    "infographic": {
-      "key_insight": "SDE-induced kernels have a sequentially semiseparable (SSS) covariance structure that enables linear-time kernel inference directly on the covariance matrix, not just on latent state estimates.",
-      "engineering_relevance": "This makes Gaussian process regression and kernel-based regularization practical for large-scale system identification and machine-learning problems with Matérn, spline, and related kernels.",
-      "method": [
-        "Represent the observed kernel covariance as an SSS matrix derived from an LTI SDE.",
-        "Use generator-level recursions for factorization, linear solves, log determinants, posterior covariance, and sampling.",
-        "Extend the same recursions to analytic marginal-likelihood gradients and kernel-based regularization with minor modifications."
-      ],
-      "evidence_signal": "The abstract reports numerical experiments that verify the accuracy of the recursions and demonstrate posterior inference and sampling on representative SDE-induced kernels.",
-      "watch_item": "The approach is tailored to kernels with an SDE/SSS structure, so performance and applicability depend on whether the kernel admits an efficient SSS representation.",
-      "hashtags": [
-        "#GaussianProcesses",
-        "#StochasticDifferentialEquations",
-        "#SSSMatrix",
-        "#KernelMethods",
-        "#SystemIdentification"
-      ],
-      "paper_id": "2026-10-05-arxiv-on_the_sequentially_semiseparable_structure_of_sde_induced_kernels_and_efficient_algorithm",
-      "paper_title": "On the Sequentially Semiseparable Structure of SDE-Induced Kernels and Efficient Algorithms for Kernel-Based Estimation Problems",
-      "paper_date": "2026-10-05",
-      "paper_category": "Symbolic Computation",
-      "generated_at": "2026-10-06T18:46:57",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-05-arxiv-the_birkhoff_geometry_of_manifold_constrained_hyper_connections_two_channels_vertex_viscos",
-    "arxiv_id": "2610.06653v1",
-    "date": "2026-10-05",
-    "title": "The Birkhoff Geometry of Manifold-Constrained Hyper-Connections: Two Channels, Vertex Viscosity, and Sinkhorn as a Retraction",
-    "authors": "Xiaoyu Li, Zhizhou Sha, Chiwun Yang",
-    "abstract": "Hyper-connections widen the residual stream of a Transformer to $n$ parallel streams. Their manifold-constrained version (mHC) mixes the streams at each layer with a doubly stochastic matrix, which it computes by Sinkhorn normalization of exponentiated logits. We give a geometric theory of this design on the Birkhoff polytope. First, a doubly stochastic mixer splits the stream into a mean channel, on which mHC is exactly a residual network, and a difference channel, which each layer contracts by its second singular value $σ_2 \\le 1 - n \\min_{ij} H_{ij}$. Thus the extra width is a fading memory with a horizon of $1/(1-σ_2)$ layers, and among nonnegative mixers only the permutations do not collapse. Second, the Sinkhorn-logit map is a global chart, and its logit gradient is exactly the Fisher-Rao gradient. Thus logit gradient flow follows a squared Fisher-Rao metric, and the straight-through update is exactly entropic mirror descent. Third, under logit gradient flow the logarithm of each entry moves at a rate of at most $4n^3\\|\\nabla f\\|_\\infty \\varepsilon$, where $\\varepsilon$ is the distance to the nearest permutation. Thus gradient flow approaches and leaves the vertices only at rate $1/t$, but mirror descent moves at an exponential rate. Fourth, the local convergence factor of Sinkhorn is $σ_2^2$, so a fixed iteration budget limits the horizon. Experiments confirm the predicted rates.",
-    "category": "Geometry and Topology",
-    "source": "arXiv",
-    "published": "2026-10-05T16:33:15Z",
-    "updated": "2026-10-05T16:33:15Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "math.OC",
-      "stat.ML"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.06653v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.06653v1"
-      }
-    ],
-    "score": 65,
-    "infographic": {
-      "key_insight": "Manifold-constrained hyper-connections can be understood geometrically on the Birkhoff polytope as a mean channel that behaves like a residual network plus a difference channel that decays at a rate set by the mixer’s second singular value.",
-      "engineering_relevance": "This gives Transformer designers a principled way to predict how much extra width actually matters, and how Sinkhorn-based mixing and updates will behave during training and optimization.",
-      "method": [
-        "Decompose doubly stochastic mixing into mean and difference channels.",
-        "Analyze Sinkhorn normalization as a global chart with Fisher-Rao geometry and entropic mirror descent.",
-        "Bound vertex approach/escape rates and Sinkhorn convergence using singular-value-based contraction."
-      ],
-      "evidence_signal": "The abstract reports experiments that confirm the predicted contraction, convergence, and rate laws.",
-      "watch_item": "The practical benefit depends on Sinkhorn iteration budget and mixer conditioning, so limited normalization steps may weaken the intended long-horizon width effects.",
-      "hashtags": [
-        "#BirkhoffPolytope",
-        "#Sinkhorn",
-        "#Transformers",
-        "#GeometricOptimization",
-        "#ManifoldLearning"
-      ],
-      "paper_id": "2026-10-05-arxiv-the_birkhoff_geometry_of_manifold_constrained_hyper_connections_two_channels_vertex_viscos",
-      "paper_title": "The Birkhoff Geometry of Manifold-Constrained Hyper-Connections: Two Channels, Vertex Viscosity, and Sinkhorn as a Retraction",
-      "paper_date": "2026-10-05",
-      "paper_category": "Geometry and Topology",
-      "generated_at": "2026-10-06T18:47:00",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-05-arxiv-transfer_stratified_on_policy_distillation_for_rl_improved_reasoning_teachers",
-    "arxiv_id": "2610.05974v1",
-    "date": "2026-10-05",
-    "title": "Transfer-Stratified On-Policy Distillation for RL-Improved Reasoning Teachers",
-    "authors": "Xiaoyu Chen, Bo Shao, Tiangang Zhu, Bintao Wu, Linjun Shou, Fengge Wu",
-    "abstract": "Reinforcement learning can substantially improve a reasoning teacher, but it is unclear which of those improvements survive when the teacher supervises a smaller on-policy student. We study this question in mathematical reasoning by comparing teacher lineages before and after GRPO, multiple student scales, direct GRPO, and several on-policy distillation objectives. The central finding is that transfer is structured rather than scalar: teacher strength alone does not make dense distillation competitive, while an RL-improved teacher creates useful but metric-dependent student gains. This motivates Transfer-Stratified On-Policy Distillation (TS-OPD), which screens training problems by the joint sampled success of the student and teacher, routes acquisition problems to gated forward KL, routes consolidation problems to gated reverse KL, and adds an entropy brake to protect sampled coverage. Across the main comparison, TS-OPD is the strongest student objective for macro average correctness with the GRPO-improved teacher, while pass@K remains more mixed. Ablations show that the gains come from routing and token gating rather than skipping problems. These results support a transfer-aware view of OPD: stronger teachers help when the supervision direction and token budget match the student's observed ability, not merely because the teacher endpoint is stronger.",
-    "category": "Mathematical Reasoning",
-    "source": "arXiv",
-    "published": "2026-10-05T08:26:20Z",
-    "updated": "2026-10-05T08:26:20Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "cs.AI"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05974v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05974v1"
-      }
-    ],
-    "score": 65,
-    "infographic": {
-      "key_insight": "Teacher improvements from RL transfer to students only when supervision is stratified by what both teacher and student can actually sample correctly, rather than by teacher strength alone.",
-      "engineering_relevance": "For training reasoning models, TS-OPD offers a practical way to allocate distillation signals by competence level, improving macro-average correctness without relying on a uniformly stronger teacher.",
-      "method": [
-        "Screen problems by joint sampled success of student and teacher.",
-        "Route acquisition examples to gated forward KL and consolidation examples to gated reverse KL.",
-        "Add an entropy brake to preserve sampled coverage during distillation."
-      ],
-      "evidence_signal": "The paper compares teacher lineages before and after GRPO, multiple student scales, direct GRPO, and several on-policy distillation objectives on mathematical reasoning tasks, finding TS-OPD strongest for macro average correctness with the GRPO-improved teacher.",
-      "watch_item": "Pass@K gains are less consistent, so the method may improve average accuracy without uniformly improving top-k diversity or sampling breadth.",
-      "hashtags": [
-        "#MathReasoning",
-        "#ReinforcementLearning",
-        "#Distillation",
-        "#OnPolicyLearning",
-        "#LLMTraining"
-      ],
-      "paper_id": "2026-10-05-arxiv-transfer_stratified_on_policy_distillation_for_rl_improved_reasoning_teachers",
-      "paper_title": "Transfer-Stratified On-Policy Distillation for RL-Improved Reasoning Teachers",
-      "paper_date": "2026-10-05",
-      "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-06T18:47:02",
+      "paper_id": "2026-10-06-arxiv-mathematical_proof_assistants_for_teaching_logic_the_logikey_methodology",
+      "paper_title": "Mathematical Proof Assistants for Teaching Logic: The LogiKEy Methodology",
+      "paper_date": "2026-10-06",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-10-07T19:12:58",
       "generator": "openai"
     }
   }

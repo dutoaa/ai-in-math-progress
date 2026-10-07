@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-10-06
+Generated: 2026-10-07
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. IGA-KAN: Isogeometric Analysis with Physics-Informed Closed-Form Kolmogorov-Arnold Networks for Forward and Inverse PDEs
@@ -11,7 +11,39 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.06348v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-iga_kan_isogeometric_analysis_with_physics_informed_closed_form_kolmogorov_arnold_networks_infographic.json
 
-## 2. Comparison of neural and spline representations for physics-informed learning
+## 2. Learning PDE solution operators with variable initial conditions via Latent Dynamics Networks
+
+- Date: 2026-10-06
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2610.08475v1
+- PDF: https://arxiv.org/pdf/2610.08475v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-06-arxiv-learning_pde_solution_operators_with_variable_initial_conditions_via_latent_dynamics_netwo_infographic.json
+
+## 3. OOPMAS: Object-Oriented Multi-Agent Systems for Query-Level Workflow Generation
+
+- Date: 2026-10-06
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.07787v1
+- PDF: https://arxiv.org/pdf/2610.07787v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-06-arxiv-oopmas_object_oriented_multi_agent_systems_for_query_level_workflow_generation_infographic.json
+
+## 4. DHCG: Dynamic Construction of Hierarchical Collaboration Graphs for LLM-Based Multi-Agent Reasoning
+
+- Date: 2026-10-06
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.07835v1
+- PDF: https://arxiv.org/pdf/2610.07835v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-06-arxiv-dhcg_dynamic_construction_of_hierarchical_collaboration_graphs_for_llm_based_multi_agent_r_infographic.json
+
+## 5. PLUTO: An Agentic AI Tool for Interactive Spacecraft Rendezvous Trajectory Design
+
+- Date: 2026-10-06
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.07573v1
+- PDF: https://arxiv.org/pdf/2610.07573v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-06-arxiv-pluto_an_agentic_ai_tool_for_interactive_spacecraft_rendezvous_trajectory_design_infographic.json
+
+## 6. Comparison of neural and spline representations for physics-informed learning
 
 - Date: 2026-10-05
 - Category: Symbolic Computation
@@ -19,15 +51,23 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.06294v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-comparison_of_neural_and_spline_representations_for_physics_informed_learning_infographic.json
 
-## 3. Harnessing LLMs with Direction-Scope Control for Combinatorial Solver Refinement
+## 7. FOSLS-deRhaNN: native de Rham neural classes for H(div) and H(curl) with applications to first-order system least-squares neural network methods for partial differential equations
 
-- Date: 2026-10-04
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.05221v1
-- PDF: https://arxiv.org/pdf/2610.05221v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-04-arxiv-harnessing_llms_with_direction_scope_control_for_combinatorial_solver_refinement_infographic.json
+- Date: 2026-10-06
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2610.08016v1
+- PDF: https://arxiv.org/pdf/2610.08016v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-06-arxiv-fosls_derhann_native_de_rham_neural_classes_for_h_div_and_h_curl_with_applications_to_firs_infographic.json
 
-## 4. Singular parameters and missing limits in neural PDE solvers
+## 8. TRIAGE: Direction-Aware Mismatch Stabilization of Native NVFP4 Reinforcement Learning
+
+- Date: 2026-10-05
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.07043v1
+- PDF: https://arxiv.org/pdf/2610.07043v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-triage_direction_aware_mismatch_stabilization_of_native_nvfp4_reinforcement_learning_infographic.json
+
+## 9. Singular parameters and missing limits in neural PDE solvers
 
 - Date: 2026-10-05
 - Category: Optimization and PDEs
@@ -35,15 +75,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.06770v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-singular_parameters_and_missing_limits_in_neural_pde_solvers_infographic.json
 
-## 5. Fusion is the New Mutation: Bandit-Guided Evolution on Workflow Graphs
+## 10. Learning What to Distill: Bilevel Top-K Token Selection for Self-Distillation in Large Language Models
 
-- Date: 2026-10-04
+- Date: 2026-10-05
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.05284v1
-- PDF: https://arxiv.org/pdf/2610.05284v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-04-arxiv-fusion_is_the_new_mutation_bandit_guided_evolution_on_workflow_graphs_infographic.json
+- arXiv: https://arxiv.org/abs/2610.07247v1
+- PDF: https://arxiv.org/pdf/2610.07247v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-learning_what_to_distill_bilevel_top_k_token_selection_for_self_distillation_in_large_lang_infographic.json
 
-## 6. LLM Benchmarking via Representation Multi-task Learning
+## 11. LLM Benchmarking via Representation Multi-task Learning
 
 - Date: 2026-10-04
 - Category: Mathematical Reasoning
@@ -51,23 +91,63 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.05613v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-04-arxiv-llm_benchmarking_via_representation_multi_task_learning_infographic.json
 
-## 7. MESH-Harness: Self-Improving Agent Harnesses via Bandit-Guided Compositional Evolution
+## 12. WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?
 
-- Date: 2026-10-04
+- Date: 2026-10-06
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.05300v1
-- PDF: https://arxiv.org/pdf/2610.05300v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-04-arxiv-mesh_harness_self_improving_agent_harnesses_via_bandit_guided_compositional_evolution_infographic.json
+- arXiv: https://arxiv.org/abs/2610.08720v1
+- PDF: https://arxiv.org/pdf/2610.08720v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-06-arxiv-worldsolver_can_llm_agents_simulate_the_physical_dynamics_via_solver_generation_infographic.json
 
-## 8. Hamiltonian Metric Learning and Energy-Based Training: A Dissipative Geometric Framework for Optimization
+## 13. Enhancing Diffusion Language Models with Autoregressive Post-Training Weights
 
-- Date: 2026-10-04
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.04969v1
-- PDF: https://arxiv.org/pdf/2610.04969v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-04-arxiv-hamiltonian_metric_learning_and_energy_based_training_a_dissipative_geometric_framework_fo_infographic.json
+- Date: 2026-10-06
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.08108v1
+- PDF: https://arxiv.org/pdf/2610.08108v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-06-arxiv-enhancing_diffusion_language_models_with_autoregressive_post_training_weights_infographic.json
 
-## 9. Global error estimators for parametric monotone nonlinearities and neural approximations
+## 14. Minimal Witness Reinforcement Learning
+
+- Date: 2026-10-05
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2610.07226v1
+- PDF: https://arxiv.org/pdf/2610.07226v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-minimal_witness_reinforcement_learning_infographic.json
+
+## 15. Optimization by Reparametrization: Time-Warped Mirror Flows with Singular Geometry
+
+- Date: 2026-10-05
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2610.07040v1
+- PDF: https://arxiv.org/pdf/2610.07040v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-optimization_by_reparametrization_time_warped_mirror_flows_with_singular_geometry_infographic.json
+
+## 16. WASD: Wasserstein-based Knowledge Distillation for Large Language Models
+
+- Date: 2026-10-06
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.07706v1
+- PDF: https://arxiv.org/pdf/2610.07706v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-06-arxiv-wasd_wasserstein_based_knowledge_distillation_for_large_language_models_infographic.json
+
+## 17. PLADOS: A Parameter-free Landing Algorithm for Decentralized Optimization on the Stiefel Manifold
+
+- Date: 2026-10-06
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2610.07750v1
+- PDF: https://arxiv.org/pdf/2610.07750v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-06-arxiv-plados_a_parameter_free_landing_algorithm_for_decentralized_optimization_on_the_stiefel_ma_infographic.json
+
+## 18. An overview of machine learning-enhanced iterative methods for systems of linear and nonlinear equations
+
+- Date: 2026-10-05
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2610.07211v1
+- PDF: https://arxiv.org/pdf/2610.07211v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-an_overview_of_machine_learning_enhanced_iterative_methods_for_systems_of_linear_and_nonli_infographic.json
+
+## 19. Global error estimators for parametric monotone nonlinearities and neural approximations
 
 - Date: 2026-10-05
 - Category: Optimization and PDEs
@@ -75,90 +155,10 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.05767v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-global_error_estimators_for_parametric_monotone_nonlinearities_and_neural_approximations_infographic.json
 
-## 10. AIProver: Agentic Auto-Formalization of Mathematical Research via Certificate-Driven Evolving Harness
+## 20. Mathematical Proof Assistants for Teaching Logic: The LogiKEy Methodology
 
-- Date: 2026-10-04
+- Date: 2026-10-06
 - Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2610.05367v1
-- PDF: https://arxiv.org/pdf/2610.05367v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-04-arxiv-aiprover_agentic_auto_formalization_of_mathematical_research_via_certificate_driven_evolvi_infographic.json
-
-## 11. CURIO: Curiosity-Driven Test-Time Learning for Open-Ended Discovery
-
-- Date: 2026-10-04
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.04851v1
-- PDF: https://arxiv.org/pdf/2610.04851v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-04-arxiv-curio_curiosity_driven_test_time_learning_for_open_ended_discovery_infographic.json
-
-## 12. Last-Iterate Convergence Rate of Normalized Gradient Descent under Hölder Smoothness
-
-- Date: 2026-10-05
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.06070v1
-- PDF: https://arxiv.org/pdf/2610.06070v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-last_iterate_convergence_rate_of_normalized_gradient_descent_under_h_lder_smoothness_infographic.json
-
-## 13. Learning to Solve Mixed-Integer Nonlinear Programming with Neural Networks and Sequential Quadratic Programming Refinement
-
-- Date: 2026-10-05
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.05746v1
-- PDF: https://arxiv.org/pdf/2610.05746v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-learning_to_solve_mixed_integer_nonlinear_programming_with_neural_networks_and_sequential_infographic.json
-
-## 14. CEENs: Causality-enforced evolutional networks for solving time-dependent partial differential equations
-
-- Date: 2026-10-03
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.04405v1
-- PDF: https://arxiv.org/pdf/2610.04405v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-03-arxiv-ceens_causality_enforced_evolutional_networks_for_solving_time_dependent_partial_different_infographic.json
-
-## 15. Adaptive Utilization of Low-Rank Adaptation via Conditioned Gating
-
-- Date: 2026-10-05
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.05800v1
-- PDF: https://arxiv.org/pdf/2610.05800v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-adaptive_utilization_of_low_rank_adaptation_via_conditioned_gating_infographic.json
-
-## 16. The Numerical Linear Algebra of Large Language Models
-
-- Date: 2026-10-03
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.04631v1
-- PDF: https://arxiv.org/pdf/2610.04631v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-03-arxiv-the_numerical_linear_algebra_of_large_language_models_infographic.json
-
-## 17. Ramp Metering Control via Hybrid State Deep Reinforcement Learning in Partially Observable Connected Vehicle Environments
-
-- Date: 2026-10-05
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.06266v1
-- PDF: https://arxiv.org/pdf/2610.06266v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-ramp_metering_control_via_hybrid_state_deep_reinforcement_learning_in_partially_observable_infographic.json
-
-## 18. On the Sequentially Semiseparable Structure of SDE-Induced Kernels and Efficient Algorithms for Kernel-Based Estimation Problems
-
-- Date: 2026-10-05
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2610.05856v1
-- PDF: https://arxiv.org/pdf/2610.05856v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-on_the_sequentially_semiseparable_structure_of_sde_induced_kernels_and_efficient_algorithm_infographic.json
-
-## 19. The Birkhoff Geometry of Manifold-Constrained Hyper-Connections: Two Channels, Vertex Viscosity, and Sinkhorn as a Retraction
-
-- Date: 2026-10-05
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2610.06653v1
-- PDF: https://arxiv.org/pdf/2610.06653v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-the_birkhoff_geometry_of_manifold_constrained_hyper_connections_two_channels_vertex_viscos_infographic.json
-
-## 20. Transfer-Stratified On-Policy Distillation for RL-Improved Reasoning Teachers
-
-- Date: 2026-10-05
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.05974v1
-- PDF: https://arxiv.org/pdf/2610.05974v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-05-arxiv-transfer_stratified_on_policy_distillation_for_rl_improved_reasoning_teachers_infographic.json
+- arXiv: https://arxiv.org/abs/2610.08214v1
+- PDF: https://arxiv.org/pdf/2610.08214v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-06-arxiv-mathematical_proof_assistants_for_teaching_logic_the_logikey_methodology_infographic.json
