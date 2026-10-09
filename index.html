@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI math Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-10-08. Ranked from recent arXiv AI math papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-10-09. Ranked from recent arXiv AI math papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -39,12 +39,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09804v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09804v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> BoT-GRPO replaces GRPO’s uniform token credit with length-invariant bag-of-tokens aggregation over token-level rewards, enabling faster and better reasoning learning without a critic/value network.</p>
-          <p><b>Engineering relevance:</b> It is a drop-in RL upgrade for token-level reward settings that can speed convergence and improve final quality in theorem proving, code generation, and math reasoning.</p>
-          <ul><li>Aggregate all token-level rewards across rollouts with inverse sequence-length weighting.</li><li>Compute per-token advantages from weighted group statistics instead of assigning one shared rollout advantage.</li><li>Use a critic-free, process-reward RL objective that works wherever GRPO is used with token-level feedback.</li></ul>
-          <p><b>Evidence signal:</b> Across React code generation and AIME reasoning, BoT-GRPO reached 80% compile rate up to 1.9× faster than GRPO and improved Pass@k by up to 8.1% in half the steps, with better final win/compile rates than several GRPO variants.</p>
-          <p><b>Watch item:</b> The gains depend on having reliable token-level reward signals, so noisy or unstable reward models may reduce or stall the benefit.</p>
-          <div class="tags"><span>#ReinforcementLearning</span> <span>#LLMReasoning</span> <span>#ProcessSupervision</span> <span>#TheoremProving</span> <span>#TokenRewards</span></div>
+          <p><b>Key insight:</b> BoT-GRPO replaces uniform token-level credit assignment with length-invariant aggregation of token rewards, enabling faster and better process-reward RL without a critic.</p>
+          <p><b>Engineering relevance:</b> It is a drop-in GRPO replacement for reasoning tasks where token-level rewards are available, improving convergence and final accuracy/compile rates with no value network.</p>
+          <ul><li>Collect token-level rewards across all rollouts.</li><li>Weight each token reward by the inverse length of its source sequence to form bag-of-tokens statistics.</li><li>Compute per-token advantages from these weighted group statistics in a critic-free GRPO update.</li></ul>
+          <p><b>Evidence signal:</b> On React code generation and AIME reasoning, BoT-GRPO reached the same or better quality faster than GRPO and recent variants, including up to 1.9× faster to 80% compile rate and up to 8.1% absolute Pass@k gains.</p>
+          <p><b>Watch item:</b> The approach depends on having clean, bounded, stable token-level reward signals; noisy or poorly calibrated reward models may reduce the benefit.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#LLMReasoning</span> <span>#ProcessReward</span> <span>#TheoremProving</span> <span>#Optimization</span></div>
         </section>
       </article>
     
@@ -58,12 +58,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09597v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09597v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Asynchronous LLM RL needs both policy-side and advantage-side off-policy correction, because stale trajectories create coupled bias and variance that token-level ratio control alone cannot fix.</p>
-          <p><b>Engineering relevance:</b> COPC improves training stability and throughput for large-scale LLM post-training, making asynchronous reinforcement learning more practical for tool use and mathematical reasoning.</p>
-          <ul><li>Token-level ratio masking to limit policy mismatch in the actor update.</li><li>Two-sided clipped-ratio weighting for TD residuals to correct stale return and advantage estimates.</li><li>Couples actor and critic corrections so the two error sources are tuned jointly rather than independently.</li></ul>
-          <p><b>Evidence signal:</b> The paper reports broad parameter regions with strong performance, the best reported results on tool-integrated math reasoning and search, stability under 64-step staleness, and a 1.7× step-time speedup over synchronous PPO.</p>
-          <p><b>Watch item:</b> Performance depends on coordinated hyperparameters, so poor tuning of the coupled correction terms could negate gains or reduce stability.</p>
-          <div class="tags"><span>#LLMRL</span> <span>#AsynchronousRL</span> <span>#OffPolicyCorrection</span> <span>#MathematicalReasoning</span> <span>#ReinforcementLearning</span></div>
+          <p><b>Key insight:</b> In asynchronous LLM RL, correcting stale policies alone is not enough because stale advantage estimates also bias training, so policy-side and advantage-side corrections must be coordinated.</p>
+          <p><b>Engineering relevance:</b> COPC gives a practical way to keep asynchronous post-training fast while improving stability and final quality, making it attractive for scalable tool-use and reasoning systems.</p>
+          <ul><li>Token-level ratio masking to reduce policy mismatch from stale rollouts.</li><li>Two-sided clipped-ratio weighting for TD residuals to correct return and advantage estimation.</li><li>Joint actor-critic correction designed to account for interaction between policy-weight error and advantage staleness.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports that COPC was tested across staleness levels and achieved the strongest reported results on tool-integrated mathematical reasoning and search, while remaining stable even at 64-step policy staleness.</p>
+          <p><b>Watch item:</b> Performance depends on coupling between correction hyperparameters, so tuning may be sensitive and implementation must manage the added complexity of coordinated actor-critic weighting.</p>
+          <div class="tags"><span>#LLMReinforcementLearning</span> <span>#AsynchronousRL</span> <span>#MathematicalReasoning</span> <span>#OffPolicyCorrection</span> <span>#ToolUseAI</span></div>
         </section>
       </article>
     
@@ -77,12 +77,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.10527v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.10527v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Clipped decentralized SGD can achieve optimal convergence under heavy-tailed noise while preserving enough gradient magnitude information to keep consensus errors controlled.</p>
-          <p><b>Engineering relevance:</b> This gives a practical decentralized optimization rule for distributed ML systems that are robust to outlier gradients and scale well with more agents.</p>
-          <ul><li>Apply gradient clipping at each local worker before decentralized SGD updates.</li><li>Analyze smooth non-convex objectives with bounded p-th moment noise for p in (1,2].</li><li>Use a sharp consensus-gap bound showing network effects enter only as higher-order terms, enabling linear speed-up.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports theoretical high-probability and expectation rates, plus numerical experiments that validate the convergence claims and linear speed-up.</p>
-          <p><b>Watch item:</b> Clipping must be tuned carefully: too aggressive a threshold may slow progress, while the guarantees rely on the specific heavy-tailed noise and smoothness assumptions.</p>
-          <div class="tags"><span>#DecentralizedSGD</span> <span>#GradientClipping</span> <span>#HeavyTailedNoise</span> <span>#DistributedOptimization</span> <span>#NonconvexOptimization</span></div>
+          <p><b>Key insight:</b> Clipped decentralized SGD can achieve order-optimal convergence under heavy-tailed noise while preserving linear speed-up across agents, unlike normalization-based methods.</p>
+          <p><b>Engineering relevance:</b> This provides a practical distributed optimization recipe for federated and networked learning systems operating under noisy, non-Gaussian gradients.</p>
+          <ul><li>Apply gradient clipping at each local worker before decentralized averaging.</li><li>Analyze consensus error so network effects appear only as higher-order terms.</li><li>Prove high-probability and expected rates for smooth non-convex objectives with bounded p-th moment noise, p in (1,2].</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports theoretical convergence guarantees, linear speed-up, and numerical experiments that validate the clipped DSGD theory.</p>
+          <p><b>Watch item:</b> Choosing the clipping threshold is important: overly aggressive clipping may distort gradients and slow optimization despite the convergence guarantees.</p>
+          <div class="tags"><span>#DecentralizedSGD</span> <span>#GradientClipping</span> <span>#HeavyTailedNoise</span> <span>#FederatedLearning</span> <span>#OptimizationTheory</span></div>
         </section>
       </article>
     
@@ -96,11 +96,11 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.08475v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.08475v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper extends Latent Dynamics Networks to learn PDE solution operators when the initial condition varies, by inferring the initial latent state from a few early observations instead of assuming a fixed start.</p>
-          <p><b>Engineering relevance:</b> This enables resolution-independent surrogate simulation for many-query PDE problems, making fast prediction practical for advection-diffusion, fluid, and solid mechanics settings.</p>
-          <ul><li>Infer the latent initial state from early-time measurements</li><li>Compare auto-decoding with a meta-learning task-context formulation</li><li>Use a coordinate-based decoder to reconstruct high-resolution fields from subsampled data</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports successful evaluation across advection-diffusion, fluid dynamics, and solid mechanics, with meta-learning giving faster latent-state inference and smoother optimization.</p>
-          <p><b>Watch item:</b> Performance depends on the availability and quality of early-time observations used to initialize the latent state, which may be challenging in noisy or sparse sensing regimes.</p>
+          <p><b>Key insight:</b> The paper extends Latent Dynamics Networks to time-dependent PDEs with varying initial conditions by inferring the latent start state from a few early observations instead of assuming a fixed initial state.</p>
+          <p><b>Engineering relevance:</b> This yields a resolution-independent surrogate model that can accelerate many-query PDE simulation across fluid, transport, and solid mechanics problems.</p>
+          <ul><li>Infer the initial latent state from early-time measurements as an adaptation problem.</li><li>Compare two initialization strategies: auto-decoding and meta-learning (task-specific context variable).</li><li>Use a coordinate-based decoder to train on spatially subsampled data and reconstruct high-resolution fields at inference.</li></ul>
+          <p><b>Evidence signal:</b> The authors report accurate results across advection-diffusion, fluid dynamics, and solid mechanics, with meta-learning accelerating latent-state inference and improving optimization conditioning.</p>
+          <p><b>Watch item:</b> Performance depends on having informative early-time observations; latent-state inference may be less robust when data are very sparse or noisy.</p>
           <div class="tags"><span>#PDEs</span> <span>#ScientificMachineLearning</span> <span>#SurrogateModeling</span> <span>#MetaLearning</span> <span>#NeuralODEs</span></div>
         </section>
       </article>
@@ -115,12 +115,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09914v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09914v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> RollVerify improves the efficiency–accuracy tradeoff in long-tail RL by verifying partial rollouts before training, instead of only correcting off-policy bias afterward.</p>
-          <p><b>Engineering relevance:</b> It reduces GPU idle time from long synchronized rollouts while preserving near on-policy-quality training for large language model reasoning systems.</p>
-          <ul><li>Defines an off-policy shift metric (OPS) to measure how far partial trajectories deviate from on-policy behavior.</li><li>Uses OPS to guide sequence-level and token-level verification, then truncates invalid suffixes before training.</li><li>Combines partial rollouts with lightweight repair to keep samples high quality without losing throughput.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports experiments on mathematical and tool-assisted mathematical reasoning showing accuracy comparable to on-policy training with lower training cost, plus preliminary code-generation results.</p>
-          <p><b>Watch item:</b> Performance may depend on how well OPS thresholds and truncation rules generalize across tasks and rollout lengths, so implementation tuning could be important.</p>
-          <div class="tags"><span>#ReinforcementLearning</span> <span>#LLMReasoning</span> <span>#PartialRollout</span> <span>#OnPolicyTraining</span> <span>#MathematicalReasoning</span></div>
+          <p><b>Key insight:</b> RollVerify keeps the efficiency of partial-rollout RL while recovering on-policy-like accuracy by verifying and repairing long-tail trajectories before training.</p>
+          <p><b>Engineering relevance:</b> It addresses a systems bottleneck in long-context RL for LLM reasoning, reducing GPU bubbles and training cost without sacrificing final model quality.</p>
+          <ul><li>Defines an off-policy shift metric (OPS) to measure how far partial rollouts drift from on-policy behavior.</li><li>Uses OPS-guided sequence-level and token-level verification to detect invalid suffixes in trajectories.</li><li>Truncates or repairs low-quality tail segments before samples enter training.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports that experiments on mathematical and tool-assisted mathematical reasoning match on-policy accuracy while lowering training cost, with additional code-generation results suggesting broader applicability.</p>
+          <p><b>Watch item:</b> OPS thresholds and verification rules may be sensitive to rollout distribution shifts, so the method could require careful tuning to avoid discarding useful long-tail reasoning.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#LLMReasoning</span> <span>#PartialRollout</span> <span>#MathematicalReasoning</span> <span>#SystemsML</span></div>
         </section>
       </article>
     
@@ -134,12 +134,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09510v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09510v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Physics-informed PDE solvers can improve accuracy not only by updating weights, but by dynamically reshaping model capacity where the residual physics is hardest to resolve.</p>
-          <p><b>Engineering relevance:</b> The method offers a practical adaptive-computation strategy for stiff, heterogeneous 3D/4D PDEs, concentrating parameters where they matter and pruning them where they do not.</p>
-          <ul><li>Representation Capacity Adaptation for PDEs (ReCAP) uses Gaussian-localized components to redistribute capacity during training.</li><li>It refines the model with residual-directed splitting, gate-based pruning, and function-aware merging.</li><li>Quiet-child refinement initializes new components by transporting the parent representation to reduce disruption from splitting.</li></ul>
-          <p><b>Evidence signal:</b> Across five challenging 3D and 4D PDE benchmarks against 11 physics-informed solvers, ReCAP achieved the lowest relative L2 error on every problem, with 10.7%–27.5% improvement over the strongest competitor.</p>
-          <p><b>Watch item:</b> Dynamic splitting/merging adds algorithmic complexity and may require careful tuning of residual indicators and stability controls to avoid unstable or overly frequent restructuring.</p>
-          <div class="tags"><span>#PhysicsInformedLearning</span> <span>#PDEs</span> <span>#NeuralPDEs</span> <span>#AdaptiveModels</span> <span>#ScientificMachineLearning</span></div>
+          <p><b>Key insight:</b> The paper proposes physics-informed neural plasticity, where a PDE solver changes its internal representation during training to shift capacity toward regions with unresolved physics.</p>
+          <p><b>Engineering relevance:</b> This could make physics-informed solvers more accurate and efficient on heterogeneous PDEs by automatically allocating model capacity where the solution is hardest to learn.</p>
+          <ul><li>ReCAP uses Gaussian-localized components with adaptive local enrichment.</li><li>It refines the representation via residual-directed splitting, gate-based pruning, and function-aware merging.</li><li>Quiet-child refinement initializes new components to minimize disruption during splitting.</li></ul>
+          <p><b>Evidence signal:</b> Across five challenging 3D and 4D PDE benchmarks against 11 competing physics-informed solvers, ReCAP achieved the lowest relative L2 error on every problem, improving by 10.7%–27.5% over the strongest baseline.</p>
+          <p><b>Watch item:</b> The adaptive splitting/merging logic and stability guarantees may add implementation complexity and require careful tuning of residual indicators and refinement thresholds.</p>
+          <div class="tags"><span>#PINNs</span> <span>#PDEs</span> <span>#ScientificML</span> <span>#NeuralNetworks</span> <span>#AdaptiveMethods</span></div>
         </section>
       </article>
     
@@ -153,12 +153,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09364v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09364v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper turns Newton’s method into a nonsmooth optimization tool by using coderivatives of subgradients as generalized Hessians, with adaptive regularization and nonmonotone line search to keep convergence reliable.</p>
-          <p><b>Engineering relevance:</b> It provides a practical second-order framework for machine learning optimization problems like Lasso, logistic Lasso, and SVMs where nonsmooth terms often limit standard Newton methods.</p>
-          <ul><li>Coderivative-based generalized Hessians for $C^{1,1}$ and convex composite objectives</li><li>Adaptive regularization for positive semidefinite generalized Hessians</li><li>Hybrid Adaptive Nonmonotone (HAN) line search for globalization</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports numerical experiments on Lasso, logistic Lasso, and SVM benchmarks, showing the method is computationally competitive with established first- and second-order approaches.</p>
-          <p><b>Watch item:</b> Performance and convergence depend on semismooth* behavior and accurate generalized derivative information, which may be costly or delicate to compute in large-scale implementations.</p>
-          <div class="tags"><span>#NonsmoothOptimization</span> <span>#NewtonMethods</span> <span>#GeneralizedDifferentiation</span> <span>#MachineLearningOptimization</span> <span>#VariationalAnalysis</span></div>
+          <p><b>Key insight:</b> The paper extends Newton’s method to nonsmooth optimization by using coderivative-based generalized Hessians plus an adaptive regularization and nonmonotone line search for stable convergence.</p>
+          <p><b>Engineering relevance:</b> It offers a practical high-order optimization tool for machine learning and inverse/design problems with nonsmooth objectives such as Lasso and SVMs.</p>
+          <ul><li>Builds Newton steps from coderivatives of the subgradient mapping (generalized Hessians).</li><li>Uses adaptive regularization to handle positive semidefinite or ill-conditioned generalized Hessians.</li><li>Adds a Hybrid Adaptive Nonmonotone (HAN) line search to improve global robustness and practical performance.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports numerical experiments on Lasso, logistic Lasso, and SVM problems, showing competitive performance against established first- and second-order nonsmooth solvers.</p>
+          <p><b>Watch item:</b> Performance depends on the semismooth* / regularity assumptions and the added second-order machinery may increase per-iteration implementation complexity.</p>
+          <div class="tags"><span>#Optimization</span> <span>#NonsmoothOptimization</span> <span>#NewtonMethods</span> <span>#MachineLearning</span> <span>#VariationalAnalysis</span></div>
         </section>
       </article>
     
@@ -172,12 +172,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.10536v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.10536v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper separates exploration from optimization in RLVR by using novelty only for generating candidate solutions, then distilling filtered correct trajectories into a student trained without novelty pressure.</p>
-          <p><b>Engineering relevance:</b> This offers a safer way to boost reasoning diversity in language models without letting novelty incentives destabilize the main policy during reinforcement learning.</p>
-          <ul><li>Train one or more explorer policies with a novelty bonus in the reward.</li><li>Filter explorer trajectories for correctness and quality.</li><li>Distill the filtered trajectories into a separate student policy and repeat in alternating rounds.</li></ul>
-          <p><b>Evidence signal:</b> Across seven mathematical reasoning benchmarks and two model families, ExpDis outperforms DAPO at the same wall-clock budget and improves pass@$k$ scaling.</p>
-          <p><b>Watch item:</b> Filtering and distillation add pipeline complexity, and the approach still depends on reliable verifiers to identify correct, high-quality exploratory trajectories.</p>
-          <div class="tags"><span>#RLVR</span> <span>#MathReasoning</span> <span>#LLMTraining</span> <span>#ExplorationDistillation</span> <span>#SyntheticData</span></div>
+          <p><b>Key insight:</b> The paper separates novelty-seeking exploration from policy optimization so RLVR can discover new reasoning strategies without harming the main model.</p>
+          <p><b>Engineering relevance:</b> For math-reasoning LMs, ExpDis offers a practical training loop that scales exploration more safely than directly adding novelty bonuses to the optimized student.</p>
+          <ul><li>Train explorer policies with a novelty bonus in the reward.</li><li>Filter explorer trajectories for correctness and quality.</li><li>Distill accepted trajectories into a separate student policy, then repeat in alternating rounds.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports that ExpDis outperforms DAPO at the same wall-clock budget across seven math benchmarks and two model families, with improved pass@k scaling.</p>
+          <p><b>Watch item:</b> The approach adds extra filtering and distillation stages, so its effectiveness may depend on the quality of correctness checks and trajectory selection.</p>
+          <div class="tags"><span>#RLVR</span> <span>#MathReasoning</span> <span>#LLMTraining</span> <span>#ExplorationDistillation</span> <span>#PassAtK</span></div>
         </section>
       </article>
     
@@ -191,11 +191,11 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.10080v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.10080v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> This paper gives the first complete fixed-domain asymptotic theory for joint maximum likelihood estimation of RBF-kernel Gaussian process variance, lengthscale, and nugget parameters, proving consistency, rates, and asymptotic normality.</p>
-          <p><b>Engineering relevance:</b> It provides the theoretical basis for trusting and tuning GP hyperparameter estimates in scientific computing, optimization, and spatial/time-series modeling when data are densely sampled in a bounded domain.</p>
-          <ul><li>Analyze the joint MLE of GP spatial variance, lengthscale, and nugget under fixed-domain asymptotics.</li><li>Prove consistency, derive parameter-specific convergence rates, and establish joint asymptotic normality.</li><li>Show the obtained rates are minimax optimal.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports a complete asymptotic characterization of the MLEs, including consistency, convergence rates, and joint asymptotic normality, but does not mention empirical experiments.</p>
-          <p><b>Watch item:</b> The results are asymptotic and fixed-domain-specific, so practical performance may differ for finite samples or increasing-domain settings.</p>
+          <p><b>Key insight:</b> This paper gives the first full fixed-domain asymptotic theory for joint maximum likelihood estimation of RBF-kernel Gaussian process parameters—variance, lengthscale, and nugget—showing they are consistent, asymptotically normal, and minimax optimal.</p>
+          <p><b>Engineering relevance:</b> It provides theoretical support for using standard GP MLE fitting in high-density spatial and scientific applications, with clear guidance on how fast each kernel parameter can be learned.</p>
+          <ul><li>Analyzed joint MLE behavior under fixed-domain asymptotics for the RBF kernel.</li><li>Derived consistency, convergence rates, and joint asymptotic normality for spatial variance, lengthscale, and nugget variance.</li><li>Proved the rates are minimax optimal.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports a complete asymptotic characterization of the joint MLE, including consistency, rates, and asymptotic normality, but does not mention experiments or datasets.</p>
+          <p><b>Watch item:</b> The results are asymptotic and specific to fixed-domain sampling with an RBF kernel, so practical finite-sample behavior and extension to other kernels or sampling regimes may differ.</p>
           <div class="tags"><span>#GaussianProcesses</span> <span>#MaximumLikelihood</span> <span>#AsymptoticTheory</span> <span>#RBFKernel</span> <span>#ScientificComputing</span></div>
         </section>
       </article>
@@ -210,12 +210,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.08928v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.08928v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper turns natural-language policy clauses for LLM-enabled autonomous agents into a monitored spatial-temporal-semantic triple, showing that only full multi-aspect runtime verification reliably blocks sequential violation chains.</p>
-          <p><b>Engineering relevance:</b> For safety-critical agent integration, the work offers a deployable interface-level control that can enforce obligations without retraining procured models.</p>
-          <ul><li>Decompose each policy clause into spatial, temporal, and semantic monitors over one canonical event stream.</li><li>Interpret spatial rules on a weighted two-sorted location graph and run past-time rules with MonPoly.</li><li>Fuse monitor outputs with a four-valued algebra that preserves provenance for decisions.</li></ul>
-          <p><b>Evidence signal:</b> Across casualty evacuation, contested sustainment, and one civil domain, the full composition reduced attack success to zero with no observed false positives and microsecond-scale per-event overhead.</p>
-          <p><b>Watch item:</b> The approach depends on accurately translating natural-language obligations into formal aspects and on the quality of the underlying event stream and spatial model.</p>
-          <div class="tags"><span>#RuntimeVerification</span> <span>#LLMAgents</span> <span>#AutonomousSystems</span> <span>#FormalMethods</span> <span>#AISafety</span></div>
+          <p><b>Key insight:</b> The paper shows that LLM-agent safety for mission-critical workflows needs joint spatial, temporal, and semantic runtime checks, because single-aspect or pairwise guards can miss multi-step violation chains.</p>
+          <p><b>Engineering relevance:</b> A policy can be enforced at the agent–system interface without retraining the model, making this approach practical for procured LLM components in safety- and defense-oriented settings.</p>
+          <ul><li>Decompose each natural-language rule into a typed spatial/temporal/semantic triple over one canonical event stream.</li><li>Monitor the temporal aspect with MonPoly and interpret spatial obligations on a weighted two-sorted location graph.</li><li>Fuse aspect verdicts with a four-valued provenance-carrying algebra to decide blocking/allowing actions.</li></ul>
+          <p><b>Evidence signal:</b> Across casualty evacuation, contested sustainment, and one civil domain, the full composed monitor drove attack success to zero with no observed false positives and microsecond-scale per-event overhead.</p>
+          <p><b>Watch item:</b> The strongest guarantees depend on accurate policy decomposition and a well-specified canonical event stream, so deployment complexity and spec-mapping errors are key risks.</p>
+          <div class="tags"><span>#LLMAgents</span> <span>#RuntimeVerification</span> <span>#FormalMethods</span> <span>#AutonomousSystems</span> <span>#SimulationVandV</span></div>
         </section>
       </article>
     
@@ -229,12 +229,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.10447v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.10447v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A teacher helps best when its guidance matches the student’s current policy, not just when the teacher is strong.</p>
-          <p><b>Engineering relevance:</b> JOLT provides a practical training recipe for improving long-horizon RL and reasoning systems by combining dense on-policy distillation with a KL-regularized privileged teacher.</p>
-          <ul><li>Derive a condition for teacher updates to align with the student’s reward gradient.</li><li>Train a single policy in two roles: privileged teacher and unprivileged student.</li><li>Use KL regularization toward the student to keep teacher supervision usable on-policy.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports gains across mathematical reasoning, coding, tool use, and terminal use, with additional improvement when student rewards are included.</p>
-          <p><b>Watch item:</b> A powerful privileged teacher can still hurt the student if its solutions rely on shortcuts the student cannot follow, so teacher-student mismatch must be controlled.</p>
-          <div class="tags"><span>#ReinforcementLearning</span> <span>#SelfDistillation</span> <span>#OnPolicyLearning</span> <span>#MathReasoning</span> <span>#AIResearch</span></div>
+          <p><b>Key insight:</b> A teacher helps best when its guidance matches the student’s current policy, not just when the teacher is stronger.</p>
+          <p><b>Engineering relevance:</b> JOLT provides a practical training recipe for improving sample efficiency and performance in long-horizon reasoning systems by combining privileged teacher learning with on-policy student distillation.</p>
+          <ul><li>Analyze when a privileged teacher’s distillation update aligns with the student’s reward gradient.</li><li>Train a single policy in two roles: a KL-regularized privileged teacher and an unprivileged student.</li><li>Use on-policy dense token-level distillation plus student rewards to improve teaching quality and learning efficiency.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports improvements across mathematical reasoning, coding, tool use, and terminal use, with additional gains when student rewards are included.</p>
+          <p><b>Watch item:</b> Privileged teachers can still harm learning if they exploit shortcuts unavailable to the student, so the teacher objective must be carefully aligned with the student’s capabilities.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#SelfDistillation</span> <span>#MathReasoning</span> <span>#OnPolicyLearning</span> <span>#LLMTraining</span></div>
         </section>
       </article>
     
@@ -248,11 +248,11 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09310v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09310v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Anisotropic dilation rescales points along their rays in a direction-dependent way, and this simple transform can move between optimal regularizers by acting explicitly on the paper’s radial summary statistic.</p>
-          <p><b>Engineering relevance:</b> It provides a practical way to adapt a fixed regularization template to data geometry, potentially improving inverse-problem reconstructions and optimization performance.</p>
-          <ul><li>Define anisotropic dilation as a direction-preserving map that multiplies each radius by a positive function on the sphere.</li><li>Derive a closed-form profile that transforms a source distribution into a target Gibbs-class regularizer and analyze the induced orbit structure.</li><li>Learn the base regularizer and dilation profile jointly, with finite-sample guarantees for linear features and sparse ReLU parameterizations.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports positive performance gains in a controlled 2D family and MNIST denoising when the anisotropic profile is learned jointly with the regularizer.</p>
-          <p><b>Watch item:</b> The approach depends on accurately estimating and parameterizing the directional profile, so limited data or poorly chosen model classes may reduce the practical benefit.</p>
+          <p><b>Key insight:</b> Anisotropic dilation rescales points along their rays with a direction-dependent profile, and this simple geometric transform can move a distribution to any desired radial summary statistic for optimal regularization.</p>
+          <p><b>Engineering relevance:</b> It provides a practical way to learn data-adaptive regularizers for inverse problems, improving optimization and denoising performance beyond isotropic scaling.</p>
+          <ul><li>Define an anisotropic dilation that preserves direction but changes radius by a positive spherical profile.</li><li>Derive the exact profile that maps a source distribution to a target Gibbs-class regularizer via the radial summary statistic.</li><li>Learn the base regularizer and profile jointly with finite-sample guarantees using linear features or sparse ReLU networks.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports experiments on a controlled 2D family and MNIST denoising, where learning the anisotropic profile further improved results.</p>
+          <p><b>Watch item:</b> The approach depends on estimating and parameterizing the directional profile well; in high dimensions, this may be data-hungry and sensitive to model misspecification.</p>
           <div class="tags"><span>#Optimization</span> <span>#InverseProblems</span> <span>#Regularization</span> <span>#AnisotropicDilation</span> <span>#MachineLearning</span></div>
         </section>
       </article>
@@ -267,12 +267,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09856v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09856v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> AnchorLoop adds a frozen previous executor as a historical reference, preventing self-training feedback from collapsing when the current model becomes over-consistent.</p>
-          <p><b>Engineering relevance:</b> This gives tool-integrated agents a lightweight, no-external-label way to sustain learning signals across iterations in automated reasoning systems.</p>
-          <ul><li>Freeze the previous iteration’s Executor as an anchor/reference model.</li><li>Use the anchor to compute cross-reference advantages for Executor reinforcement learning.</li><li>Reuse the anchor during Curriculum training to score agreement differences for task selection.</li></ul>
-          <p><b>Evidence signal:</b> Across 13 reasoning benchmarks, the method improves over Agent0 by 2.5% on mathematical reasoning and 2.8% on general reasoning, with stronger late-iteration gains.</p>
-          <p><b>Watch item:</b> Because the anchor matches the Executor during Curriculum training, its agreement signal is only a proxy for task usefulness, not proof of correctness or true improvement.</p>
-          <div class="tags"><span>#ToolIntegratedAgents</span> <span>#ReinforcementLearning</span> <span>#SelfTraining</span> <span>#MathReasoning</span> <span>#AgentCurriculum</span></div>
+          <p><b>Key insight:</b> AnchorLoop improves self-evolving tool-integrated agents by adding a frozen historical reference, avoiding collapse of learning signals when current self-consistency becomes too unanimous.</p>
+          <p><b>Engineering relevance:</b> The method is a lightweight training-loop modification that can strengthen iterative agent improvement without external labels, making it useful for scalable reasoning systems.</p>
+          <ul><li>Freeze the previous Executor as an anchor reference for the next training cycle.</li><li>Use cross-reference advantages for the Executor by comparing current outputs against both current and historical majority answers.</li><li>Use agreement-based reference signals for the Curriculum Agent to select tasks that remain informative for learning.</li></ul>
+          <p><b>Evidence signal:</b> Across 13 reasoning benchmarks, AnchorLoop reports +2.5% on mathematical reasoning and +2.8% on general reasoning, while sustaining higher effective-advantage variance and later-iteration gains.</p>
+          <p><b>Watch item:</b> Because the anchor and current Executor share parameters during Curriculum training, the agreement signal is only a proxy for task usefulness and may not directly reflect correctness or true inter-version improvement.</p>
+          <div class="tags"><span>#SelfEvolvingAgents</span> <span>#ToolIntegratedAI</span> <span>#ReinforcementLearning</span> <span>#ReasoningBenchmarks</span> <span>#AnchorLoop</span></div>
         </section>
       </article>
     
@@ -286,12 +286,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.10206v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.10206v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Reinforcement learning and Bayesian optimisation can find strong upper bounds for hard-to-compute link invariants, enabling many new exact values when combined with lower bounds.</p>
-          <p><b>Engineering relevance:</b> This shows machine learning can guide search in discrete mathematical spaces where exact algorithms are unavailable, suggesting a general strategy for hard optimization problems in computational science.</p>
-          <ul><li>Train reinforcement-learning agents to search for unlinking/slicing trajectories.</li><li>Use Bayesian optimisation to propose candidate moves and improve upper bounds.</li><li>Combine learned upper bounds with known lower bounds to certify exact invariant values where possible.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports new upper bounds, new exact values in many cases, and reproduction of known non-additivity counterexamples, including some new unknotting trajectories.</p>
-          <p><b>Watch item:</b> The approach depends on heuristic search and auxiliary lower bounds, so results are not guaranteed to be exhaustive or definitive when the bounds do not meet exactly.</p>
-          <div class="tags"><span>#MachineLearning</span> <span>#Topology</span> <span>#ReinforcementLearning</span> <span>#BayesianOptimization</span> <span>#ComputationalMathematics</span></div>
+          <p><b>Key insight:</b> The paper uses machine learning to search for effective link simplifications, producing new upper bounds and many exact values for hard-to-compute invariants such as slice genus, unknotting number, and strong slice genus.</p>
+          <p><b>Engineering relevance:</b> It shows how reinforcement learning and Bayesian optimization can guide combinatorial search in topology when exact algorithms are unavailable, yielding practical bound estimates and discovered transformation trajectories.</p>
+          <ul><li>Reinforcement learning to find unknotting or slice-genera-improving moves for links</li><li>Bayesian optimization to improve upper bounds on link invariants</li><li>Combine learned upper bounds with known lower bounds to certify exact values when they meet</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports new upper bounds, many newly exact values, and recovered non-additivity counterexamples for the unknotting number, including new unknotting trajectories in some cases.</p>
+          <p><b>Watch item:</b> The approach provides bounds and certificates via comparison with known invariants, but it does not make these link invariants algorithmically computable in general.</p>
+          <div class="tags"><span>#MachineLearning</span> <span>#Topology</span> <span>#KnotTheory</span> <span>#ReinforcementLearning</span> <span>#BayesianOptimization</span></div>
         </section>
       </article>
     
@@ -305,12 +305,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09890v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09890v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Instead of merely fitting observed decisions as optimal, the paper learns objective weights that make the model’s chosen solution outperform the observed action in every component.</p>
-          <p><b>Engineering relevance:</b> This gives a practical way to train decision models for MILPs when logged actions are suboptimal, improving downstream decision quality rather than just imitation.</p>
-          <ul><li>Define an outperformance inverse-optimization loss that can be evaluated using only forward-problem oracles.</li><li>Optimize the loss with gradient-based and DC (difference-of-convex) algorithms.</li><li>Prove a generalization bound for the probability of failing to outperform on new states.</li></ul>
-          <p><b>Evidence signal:</b> Experiments on synthetic and real data show the proposed methods improve prediction of solutions that outperform the observed actions over existing methods.</p>
-          <p><b>Watch item:</b> The guarantee assumes weights induce a unique outperforming optimal solution at all training observations, so performance may depend on oracle quality and solution uniqueness in practice.</p>
-          <div class="tags"><span>#InverseOptimization</span> <span>#MILP</span> <span>#DecisionLearning</span> <span>#Optimization</span> <span>#MachineLearning</span></div>
+          <p><b>Key insight:</b> Instead of learning an objective that merely reproduces observed decisions, the paper learns weights that produce optimal solutions outperforming those actions in every component.</p>
+          <p><b>Engineering relevance:</b> This offers a practical inverse-optimization framework for decision systems where improving downstream quality matters more than matching historical choices, including MILPs.</p>
+          <ul><li>Define an outperformance loss using only forward-problem oracles, making it usable for mixed-integer linear programs.</li><li>Optimize the loss with gradient-based and difference-of-convex (DC) algorithms.</li><li>Provide a generalization bound showing the failure probability at new states decreases inversely with the number of observations.</li></ul>
+          <p><b>Evidence signal:</b> Synthetic and real-data experiments show the proposed methods better predict outperforming solutions than existing inverse-optimization approaches.</p>
+          <p><b>Watch item:</b> Guaranteeing a unique outperforming optimum at all training observations may be difficult in noisy or highly degenerate MILP settings.</p>
+          <div class="tags"><span>#InverseOptimization</span> <span>#MixedIntegerProgramming</span> <span>#MachineLearning</span> <span>#Optimization</span> <span>#Generalization</span></div>
         </section>
       </article>
     
@@ -324,12 +324,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09712v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09712v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper extends deterministic policy gradient reinforcement learning to hypercube-constrained reflected stochastic dynamics, deriving a Neumann Bellman formulation and a boundary-aware gradient rule.</p>
-          <p><b>Engineering relevance:</b> It provides a practical framework for control problems with hard state constraints, such as reservoir operations, where respecting boundaries is critical for stable decision-making.</p>
-          <ul><li>Model the environment as a controlled reflected stochastic differential equation on a hypercube.</li><li>Derive the value-function link to the Neumann Bellman equation and a deterministic policy gradient via an advantage-rate function.</li><li>Implement continuous-time DDPG with Neumann boundary conditions enforced by soft penalty or hard architectural constraint.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports experiments on reservoir control problems, where the boundary-aware approach reduces Neumann residuals and improves learning stability.</p>
-          <p><b>Watch item:</b> Performance depends on the validity of the reflected-dynamics assumptions and on how accurately discretized execution approximates the ideal continuous-time process.</p>
-          <div class="tags"><span>#ReinforcementLearning</span> <span>#DeterministicPolicyGradient</span> <span>#ReflectedSDE</span> <span>#NeumannBoundaryCondition</span> <span>#ControlTheory</span></div>
+          <p><b>Key insight:</b> The paper extends deterministic policy gradient reinforcement learning to reflected stochastic dynamics on hypercubes by linking the value function to a Neumann Bellman equation and deriving a boundary-aware gradient rule.</p>
+          <p><b>Engineering relevance:</b> This enables stable continuous-time control for systems with state constraints, such as reservoir management, where respecting hard boundaries is crucial.</p>
+          <ul><li>Model the state as a controlled reflected stochastic differential equation on a hypercube.</li><li>Derive a deterministic policy gradient via an advantage-rate function and martingale characterization.</li><li>Enforce Neumann boundary conditions using either soft penalization or a hard architectural constraint in a deep DDPG algorithm.</li></ul>
+          <p><b>Evidence signal:</b> Experiments on reservoir control show improved learning stability and substantially smaller Neumann boundary residuals for boundary-aware methods.</p>
+          <p><b>Watch item:</b> Performance depends on how accurately the discretized exploratory dynamics approximate the ideal continuous-time reflected system, so grid refinement and noise settings matter.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#DeterministicPolicyGradient</span> <span>#ReflectedSDE</span> <span>#BoundaryConditions</span> <span>#ScientificML</span></div>
         </section>
       </article>
     
@@ -343,12 +343,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09681v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09681v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> CoCo-Prover treats theorem proving as a cost-aware orchestration problem, selecting goals symbolically and buying bounded specialist actions only when they improve the proof frontier.</p>
-          <p><b>Engineering relevance:</b> This makes large-scale program verification more practical by reducing prover spending while increasing the number of proofs that can be completed across many dependent obligations.</p>
-          <ul><li>Builds a two-level proof graph: an AND/OR proof hypergraph within each declaration plus a lemma-dependency graph across declarations.</li><li>Uses symbolic topological selection to decide which open goals to tackle next.</li><li>Uses an agentic router to choose among priced specialist prover actions under evolving routing rules.</li></ul>
-          <p><b>Evidence signal:</b> Evaluated on five Lean 4 verification benchmarks, where CoCo-Prover achieved the best solve rate on every benchmark, reached up to 100% on two, and cut cost by up to 30.9% versus the strongest baseline.</p>
-          <p><b>Watch item:</b> The approach depends on effective routing and bounded specialist invocations, so gains may be sensitive to benchmark structure, prover integration details, and the cost model used in deployment.</p>
-          <div class="tags"><span>#TheoremProving</span> <span>#ProgramVerification</span> <span>#Lean4</span> <span>#AgentOrchestration</span> <span>#CostEfficiency</span></div>
+          <p><b>Key insight:</b> CoCo-Prover turns theorem proving into a cost-aware orchestration problem, using proof-graph structure to decide both which goals to tackle and which specialist agent calls to buy.</p>
+          <p><b>Engineering relevance:</b> This is useful for large-scale program verification because it aims to maximize verified obligations per dollar, not just raw proof success.</p>
+          <ul><li>Builds a two-level proof representation: an intra-declaration AND/OR proof hypergraph plus an inter-declaration lemma-dependency graph.</li><li>Selects open goals symbolically via topological traversal of the proof graphs.</li><li>Uses an agentic router to allocate bounded, priced specialist invocations with evolving routing rules as evidence accumulates.</li></ul>
+          <p><b>Evidence signal:</b> Evaluated on five Lean 4 verification benchmarks (CLEVER, VERINA, AlgoVeri, NTP4VC, and Vero), where it achieved the best solve rate on every benchmark, up to 100% on two, and cut cost by up to 30.9% versus the strongest baseline.</p>
+          <p><b>Watch item:</b> The approach depends on accurate proof-graph modeling and effective routing policies, so performance may be sensitive to benchmark structure and specialist-agent configuration.</p>
+          <div class="tags"><span>#TheoremProving</span> <span>#ProgramVerification</span> <span>#Lean4</span> <span>#LLMs</span> <span>#AgentOrchestration</span></div>
         </section>
       </article>
     
@@ -362,12 +362,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09299v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09299v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Empirical residual minimization for kernels and physics-informed neural networks can be converted into provable pointwise error bounds for Hamilton–Jacobi–Bellman equations on unbounded domains.</p>
-          <p><b>Engineering relevance:</b> This gives a theoretically grounded way to use mesh-free solvers for high-dimensional control and optimization PDEs when classical grid methods are impractical.</p>
-          <ul><li>Wendland-kernel collocation with a native-space norm constraint and fill-distance-dependent convergence.</li><li>Physics-informed neural networks with smooth activations and a Sobolev-norm constraint, yielding probabilistic convergence.</li><li>Both analyses recover sup-norm residual control from empirical squared loss using interpolation and domain-truncation error estimates.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports both uniform convergence results and quantitative a posteriori error bounds, supported by numerical experiments in one and two spatial dimensions.</p>
-          <p><b>Watch item:</b> The convergence guarantees require additional regularity assumptions beyond viscosity well-posedness, so the theory may not apply directly to rough or highly irregular solutions.</p>
-          <div class="tags"><span>#HamiltonJacobiBellman</span> <span>#PhysicsInformedNN</span> <span>#KernelMethods</span> <span>#ViscositySolutions</span> <span>#PDETheory</span></div>
+          <p><b>Key insight:</b> Empirical squared residuals can be converted into pointwise error bounds for mesh-free solvers of Hamilton–Jacobi–Bellman equations on unbounded domains, enabling convergence guarantees for both kernel collocation and PINNs.</p>
+          <p><b>Engineering relevance:</b> This gives practical a posteriori error control for large-scale optimal control and PDE solvers when meshing is difficult or impossible, especially on unbounded domains.</p>
+          <ul><li>Wendland-kernel collocation with a native-space norm constraint; convergence depends on fill distance.</li><li>Physics-informed neural networks with smooth activations and a Sobolev-norm constraint; convergence is in probability with high-probability bounds.</li><li>Use empirical-to-population estimates plus an interpolation inequality to turn $L^2$ residuals into sup-norm control, with domain-truncation error quantified.</li></ul>
+          <p><b>Evidence signal:</b> The paper provides theoretical convergence and quantitative error bounds, and validates them with numerical experiments in one and two spatial dimensions.</p>
+          <p><b>Watch item:</b> The guarantees require additional regularity assumptions beyond viscosity well-posedness, and the neural-network result is probabilistic rather than deterministic.</p>
+          <div class="tags"><span>#HamiltonJacobiBellman</span> <span>#PhysicsInformedNN</span> <span>#KernelMethods</span> <span>#PDEConvergence</span> <span>#OptimalControl</span></div>
         </section>
       </article>
     
@@ -381,12 +381,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.09919v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.09919v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Deep learning Hessian spectra can be explained as symmetry breaking from a nearby highly symmetric reference model, which naturally produces large zero-like kernels plus clustered eigenvalue outliers.</p>
-          <p><b>Engineering relevance:</b> This offers a structural way to interpret sharpness, flat directions, and optimizer behavior across architectures, helping diagnose and compare training landscapes in modern neural networks.</p>
-          <ul><li>Identify a nearby reference configuration with hidden invariances beyond standard weight symmetries.</li><li>Analyze the Hessian spectrum under these symmetries to obtain high-multiplicity eigenvalues and large kernels.</li><li>Compare with the original model to see how symmetry breaking splits clusters into the observed bulk-and-outlier pattern.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports a detailed theoretical analysis of three-layer ReLU networks and extensions to convolutional, graph, transformer, NTK, layerwise Hessians, and the Gauss-Newton matrix, showing the same spectral mechanism across settings.</p>
-          <p><b>Watch item:</b> The framework is primarily structural and model-dependent, so the choice of reference configuration or metric may affect how directly the predicted spectral clusters match a given trained network.</p>
-          <div class="tags"><span>#DeepLearningTheory</span> <span>#HessianSpectrum</span> <span>#SymmetryBreaking</span> <span>#NeuralNetworks</span> <span>#Optimization</span></div>
+          <p><b>Key insight:</b> Deep-learning Hessian spectra can be explained as the symmetry-broken version of a nearby highly symmetric reference model, which naturally produces zero-kernel structure, large multiplicities, and a few outlier eigenvalues.</p>
+          <p><b>Engineering relevance:</b> This gives practitioners a geometric lens for diagnosing optimization curvature and loss landscape structure across architectures such as MLPs, CNNs, GNNs, and transformers.</p>
+          <ul><li>Identify a nearby reference configuration with rich invariances beyond standard weight symmetries.</li><li>Analyze how those symmetries force Hessian eigenvalue multiplicities and high-dimensional nullspaces.</li><li>Show that moving back to the trained/original setting breaks symmetry and yields the observed bulk-plus-outlier spectrum.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports a detailed theoretical analysis, including three-layer ReLU networks and extensions to convolutional, graph, transformer, NTK, layerwise Hessians, and the Gauss-Newton matrix, rather than a primarily empirical benchmark study.</p>
+          <p><b>Watch item:</b> The symmetry-based picture relies on constructing or approximating a nearby reference model, so practical use may depend on how well a real trained network matches that idealization.</p>
+          <div class="tags"><span>#DeepLearning</span> <span>#HessianSpectrum</span> <span>#SymmetryBreaking</span> <span>#OptimizationGeometry</span> <span>#NeuralNetworks</span></div>
         </section>
       </article>
     
@@ -400,12 +400,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2610.08883v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2610.08883v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper extends trust-region optimization to smooth potential-interaction energies in Wasserstein space, using second-order geometry to make nonconvex particle/distribution minimization more reliable.</p>
-          <p><b>Engineering relevance:</b> It provides a scalable optimization framework for particle-based inference and interacting systems, with convergence guarantees and complexity bounds that remain stable for empirical measures.</p>
-          <ul><li>Build a quadratic model along Wasserstein pushforward curves with an $L^2(\rho)$ trust-region radius.</li><li>Solve the trust-region subproblem with a Steihaug-Toint method using an explicit self-adjoint second-variation operator.</li><li>Accept or reject steps via a ratio test and update the radius accordingly.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports theoretical convergence and $O(\varepsilon^{-2})$ outer-trial complexity, plus numerical tests on smooth soft-particle energies, MMD minimization for non-Gaussian targets, ablations, and scaling studies.</p>
-          <p><b>Watch item:</b> The guarantees rely on smoothness, bounded Hessians, and a lower energy bound, so performance may degrade if these assumptions fail or if the second-variation operator is costly to approximate in practice.</p>
-          <div class="tags"><span>#WassersteinOptimization</span> <span>#TrustRegionMethods</span> <span>#ParticleSystems</span> <span>#PDEConstrainedOptimization</span> <span>#SecondOrderMethods</span></div>
+          <p><b>Key insight:</b> The paper develops a trust-region method on Wasserstein space that uses second-order information to reliably minimize smooth, nonconvex potential-interaction energies.</p>
+          <p><b>Engineering relevance:</b> It provides a scalable optimization framework for particle-based simulation and distribution fitting, with complexity guarantees that remain stable across particle number and dimension under bounded initial objective gaps.</p>
+          <ul><li>Build a quadratic model along Wasserstein pushforward curves using an explicit self-adjoint second-variation operator.</li><li>Solve the trust-region subproblem with a Steihaug-Toint method in the $L^2(\rho)$ metric and adapt the radius via a ratio test.</li><li>Prove monotone energy decrease and convergence to stationary points, with an $O(\varepsilon^{-2})$ outer-trial complexity bound.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports numerical experiments on soft-particle energy, MMD minimization for non-Gaussian targets, ablation studies, and scaling tests in particle number and dimension.</p>
+          <p><b>Watch item:</b> The theory assumes globally bounded Hessians and, for stronger convergence, quadratic coercivity, so performance may depend on how well a real problem satisfies these smoothness and curvature conditions.</p>
+          <div class="tags"><span>#WassersteinOptimization</span> <span>#TrustRegionMethods</span> <span>#OptimalTransport</span> <span>#ParticleMethods</span> <span>#ScientificComputing</span></div>
         </section>
       </article>
     </section>

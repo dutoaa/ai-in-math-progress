@@ -1,24 +1,24 @@
 {
-  "key_insight": "RollVerify improves the efficiency–accuracy tradeoff in long-tail RL by verifying partial rollouts before training, instead of only correcting off-policy bias afterward.",
-  "engineering_relevance": "It reduces GPU idle time from long synchronized rollouts while preserving near on-policy-quality training for large language model reasoning systems.",
+  "key_insight": "RollVerify keeps the efficiency of partial-rollout RL while recovering on-policy-like accuracy by verifying and repairing long-tail trajectories before training.",
+  "engineering_relevance": "It addresses a systems bottleneck in long-context RL for LLM reasoning, reducing GPU bubbles and training cost without sacrificing final model quality.",
   "method": [
-    "Defines an off-policy shift metric (OPS) to measure how far partial trajectories deviate from on-policy behavior.",
-    "Uses OPS to guide sequence-level and token-level verification, then truncates invalid suffixes before training.",
-    "Combines partial rollouts with lightweight repair to keep samples high quality without losing throughput."
+    "Defines an off-policy shift metric (OPS) to measure how far partial rollouts drift from on-policy behavior.",
+    "Uses OPS-guided sequence-level and token-level verification to detect invalid suffixes in trajectories.",
+    "Truncates or repairs low-quality tail segments before samples enter training."
   ],
-  "evidence_signal": "The abstract reports experiments on mathematical and tool-assisted mathematical reasoning showing accuracy comparable to on-policy training with lower training cost, plus preliminary code-generation results.",
-  "watch_item": "Performance may depend on how well OPS thresholds and truncation rules generalize across tasks and rollout lengths, so implementation tuning could be important.",
+  "evidence_signal": "The abstract reports that experiments on mathematical and tool-assisted mathematical reasoning match on-policy accuracy while lowering training cost, with additional code-generation results suggesting broader applicability.",
+  "watch_item": "OPS thresholds and verification rules may be sensitive to rollout distribution shifts, so the method could require careful tuning to avoid discarding useful long-tail reasoning.",
   "hashtags": [
     "#ReinforcementLearning",
     "#LLMReasoning",
     "#PartialRollout",
-    "#OnPolicyTraining",
-    "#MathematicalReasoning"
+    "#MathematicalReasoning",
+    "#SystemsML"
   ],
   "paper_id": "2026-10-07-arxiv-rollverify_bridging_efficiency_and_accuracy_in_long_tail_rollout_reinforcement_learning",
   "paper_title": "RollVerify: Bridging Efficiency and Accuracy in Long-Tail Rollout Reinforcement Learning",
   "paper_date": "2026-10-07",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-08T19:08:48",
+  "generated_at": "2026-10-09T18:44:55",
   "generator": "openai"
 }

@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-10-08
+Generated: 2026-10-09
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. BoT-GRPO: Efficient Process-Reward RL for Reasoning via Bag-of-Token Aggregation
