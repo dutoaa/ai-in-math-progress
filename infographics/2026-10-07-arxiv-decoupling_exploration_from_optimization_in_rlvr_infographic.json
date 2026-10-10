@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper separates novelty-seeking exploration from policy optimization so RLVR can discover new reasoning strategies without harming the main model.",
-  "engineering_relevance": "For math-reasoning LMs, ExpDis offers a practical training loop that scales exploration more safely than directly adding novelty bonuses to the optimized student.",
+  "key_insight": "The paper separates exploration from optimization in RLVR by using novelty only in explorer policies, then distilling verified good trajectories into a student trained without novelty pressure.",
+  "engineering_relevance": "This design lets teams scale exploratory search for new reasoning strategies while reducing the risk that novelty incentives degrade the main model's performance.",
   "method": [
-    "Train explorer policies with a novelty bonus in the reward.",
+    "Train one or more explorer policies with a novelty bonus in the reward.",
     "Filter explorer trajectories for correctness and quality.",
-    "Distill accepted trajectories into a separate student policy, then repeat in alternating rounds."
+    "Distill the filtered trajectories into a separate student policy and repeat across rounds."
   ],
-  "evidence_signal": "The abstract reports that ExpDis outperforms DAPO at the same wall-clock budget across seven math benchmarks and two model families, with improved pass@k scaling.",
-  "watch_item": "The approach adds extra filtering and distillation stages, so its effectiveness may depend on the quality of correctness checks and trajectory selection.",
+  "evidence_signal": "Across seven mathematical reasoning benchmarks and two model families, ExpDis outperforms DAPO at the same wall-clock budget and improves pass@k scaling.",
+  "watch_item": "The approach adds a multi-stage training pipeline with trajectory filtering and repeated alternation, so its practical cost and filter quality are important implementation risks.",
   "hashtags": [
     "#RLVR",
-    "#MathReasoning",
-    "#LLMTraining",
+    "#LLMReasoning",
     "#ExplorationDistillation",
-    "#PassAtK"
+    "#MathematicalReasoning",
+    "#ReinforcementLearning"
   ],
   "paper_id": "2026-10-07-arxiv-decoupling_exploration_from_optimization_in_rlvr",
   "paper_title": "Decoupling Exploration from Optimization in RLVR",
   "paper_date": "2026-10-07",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-09T18:45:00",
+  "generated_at": "2026-10-10T17:38:59",
   "generator": "openai"
 }
