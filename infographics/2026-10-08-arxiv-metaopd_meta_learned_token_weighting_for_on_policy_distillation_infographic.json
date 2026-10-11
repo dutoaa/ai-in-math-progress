@@ -1,24 +1,24 @@
 {
-  "key_insight": "MetaOPD learns token weights with a meta-objective so weighting decisions are optimized for how they improve the student after an update, rather than by a fixed heuristic.",
-  "engineering_relevance": "This gives a practical way to make on-policy distillation more adaptive and robust for training smaller reasoning models in mathematical NLP systems.",
+  "key_insight": "MetaOPD learns token weights via bilevel optimization so the weighting strategy is guided by how it improves the student after an update, rather than by fixed heuristics.",
+  "engineering_relevance": "This makes on-policy distillation more adaptive and potentially more effective for training smaller reasoning models that must learn from their own generated outputs.",
   "method": [
-    "Inner loop: update the student with weighted on-policy distillation.",
-    "Outer loop: update a lightweight token-weighting network using validation loss after a virtual student step.",
-    "Differentiate through the student update so token weights reflect post-update learning benefit."
+    "Inner loop: update the student with weighted OPD on its own responses.",
+    "Outer loop: tune a lightweight token-weighting network using validation loss on reference solutions after a virtual student update.",
+    "Differentiate through the update so token weights reflect their downstream impact on learning."
   ],
-  "evidence_signal": "Evaluated on six mathematical reasoning and three out-of-domain datasets across two student sizes and seven baselines, with MetaOPD improving Avg@8/Pass@8 over OPD by 1.99/5.97 points for 0.6B and 2.25/6.41 points for 1.7B.",
-  "watch_item": "Bilevel optimization adds training complexity and memory/compute overhead, so stable and efficient differentiation through the virtual update may be a practical implementation challenge.",
+  "evidence_signal": "The paper reports results on six mathematical reasoning and three out-of-domain datasets, across two student scales and seven baselines, with MetaOPD improving Avg@8/Pass@8 over OPD by up to 2.25/6.41 points.",
+  "watch_item": "Bilevel training adds optimization complexity and may be sensitive to the stability and cost of differentiating through virtual student updates.",
   "hashtags": [
-    "#OnPolicyDistillation",
     "#MetaLearning",
-    "#TokenWeighting",
-    "#MathReasoning",
-    "#BilevelOptimization"
+    "#OnPolicyDistillation",
+    "#BilevelOptimization",
+    "#LLMTraining",
+    "#MathematicalReasoning"
   ],
   "paper_id": "2026-10-08-arxiv-metaopd_meta_learned_token_weighting_for_on_policy_distillation",
   "paper_title": "MetaOPD: Meta-Learned Token Weighting for On-Policy Distillation",
   "paper_date": "2026-10-08",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-10T17:39:19",
+  "generated_at": "2026-10-11T17:54:55",
   "generator": "openai"
 }

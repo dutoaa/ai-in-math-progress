@@ -1,24 +1,24 @@
 {
-  "key_insight": "Rank-4 W4A4 post-training quantization can be made much more accurate by jointly optimizing a low-rank compensation branch and quantized residuals, using a deflated Hessian plus an activation-noise surrogate.",
-  "engineering_relevance": "This offers a practical path to deploy diffusion transformers and LLMs at 4-bit precision with lower memory, faster quantization, and less accuracy loss.",
+  "key_insight": "The paper shows that W4A4 diffusion quantization improves when low-rank compensation and activation-noise reduction are solved together using a deflated Hessian objective.",
+  "engineering_relevance": "It offers a practical post-training quantization route that cuts rank and calibration cost while preserving image and multimodal model quality.",
   "method": [
-    "Model weight quantization as a coupled calibration problem for the low-rank branch and residual branch.",
-    "Derive a deflated Hessian by removing errors already explained by the low-rank factor.",
+    "Decompose each weight into a low-bit residual plus a small high-precision low-rank branch.",
+    "Eliminate the output-side low-rank factor to form a deflated Hessian that ignores errors already explained by the low-rank term.",
     "Add an activation-noise surrogate to explicitly reduce 4-bit activation quantization error."
   ],
-  "evidence_signal": "Across five diffusion backbones, rank-4 method outperforms rank-4 SVDQuant on PSNR and LPIPS, and on several models it even beats rank-32 SVDQuant with up to 8x smaller rank and 6.25x faster quantization; on Qwen3-8B it raises MMLU from 61.50% to 68.17%.",
-  "watch_item": "The approach still depends on careful calibration and low-rank fitting quality, so performance may be sensitive to model architecture, activation statistics, and implementation of the second-order approximation.",
+  "evidence_signal": "Across five diffusion backbones, rank-4 method consistently beat rank-4 SVDQuant on PSNR and LPIPS, and it surpassed rank-32 SVDQuant on several models with up to 6.25× faster quantization; on Qwen3-8B it improved MMLU from 61.50% to 68.17%.",
+  "watch_item": "The approach still depends on careful calibration and solver stability, so gains may vary with backbone choice and quantization setup.",
   "hashtags": [
     "#Quantization",
     "#DiffusionModels",
     "#Transformers",
     "#PostTrainingQuantization",
-    "#LowRankMethods"
+    "#LowRankApproximation"
   ],
   "paper_id": "2026-10-08-arxiv-deflating_the_hessian_rank_4_w4a4_quantization_for_multimodal_diffusion_transformers",
   "paper_title": "Deflating the Hessian: Rank-4 W4A4 Quantization for Multimodal Diffusion Transformers",
   "paper_date": "2026-10-08",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-10-10T17:39:04",
+  "generated_at": "2026-10-11T17:54:40",
   "generator": "openai"
 }

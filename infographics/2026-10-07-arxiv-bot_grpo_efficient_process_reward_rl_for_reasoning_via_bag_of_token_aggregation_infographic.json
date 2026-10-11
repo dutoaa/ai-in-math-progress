@@ -1,24 +1,24 @@
 {
-  "key_insight": "BoT-GRPO improves GRPO by aggregating token-level rewards with length-invariant weighting, giving more efficient process supervision without needing a value network.",
-  "engineering_relevance": "The method is a drop-in RL upgrade for reasoning models that can speed convergence and improve final quality in code generation and math tasks when token-level rewards are available.",
+  "key_insight": "BoT-GRPO replaces GRPO’s uniform token advantage with length-invariant bag-of-tokens aggregation over token-level rewards, enabling critic-free process supervision that learns faster and achieves better reasoning quality.",
+  "engineering_relevance": "The method is a drop-in RL upgrade for token-level reward settings, promising faster convergence and higher final performance without the compute and complexity of a value network.",
   "method": [
-    "Collect token-level rewards from all rollouts.",
-    "Weight each token reward by the inverse length of its source sequence to form a bag-of-tokens aggregate.",
-    "Compute per-token advantages from weighted group statistics in a critic-free GRPO-style update."
+    "Aggregate all token-level rewards across rollouts with inverse-length weighting to prevent long sequences from dominating.",
+    "Compute per-token advantages from weighted group statistics instead of assigning the same rollout-level advantage to every token.",
+    "Use a critic-free GRPO extension that directly leverages token-level reward models for process supervision."
   ],
-  "evidence_signal": "On React code generation it reached 80% compile rate up to 1.9× faster than GRPO, and on AIME it improved Pass@k by up to 8.1% over GRPO in half the steps.",
-  "watch_item": "The approach depends on having reliable token-level reward signals, so noisy or unstable reward models can limit gains.",
+  "evidence_signal": "The abstract reports up to 1.9× faster convergence on React code generation, up to 8.1% absolute Pass@k gains on AIME, and improved compile/win rates across multiple base-model families.",
+  "watch_item": "Performance depends on having clean, bounded, stable token-level rewards; noisier reward signals may reduce gains or stall training.",
   "hashtags": [
-    "#ReinforcementLearning",
-    "#LLMReasoning",
+    "#RLHF",
     "#ProcessReward",
     "#TheoremProving",
-    "#RLHF"
+    "#LLMReasoning",
+    "#Optimization"
   ],
   "paper_id": "2026-10-07-arxiv-bot_grpo_efficient_process_reward_rl_for_reasoning_via_bag_of_token_aggregation",
   "paper_title": "BoT-GRPO: Efficient Process-Reward RL for Reasoning via Bag-of-Token Aggregation",
   "paper_date": "2026-10-07",
   "paper_category": "Theorem Proving",
-  "generated_at": "2026-10-10T17:38:45",
+  "generated_at": "2026-10-11T17:54:21",
   "generator": "openai"
 }

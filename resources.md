@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-10-10
+Generated: 2026-10-11
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Where to Adapt Matters: Layer-Selective Fine-Tuning for Capability Retention

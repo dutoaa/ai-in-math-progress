@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper separates exploration from optimization in RLVR by using novelty only in explorer policies, then distilling verified good trajectories into a student trained without novelty pressure.",
-  "engineering_relevance": "This design lets teams scale exploratory search for new reasoning strategies while reducing the risk that novelty incentives degrade the main model's performance.",
+  "key_insight": "Decoupling exploration from optimization lets RLVR search for novel reasoning strategies without harming the final student model.",
+  "engineering_relevance": "For math-reasoning LMs, this provides a safer training recipe to improve diversity and performance while avoiding the quality regressions caused by putting novelty pressure directly on the optimized policy.",
   "method": [
-    "Train one or more explorer policies with a novelty bonus in the reward.",
-    "Filter explorer trajectories for correctness and quality.",
-    "Distill the filtered trajectories into a separate student policy and repeat across rounds."
+    "Train explorer policy/policies with an added novelty bonus",
+    "Filter sampled trajectories for correctness and quality",
+    "Distill accepted trajectories into a separate student policy without novelty bonus, then repeat across rounds"
   ],
-  "evidence_signal": "Across seven mathematical reasoning benchmarks and two model families, ExpDis outperforms DAPO at the same wall-clock budget and improves pass@k scaling.",
-  "watch_item": "The approach adds a multi-stage training pipeline with trajectory filtering and repeated alternation, so its practical cost and filter quality are important implementation risks.",
+  "evidence_signal": "The abstract reports results on seven mathematical reasoning benchmarks and two model families, with ExpDis outperforming DAPO at the same wall-clock budget and improving pass@k scaling.",
+  "watch_item": "Filtering and distillation quality are critical: if novelty samples are noisy or the verifier is narrow, exploration gains may not transfer cleanly to the student.",
   "hashtags": [
     "#RLVR",
-    "#LLMReasoning",
+    "#MathReasoning",
+    "#LLMTraining",
     "#ExplorationDistillation",
-    "#MathematicalReasoning",
-    "#ReinforcementLearning"
+    "#AIResearch"
   ],
   "paper_id": "2026-10-07-arxiv-decoupling_exploration_from_optimization_in_rlvr",
   "paper_title": "Decoupling Exploration from Optimization in RLVR",
   "paper_date": "2026-10-07",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-10T17:38:59",
+  "generated_at": "2026-10-11T17:54:34",
   "generator": "openai"
 }

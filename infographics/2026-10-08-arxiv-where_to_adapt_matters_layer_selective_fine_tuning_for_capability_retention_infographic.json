@@ -1,24 +1,24 @@
 {
-  "key_insight": "Adapting only the Transformer layers most sensitive to the target task can improve fine-tuning gains while reducing degradation of general abilities.",
-  "engineering_relevance": "LS-LoRA offers a simple, forward-only way to place LoRA adapters more efficiently, making PEFT more practical for math and code workloads where capability retention matters.",
+  "key_insight": "Layer choice matters: adapting only the most sensitivity-matched Transformer layers can improve target-task performance while preserving more general LLM capabilities.",
+  "engineering_relevance": "LS-LoRA offers a simple, forward-only way to place LoRA adapters more efficiently, reducing capability loss without adding replay data or explicit regularization.",
   "method": [
-    "Measure layer sensitivity with input-output cosine similarity as a cheap proxy for empirical Fisher.",
-    "Insert trainable LoRA adapters only into layers with low input-output similarity.",
-    "Use this layer-selective placement to balance target-task adaptation and general-capability preservation."
+    "Estimate layer sensitivity with input-output cosine similarity as a lightweight proxy for empirical Fisher information.",
+    "Select low-similarity layers as adaptation sites.",
+    "Insert trainable LoRA adapters only in those layers (LS-LoRA)."
   ],
-  "evidence_signal": "The abstract reports experiments on mathematical reasoning and code generation, where LS-LoRA improves average target-task performance and preserves more commonsense reasoning than standard all-layer LoRA.",
-  "watch_item": "Layer ranking depends on the chosen proxy and task/model setting, so sensitivity estimates may need validation before deployment on new architectures or domains.",
+  "evidence_signal": "Across models and tasks in mathematical reasoning and code generation, low input-output similarity layers aligned with higher Fisher scores and LS-LoRA outperformed standard all-layer LoRA on target performance while retaining more commonsense reasoning.",
+  "watch_item": "The proxy-guided layer ranking may depend on model and task, so sensitivity selection should be validated before deployment.",
   "hashtags": [
-    "#FineTuning",
+    "#LLM",
+    "#PEFT",
     "#LoRA",
-    "#LLMAdaptation",
     "#MathematicalReasoning",
-    "#CapabilityRetention"
+    "#ModelAdaptation"
   ],
   "paper_id": "2026-10-08-arxiv-where_to_adapt_matters_layer_selective_fine_tuning_for_capability_retention",
   "paper_title": "Where to Adapt Matters: Layer-Selective Fine-Tuning for Capability Retention",
   "paper_date": "2026-10-08",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-10T17:38:40",
+  "generated_at": "2026-10-11T17:54:16",
   "generator": "openai"
 }
