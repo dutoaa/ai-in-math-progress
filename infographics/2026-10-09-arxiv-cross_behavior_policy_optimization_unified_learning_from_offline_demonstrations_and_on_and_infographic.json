@@ -1,24 +1,24 @@
 {
-  "key_insight": "CBPO unifies offline demonstrations and online rollouts under a single regression objective by using a fixed-reference target, so the same replayable data format can support SFT-like and RL-like learning without separate optimization pipelines.",
-  "engineering_relevance": "For math-reasoning systems, this simplifies training orchestration and improves sample reuse, making it easier to scale from collected demonstrations to continual self-improvement with one shared buffer.",
+  "key_insight": "CBPO unifies supervised and reinforcement-style reasoning training by turning offline demonstrations and policy rollouts into a single shared regression target, so all collected responses can be reused in one replay buffer.",
+  "engineering_relevance": "This simplifies reasoning post-training by avoiding separate SFT/RL objectives, importance weighting, stored behavior-policy probabilities, and critic learning while still enabling offline, on-policy, and off-policy training.",
   "method": [
-    "Uses a fixed-reference regression target that does not depend on the behavior policy.",
-    "Treats offline positives/negatives, reference answers, and current/history rollouts in one reward-labeled replay format.",
-    "Removes the need for importance weights, stored behavior probabilities, or a learned critic."
+    "Uses a fixed-reference target that does not depend on the generating policy.",
+    "Allows positive/negative offline completions, reference answers, and historical rollouts to share one reward-labeled format.",
+    "Supports offline, on-policy, off-policy, and unified CBPO variants under the same regression objective."
   ],
-  "evidence_signal": "Across two model scales and four mathematical reasoning benchmarks, CBPO reports leading avg@32 and pass@32 results; on Qwen3-1.7B, CBPO-Unified improves benchmark-averaged avg@32 by 2.33 points and pass@32 by 4.44 points over SFT DAPO, with historical rollouts adding another 1.87 and 3.72 points in replay ablation.",
-  "watch_item": "Because the method relies on a fixed-reference target and shared reward labels, performance may depend on careful reward construction and buffer management to avoid stale or noisy rollouts dominating training.",
+  "evidence_signal": "Across two model scales and four mathematical reasoning benchmarks, CBPO reported leading avg@32 and pass@32 results; on Qwen3-1.7B, CBPO-Unified improved benchmark-averaged avg@32 and pass@32 over SFT DAPO by 2.33 and 4.44 points, and replay history added another 1.87 and 3.72 points.",
+  "watch_item": "The approach depends on a fixed-reference regression setup, so performance may be sensitive to how targets are constructed and how stale historical rollouts are managed in the buffer.",
   "hashtags": [
-    "#AIReasoning",
+    "#MathReasoning",
     "#ReinforcementLearning",
-    "#OfflineRL",
-    "#MathBenchmarks",
-    "#PolicyOptimization"
+    "#SupervisedFineTuning",
+    "#ReplayBuffer",
+    "#LLMTraining"
   ],
   "paper_id": "2026-10-09-arxiv-cross_behavior_policy_optimization_unified_learning_from_offline_demonstrations_and_on_and",
   "paper_title": "Cross-Behavior Policy Optimization: Unified Learning from Offline Demonstrations and On- and Off-Policy Rollouts via a Shared Regression Target",
   "paper_date": "2026-10-09",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-12T21:33:51",
+  "generated_at": "2026-10-13T19:44:49",
   "generator": "openai"
 }

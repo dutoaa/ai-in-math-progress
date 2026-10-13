@@ -1,24 +1,24 @@
 {
-  "key_insight": "Gaussian process PDE solvers can enforce linear inequality constraints by conditioning sequentially on equality information first and then on a finite-dimensional inequality event, yielding a valid non-Gaussian posterior.",
-  "engineering_relevance": "This lets practitioners encode admissibility requirements like nonnegativity, monotonicity, and no-arbitrage directly into probabilistic PDE solvers without changing the underlying physics-informed conditioning step.",
+  "key_insight": "Gaussian process PDE solvers can incorporate linear inequality constraints by sequentially conditioning first on the PDE/equality data and then on a finite-dimensional constraint event, yielding a valid non-Gaussian posterior.",
+  "engineering_relevance": "This lets engineers enforce physically or financially admissible solutions such as nonnegativity, monotonicity, and no-arbitrage without redesigning the underlying PDE solver.",
   "method": [
-    "Condition a GP prior on PDE residuals, boundary data, and measurements to obtain a physics-informed posterior.",
-    "Use that posterior as the prior for a virtual-point inequality update via truncated-Gaussian moments.",
-    "Interpret the probability of the noisy constraint event as a measure of agreement with the specified bounds."
+    "Condition a GP prior on PDE residuals, boundary data, and observations to obtain a physics-informed posterior.",
+    "Treat virtual inequality constraints as a finite-dimensional event and update the equality posterior using truncated-Gaussian moments.",
+    "Use the resulting non-Gaussian posterior directly; no change is needed to the PDE-conditioning step or the inequality-update step."
   ],
-  "evidence_signal": "On a Poisson benchmark, an added monotonicity constraint reduced reconstruction error by 63%; on a thinned S&P 500 option chain, no-arbitrage constraints cut held-out extrapolation error by 22% and reduced calendar-arbitrage violations from 10% to 1%; on air-quality snapshots, nonnegativity reduced a sub-zero-tail proxy by 74% at the sparsest monitor count.",
-  "watch_item": "The inequality update is non-Gaussian and depends on finite virtual points, so scalability and constraint placement may affect accuracy and computational cost.",
+  "evidence_signal": "Across Poisson, option-pricing, and air-quality benchmarks, the constrained posteriors improved constraint satisfaction and often reduced error, including a 63% error drop for 2D Poisson under monotonicity and a reduction of calendar-arbitrage from 10% to 1% on thinned S&P 500 options.",
+  "watch_item": "The approach relies on finite virtual constraint points and truncated-moment computation, so scalability and constraint placement may become important in higher-dimensional or tightly constrained problems.",
   "hashtags": [
     "#GaussianProcesses",
-    "#ProbabilisticNumerics",
     "#PDEs",
-    "#ConstrainedInference",
+    "#ProbabilisticNumerics",
+    "#ConstrainedOptimization",
     "#ScientificMachineLearning"
   ],
   "paper_id": "2026-10-09-arxiv-constrained_probabilistic_numerics_gaussian_process_solvers_for_linear_pdes_under_linear_i",
   "paper_title": "Constrained Probabilistic Numerics: Gaussian Process Solvers for Linear PDEs under Linear Inequality Constraints",
   "paper_date": "2026-10-09",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-10-12T21:34:00",
+  "generated_at": "2026-10-13T19:45:00",
   "generator": "openai"
 }

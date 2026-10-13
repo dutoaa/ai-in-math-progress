@@ -1,16 +1,16 @@
 {
-  "key_insight": "SynCo co-trains a task synthesizer and a solver so the training data evolves with model ability, reducing the mismatch that makes static synthetic datasets become either too easy or too hard.",
-  "engineering_relevance": "For reasoning systems, this suggests a practical path to continual self-improvement by jointly adapting data generation and policy learning instead of freezing one side of the loop.",
+  "key_insight": "SynCo co-trains a task Synthesizer and a problem-solving Reasoner so the training data continually adapts to the model’s changing ability, avoiding stale or too-hard synthetic tasks.",
+  "engineering_relevance": "This is relevant for building self-improving LLM systems that need automated curriculum generation and continual adaptation without relying on fixed, manually curated datasets.",
   "method": [
-    "Multi-agent reinforcement learning jointly updates a Synthesizer and a Reasoner.",
-    "The Synthesizer creates tasks conditioned on the Reasoner’s evolving capability state.",
-    "Rollout outcomes provide correctness, quality, reliability, and teachability rewards for both agents."
+    "Jointly optimize two agents with multi-agent reinforcement learning: a Synthesizer that creates tasks and a Reasoner that solves them.",
+    "Use rollouts from multiple Reasoner attempts to produce feedback for both agents: correctness for the Reasoner and task quality, answer reliability, and teachability for the Synthesizer.",
+    "Feed updated agent states back into the next synthesis round so the task distribution evolves along with model capability."
   ],
-  "evidence_signal": "The paper reports strong gains across eight mathematical reasoning benchmarks, with most improvements coming from previously unsolved problems.",
-  "watch_item": "The approach adds training complexity and may depend on stable reward design; if rewards are poorly calibrated, task synthesis can drift toward overly easy or noisy problems.",
+  "evidence_signal": "The paper reports experiments on eight mathematical reasoning benchmarks, where SynCo outperforms a broad range of synthetic-data methods and baselines, with most gains coming from previously unsolved problems.",
+  "watch_item": "Because the framework depends on iterative multi-agent reward signals, implementation stability and reward design may be sensitive to noisy evaluations or poorly calibrated task-quality feedback.",
   "hashtags": [
     "#LLM",
-    "#MathReasoning",
+    "#MathematicalReasoning",
     "#ReinforcementLearning",
     "#SyntheticData",
     "#SelfImprovingAI"
@@ -19,6 +19,6 @@
   "paper_title": "SynCo: Data Synthesis Co-Training for Self-Evolving LLMs via Multi-Agent Reinforcement Learning",
   "paper_date": "2026-10-08",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-12T21:34:05",
+  "generated_at": "2026-10-13T19:45:06",
   "generator": "openai"
 }

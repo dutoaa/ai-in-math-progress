@@ -1,24 +1,24 @@
 {
-  "key_insight": "Adapting only the Transformer layers that are least similar to their inputs can improve task-specific gains while better preserving a model’s general capabilities.",
-  "engineering_relevance": "LS-LoRA offers a simple, forward-only way to target fine-tuning where it matters, reducing capability drift without needing extra replay data or explicit regularization.",
+  "key_insight": "Not all Transformer layers should be adapted equally: choosing low-similarity layers for fine-tuning can improve task performance while preserving more of the model’s general abilities.",
+  "engineering_relevance": "Layer-selective adaptation offers a simple, compute-aware PEFT strategy for deploying LLMs on math and code tasks without as much capability drift.",
   "method": [
-    "Measure layer sensitivity using empirical Fisher information.",
-    "Use input–output cosine similarity as a cheap proxy to rank layers by sensitivity.",
-    "Insert trainable LoRA adapters only into low-similarity layers."
+    "Measure layer sensitivity with empirical Fisher information.",
+    "Use input–output cosine similarity as a forward-only proxy to rank layers.",
+    "Apply LoRA only to layers with low input–output similarity (LS-LoRA)."
   ],
-  "evidence_signal": "Across mathematical reasoning and code generation benchmarks, LS-LoRA improved average target-task performance and retained more commonsense reasoning ability than standard all-layer LoRA.",
-  "watch_item": "Input–output similarity is only a proxy for Fisher sensitivity, so layer ranking may be model- and task-dependent and should be validated before deployment.",
+  "evidence_signal": "Across mathematical reasoning and code generation benchmarks, LS-LoRA improved average target-task performance and retained substantially more commonsense reasoning capability than standard all-layer LoRA.",
+  "watch_item": "The layer-ranking proxy may depend on model and task settings, so the selected layers should be validated before deployment.",
   "hashtags": [
+    "#LLM",
     "#PEFT",
     "#LoRA",
-    "#LLMs",
-    "#FineTuning",
-    "#MathReasoning"
+    "#MathematicalReasoning",
+    "#ModelAlignment"
   ],
   "paper_id": "2026-10-08-arxiv-where_to_adapt_matters_layer_selective_fine_tuning_for_capability_retention",
   "paper_title": "Where to Adapt Matters: Layer-Selective Fine-Tuning for Capability Retention",
   "paper_date": "2026-10-08",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-12T21:33:33",
+  "generated_at": "2026-10-13T19:44:31",
   "generator": "openai"
 }

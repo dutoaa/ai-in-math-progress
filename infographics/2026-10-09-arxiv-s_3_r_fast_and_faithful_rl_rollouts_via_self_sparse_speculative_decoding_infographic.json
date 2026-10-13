@@ -1,24 +1,24 @@
 {
-  "key_insight": "S$^3$R speeds up long-context RL rollouts by using sparse attention only for drafting, then full-attention speculative verification to preserve the exact dense-policy response groups needed for stable group-relative learning.",
-  "engineering_relevance": "The method targets the main RLVR bottleneck—KV-cache traffic during autoregressive decoding—while keeping training behavior faithful to dense-policy rollouts.",
+  "key_insight": "S$^3$R speeds up long-context RL rollouts by using sparse attention only for drafting, then restoring the dense-policy distribution through full-attention speculative verification.",
+  "engineering_relevance": "It offers a practical way to cut KV-cache traffic in verifiable-reward RL training without changing the response groups that policy optimization depends on.",
   "method": [
-    "Use self-sparse speculative decoding to propose tokens with sparse attention.",
-    "Verify drafted responses with full attention and exact speculative sampling so the final group distribution matches dense policy.",
-    "Add a KV-aware scheduler to reduce repeated KV-cache offloading/restoration during verification."
+    "Use self-sparse drafting to propose tokens with sparse attention.",
+    "Verify drafted responses with full attention and exact speculative sampling.",
+    "Keep drafting and verification on the same policy, plus KV-aware scheduling to reduce repeated cache offload/restore."
   ],
-  "evidence_signal": "In long-context mathematical reasoning on Qwen3, S$^3$R reached about 1.39× to 1.35× end-to-end training throughput versus autoregressive rollouts with comparable task performance.",
-  "watch_item": "Dense verification still needs the full historical KV cache, so memory movement and cache management remain a practical bottleneck.",
+  "evidence_signal": "On long-context mathematical reasoning, the method reached 1.39× and 1.35× end-to-end training throughput over autoregressive rollouts on Qwen3, with comparable task performance.",
+  "watch_item": "Dense verification still needs the full historical KV cache, so KV-cache movement can remain a bottleneck if scheduling is not carefully managed.",
   "hashtags": [
-    "#RLVR",
+    "#ReinforcementLearning",
     "#SpeculativeDecoding",
-    "#KVCache",
     "#LongContext",
+    "#KVCache",
     "#MathematicalReasoning"
   ],
   "paper_id": "2026-10-09-arxiv-s_3_r_fast_and_faithful_rl_rollouts_via_self_sparse_speculative_decoding",
   "paper_title": "S$^3$R: Fast and Faithful RL Rollouts via Self-Sparse Speculative Decoding",
   "paper_date": "2026-10-09",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-12T21:33:48",
+  "generated_at": "2026-10-13T19:44:46",
   "generator": "openai"
 }
