@@ -1,0 +1,1043 @@
+[
+  {
+    "id": "2026-10-08-arxiv-where_to_adapt_matters_layer_selective_fine_tuning_for_capability_retention",
+    "arxiv_id": "2610.11620v1",
+    "date": "2026-10-08",
+    "title": "Where to Adapt Matters: Layer-Selective Fine-Tuning for Capability Retention",
+    "authors": "Zhiqiang Pang, Zihong Sun, Qi Xie, Jun Shu, Deyu Meng, Zongben Xu",
+    "abstract": "Parameter-efficient fine-tuning (PEFT) enables large language models (LLMs) to adapt to specialized tasks, but often at the cost of degrading general capabilities acquired during pretraining. Existing approaches primarily mitigate this trade-off through data replay or regularization, relying on additional data or explicit optimization constraints. We instead focus on a different question: where should adaptation be applied? We find that fine-tuning different Transformer layers produces different target-task gains and degrees of capability degradation, suggesting that not all layers are equally suitable for adaptation. To characterize this difference, we use layer-wise empirical Fisher information to measure target-task sensitivity. However, computing Fisher scores requires backward computation and becomes increasingly expensive for large models. We therefore introduce input--output cosine similarity as a lightweight, forward-only proxy for ranking layer sensitivity. Across models and tasks, layers with lower input--output similarity consistently exhibit higher empirical Fisher scores. Building on this observation, we propose Layer-Selective LoRA (LS-LoRA), which places trainable LoRA adapters only in layers with low input--output similarity. Experiments on mathematical reasoning and code generation show that LS-LoRA improves average target-task performance while retaining substantially more commonsense reasoning capability than standard all-layer LoRA, demonstrating that carefully choosing where to adapt can provide a simple and effective way to balance target-task adaptation and general capability retention.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-08T09:59:16Z",
+    "updated": "2026-10-08T09:59:16Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.11620v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.11620v1"
+      }
+    ],
+    "score": 72,
+    "infographic": {
+      "key_insight": "Not all Transformer layers should be adapted equally: choosing low-similarity layers for fine-tuning can improve task performance while preserving more of the model’s general abilities.",
+      "engineering_relevance": "Layer-selective adaptation offers a simple, compute-aware PEFT strategy for deploying LLMs on math and code tasks without as much capability drift.",
+      "method": [
+        "Measure layer sensitivity with empirical Fisher information.",
+        "Use input–output cosine similarity as a forward-only proxy to rank layers.",
+        "Apply LoRA only to layers with low input–output similarity (LS-LoRA)."
+      ],
+      "evidence_signal": "Across mathematical reasoning and code generation benchmarks, LS-LoRA improved average target-task performance and retained substantially more commonsense reasoning capability than standard all-layer LoRA.",
+      "watch_item": "The layer-ranking proxy may depend on model and task settings, so the selected layers should be validated before deployment.",
+      "hashtags": [
+        "#LLM",
+        "#PEFT",
+        "#LoRA",
+        "#MathematicalReasoning",
+        "#ModelAlignment"
+      ],
+      "paper_id": "2026-10-08-arxiv-where_to_adapt_matters_layer_selective_fine_tuning_for_capability_retention",
+      "paper_title": "Where to Adapt Matters: Layer-Selective Fine-Tuning for Capability Retention",
+      "paper_date": "2026-10-08",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-13T19:44:31",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-08-arxiv-fed_grpo_reward_signal_driven_federated_group_relative_policy_optimization",
+    "arxiv_id": "2610.11502v1",
+    "date": "2026-10-08",
+    "title": "Fed-GRPO: Reward-Signal-Driven Federated Group Relative Policy Optimization",
+    "authors": "Pengxin Guo, Shuang Zeng, Zonggen Li, Weiying Zheng, Mengting Liu, Liangqiong Qu",
+    "abstract": "Large Language Models (LLMs) have shown strong reasoning capabilities when fine-tuned with reinforcement learning (RL), particularly through Group Relative Policy Optimization (GRPO). However, existing GRPO methods assume centralized access to training data, which may not hold in practice due to privacy or regulatory constraints. To this end, we propose Fed-GRPO, a federated GRPO training framework that addresses these privacy constraints by enabling collaborative reasoning training without sharing raw data, which leverages the reward statistics naturally produced during GRPO training as zero-cost signals to guide aggregation, local training, and communication. Fed-GRPO contains three reward-signal-driven mechanisms: (i) \\emph{signal-weighted aggregation} that weights clients by their reward standard deviation, prioritizing clients with stronger learning signals; (ii) \\emph{global reward calibration} that re-weights per-prompt objectives based on the local-global reward gap, steering each client toward its relative weaknesses; and (iii) \\emph{adaptive sparse communication} that allocates bandwidth based on the informativeness of each client's update. Extensive experiments on mathematical reasoning tasks demonstrate that Fed-GRPO achieves the best performance among all federated methods, clearly outperforms FedAvg and approaches centralized training performance, while losslessly reducing communication by $32\\times$ and supporting up to $621\\times$ compression under tight bandwidth budgets with only graceful accuracy degradation. Our code is available at https://github.com/HKU-HealthAI/Fed-GRPO.",
+    "category": "Number Theory and Algebra",
+    "source": "arXiv",
+    "published": "2026-10-08T08:40:41Z",
+    "updated": "2026-10-08T08:40:41Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.11502v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.11502v1"
+      }
+    ],
+    "score": 72,
+    "infographic": {
+      "key_insight": "Fed-GRPO adapts GRPO to federated learning by using reward statistics as zero-cost signals to coordinate aggregation, calibration, and communication without sharing raw data.",
+      "engineering_relevance": "It offers a privacy-preserving training recipe for distributed LLM reasoning systems that can reduce bandwidth dramatically while staying close to centralized performance.",
+      "method": [
+        "Signal-weighted aggregation uses each client’s reward standard deviation to prioritize stronger learning signals.",
+        "Global reward calibration re-weights local objectives using the local-global reward gap to target weaknesses.",
+        "Adaptive sparse communication allocates bandwidth based on how informative each client update is."
+      ],
+      "evidence_signal": "On mathematical reasoning benchmarks, the method outperforms other federated baselines, approaches centralized training, and achieves up to 32× lossless communication reduction and 621× compression under tight budgets.",
+      "watch_item": "Performance gains depend on the quality and stability of reward signals, so noisy or highly non-iid client rewards may make calibration and update selection harder.",
+      "hashtags": [
+        "#FederatedLearning",
+        "#LLMReasoning",
+        "#ReinforcementLearning",
+        "#GRPO",
+        "#PrivacyPreservingAI"
+      ],
+      "paper_id": "2026-10-08-arxiv-fed_grpo_reward_signal_driven_federated_group_relative_policy_optimization",
+      "paper_title": "Fed-GRPO: Reward-Signal-Driven Federated Group Relative Policy Optimization",
+      "paper_date": "2026-10-08",
+      "paper_category": "Number Theory and Algebra",
+      "generated_at": "2026-10-13T19:44:33",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-collaborative_theory_of_mind_learning_to_self_revise_by_anticipating_user_responses",
+    "arxiv_id": "2610.12872v1",
+    "date": "2026-10-09",
+    "title": "Collaborative Theory of Mind: Learning to Self-Revise by Anticipating User Responses",
+    "authors": "Fanzhi Zeng, Anubrata Das, Maytal Saar-Tsechansky, Liu Leqi",
+    "abstract": "Large language models (LLMs) demonstrate strong individual task performance, yet still struggle to collaborate with users over extended, multi-turn interactions, for example by attempting solutions before understanding the user's needs or by failing to revise mistaken assumptions after receiving feedback. We propose Collaborative Theory of Mind (CToM), a framework that addresses these challenges by explicitly training LLMs to anticipate user responses and to use those predictions to improve their own behavior. CToM drafts a response, predicts how the user will respond, and uses this prediction to guide internal revision before presenting a response. During training, the user's reply to each draft serves as the target for predicting the next turn, and we train the assistant to minimize the negative log-likelihood of that reply. We combine this prediction objective with group-relative policy optimization (GRPO) to optimize both task performance and interaction efficiency. Across mathematical reasoning, coding, and writing tasks, CToM achieves higher collaborative task performance than all baselines; for example, on a collaborative mathematical reasoning task, it improves final accuracy from 74.1% to 79.6% compared with naive GRPO. Ablations show that predicting user responses also makes collaboration more efficient: under the same reward, adding prediction supervision reduces the number of user replies by 8% on coding and 17% on writing while improving task performance. Behavioral analyses of interaction trajectories show that user-response predictions become more accurate after training, and that more accurate predictions are associated with larger improvements in collaborative task performance through self-revision.",
+    "category": "Number Theory and Algebra",
+    "source": "arXiv",
+    "published": "2026-10-09T02:01:05Z",
+    "updated": "2026-10-09T02:01:05Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.12872v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.12872v1"
+      }
+    ],
+    "score": 71,
+    "infographic": {
+      "key_insight": "Collaborative Theory of Mind (CToM) improves multi-turn LLM collaboration by predicting user replies and using those predictions to self-revise before responding.",
+      "engineering_relevance": "The approach can make assistant systems more accurate and interaction-efficient in real workflows that require iterative feedback, such as math solving, coding, and drafting.",
+      "method": [
+        "Draft an answer, then predict how the user is likely to respond.",
+        "Use the predicted reply to revise the draft internally before finalizing the response.",
+        "Train with a user-reply prediction loss plus GRPO to optimize both task quality and interaction efficiency."
+      ],
+      "evidence_signal": "Across mathematical reasoning, coding, and writing tasks, CToM outperformed baselines, including improving collaborative math accuracy from 74.1% to 79.6% over naive GRPO.",
+      "watch_item": "The method adds an extra prediction module and training objective, so its gains may depend on reliable user-response modeling and may be less robust when user feedback is noisy or out-of-distribution.",
+      "hashtags": [
+        "#LLMAlignment",
+        "#MultiTurnInteraction",
+        "#SelfRevision",
+        "#CollaborativeAI",
+        "#MathReasoning"
+      ],
+      "paper_id": "2026-10-09-arxiv-collaborative_theory_of_mind_learning_to_self_revise_by_anticipating_user_responses",
+      "paper_title": "Collaborative Theory of Mind: Learning to Self-Revise by Anticipating User Responses",
+      "paper_date": "2026-10-09",
+      "paper_category": "Number Theory and Algebra",
+      "generated_at": "2026-10-13T19:44:35",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-finiteness_of_planar_central_configurations_of_five_bodies_for_all_positive_masses",
+    "arxiv_id": "2610.13100v1",
+    "date": "2026-10-09",
+    "title": "Finiteness of planar central configurations of five bodies for all positive masses",
+    "authors": "Tejasvi Singh Tomar",
+    "abstract": "We prove that for every choice of five positive masses the planar five-body problem has finitely many central configurations up to similarity. This settles Smale's sixth problem for five bodies in the plane. Albouy and Kaloshin proved it for masses outside a closed algebraic subset of codimension two. We follow their method. Infinitely many central configurations would give an algebraic curve of complex solutions. At the places at infinity of the curve the valuations of the mutual distances must balance. We determine the possible valuation vectors at all positive masses, together with the mass conditions under which each can occur. We treat limits in which four bodies form a cluster of zero potential energy by expanding the potential, which is constant along the curve, at a place. This excludes, at every positive mass, one of the two diagrams in which such clusters occur, and part of the other. The same expansion excludes one further diagram at every positive mass. What remains is an exact analysis, by computer algebra, of the sets of mass conditions that can hold together at positive masses. Exact rational certificates show that the balance fails under each of them, except on a few one-parameter families of masses, which we treat separately. On the rays through $(1,4,4,4,4)$ and $(1,1,4,4,4)$ the certificates do not apply. On the first ray they cannot apply: there the complex equations have a continuum of solutions, as Albouy and Kaloshin observed. On these rays we count the real central configurations: there are 306 and 294 up to orientation-preserving similarity. The certificates, the programs that check them and a proof of the theorem in the Lean proof assistant are available.",
+    "category": "Theorem Proving",
+    "source": "arXiv",
+    "published": "2026-10-09T06:54:45Z",
+    "updated": "2026-10-09T06:54:45Z",
+    "primary_category": "math.DS",
+    "categories": [
+      "math.DS",
+      "math-ph",
+      "math.AG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.13100v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.13100v1"
+      }
+    ],
+    "score": 69,
+    "infographic": {
+      "key_insight": "The paper proves that the planar five-body problem has only finitely many central configurations for every choice of positive masses, fully resolving Smale’s sixth problem for five bodies in the plane.",
+      "engineering_relevance": "This result strengthens the mathematical foundations of multi-agent and gravitational N-body modeling by guaranteeing that the equilibrium configuration set is finite, making exhaustive classification and symbolic verification feasible.",
+      "method": [
+        "Extend Albouy–Kaloshin’s algebraic-geometry approach to five bodies",
+        "Analyze valuations at infinity for hypothetical solution curves",
+        "Use computer algebra and exact rational certificates to eliminate all remaining mass cases"
+      ],
+      "evidence_signal": "The authors combine theoretical elimination with exact computer-algebra certificates and also report explicit counts of real central configurations on two special mass rays: 306 and 294 up to orientation-preserving similarity.",
+      "watch_item": "The proof relies on intricate case analysis and special handling of a few mass families, so reproducing the argument depends on the provided certificates, programs, and Lean formalization.",
+      "hashtags": [
+        "#NBodyProblem",
+        "#AlgebraicGeometry",
+        "#TheoremProving",
+        "#ComputationalMath",
+        "#FormalVerification"
+      ],
+      "paper_id": "2026-10-09-arxiv-finiteness_of_planar_central_configurations_of_five_bodies_for_all_positive_masses",
+      "paper_title": "Finiteness of planar central configurations of five bodies for all positive masses",
+      "paper_date": "2026-10-09",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-10-13T19:44:37",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-trajectory_aware_policy_optimization_closing_the_state_distribution_gap_in_long_horizon_ll",
+    "arxiv_id": "2610.13020v1",
+    "date": "2026-10-09",
+    "title": "Trajectory-Aware Policy Optimization: Closing the State Distribution Gap in Long-Horizon LLM RL",
+    "authors": "Zhicheng Cai, Weinan Dai, Yuyan Zhou, Wei-Ying Ma, Ya-Qin Zhang, Hao Zhou",
+    "abstract": "Reinforcement learning (RL) has become a dominant paradigm for enhancing LLMs' reasoning capabilities. Yet long-horizon autoregressive rollouts introduce a fundamental limitation: local policy mismatch can compound into severe state distribution shift over trajectories. Existing LLM RL methods, such as GRPO and GSPO, control policy mismatch at the token or sequence level, but overlook this trajectory-induced shift, causing training instability and eventual collapse as the horizon grows. To close the state distribution gap, we propose Trajectory-Aware Policy Optimization (TAPO), a principled framework that theoretically derives the state-distribution correction from the off-policy policy gradient and incorporates it into the RL objective. TAPO further employs a geometric-mean estimator for variance reduction, together with a length-aware dynamic clipping that prevents overly deviated updates across the trajectory. Extensive experiments demonstrate that TAPO significantly surpasses existing LLM RL algorithms across eight competition-level benchmarks, achieving up to 48% and 12% improvement over GRPO on mathematical reasoning and algorithmic coding, with substantially enhanced training stability.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-09T05:22:07Z",
+    "updated": "2026-10-09T05:22:07Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.13020v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.13020v1"
+      }
+    ],
+    "score": 69,
+    "infographic": {
+      "key_insight": "Long-horizon LLM RL can fail because small token-level policy errors compound into large trajectory-level state distribution shifts, and TAPO explicitly corrects for this gap.",
+      "engineering_relevance": "For building stable reasoning agents, TAPO offers a more reliable optimization strategy than token- or sequence-only RL methods when rollouts get long.",
+      "method": [
+        "Derives a trajectory-aware state-distribution correction from the off-policy policy gradient.",
+        "Uses a geometric-mean estimator to reduce variance during training.",
+        "Applies length-aware dynamic clipping to limit overly deviated trajectory updates."
+      ],
+      "evidence_signal": "The paper reports experiments on eight competition-level benchmarks, with improvements of up to 48% over GRPO on mathematical reasoning and 12% on algorithmic coding, plus better training stability.",
+      "watch_item": "The added trajectory correction, variance estimator, and dynamic clipping likely increase implementation complexity and may require careful tuning for different rollout lengths.",
+      "hashtags": [
+        "#LLMRL",
+        "#ReasoningModels",
+        "#PolicyOptimization",
+        "#TrajectoryShift",
+        "#MathematicalReasoning"
+      ],
+      "paper_id": "2026-10-09-arxiv-trajectory_aware_policy_optimization_closing_the_state_distribution_gap_in_long_horizon_ll",
+      "paper_title": "Trajectory-Aware Policy Optimization: Closing the State Distribution Gap in Long-Horizon LLM RL",
+      "paper_date": "2026-10-09",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-13T19:44:39",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-08-arxiv-coordinate_free_automatic_differentiation",
+    "arxiv_id": "2610.12776v1",
+    "date": "2026-10-08",
+    "title": "Coordinate-Free Automatic Differentiation",
+    "authors": "Alex Guerra, Joshua Aduol, Yaqian Tang, Daniel Williams, Ryan P. Adams, Peter Orbanz",
+    "abstract": "Automatic differentiation (AD) is a cornerstone of modern machine learning. Since all AD frameworks implicitly fix a basis of Euclidean space to define gradients and Jacobians, they natively process mathematical objects that are arrays of a fixed set of coordinates. This makes it awkward to express objects such as rotations, volume forms, and curvatures that arise, for example, in applications of AI to science. Bespoke workarounds lack reusability. We show that (i) a single, basis-independent derivative operator can represent many geometric differential operations, and (ii) this operator can be expressed entirely in terms of existing AD primitives. This reusable transformation can be composed with JAX batching, compilation, and hardware acceleration. Geometry enters as algebraic data. We experimentally demonstrate its reuse across different manifold operators, its composition through a spacetime inverse-problem pipeline, and its use in optimization over different rotor subgroups.",
+    "category": "Geometry and Topology",
+    "source": "arXiv",
+    "published": "2026-10-08T22:35:10Z",
+    "updated": "2026-10-08T22:35:10Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.MS",
+      "math.DG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.12776v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.12776v1"
+      }
+    ],
+    "score": 69,
+    "infographic": {
+      "key_insight": "The paper introduces a single basis-independent differentiation operator that can express multiple geometric derivatives, while still being built entirely from standard automatic-differentiation primitives.",
+      "engineering_relevance": "This lets AI/physics software handle rotations, volume forms, curvatures, and other manifold quantities without ad hoc coordinate-specific code, and it remains compatible with JAX batching, compilation, and acceleration.",
+      "method": [
+        "Define geometry as algebraic data rather than fixed coordinates.",
+        "Construct a coordinate-free derivative operator from existing AD primitives.",
+        "Compose the operator with standard JAX workflows for reusable manifold computations."
+      ],
+      "evidence_signal": "The abstract reports experimental reuse across multiple manifold operators, a spacetime inverse-problem pipeline, and optimization over rotor subgroups.",
+      "watch_item": "Practical use likely depends on careful encoding of the relevant geometric/algebraic structure, so incorrect or incomplete manifold specifications could limit correctness or usability.",
+      "hashtags": [
+        "#AutomaticDifferentiation",
+        "#DifferentialGeometry",
+        "#JAX",
+        "#ScientificML",
+        "#GeometryAwareAI"
+      ],
+      "paper_id": "2026-10-08-arxiv-coordinate_free_automatic_differentiation",
+      "paper_title": "Coordinate-Free Automatic Differentiation",
+      "paper_date": "2026-10-08",
+      "paper_category": "Geometry and Topology",
+      "generated_at": "2026-10-13T19:44:41",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-geometry_aware_multi_objective_optimization_norm_constrained_oracles_with_entropic_weight",
+    "arxiv_id": "2610.13773v1",
+    "date": "2026-10-09",
+    "title": "Geometry-Aware Multi-Objective Optimization: Norm-Constrained Oracles with Entropic Weight Updates",
+    "authors": "El Mahdi Chayti, Alireza Mirrokni, Martin Jaggi",
+    "abstract": "Multiple-gradient descent is typically formulated in Euclidean geometry, whereas matrix-aware optimizers use directions induced by other norms. We analyze a single-loop multi-objective method combining a norm-constrained linear minimization oracle with entropic updates of task weights. For any finite-dimensional norm pair, we establish an $O(T^{-1/2})$ ergodic stationarity rate in the deterministic setting, deriving the required trajectory gradient bound from smoothness and lower-boundedness in the unregularized case. With stochastic gradients and a bounded-gradient assumption, one persistent blended-gradient momentum buffer yields an $O(T^{-1/4})$ rate whose leading term has no explicit dependence on the number of tasks. We also establish static regret for the inner weighting objective on arbitrary bounded gradient sequences and, with entropy regularization and a weight floor, iteration-wise inner-gap control after burn-in while retaining ergodic stationarity, conditional on a trajectory gradient bound. The optimal blended gradient can be nonunique in spectral and sign geometries, motivating a selection-independent inner gap. Our analysis extends the spectral construction studied by concurrent MOON to general norms. Experiments compare the method with existing multi-task optimizers and examine its oracle, weighting, and momentum choices.",
+    "category": "Geometry and Topology",
+    "source": "arXiv",
+    "published": "2026-10-09T15:55:53Z",
+    "updated": "2026-10-09T15:55:53Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.13773v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.13773v1"
+      }
+    ],
+    "score": 66,
+    "infographic": {
+      "key_insight": "A single-loop multi-objective optimizer can combine norm-aware linear minimization with entropic task-weight updates to achieve provable stationarity guarantees beyond Euclidean geometry.",
+      "engineering_relevance": "This provides a practical framework for multi-task and matrix-aware optimization where the geometry, weighting strategy, and momentum can be tailored while retaining convergence guarantees.",
+      "method": [
+        "Uses a norm-constrained linear minimization oracle to compute blended descent directions.",
+        "Updates task weights with an entropy-regularized rule, optionally enforcing a minimum weight floor.",
+        "Adds a persistent blended-gradient momentum buffer for stochastic settings."
+      ],
+      "evidence_signal": "The abstract reports theoretical convergence bounds and notes experiments comparing the method against existing multi-task optimizers, including oracle, weighting, and momentum variants.",
+      "watch_item": "The strongest inner-gap guarantees require assumptions such as bounded gradients, a trajectory gradient bound, and in some cases a weight floor or burn-in period.",
+      "hashtags": [
+        "#MultiObjectiveOptimization",
+        "#NormAwareOptimization",
+        "#EntropyRegularization",
+        "#StochasticOptimization",
+        "#MachineLearningTheory"
+      ],
+      "paper_id": "2026-10-09-arxiv-geometry_aware_multi_objective_optimization_norm_constrained_oracles_with_entropic_weight",
+      "paper_title": "Geometry-Aware Multi-Objective Optimization: Norm-Constrained Oracles with Entropic Weight Updates",
+      "paper_date": "2026-10-09",
+      "paper_category": "Geometry and Topology",
+      "generated_at": "2026-10-13T19:44:44",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-s_3_r_fast_and_faithful_rl_rollouts_via_self_sparse_speculative_decoding",
+    "arxiv_id": "2610.13202v1",
+    "date": "2026-10-09",
+    "title": "S$^3$R: Fast and Faithful RL Rollouts via Self-Sparse Speculative Decoding",
+    "authors": "Yuhang He, Hongyu Ge, Zihan Lin, Siyi Liu, Yongqi Zhang",
+    "abstract": "Fast rollout generation for long-context reinforcement learning with verifiable rewards (RLVR) requires reducing KV-cache traffic without changing the response groups used for policy optimization. In our profiled RLVR workloads, attention accounts for 72--76\\% of autoregressive decoding kernel time. Sparse attention reduces these reads, but sampling directly from a sparse policy changes the response groups used for learning. For group-relative optimization, we show that even exact response-wise reweighting does not generally recover the expected dense-policy update because the advantage of each response depends on the rewards of other group members. We propose Self-Sparse Speculative Rollouts (S$^3$R). It uses sparse attention to propose tokens, then generates responses through full-attention verification and exact speculative sampling. Drafting and verification share the same policy parameter, eliminating the need to train or update a separate drafter. The resulting response groups follow the dense-policy distribution. Under S$^3$R, we characterize speedup conditions and the costs of drafting and verification. We found that dense verification still requires the complete historical KV cache. A KV-aware scheduler therefore limits KV-cache repeated offloading and restoration while maintaining rollout parallelism. % OR thrashing In a matched ablation with an aggressive sparse drafting budget, S$^3$R maintains stable training while direct sparse sampling with training-side correction becomes unstable. On long-context mathematical reasoning, S$^3$R achieves $1.39\\times~1.35\\times$ the end-to-end training throughput of autoregressive rollouts on Qwen3 model, with comparable task performance.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-09T08:22:40Z",
+    "updated": "2026-10-09T08:22:40Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.13202v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.13202v1"
+      }
+    ],
+    "score": 65,
+    "infographic": {
+      "key_insight": "S$^3$R speeds up long-context RL rollouts by using sparse attention only for drafting, then restoring the dense-policy distribution through full-attention speculative verification.",
+      "engineering_relevance": "It offers a practical way to cut KV-cache traffic in verifiable-reward RL training without changing the response groups that policy optimization depends on.",
+      "method": [
+        "Use self-sparse drafting to propose tokens with sparse attention.",
+        "Verify drafted responses with full attention and exact speculative sampling.",
+        "Keep drafting and verification on the same policy, plus KV-aware scheduling to reduce repeated cache offload/restore."
+      ],
+      "evidence_signal": "On long-context mathematical reasoning, the method reached 1.39× and 1.35× end-to-end training throughput over autoregressive rollouts on Qwen3, with comparable task performance.",
+      "watch_item": "Dense verification still needs the full historical KV cache, so KV-cache movement can remain a bottleneck if scheduling is not carefully managed.",
+      "hashtags": [
+        "#ReinforcementLearning",
+        "#SpeculativeDecoding",
+        "#LongContext",
+        "#KVCache",
+        "#MathematicalReasoning"
+      ],
+      "paper_id": "2026-10-09-arxiv-s_3_r_fast_and_faithful_rl_rollouts_via_self_sparse_speculative_decoding",
+      "paper_title": "S$^3$R: Fast and Faithful RL Rollouts via Self-Sparse Speculative Decoding",
+      "paper_date": "2026-10-09",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-13T19:44:46",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-cross_behavior_policy_optimization_unified_learning_from_offline_demonstrations_and_on_and",
+    "arxiv_id": "2610.12830v1",
+    "date": "2026-10-09",
+    "title": "Cross-Behavior Policy Optimization: Unified Learning from Offline Demonstrations and On- and Off-Policy Rollouts via a Shared Regression Target",
+    "authors": "Du Cheng, Junyu Lu, Jingfan Zhang, Yuzhuo Zhang, Haoxuan Jia, Shichao Weng",
+    "abstract": "Reasoning post-training draws on offline demonstrations and policy-generated rollouts, yet conventional supervised fine-tuning (SFT) followed by reinforcement learning (RL) separates their objectives and limits continued reuse of collected responses. We propose \\textbf{Cross-Behavior Policy Optimization} (CBPO), which makes these sources compatible with one regression loss through a fixed-reference target. Because the generating policy does not enter this target, positive and negative offline completions, reference responses, and current and historical rollouts can share a common reward-labeled record format and replay buffer. As new responses enter the buffer, optimization retains the same regression objective without coordinating separate SFT and RL objectives or requiring stored behavior-policy probabilities, importance weighting, or a learned critic. Restricting the available sources gives offline, on-policy, and off-policy variants, while CBPO-Unified combines them. Across two model scales and four mathematical reasoning benchmarks, CBPO delivers leading \\texttt{avg@32} and \\texttt{pass@32} performance across benchmarks and data regimes. On Qwen3-1.7B, CBPO-Unified improves benchmark-averaged \\texttt{avg@32} and \\texttt{pass@32} over SFT DAPO by 2.33 and 4.44 percentage points, respectively. In the replay ablation, retaining historical rollouts improves these metrics by 1.87 and 3.72 percentage points over the no-history configuration.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-09T00:29:53Z",
+    "updated": "2026-10-09T00:29:53Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.12830v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.12830v1"
+      }
+    ],
+    "score": 65,
+    "infographic": {
+      "key_insight": "CBPO unifies supervised and reinforcement-style reasoning training by turning offline demonstrations and policy rollouts into a single shared regression target, so all collected responses can be reused in one replay buffer.",
+      "engineering_relevance": "This simplifies reasoning post-training by avoiding separate SFT/RL objectives, importance weighting, stored behavior-policy probabilities, and critic learning while still enabling offline, on-policy, and off-policy training.",
+      "method": [
+        "Uses a fixed-reference target that does not depend on the generating policy.",
+        "Allows positive/negative offline completions, reference answers, and historical rollouts to share one reward-labeled format.",
+        "Supports offline, on-policy, off-policy, and unified CBPO variants under the same regression objective."
+      ],
+      "evidence_signal": "Across two model scales and four mathematical reasoning benchmarks, CBPO reported leading avg@32 and pass@32 results; on Qwen3-1.7B, CBPO-Unified improved benchmark-averaged avg@32 and pass@32 over SFT DAPO by 2.33 and 4.44 points, and replay history added another 1.87 and 3.72 points.",
+      "watch_item": "The approach depends on a fixed-reference regression setup, so performance may be sensitive to how targets are constructed and how stale historical rollouts are managed in the buffer.",
+      "hashtags": [
+        "#MathReasoning",
+        "#ReinforcementLearning",
+        "#SupervisedFineTuning",
+        "#ReplayBuffer",
+        "#LLMTraining"
+      ],
+      "paper_id": "2026-10-09-arxiv-cross_behavior_policy_optimization_unified_learning_from_offline_demonstrations_and_on_and",
+      "paper_title": "Cross-Behavior Policy Optimization: Unified Learning from Offline Demonstrations and On- and Off-Policy Rollouts via a Shared Regression Target",
+      "paper_date": "2026-10-09",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-13T19:44:49",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-collaborative_learning_and_reasoning_over_model_slices",
+    "arxiv_id": "2610.12927v1",
+    "date": "2026-10-09",
+    "title": "Collaborative Learning and Reasoning over Model Slices",
+    "authors": "Yuheng Wang, Runde Yang, Zhuohan Bao, Qiran Zhang, Huatao Li, Yiyang Zheng",
+    "abstract": "Large language models (LLMs) excel across diverse tasks, benefiting from knowledge priors, in-context reasoning, and test-time computation. Despite these strengths, single-model reasoning remains vulnerable to error propagation, as later steps depend on the model's earlier outputs, leaving reasoning blind spots difficult to independently reassess. To address this limitation, we develop \\textit{collaborative learning}, encompassing the construction of heterogeneous collaborators and the learning of effective cross-model collaboration. Specifically, \\textit{model slicing} replaces a large model with smaller, heterogeneous models under a comparable parameter budget, enabling prior reasoning to be reassessed across distinct model parameterizations. \\textit{Pyramid supervision} combines protocol distillation with step-level supervision to refine reasoning and interaction decisions throughout collaboration. We evaluate our approach across four task categories: multi-hop question answering, mathematical reasoning, code generation, and open-ended constrained generation. The trained heterogeneous models achieve comparable or better task performance than the original large model and established multi-agent baselines, including reinforcement-learning-based methods, while also achieving higher inference efficiency than the multi-agent baselines and exhibiting differentiated collaboration patterns across tasks. These findings show that learned collaboration turns model heterogeneity into complementary reasoning capabilities.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-09T03:17:29Z",
+    "updated": "2026-10-09T03:17:29Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.12927v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.12927v1"
+      }
+    ],
+    "score": 63,
+    "infographic": {
+      "key_insight": "Model slicing turns a single large LLM into heterogeneous smaller collaborators that can re-check each other’s reasoning steps and reduce error propagation.",
+      "engineering_relevance": "The approach offers a practical way to improve reasoning accuracy and inference efficiency without relying on one monolithic model or expensive RL-based multi-agent systems.",
+      "method": [
+        "Construct heterogeneous collaborator models via model slicing under a comparable parameter budget.",
+        "Use pyramid supervision to combine protocol distillation with step-level step supervision.",
+        "Learn when and how models should interact so they can reassess prior reasoning across distinct parameterizations."
+      ],
+      "evidence_signal": "The method was evaluated on multi-hop QA, mathematical reasoning, code generation, and constrained generation, and the trained heterogeneous models matched or exceeded the original large model and multi-agent baselines while using higher inference efficiency.",
+      "watch_item": "Performance depends on effective training of collaboration policies and may be sensitive to task/domain shifts where heterogeneous model disagreements are less informative.",
+      "hashtags": [
+        "#LLMReasoning",
+        "#ModelSlicing",
+        "#MultiAgentAI",
+        "#MathematicalReasoning",
+        "#EfficientInference"
+      ],
+      "paper_id": "2026-10-09-arxiv-collaborative_learning_and_reasoning_over_model_slices",
+      "paper_title": "Collaborative Learning and Reasoning over Model Slices",
+      "paper_date": "2026-10-09",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-13T19:44:51",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-08-arxiv-variational_neural_transport_for_aggregation_diffusion_equations",
+    "arxiv_id": "2610.12745v1",
+    "date": "2026-10-08",
+    "title": "Variational neural transport for aggregation-diffusion equations",
+    "authors": "Qianyi Li, Hailiang Liu",
+    "abstract": "We develop a neural transport framework for nonlinear, nonlocal aggregationdiffusion equations arising in chemotaxis, polymer dynamics, and related applications. Based on the Onsager variational principle, we reformulate the governing equation as a constrained optimal control problem, taking the velocity field as the control and evolving the density via the associated continuity equation. The velocity field is parameterized by a neural network trained on the variational objective evaluated along particle trajectories. By coupling the density and generalized score equations into a single system solved via the Euler method, the score function propagates efficiently for loss evaluation. Furthermore, we establish a rigorous error analysis that decomposes the total error into approximation, optimization, Monte Carlo sampling, and time-discretization components, and prove corresponding error bounds. Numerical experiments across several representative models demonstrate the accuracy and effectiveness of the proposed approach.",
+    "category": "Optimization and PDEs",
+    "source": "arXiv",
+    "published": "2026-10-08T21:46:36Z",
+    "updated": "2026-10-08T21:46:36Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.12745v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.12745v1"
+      }
+    ],
+    "score": 61,
+    "infographic": {
+      "key_insight": "The paper turns nonlinear aggregation-diffusion PDE solving into a variationally trained neural transport problem, where a neural velocity field drives the density through a continuity equation.",
+      "engineering_relevance": "This offers a mesh-free framework for simulating complex transport phenomena in chemotaxis, polymer dynamics, and related PDE-driven systems.",
+      "method": [
+        "Use Onsager’s variational principle to rewrite the PDE as a constrained optimal control problem.",
+        "Parameterize the transport velocity with a neural network and train it on variational losses along particle trajectories.",
+        "Propagate density and generalized score equations together with an Euler time-stepping scheme to evaluate the objective efficiently."
+      ],
+      "evidence_signal": "The abstract reports numerical experiments on several representative models and a rigorous error analysis with bounds for approximation, optimization, Monte Carlo sampling, and time-discretization errors.",
+      "watch_item": "Accuracy depends on balancing multiple error sources, so training stability and discretization choices may strongly affect performance.",
+      "hashtags": [
+        "#NeuralPDE",
+        "#VariationalMethods",
+        "#AggregationDiffusion",
+        "#OptimalControl",
+        "#ScientificMachineLearning"
+      ],
+      "paper_id": "2026-10-08-arxiv-variational_neural_transport_for_aggregation_diffusion_equations",
+      "paper_title": "Variational neural transport for aggregation-diffusion equations",
+      "paper_date": "2026-10-08",
+      "paper_category": "Optimization and PDEs",
+      "generated_at": "2026-10-13T19:44:53",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-08-arxiv-bilevel_optimization_for_data_driven_learning_of_koopman_embeddings_using_kernel_based_aut",
+    "arxiv_id": "2610.12370v1",
+    "date": "2026-10-08",
+    "title": "Bilevel optimization for data-driven learning of Koopman embeddings using kernel-based autoencoders",
+    "authors": "Joel-Pascal Ntwali N'konzi, Feliks Nüske, Stefan Klus",
+    "abstract": "Koopman operator theory provides a linear framework for analyzing nonlinear dynamical systems and has become a major tool for data-driven modeling. A central challenge, however, is that finite-dimensional approximations computed by methods such as extended dynamic mode decomposition (EDMD) require the dictionary to be specified a priori. Recent machine-learning approaches address this limitation by learning the dictionary from data, predominantly using artificial neural network (ANN) autoencoder architectures. Although kernel methods offer an alternative with greater interpretability and tractability for theoretical analysis, they have received little attention in this setting. We introduce extended dynamic mode decomposition with kernel-based dictionary learning (EDMD-kDL), a kernel-based method for learning finite-dimensional Koopman embeddings directly from data. The method combines ideas from collocation methods and bilevel optimization to simultaneously learn a kernel dictionary and the corresponding Koopman approximation. We evaluate EDMD-kDL against state-of-the-art ANN-based approaches on a range of numerical experiments, including global sea-surface-temperature forecasting and learning directly from video data. Across all tested settings, EDMD-kDL achieves performance comparable to or better than the ANN-based methods. Moreover, in contrast to standard kernel methods, the proposed approach is scalable to large datasets by design since the size of the required kernel matrices depends on the number of collocation points rather than the size of the training dataset.",
+    "category": "Optimization and PDEs",
+    "source": "arXiv",
+    "published": "2026-10-08T17:30:23Z",
+    "updated": "2026-10-08T17:30:23Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "math.DS",
+      "stat.ML"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.12370v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.12370v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "The paper learns Koopman embeddings directly from data with a kernel-based bilevel optimization framework, avoiding the need to predefine a dictionary.",
+      "engineering_relevance": "This offers a more interpretable and scalable alternative to neural autoencoder approaches for forecasting and reduced-order modeling of nonlinear dynamical systems.",
+      "method": [
+        "EDMD-kDL combines kernel dictionaries with extended dynamic mode decomposition.",
+        "A bilevel optimization scheme jointly learns the embedding and Koopman approximation.",
+        "Collocation-based formulation keeps kernel matrix size tied to collocation points, improving scalability."
+      ],
+      "evidence_signal": "Across experiments on sea-surface-temperature forecasting and video data, EDMD-kDL matches or outperforms ANN-based methods.",
+      "watch_item": "Performance depends on choosing suitable kernels, collocation points, and optimization settings, which may affect robustness and implementation complexity.",
+      "hashtags": [
+        "#KoopmanOperator",
+        "#KernelMethods",
+        "#BilevelOptimization",
+        "#ReducedOrderModeling",
+        "#MachineLearning"
+      ],
+      "paper_id": "2026-10-08-arxiv-bilevel_optimization_for_data_driven_learning_of_koopman_embeddings_using_kernel_based_aut",
+      "paper_title": "Bilevel optimization for data-driven learning of Koopman embeddings using kernel-based autoencoders",
+      "paper_date": "2026-10-08",
+      "paper_category": "Optimization and PDEs",
+      "generated_at": "2026-10-13T19:44:55",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-08-arxiv-ghost_tasking_for_parametrized_gaussian_processes_solving_linear_differential_equations",
+    "arxiv_id": "2610.12009v1",
+    "date": "2026-10-08",
+    "title": "Ghost tasking for parametrized Gaussian Processes solving linear differential equations",
+    "authors": "Johanna Moser, Christopher Albert, Sascha Ranftl",
+    "abstract": "Physics-informed machine learning has gained significant attention in recent years. In regimes of limited data, parametrized Gaussian processes have become popular. Existing approaches, however, often face limitations, such as requiring parametrizable (also called controllable) systems or a large number of output tasks. In this work, we introduce a systematic procedure we call \"ghost tasking\", using auxiliary tasks to circumvent these limitations. We prove that such ghost tasks can render any non-parametrizable system effectively parametrizable, enabling algorithmic construction of parametrized Gaussian Processes while keeping the number of required tasks (i.e. output dimensions) and latent functions low. We find that ghost tasking performs especially well in an inverse problem setting, even with very few available data. We show the usage and power of ghost tasking in three experiments, providing systematic comparisons to the only other currently available method applicable to all experiments. We provide necessary syntax and explications for two computer algebra programs that compute parametrizations for systems with polynomial or rational coefficients. Our theoretical results extend to systems with meromorphic functions.",
+    "category": "Symbolic Computation",
+    "source": "arXiv",
+    "published": "2026-10-08T14:10:51Z",
+    "updated": "2026-10-08T14:10:51Z",
+    "primary_category": "physics.comp-ph",
+    "categories": [
+      "physics.comp-ph",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.12009v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.12009v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "Ghost tasking adds auxiliary output tasks so even non-parametrizable linear differential systems can be made effectively parametrizable for Gaussian-process-based learning.",
+      "engineering_relevance": "This enables physics-informed surrogate modeling and inverse problem solving with fewer output tasks and latent functions, especially when data are scarce.",
+      "method": [
+        "Introduce auxiliary “ghost” tasks to augment the system.",
+        "Use these tasks to construct a parametrization compatible with Gaussian Processes.",
+        "Provide CAS syntax/procedures for polynomial, rational, and meromorphic coefficient systems."
+      ],
+      "evidence_signal": "The abstract reports three experiments with systematic comparisons, and highlights particularly strong performance in an inverse-problem setting with very little data.",
+      "watch_item": "The approach depends on correct symbolic parametrization construction, so practical use may require careful computer-algebra setup and may be sensitive to model specification.",
+      "hashtags": [
+        "#GaussianProcesses",
+        "#PhysicsInformedML",
+        "#InverseProblems",
+        "#SymbolicComputation",
+        "#DifferentialEquations"
+      ],
+      "paper_id": "2026-10-08-arxiv-ghost_tasking_for_parametrized_gaussian_processes_solving_linear_differential_equations",
+      "paper_title": "Ghost tasking for parametrized Gaussian Processes solving linear differential equations",
+      "paper_date": "2026-10-08",
+      "paper_category": "Symbolic Computation",
+      "generated_at": "2026-10-13T19:44:58",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-constrained_probabilistic_numerics_gaussian_process_solvers_for_linear_pdes_under_linear_i",
+    "arxiv_id": "2610.13804v1",
+    "date": "2026-10-09",
+    "title": "Constrained Probabilistic Numerics: Gaussian Process Solvers for Linear PDEs under Linear Inequality Constraints",
+    "authors": "Boyuan Deng, Kshitiz Upadhyay, Michael Shields",
+    "abstract": "Gaussian process solvers for linear partial differential equations (PDEs) return posteriors rather than point estimates, but they condition only on equality information: the PDE residual, boundary data, and measurements. Many solutions of interest also obey inequality constraints, including nonnegativity, monotonicity, and absence of arbitrage, which equality conditioning cannot enforce. We prove that conditioning a Gaussian process prior jointly on linear equality observations and a finite-dimensional inequality event is equivalent to conditioning sequentially in terms of Borel measures on the solution space. The physics-informed posterior is therefore a valid prior for the inequality update at virtual points. The combined law is non-Gaussian yet computable through truncated-Gaussian moments, and neither the PDE conditioning nor the inequality update requires modification. We evaluated the construction on a Poisson benchmark, option-price surfaces, and air-quality fields. Under incomplete boundary data, a monotonicity constraint lowered the error of a two-dimensional Poisson reconstruction by $63\\%$. On a real S&P 500 option chain thinned to $20$ retained quotes, no-arbitrage constraints reduced held-out extrapolation error by $22\\%$ and cut the calendar-arbitrage rate from $10\\%$ to $1\\%$. On four real air-quality snapshots, nonnegativity reduced a Gaussian moment-based sub-zero-tail proxy by $74\\%$ at the sparsest monitor count. Changes in mean accuracy and constraint diagnostics differed across data regimes. The probability of the noisy virtual constraint event under the equality posterior measures agreement with the specified bounds before the update. The construction turns admissibility from a post-processing step into conditioning information for probabilistic PDE solvers.",
+    "category": "Optimization and PDEs",
+    "source": "arXiv",
+    "published": "2026-10-09T16:18:11Z",
+    "updated": "2026-10-09T16:18:11Z",
+    "primary_category": "stat.ML",
+    "categories": [
+      "stat.ML",
+      "cs.LG",
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.13804v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.13804v1"
+      }
+    ],
+    "score": 59,
+    "infographic": {
+      "key_insight": "Gaussian process PDE solvers can incorporate linear inequality constraints by sequentially conditioning first on the PDE/equality data and then on a finite-dimensional constraint event, yielding a valid non-Gaussian posterior.",
+      "engineering_relevance": "This lets engineers enforce physically or financially admissible solutions such as nonnegativity, monotonicity, and no-arbitrage without redesigning the underlying PDE solver.",
+      "method": [
+        "Condition a GP prior on PDE residuals, boundary data, and observations to obtain a physics-informed posterior.",
+        "Treat virtual inequality constraints as a finite-dimensional event and update the equality posterior using truncated-Gaussian moments.",
+        "Use the resulting non-Gaussian posterior directly; no change is needed to the PDE-conditioning step or the inequality-update step."
+      ],
+      "evidence_signal": "Across Poisson, option-pricing, and air-quality benchmarks, the constrained posteriors improved constraint satisfaction and often reduced error, including a 63% error drop for 2D Poisson under monotonicity and a reduction of calendar-arbitrage from 10% to 1% on thinned S&P 500 options.",
+      "watch_item": "The approach relies on finite virtual constraint points and truncated-moment computation, so scalability and constraint placement may become important in higher-dimensional or tightly constrained problems.",
+      "hashtags": [
+        "#GaussianProcesses",
+        "#PDEs",
+        "#ProbabilisticNumerics",
+        "#ConstrainedOptimization",
+        "#ScientificMachineLearning"
+      ],
+      "paper_id": "2026-10-09-arxiv-constrained_probabilistic_numerics_gaussian_process_solvers_for_linear_pdes_under_linear_i",
+      "paper_title": "Constrained Probabilistic Numerics: Gaussian Process Solvers for Linear PDEs under Linear Inequality Constraints",
+      "paper_date": "2026-10-09",
+      "paper_category": "Optimization and PDEs",
+      "generated_at": "2026-10-13T19:45:00",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-squeezebench_saturation_resilient_evaluation_of_mathematical_capability",
+    "arxiv_id": "2610.13461v1",
+    "date": "2026-10-09",
+    "title": "SqueezeBench: Saturation-Resilient Evaluation of Mathematical Capability",
+    "authors": "Pablo Manrique, Hai Xia, Stefan Szeider",
+    "abstract": "AI systems are making rapid progress in mathematics, but this progress is hard to measure. Benchmarks of solved problems saturate, and in benchmarks of open problems each problem can be resolved for the first time only once. We present SqueezeBench, a benchmark that is resilient to saturation: a success raises the bar instead of removing the problem. Each problem fixes an integer function $f(n)$ whose values are known only for small $n$, and the benchmark keeps a lower and an upper record on it. A record is a computable Lean function with a machine-checked proof that it bounds $f$. A submission proposes a new function and proves that it bounds $f$, that it is no worse than the current record at any $n$, and that it is strictly better at some $n$. Once accepted, it becomes the record that the next submission has to beat. The system thus chooses the bound as well as its proof, and it may improve the record at a single $n$ or its growth rate. At every $n$, the gap between the two records shows how far the certified bounds are from determining $f(n)$. Every proof is checked by two independent Lean kernels, so no referee needs to check the mathematics. The checks also reject a function that computes $f$ by exhaustive search at small $n$, and a maintainer only reads the submitter's report and looks for such a search at larger $n$. We release ten problems from extremal combinatorics with twenty proved initial records and the admission tools. As a baseline, agents based on a frontier language model, with at most one hour per record, had 82 submissions accepted and improved every record, without going beyond the published literature. Agents based on two newer models then started from these records, had 60 more submissions accepted and improved 19 of the 20 records again. For eight of the ten problems, at least one record is still asymptotically behind the best published bound.",
+    "category": "Theorem Proving",
+    "source": "arXiv",
+    "published": "2026-10-09T11:59:46Z",
+    "updated": "2026-10-09T11:59:46Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI",
+      "cs.LG",
+      "cs.LO"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.13461v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.13461v1"
+      }
+    ],
+    "score": 59,
+    "infographic": {
+      "key_insight": "SqueezeBench turns benchmark saturation into continued progress by requiring each accepted solution to produce a provably stronger mathematical bound than the current record.",
+      "engineering_relevance": "It offers a practical evaluation protocol for theorem-proving models that measures certified reasoning progress even after standard benchmarks stop being informative.",
+      "method": [
+        "Each problem defines an integer function f(n) known only at small n, with Lean-verified lower and upper record functions maintained over n.",
+        "A submission must prove its proposed bound is valid, no worse than the current record everywhere, and strictly better at least one n.",
+        "Accepted records become the new target, while automated dual-kernel Lean checking verifies proofs and blocks trivial exhaustive-search solutions."
+      ],
+      "evidence_signal": "The authors released 10 extremal-combinatorics problems, obtained 20 initial records, and report 82 accepted submissions from a frontier LLM baseline plus 60 more from newer models, improving nearly all records.",
+      "watch_item": "Because the benchmark relies on formally checked bounds and maintainers only inspect for exhaustive search at larger n, it may still be sensitive to implementation details of the admission process and record design.",
+      "hashtags": [
+        "#TheoremProving",
+        "#AIforMath",
+        "#BenchmarkDesign",
+        "#LeanProofs",
+        "#MathematicalReasoning"
+      ],
+      "paper_id": "2026-10-09-arxiv-squeezebench_saturation_resilient_evaluation_of_mathematical_capability",
+      "paper_title": "SqueezeBench: Saturation-Resilient Evaluation of Mathematical Capability",
+      "paper_date": "2026-10-09",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-10-13T19:45:03",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-08-arxiv-synco_data_synthesis_co_training_for_self_evolving_llms_via_multi_agent_reinforcement_lear",
+    "arxiv_id": "2610.11345v1",
+    "date": "2026-10-08",
+    "title": "SynCo: Data Synthesis Co-Training for Self-Evolving LLMs via Multi-Agent Reinforcement Learning",
+    "authors": "Wei Yang, Shawn Li, Yuehan Qin, Yawei Wang, Mingxi Wang, Shixuan Li",
+    "abstract": "Self-evolving LLM agents promise to improve autonomously through continual interaction and learning, reducing their dependence on manually curated supervision. Realizing this promise requires not only updating the agent, but also evolving its training experience as its capabilities change. However, most existing pipelines rely on static datasets or separately updated synthesis models, causing previously useful tasks to become trivial while overly difficult tasks remain uninformative. This growing mismatch between agent capability and training experience limits sustained self-improvement. To address this problem, we propose SynCo, an agentic data synthesis co-training framework for self-evolving LLMs based on multi-agent reinforcement learning. SynCo jointly optimizes two independently parameterized agents: a Synthesizer that constructs training tasks from the Reasoner's evolving capability state, and a Reasoner that learns from the resulting experience. Each synthesized task induces multiple Reasoner rollouts whose outcomes provide complementary rewards to both agents. Correctness feedback improves the Reasoner, while task quality, answer reliability, and outcome-grounded teachability guide the Synthesizer. Their updates are fed back into subsequent synthesis rounds, allowing the task-solving policy and its training distribution to evolve together. Extensive experiments across eight mathematical reasoning benchmarks demonstrate that SynCo substantially outperforms a broad range of existing synthetic-data methods and controlled baselines, achieving the strongest overall performance while deriving most of its gains from previously unsolved problems.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-08T06:40:18Z",
+    "updated": "2026-10-08T06:40:18Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.11345v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.11345v1"
+      }
+    ],
+    "score": 58,
+    "infographic": {
+      "key_insight": "SynCo co-trains a task Synthesizer and a problem-solving Reasoner so the training data continually adapts to the model’s changing ability, avoiding stale or too-hard synthetic tasks.",
+      "engineering_relevance": "This is relevant for building self-improving LLM systems that need automated curriculum generation and continual adaptation without relying on fixed, manually curated datasets.",
+      "method": [
+        "Jointly optimize two agents with multi-agent reinforcement learning: a Synthesizer that creates tasks and a Reasoner that solves them.",
+        "Use rollouts from multiple Reasoner attempts to produce feedback for both agents: correctness for the Reasoner and task quality, answer reliability, and teachability for the Synthesizer.",
+        "Feed updated agent states back into the next synthesis round so the task distribution evolves along with model capability."
+      ],
+      "evidence_signal": "The paper reports experiments on eight mathematical reasoning benchmarks, where SynCo outperforms a broad range of synthetic-data methods and baselines, with most gains coming from previously unsolved problems.",
+      "watch_item": "Because the framework depends on iterative multi-agent reward signals, implementation stability and reward design may be sensitive to noisy evaluations or poorly calibrated task-quality feedback.",
+      "hashtags": [
+        "#LLM",
+        "#MathematicalReasoning",
+        "#ReinforcementLearning",
+        "#SyntheticData",
+        "#SelfImprovingAI"
+      ],
+      "paper_id": "2026-10-08-arxiv-synco_data_synthesis_co_training_for_self_evolving_llms_via_multi_agent_reinforcement_lear",
+      "paper_title": "SynCo: Data Synthesis Co-Training for Self-Evolving LLMs via Multi-Agent Reinforcement Learning",
+      "paper_date": "2026-10-08",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-13T19:45:06",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-08-arxiv-deflating_the_hessian_rank_4_w4a4_quantization_for_multimodal_diffusion_transformers",
+    "arxiv_id": "2610.11315v2",
+    "date": "2026-10-08",
+    "title": "Deflating the Hessian: Rank-4 W4A4 Quantization for Multimodal Diffusion Transformers",
+    "authors": "Shiwen Wang, Pengxiang Zhao, Xiaoming Yuan",
+    "abstract": "In diffusion transformers, low-rank branches can mitigate 4-bit weight--activation (W4A4) post-training quantization (PTQ) loss by decomposing each weight into a low-bit residual and a high-precision low-rank component. Existing low-rank PTQ approaches, however, either optimize low-rank compensation and residual quantization separately, often requiring higher ranks, or rely on second-order weight updates without explicitly modeling activation quantization error, which becomes particularly pronounced under 4-bit quantization. To address these limitations, we present HSVDQuant, a unified framework modeling low-rank-assisted W4A4 PTQ as a coupled calibration problem and deriving optimization-based solvers from the joint objective. Eliminating the output-side low-rank factor yields a deflated Hessian that discounts residual errors already captured by the low-rank component, while an activation-noise surrogate is incorporated to suppress activation quantization error. Across five diffusion backbones, rank-4 HSVDQuant consistently outperforms rank-4 SVDQuant in PSNR and LPIPS. It further surpasses rank-32 SVDQuant on SANA-1.6B, FLUX.1-schnell, and FLUX.1-dev with an $8\\times$ smaller rank and up to $6.25\\times$ faster quantization. Furthermore, on the Qwen3-8B LLM, rank-4 HSVDQuant improves MMLU accuracy from 61.50% to 68.17% over rank-32 SVDQuant. Overall, HSVDQuant achieves better W4A4 performance with substantially lower rank and quantization cost.",
+    "category": "Number Theory and Algebra",
+    "source": "arXiv",
+    "published": "2026-10-08T06:22:19Z",
+    "updated": "2026-10-09T04:09:36Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.CV",
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.11315v2"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.11315v2"
+      }
+    ],
+    "score": 58,
+    "infographic": {
+      "key_insight": "HSVDQuant turns W4A4 PTQ into a coupled optimization problem, using a deflated Hessian and activation-noise surrogate to make rank-4 low-rank compensation much more effective.",
+      "engineering_relevance": "It offers a practical path to faster, lower-rank quantization of diffusion transformers and LLMs without sacrificing, and often improving, accuracy or image quality.",
+      "method": [
+        "Model weight error as a low-bit residual plus a high-precision low-rank branch.",
+        "Eliminate the output-side low-rank factor to obtain a deflated Hessian that downweights errors already explained by the low-rank term.",
+        "Add an activation-noise surrogate so the calibration also suppresses 4-bit activation quantization error."
+      ],
+      "evidence_signal": "Across five diffusion backbones, rank-4 HSVDQuant beats rank-4 SVDQuant on PSNR and LPIPS, and it even surpasses rank-32 SVDQuant on several models with up to 6.25× faster quantization; on Qwen3-8B, MMLU rises from 61.50% to 68.17%.",
+      "watch_item": "Performance depends on careful calibration and solving the coupled objective, so implementation complexity and sensitivity to calibration data may matter in practice.",
+      "hashtags": [
+        "#Quantization",
+        "#DiffusionTransformers",
+        "#W4A4",
+        "#LowRankApproximation",
+        "#PostTrainingQuantization"
+      ],
+      "paper_id": "2026-10-08-arxiv-deflating_the_hessian_rank_4_w4a4_quantization_for_multimodal_diffusion_transformers",
+      "paper_title": "Deflating the Hessian: Rank-4 W4A4 Quantization for Multimodal Diffusion Transformers",
+      "paper_date": "2026-10-08",
+      "paper_category": "Number Theory and Algebra",
+      "generated_at": "2026-10-13T19:45:08",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-localized_generative_design_of_ship_hulls_with_diffusion_models_and_high_fidelity_assessme",
+    "arxiv_id": "2610.12870v1",
+    "date": "2026-10-09",
+    "title": "Localized Generative Design of Ship Hulls with Diffusion Models and High-Fidelity Assessment",
+    "authors": "Hadi Keramati, Mohammed A. Hannan, Patrick Kirchen, Sina Tousi, Joonas Riekkinen, Jim Pyra",
+    "abstract": "Practical ship design requires localized refinement and performance evaluation. This paper presents a reward-directed diffusion framework for localized hull optimization. Parametric masking during dataset generation restricts geometric changes to selected variables, including the bulbous bow and forebody, while preserving full-hull continuity. Surrogate-assisted sequential Monte Carlo sampling targets reduced predicted calm-water resistance, with stability retained through training data and displacement matched during screening. An automated viscous free-surface CFD pipeline, validated against measurements for two benchmark container ships, evaluates a generated variant and GenHull E, a hull refined by a naval architect within the same representation. At matched KRISO Container Ship (KCS) displacement, the generated variant has comparable total resistance at $F_n=0.195$ but 45-50% higher resistance at $F_n=0.250$ and $0.260$, missed by empirical screening. GenHull E achieves 6-8% lower total resistance up to $F_n=0.240$ but higher resistance above $F_n=0.250$ as opposing friction and pressure trends reverse the gains. Aggregating resistance across this crossover can conceal tradeoffs that emerge when friction and pressure components are evaluated separately. The assessment reveals an inability to represent a faired bulbous bow and a reward lacking viscous pressure and stability terms. These findings show how high-fidelity assessment informs improved representations and objectives for physically realizable generative designs.",
+    "category": "Number Theory and Algebra",
+    "source": "arXiv",
+    "published": "2026-10-09T01:56:07Z",
+    "updated": "2026-10-09T01:56:07Z",
+    "primary_category": "math.AP",
+    "categories": [
+      "math.AP",
+      "cs.AI",
+      "math-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.12870v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.12870v1"
+      }
+    ],
+    "score": 57,
+    "infographic": {
+      "key_insight": "Localized diffusion-based optimization can generate hull variants that look promising under surrogate screening but still fail under high-fidelity CFD when viscous and pressure effects are fully resolved.",
+      "engineering_relevance": "For ship designers, the work shows that physics-aware validation is essential before adopting generative hull changes, especially when optimizing only part of the hull such as the bulbous bow and forebody.",
+      "method": [
+        "Parametric masking restricts diffusion-based edits to selected hull variables while preserving full-hull continuity.",
+        "A reward-directed sequential Monte Carlo sampler targets lower predicted calm-water resistance under displacement and stability constraints.",
+        "An automated viscous free-surface CFD pipeline compares generated hulls against a naval-architect-refined design and benchmark ships."
+      ],
+      "evidence_signal": "Validated CFD on two benchmark container ships showed the generated variant matched resistance at Fn=0.195 but had 45-50% higher resistance at Fn=0.250 and 0.260, while GenHull E improved resistance only below Fn=0.240.",
+      "watch_item": "Surrogate rewards that omit viscous pressure and stability terms can miss performance regressions, and the representation may not capture a faired bulbous bow adequately.",
+      "hashtags": [
+        "#GenerativeDesign",
+        "#ShipHullDesign",
+        "#DiffusionModels",
+        "#CFD",
+        "#Optimization"
+      ],
+      "paper_id": "2026-10-09-arxiv-localized_generative_design_of_ship_hulls_with_diffusion_models_and_high_fidelity_assessme",
+      "paper_title": "Localized Generative Design of Ship Hulls with Diffusion Models and High-Fidelity Assessment",
+      "paper_date": "2026-10-09",
+      "paper_category": "Number Theory and Algebra",
+      "generated_at": "2026-10-13T19:45:11",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-optimal_algorithms_for_nonsmooth_nonconvex_stochastic_optimization_with_constraints",
+    "arxiv_id": "2610.13787v1",
+    "date": "2026-10-09",
+    "title": "Optimal Algorithms for Nonsmooth Nonconvex Stochastic Optimization with Constraints",
+    "authors": "Gon Buzaglo, Guy Kornowski",
+    "abstract": "We present new algorithms for stochastic optimization problems in which the objective is neither smooth nor convex, subject to a convex constraint set. Our algorithms return a $(δ,\\varepsilon)$-Goldstein stationary point, as recently defined for constrained problems by Liu et al. (2024), with improved complexities, and are the first to achieve optimal convergence rates for this task in several settings. In particular, we design projection-based and projection-free algorithms that achieve a $\\widetilde O(δ^{-1}\\varepsilon^{-3})$ rate using stochastic gradients, which we show to be optimal, and a $\\widetilde O(dδ^{-1}\\varepsilon^{-3})$ rate using zeroth-order queries, which is also optimal in its dependence on the dimension $d$ and improves over prior work. Notably, our lower bound is given in terms of the Frank-Wolfe gap and holds even for smooth problems, which is of independent interest. These results show that in nonconvex stochastic optimization, the convergence rate is degraded neither by the presence of constraints nor by nonsmoothness. Our analysis is based on a reduction to online linear optimization, extending a related technique from unconstrained optimization.",
+    "category": "Optimization and PDEs",
+    "source": "arXiv",
+    "published": "2026-10-09T16:04:13Z",
+    "updated": "2026-10-09T16:04:13Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.13787v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.13787v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "The paper gives optimal stochastic algorithms for nonsmooth, nonconvex optimization with convex constraints, matching lower bounds for finding a (δ, ε)-Goldstein stationary point.",
+      "engineering_relevance": "This provides theoretically optimal solver rates for constrained machine-learning and control problems where objectives are noisy, nonsmooth, and nonconvex.",
+      "method": [
+        "Projection-based stochastic gradient method with \\u007eO(δ^{-1}ε^{-3}) complexity",
+        "Projection-free / Frank-Wolfe-style variant with the same optimal rate",
+        "Zeroth-order extension with \\u007eO(dδ^{-1}ε^{-3}) complexity, optimal in dimension dependence"
+      ],
+      "evidence_signal": "The abstract reports matching upper and lower complexity bounds, including a lower bound stated via the Frank-Wolfe gap and valid even for smooth problems.",
+      "watch_item": "The optimal rates are asymptotic and rely on convex constraints plus stochastic oracle assumptions, so practical performance may still depend strongly on projection cost, noise level, and tuning.",
+      "hashtags": [
+        "#Optimization",
+        "#NonconvexOptimization",
+        "#StochasticOptimization",
+        "#FrankWolfe",
+        "#GoldsteinStationarity"
+      ],
+      "paper_id": "2026-10-09-arxiv-optimal_algorithms_for_nonsmooth_nonconvex_stochastic_optimization_with_constraints",
+      "paper_title": "Optimal Algorithms for Nonsmooth Nonconvex Stochastic Optimization with Constraints",
+      "paper_date": "2026-10-09",
+      "paper_category": "Optimization and PDEs",
+      "generated_at": "2026-10-13T19:45:13",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-09-arxiv-a_scalable_learned_iterative_solver_for_nonlinear_mpc_via_temporal_decomposition",
+    "arxiv_id": "2610.13480v1",
+    "date": "2026-10-09",
+    "title": "A Scalable Learned Iterative Solver for Nonlinear MPC via Temporal Decomposition",
+    "authors": "Lukas Lüken, Sergio Lucia",
+    "abstract": "Nonlinear model predictive control (NMPC) can be applied to large nonlinear systems with complex objectives while enforcing constraints, but the cost of solving the underlying optimization problems limits real-time application for systems with fast dynamics or many states. Neural networks can reduce this online cost by approximating the control law, but may violate constraints and typically require many precomputed optimizer solutions for training. The learning-based iterative solver for constrained optimization (LISCO) instead learns to predict primal-dual steps toward satisfaction of the Karush-Kuhn-Tucker (KKT) conditions through self-supervised training without precomputed solutions, but its dense, monolithic architecture grows with the prediction horizon. We remove this horizon dependence by exploiting the temporal structure of the problem in the solver architecture, which makes the network size independent of the horizon while leaving the training loss and the solver iteration unchanged. A closed-loop resampling strategy further aligns the training distribution with closed-loop operation at no additional sampling cost. On an economic NMPC benchmark of a CSTR cascade, the proposed solver scales to larger problems than monolithic LISCO and achieves median speedups of up to a factor of four over IPOPT. In closed loop, it achieves comparable control performance to IPOPT with no observed constraint violations.",
+    "category": "Optimization and PDEs",
+    "source": "arXiv",
+    "published": "2026-10-09T12:13:21Z",
+    "updated": "2026-10-09T12:13:21Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC",
+      "cs.LG",
+      "eess.SY"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.13480v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.13480v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "The paper introduces a learned iterative solver for nonlinear MPC that exploits temporal decomposition so the network size stays independent of prediction horizon while still learning primal-dual updates toward KKT satisfaction.",
+      "engineering_relevance": "It offers a faster, scalable alternative to conventional NMPC solvers for real-time control of large nonlinear systems, with comparable closed-loop performance and no observed constraint violations on the reported benchmark.",
+      "method": [
+        "Learn primal-dual solver steps self-supervised, without precomputed optimal solutions.",
+        "Replace the monolithic horizon-dependent network with a temporally decomposed architecture.",
+        "Use closed-loop resampling to better match the training distribution to deployment behavior."
+      ],
+      "evidence_signal": "On an economic NMPC benchmark of a CSTR cascade, the method scaled to larger problems than monolithic LISCO and achieved median speedups of up to 4× over IPOPT.",
+      "watch_item": "The approach still depends on learned optimization dynamics, so robustness and generalization beyond the benchmarked closed-loop setting should be validated carefully.",
+      "hashtags": [
+        "#NMPC",
+        "#Optimization",
+        "#MachineLearning",
+        "#RealTimeControl",
+        "#ScalableSolvers"
+      ],
+      "paper_id": "2026-10-09-arxiv-a_scalable_learned_iterative_solver_for_nonlinear_mpc_via_temporal_decomposition",
+      "paper_title": "A Scalable Learned Iterative Solver for Nonlinear MPC via Temporal Decomposition",
+      "paper_date": "2026-10-09",
+      "paper_category": "Optimization and PDEs",
+      "generated_at": "2026-10-13T19:45:15",
+      "generator": "openai"
+    }
+  }
+]
