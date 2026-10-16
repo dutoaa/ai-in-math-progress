@@ -1,24 +1,24 @@
 {
-  "key_insight": "Random-reshuffling SGD can guarantee convergence of the final iterate with a much larger constant stepsize than prior last-iterate results, removing the usual explicit 1/n restriction up to logarithmic factors.",
-  "engineering_relevance": "This makes RR-SGD more practical for large finite-sum machine learning problems because the naturally returned last model iterate can be used without requiring overly tiny per-component stepsizes.",
+  "key_insight": "The paper proves that random-reshuffling SGD can achieve last-iterate convergence with a much larger constant stepsize, removing the usual explicit 1/n dependence and keeping only a logarithmic penalty in the number of epochs and components.",
+  "engineering_relevance": "This makes RR-SGD more practical for machine learning training loops where the final model iterate is what matters and stepsize tuning should not need to shrink with dataset size.",
   "method": [
-    "Analyze unconstrained finite-sum optimization with convex, L-smooth component losses.",
-    "Retain the sampling bias at random comparison points in the proof to avoid the explicit 1/n stepsize dependence.",
-    "Combine the new last-iterate bound with existing small-step results to match averaged-iterate rates up to log factors."
+    "Analyzes unconstrained finite-sum optimization with convex, L-smooth component functions.",
+    "Keeps the sampling bias at random comparison points instead of averaging it away, which enables the improved stepsize condition.",
+    "Derives an expected objective-gap bound for the final iterate with eta up to order 1/(L(1+log(nK)))."
   ],
-  "evidence_signal": "The abstract reports an expected objective-gap bound for the RR-SGD last iterate with constant component stepsize η ≲ 1/(L(1 + log(nK))), where K is the number of epochs.",
-  "watch_item": "The guarantee is logarithmically weakened and applies to unconstrained convex L-smooth finite-sum problems, so its direct use in nonconvex or constrained settings is not implied.",
+  "evidence_signal": "The abstract reports an expected objective-gap bound and states that, when combined with existing small-step results, the new rate matches averaged-iterate convergence up to logarithmic factors.",
+  "watch_item": "The guarantee still depends on a logarithmic factor in nK, so the practical benefit may diminish for very large datasets or long training runs if stepsizes are pushed too aggressively.",
   "hashtags": [
-    "#Optimization",
-    "#SGD",
     "#RandomReshuffling",
-    "#ConvexOptimization",
+    "#SGD",
+    "#Optimization",
+    "#LastIterate",
     "#MachineLearning"
   ],
   "paper_id": "2026-10-14-arxiv-large_step_last_iterate_convergence_of_random_reshuffling_stochastic_gradient_descent",
   "paper_title": "Large-Step Last-Iterate Convergence of Random-Reshuffling Stochastic Gradient Descent",
   "paper_date": "2026-10-14",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-10-15T17:36:58",
+  "generated_at": "2026-10-16T17:15:43",
   "generator": "openai"
 }

@@ -27,27 +27,27 @@
     ],
     "score": 98,
     "infographic": {
-      "key_insight": "The paper mines OpenAI’s 2026 AI-generated mathematics release to identify reusable “mathematical instruments” — new lemmas, constructions, inequalities, and proof mechanisms — across 38 problem families.",
-      "engineering_relevance": "It provides a structured way to extract, compare, and track candidate proof components that could inform future automated theorem proving and formal verification workflows.",
+      "key_insight": "The paper mines 38 AI-generated math families to extract reusable “mathematical instruments” such as lemmas, constructions, inequalities, and proof mechanisms, rather than just judging theorems.",
+      "engineering_relevance": "It offers a structured way to turn large-language-model mathematical outputs into candidate building blocks for theorem proving, formalization workflows, and automated discovery pipelines.",
       "method": [
-        "Surveyed 38 families from 722 AI-written manuscripts across two groups of 17 and 21",
-        "Recorded each family’s claim, extracted instruments, antecedents, and caveats",
-        "Added cross-cutting patterns and a scoreboard for formalization status and dependencies"
+        "Surveyed 38 problem families across two groups spanning number theory, geometry, analysis, combinatorics, complexity, algebra, operator algebras, topology, and mathematical physics.",
+        "Recorded for each entry the claim, extracted instruments, antecedents, and caveats.",
+        "Added cross-cutting patterns plus a scoreboard of formalization status and dependencies."
       ],
-      "evidence_signal": "The abstract reports a corpus-level review spanning 372 problem families, with selected source comparisons and a formalization/dependency scoreboard, but no Lean development was compiled or kernel-checked.",
-      "watch_item": "Novelty and correctness assessments are explicitly provisional, and the survey does not independently certify the underlying proofs.",
+      "evidence_signal": "The abstract reports a corpus of 722 AI-written manuscripts organized into 372 problem families, with selected source comparisons used to correct statements, hypotheses, and counts.",
+      "watch_item": "Novelty and correctness assessments are explicitly provisional, and no Lean development was compiled or kernel-checked, so the extracted instruments should not be treated as verified proofs.",
       "hashtags": [
         "#TheoremProving",
-        "#MathAI",
-        "#AutomatedReasoning",
-        "#FormalVerification",
-        "#OpenProblems"
+        "#AIforMath",
+        "#FormalMethods",
+        "#AutomatedDiscovery",
+        "#MathMining"
       ],
       "paper_id": "2026-10-12-arxiv-what_the_machine_invented_mining_new_mathematical_instruments_from_openai_s_october_2026_r",
       "paper_title": "What the Machine Invented: Mining New Mathematical Instruments from OpenAI's October 2026 Release of AI-Generated Mathematics",
       "paper_date": "2026-10-12",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-15T17:36:23",
+      "generated_at": "2026-10-16T17:15:13",
       "generator": "openai"
     }
   },
@@ -78,15 +78,15 @@
     ],
     "score": 92,
     "infographic": {
-      "key_insight": "RGR builds recursive stochastic gradients in Euclidean space and then retracts them to the Stiefel manifold, removing the need for vector transport while enabling adaptive, horizon-free optimization.",
-      "engineering_relevance": "The method offers practical training algorithms for manifold-constrained machine learning models such as PCA, matrix completion, and orthogonal neural networks, with less tuning than prior Riemannian approaches.",
+      "key_insight": "RGR moves recursive stochastic gradient estimation into Euclidean space before retracting to the Stiefel manifold, eliminating vector transport and enabling adaptive, horizon-free optimization.",
+      "engineering_relevance": "This makes nonconvex Stiefel optimization more practical for machine learning systems such as PCA, matrix completion, and orthogonal neural networks by reducing tuning burden and improving convergence stability.",
       "method": [
         "RGR-SPIDER: finite-sum variant with Lipschitz-free, horizon-free adaptive stepsizes.",
-        "RGR-SRM and RGR-EMA: online stochastic variants that are mini-batch free and do not require a preset iteration budget.",
-        "Recursive estimator is formed in Euclidean space and mapped to tangent space via retraction, avoiding vector transport."
+        "RGR-SRM: online mini-batch variant with no prescribed large batch sizes or iteration budget.",
+        "RGR-EMA: online exponential-moving-average variant with similar horizon-free guarantees."
       ],
-      "evidence_signal": "The abstract reports theory plus experiments on principal component analysis, low-rank matrix completion, and orthogonal convolutional neural networks, showing faster empirical convergence than tangent-space recursive methods.",
-      "watch_item": "Performance and stability may still depend on retraction choice and adaptive hyperparameter settings, especially for large-scale manifold-constrained training.",
+      "evidence_signal": "The abstract reports theoretical complexity bounds and experiments on PCA, low-rank matrix completion, and orthogonal CNNs, where RGR variants converge faster than tangent-space recursive methods.",
+      "watch_item": "The method is specialized to Stiefel-manifold problems, so implementation still requires careful manifold retraction and adaptive-parameter handling.",
       "hashtags": [
         "#StiefelManifold",
         "#RiemannianOptimization",
@@ -98,7 +98,7 @@
       "paper_title": "Recursive Gradient Retraction Methods for Stochastic Nonconvex Optimization on Stiefel Manifolds",
       "paper_date": "2026-10-14",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-10-15T17:36:26",
+      "generated_at": "2026-10-16T17:15:15",
       "generator": "openai"
     }
   },
@@ -129,27 +129,27 @@
     ],
     "score": 90,
     "infographic": {
-      "key_insight": "A Neural Spline Flow can learn a smooth, invertible domain map so PDEs on complex geometries can be solved by pulling the problem back to a fixed reference mesh.",
-      "engineering_relevance": "This reduces the need for repeated unstructured meshing and enables reusable, structured finite element workflows with potential gains in assembly efficiency, memory access, and quadrature reuse.",
+      "key_insight": "The paper learns smooth, invertible neural domain maps so PDEs on complex geometries can be solved on a fixed reference mesh via pullback finite elements.",
+      "engineering_relevance": "This can reduce repeated unstructured meshing and enable reusable, efficient FEM workflows for simulation on changing or complex shapes.",
       "method": [
-        "Use monotone rational-quadratic spline coupling layers to enforce a strictly positive Jacobian determinant.",
-        "Transfer the PDE weak form to a reference domain via a diffeomorphic pullback and solve with standard finite elements.",
-        "Condition a shared NSF on latent shape codes and predict those codes for new geometries with an encoder."
+        "Use monotone rational-quadratic spline coupling layers to guarantee a positive Jacobian determinant.",
+        "Condition a shared neural spline flow on low-dimensional latent codes to represent different geometries.",
+        "Transfer the PDE weak form to a reference domain and solve with standard finite elements on a structured mesh."
       ],
       "evidence_signal": "The abstract reports numerical benchmarks showing that sufficiently accurate learned mappings produce reliable finite element solutions.",
-      "watch_item": "Overall accuracy depends on geometric fidelity, so mapping error must be controlled separately from discretization and quadrature error.",
+      "watch_item": "Overall accuracy depends on geometric fidelity, so mapping error must be controlled separately from FEM discretization and quadrature error.",
       "hashtags": [
-        "#NeuralSplines",
+        "#NeuralOperators",
         "#FiniteElementMethod",
         "#PDEs",
-        "#DiffeomorphicMapping",
-        "#ScientificMachineLearning"
+        "#GeometryLearning",
+        "#ScientificML"
       ],
       "paper_id": "2026-10-13-arxiv-neural_spline_flow_diffeomorphisms_for_pullback_finite_element_methods_on_complex_domains",
       "paper_title": "Neural Spline Flow Diffeomorphisms for Pullback Finite Element Methods on Complex Domains",
       "paper_date": "2026-10-13",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-15T17:36:27",
+      "generated_at": "2026-10-16T17:15:16",
       "generator": "openai"
     }
   },
@@ -180,27 +180,27 @@
     ],
     "score": 87,
     "infographic": {
-      "key_insight": "The paper shows that boundary-actuated reinforcement learning can stabilize and damp vibrations in a modified Timoshenko-Ehrenfest beam using a reduced-order PDE model.",
-      "engineering_relevance": "This provides a data-driven control route for flexible structures where boundary actuation is practical and classical model-based tuning may be difficult.",
+      "key_insight": "The paper uses reduced-order reinforcement learning to learn boundary control for suppressing vibrations in a modified Timoshenko-Ehrenfest beam, and compares the learned policy against a classical LQR controller.",
+      "engineering_relevance": "This provides a practical framework for active vibration suppression in flexible structures where boundary actuation and actuator limits matter.",
       "method": [
-        "Model the beam with a modified Timoshenko-Ehrenfest linear PDE under simply supported boundary conditions.",
-        "Reduce the infinite-dimensional system via eigenvalue expansion and truncated Galerkin projection.",
-        "Train a PPO controller on the resulting continuous-time Markov decision process and compare it with LQR."
+        "Model the beam with a modified Timoshenko-Ehrenfest PDE and simply supported boundary conditions.",
+        "Derive a reduced-order model via eigenfunction expansion and truncated Galerkin projection.",
+        "Formulate the finite-dimensional control problem as a continuous-time MDP and train a PPO controller; benchmark against LQR."
       ],
-      "evidence_signal": "The abstract reports a systematic numerical comparison between PPO-based control and the classical LQR regulator, with attention to vibration suppression, energy dissipation, and actuator limits.",
-      "watch_item": "Performance depends on the reduced-order approximation and discretization, so stability or accuracy may degrade if the truncation misses important beam dynamics.",
+      "evidence_signal": "The abstract reports a systematic numerical comparison between PPO and LQR, focusing on vibration reduction, energy dissipation, and actuator constraints.",
+      "watch_item": "ROM accuracy and boundary-actuation feasibility may limit performance when the truncated dynamics or actuator constraints are too restrictive.",
       "hashtags": [
         "#ReinforcementLearning",
         "#PDEControl",
-        "#StructuralDynamics",
-        "#TimoshenkoBeam",
-        "#PPO"
+        "#VibrationControl",
+        "#ReducedOrderModeling",
+        "#OptimalControl"
       ],
       "paper_id": "2026-10-13-arxiv-boundary_control_of_a_modified_timoshenko_ehrenfest_beam_via_reduced_order_reinforcement_l",
       "paper_title": "Boundary Control of a Modified Timoshenko-Ehrenfest Beam via Reduced-Order Reinforcement Learning",
       "paper_date": "2026-10-13",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-15T17:36:29",
+      "generated_at": "2026-10-16T17:15:18",
       "generator": "openai"
     }
   },
@@ -234,15 +234,15 @@
     ],
     "score": 83,
     "infographic": {
-      "key_insight": "In RL with verifiable rewards, larger EMA momentum can help—if it is increased enough to stay in a stable, non-overshooting regime.",
-      "engineering_relevance": "For LLM post-training and RLVR, tuning momentum upward can yield better sample efficiency and validation accuracy than using conventional small momentum values.",
+      "key_insight": "In RL with verifiable rewards, larger momentum coefficients can help—if they are chosen so the effective step size stays in a safe, non-overshooting regime.",
+      "engineering_relevance": "For practical LLM post-training, tuning EMA momentum upward can improve stability and validation accuracy, especially when gradients are noisy or sampled.",
       "method": [
-        "Analyze a bandit model of RLVR with bias-corrected EMA momentum.",
-        "Prove that, under exact gradients, larger EMA coefficients accelerate optimization before overshoot.",
-        "Show that with sampled gradients, keeping η/(1−β) in the safe regime preserves a gain that beats sampling noise as η shrinks."
+        "Analyze RLVR with a bandit model and bias-corrected EMA momentum.",
+        "Prove that, with exact policy gradients, increasing beta speeds optimization as long as overshoot is avoided.",
+        "Show that with sampled gradients, scaling beta to keep eta/(1-beta) safe preserves a nonvanishing gain that can beat sampling noise."
       ],
-      "evidence_signal": "Bandit simulations and RLVR experiments on Qwen3-4B-Base and Qwen2.5-32B (with SGD/EMA and AdamW) validate the theory, including nearly 2 percentage points higher mean validation accuracy from increasing β1.",
-      "watch_item": "Momentum must be increased carefully; if the effective step size becomes too large, overshoot can negate the benefit.",
+      "evidence_signal": "The paper reports bandit simulations plus RLVR experiments on Qwen3-4B-Base and Qwen2.5-32B, where increasing beta1 improved validation accuracy by nearly 2 percentage points.",
+      "watch_item": "The benefit depends on keeping the effective learning-rate/momentum combination in a safe range; too much momentum or an unsafe eta/(1-beta) can cause overshoot or obscure gains.",
       "hashtags": [
         "#ReinforcementLearning",
         "#Momentum",
@@ -254,7 +254,7 @@
       "paper_title": "When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?",
       "paper_date": "2026-10-14",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-15T17:36:32",
+      "generated_at": "2026-10-16T17:15:20",
       "generator": "openai"
     }
   },
@@ -285,18 +285,18 @@
     ],
     "score": 81,
     "infographic": {
-      "key_insight": "Euler reframes AI mathematics from single-shot answers to a human-centered, persistent research workflow that records and reuses the full reasoning process.",
-      "engineering_relevance": "The system’s research-graph design supports traceability, collaboration, and stateful multi-agent planning, which is useful for long-horizon theorem proving and other complex scientific workflows.",
+      "key_insight": "Euler shifts AI-for-mathematics from just producing answers to organizing the full research process—claims, assumptions, dependencies, failures, and verification—into a shared graph that supports human oversight and multi-agent collaboration.",
+      "engineering_relevance": "For theorem proving workflows, Euler offers a persistent, structured memory layer that can reduce context loss, improve traceability, and make long-horizon mathematical investigation easier to debug and steer.",
       "method": [
-        "Builds a shared research graph of statements, assumptions, proof dependencies, alternatives, failed attempts, and verification evidence.",
-        "Lets agents and researchers revisit saved team states and continue exploration from any graph node.",
-        "Uses persistent task-relevant context to reduce fragmentation and help prevent unsupported claims from propagating."
+        "Builds connected research graphs of statements, assumptions, proof dependencies, alternative approaches, failed attempts, and verification evidence.",
+        "Lets agents reuse persistent, task-relevant context across sessions for planning, collaboration, and verification.",
+        "Supports human-in-the-loop exploration by allowing users to revisit saved team states and continue reasoning from specific graph nodes."
       ],
-      "evidence_signal": "The abstract reports three mathematical research case studies plus implementation and software validation, but does not provide quantitative benchmark results.",
-      "watch_item": "The main concern is that the approach appears validated mainly through case studies, so scalability and robustness across larger, harder proof tasks remain to be shown.",
+      "evidence_signal": "The abstract reports three mathematical research case studies and a software validation of the implemented system.",
+      "watch_item": "The abstract does not report quantitative benchmark results, so the practical impact and robustness of the graph-based workflow may depend on how well the system scales and how faithfully agents maintain the shared structure.",
       "hashtags": [
-        "#AI4Math",
         "#TheoremProving",
+        "#AIMathematics",
         "#MultiAgentSystems",
         "#ResearchGraphs",
         "#HumanCenteredAI"
@@ -305,7 +305,7 @@
       "paper_title": "Euler: Towards Human-Centered Multi-Agent Mathematical Discovery",
       "paper_date": "2026-10-14",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-15T17:36:34",
+      "generated_at": "2026-10-16T17:15:22",
       "generator": "openai"
     }
   },
@@ -336,27 +336,27 @@
     ],
     "score": 79,
     "infographic": {
-      "key_insight": "Sparse noisy tumor-growth data can produce convincing fits and explanations while still yielding the wrong governing law, so law discovery must be judged beyond prediction accuracy.",
-      "engineering_relevance": "For scientific modeling workflows, the study shows that coefficient refitting and model ranking should be validated against mathematical correctness, not just curve-fit quality.",
+      "key_insight": "Accurate tumor-growth predictions can still come from the wrong underlying law, so symbolic discovery must be judged by mathematical validity and law recovery—not fit alone.",
+      "engineering_relevance": "For data-driven modeling in biology and other sparse-data systems, the workflow highlights that coefficient refitting, candidate filtering, and ranking should be designed to avoid selecting plausible but incorrect governing equations.",
       "method": [
-        "Symbolic regression generates candidate growth laws from sparse data.",
-        "Candidates are filtered by mathematical admissibility and then coefficient-refit using either physics-informed neural networks or nonlinear least squares.",
-        "An LLM-based ranking step is compared against selection by training error."
+        "Symbolic regression proposes candidate growth laws from sparse noisy tumor data",
+        "Mathematical admissibility checks and coefficient refitting refine retained models",
+        "LLM-based ranking is compared against training-error selection and classical nonlinear least squares"
       ],
-      "evidence_signal": "Using synthetic Gompertz data, dense noiseless data recover the true family, while sparse noisy sampling often selects alternative forms; nonlinear least squares usually lowers growth-law error, but PINN refitting often increases it.",
-      "watch_item": "LLM rankings and high-quality trajectory fits do not guarantee correct law recovery, so downstream selection criteria can be misleading.",
+      "evidence_signal": "On synthetic Gompertz data, dense noiseless sampling recovered the true family, while sparse noisy sampling often produced alternative laws; nonlinear least squares usually reduced law error, whereas PINN refitting often increased it.",
+      "watch_item": "LLM rankings and good trajectory fits can mask mathematical errors, so implementation should include explicit law-recovery and admissibility evaluation before accepting a model.",
       "hashtags": [
+        "#ScientificML",
         "#SymbolicRegression",
         "#TumorGrowth",
-        "#ScientificAI",
-        "#ModelDiscovery",
-        "#LLMReasoning"
+        "#AIforMath",
+        "#ModelDiscovery"
       ],
       "paper_id": "2026-10-12-arxiv-ai_assisted_tumor_growth_law_discovery_from_sparse_data_refitting_and_llm_based_ranking",
       "paper_title": "AI-Assisted Tumor-Growth Law Discovery from Sparse Data: Refitting and LLM-Based Ranking",
       "paper_date": "2026-10-12",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-15T17:36:36",
+      "generated_at": "2026-10-16T17:15:24",
       "generator": "openai"
     }
   },
@@ -388,27 +388,27 @@
     ],
     "score": 75,
     "infographic": {
-      "key_insight": "TPPO replaces a single critic with a cumulative, log-odds-style value decomposition that better tracks how value evolves across a reasoning trajectory under sparse terminal rewards.",
-      "engineering_relevance": "This gives a more faithful reward/advantage signal for training language models on math reasoning, improving PPO stability and generalization without changing the underlying task reward.",
+      "key_insight": "TPPO reframes PPO value estimation for language-model reasoning by cumulatively reconstructing prefix values in log-odds space, better tracking token-level credit under sparse terminal rewards.",
+      "engineering_relevance": "This offers a practical drop-in training improvement for reasoning LMs, improving advantage estimation and generalization across multiple model sizes and task types.",
       "method": [
         "Decompose successive prefix values with a Bayesian additive update in log-odds space.",
-        "Parameterize the value as a sum of position-wise scalar outputs, producing cumulative value logits.",
+        "Parameterize the critic as summed position-wise scalar outputs to produce value logits.",
         "Train these outputs using terminal-outcome supervision on reconstructed values."
       ],
-      "evidence_signal": "The abstract reports +7.0 and +8.4 aggregate math-score gains over PPO on Qwen3-4B-Base and Qwen3-8B-Base, plus improved out-of-distribution generalization across several model sizes and additional tasks.",
-      "watch_item": "Because the method reconstructs values from position-wise outputs, implementation quality and calibration of the cumulative value logits may strongly affect stability under sparse-reward training.",
+      "evidence_signal": "The abstract reports +7.0 and +8.4 aggregate reasoning-score gains over PPO on Qwen3-4B-Base and Qwen3-8B-Base, with additional improvements on Qwen3-4B, Qwen2.5-Math-1.5B, Qwen3.5-9B, countdown, and scientific coding tasks.",
+      "watch_item": "The method depends on accurate reconstruction from terminal labels, so it may be sensitive to reward sparsity, value calibration, or implementation details in the cumulative critic.",
       "hashtags": [
-        "#LLMReasoning",
         "#PPO",
+        "#LLMReasoning",
         "#ReinforcementLearning",
-        "#MathematicalReasoning",
-        "#ValueEstimation"
+        "#ValueFunction",
+        "#MathAI"
       ],
       "paper_id": "2026-10-12-arxiv-tppo_tracking_value_ppo_for_language_model_reasoning",
       "paper_title": "TPPO: Tracking-Value PPO For Language Model Reasoning",
       "paper_date": "2026-10-12",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-15T17:36:38",
+      "generated_at": "2026-10-16T17:15:26",
       "generator": "openai"
     }
   },
@@ -440,27 +440,27 @@
     ],
     "score": 74,
     "infographic": {
-      "key_insight": "PatternBoost, when adapted with geometry-aware representations and search moves, can automate the discovery of stronger extremal constructions than prior hand-designed efforts.",
-      "engineering_relevance": "The study shows that learning-guided search can accelerate lower-bound discovery for combinatorial geometry problems, informing algorithm design and hardness analysis.",
+      "key_insight": "A PatternBoost-based learning-guided search can automate the discovery of new extremal geometric constructions, and modest expert seeding can further improve the best-known integrality-gap bounds.",
+      "engineering_relevance": "The work provides a practical blueprint for using machine learning to accelerate lower-bound construction and hardness-instance generation in combinatorial optimization and algorithm design.",
       "method": [
-        "Alternate local search with transformer-generated candidate constructions.",
-        "Use tailored instance encodings plus surrogate ranking before exact verification.",
-        "Inject modest expert-crafted diversity when automated search plateaus."
+        "Adapt PatternBoost to geometric instance spaces with custom candidate representations and local search moves.",
+        "Use a transformer surrogate to rank candidate constructions before exact verification.",
+        "Combine automated search with structured expert-provided seeds to expand instance diversity and escape early plateaus."
       ],
-      "evidence_signal": "On stabbing unit squares with axis-parallel lines, the method improved the best known lower bound from 3/2 to 20/13, and with structured staircase initialization to 14/9.",
-      "watch_item": "Performance appears sensitive to representation quality and initial diversity, so naive encodings or search operators may fail or plateau early.",
+      "evidence_signal": "On stabbing unit squares by axis-parallel lines, the method improved the best known lower bound from 3/2 to 20/13, and with a structured staircase seed reached 14/9.",
+      "watch_item": "Performance appears sensitive to representation design and initial diversity, so naive setups plateau quickly and may miss stronger constructions without domain-specific guidance.",
       "hashtags": [
-        "#Geometry",
         "#MachineLearning",
-        "#CombinatorialOptimization",
-        "#AlgorithmDesign",
-        "#ExtremalConstructions"
+        "#CombinatorialGeometry",
+        "#IntegralityGap",
+        "#PatternBoost",
+        "#AlgorithmDesign"
       ],
       "paper_id": "2026-10-14-arxiv-towards_learning_guided_discovery_of_extremal_geometric_constructions_a_patternboost_study",
       "paper_title": "Towards Learning-Guided Discovery of Extremal Geometric Constructions: A PatternBoost Study",
       "paper_date": "2026-10-14",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-10-15T17:36:40",
+      "generated_at": "2026-10-16T17:15:28",
       "generator": "openai"
     }
   },
@@ -493,27 +493,27 @@
     ],
     "score": 71,
     "infographic": {
-      "key_insight": "α-stable score-based generative models match heavy-tailed targets by preserving power-law tails, and tail-index matching (α = ν) is the key condition for correct extreme-event scaling.",
-      "engineering_relevance": "For applications with rare but consequential extremes—such as risk modeling, anomaly generation, or climate/finance simulation—stable dynamics can better preserve tail behavior than Brownian diffusion models.",
+      "key_insight": "α-stable score-based generative models can match heavy-tailed extremes better than Brownian diffusion, with tail behavior governed by tail-index matching rather than global Wasserstein convergence alone.",
+      "engineering_relevance": "For simulation and generative modeling of rare events, finance, climate, or other heavy-tailed systems, choosing a stable process with the right α can improve extreme-quantile fidelity.",
       "method": [
-        "Non-asymptotic p-Wasserstein convergence analysis for scale-preserving α-stable generative dynamics",
-        "Quantification of initialization, early stopping, score approximation, and time-discretization errors",
-        "Comparison against Brownian dynamics to separate global convergence from tail behavior"
+        "Non-asymptotic p-Wasserstein convergence analysis for scale-preserving α-stable generative dynamics.",
+        "Decomposes error from early stopping, initialization, score approximation, and time discretization.",
+        "Compares stable vs Brownian dynamics on compactly supported and power-law targets, emphasizing tail asymptotics."
       ],
-      "evidence_signal": "The abstract reports theoretical convergence bounds, exponential decay of initialization error, and tail asymptotics showing power-law tails for stable dynamics versus light tails for Brownian dynamics.",
-      "watch_item": "Tail benefits depend on correct α–ν matching; mis-specifying the stability index or using approximate scores/discretization may degrade extreme-quantile fidelity.",
+      "evidence_signal": "The abstract reports theoretical convergence guarantees and asymptotic tail/quantile analysis rather than an empirical benchmark or dataset-based evaluation.",
+      "watch_item": "Tail-index matching is crucial: if α does not match the target tail index, the model may still converge globally while failing to reproduce extreme tails accurately.",
       "hashtags": [
-        "#GenerativeModels",
-        "#StableDiffusion",
+        "#ScoreBasedGenerativeModels",
+        "#StableProcesses",
         "#HeavyTails",
         "#WassersteinDistance",
-        "#ExtremeEvents"
+        "#RareEventModeling"
       ],
       "paper_id": "2026-10-14-arxiv-from_global_to_tail_convergence_dynamics_of_stable_score_based_generative_models",
       "paper_title": "From Global to Tail Convergence: Dynamics of $α$-Stable Score-Based Generative Models",
       "paper_date": "2026-10-14",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-15T17:36:42",
+      "generated_at": "2026-10-16T17:15:30",
       "generator": "openai"
     }
   },
@@ -545,15 +545,15 @@
     ],
     "score": 71,
     "infographic": {
-      "key_insight": "The paper shows how to generate graphs whose persistent homology matches a target persistence diagram exactly, rather than only approximately.",
-      "engineering_relevance": "This enables topology-constrained graph synthesis for design and simulation pipelines where exact structural guarantees matter.",
+      "key_insight": "The paper shows how to generate graphs that match a target persistence diagram exactly, rather than only approximately, by using topology-imposed constraints.",
+      "engineering_relevance": "This enables topology-controlled graph generation for scientific and engineering workflows where strict shape or connectivity constraints must be preserved.",
       "method": [
-        "Local iterative generation of degree-based PD-equivalent graphs with provable exactness and reachability.",
-        "Global formulation as a complete constraint satisfaction problem solved by modern CP solvers.",
-        "Applies to any vertex-based permutation-equivariant filtration and is minimal under degree filtration."
+        "Local iterative construction of degree-based PD-equivalent graphs with proofs of exact PD realization and reachability.",
+        "Global formulation as a complete constraint satisfaction problem solvable with modern constraint programming solvers.",
+        "Applicable to any vertex-based permutation-equivariant filtration scheme, and minimal under degree filtration."
       ],
-      "evidence_signal": "Across four standard graph generation benchmarks, both proposed methods produced graphs whose target persistence diagrams were matched exactly.",
-      "watch_item": "The local method can trade off diversity and may encounter infeasible states, so solver-based global encoding may be preferable but could be more computationally demanding.",
+      "evidence_signal": "Experiments on four standard graph generation benchmarks show that both proposed methods realize the target persistence diagram exactly.",
+      "watch_item": "The local method can trade off sample diversity and may reach infeasible states, so the global solver-based approach may be preferable when exactness matters.",
       "hashtags": [
         "#PersistentHomology",
         "#GraphGeneration",
@@ -565,7 +565,7 @@
       "paper_title": "Exact Topological Compliance: Generating Persistence-Equivalent Graphs",
       "paper_date": "2026-10-13",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-10-15T17:36:44",
+      "generated_at": "2026-10-16T17:15:32",
       "generator": "openai"
     }
   },
@@ -598,27 +598,27 @@
     ],
     "score": 71,
     "infographic": {
-      "key_insight": "LeanPRM turns Lean-formalized proofs into step-level supervision for natural-language proof verification without human annotations.",
-      "engineering_relevance": "It provides a scalable recipe for training proof verifiers that can improve step checking and best-of-N proof selection across model sizes.",
+      "key_insight": "LeanPRM uses Lean to automatically generate step-level labels for natural-language proofs, enabling scalable process supervision without human annotation.",
+      "engineering_relevance": "It provides a practical training pipeline for stronger proof verifiers and better best-of-N proof selection in theorem proving systems.",
       "method": [
-        "Generate a natural-language proof and a paired Lean formal proof without Lean feedback.",
-        "Use Lean to label each proof step as correct or incorrect.",
-        "Filter out syntax-only Lean failures with a second model so negatives reflect mathematical mistakes."
+        "A model writes a natural-language proof paired with a formal Lean proof.",
+        "Lean checks each step and assigns labels from the formal verification outcome.",
+        "A second model filters syntax-only Lean failures so negatives reflect mathematical mistakes."
       ],
-      "evidence_signal": "The dataset includes 10,634 proofs and 152K labeled steps; a Qwen3-4B verifier improved exact step-label accuracy on LeanPRM-Bench from 48.2% to 74.7% and beat PRM800K training at 60.3%.",
-      "watch_item": "The pipeline depends on the availability and quality of formal Lean statements and on a secondary model to separate syntactic failures from genuine math errors.",
+      "evidence_signal": "On LeanPRM-Bench, a Qwen3-4B verifier improved exact step-label accuracy from 48.2% to 74.7%, outperforming the same model trained on PRM800K.",
+      "watch_item": "Performance depends on generating aligned formal proofs, and any mismatch between Lean syntax errors and true mathematical errors must be carefully filtered.",
       "hashtags": [
         "#TheoremProving",
         "#Lean",
+        "#ProcessSupervision",
         "#ProofVerification",
-        "#AIforMath",
-        "#ProcessSupervision"
+        "#AIforMath"
       ],
       "paper_id": "2026-10-13-arxiv-leanprm_lean_grounded_process_supervision_for_natural_language_proof_verification",
       "paper_title": "LeanPRM: Lean-Grounded Process Supervision for Natural Language Proof Verification",
       "paper_date": "2026-10-13",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-15T17:36:46",
+      "generated_at": "2026-10-16T17:15:33",
       "generator": "openai"
     }
   },
@@ -649,27 +649,27 @@
     ],
     "score": 70,
     "infographic": {
-      "key_insight": "Hybrid PQC-QKD designs aim to keep session keys secure if either the computational layer or the physical quantum layer remains secure, but their real value depends on how the two components are combined and authenticated.",
-      "engineering_relevance": "The paper gives engineers a practical taxonomy and comparison framework for selecting, standardizing, and deploying quantum-safe key exchange across TLS, MACsec, and IKEv2-style systems.",
+      "key_insight": "The paper argues that PQC and QKD are complementary quantum-safe approaches and proposes a unified taxonomy to compare hybrid designs that remain secure if either component holds.",
+      "engineering_relevance": "It helps engineers choose and evaluate deployable quantum-safe key exchange architectures for TLS, IKEv2, MACsec, and QKD-backed systems under realistic trust and standards constraints.",
       "method": [
-        "Define an 8-dimension taxonomy for PQC-QKD hybrids",
-        "Compare published protocols, standards, and combiner designs against a common security grid",
-        "Survey deployment evidence from QKD testbeds and networks"
+        "Defined an 8-dimension taxonomy for hybrid PQC-QKD designs",
+        "Compared published protocols, RFC-standardized mechanisms, and key-combiner constructions against common security-model criteria",
+        "Synthesized deployment, standards, and policy evidence from testbeds and national guidance"
       ],
-      "evidence_signal": "The abstract synthesizes protocol literature, standards guidance, and deployment reports, but does not present a new experimental benchmark or numerical evaluation.",
-      "watch_item": "A major implementation concern is authenticating the QKD classical channel and proving security under shared-infrastructure and real-world deployment assumptions.",
+      "evidence_signal": "The abstract reports a literature-based comparative synthesis spanning deployed QKD networks, RFCs 8784/9370/9867, and standards guidance rather than new experimental results.",
+      "watch_item": "A major implementation concern is authenticating the QKD classical channel and proving security when shared infrastructure, imperfect devices, or partially compromised components are involved.",
       "hashtags": [
         "#PostQuantumCryptography",
         "#QuantumKeyDistribution",
         "#HybridSecurity",
         "#KeyExchange",
-        "#QuantumSafe"
+        "#CryptoStandards"
       ],
       "paper_id": "2026-10-13-arxiv-combining_post_quantum_cryptography_and_quantum_key_distribution_taxonomy_constructions_pr",
       "paper_title": "Combining Post-Quantum Cryptography and Quantum Key Distribution: Taxonomy, Constructions, Proofs, Standards, Deployments and Open Problems",
       "paper_date": "2026-10-13",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-15T17:36:49",
+      "generated_at": "2026-10-16T17:15:35",
       "generator": "openai"
     }
   },
@@ -704,27 +704,27 @@
     ],
     "score": 70,
     "infographic": {
-      "key_insight": "The paper turns finite-time Lyapunov bounds for an associated SDE into convergence-rate guarantees for stochastic gradient algorithms via a rate-transfer method.",
-      "engineering_relevance": "This gives practitioners a calculus-based route to prove or estimate optimization rates for new SGD-style methods without doing a full discrete-time analysis from scratch.",
+      "key_insight": "The paper shows how finite-time Lyapunov bounds for an associated SDE can be transferred into convergence-rate guarantees for stochastic gradient algorithms.",
+      "engineering_relevance": "This gives practitioners a calculus-based route to prove and compare SGD convergence rates for existing and new optimization methods without doing a full stochastic analysis from scratch.",
       "method": [
-        "Construct an SDE that approximates or corresponds to the stochastic gradient algorithm.",
-        "Prove a finite-time Lyapunov generator inequality for the SDE using smoothness and moment assumptions.",
-        "Transfer the SDE bound into a finite-time convergence rate for the discrete algorithm."
+        "Construct an SDE that approximates the stochastic gradient algorithm.",
+        "Prove a finite-time Lyapunov generator inequality for the SDE.",
+        "Transfer the SDE rate bound back to the discrete algorithm under moment and smoothness conditions."
       ],
-      "evidence_signal": "The abstract reports that the method recovers established rates for classical stochastic gradient methods and extends to new algorithms through calculus arguments.",
-      "watch_item": "The approach depends on generic moment and smoothness conditions plus a valid SDE connection, so it may be less straightforward for highly non-smooth or strongly non-asymptotic implementations.",
+      "evidence_signal": "The abstract reports theoretical verification of finite-time convergence bounds and recovery of established rates for classical stochastic gradient methods.",
+      "watch_item": "The approach depends on finding a suitable associated SDE and verifying moment/smoothness assumptions, which may be nontrivial for complex or nonstandard algorithms.",
       "hashtags": [
         "#StochasticGradientDescent",
         "#StochasticCalculus",
+        "#ConvergenceRates",
         "#LyapunovMethods",
-        "#OptimizationTheory",
-        "#SDE"
+        "#OptimizationTheory"
       ],
       "paper_id": "2026-10-13-arxiv-a_rate_transfer_method_convergence_rates_in_stochastic_gradient_descent_via_stochastic_cal",
       "paper_title": "A Rate Transfer Method: Convergence Rates in Stochastic Gradient Descent via Stochastic Calculus",
       "paper_date": "2026-10-13",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-15T17:36:51",
+      "generated_at": "2026-10-16T17:15:37",
       "generator": "openai"
     }
   },
@@ -755,27 +755,27 @@
     ],
     "score": 68,
     "infographic": {
-      "key_insight": "They formalize an end-to-end security proof for entanglement-based BB84 in Lean, removing hidden assumptions and making the cryptographic argument machine-checkable.",
-      "engineering_relevance": "This provides a reproducible standard for quantum cryptography proofs and shows how formal methods can both verify security and help optimize finite-size key rates.",
+      "key_insight": "They formalize an end-to-end, composable security proof for entanglement-based qubit BB84 in Lean, removing hidden assumptions and strengthening trust in quantum cryptography arguments.",
+      "engineering_relevance": "This shows that theorem provers can both verify critical security protocols and help improve them, making formal methods a practical tool for quantum communication design.",
       "method": [
-        "Formalized composable security of entanglement-based qubit BB84 against coherent attacks in Lean",
-        "Used the postselection technique to handle general attacks and finite block-size effects",
-        "Leveraged LLM-based autoformalization to build the proof and then reuse the pipeline for discovery"
+        "Built the security proof in Lean using only the standard axioms and explicit local-operations/classical-communication structure.",
+        "Applied the postselection technique to prove composable security against coherent attacks with finite-size effects.",
+        "Used an LLM-based autoformalization pipeline to accelerate proof construction and then reuse it for discovery."
       ],
-      "evidence_signal": "The abstract reports a complete Lean formalization of the security theorem, with the same autoformalization pipeline also used to reduce the finite-size penalty on the key rate.",
-      "watch_item": "Formal verification strengthens confidence, but the result still depends on the modeling choices, protocol encoding, and the finite-size assumptions used in the Lean specification.",
+      "evidence_signal": "The abstract reports a completed Lean formalization of BB84 security plus a follow-on use of the same pipeline to reduce the finite-size key-rate penalty.",
+      "watch_item": "The result depends on the fidelity of the autoformalized specification and the proof assumptions encoded in Lean, so protocol-to-code translation remains a careful implementation step.",
       "hashtags": [
+        "#TheoremProving",
+        "#Lean",
         "#QuantumCryptography",
-        "#LeanTheoremProver",
-        "#FormalVerification",
         "#Autoformalization",
-        "#QuantumInformation"
+        "#FormalMethods"
       ],
       "paper_id": "2026-10-12-arxiv-quantum_cryptography_and_autoformalization_in_lean",
       "paper_title": "Quantum Cryptography and Autoformalization in Lean",
       "paper_date": "2026-10-12",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-15T17:36:53",
+      "generated_at": "2026-10-16T17:15:39",
       "generator": "openai"
     }
   },
@@ -808,27 +808,27 @@
     ],
     "score": 67,
     "infographic": {
-      "key_insight": "VASPO combines a critic and a self-teacher at the same student-generated prefixes to better align self-distillation with expected return, improving reasoning policy optimization over PPO.",
-      "engineering_relevance": "For math-reasoning model training, VASPO offers a practical way to mix value-based credit assignment with privileged self-teaching, yielding stronger and more stable updates than using self-distillation alone.",
+      "key_insight": "VASPO combines a critic and a self-teacher at the same student-generated prefixes, using privileged value estimation plus bounded self-distillation to improve reasoning-policy updates.",
+      "engineering_relevance": "The method offers a practical PPO-style training recipe for reasoning models that leverages privileged information more effectively than prior GRPO-based self-distillation schemes.",
       "method": [
-        "Critic estimates token-level PPO advantages from predicted continuation returns.",
-        "Self-teacher uses privileged information to scale selected positive advantages with bounded probability ratios.",
-        "Designed around positional dynamics: critic improves toward the end of generations, while self-teacher is strongest early and late."
+        "Critic predicts continuation returns and forms token-level PPO advantages at student prefixes.",
+        "Self-teacher uses the same privileged information to scale selected positive advantages with bounded probability ratios.",
+        "Design exploits complementary dynamics: critic is stronger near the end of responses, while teacher guidance is strongest early and late."
       ],
-      "evidence_signal": "Evaluated on six mathematical reasoning benchmarks, VASPO improved mean accuracy over PPO by 2.59 points on Qwen3-4B and 1.81 points on OLMo3-7B, and achieved the best mean accuracy on Knights and Knaves.",
-      "watch_item": "Because VASPO relies on privileged information and bounded ratio-based scaling, its gains may depend on careful synchronization of teacher and critic signals to avoid unstable updates.",
+      "evidence_signal": "Across six mathematical reasoning benchmarks, VASPO improves mean accuracy over PPO by 2.59 points on Qwen3-4B and 1.81 points on OLMo3-7B, with the best mean accuracy on Knights and Knaves.",
+      "watch_item": "Because the method depends on privileged information and careful advantage/ration coupling, implementation stability and reproducibility may be sensitive to how those signals are estimated and bounded.",
       "hashtags": [
         "#MathReasoning",
-        "#ReinforcementLearning",
         "#SelfDistillation",
         "#PPO",
+        "#ReinforcementLearning",
         "#LLMTraining"
       ],
       "paper_id": "2026-10-14-arxiv-vaspo_self_distillation_with_privileged_value_estimation",
       "paper_title": "VASPO: Self-Distillation with Privileged Value Estimation",
       "paper_date": "2026-10-14",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-15T17:36:55",
+      "generated_at": "2026-10-16T17:15:41",
       "generator": "openai"
     }
   },
@@ -861,27 +861,27 @@
     ],
     "score": 67,
     "infographic": {
-      "key_insight": "Random-reshuffling SGD can guarantee convergence of the final iterate with a much larger constant stepsize than prior last-iterate results, removing the usual explicit 1/n restriction up to logarithmic factors.",
-      "engineering_relevance": "This makes RR-SGD more practical for large finite-sum machine learning problems because the naturally returned last model iterate can be used without requiring overly tiny per-component stepsizes.",
+      "key_insight": "The paper proves that random-reshuffling SGD can achieve last-iterate convergence with a much larger constant stepsize, removing the usual explicit 1/n dependence and keeping only a logarithmic penalty in the number of epochs and components.",
+      "engineering_relevance": "This makes RR-SGD more practical for machine learning training loops where the final model iterate is what matters and stepsize tuning should not need to shrink with dataset size.",
       "method": [
-        "Analyze unconstrained finite-sum optimization with convex, L-smooth component losses.",
-        "Retain the sampling bias at random comparison points in the proof to avoid the explicit 1/n stepsize dependence.",
-        "Combine the new last-iterate bound with existing small-step results to match averaged-iterate rates up to log factors."
+        "Analyzes unconstrained finite-sum optimization with convex, L-smooth component functions.",
+        "Keeps the sampling bias at random comparison points instead of averaging it away, which enables the improved stepsize condition.",
+        "Derives an expected objective-gap bound for the final iterate with eta up to order 1/(L(1+log(nK)))."
       ],
-      "evidence_signal": "The abstract reports an expected objective-gap bound for the RR-SGD last iterate with constant component stepsize η ≲ 1/(L(1 + log(nK))), where K is the number of epochs.",
-      "watch_item": "The guarantee is logarithmically weakened and applies to unconstrained convex L-smooth finite-sum problems, so its direct use in nonconvex or constrained settings is not implied.",
+      "evidence_signal": "The abstract reports an expected objective-gap bound and states that, when combined with existing small-step results, the new rate matches averaged-iterate convergence up to logarithmic factors.",
+      "watch_item": "The guarantee still depends on a logarithmic factor in nK, so the practical benefit may diminish for very large datasets or long training runs if stepsizes are pushed too aggressively.",
       "hashtags": [
-        "#Optimization",
-        "#SGD",
         "#RandomReshuffling",
-        "#ConvexOptimization",
+        "#SGD",
+        "#Optimization",
+        "#LastIterate",
         "#MachineLearning"
       ],
       "paper_id": "2026-10-14-arxiv-large_step_last_iterate_convergence_of_random_reshuffling_stochastic_gradient_descent",
       "paper_title": "Large-Step Last-Iterate Convergence of Random-Reshuffling Stochastic Gradient Descent",
       "paper_date": "2026-10-14",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-15T17:36:58",
+      "generated_at": "2026-10-16T17:15:43",
       "generator": "openai"
     }
   },
@@ -912,27 +912,27 @@
     ],
     "score": 67,
     "infographic": {
-      "key_insight": "The paper argues that in auditable, hypothesis-driven decision tasks, output discipline and structured reasoning matter more than raw model scale, and a falsification-guided protocol can rescue weak models while exposing the limits of already-disciplined ones.",
-      "engineering_relevance": "For dependable agent systems, the key design target is not only better models but enforceable output formats, explicit candidate-vs-evidence checking, and termination guarantees that make decisions machine-verifiable.",
+      "key_insight": "A falsification-guided, model-agnostic output protocol can outperform raw model scaling by enforcing auditable reasoning and termination discipline in hypothesis-driven decisions.",
+      "engineering_relevance": "For deployed decision systems, the main bottleneck may be reliable output structure and verification workflow rather than model size alone.",
       "method": [
-        "Five-stage closed-loop agent protocol for decision making",
-        "Candidate × evidence matrix with falsification of every candidate against every evidence item",
-        "License a conclusion only after at least half the candidates are falsified and survivors are emitted in a single-line verifiable format"
+        "Five-stage closed-loop agent protocol",
+        "Candidate × evidence matrix: every candidate checked against every evidence item",
+        "Require at least half of candidates to be falsified before final output"
       ],
-      "evidence_signal": "On TCMEval-SDT (200 cases), the protocol improved weak models by about +0.27, reduced one model’s run-to-run standard deviation from 0.218 to 0.007, and transferred to misinformation-robust math reasoning with 89.8% recall and 6.8% false-positive rate.",
-      "watch_item": "The protocol can reduce accuracy on already disciplined models, so implementation should be budget-aware and benchmarked against format overhead and task-specific failure modes.",
+      "evidence_signal": "On TCMEval-SDT (200 cases), the protocol rescued poorly disciplined models such as DeepSeek-V4-Flash (+0.267/+0.271) and reduced Kimi K3 run-to-run std from 0.218 to 0.007, while disciplined models saw a small accuracy drop.",
+      "watch_item": "The protocol can incur measurable accuracy costs on already well-disciplined models, especially from the candidate-bounded formatting layer, so budget and task fit matter.",
       "hashtags": [
-        "#LLMReasoning",
-        "#AgentProtocol",
-        "#ModelAgnostic",
+        "#LLMAgents",
+        "#OutputDiscipline",
         "#AuditableAI",
-        "#Falsification"
+        "#TheoremProving",
+        "#DecisionProtocols"
       ],
       "paper_id": "2026-10-13-arxiv-output_discipline_sets_the_floor_a_falsification_guided_model_agnostic_agent_protocol_for",
       "paper_title": "Output Discipline Sets the Floor: A Falsification-Guided, Model-Agnostic Agent Protocol for Auditable Hypothesis-Driven Decision Making",
       "paper_date": "2026-10-13",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-15T17:37:00",
+      "generated_at": "2026-10-16T17:15:45",
       "generator": "openai"
     }
   },
@@ -964,27 +964,27 @@
     ],
     "score": 66,
     "infographic": {
-      "key_insight": "Reasoning-guided translation can preserve benchmark meaning across languages, enabling more reliable multilingual safety and mathematical reasoning evaluation than direct translation alone.",
-      "engineering_relevance": "This framework provides a scalable way to build high-quality multilingual test sets for evaluating LLM behavior in safety-critical and reasoning-heavy applications beyond English.",
+      "key_insight": "A reasoning-guided translation pipeline can preserve benchmark meaning across languages, enabling more reliable multilingual safety and reasoning evaluation beyond English.",
+      "engineering_relevance": "For LLM deployment, this approach supports scalable cross-lingual test sets that expose language-specific failures in refusal behavior and mathematical reasoning.",
       "method": [
-        "Select translation strategies with reasoning guidance before generation",
-        "Apply task-aware validation, targeted repair, and independent quality screening",
-        "Assemble source-aligned benchmarks across safety, conversation, and math resources in 11 languages"
+        "Select translation strategies with reasoning-guided configuration.",
+        "Validate task meaning with task-aware checks and targeted repair.",
+        "Add independent quality screening across 11 languages."
       ],
-      "evidence_signal": "The resulting collection covers 99.94% of intended item–language pairs in the two subsets that required repair, and evaluations show language-dependent refusal inconsistencies and reasoning drops in lower-resource languages.",
-      "watch_item": "Benchmark quality still depends on preserving task intent during translation, so low-resource languages and culturally sensitive harmful prompts may remain harder to validate consistently.",
+      "evidence_signal": "The authors built a source-aligned collection from seven safety, conversational, and mathematical reasoning resources across 11 languages, achieving 99.94% coverage in the subsets that required repair.",
+      "watch_item": "Translated benchmarks can still drift in meaning or difficulty, so quality assurance and item-level validation remain necessary, especially for lower-resource languages.",
       "hashtags": [
-        "#LLMEvaluation",
-        "#MultilingualAI",
-        "#MathematicalReasoning",
+        "#MultilingualLLM",
+        "#BenchmarkTranslation",
         "#AISafety",
-        "#Benchmarking"
+        "#MathReasoning",
+        "#NLP"
       ],
       "paper_id": "2026-10-14-arxiv-scaling_multilingual_safety_and_reasoning_evaluation_through_reasoning_guided_translation",
       "paper_title": "Scaling Multilingual Safety and Reasoning Evaluation through Reasoning-Guided Translation",
       "paper_date": "2026-10-14",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-15T17:37:02",
+      "generated_at": "2026-10-16T17:15:47",
       "generator": "openai"
     }
   },
@@ -1016,27 +1016,27 @@
     ],
     "score": 66,
     "infographic": {
-      "key_insight": "ACCESS decouples finding strong candidate solutions from checking feasibility, using many cheap single-scenario solves plus large-scale batched simulation instead of expensive all-at-once scenario optimization.",
-      "engineering_relevance": "This can make chance-constrained optimization practical for large stochastic design and operations problems by improving solution quality while reducing compute and leveraging GPU-parallel feasibility testing.",
+      "key_insight": "ACCESS decouples finding good solutions from checking feasibility in chance-constrained optimization, using cheap single-scenario search followed by large-scale simulation-based validation.",
+      "engineering_relevance": "This makes stochastic design under uncertainty more scalable on modern hardware, especially when feasibility checks can be massively parallelized on GPUs.",
       "method": [
-        "Generate candidate solutions from many inexpensive single-scenario subproblems rather than embedding all scenarios in one high-dimensional solve.",
-        "Evaluate feasibility separately with massive batched Monte Carlo simulation, which is highly parallel on GPUs.",
-        "Focus search on a 2D tradeoff space of conservatism and scenario diversity, with ACCESS(δ) adding probabilistic feasibility certification."
+        "Generate many candidate solutions from inexpensive single-scenario subproblems instead of full SAA over the whole uncertain model.",
+        "Evaluate candidate feasibility separately with batched simulation over a very large number of scenarios.",
+        "Use a 2D control space for conservatism and scenario diversity; ACCESS(δ) adds certified feasibility with probability 1-δ."
       ],
-      "evidence_signal": "Across three benchmark classes and five scenario distributions, ACCESS matched or exceeded the best objective in nearly every setting, while ACCESS(δ) was empirically feasible on every instance and SAA was often infeasible and much slower on harder cases.",
-      "watch_item": "The approach relies on simulation-based feasibility assessment and tuning of conservatism/diversity, so certification and performance may depend on sampling budget, distribution shift, and problem structure.",
+      "evidence_signal": "Across three benchmark classes and five scenario distributions, ACCESS matched or beat the best objective in nearly every setting, while ACCESS(δ) was empirically feasible on every instance and SAA was often infeasible and much slower.",
+      "watch_item": "The framework depends on strong simulation throughput and careful tuning of conservatism/diversity, so performance may vary if scenario sampling is unrepresentative or GPU resources are limited.",
       "hashtags": [
         "#ChanceConstrainedOptimization",
         "#StochasticProgramming",
-        "#SamplingMethods",
         "#GPUComputing",
-        "#OperationsResearch"
+        "#SimulationBasedOptimization",
+        "#Feasibility"
       ],
       "paper_id": "2026-10-13-arxiv-optimization_for_one_feasibility_for_most_decoupling_optimization_from_feasibility_in_chan",
       "paper_title": "Optimization for One, Feasibility for Most: Decoupling Optimization from Feasibility in Chance-Constrained Programs",
       "paper_date": "2026-10-13",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-15T17:37:04",
+      "generated_at": "2026-10-16T17:15:49",
       "generator": "openai"
     }
   }

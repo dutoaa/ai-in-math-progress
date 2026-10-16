@@ -1,24 +1,24 @@
 {
-  "key_insight": "TPPO replaces a single critic with a cumulative, log-odds-style value decomposition that better tracks how value evolves across a reasoning trajectory under sparse terminal rewards.",
-  "engineering_relevance": "This gives a more faithful reward/advantage signal for training language models on math reasoning, improving PPO stability and generalization without changing the underlying task reward.",
+  "key_insight": "TPPO reframes PPO value estimation for language-model reasoning by cumulatively reconstructing prefix values in log-odds space, better tracking token-level credit under sparse terminal rewards.",
+  "engineering_relevance": "This offers a practical drop-in training improvement for reasoning LMs, improving advantage estimation and generalization across multiple model sizes and task types.",
   "method": [
     "Decompose successive prefix values with a Bayesian additive update in log-odds space.",
-    "Parameterize the value as a sum of position-wise scalar outputs, producing cumulative value logits.",
+    "Parameterize the critic as summed position-wise scalar outputs to produce value logits.",
     "Train these outputs using terminal-outcome supervision on reconstructed values."
   ],
-  "evidence_signal": "The abstract reports +7.0 and +8.4 aggregate math-score gains over PPO on Qwen3-4B-Base and Qwen3-8B-Base, plus improved out-of-distribution generalization across several model sizes and additional tasks.",
-  "watch_item": "Because the method reconstructs values from position-wise outputs, implementation quality and calibration of the cumulative value logits may strongly affect stability under sparse-reward training.",
+  "evidence_signal": "The abstract reports +7.0 and +8.4 aggregate reasoning-score gains over PPO on Qwen3-4B-Base and Qwen3-8B-Base, with additional improvements on Qwen3-4B, Qwen2.5-Math-1.5B, Qwen3.5-9B, countdown, and scientific coding tasks.",
+  "watch_item": "The method depends on accurate reconstruction from terminal labels, so it may be sensitive to reward sparsity, value calibration, or implementation details in the cumulative critic.",
   "hashtags": [
-    "#LLMReasoning",
     "#PPO",
+    "#LLMReasoning",
     "#ReinforcementLearning",
-    "#MathematicalReasoning",
-    "#ValueEstimation"
+    "#ValueFunction",
+    "#MathAI"
   ],
   "paper_id": "2026-10-12-arxiv-tppo_tracking_value_ppo_for_language_model_reasoning",
   "paper_title": "TPPO: Tracking-Value PPO For Language Model Reasoning",
   "paper_date": "2026-10-12",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-15T17:36:38",
+  "generated_at": "2026-10-16T17:15:26",
   "generator": "openai"
 }
