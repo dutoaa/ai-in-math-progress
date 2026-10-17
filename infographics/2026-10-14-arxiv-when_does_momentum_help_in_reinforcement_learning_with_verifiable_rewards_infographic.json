@@ -1,24 +1,24 @@
 {
-  "key_insight": "In RL with verifiable rewards, larger momentum coefficients can help—if they are chosen so the effective step size stays in a safe, non-overshooting regime.",
-  "engineering_relevance": "For practical LLM post-training, tuning EMA momentum upward can improve stability and validation accuracy, especially when gradients are noisy or sampled.",
+  "key_insight": "In RL with verifiable rewards, momentum helps when the EMA coefficient is chosen large enough to stay in a safe regime that avoids overshoot, especially as sampling noise dominates at smaller learning rates.",
+  "engineering_relevance": "For practical LLM post-training, tuning momentum upward can preserve a real optimization gain and improve validation accuracy without changing the core training setup.",
   "method": [
-    "Analyze RLVR with a bandit model and bias-corrected EMA momentum.",
-    "Prove that, with exact policy gradients, increasing beta speeds optimization as long as overshoot is avoided.",
-    "Show that with sampled gradients, scaling beta to keep eta/(1-beta) safe preserves a nonvanishing gain that can beat sampling noise."
+    "Bandit model of RLVR with bias-corrected EMA momentum",
+    "Theoretical analysis of exact policy gradients vs sampled-gradient noise",
+    "Guideline: increase β as learning rate η decreases to keep η/(1−β) in the safe range"
   ],
-  "evidence_signal": "The paper reports bandit simulations plus RLVR experiments on Qwen3-4B-Base and Qwen2.5-32B, where increasing beta1 improved validation accuracy by nearly 2 percentage points.",
-  "watch_item": "The benefit depends on keeping the effective learning-rate/momentum combination in a safe range; too much momentum or an unsafe eta/(1-beta) can cause overshoot or obscure gains.",
+  "evidence_signal": "Bandit simulations and RLVR experiments on Qwen3-4B-Base and Qwen2.5-32B validate the theory, with larger β1 improving mean validation accuracy by nearly 2 percentage points on the larger model.",
+  "watch_item": "The benefit depends on staying below the overshoot threshold; overly aggressive momentum settings can destabilize training or lose gains under noisy gradient estimates.",
   "hashtags": [
     "#ReinforcementLearning",
     "#Momentum",
-    "#Optimization",
     "#LLMTraining",
+    "#OptimizationTheory",
     "#RLVR"
   ],
   "paper_id": "2026-10-14-arxiv-when_does_momentum_help_in_reinforcement_learning_with_verifiable_rewards",
   "paper_title": "When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?",
   "paper_date": "2026-10-14",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-10-16T17:15:20",
+  "generated_at": "2026-10-17T16:08:34",
   "generator": "openai"
 }
