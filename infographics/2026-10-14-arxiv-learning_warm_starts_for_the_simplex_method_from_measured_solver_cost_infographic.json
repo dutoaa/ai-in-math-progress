@@ -1,24 +1,24 @@
 {
-  "key_insight": "Predicting a good simplex warm start is not enough: the cheapest start is not always the one closest to optimal, so the start policy should be chosen using measured solver cost.",
-  "engineering_relevance": "A cost-aware warm-start policy can cut linear-program solve time substantially in practice, making simplex more competitive for large LP pipelines.",
+  "key_insight": "Warm-start quality for simplex is not determined just by fewer pivots: the same-quality start can have very different linear-algebra cost, so the paper learns starts using measured solver cost, not iteration count alone.",
+  "engineering_relevance": "For LP solvers in practice, optimizing the warm start can cut wall-clock time substantially, making learned initialization more useful for real workloads than pivot reduction alone.",
   "method": [
-    "Train a supervised model to predict an optimal basis from LP structure.",
-    "Use measured CPU instruction counts to learn when to warm-start, how many predicted columns to include, and which simplex variant/pricing rule to use.",
-    "Select the start policy per LP with a small learned controller instead of relying only on basis overlap or iteration counts."
+    "Predict a candidate optimal basis with a supervised model.",
+    "Train a small policy on measured instruction counts to choose how many predicted columns to use, plus algorithm and pricing rule.",
+    "Optionally skip warm-starting when it is not cost-effective."
   ],
-  "evidence_signal": "Across 25 LP classes, the proposed CostStart roughly halves solve time versus the default start and beats retrained published baselines by about 1.4× to 2.2×, including on LPs four times larger than training instances.",
-  "watch_item": "The gains depend on solver-specific cost measurements and careful retraining, so deployment may require re-tuning for a different simplex implementation or hardware stack.",
+  "evidence_signal": "Across 25 LP classes, the method cuts dual-simplex iterations by about two-thirds but only about one-third of solve time; on unseen LPs it roughly halves solve time versus the default start.",
+  "watch_item": "A warm start that looks close in basis overlap may still be expensive, so deploying this approach requires cost-aware evaluation and hardware-sensitive measurement.",
   "hashtags": [
     "#LinearProgramming",
     "#SimplexMethod",
-    "#MachineLearning",
-    "#Optimization",
-    "#ScientificComputing"
+    "#MachineLearningForOptimization",
+    "#WarmStart",
+    "#ScientificML"
   ],
   "paper_id": "2026-10-14-arxiv-learning_warm_starts_for_the_simplex_method_from_measured_solver_cost",
   "paper_title": "Learning Warm Starts for the Simplex Method from Measured Solver Cost",
   "paper_date": "2026-10-14",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-10-17T16:08:42",
+  "generated_at": "2026-10-18T16:21:39",
   "generator": "openai"
 }

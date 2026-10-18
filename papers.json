@@ -24,17 +24,17 @@
         "url": "https://arxiv.org/pdf/2610.21537v1"
       }
     ],
-    "score": 85,
+    "score": 80,
     "infographic": {
-      "key_insight": "The paper shows that large language models contain low-overlap functional subnetworks that can be selectively updated to improve continual learning without causing severe forgetting.",
-      "engineering_relevance": "This suggests a practical way to make continual fine-tuning of LLMs more memory- and compute-efficient by restricting optimization to task-relevant regions.",
+      "key_insight": "The paper shows that LLMs contain low-overlap, functionally specialized subnetworks that can be updated selectively to reduce catastrophic forgetting in continual learning.",
+      "engineering_relevance": "This suggests a practical way to make large models adapt to new tasks with lower compute and memory cost by limiting training and optimizer updates to task-relevant regions.",
       "method": [
-        "Gradient-attribution profiling identifies cognition-associated subnetworks with minimal mutual overlap.",
-        "CiMEO routes each training example to its matching functional subnetwork and updates only those parameters plus their optimizer states.",
-        "Subspace-overlap and principal-angle analyses are used to verify representation preservation during sequential training."
+        "Use gradient-attribution profiling to localize cognition-associated subnetworks.",
+        "Route each training example to its corresponding functional subnetwork.",
+        "Restrict parameter updates and optimizer states to the selected regions in CiMEO."
       ],
-      "evidence_signal": "The method is evaluated across 1.4 million sequential instructions and reports the best average performance on five generative benchmarks, including programming, exam-style tasks, and mathematical reasoning.",
-      "watch_item": "Subnetwork routing depends on reliable functional localization, so performance may be sensitive to attribution quality and how well subnetworks generalize across unseen task mixtures.",
+      "evidence_signal": "Across 1.4 million sequential instructions, the method reports the best average performance on five generative benchmarks spanning programming, exam-style tasks, and mathematical reasoning.",
+      "watch_item": "Subnetwork routing depends on accurate functional localization, so misassignment or task drift could weaken performance and complicate deployment.",
       "hashtags": [
         "#ContinualLearning",
         "#LargeLanguageModels",
@@ -46,7 +46,7 @@
       "paper_title": "Functional Subnetwork Localization for Efficient Continual Learning in Large Language Models",
       "paper_date": "2026-10-15",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-17T16:08:26",
+      "generated_at": "2026-10-18T16:21:24",
       "generator": "openai"
     }
   },
@@ -75,29 +75,29 @@
         "url": "https://arxiv.org/pdf/2610.19944v1"
       }
     ],
-    "score": 82,
+    "score": 77,
     "infographic": {
-      "key_insight": "RGR moves stochastic gradient estimation to Euclidean space before retracting to the Stiefel manifold, eliminating vector transport and enabling adaptive, horizon-free optimization with strong complexity guarantees.",
-      "engineering_relevance": "This gives machine learning and deep learning practitioners a more practical way to train orthogonality-constrained models such as PCA, matrix completion, and orthogonal CNNs without tuning steps from unknown smoothness or training horizon.",
+      "key_insight": "RGR builds recursive stochastic gradient estimators in Euclidean space and then maps them to the Stiefel tangent space, avoiding vector transport while enabling horizon-free and, in one variant, Lipschitz-free optimization.",
+      "engineering_relevance": "This gives a more practical optimizer for large-scale constrained learning tasks such as PCA, matrix completion, and orthogonal neural networks where Stiefel-manifold constraints arise naturally.",
       "method": [
-        "RGR computes recursive gradient estimators in Euclidean space, then maps them to the tangent space via retraction.",
-        "RGR-SPIDER is designed for finite-sum problems with adaptive, Lipschitz-free and horizon-free stepsizes.",
-        "RGR-SRM and RGR-EMA target online stochastic settings with mini-batch and horizon-free parameter choices."
+        "RGR-SPIDER: finite-sum variant with adaptive, Lipschitz-free and horizon-free stepsizes.",
+        "RGR-SRM and RGR-EMA: online stochastic variants that are mini-batch-free/horizon-free and do not require prescribed large batches.",
+        "Recursive estimator is formed in Euclidean space first, then projected to the tangent space to avoid vector transport."
       ],
-      "evidence_signal": "The paper reports theoretical convergence rates and experiments on PCA, low-rank matrix completion, and orthogonal convolutional neural networks, where RGR variants converge faster than tangent-space recursive methods.",
-      "watch_item": "Performance depends on manifold retraction quality and careful implementation of adaptive estimator updates, so empirical gains may vary across Stiefel problems and batch-noise regimes.",
+      "evidence_signal": "The paper reports theoretical convergence rates and experiments on PCA, low-rank matrix completion, and orthogonal CNNs, showing faster empirical convergence than tangent-space recursive methods.",
+      "watch_item": "Performance depends on correct manifold projections/retractions and step-size tuning; benefits may diminish if the Stiefel constraints or stochastic gradients are poorly conditioned.",
       "hashtags": [
-        "#StiefelManifold",
         "#RiemannianOptimization",
+        "#StiefelManifold",
         "#StochasticOptimization",
-        "#NonconvexOptimization",
-        "#MachineLearning"
+        "#MachineLearning",
+        "#NonconvexOptimization"
       ],
       "paper_id": "2026-10-14-arxiv-recursive_gradient_retraction_methods_for_stochastic_nonconvex_optimization_on_stiefel_man",
       "paper_title": "Recursive Gradient Retraction Methods for Stochastic Nonconvex Optimization on Stiefel Manifolds",
       "paper_date": "2026-10-14",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-10-17T16:08:28",
+      "generated_at": "2026-10-18T16:21:25",
       "generator": "openai"
     }
   },
@@ -128,29 +128,29 @@
         "url": "https://arxiv.org/pdf/2610.21290v1"
       }
     ],
-    "score": 80,
+    "score": 75,
     "infographic": {
-      "key_insight": "The paper shows that multi-agent LLM aggregation can be improved by controlling stylistic bias during answer selection and deliberately injecting bias to reveal when agents are unreliable.",
-      "engineering_relevance": "It provides a test-time aggregation strategy that needs no validation set or prior model-ranking, making it practical for heterogeneous LLM systems in mathematical reasoning workflows.",
+      "key_insight": "The paper shows that controlling and strategically injecting bias can make multi-agent LLM aggregation more reliable when agents disagree.",
+      "engineering_relevance": "It offers a test-time, training-free aggregation method that improves answer accuracy and token efficiency without needing validation data or model-strength priors.",
       "method": [
-        "Normalize each distinct answer into one reasoning trace to reduce majority and style bias.",
-        "Force each aggregator’s preferred answer into the minority to induce decision instability as a reliability signal.",
-        "Use this signal to choose final answers and improve aggregation without changing debate or synthesis pipelines."
+        "Normalize each distinct answer into a style-matched reasoning trace before aggregation.",
+        "Use bias control to reduce non-semantic effects like majority pressure and response-style preference.",
+        "Use bias injection by making each agent’s initial choice the minority to expose decision instability as a reliability signal."
       ],
-      "evidence_signal": "The method reports higher average accuracy and better token efficiency than non-oracle aggregation baselines across three math benchmarks and four heterogeneous LLM pairings, and it also improves multi-agent debate and Mixture-of-Agents final accuracy.",
-      "watch_item": "Because the approach depends on induced instability and style normalization, its gains may be sensitive to prompt design, answer formatting, and the specific mix of models involved.",
+      "evidence_signal": "Across three mathematical reasoning benchmarks and four heterogeneous LLM pairings, the framework outperforms non-oracle aggregation methods and also improves multi-agent debate and Mixture-of-Agents final-answer accuracy.",
+      "watch_item": "The method depends on manipulating presentation order and minority status, so its gains may vary with prompt sensitivity and heterogeneous agent behavior.",
       "hashtags": [
         "#LLMReasoning",
-        "#MultiAgentAI",
+        "#MultiAgentSystems",
         "#BiasControl",
-        "#MathematicalReasoning",
-        "#TestTimeAggregation"
+        "#TestTimeAggregation",
+        "#MathAI"
       ],
       "paper_id": "2026-10-15-arxiv-bias_control_and_injection_for_multi_agent_aggregation",
       "paper_title": "Bias Control and Injection for Multi-Agent Aggregation",
       "paper_date": "2026-10-15",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-17T16:08:30",
+      "generated_at": "2026-10-18T16:21:27",
       "generator": "openai"
     }
   },
@@ -179,29 +179,134 @@
         "url": "https://arxiv.org/pdf/2610.19092v1"
       }
     ],
-    "score": 80,
+    "score": 75,
     "infographic": {
-      "key_insight": "A neural spline flow can learn a smooth, invertible domain map so finite element PDEs on complex geometries can be solved on a fixed reference mesh via a diffeomorphic pullback.",
-      "engineering_relevance": "This replaces repeated unstructured mesh generation with reusable structured meshes, enabling faster and more memory-efficient simulation workflows while preserving standard finite element machinery.",
+      "key_insight": "Neural Spline Flows can learn smooth, invertible domain maps so finite element PDEs on complex geometries can be pulled back to a fixed reference mesh without losing diffeomorphic structure.",
+      "engineering_relevance": "This can replace repeated unstructured remeshing with reusable structured FEM workflows, improving simulation efficiency while keeping standard discretization machinery intact.",
       "method": [
         "Use monotone rational-quadratic spline coupling layers to guarantee a positive Jacobian determinant.",
-        "Condition a shared NSF on low-dimensional latent codes to generalize across geometries.",
-        "Predict latent codes for unseen shapes with an encoder, then solve the pullback PDE on the reference domain."
+        "Learn a diffeomorphic map from a reference domain and pull back the PDE weak form to that domain.",
+        "Condition a shared NSF on low-dimensional latent codes; an encoder predicts codes for new geometries in one pass."
       ],
-      "evidence_signal": "The abstract reports numerical benchmarks showing that sufficiently accurate learned mappings produce reliable finite element solutions on complex domains.",
-      "watch_item": "Overall accuracy depends on geometric fidelity: the learned map approximates the target shape, so mapping error remains separate from discretization and quadrature error.",
+      "evidence_signal": "The abstract reports numerical benchmarks showing that sufficiently accurate learned mappings produce reliable finite element solutions.",
+      "watch_item": "Overall accuracy depends on geometric fidelity, so mapping error can remain a separate source of error from FEM discretization and quadrature.",
       "hashtags": [
+        "#NeuralSplineFlows",
         "#FiniteElementMethod",
-        "#NeuralSplines",
-        "#Diffeomorphism",
         "#PDEs",
-        "#ScientificMachineLearning"
+        "#ScientificMachineLearning",
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-10-13-arxiv-neural_spline_flow_diffeomorphisms_for_pullback_finite_element_methods_on_complex_domains",
       "paper_title": "Neural Spline Flow Diffeomorphisms for Pullback Finite Element Methods on Complex Domains",
       "paper_date": "2026-10-13",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-17T16:08:32",
+      "generated_at": "2026-10-18T16:21:29",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-14-arxiv-gibbs_gap_policy_optimization_for_off_policy_rl_with_verifiable_rewards",
+    "arxiv_id": "2610.20814v1",
+    "date": "2026-10-14",
+    "title": "Gibbs-Gap Policy Optimization for Off-Policy RL with Verifiable Rewards",
+    "authors": "Xuanchang Zhang, Tong Zhang",
+    "abstract": "Reinforcement learning with verifiable rewards often trains language models on responses generated by a different, possibly stale behavior policy. Correcting this mismatch with learner-to-behavior importance weights can introduce high variance for long responses. We introduce Gibbs-Gap Policy Optimization (GGPO), which minimizes a log-mean-exp contrast of KL-adjusted rewards among responses to the same prompt, without learner-to-behavior importance weights. We derive GGPO from KL-regularized policy optimization: on policy, its population loss is exactly the KL-regularized optimality gap, and under suitable coverage the learner's single-response expected reward is at least the behavior policy's best-of-$K$ reward, minus terms for the raw finite-group loss, regularization, and finite training data. We characterize reference refresh through exact Gibbs-target composition and a finite-data final-policy reward bound under local reference control and tokenwise behavior mismatch. This refresh is empirically important: in an ablation, fixed-reference GGPO scores $32.96$ on the five-benchmark problem-weighted average, versus $46.58$ with the default refresh schedule. Experiments on mathematical reasoning further show that GGPO outperforms GRPO and AGRO under training-inference mismatch and on fixed offline data, while maintaining its performance as controlled policy staleness grows.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-14T18:59:29Z",
+    "updated": "2026-10-14T18:59:29Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.20814v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.20814v1"
+      }
+    ],
+    "score": 69,
+    "infographic": {
+      "key_insight": "Gibbs-Gap Policy Optimization (GGPO) removes learner-to-behavior importance weights by optimizing a KL-adjusted log-mean-exp gap over grouped responses, yielding a stable off-policy objective for verifiable-reward RL.",
+      "engineering_relevance": "For language-model RL pipelines with stale or offline data, GGPO offers a practical way to train against policy mismatch while controlling variance and preserving reward gains.",
+      "method": [
+        "Minimize a log-mean-exp contrast of KL-adjusted rewards across multiple responses to the same prompt.",
+        "Derive the objective from KL-regularized policy optimization so the population loss matches the KL-regularized optimality gap on-policy.",
+        "Use reference refresh analysis and local reference control to bound final-policy reward under policy staleness and finite data."
+      ],
+      "evidence_signal": "In experiments on mathematical reasoning, GGPO outperformed GRPO and AGRO under training-inference mismatch and fixed offline data, and a default refresh schedule scored 46.58 versus 32.96 with a fixed reference on the five-benchmark weighted average.",
+      "watch_item": "Performance depends on reference refresh and coverage assumptions, so stale references or poor prompt-response coverage can weaken the bound and degrade results.",
+      "hashtags": [
+        "#ReinforcementLearning",
+        "#OffPolicyRL",
+        "#LLMAlignment",
+        "#KLRegularization",
+        "#MathematicalReasoning"
+      ],
+      "paper_id": "2026-10-14-arxiv-gibbs_gap_policy_optimization_for_off_policy_rl_with_verifiable_rewards",
+      "paper_title": "Gibbs-Gap Policy Optimization for Off-Policy RL with Verifiable Rewards",
+      "paper_date": "2026-10-14",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-18T16:21:31",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-15-arxiv-when_is_a_better_llm_worth_paying_for_stochastic_optimization_with_switching_mixed_fidelit",
+    "arxiv_id": "2610.21139v1",
+    "date": "2026-10-15",
+    "title": "When is a better LLM worth paying for? Stochastic Optimization with Switching Mixed-Fidelity Oracles",
+    "authors": "Swati Gupta, Tianjiao Li",
+    "abstract": "Large language models (LLMs) are increasingly used upstream of decision-making to clean data, detect label errors, and reconstruct missing values. Yet LLM-assisted data curation creates a new operational tradeoff: higher-fidelity models and richer prompts can be substantially more expensive, while the value of this additional fidelity depends on the downstream optimization accuracy. This raises the central question of this work: when should one pay for a better LLM, given a specific downstream task at hand? We study this question through stochastic optimization with mixed-fidelity first-order oracles, which can have systematic bias and state-dependent variance. We develop two cost-aware algorithmic frameworks that allow adaptive switching between stochastic oracles. With known bias, the first meta-algorithm applies a restarted, cost-aware policy that adaptively selects oracle fidelity across optimization stages. Its cumulative cost is no larger than that of the best fixed oracle in hindsight and can be substantially smaller. With unknown bias, we develop a budgeted certification scheme that uses occasional trusted-gradient evaluations to certify the optimization progress and eliminate unsuccessful oracle sources, and show an explicit tradeoff between certification cost and delayed detection of biased sources. We provide concrete realizations of these meta-algorithms by applying biased stochastic gradient extrapolation (SGE) and recursive regularization under state-dependent noise as subroutines. Synthetic and LLM-completion experiments illustrate the qualitative switching behavior predicted by the theory: the adaptive policy skips several expensive LLM oracles and substantially reduces cumulative cost relative to fixed high-fidelity alternatives while achieving comparable accuracy.",
+    "category": "Theorem Proving",
+    "source": "arXiv",
+    "published": "2026-10-15T02:50:49Z",
+    "updated": "2026-10-15T02:50:49Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.21139v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.21139v1"
+      }
+    ],
+    "score": 68,
+    "infographic": {
+      "key_insight": "The paper shows that paying for a higher-fidelity LLM is only worthwhile when its extra accuracy justifies the downstream optimization cost, and proposes adaptive switching policies to decide this automatically.",
+      "engineering_relevance": "For data curation and learning pipelines, it offers a cost-aware way to trade off LLM quality against budget while still preserving optimization performance.",
+      "method": [
+        "Restarted cost-aware meta-algorithm that adaptively switches among mixed-fidelity stochastic oracles using known bias.",
+        "Budgeted certification scheme with occasional trusted-gradient checks to detect biased sources when bias is unknown.",
+        "Subroutines based on biased stochastic gradient extrapolation and recursive regularization under state-dependent noise."
+      ],
+      "evidence_signal": "The abstract reports synthetic and LLM-completion experiments showing the adaptive policy skips expensive LLM calls, reduces cumulative cost, and maintains comparable accuracy.",
+      "watch_item": "The approach depends on reliable bias/certification behavior; if trusted-gradient checks are too costly or biased sources are hard to detect, the savings can shrink.",
+      "hashtags": [
+        "#LLMOptimization",
+        "#CostAwareAI",
+        "#StochasticOptimization",
+        "#MixedFidelity",
+        "#AdaptiveOracles"
+      ],
+      "paper_id": "2026-10-15-arxiv-when_is_a_better_llm_worth_paying_for_stochastic_optimization_with_switching_mixed_fidelit",
+      "paper_title": "When is a better LLM worth paying for? Stochastic Optimization with Switching Mixed-Fidelity Oracles",
+      "paper_date": "2026-10-15",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-10-18T16:21:33",
       "generator": "openai"
     }
   },
@@ -233,134 +338,29 @@
         "url": "https://arxiv.org/pdf/2610.20413v1"
       }
     ],
-    "score": 78,
+    "score": 68,
     "infographic": {
-      "key_insight": "In RL with verifiable rewards, momentum helps when the EMA coefficient is chosen large enough to stay in a safe regime that avoids overshoot, especially as sampling noise dominates at smaller learning rates.",
-      "engineering_relevance": "For practical LLM post-training, tuning momentum upward can preserve a real optimization gain and improve validation accuracy without changing the core training setup.",
+      "key_insight": "In RL with verifiable rewards, momentum helps when the EMA coefficient is chosen large enough to stay in a safe regime, because it preserves a real optimization gain that can otherwise be hidden by sampling noise.",
+      "engineering_relevance": "For practical LLM post-training, tuning momentum upward can improve learning stability and validation accuracy, especially when using SGD+EMA or AdamW at larger model scale.",
       "method": [
-        "Bandit model of RLVR with bias-corrected EMA momentum",
-        "Theoretical analysis of exact policy gradients vs sampled-gradient noise",
-        "Guideline: increase β as learning rate η decreases to keep η/(1−β) in the safe range"
+        "Analyze RLVR with a bandit formulation and bias-corrected EMA momentum.",
+        "Prove that, under exact policy gradients, larger β accelerates optimization if overshoot is avoided.",
+        "Show that with sampled gradients, fixed β can lose benefit as η shrinks, while increasing β to keep η/(1−β) safe retains a nonvanishing gain."
       ],
-      "evidence_signal": "Bandit simulations and RLVR experiments on Qwen3-4B-Base and Qwen2.5-32B validate the theory, with larger β1 improving mean validation accuracy by nearly 2 percentage points on the larger model.",
-      "watch_item": "The benefit depends on staying below the overshoot threshold; overly aggressive momentum settings can destabilize training or lose gains under noisy gradient estimates.",
+      "evidence_signal": "The paper validates the theory with bandit simulations and RLVR experiments on Qwen3-4B-Base and Qwen2.5-32B, where increasing β1 improved mean validation accuracy by nearly 2 percentage points.",
+      "watch_item": "Momentum gains depend on staying below the overshoot threshold; using too large a β or an unsafe η/(1−β) setting can negate the benefit.",
       "hashtags": [
         "#ReinforcementLearning",
         "#Momentum",
         "#LLMTraining",
-        "#OptimizationTheory",
+        "#Optimization",
         "#RLVR"
       ],
       "paper_id": "2026-10-14-arxiv-when_does_momentum_help_in_reinforcement_learning_with_verifiable_rewards",
       "paper_title": "When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?",
       "paper_date": "2026-10-14",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-17T16:08:34",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-14-arxiv-gibbs_gap_policy_optimization_for_off_policy_rl_with_verifiable_rewards",
-    "arxiv_id": "2610.20814v1",
-    "date": "2026-10-14",
-    "title": "Gibbs-Gap Policy Optimization for Off-Policy RL with Verifiable Rewards",
-    "authors": "Xuanchang Zhang, Tong Zhang",
-    "abstract": "Reinforcement learning with verifiable rewards often trains language models on responses generated by a different, possibly stale behavior policy. Correcting this mismatch with learner-to-behavior importance weights can introduce high variance for long responses. We introduce Gibbs-Gap Policy Optimization (GGPO), which minimizes a log-mean-exp contrast of KL-adjusted rewards among responses to the same prompt, without learner-to-behavior importance weights. We derive GGPO from KL-regularized policy optimization: on policy, its population loss is exactly the KL-regularized optimality gap, and under suitable coverage the learner's single-response expected reward is at least the behavior policy's best-of-$K$ reward, minus terms for the raw finite-group loss, regularization, and finite training data. We characterize reference refresh through exact Gibbs-target composition and a finite-data final-policy reward bound under local reference control and tokenwise behavior mismatch. This refresh is empirically important: in an ablation, fixed-reference GGPO scores $32.96$ on the five-benchmark problem-weighted average, versus $46.58$ with the default refresh schedule. Experiments on mathematical reasoning further show that GGPO outperforms GRPO and AGRO under training-inference mismatch and on fixed offline data, while maintaining its performance as controlled policy staleness grows.",
-    "category": "Mathematical Reasoning",
-    "source": "arXiv",
-    "published": "2026-10-14T18:59:29Z",
-    "updated": "2026-10-14T18:59:29Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "cs.CL"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.20814v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.20814v1"
-      }
-    ],
-    "score": 74,
-    "infographic": {
-      "key_insight": "Gibbs-Gap Policy Optimization (GGPO) removes learner-to-behavior importance weights by optimizing a KL-adjusted log-mean-exp gap over grouped responses, yielding stable off-policy learning for verifiable-reward RL.",
-      "engineering_relevance": "The method is directly useful for training large language models from stale or offline data, where reducing variance and handling policy mismatch are critical for scalable deployment.",
-      "method": [
-        "Optimize a contrast of KL-adjusted rewards within response groups for the same prompt.",
-        "Derive the objective from KL-regularized policy optimization, linking it to the optimality gap on-policy.",
-        "Use reference refresh to track Gibbs-target composition and control policy staleness."
-      ],
-      "evidence_signal": "In the abstract, GGPO outperforms GRPO and AGRO under training-inference mismatch and on fixed offline data, with a reported five-benchmark average of 46.58 using the default refresh schedule versus 32.96 with a fixed reference.",
-      "watch_item": "Performance depends on reference refresh and coverage assumptions, so stale references or poor support over responses may weaken the theoretical and empirical gains.",
-      "hashtags": [
-        "#ReinforcementLearning",
-        "#LLMAlignment",
-        "#OffPolicyRL",
-        "#PolicyOptimization",
-        "#MathematicalReasoning"
-      ],
-      "paper_id": "2026-10-14-arxiv-gibbs_gap_policy_optimization_for_off_policy_rl_with_verifiable_rewards",
-      "paper_title": "Gibbs-Gap Policy Optimization for Off-Policy RL with Verifiable Rewards",
-      "paper_date": "2026-10-14",
-      "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-17T16:08:36",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-15-arxiv-when_is_a_better_llm_worth_paying_for_stochastic_optimization_with_switching_mixed_fidelit",
-    "arxiv_id": "2610.21139v1",
-    "date": "2026-10-15",
-    "title": "When is a better LLM worth paying for? Stochastic Optimization with Switching Mixed-Fidelity Oracles",
-    "authors": "Swati Gupta, Tianjiao Li",
-    "abstract": "Large language models (LLMs) are increasingly used upstream of decision-making to clean data, detect label errors, and reconstruct missing values. Yet LLM-assisted data curation creates a new operational tradeoff: higher-fidelity models and richer prompts can be substantially more expensive, while the value of this additional fidelity depends on the downstream optimization accuracy. This raises the central question of this work: when should one pay for a better LLM, given a specific downstream task at hand? We study this question through stochastic optimization with mixed-fidelity first-order oracles, which can have systematic bias and state-dependent variance. We develop two cost-aware algorithmic frameworks that allow adaptive switching between stochastic oracles. With known bias, the first meta-algorithm applies a restarted, cost-aware policy that adaptively selects oracle fidelity across optimization stages. Its cumulative cost is no larger than that of the best fixed oracle in hindsight and can be substantially smaller. With unknown bias, we develop a budgeted certification scheme that uses occasional trusted-gradient evaluations to certify the optimization progress and eliminate unsuccessful oracle sources, and show an explicit tradeoff between certification cost and delayed detection of biased sources. We provide concrete realizations of these meta-algorithms by applying biased stochastic gradient extrapolation (SGE) and recursive regularization under state-dependent noise as subroutines. Synthetic and LLM-completion experiments illustrate the qualitative switching behavior predicted by the theory: the adaptive policy skips several expensive LLM oracles and substantially reduces cumulative cost relative to fixed high-fidelity alternatives while achieving comparable accuracy.",
-    "category": "Theorem Proving",
-    "source": "arXiv",
-    "published": "2026-10-15T02:50:49Z",
-    "updated": "2026-10-15T02:50:49Z",
-    "primary_category": "math.OC",
-    "categories": [
-      "math.OC",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.21139v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.21139v1"
-      }
-    ],
-    "score": 73,
-    "infographic": {
-      "key_insight": "Adaptive switching between cheap and expensive LLM oracles can minimize total cost while preserving downstream optimization accuracy.",
-      "engineering_relevance": "For data curation and optimization pipelines, the paper gives a principled way to decide when higher-fidelity LLM calls are worth paying for.",
-      "method": [
-        "Develops a restarted, cost-aware meta-algorithm that switches oracle fidelity when bias is known.",
-        "Introduces a budgeted certification scheme with occasional trusted-gradient checks when bias is unknown.",
-        "Implements the framework with biased stochastic gradient extrapolation and recursive regularization under state-dependent noise."
-      ],
-      "evidence_signal": "Synthetic experiments and LLM-completion tests show the adaptive policy skips multiple expensive oracle calls, lowers cumulative cost, and matches the accuracy of fixed high-fidelity methods.",
-      "watch_item": "The approach relies on occasional trusted evaluations and assumptions about bias/noise structure, so real-world gains depend on how well those conditions hold.",
-      "hashtags": [
-        "#LLMOptimization",
-        "#StochasticOptimization",
-        "#MixedFidelity",
-        "#CostAwareAI",
-        "#TheoremProving"
-      ],
-      "paper_id": "2026-10-15-arxiv-when_is_a_better_llm_worth_paying_for_stochastic_optimization_with_switching_mixed_fidelit",
-      "paper_title": "When is a better LLM worth paying for? Stochastic Optimization with Switching Mixed-Fidelity Oracles",
-      "paper_date": "2026-10-15",
-      "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-17T16:08:38",
+      "generated_at": "2026-10-18T16:21:35",
       "generator": "openai"
     }
   },
@@ -389,29 +389,29 @@
         "url": "https://arxiv.org/pdf/2610.19864v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "Euler shifts AI math research from only producing final answers to supporting a shared, human-readable research graph that captures assumptions, proofs, failed attempts, and verification evidence.",
-      "engineering_relevance": "For theorem proving systems, this provides persistent context across sessions so multi-agent workflows can plan, collaborate, and verify more reliably over long investigations.",
+      "key_insight": "Euler shifts AI-for-mathematics from single-answer solving to a human-centered, persistent research workflow that records statements, assumptions, proof links, failed attempts, and verification evidence in a shared graph.",
+      "engineering_relevance": "The system is relevant for building trustworthy multi-agent scientific assistants because it preserves context across sessions and supports traceability, collaboration, and verification during long research tasks.",
       "method": [
-        "Builds connected research graphs of mathematical statements, assumptions, dependencies, alternatives, failures, and evidence.",
-        "Lets researchers jump back to saved team states, inspect prior reasoning, and continue exploring from any graph node.",
-        "Uses the graph as shared memory for agent planning, collaboration, and verification across sessions."
+        "Builds a structured research graph of mathematical statements, assumptions, dependencies, alternatives, and failures.",
+        "Uses the graph as persistent shared memory for multi-agent planning, collaboration, and verification.",
+        "Lets researchers revisit saved team states and continue exploring alternative proof paths interactively."
       ],
-      "evidence_signal": "The abstract reports three mathematical research case studies plus an implemented system and software validation, but does not provide quantitative benchmark results.",
-      "watch_item": "The abstract does not specify scalability, robustness against graph inconsistency, or how well the system handles very large or noisy multi-agent proof sessions.",
+      "evidence_signal": "The abstract reports three mathematical research case studies and software validation to illustrate the system’s capabilities.",
+      "watch_item": "The abstract suggests the approach depends on careful graph maintenance and verification; robustness and scalability may be challenging in long, complex investigations.",
       "hashtags": [
+        "#AI4Math",
+        "#MultiAgentSystems",
         "#TheoremProving",
-        "#MultiAgentAI",
-        "#MathDiscovery",
         "#HumanCenteredAI",
-        "#ResearchGraphs"
+        "#ResearchWorkflow"
       ],
       "paper_id": "2026-10-14-arxiv-euler_towards_human_centered_multi_agent_mathematical_discovery",
       "paper_title": "Euler: Towards Human-Centered Multi-Agent Mathematical Discovery",
       "paper_date": "2026-10-14",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-17T16:08:40",
+      "generated_at": "2026-10-18T16:21:37",
       "generator": "openai"
     }
   },
@@ -441,29 +441,29 @@
         "url": "https://arxiv.org/pdf/2610.20892v1"
       }
     ],
-    "score": 69,
+    "score": 64,
     "infographic": {
-      "key_insight": "Predicting a good simplex warm start is not enough: the cheapest start is not always the one closest to optimal, so the start policy should be chosen using measured solver cost.",
-      "engineering_relevance": "A cost-aware warm-start policy can cut linear-program solve time substantially in practice, making simplex more competitive for large LP pipelines.",
+      "key_insight": "Warm-start quality for simplex is not determined just by fewer pivots: the same-quality start can have very different linear-algebra cost, so the paper learns starts using measured solver cost, not iteration count alone.",
+      "engineering_relevance": "For LP solvers in practice, optimizing the warm start can cut wall-clock time substantially, making learned initialization more useful for real workloads than pivot reduction alone.",
       "method": [
-        "Train a supervised model to predict an optimal basis from LP structure.",
-        "Use measured CPU instruction counts to learn when to warm-start, how many predicted columns to include, and which simplex variant/pricing rule to use.",
-        "Select the start policy per LP with a small learned controller instead of relying only on basis overlap or iteration counts."
+        "Predict a candidate optimal basis with a supervised model.",
+        "Train a small policy on measured instruction counts to choose how many predicted columns to use, plus algorithm and pricing rule.",
+        "Optionally skip warm-starting when it is not cost-effective."
       ],
-      "evidence_signal": "Across 25 LP classes, the proposed CostStart roughly halves solve time versus the default start and beats retrained published baselines by about 1.4× to 2.2×, including on LPs four times larger than training instances.",
-      "watch_item": "The gains depend on solver-specific cost measurements and careful retraining, so deployment may require re-tuning for a different simplex implementation or hardware stack.",
+      "evidence_signal": "Across 25 LP classes, the method cuts dual-simplex iterations by about two-thirds but only about one-third of solve time; on unseen LPs it roughly halves solve time versus the default start.",
+      "watch_item": "A warm start that looks close in basis overlap may still be expensive, so deploying this approach requires cost-aware evaluation and hardware-sensitive measurement.",
       "hashtags": [
         "#LinearProgramming",
         "#SimplexMethod",
-        "#MachineLearning",
-        "#Optimization",
-        "#ScientificComputing"
+        "#MachineLearningForOptimization",
+        "#WarmStart",
+        "#ScientificML"
       ],
       "paper_id": "2026-10-14-arxiv-learning_warm_starts_for_the_simplex_method_from_measured_solver_cost",
       "paper_title": "Learning Warm Starts for the Simplex Method from Measured Solver Cost",
       "paper_date": "2026-10-14",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-10-17T16:08:42",
+      "generated_at": "2026-10-18T16:21:39",
       "generator": "openai"
     }
   },
@@ -495,29 +495,29 @@
         "url": "https://arxiv.org/pdf/2610.21964v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "Shallow neural networks tend to learn sinusoidal, low-frequency components first because the gradient-descent dynamics in an orthogonal polynomial basis have a graded matrix structure with rapidly decaying eigenvalues.",
-      "engineering_relevance": "This gives practitioners a more general theoretical lens for predicting and interpreting spectral bias across activations like sigmoid and ReLU, not just in Fourier-domain toy settings.",
+      "key_insight": "Shallow neural networks learn low-frequency, sinusoidal-like components first because the gradient-descent dynamics matrix has a graded structure whose eigenvalues decay and eigenvectors align with orthogonal-polynomial Fourier modes.",
+      "engineering_relevance": "This framework gives a more general theory of spectral bias that can help engineers predict training dynamics across activation functions and data distributions, not just in Fourier-domain toy settings.",
       "method": [
-        "Expand network outputs as a general Fourier series in an orthogonal polynomial basis",
-        "Derive ODEs for gradient-descent dynamics of the expansion coefficients",
-        "Analyze the dynamics matrix H via eigenvalue decay and eigenvector structure to explain learning order"
+        "Expand network outputs as a general Fourier series in an orthogonal polynomial basis.",
+        "Derive gradient-descent dynamics for the series coefficients as an ODE system with dynamics matrix H.",
+        "Analyze H's eigenvalue decay and eigenvector shapes to explain why smooth sinusoidal components emerge first."
       ],
-      "evidence_signal": "The paper is theory-driven and supports its claims by analyzing the structure of H rather than reporting new experimental datasets in the abstract.",
-      "watch_item": "The framework is asymptotic and analytical, so practical fidelity may depend on how well the polynomial-basis assumptions and weak data-distribution conditions hold in real training settings.",
+      "evidence_signal": "The paper is theoretical, using asymptotic analysis of the dynamics matrix H rather than new experimental data in the abstract.",
+      "watch_item": "The framework is analytical and depends on the polynomial-basis approximation, so practical validation and numerical stability may vary for specific architectures and datasets.",
       "hashtags": [
         "#SpectralBias",
         "#NeuralNetworks",
-        "#FourierAnalysis",
         "#OrthogonalPolynomials",
-        "#GradientDescent"
+        "#FourierAnalysis",
+        "#DeepLearningTheory"
       ],
       "paper_id": "2026-10-15-arxiv-why_shallow_neural_networks_learn_sinusoidal_components_first_an_orthogonal_polynomial_dyn",
       "paper_title": "Why Shallow Neural Networks Learn Sinusoidal Components First: An Orthogonal Polynomial Dynamics Framework",
       "paper_date": "2026-10-15",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-10-17T16:08:44",
+      "generated_at": "2026-10-18T16:21:41",
       "generator": "openai"
     }
   },
@@ -548,29 +548,29 @@
         "url": "https://arxiv.org/pdf/2610.21363v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "Test-time LLM ensembling has two distinct data bottlenecks—labeled questions Q and per-question generations N—and the paper shows buffered ERM is near-optimal in many regimes, with excess risk scaling like Q^{-1/2}+N^{-β/2} up to logs.",
-      "engineering_relevance": "For systems that combine multiple LLMs at inference time, the results give a principled way to budget annotation versus sampling effort and predict when more generations or more labeled questions will actually improve ensemble quality.",
+      "key_insight": "Learning test-time ensemble weights depends on two sample sizes, and buffered ERM achieves near-optimal excess risk of order Q^{-1/2}+N^{-β/2} under a margin condition.",
+      "engineering_relevance": "For LLM ensembling, this gives a practical scaling law for how many labeled questions (Q) and generations per model (N) are needed to improve voting-based test-time performance.",
       "method": [
-        "Buffered ERM with a calibrated margin buffer for weighted model selection.",
-        "Minimax analysis of a two-model/two-answer subproblem via Hellinger modulus for a binomial-mixture experiment.",
-        "Polynomial approximation and spectral analysis to separate learning regimes in Q and N."
+        "Buffered ERM adds a calibrated margin buffer to stabilize weight learning.",
+        "A simplified two-model/two-answer submodel is used to derive minimax lower bounds.",
+        "Hellinger-modulus, polynomial approximation, and spectral analysis expose three sample-size regimes."
       ],
-      "evidence_signal": "The paper derives theoretical excess-risk rates and minimax lower bounds, using a simplified submodel to validate when the buffered ERM upper bound is tight up to logarithmic factors.",
-      "watch_item": "The sharp transitions between regimes and a matching pooled estimator for general ensembles remain unresolved, so practical gains may depend on problem structure.",
+      "evidence_signal": "The abstract reports theoretical excess-risk bounds and minimax characterizations, rather than empirical experiments, with rates depending on Q, N, and the margin exponent β.",
+      "watch_item": "The sharp transitions between the identified regimes are not fully resolved, and a matching pooled estimator for general ensembles is still open.",
       "hashtags": [
         "#LLMEnsembling",
         "#TestTimeScaling",
         "#MinimaxTheory",
         "#ERM",
-        "#TheoremProving"
+        "#Generalization"
       ],
       "paper_id": "2026-10-15-arxiv-two_sample_sizes_in_test_time_llm_ensembling_buffered_erm_and_minimax_theory",
       "paper_title": "Two Sample Sizes in Test-Time LLM Ensembling: Buffered ERM and Minimax Theory",
       "paper_date": "2026-10-15",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-17T16:08:46",
+      "generated_at": "2026-10-18T16:21:43",
       "generator": "openai"
     }
   },
@@ -601,21 +601,21 @@
         "url": "https://arxiv.org/pdf/2610.22265v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "The paper designs pull-based sampling policies that minimize the mean age of incorrect information (MAoII) when remotely estimating a Markov source, accounting for both estimation errors and how long they persist.",
-      "engineering_relevance": "This provides a principled scheduling framework for edge monitoring systems where communication is limited and freshness matters more than raw update rate.",
+      "key_insight": "The paper minimizes Mean Age of Incorrect Information (MAoII) in pull-based remote estimation of a Markov source by optimizing when the monitor should request samples under delay and sampling-rate constraints.",
+      "engineering_relevance": "It provides a principled control policy for freshness-critical remote monitoring systems where outdated or wrong state estimates can directly affect decision-making.",
       "method": [
-        "Models the source as a finite-state DTMC and the monitor as using a MAP estimator.",
-        "Formulates the zero-delay case as an SMDP to derive an optimal observation-dependent pull policy.",
-        "Handles the unit-delay case with belief-MDP modeling and a constrained deep reinforcement learning policy."
+        "Formulate the zero-delay case as a semi-Markov decision process to obtain an optimal observation-dependent pull policy.",
+        "For unit-delay channels, compute MAoII and average sampling rate numerically using the joint age-source distribution from the full observation history (belief).",
+        "Use a belief-MDP with constrained deep reinforcement learning to learn a belief-dependent pull policy under sampling constraints."
       ],
-      "evidence_signal": "The abstract reports numerical algorithms for computing MAoII and average sampling rate under a given policy, and uses these to optimize the system under a long-run sampling-rate constraint.",
-      "watch_item": "The unit-delay setting relies on belief-state estimation and CDRL, which can be computationally heavy and sensitive to approximation errors.",
+      "evidence_signal": "The abstract reports analytical optimization for the zero-delay model and numerical evaluation plus algorithmic development for the unit-delay model, including computation of MAoII and average sampling rate.",
+      "watch_item": "The unit-delay setting relies on belief-state estimation and deep RL, which may be computationally heavy and sensitive to approximation error or model mismatch.",
       "hashtags": [
         "#RemoteEstimation",
         "#AgeOfInformation",
-        "#MarkovProcess",
+        "#MarkovChains",
         "#ReinforcementLearning",
         "#Optimization"
       ],
@@ -623,7 +623,7 @@
       "paper_title": "Minimizing Age of Incorrect Information in Pull-Based Remote Estimation of a Markov Source",
       "paper_date": "2026-10-15",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-17T16:08:48",
+      "generated_at": "2026-10-18T16:21:44",
       "generator": "openai"
     }
   },
@@ -652,29 +652,29 @@
         "url": "https://arxiv.org/pdf/2610.22248v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "The paper synthesizes the theory of evolution algebras and adds new certified results showing rich automorphism behavior, idempotent structure, and group-realization phenomena.",
-      "engineering_relevance": "It provides formalized algebraic tools and verified theorems that can support symbolic computation, theorem proving, and automated reasoning about non-Mendelian inheritance models.",
+      "key_insight": "This survey shows that evolution algebras have a rich structure theory and unexpectedly flexible symmetry behavior, with many foundational questions resolved and several open problems now sharply organized.",
+      "engineering_relevance": "For theorem proving and formalized algebra, the paper is notable because it combines broad mathematical classification with Lean-verified results, making it a strong benchmark for interactive proof and symbolic algebra systems.",
       "method": [
-        "Surveyed major results on classification, structure, nilpotency, automorphisms, graphs, dynamics, and embeddings.",
-        "Proved new theorems and conjecture resolutions, many formally verified in Lean.",
-        "Combined theory review with explicit constructions and counterexamples across fields and dimensions."
+        "Surveyed core theory: classification, nilpotency, automorphisms/derivations, graph and dynamical viewpoints.",
+        "Collected 50 open questions and 11 conjectures, then resolved some by new proofs.",
+        "Formally verified several new observations in Lean, especially about automorphism groups and idempotents."
       ],
-      "evidence_signal": "The abstract reports fifty open questions, eleven new conjectures, and several new results, including two conjectures and one question settled, with many proofs formally verified in Lean.",
-      "watch_item": "Several claims depend on field choice, dimension, or simplicity/perfection assumptions, so results should not be generalized beyond the stated hypotheses.",
+      "evidence_signal": "The abstract reports new theorem-level results, including Lean-formalized proofs, plus evidence-backed conjectures and open questions rather than experimental data.",
+      "watch_item": "Many results are structural and field-dependent, so automated reasoning or implementation must carefully track assumptions such as dimension, simplicity, perfectness, and the base field.",
       "hashtags": [
         "#TheoremProving",
         "#Lean",
-        "#AbstractAlgebra",
-        "#EvolutionAlgebras",
-        "#FormalVerification"
+        "#Algebra",
+        "#FormalMethods",
+        "#MathematicalResearch"
       ],
       "paper_id": "2026-10-15-arxiv-evolution_algebras_a_survey_of_results_and_a_list_of_open_problems",
       "paper_title": "Evolution algebras: a survey of results and a list of open problems",
       "paper_date": "2026-10-15",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-17T16:08:49",
+      "generated_at": "2026-10-18T16:21:46",
       "generator": "openai"
     }
   },
@@ -705,29 +705,29 @@
         "url": "https://arxiv.org/pdf/2610.21908v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "Learning to sample from a soft-optimal Gibbs distribution is statistically different from finding a single best action, and this shift can reduce regret from O(\\sqrt{T}) to logarithmic in T under standard conditions.",
-      "engineering_relevance": "For RLHF, entropy-regularized RL, and reward-guided generation, the paper provides a principled way to optimize diverse high-quality outputs instead of only maximizing top-1 accuracy.",
+      "key_insight": "Learning to sample from an unknown Gibbs-optimal distribution is statistically different from choosing a single best action, and this shift turns regret from O(\\sqrt{T}) into logarithmic growth under standard conditions.",
+      "engineering_relevance": "For entropy-regularized RL, RLHF, and reward-guided generation, this gives a principled way to design samplers that stay close to the desired soft-optimal policy rather than merely optimizing one action.",
       "method": [
-        "Defines sampling regret as temperature-normalized cumulative KL divergence to the Gibbs target.",
-        "Derives unified regret decompositions showing sampling regret depends on squared confidence widths rather than first-order uncertainty.",
-        "Introduces sampling analogues of UCB and Thompson sampling: UCS and TS^2, including a Bayesian decomposition for posterior-random Gibbs distributions."
+        "Defines sampling regret as temperature-normalized cumulative KL to the target Gibbs distribution.",
+        "Develops two sampling analogues of bandit algorithms: UCS and TS^2.",
+        "Provides unified regret decompositions, including a Bayesian decomposition for posterior-random Gibbs targets."
       ],
-      "evidence_signal": "The abstract reports theoretical regret guarantees and unified decompositions rather than an empirical benchmark, with logarithmic-in-T sampling regret at fixed temperature in standard settings.",
-      "watch_item": "The logarithmic regret gains rely on fixed-temperature assumptions and problem-specific uncertainty structure, so performance may degrade if the target distribution or reward model shifts substantially.",
+      "evidence_signal": "The abstract reports theoretical regret guarantees, including logarithmic-in-T bounds at fixed temperature and the first Bayesian sampling-regret decomposition.",
+      "watch_item": "The logarithmic guarantees rely on fixed-temperature and standard uncertainty assumptions, so performance may degrade or require new analysis in low-temperature or highly misspecified settings.",
       "hashtags": [
-        "#ReinforcementLearning",
-        "#BayesianInference",
-        "#EntropyRegularization",
+        "#AImath",
         "#Bandits",
+        "#ReinforcementLearning",
+        "#PosteriorSampling",
         "#RegretAnalysis"
       ],
       "paper_id": "2026-10-15-arxiv-the_tilted_sampling_problem_optimism_posterior_sampling_and_logarithmic_regret",
       "paper_title": "The Tilted Sampling Problem: Optimism, Posterior Sampling, and Logarithmic Regret",
       "paper_date": "2026-10-15",
       "paper_category": "AI math",
-      "generated_at": "2026-10-17T16:08:52",
+      "generated_at": "2026-10-18T16:21:48",
       "generator": "openai"
     }
   },
@@ -757,29 +757,29 @@
         "url": "https://arxiv.org/pdf/2610.21077v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "SFRBE--RaNN adaptively reallocates random neural network features and enriches the trial space to better match PDE structure, scale, and nonlinearity while keeping the solve least-squares based.",
-      "engineering_relevance": "The method offers a practical way to improve accuracy for localized, multiscale, and nonlinear PDEs without abandoning the efficiency of randomized neural solvers.",
+      "key_insight": "SFRBE--RaNN adaptively redistributes random feature capacity and adds only nonredundant enrichments to better match PDE spatial scales, while preserving a fast output-linear solve.",
+      "engineering_relevance": "It offers a practical way to improve accuracy on localized, multiscale, and nonlinear PDEs without abandoning the computational efficiency of randomized neural networks.",
       "method": [
-        "SFR redistributes a fixed feature budget by regional residual indicators and optimizes local weight scales.",
-        "RBE adds only nonredundant features by screening activation families, removing already-represented directions, and choosing the smallest valid prefix.",
-        "For nonlinear operators, candidates are first screened with a frozen operator and then verified by the full nonlinear residual."
+        "SFR: reallocates a fixed feature budget by regional indicator mass and tunes regional scales via residual-based low-dimensional optimization.",
+        "RBE: screens multiple activation families, removes already-represented response directions, and selects the smallest admissible enrichment prefix.",
+        "For nonlinear operators, candidates are first screened with a frozen operator and then accepted only if they pass nonlinear residual verification."
       ],
-      "evidence_signal": "The abstract reports numerical experiments on localized, multiscale, and nonlinear space-time PDEs, alongside theoretical residual identities and error/probability bounds for linear problems.",
-      "watch_item": "The adaptive pipeline adds screening, residual checks, and optimization steps, so implementation complexity and compute overhead may increase relative to plain randomized features.",
+      "evidence_signal": "The abstract reports numerical experiments on localized, multiscale, and nonlinear space-time problems, and also states exact residual identities and conditional error/success-probability bounds for fixed linear cases.",
+      "watch_item": "The adaptive screening and verification steps add implementation complexity, and the theoretical guarantees are conditional rather than universal.",
       "hashtags": [
         "#PDEs",
-        "#RandomizedNeuralNetworks",
+        "#RandomizedNN",
         "#ScientificComputing",
         "#AdaptiveMethods",
-        "#PhysicsInformedML"
+        "#Optimization"
       ],
       "paper_id": "2026-10-15-arxiv-adaptive_randomized_neural_networks_for_pdes_structure_aware_feature_redistribution_and_re",
       "paper_title": "Adaptive Randomized Neural Networks for PDEs: Structure-Aware Feature Redistribution and Residual-Driven Block Enrichment",
       "paper_date": "2026-10-15",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-17T16:08:53",
+      "generated_at": "2026-10-18T16:21:50",
       "generator": "openai"
     }
   },
@@ -808,21 +808,21 @@
         "url": "https://arxiv.org/pdf/2610.20681v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "IneqAgent combines LLM-driven reasoning with symbolic computation in Lean4 to prove inequalities by coordinating lemma search, reformulation, and exact certificate generation.",
-      "engineering_relevance": "The framework shows how agentic control plus verified numerical/symbolic backends can improve formal theorem proving efficiency and reliability for mathematically exact engineering workflows.",
+      "key_insight": "IneqAgent combines LLM planning with exact symbolic backends in Lean4 to prove inequalities by constructing and checking lemma-level proof steps.",
+      "engineering_relevance": "The framework shows how agentic search plus certified computation can improve reliability and reduce inference cost for formal mathematical proving systems.",
       "method": [
-        "Lemma-level Monte Carlo Tree Search guides lemma construction and goal reformulation.",
-        "Selects among sum-of-squares, Bernstein, and successive difference-substitution backends to produce exact certificates.",
-        "Integrates backend proofs with LLM-generated steps and Lean feedback to build complete verified proofs."
+        "Lemma-level Monte Carlo Tree Search coordinates lemma construction, goal reformulation, and backend choice.",
+        "Uses symbolic backends such as sum-of-squares, Bernstein, and successive difference substitution to generate exact certificates.",
+        "Integrates backend proofs with LLM-generated steps and Lean feedback to complete verified proofs."
       ],
-      "evidence_signal": "On four benchmarks, IneqAgent with DeepSeek-V4-Flash solved 175 of 186 problems (94.09%), outperforming evaluated methods overall and achieving lower-cost success at low inference thresholds.",
-      "watch_item": "Performance depends on backend quality, Lean feedback integration, and benchmark-specific proof structure, so robustness on broader theorem classes may vary.",
+      "evidence_signal": "On four benchmarks, DeepSeek-V4-Flash with IneqAgent solved 175 of 186 problems (94.09%), with higher success at low inference-cost thresholds and lower mean cost on successful runs across four backbones.",
+      "watch_item": "Performance depends on the quality of symbolic backend selection and Lean integration, so difficult goals may still require careful engineering and may not generalize uniformly across domains.",
       "hashtags": [
-        "#TheoremProving",
         "#Lean4",
-        "#LLM",
+        "#TheoremProving",
+        "#LLMs",
         "#SymbolicComputation",
         "#FormalMethods"
       ],
@@ -830,7 +830,7 @@
       "paper_title": "IneqAgent: Agentic Inequality Proving in Lean with Symbolic Computation",
       "paper_date": "2026-10-14",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-17T16:08:55",
+      "generated_at": "2026-10-18T16:21:52",
       "generator": "openai"
     }
   },
@@ -863,29 +863,29 @@
         "url": "https://arxiv.org/pdf/2610.18739v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "A rate-transfer framework turns finite-time Lyapunov bounds for an SDE into finite-time convergence rates for stochastic gradient methods.",
-      "engineering_relevance": "This gives optimization practitioners a calculus-based route to prove and compare convergence rates for SGD-style algorithms, including new variants.",
+      "key_insight": "A rate-transfer method turns finite-time Lyapunov bounds for an associated SDE into finite-time convergence rates for stochastic gradient algorithms.",
+      "engineering_relevance": "This provides a calculus-based way to prove and predict convergence behavior for SGD-type optimizers, including new variants, without requiring a full bespoke discrete-time analysis.",
       "method": [
-        "Model the stochastic gradient algorithm with an associated SDE.",
-        "Prove a Lyapunov generator inequality for the SDE using calculus.",
-        "Transfer the SDE finite-time bound into a convergence-rate guarantee for the discrete algorithm."
+        "Model the stochastic gradient method with an associated SDE.",
+        "Verify a Lyapunov generator inequality for the SDE using calculus.",
+        "Transfer the resulting finite-time Lyapunov estimate into a convergence-rate bound for the algorithm."
       ],
       "evidence_signal": "The abstract reports that the method recovers established rates for classical stochastic gradient methods and extends to new algorithms via SDE-based calculus arguments.",
-      "watch_item": "The approach depends on verifying suitable moment, smoothness, and Lyapunov conditions, which may be nontrivial for complex or non-smooth objectives.",
+      "watch_item": "The approach depends on moment and smoothness conditions plus a suitable SDE approximation, so rate guarantees may be sensitive to modeling assumptions.",
       "hashtags": [
         "#StochasticGradientDescent",
         "#StochasticCalculus",
+        "#Optimization",
         "#LyapunovMethods",
-        "#OptimizationTheory",
         "#ConvergenceRates"
       ],
       "paper_id": "2026-10-13-arxiv-a_rate_transfer_method_convergence_rates_in_stochastic_gradient_descent_via_stochastic_cal",
       "paper_title": "A Rate Transfer Method: Convergence Rates in Stochastic Gradient Descent via Stochastic Calculus",
       "paper_date": "2026-10-13",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-17T16:08:58",
+      "generated_at": "2026-10-18T16:21:54",
       "generator": "openai"
     }
   },
@@ -915,29 +915,29 @@
         "url": "https://arxiv.org/pdf/2610.19980v1"
       }
     ],
-    "score": 64,
+    "score": 59,
     "infographic": {
-      "key_insight": "A PatternBoost-style loop combining local search with transformer-guided generation can discover new extremal geometric constructions that improve known lower bounds.",
-      "engineering_relevance": "The work shows how learning-guided search can accelerate the discovery of hard instances and integrality gaps, informing algorithm design, benchmarking, and worst-case analysis.",
+      "key_insight": "A PatternBoost-style loop of local search plus transformer-guided generation can discover new extremal geometric constructions, especially when the search space and representations are tailored to the problem.",
+      "engineering_relevance": "The work offers a practical template for using learning-guided search to strengthen lower bounds and stress-test algorithmic relaxations in geometric optimization.",
       "method": [
-        "Alternate local search with transformer-based candidate generation (PatternBoost/Axplorer).",
-        "Adapt representations, neighborhood moves, and surrogate ranking models to geometric combinatorial instances.",
-        "Use exact verification to validate promising candidates and iterate on discovered constructions."
+        "Adapted PatternBoost/Axplorer to three combinatorial geometry tasks.",
+        "Designed problem-specific candidate representations, local moves, and surrogate ranking models.",
+        "Used exact verification to filter generated candidates and measure true integrality gaps."
       ],
-      "evidence_signal": "In three geometry problems, the tailored system found non-trivial constructions, including a stabbing-unit-squares gap of 20/13 and, with expert seeding, an improved 14/9 bound.",
-      "watch_item": "Purely automated search plateaued quickly, indicating that representation quality and initial diversity strongly affect results and may limit full automation.",
+      "evidence_signal": "On stabbing unit squares with axis-parallel lines, the automated search found a gap of 20/13 ≈ 1.54, and with structured expert-initialized instances it improved further to 14/9 ≈ 1.555.",
+      "watch_item": "Performance depends strongly on representation quality and initial diversity; naive setups plateau quickly and may miss stronger constructions.",
       "hashtags": [
+        "#Geometry",
         "#MachineLearning",
-        "#CombinatorialGeometry",
-        "#ExtremalConstructions",
-        "#AlgorithmDesign",
-        "#PatternBoost"
+        "#CombinatorialOptimization",
+        "#IntegralityGap",
+        "#SearchBasedDiscovery"
       ],
       "paper_id": "2026-10-14-arxiv-towards_learning_guided_discovery_of_extremal_geometric_constructions_a_patternboost_study",
       "paper_title": "Towards Learning-Guided Discovery of Extremal Geometric Constructions: A PatternBoost Study",
       "paper_date": "2026-10-14",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-10-17T16:09:00",
+      "generated_at": "2026-10-18T16:21:56",
       "generator": "openai"
     }
   },
@@ -968,29 +968,29 @@
         "url": "https://arxiv.org/pdf/2610.22287v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
-      "key_insight": "The paper turns probabilistic temporal objectives in multi-agent systems into a rational synthesis problem, using MARL to learn joint strategies that satisfy a designated agent’s specification while remaining stable under equilibrium concepts.",
-      "engineering_relevance": "This provides a model-free way to design and verify agent policies for stochastic systems where safety or mission success depends on temporal logic goals and strategic interaction.",
+      "key_insight": "The paper turns rational synthesis into a MARL learning problem: find strategy profiles that satisfy each agent’s temporal objective while remaining stable under game-theoretic solution concepts like Nash or subgame-perfect equilibrium.",
+      "engineering_relevance": "This offers a model-free way to verify and optimize temporal-logic requirements in multi-agent systems with unknown dynamics, relevant to autonomous coordination, verification, and safe control.",
       "method": [
-        "Encode each agent’s PLTL_f objective as a reward automaton and learn in a stochastic concurrent game.",
-        "Use Nash-Q learning with conditional convergence guarantees for tabular settings.",
-        "Check satisfaction with finite-sample confidence bounds and assess stability via approximate best-response tests."
+        "Compile each agent’s PLTLf objective into a reward automaton and learn strategies with Nash-Q in a stochastic MARL setting.",
+        "Use simultaneous finite-sample confidence bounds to certify satisfaction probabilities.",
+        "Check approximate best responses to assess strategic stability under the chosen equilibrium notion."
       ],
-      "evidence_signal": "The approach is empirically validated on 8 general-sum concurrent stochastic games.",
-      "watch_item": "The guarantees are conditional and the tabular learning plus finite-sample certification may limit scalability to larger or continuous-state MARL problems.",
+      "evidence_signal": "The approach is empirically evaluated on 8 general-sum concurrent stochastic games.",
+      "watch_item": "Convergence and certification are conditional on tabular assumptions and finite-sample approximations, so scalability and estimation error may limit deployment in larger systems.",
       "hashtags": [
         "#MultiAgentRL",
         "#TemporalLogic",
-        "#NashEquilibrium",
-        "#StochasticGames",
-        "#FormalMethods"
+        "#RationalSynthesis",
+        "#GameTheory",
+        "#SafeAI"
       ],
       "paper_id": "2026-10-15-arxiv-learning_rational_strategies_for_temporal_objectives_in_multi_agent_systems",
       "paper_title": "Learning Rational Strategies for Temporal Objectives in Multi-Agent Systems",
       "paper_date": "2026-10-15",
       "paper_category": "AI math",
-      "generated_at": "2026-10-17T16:09:02",
+      "generated_at": "2026-10-18T16:21:57",
       "generator": "openai"
     }
   },
@@ -1021,29 +1021,29 @@
         "url": "https://arxiv.org/pdf/2610.20516v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
-      "key_insight": "VASPO combines a critic and a self-teacher at the same student-generated prefixes, using value-based PPO advantages plus bounded teacher scaling to better align self-distillation with expected return.",
-      "engineering_relevance": "The method offers a practical reinforcement-learning recipe for improving mathematical reasoning models by stabilizing updates and exploiting complementary token-position signals from privileged information.",
+      "key_insight": "VASPO combines a critic-based PPO value estimate with privileged self-teacher signals, using each where it is strongest to improve math-reasoning training.",
+      "engineering_relevance": "For reasoning-model training, it offers a practical way to blend dense supervision and return-aware optimization, improving accuracy without relying only on GRPO-style signal scaling.",
       "method": [
-        "Critic predicts continuation returns from privileged information and converts them into token-level PPO advantages.",
-        "Self-teacher modulates selected positive advantages using bounded probability ratios.",
-        "Integration is done within PPO rather than GRPO, leveraging complementary positional dynamics across generation."
+        "Compute PPO token-level advantages from a critic that predicts continuation returns at student-generated prefixes.",
+        "Use a self-teacher with privileged information to modulate selected positive advantages through bounded probability ratios.",
+        "Exploit complementary dynamics: critic is stronger near the end of responses, while self-teacher is strongest early and rebounds at the end."
       ],
-      "evidence_signal": "Across six mathematical reasoning benchmarks, VASPO improves mean accuracy over PPO by 2.59 points on Qwen3-4B and 1.81 points on OLMo3-7B, and achieves the best mean accuracy on Knights and Knaves.",
-      "watch_item": "Performance depends on a critic accurate near the end of responses and careful bounding of teacher ratios; mismatched value estimates or overly aggressive scaling could destabilize training.",
+      "evidence_signal": "Across six mathematical reasoning benchmarks, VASPO improved mean accuracy over PPO by 2.59 points on Qwen3-4B and 1.81 points on OLMo3-7B, and achieved the best mean accuracy on Knights and Knaves.",
+      "watch_item": "Because the method depends on careful coordination between critic estimates and self-teacher weighting, instability or miscalibration in either component could reduce the benefit.",
       "hashtags": [
-        "#LLMReasoning",
-        "#SelfDistillation",
+        "#MathReasoning",
         "#PPO",
-        "#RLHF",
-        "#MathBenchmarks"
+        "#SelfDistillation",
+        "#ReinforcementLearning",
+        "#LLMTraining"
       ],
       "paper_id": "2026-10-14-arxiv-vaspo_self_distillation_with_privileged_value_estimation",
       "paper_title": "VASPO: Self-Distillation with Privileged Value Estimation",
       "paper_date": "2026-10-14",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-17T16:09:03",
+      "generated_at": "2026-10-18T16:21:59",
       "generator": "openai"
     }
   }

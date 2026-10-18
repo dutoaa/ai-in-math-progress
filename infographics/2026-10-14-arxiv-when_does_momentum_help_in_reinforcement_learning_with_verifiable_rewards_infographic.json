@@ -1,24 +1,24 @@
 {
-  "key_insight": "In RL with verifiable rewards, momentum helps when the EMA coefficient is chosen large enough to stay in a safe regime that avoids overshoot, especially as sampling noise dominates at smaller learning rates.",
-  "engineering_relevance": "For practical LLM post-training, tuning momentum upward can preserve a real optimization gain and improve validation accuracy without changing the core training setup.",
+  "key_insight": "In RL with verifiable rewards, momentum helps when the EMA coefficient is chosen large enough to stay in a safe regime, because it preserves a real optimization gain that can otherwise be hidden by sampling noise.",
+  "engineering_relevance": "For practical LLM post-training, tuning momentum upward can improve learning stability and validation accuracy, especially when using SGD+EMA or AdamW at larger model scale.",
   "method": [
-    "Bandit model of RLVR with bias-corrected EMA momentum",
-    "Theoretical analysis of exact policy gradients vs sampled-gradient noise",
-    "Guideline: increase β as learning rate η decreases to keep η/(1−β) in the safe range"
+    "Analyze RLVR with a bandit formulation and bias-corrected EMA momentum.",
+    "Prove that, under exact policy gradients, larger β accelerates optimization if overshoot is avoided.",
+    "Show that with sampled gradients, fixed β can lose benefit as η shrinks, while increasing β to keep η/(1−β) safe retains a nonvanishing gain."
   ],
-  "evidence_signal": "Bandit simulations and RLVR experiments on Qwen3-4B-Base and Qwen2.5-32B validate the theory, with larger β1 improving mean validation accuracy by nearly 2 percentage points on the larger model.",
-  "watch_item": "The benefit depends on staying below the overshoot threshold; overly aggressive momentum settings can destabilize training or lose gains under noisy gradient estimates.",
+  "evidence_signal": "The paper validates the theory with bandit simulations and RLVR experiments on Qwen3-4B-Base and Qwen2.5-32B, where increasing β1 improved mean validation accuracy by nearly 2 percentage points.",
+  "watch_item": "Momentum gains depend on staying below the overshoot threshold; using too large a β or an unsafe η/(1−β) setting can negate the benefit.",
   "hashtags": [
     "#ReinforcementLearning",
     "#Momentum",
     "#LLMTraining",
-    "#OptimizationTheory",
+    "#Optimization",
     "#RLVR"
   ],
   "paper_id": "2026-10-14-arxiv-when_does_momentum_help_in_reinforcement_learning_with_verifiable_rewards",
   "paper_title": "When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?",
   "paper_date": "2026-10-14",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-10-17T16:08:34",
+  "generated_at": "2026-10-18T16:21:35",
   "generator": "openai"
 }

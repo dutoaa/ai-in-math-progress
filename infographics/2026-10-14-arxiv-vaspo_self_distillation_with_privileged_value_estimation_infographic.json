@@ -1,24 +1,24 @@
 {
-  "key_insight": "VASPO combines a critic and a self-teacher at the same student-generated prefixes, using value-based PPO advantages plus bounded teacher scaling to better align self-distillation with expected return.",
-  "engineering_relevance": "The method offers a practical reinforcement-learning recipe for improving mathematical reasoning models by stabilizing updates and exploiting complementary token-position signals from privileged information.",
+  "key_insight": "VASPO combines a critic-based PPO value estimate with privileged self-teacher signals, using each where it is strongest to improve math-reasoning training.",
+  "engineering_relevance": "For reasoning-model training, it offers a practical way to blend dense supervision and return-aware optimization, improving accuracy without relying only on GRPO-style signal scaling.",
   "method": [
-    "Critic predicts continuation returns from privileged information and converts them into token-level PPO advantages.",
-    "Self-teacher modulates selected positive advantages using bounded probability ratios.",
-    "Integration is done within PPO rather than GRPO, leveraging complementary positional dynamics across generation."
+    "Compute PPO token-level advantages from a critic that predicts continuation returns at student-generated prefixes.",
+    "Use a self-teacher with privileged information to modulate selected positive advantages through bounded probability ratios.",
+    "Exploit complementary dynamics: critic is stronger near the end of responses, while self-teacher is strongest early and rebounds at the end."
   ],
-  "evidence_signal": "Across six mathematical reasoning benchmarks, VASPO improves mean accuracy over PPO by 2.59 points on Qwen3-4B and 1.81 points on OLMo3-7B, and achieves the best mean accuracy on Knights and Knaves.",
-  "watch_item": "Performance depends on a critic accurate near the end of responses and careful bounding of teacher ratios; mismatched value estimates or overly aggressive scaling could destabilize training.",
+  "evidence_signal": "Across six mathematical reasoning benchmarks, VASPO improved mean accuracy over PPO by 2.59 points on Qwen3-4B and 1.81 points on OLMo3-7B, and achieved the best mean accuracy on Knights and Knaves.",
+  "watch_item": "Because the method depends on careful coordination between critic estimates and self-teacher weighting, instability or miscalibration in either component could reduce the benefit.",
   "hashtags": [
-    "#LLMReasoning",
-    "#SelfDistillation",
+    "#MathReasoning",
     "#PPO",
-    "#RLHF",
-    "#MathBenchmarks"
+    "#SelfDistillation",
+    "#ReinforcementLearning",
+    "#LLMTraining"
   ],
   "paper_id": "2026-10-14-arxiv-vaspo_self_distillation_with_privileged_value_estimation",
   "paper_title": "VASPO: Self-Distillation with Privileged Value Estimation",
   "paper_date": "2026-10-14",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-17T16:09:03",
+  "generated_at": "2026-10-18T16:21:59",
   "generator": "openai"
 }

@@ -1,17 +1,17 @@
 {
-  "key_insight": "The paper designs pull-based sampling policies that minimize the mean age of incorrect information (MAoII) when remotely estimating a Markov source, accounting for both estimation errors and how long they persist.",
-  "engineering_relevance": "This provides a principled scheduling framework for edge monitoring systems where communication is limited and freshness matters more than raw update rate.",
+  "key_insight": "The paper minimizes Mean Age of Incorrect Information (MAoII) in pull-based remote estimation of a Markov source by optimizing when the monitor should request samples under delay and sampling-rate constraints.",
+  "engineering_relevance": "It provides a principled control policy for freshness-critical remote monitoring systems where outdated or wrong state estimates can directly affect decision-making.",
   "method": [
-    "Models the source as a finite-state DTMC and the monitor as using a MAP estimator.",
-    "Formulates the zero-delay case as an SMDP to derive an optimal observation-dependent pull policy.",
-    "Handles the unit-delay case with belief-MDP modeling and a constrained deep reinforcement learning policy."
+    "Formulate the zero-delay case as a semi-Markov decision process to obtain an optimal observation-dependent pull policy.",
+    "For unit-delay channels, compute MAoII and average sampling rate numerically using the joint age-source distribution from the full observation history (belief).",
+    "Use a belief-MDP with constrained deep reinforcement learning to learn a belief-dependent pull policy under sampling constraints."
   ],
-  "evidence_signal": "The abstract reports numerical algorithms for computing MAoII and average sampling rate under a given policy, and uses these to optimize the system under a long-run sampling-rate constraint.",
-  "watch_item": "The unit-delay setting relies on belief-state estimation and CDRL, which can be computationally heavy and sensitive to approximation errors.",
+  "evidence_signal": "The abstract reports analytical optimization for the zero-delay model and numerical evaluation plus algorithmic development for the unit-delay model, including computation of MAoII and average sampling rate.",
+  "watch_item": "The unit-delay setting relies on belief-state estimation and deep RL, which may be computationally heavy and sensitive to approximation error or model mismatch.",
   "hashtags": [
     "#RemoteEstimation",
     "#AgeOfInformation",
-    "#MarkovProcess",
+    "#MarkovChains",
     "#ReinforcementLearning",
     "#Optimization"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Minimizing Age of Incorrect Information in Pull-Based Remote Estimation of a Markov Source",
   "paper_date": "2026-10-15",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-10-17T16:08:48",
+  "generated_at": "2026-10-18T16:21:44",
   "generator": "openai"
 }

@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-10-17
+Generated: 2026-10-18
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Functional Subnetwork Localization for Efficient Continual Learning in Large Language Models
@@ -35,15 +35,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.19092v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-13-arxiv-neural_spline_flow_diffeomorphisms_for_pullback_finite_element_methods_on_complex_domains_infographic.json
 
-## 5. When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?
-
-- Date: 2026-10-14
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.20413v1
-- PDF: https://arxiv.org/pdf/2610.20413v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-when_does_momentum_help_in_reinforcement_learning_with_verifiable_rewards_infographic.json
-
-## 6. Gibbs-Gap Policy Optimization for Off-Policy RL with Verifiable Rewards
+## 5. Gibbs-Gap Policy Optimization for Off-Policy RL with Verifiable Rewards
 
 - Date: 2026-10-14
 - Category: Mathematical Reasoning
@@ -51,13 +43,21 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.20814v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-gibbs_gap_policy_optimization_for_off_policy_rl_with_verifiable_rewards_infographic.json
 
-## 7. When is a better LLM worth paying for? Stochastic Optimization with Switching Mixed-Fidelity Oracles
+## 6. When is a better LLM worth paying for? Stochastic Optimization with Switching Mixed-Fidelity Oracles
 
 - Date: 2026-10-15
 - Category: Theorem Proving
 - arXiv: https://arxiv.org/abs/2610.21139v1
 - PDF: https://arxiv.org/pdf/2610.21139v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-when_is_a_better_llm_worth_paying_for_stochastic_optimization_with_switching_mixed_fidelit_infographic.json
+
+## 7. When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?
+
+- Date: 2026-10-14
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2610.20413v1
+- PDF: https://arxiv.org/pdf/2610.20413v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-when_does_momentum_help_in_reinforcement_learning_with_verifiable_rewards_infographic.json
 
 ## 8. Euler: Towards Human-Centered Multi-Agent Mathematical Discovery
 
