@@ -1,18 +1,18 @@
 {
-  "key_insight": "Good simplex warm starts must minimize measured computational cost, not just pivot counts or distance to an optimal basis.",
-  "engineering_relevance": "CostStart can accelerate LP solving by adapting the starting basis and solver configuration to each problem, while retaining the option not to warm-start.",
+  "key_insight": "CostStart learns simplex warm-start decisions from measured computational cost because fewer pivots and greater overlap with an optimal basis do not reliably imply faster solves.",
+  "engineering_relevance": "Cost-aware warm starts can accelerate LP solving by choosing both the starting basis and solver settings, while retaining the option to use the default start.",
   "method": [
-    "Predict a starting basis with supervised learning.",
+    "Use supervised learning to predict which variables belong in an optimal basis.",
     "Train a small policy on measured CPU instruction counts.",
-    "Choose how many predicted columns to use, the simplex algorithm, pricing rule, and whether to warm-start."
+    "Choose how many predicted columns to use, the simplex algorithm and pricing rule, or no warm start."
   ],
-  "evidence_signal": "Across 25 LP classes, CostStart roughly halved default-start solve time on unseen instances from training classes, including instances four times the training size, and was 1.4–2.2× as fast as two retrained published methods.",
-  "watch_item": "Generalization to entirely new LP classes is not established by the reported evaluation.",
+  "evidence_signal": "Across 25 LP classes, CostStart roughly halves default-start solve time on unseen instances from training classes, including instances four times the training size, and is 1.4–2.2× faster than two retrained published methods.",
+  "watch_item": "Generalization to new LP classes and transfer of instruction-count-based decisions across hardware or solver implementations remain unestablished by the abstract.",
   "hashtags": [
     "#LinearProgramming",
     "#SimplexMethod",
     "#LearningToOptimize",
-    "#SolverPerformance",
+    "#WarmStarts",
     "#ComputationalOptimization"
   ],
   "model": "gpt-6.1-sol",
@@ -21,6 +21,6 @@
   "paper_title": "Learning Warm Starts for the Simplex Method from Measured Solver Cost",
   "paper_date": "2026-10-14",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-10-19T09:23:39",
+  "generated_at": "2026-10-19T19:01:52",
   "generator": "openai"
 }

@@ -1,13 +1,13 @@
 {
-  "key_insight": "Momentum helps RLVR when its coefficient increases as the learning rate decreases, keeping η/(1−β) in a safe regime so expected gains can dominate sampling fluctuations.",
-  "engineering_relevance": "RLVR post-training may benefit from tuning momentum jointly with the learning rate rather than retaining a conventional fixed coefficient.",
+  "key_insight": "Momentum helps RLVR when its coefficient increases as the learning rate decreases, keeping η/(1−β) in a safe regime so expected gains can outweigh sampling fluctuations.",
+  "engineering_relevance": "Tuning first-moment momentum alongside the learning rate can improve verifiable-reward LLM post-training rather than defaulting to conventional coefficients.",
   "method": [
     "Model RLVR as a bandit problem with bias-corrected EMA momentum.",
-    "Prove acceleration for exact policy gradients within an overshoot-safe coefficient range.",
+    "Prove acceleration with exact policy gradients when momentum stays within a no-overshoot range.",
     "Analyze sampled-gradient fluctuations and test predictions in bandit simulations and LLM post-training."
   ],
-  "evidence_signal": "Bandit simulations validate the predictions, Qwen3-4B-Base experiments support larger momentum coefficients, and increasing AdamW β₁ on Qwen2.5-32B improves mean validation accuracy by nearly 2 percentage points over the conventional choice.",
-  "watch_item": "Larger momentum is not unconditionally better: the theory requires an overshoot-safe regime, and its guarantees are derived in a bandit formulation.",
+  "evidence_signal": "Bandit simulations validate the predictions; Qwen3-4B-Base experiments support larger momentum coefficients, and increasing AdamW β₁ on Qwen2.5-32B improves mean validation accuracy by nearly 2 percentage points.",
+  "watch_item": "The guarantees rely on a bandit formulation and a safe momentum range; larger coefficients should not be assumed beneficial without checking stability in practical training.",
   "hashtags": [
     "#RLVR",
     "#Momentum",
@@ -21,6 +21,6 @@
   "paper_title": "When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?",
   "paper_date": "2026-10-14",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-10-19T09:23:16",
+  "generated_at": "2026-10-19T19:01:47",
   "generator": "openai"
 }
