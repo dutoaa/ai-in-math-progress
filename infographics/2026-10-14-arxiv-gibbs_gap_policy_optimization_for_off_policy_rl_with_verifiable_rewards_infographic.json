@@ -1,24 +1,24 @@
 {
-  "key_insight": "Gibbs-Gap Policy Optimization (GGPO) removes learner-to-behavior importance weights by optimizing a KL-adjusted log-mean-exp gap over grouped responses, yielding a stable off-policy objective for verifiable-reward RL.",
-  "engineering_relevance": "For language-model RL pipelines with stale or offline data, GGPO offers a practical way to train against policy mismatch while controlling variance and preserving reward gains.",
+  "key_insight": "GGPO replaces high-variance learner-to-behavior importance weighting with a KL-adjusted log-mean-exp objective over grouped responses, while retaining a principled link to KL-regularized optimality.",
+  "engineering_relevance": "It is a practical off-policy RL recipe for training language models from stale or mismatched offline data, especially when long responses make importance weighting unstable.",
   "method": [
-    "Minimize a log-mean-exp contrast of KL-adjusted rewards across multiple responses to the same prompt.",
-    "Derive the objective from KL-regularized policy optimization so the population loss matches the KL-regularized optimality gap on-policy.",
-    "Use reference refresh analysis and local reference control to bound final-policy reward under policy staleness and finite data."
+    "Optimize a log-mean-exp contrast of KL-adjusted rewards across responses to the same prompt.",
+    "Derive the objective from KL-regularized policy optimization, so the on-policy population loss matches the KL-regularized optimality gap.",
+    "Use reference-policy refresh to control policy staleness and preserve reward guarantees under finite data."
   ],
-  "evidence_signal": "In experiments on mathematical reasoning, GGPO outperformed GRPO and AGRO under training-inference mismatch and fixed offline data, and a default refresh schedule scored 46.58 versus 32.96 with a fixed reference on the five-benchmark weighted average.",
-  "watch_item": "Performance depends on reference refresh and coverage assumptions, so stale references or poor prompt-response coverage can weaken the bound and degrade results.",
+  "evidence_signal": "The abstract reports that with fixed reference GGPO scores 32.96 on a five-benchmark problem-weighted average, while the default refresh schedule reaches 46.58, and that GGPO outperforms GRPO and AGRO under mismatch and fixed offline data.",
+  "watch_item": "Performance depends on reference refresh and coverage assumptions, so stale references or weak data support can materially degrade results.",
   "hashtags": [
     "#ReinforcementLearning",
     "#OffPolicyRL",
-    "#LLMAlignment",
-    "#KLRegularization",
-    "#MathematicalReasoning"
+    "#LanguageModels",
+    "#MathematicalReasoning",
+    "#PolicyOptimization"
   ],
   "paper_id": "2026-10-14-arxiv-gibbs_gap_policy_optimization_for_off_policy_rl_with_verifiable_rewards",
   "paper_title": "Gibbs-Gap Policy Optimization for Off-Policy RL with Verifiable Rewards",
   "paper_date": "2026-10-14",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-18T16:21:31",
+  "generated_at": "2026-10-19T09:20:59",
   "generator": "openai"
 }

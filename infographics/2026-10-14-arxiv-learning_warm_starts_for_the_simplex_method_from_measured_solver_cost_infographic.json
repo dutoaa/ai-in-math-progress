@@ -1,24 +1,24 @@
 {
-  "key_insight": "Warm-start quality for simplex is not determined just by fewer pivots: the same-quality start can have very different linear-algebra cost, so the paper learns starts using measured solver cost, not iteration count alone.",
-  "engineering_relevance": "For LP solvers in practice, optimizing the warm start can cut wall-clock time substantially, making learned initialization more useful for real workloads than pivot reduction alone.",
+  "key_insight": "Predicting a good simplex warm start is not enough—measured solver cost depends strongly on how the start is chosen, not just on how many iterations it saves.",
+  "engineering_relevance": "For practical LP solvers, CostStart can cut end-to-end solve time much more reliably than basis prediction alone by optimizing for actual CPU work.",
   "method": [
-    "Predict a candidate optimal basis with a supervised model.",
-    "Train a small policy on measured instruction counts to choose how many predicted columns to use, plus algorithm and pricing rule.",
-    "Optionally skip warm-starting when it is not cost-effective."
+    "Train a supervised model to predict which variables should be basic at optimality.",
+    "Measure solver instruction counts and train a small policy to choose warm-start size, algorithm, pricing rule, or no warm start.",
+    "Select the start that minimizes measured cost rather than relying only on basis overlap or pivot count."
   ],
-  "evidence_signal": "Across 25 LP classes, the method cuts dual-simplex iterations by about two-thirds but only about one-third of solve time; on unseen LPs it roughly halves solve time versus the default start.",
-  "watch_item": "A warm start that looks close in basis overlap may still be expensive, so deploying this approach requires cost-aware evaluation and hardware-sensitive measurement.",
+  "evidence_signal": "Across 25 LP classes, the method removed about two thirds of dual-simplex iterations but only about one third of runtime; on unseen test LPs it roughly halved solve time and outperformed prior retrained methods by 1.4–2.2×.",
+  "watch_item": "Instruction-count-based tuning may depend on solver implementation details and hardware, so gains may not transfer unchanged across different LP solvers or compute environments.",
   "hashtags": [
     "#LinearProgramming",
     "#SimplexMethod",
     "#MachineLearningForOptimization",
     "#WarmStart",
-    "#ScientificML"
+    "#ScientificComputing"
   ],
   "paper_id": "2026-10-14-arxiv-learning_warm_starts_for_the_simplex_method_from_measured_solver_cost",
   "paper_title": "Learning Warm Starts for the Simplex Method from Measured Solver Cost",
   "paper_date": "2026-10-14",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-10-18T16:21:39",
+  "generated_at": "2026-10-19T09:21:16",
   "generator": "openai"
 }

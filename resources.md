@@ -1,17 +1,25 @@
 # AI math Progress Public Resources
 
-Generated: 2026-10-18
+Generated: 2026-10-19
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. Functional Subnetwork Localization for Efficient Continual Learning in Large Language Models
+## 1. At the Limits of Computability: Steps Towards Autonomous AI Discovery on the Busy Beaver Frontier
 
 - Date: 2026-10-15
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.21537v1
-- PDF: https://arxiv.org/pdf/2610.21537v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-functional_subnetwork_localization_for_efficient_continual_learning_in_large_language_mode_infographic.json
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2610.22603v1
+- PDF: https://arxiv.org/pdf/2610.22603v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-at_the_limits_of_computability_steps_towards_autonomous_ai_discovery_on_the_busy_beaver_fr_infographic.json
 
-## 2. Recursive Gradient Retraction Methods for Stochastic Nonconvex Optimization on Stiefel Manifolds
+## 2. On the possibilities and limitations of LLM-based multi-agent systems for multi-criteria decision-making in healthcare operations management
+
+- Date: 2026-10-16
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2610.23673v1
+- PDF: https://arxiv.org/pdf/2610.23673v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-16-arxiv-on_the_possibilities_and_limitations_of_llm_based_multi_agent_systems_for_multi_criteria_d_infographic.json
+
+## 3. Recursive Gradient Retraction Methods for Stochastic Nonconvex Optimization on Stiefel Manifolds
 
 - Date: 2026-10-14
 - Category: Geometry and Topology
@@ -19,7 +27,23 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.19944v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-recursive_gradient_retraction_methods_for_stochastic_nonconvex_optimization_on_stiefel_man_infographic.json
 
-## 3. Bias Control and Injection for Multi-Agent Aggregation
+## 4. Functional Subnetwork Localization for Efficient Continual Learning in Large Language Models
+
+- Date: 2026-10-15
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.21537v1
+- PDF: https://arxiv.org/pdf/2610.21537v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-functional_subnetwork_localization_for_efficient_continual_learning_in_large_language_mode_infographic.json
+
+## 5. Computing Fréchet on Unknown Submanifolds of Riemannian Manifolds
+
+- Date: 2026-10-15
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2610.22592v1
+- PDF: https://arxiv.org/pdf/2610.22592v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-computing_fr_chet_on_unknown_submanifolds_of_riemannian_manifolds_infographic.json
+
+## 6. Bias Control and Injection for Multi-Agent Aggregation
 
 - Date: 2026-10-15
 - Category: Mathematical Reasoning
@@ -27,31 +51,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.21290v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-bias_control_and_injection_for_multi_agent_aggregation_infographic.json
 
-## 4. Neural Spline Flow Diffeomorphisms for Pullback Finite Element Methods on Complex Domains
+## 7. ParetoChat: An LLM-Based Interface for Interactive Multi-Objective Optimization
 
-- Date: 2026-10-13
+- Date: 2026-10-16
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.19092v1
-- PDF: https://arxiv.org/pdf/2610.19092v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-13-arxiv-neural_spline_flow_diffeomorphisms_for_pullback_finite_element_methods_on_complex_domains_infographic.json
+- arXiv: https://arxiv.org/abs/2610.23062v1
+- PDF: https://arxiv.org/pdf/2610.23062v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-16-arxiv-paretochat_an_llm_based_interface_for_interactive_multi_objective_optimization_infographic.json
 
-## 5. Gibbs-Gap Policy Optimization for Off-Policy RL with Verifiable Rewards
-
-- Date: 2026-10-14
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.20814v1
-- PDF: https://arxiv.org/pdf/2610.20814v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-gibbs_gap_policy_optimization_for_off_policy_rl_with_verifiable_rewards_infographic.json
-
-## 6. When is a better LLM worth paying for? Stochastic Optimization with Switching Mixed-Fidelity Oracles
-
-- Date: 2026-10-15
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2610.21139v1
-- PDF: https://arxiv.org/pdf/2610.21139v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-when_is_a_better_llm_worth_paying_for_stochastic_optimization_with_switching_mixed_fidelit_infographic.json
-
-## 7. When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?
+## 8. When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?
 
 - Date: 2026-10-14
 - Category: Optimization and PDEs
@@ -59,7 +67,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.20413v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-when_does_momentum_help_in_reinforcement_learning_with_verifiable_rewards_infographic.json
 
-## 8. Euler: Towards Human-Centered Multi-Agent Mathematical Discovery
+## 9. Euler: Towards Human-Centered Multi-Agent Mathematical Discovery
 
 - Date: 2026-10-14
 - Category: Theorem Proving
@@ -67,15 +75,39 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.19864v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-euler_towards_human_centered_multi_agent_mathematical_discovery_infographic.json
 
-## 9. Learning Warm Starts for the Simplex Method from Measured Solver Cost
+## 10. Gibbs-Gap Policy Optimization for Off-Policy RL with Verifiable Rewards
 
 - Date: 2026-10-14
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2610.20892v1
-- PDF: https://arxiv.org/pdf/2610.20892v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-learning_warm_starts_for_the_simplex_method_from_measured_solver_cost_infographic.json
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.20814v1
+- PDF: https://arxiv.org/pdf/2610.20814v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-gibbs_gap_policy_optimization_for_off_policy_rl_with_verifiable_rewards_infographic.json
 
-## 10. Why Shallow Neural Networks Learn Sinusoidal Components First: An Orthogonal Polynomial Dynamics Framework
+## 11. Distributed Performance Boosting through Neural Control for Plug-and-Play Networks
+
+- Date: 2026-10-16
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2610.23292v1
+- PDF: https://arxiv.org/pdf/2610.23292v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-16-arxiv-distributed_performance_boosting_through_neural_control_for_plug_and_play_networks_infographic.json
+
+## 12. Uncertainty-Aware Budget Allocation for Efficient LLM Tree Search
+
+- Date: 2026-10-16
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.22858v1
+- PDF: https://arxiv.org/pdf/2610.22858v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-16-arxiv-uncertainty_aware_budget_allocation_for_efficient_llm_tree_search_infographic.json
+
+## 13. When is a better LLM worth paying for? Stochastic Optimization with Switching Mixed-Fidelity Oracles
+
+- Date: 2026-10-15
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2610.21139v1
+- PDF: https://arxiv.org/pdf/2610.21139v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-when_is_a_better_llm_worth_paying_for_stochastic_optimization_with_switching_mixed_fidelit_infographic.json
+
+## 14. Why Shallow Neural Networks Learn Sinusoidal Components First: An Orthogonal Polynomial Dynamics Framework
 
 - Date: 2026-10-15
 - Category: Symbolic Computation
@@ -83,31 +115,23 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.21964v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-why_shallow_neural_networks_learn_sinusoidal_components_first_an_orthogonal_polynomial_dyn_infographic.json
 
-## 11. Two Sample Sizes in Test-Time LLM Ensembling: Buffered ERM and Minimax Theory
+## 15. ScoutRoute: Efficient Mixture-of-Experts Routing Using Internal Language Model Signals
 
-- Date: 2026-10-15
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2610.21363v1
-- PDF: https://arxiv.org/pdf/2610.21363v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-two_sample_sizes_in_test_time_llm_ensembling_buffered_erm_and_minimax_theory_infographic.json
+- Date: 2026-10-16
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.23443v1
+- PDF: https://arxiv.org/pdf/2610.23443v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-16-arxiv-scoutroute_efficient_mixture_of_experts_routing_using_internal_language_model_signals_infographic.json
 
-## 12. Minimizing Age of Incorrect Information in Pull-Based Remote Estimation of a Markov Source
+## 16. Convergence rate of stochastic gradient descent under Łojasiewicz type condition and polynomially controlled noise
 
-- Date: 2026-10-15
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.22265v1
-- PDF: https://arxiv.org/pdf/2610.22265v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-minimizing_age_of_incorrect_information_in_pull_based_remote_estimation_of_a_markov_source_infographic.json
+- Date: 2026-10-16
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2610.23386v1
+- PDF: https://arxiv.org/pdf/2610.23386v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-16-arxiv-convergence_rate_of_stochastic_gradient_descent_under_ojasiewicz_type_condition_and_polyno_infographic.json
 
-## 13. Evolution algebras: a survey of results and a list of open problems
-
-- Date: 2026-10-15
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2610.22248v1
-- PDF: https://arxiv.org/pdf/2610.22248v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-evolution_algebras_a_survey_of_results_and_a_list_of_open_problems_infographic.json
-
-## 14. The Tilted Sampling Problem: Optimism, Posterior Sampling, and Logarithmic Regret
+## 17. The Tilted Sampling Problem: Optimism, Posterior Sampling, and Logarithmic Regret
 
 - Date: 2026-10-15
 - Category: AI math
@@ -115,31 +139,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.21908v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-the_tilted_sampling_problem_optimism_posterior_sampling_and_logarithmic_regret_infographic.json
 
-## 15. Adaptive Randomized Neural Networks for PDEs: Structure-Aware Feature Redistribution and Residual-Driven Block Enrichment
-
-- Date: 2026-10-15
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.21077v1
-- PDF: https://arxiv.org/pdf/2610.21077v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-adaptive_randomized_neural_networks_for_pdes_structure_aware_feature_redistribution_and_re_infographic.json
-
-## 16. IneqAgent: Agentic Inequality Proving in Lean with Symbolic Computation
+## 18. Learning Warm Starts for the Simplex Method from Measured Solver Cost
 
 - Date: 2026-10-14
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2610.20681v1
-- PDF: https://arxiv.org/pdf/2610.20681v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-ineqagent_agentic_inequality_proving_in_lean_with_symbolic_computation_infographic.json
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2610.20892v1
+- PDF: https://arxiv.org/pdf/2610.20892v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-learning_warm_starts_for_the_simplex_method_from_measured_solver_cost_infographic.json
 
-## 17. A Rate Transfer Method: Convergence Rates in Stochastic Gradient Descent via Stochastic Calculus
-
-- Date: 2026-10-13
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.18739v1
-- PDF: https://arxiv.org/pdf/2610.18739v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-13-arxiv-a_rate_transfer_method_convergence_rates_in_stochastic_gradient_descent_via_stochastic_cal_infographic.json
-
-## 18. Towards Learning-Guided Discovery of Extremal Geometric Constructions: A PatternBoost Study
+## 19. Towards Learning-Guided Discovery of Extremal Geometric Constructions: A PatternBoost Study
 
 - Date: 2026-10-14
 - Category: Geometry and Topology
@@ -147,18 +155,10 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.19980v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-towards_learning_guided_discovery_of_extremal_geometric_constructions_a_patternboost_study_infographic.json
 
-## 19. Learning Rational Strategies for Temporal Objectives in Multi-Agent Systems
+## 20. MGE-PO: Entropy-Aware Credit Assignment for Mathematical Reasoning
 
-- Date: 2026-10-15
-- Category: AI math
-- arXiv: https://arxiv.org/abs/2610.22287v1
-- PDF: https://arxiv.org/pdf/2610.22287v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-15-arxiv-learning_rational_strategies_for_temporal_objectives_in_multi_agent_systems_infographic.json
-
-## 20. VASPO: Self-Distillation with Privileged Value Estimation
-
-- Date: 2026-10-14
+- Date: 2026-10-16
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.20516v1
-- PDF: https://arxiv.org/pdf/2610.20516v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-14-arxiv-vaspo_self_distillation_with_privileged_value_estimation_infographic.json
+- arXiv: https://arxiv.org/abs/2610.23245v1
+- PDF: https://arxiv.org/pdf/2610.23245v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-16-arxiv-mge_po_entropy_aware_credit_assignment_for_mathematical_reasoning_infographic.json
