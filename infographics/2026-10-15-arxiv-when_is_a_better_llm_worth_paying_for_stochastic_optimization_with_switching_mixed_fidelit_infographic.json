@@ -1,24 +1,26 @@
 {
-  "key_insight": "The paper shows that it is often not worth paying for the highest-fidelity LLM or oracle at every step: adaptive switching can achieve similar optimization quality at lower total cost.",
-  "engineering_relevance": "For data curation and decision pipelines, it provides a principled way to choose when to use expensive high-quality models versus cheaper noisy ones based on downstream optimization value.",
+  "key_insight": "Pay for higher-fidelity LLM outputs when downstream optimization accuracy warrants it; adaptive oracle switching can match or beat the cumulative cost of the best fixed oracle in hindsight under the known-bias framework.",
+  "engineering_relevance": "Cost-aware fidelity selection can reduce spending on LLM-assisted data curation while targeting the accuracy needed by downstream optimization.",
   "method": [
-    "Cost-aware restarted optimization with adaptive oracle switching when bias is known.",
-    "Budgeted certification with occasional trusted-gradient checks to detect and eliminate biased sources when bias is unknown.",
-    "Concrete instantiations using biased stochastic gradient extrapolation and recursive regularization under state-dependent noise."
+    "Known bias: use a restarted, cost-aware policy to select oracle fidelity across optimization stages.",
+    "Unknown bias: periodically evaluate trusted gradients to certify progress and eliminate unsuccessful oracle sources.",
+    "Instantiate the frameworks with biased stochastic gradient extrapolation and recursive regularization under state-dependent noise."
   ],
-  "evidence_signal": "Synthetic and LLM-completion experiments show the adaptive policy skips several expensive LLM calls while maintaining comparable accuracy and reducing cumulative cost.",
-  "watch_item": "The certification approach depends on occasional trusted evaluations, so its practical benefit can be reduced if trusted checks are costly or if bias is detected only after substantial delay.",
+  "evidence_signal": "Synthetic and LLM-completion experiments show adaptive switching skipping several expensive LLM oracles and substantially reducing cumulative cost versus fixed high-fidelity alternatives at comparable accuracy.",
+  "watch_item": "Unknown-bias deployment requires trusted-gradient evaluations, with an explicit tradeoff between certification cost and delayed detection of biased sources.",
   "hashtags": [
-    "#LLMs",
     "#StochasticOptimization",
-    "#CostAwareAI",
-    "#MixedFidelity",
-    "#AdaptiveAlgorithms"
+    "#LLMCostEfficiency",
+    "#AdaptiveFidelity",
+    "#BiasedOracles",
+    "#DataCuration"
   ],
+  "model": "gpt-6.1-sol",
+  "service_tier": "ultrafast",
   "paper_id": "2026-10-15-arxiv-when_is_a_better_llm_worth_paying_for_stochastic_optimization_with_switching_mixed_fidelit",
   "paper_title": "When is a better LLM worth paying for? Stochastic Optimization with Switching Mixed-Fidelity Oracles",
   "paper_date": "2026-10-15",
   "paper_category": "Theorem Proving",
-  "generated_at": "2026-10-19T09:21:05",
+  "generated_at": "2026-10-19T09:23:28",
   "generator": "openai"
 }

@@ -1,24 +1,26 @@
 {
-  "key_insight": "ScoutRoute uses a single cheap scout-model forward pass to infer which expert LLM is most competent, enabling efficient post-hoc routing without retraining the models.",
-  "engineering_relevance": "This offers a practical MoE routing strategy for deploying heterogeneous LLMs with lower inference cost and greater flexibility than joint gating or multi-model evaluation.",
+  "key_insight": "ScoutRoute uses internal signals from one inexpensive language model to predict which expert model is best suited to a task.",
+  "engineering_relevance": "The framework supports lightweight, post-hoc routing across independently trained language models without modifying the underlying models.",
   "method": [
-    "Extract hidden-state signals from one scout LLM pass.",
-    "Train lightweight logistic probes to estimate cross-model competence.",
-    "Combine probe scores with logit-based confidence in a domain-aware routing rule."
+    "Run a single forward pass through an inexpensive scout model.",
+    "Apply lightweight logistic probes to hidden states to estimate expert competence.",
+    "Combine competence estimates with logit-derived confidence in a domain-aware routing strategy."
   ],
-  "evidence_signal": "The method was evaluated on five open-weight models across four benchmarks spanning math reasoning, code generation, commonsense reasoning, and multidisciplinary knowledge, and it consistently outperformed individual routing signals.",
-  "watch_item": "Routing quality depends on the scout model and probe calibration, so domain shift or poor scout selection could reduce expert-selection accuracy.",
+  "evidence_signal": "Across five open-weight models and four benchmarks spanning math, code, commonsense, and multidisciplinary knowledge, ScoutRoute reportedly outperformed individual routing signals, while its competence probes showed better calibration than conventional confidence measures.",
+  "watch_item": "The abstract does not quantify routing gains or end-to-end latency savings, leaving deployment benefits uncertain.",
   "hashtags": [
     "#MixtureOfExperts",
     "#LLMRouting",
     "#MathematicalReasoning",
-    "#ModelCalibration",
-    "#EfficientInference"
+    "#EfficientAI",
+    "#ModelCalibration"
   ],
+  "model": "gpt-6.1-sol",
+  "service_tier": "ultrafast",
   "paper_id": "2026-10-16-arxiv-scoutroute_efficient_mixture_of_experts_routing_using_internal_language_model_signals",
   "paper_title": "ScoutRoute: Efficient Mixture-of-Experts Routing Using Internal Language Model Signals",
   "paper_date": "2026-10-16",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-19T09:21:09",
+  "generated_at": "2026-10-19T09:23:32",
   "generator": "openai"
 }

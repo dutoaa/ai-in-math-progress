@@ -1,24 +1,26 @@
 {
-  "key_insight": "GGPO replaces high-variance learner-to-behavior importance weighting with a KL-adjusted log-mean-exp objective over grouped responses, while retaining a principled link to KL-regularized optimality.",
-  "engineering_relevance": "It is a practical off-policy RL recipe for training language models from stale or mismatched offline data, especially when long responses make importance weighting unstable.",
+  "key_insight": "GGPO trains off-policy reasoning models by contrasting KL-adjusted rewards within prompt-level response groups, avoiding high-variance learner-to-behavior importance weights.",
+  "engineering_relevance": "GGPO offers a way to reuse stale or fixed response data for verifiable-reward training while remaining robust to policy mismatch in the reported experiments.",
   "method": [
-    "Optimize a log-mean-exp contrast of KL-adjusted rewards across responses to the same prompt.",
-    "Derive the objective from KL-regularized policy optimization, so the on-policy population loss matches the KL-regularized optimality gap.",
-    "Use reference-policy refresh to control policy staleness and preserve reward guarantees under finite data."
+    "Minimize a log-mean-exp contrast of KL-adjusted rewards across responses to the same prompt.",
+    "Derive the objective from KL-regularized policy optimization, with an exact on-policy population optimality-gap interpretation.",
+    "Refresh the reference policy, supported by Gibbs-target composition and conditional finite-data reward bounds."
   ],
-  "evidence_signal": "The abstract reports that with fixed reference GGPO scores 32.96 on a five-benchmark problem-weighted average, while the default refresh schedule reaches 46.58, and that GGPO outperforms GRPO and AGRO under mismatch and fixed offline data.",
-  "watch_item": "Performance depends on reference refresh and coverage assumptions, so stale references or weak data support can materially degrade results.",
+  "evidence_signal": "Math-reasoning experiments report gains over GRPO and AGRO under training–inference mismatch and fixed offline data; reference refresh raises the five-benchmark problem-weighted average from 32.96 to 46.58.",
+  "watch_item": "Reference refresh is consequential, and theoretical reward guarantees require coverage and mismatch-control assumptions that may not hold for arbitrary offline data.",
   "hashtags": [
-    "#ReinforcementLearning",
     "#OffPolicyRL",
-    "#LanguageModels",
+    "#VerifiableRewards",
     "#MathematicalReasoning",
-    "#PolicyOptimization"
+    "#PolicyOptimization",
+    "#GGPO"
   ],
+  "model": "gpt-6.1-sol",
+  "service_tier": "ultrafast",
   "paper_id": "2026-10-14-arxiv-gibbs_gap_policy_optimization_for_off_policy_rl_with_verifiable_rewards",
   "paper_title": "Gibbs-Gap Policy Optimization for Off-Policy RL with Verifiable Rewards",
   "paper_date": "2026-10-14",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-10-19T09:20:59",
+  "generated_at": "2026-10-19T09:23:21",
   "generator": "openai"
 }

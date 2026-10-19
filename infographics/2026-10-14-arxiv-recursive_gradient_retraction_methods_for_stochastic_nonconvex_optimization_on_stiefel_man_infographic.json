@@ -1,24 +1,26 @@
 {
-  "key_insight": "RGR builds stochastic gradient estimators in Euclidean space and then retracts them onto the Stiefel manifold, removing the need for vector transport and enabling adaptive, horizon-free optimization.",
-  "engineering_relevance": "This makes large-scale constrained learning on orthogonality-aware models, such as PCA and orthogonal CNNs, more practical by reducing tuning burden and improving stability in nonconvex training.",
+  "key_insight": "RGR builds recursive gradient estimates in Euclidean space before mapping them to Stiefel tangent spaces, avoiding vector transport while retaining convergence guarantees.",
+  "engineering_relevance": "The framework supports orthogonality-constrained learning with fewer tuning requirements, including applications to PCA, matrix completion, and orthogonal neural networks.",
   "method": [
-    "Construct recursive gradient estimators in Euclidean space, then map them to the tangent space before retraction.",
-    "Provide three variants: RGR-SPIDER for finite-sum problems, and RGR-SRM / RGR-EMA for online stochastic optimization.",
-    "Use adaptive stepsizes that avoid prior knowledge of Lipschitz constants, iteration horizons, and restrictive large-batch requirements."
+    "Estimate gradients recursively in Euclidean space, map to tangent space, and update via retraction.",
+    "Finite-sum RGR-SPIDER uses an adaptive stepsize requiring neither the gradient Lipschitz constant nor a fixed iteration horizon.",
+    "Online RGR-SRM and RGR-EMA require neither prescribed large mini-batches nor a fixed iteration horizon."
   ],
-  "evidence_signal": "The abstract reports theoretical complexity guarantees and empirical gains on PCA, low-rank matrix completion, and orthogonal convolutional neural networks versus tangent-space recursive baselines.",
-  "watch_item": "Performance still depends on manifold-specific implementation details and the practical cost of retraction and estimator updates may vary across applications.",
+  "evidence_signal": "The abstract reports faster empirical convergence on PCA, low-rank matrix completion, and orthogonal convolutional networks, plus an RGR-SPIDER bound of O(N + √N ε⁻²) component-gradient evaluations to reach ε-criticality.",
+  "watch_item": "Faster empirical convergence does not necessarily imply lower wall-clock cost; tangent mapping and retraction overhead should be benchmarked.",
   "hashtags": [
-    "#StiefelManifold",
     "#RiemannianOptimization",
+    "#StiefelManifold",
     "#StochasticOptimization",
-    "#NonconvexOptimization",
-    "#MachineLearning"
+    "#VarianceReduction",
+    "#OrthogonalNeuralNetworks"
   ],
+  "model": "gpt-6.1-sol",
+  "service_tier": "ultrafast",
   "paper_id": "2026-10-14-arxiv-recursive_gradient_retraction_methods_for_stochastic_nonconvex_optimization_on_stiefel_man",
   "paper_title": "Recursive Gradient Retraction Methods for Stochastic Nonconvex Optimization on Stiefel Manifolds",
   "paper_date": "2026-10-14",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-10-19T09:20:43",
+  "generated_at": "2026-10-19T09:23:05",
   "generator": "openai"
 }

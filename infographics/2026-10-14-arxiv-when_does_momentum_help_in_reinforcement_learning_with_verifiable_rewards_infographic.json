@@ -1,24 +1,26 @@
 {
-  "key_insight": "In RL with verifiable rewards, momentum helps when the EMA coefficient is chosen large enough to stay in a stable regime, making the gain from past gradients survive sampling noise.",
-  "engineering_relevance": "For practical LLM post-training, tuning momentum upward can improve convergence and validation accuracy, especially when using SGD or AdamW at scale.",
+  "key_insight": "Momentum helps RLVR when its coefficient increases as the learning rate decreases, keeping η/(1−β) in a safe regime so expected gains can dominate sampling fluctuations.",
+  "engineering_relevance": "RLVR post-training may benefit from tuning momentum jointly with the learning rate rather than retaining a conventional fixed coefficient.",
   "method": [
-    "Bandit model of RLVR with bias-corrected EMA momentum.",
-    "Theoretical analysis of exact policy gradients and sampled-gradient noise.",
-    "Guideline: increase β so η/(1−β) stays in the safe non-overshoot regime."
+    "Model RLVR as a bandit problem with bias-corrected EMA momentum.",
+    "Prove acceleration for exact policy gradients within an overshoot-safe coefficient range.",
+    "Analyze sampled-gradient fluctuations and test predictions in bandit simulations and LLM post-training."
   ],
-  "evidence_signal": "Bandit simulations and RLVR experiments on Qwen3-4B-Base and Qwen2.5-32B show that larger momentum coefficients improve performance, with up to nearly 2 percentage points higher mean validation accuracy.",
-  "watch_item": "Momentum is not universally beneficial: if β is too small or the effective step size is too aggressive, overshoot and sampling fluctuations can erase the expected gain.",
+  "evidence_signal": "Bandit simulations validate the predictions, Qwen3-4B-Base experiments support larger momentum coefficients, and increasing AdamW β₁ on Qwen2.5-32B improves mean validation accuracy by nearly 2 percentage points over the conventional choice.",
+  "watch_item": "Larger momentum is not unconditionally better: the theory requires an overshoot-safe regime, and its guarantees are derived in a bandit formulation.",
   "hashtags": [
-    "#ReinforcementLearning",
+    "#RLVR",
     "#Momentum",
     "#Optimization",
-    "#LLMTraining",
-    "#RLVR"
+    "#LLMPostTraining",
+    "#PolicyGradients"
   ],
+  "model": "gpt-6.1-sol",
+  "service_tier": "ultrafast",
   "paper_id": "2026-10-14-arxiv-when_does_momentum_help_in_reinforcement_learning_with_verifiable_rewards",
   "paper_title": "When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?",
   "paper_date": "2026-10-14",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-10-19T09:20:55",
+  "generated_at": "2026-10-19T09:23:16",
   "generator": "openai"
 }

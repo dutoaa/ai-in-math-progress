@@ -1,24 +1,26 @@
 {
-  "key_insight": "Predicting a good simplex warm start is not enough—measured solver cost depends strongly on how the start is chosen, not just on how many iterations it saves.",
-  "engineering_relevance": "For practical LP solvers, CostStart can cut end-to-end solve time much more reliably than basis prediction alone by optimizing for actual CPU work.",
+  "key_insight": "Good simplex warm starts must minimize measured computational cost, not just pivot counts or distance to an optimal basis.",
+  "engineering_relevance": "CostStart can accelerate LP solving by adapting the starting basis and solver configuration to each problem, while retaining the option not to warm-start.",
   "method": [
-    "Train a supervised model to predict which variables should be basic at optimality.",
-    "Measure solver instruction counts and train a small policy to choose warm-start size, algorithm, pricing rule, or no warm start.",
-    "Select the start that minimizes measured cost rather than relying only on basis overlap or pivot count."
+    "Predict a starting basis with supervised learning.",
+    "Train a small policy on measured CPU instruction counts.",
+    "Choose how many predicted columns to use, the simplex algorithm, pricing rule, and whether to warm-start."
   ],
-  "evidence_signal": "Across 25 LP classes, the method removed about two thirds of dual-simplex iterations but only about one third of runtime; on unseen test LPs it roughly halved solve time and outperformed prior retrained methods by 1.4–2.2×.",
-  "watch_item": "Instruction-count-based tuning may depend on solver implementation details and hardware, so gains may not transfer unchanged across different LP solvers or compute environments.",
+  "evidence_signal": "Across 25 LP classes, CostStart roughly halved default-start solve time on unseen instances from training classes, including instances four times the training size, and was 1.4–2.2× as fast as two retrained published methods.",
+  "watch_item": "Generalization to entirely new LP classes is not established by the reported evaluation.",
   "hashtags": [
     "#LinearProgramming",
     "#SimplexMethod",
-    "#MachineLearningForOptimization",
-    "#WarmStart",
-    "#ScientificComputing"
+    "#LearningToOptimize",
+    "#SolverPerformance",
+    "#ComputationalOptimization"
   ],
+  "model": "gpt-6.1-sol",
+  "service_tier": "ultrafast",
   "paper_id": "2026-10-14-arxiv-learning_warm_starts_for_the_simplex_method_from_measured_solver_cost",
   "paper_title": "Learning Warm Starts for the Simplex Method from Measured Solver Cost",
   "paper_date": "2026-10-14",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-10-19T09:21:16",
+  "generated_at": "2026-10-19T09:23:39",
   "generator": "openai"
 }
