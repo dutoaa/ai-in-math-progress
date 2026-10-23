@@ -1,18 +1,18 @@
 {
-  "key_insight": "Agent collaboration admits linear convergence guarantees when local proposals account for cross-agent effects and pass a global objective check, with an error floor that vanishes under exact corrections.",
-  "engineering_relevance": "The framework offers a principled way to coordinate parallel AI agents while checking that merged updates improve a shared solution.",
+  "key_insight": "LLM-agent collaboration can be modeled as block optimization with provable linear convergence to an error floor that vanishes when cross-agent corrections are exact.",
+  "engineering_relevance": "A coordinator that checks proposals against a global objective can turn parallel agent work into reliable progress while safely merging compatible updates.",
   "method": [
-    "Model the shared solution as blocks, with each agent optimizing one block using a cross-block correction.",
-    "Globally check proposals and merge noninterfering updates.",
-    "Allow interfering updates after checking their combination; convergence rates reflect how well proposals combine."
+    "Each agent improves one solution block using a local objective plus a correction for effects on other blocks.",
+    "A coordinator checks global improvement and merges noninterfering proposals or explicitly checked combinations.",
+    "The convergence rate accounts for how well accepted proposals combine."
   ],
-  "evidence_signal": "GPT-OSS-120B routing experiments report collision-free plans in every three-agent run, roughly 2× faster median search with six agents on a larger task, and about 30% less team search time using the best checked proposal combination; SQLite query planning and synthetic tasks were also tested.",
-  "watch_item": "Practical gains depend on correction accuracy and the cost of globally evaluating individual proposals and their combinations.",
+  "evidence_signal": "In GPT-OSS-120B robot-routing tests, three agents found collision-free plans in every run; on a larger task, six agents searched about twice as fast as a single agent in median, and merging the best checked combination cut team search time by about 30%.",
+  "watch_item": "Practical gains depend on the cost of global checks and the accuracy of cross-agent corrections; approximate corrections can leave a nonzero error floor.",
   "hashtags": [
     "#MultiAgentAI",
     "#ConvergenceTheory",
     "#BlockOptimization",
-    "#CollaborativeAI",
+    "#LLMAgents",
     "#RobotRouting"
   ],
   "model": "gpt-6.1-sol",
@@ -21,6 +21,6 @@
   "paper_title": "Local Work, Global Progress: A Convergence Theory of AI Agent Collaboration",
   "paper_date": "2026-10-20",
   "paper_category": "Theorem Proving",
-  "generated_at": "2026-10-22T17:51:28",
+  "generated_at": "2026-10-23T17:43:34",
   "generator": "openai"
 }
