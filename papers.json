@@ -24,23 +24,23 @@
         "url": "https://arxiv.org/pdf/2610.30796v1"
       }
     ],
-    "score": 89,
+    "score": 84,
     "infographic": {
-      "key_insight": "GIFT filters token-level distillation guidance using gradient geometry to reduce conflict with correctness-driven reinforcement learning.",
-      "engineering_relevance": "GIFT offers a principled way to allocate teacher guidance during reasoning-model training while transitioning toward an outcome-grounded RL objective.",
+      "key_insight": "GIFT selectively applies teacher guidance by measuring its gradient alignment with reinforcement learning, reducing optimization conflict while retaining complementary reasoning signals.",
+      "engineering_relevance": "For reasoning-model training, GIFT offers a principled way to allocate distillation updates without letting imitation undermine the outcome-based RL objective.",
       "method": [
-        "Decompose distillation gradients into components parallel and orthogonal to the RL gradient.",
-        "Rank token-level guidance by first-order conflict and novel directional value.",
-        "Progressively shrink distillation coverage, dropping conflicting guidance first while retaining selected updates at full strength."
+        "Decompose token-level distillation gradients into components parallel and orthogonal to the RL gradient.",
+        "Rank guidance using parallel alignment for safety and orthogonal contribution for directional value.",
+        "Progressively shrink distillation coverage, retaining selected updates at full strength before transitioning to pure RL."
       ],
-      "evidence_signal": "The abstract reports consistent improvements over strong baselines across multiple model scales on mathematical and logical reasoning benchmarks, with relative gains up to 9.5% on difficult math tasks.",
-      "watch_item": "Token-level gradient analysis may add training overhead, which the abstract does not quantify.",
+      "evidence_signal": "The abstract reports consistent improvements over strong baselines on mathematical and logical reasoning benchmarks across multiple model scales, with relative gains up to 9.5% on difficult math tasks.",
+      "watch_item": "Token-level gradient analysis may add training overhead; the abstract does not quantify its computational cost.",
       "hashtags": [
-        "#GIFT",
         "#MathematicalReasoning",
         "#ReinforcementLearning",
         "#KnowledgeDistillation",
-        "#GradientFiltering"
+        "#GradientFiltering",
+        "#LLMTraining"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -48,7 +48,7 @@
       "paper_title": "GIFT: Gradient Informed Filtering for Distillation Augmented Reasoning RL",
       "paper_date": "2026-10-22",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-24T16:26:04",
+      "generated_at": "2026-10-25T16:57:32",
       "generator": "openai"
     }
   },
@@ -77,23 +77,23 @@
         "url": "https://arxiv.org/pdf/2610.30429v1"
       }
     ],
-    "score": 85,
+    "score": 80,
     "infographic": {
-      "key_insight": "RoleFlow adapts multi-agent collaboration through atomic structural edits and on-demand role creation, using counterfactual feedback to credit individual changes.",
-      "engineering_relevance": "Adaptive collaboration could improve LLM workflows whose task requirements outgrow fixed agent roles and coordination structures.",
+      "key_insight": "RoleFlow learns to adapt multi-agent collaboration structures by isolating the contribution of individual structural edits.",
+      "engineering_relevance": "Adaptive coordination could reduce reliance on fixed agent workflows for mathematical reasoning, coding, and web interaction.",
       "method": [
         "Refine collaboration structures through feedback-driven atomic edits.",
-        "Synthesize new roles on demand.",
+        "Synthesize new agent roles on demand.",
         "Use SECPO to compare each edit with a no-edit counterpart at the same chain state and credit edit-specific tokens."
       ],
-      "evidence_signal": "Across seven benchmarks in four domains, the abstract reports the best average performance, a 4.7-point lead over the strongest competitor, and 3.2–7.5 F1 gains on three multi-hop QA benchmarks.",
-      "watch_item": "Counterfactual edit evaluation may add training cost; the abstract does not quantify computational overhead.",
+      "evidence_signal": "Across seven benchmarks in four domains, RoleFlow reports the best average performance, exceeding the strongest competitor by 4.7 points and leading three multi-hop QA benchmarks by 3.2–7.5 F1 points.",
+      "watch_item": "Edit-versus-no-edit evaluations may add training cost; the abstract does not quantify this overhead.",
       "hashtags": [
         "#MultiAgentSystems",
         "#MathematicalReasoning",
         "#LLM",
-        "#StructuralAdaptation",
-        "#CounterfactualLearning"
+        "#PolicyOptimization",
+        "#AdaptiveWorkflows"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -101,7 +101,7 @@
       "paper_title": "RoleFlow: Self-Evolving Multi-Role Agentic Collaboration via Structural Adaptation",
       "paper_date": "2026-10-21",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-24T16:26:07",
+      "generated_at": "2026-10-25T16:57:35",
       "generator": "openai"
     }
   },
@@ -131,23 +131,23 @@
         "url": "https://arxiv.org/pdf/2610.30492v1"
       }
     ],
-    "score": 80,
+    "score": 75,
     "infographic": {
-      "key_insight": "Adaptive optimization of discrete PDE losses can identify highly accurate self-similar singularity profiles without prescribing far-field amplitudes.",
-      "engineering_relevance": "The approach offers computational scientists a high-accuracy tool for studying PDE blow-up while avoiding finite-domain truncation.",
+      "key_insight": "Adaptive optimization of discrete PDE residuals can recover highly accurate self-similar singularity profiles without prescribed far-field conditions.",
+      "engineering_relevance": "The approach offers computational scientists a high-accuracy numerical tool for studying PDE blow-up that complements AI-based methods.",
       "method": [
         "Represent fields with overlapping local Chebyshev patches and a mapped asymptotic patch.",
-        "Factor out leading power laws and optimize the remaining profiles, including limiting amplitudes at infinity.",
-        "Refine using Chebyshev-coefficient decay and solve with automatically differentiated Gauss–Newton iterations and Levenberg–Marquardt damping."
+        "Factor out leading power laws, optimize far-field amplitudes, and refine using Chebyshev-coefficient decay.",
+        "Minimize the discrete loss using automatically differentiated Gauss–Newton iterations with Levenberg–Marquardt damping."
       ],
-      "evidence_signal": "The abstract reports O(10^-14)-level accuracy for Burgers profiles, residuals of O(10^-14)–O(10^-10) for generalized De Gregorio equations, and O(10^-8) residuals in a local region for 2D Boussinesq equations.",
-      "watch_item": "Small numerical residuals, especially in a local region, do not alone establish a rigorous global PDE singularity.",
+      "evidence_signal": "The abstract reports O(10^-14)-level accuracy for Burgers profiles, O(10^-14)–O(10^-10) residuals for generalized De Gregorio equations, and O(10^-8) residuals in a local region for 2D Boussinesq equations.",
+      "watch_item": "Small numerical residuals do not by themselves prove singularity formation, and the reported Boussinesq result is local.",
       "hashtags": [
         "#ScientificComputing",
-        "#PDESingularities",
-        "#AdaptiveDiscretization",
+        "#PartialDifferentialEquations",
+        "#AdaptiveNumerics",
         "#NumericalOptimization",
-        "#ODIL"
+        "#SingularityFormation"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -155,60 +155,7 @@
       "paper_title": "Discovery of Singularities in Partial Differential Equations Using Adaptive Numerical Discretizations",
       "paper_date": "2026-10-21",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-24T16:26:10",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-21-arxiv-epic_rethinking_trust_regions_for_autoregressive_llm_policies_via_exact_kl_prefix_importan",
-    "arxiv_id": "2610.29999v1",
-    "date": "2026-10-21",
-    "title": "EPIC: Rethinking Trust Regions for Autoregressive LLM Policies via Exact-KL Prefix Importance-Ratio Clipping",
-    "authors": "Chengxi Li, Hanlin Wu, Zhicheng Cai, Huan-ang Gao, Wei-Ying Ma, Jingjing Liu",
-    "abstract": "Reinforcement learning (RL) based on PPO-style clipping has become an effective approach to improving the reasoning capabilities of large language models (LLMs). However, standard token-level clipping measures policy change only through the conditional probability of the current token, while the prefix conditioning context is itself generated by the policy. This mismatch becomes especially consequential in long-response and off-policy training. We reformulate autoregressive generation as a finite-horizon Markov decision process and derive its performance-difference identity under behavior-policy sampling. The resulting change of measure identifies the cumulative likelihood ratio of the generated prefix as the exact importance weight for each stepwise policy-improvement term. Starting from the monotonic-improvement principle of trust-region policy optimization, we then construct a prefix-level trust region using the exact reverse-KL coordinate $r-1-\\log r$, whose behavior-policy expectation equals the corresponding prefix-distribution KL divergence. This yields EPIC, a PPO-style sequence-clipping method that directly regulates prefix-level policy drift without relying on a local quadratic approximation or expert-routing replay. Experiments on off-policy reinforcement learning with a sparse mixture-of-experts language model show that EPIC consistently outperforms standard and sequence-level clipping baselines across mathematical-reasoning benchmarks, while remaining competitive with routing-replay-based alternatives. Code is available at https://github.com/LiChengxi666/EPIC.",
-    "category": "Mathematical Reasoning",
-    "source": "arXiv",
-    "published": "2026-10-21T16:37:09Z",
-    "updated": "2026-10-21T16:37:09Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.29999v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.29999v1"
-      }
-    ],
-    "score": 79,
-    "infographic": {
-      "key_insight": "EPIC regulates cumulative prefix-level policy drift rather than only current-token probability changes, addressing a mismatch in PPO-style training of autoregressive LLMs.",
-      "engineering_relevance": "For long-response and off-policy LLM reinforcement learning, EPIC offers a trust-region clipping approach that does not require expert-routing replay.",
-      "method": [
-        "Model autoregressive generation as a finite-horizon MDP and derive a behavior-policy performance-difference identity.",
-        "Use cumulative prefix likelihood ratios as exact importance weights for stepwise policy-improvement terms.",
-        "Construct prefix-level clipping with the exact reverse-KL coordinate r − 1 − log r instead of a local quadratic approximation."
-      ],
-      "evidence_signal": "The abstract reports consistent gains over standard and sequence-level clipping across mathematical-reasoning benchmarks using an off-policy-trained sparse mixture-of-experts LLM, with competitive results against routing-replay alternatives.",
-      "watch_item": "The abstract provides no numerical gains or broader model coverage, leaving effect sizes and generalization beyond the evaluated sparse-MoE setting uncertain.",
-      "hashtags": [
-        "#LLMReinforcementLearning",
-        "#MathematicalReasoning",
-        "#TrustRegions",
-        "#OffPolicyLearning",
-        "#MixtureOfExperts"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-10-21-arxiv-epic_rethinking_trust_regions_for_autoregressive_llm_policies_via_exact_kl_prefix_importan",
-      "paper_title": "EPIC: Rethinking Trust Regions for Autoregressive LLM Policies via Exact-KL Prefix Importance-Ratio Clipping",
-      "paper_date": "2026-10-21",
-      "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-24T16:26:13",
+      "generated_at": "2026-10-25T16:57:37",
       "generator": "openai"
     }
   },
@@ -239,17 +186,17 @@
         "url": "https://arxiv.org/pdf/2610.30388v1"
       }
     ],
-    "score": 77,
+    "score": 72,
     "infographic": {
-      "key_insight": "OCFormer learns a physics-informed map from independent latent dynamics to collision-constrained multi-agent trajectories, enabling near-optimal planning for unseen start and goal configurations.",
-      "engineering_relevance": "Amortized inference could accelerate coordinated robot or drone navigation without solving a new optimal control problem from scratch for every configuration.",
+      "key_insight": "OCFormer learns a transformation from simple, independent latent-agent dynamics to coupled physical trajectories, enabling near-optimal multi-agent planning for varying start and goal configurations.",
+      "engineering_relevance": "Amortized inference could accelerate collision-aware robot or drone fleet planning without solving a new high-dimensional optimal control problem for every configuration.",
       "method": [
-        "Use a transformer to map analytically tractable latent dynamics into the interacting physical system.",
-        "Train with Pontryagin Hamiltonian ODE residuals and boundary matching, without precomputed trajectories.",
-        "Preserve agent permutation equivariance through self-attention and adapt to distribution shifts with L-BFGS fine-tuning."
+        "Use a transformer to map analytically tractable latent dynamics into interacting physical-agent trajectories.",
+        "Train without precomputed trajectories using PMP Hamiltonian ODE residuals and boundary-matching losses.",
+        "Enforce agent permutation equivariance through self-attention and adapt to distribution shifts with L-BFGS fine-tuning."
       ],
-      "evidence_signal": "The abstract reports 2D and 3D navigation experiments with up to 128 agents, approximately 220 ms single-pass inference, and adaptation to out-of-distribution perturbations in seconds.",
-      "watch_item": "Physics-informed loss minimization alone does not establish guaranteed collision avoidance or optimality for unseen configurations.",
+      "evidence_signal": "The abstract reports 2D and 3D navigation experiments with up to 128 agents, approximately 220 ms inference on unseen boundary configurations, and adaptation to out-of-distribution perturbations in seconds.",
+      "watch_item": "Physics-informed residual minimization alone does not establish hard collision-avoidance guarantees; safety and latency should be validated under deployment conditions.",
       "hashtags": [
         "#MultiAgentPlanning",
         "#OptimalControl",
@@ -263,7 +210,7 @@
       "paper_title": "A Transformer-based Approach for Real-time Multi-agent Path Planning with Varying Initial/Final Conditions",
       "paper_date": "2026-10-21",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-10-24T16:26:15",
+      "generated_at": "2026-10-25T16:57:40",
       "generator": "openai"
     }
   },
@@ -292,23 +239,23 @@
         "url": "https://arxiv.org/pdf/2610.29906v1"
       }
     ],
-    "score": 76,
+    "score": 71,
     "infographic": {
-      "key_insight": "A message-passing reinforcement learning architecture coordinates global and node-level network control while preserving permutation symmetries and transparency constraints.",
-      "engineering_relevance": "The framework supports scalable decisions that combine network-wide resource budgets with institution-specific allocations in systemic-risk management.",
+      "key_insight": "A message-passing reinforcement learning policy coordinates global and node-level control on dynamic networks while respecting permutation symmetries and transparency constraints.",
+      "engineering_relevance": "The framework supports network-wide resource decisions coupled with local allocations, such as distributing capital interventions across interconnected financial institutions.",
       "method": [
-        "Use message passing with separate global and local policy heads.",
-        "Derive explicit Lipschitz bounds for parameter and input perturbations.",
+        "Use a message-passing neural network with separate global and local policy heads.",
+        "Derive explicit Lipschitz bounds for input and parameter perturbations.",
         "Use these bounds to establish projected policy-gradient convergence guarantees."
       ],
-      "evidence_signal": "Financial-network experiments report better performance than feedforward-network baselines and scalability to large networks, but the abstract provides no numerical metrics or network sizes.",
-      "watch_item": "Sensitivity and convergence depend on architectural choices and graph characteristics, so robustness should be checked on the intended deployment networks.",
+      "evidence_signal": "Numerical systemic-risk experiments report better performance than feedforward-network baselines and scaling to large networks, but the abstract provides no quantitative results.",
+      "watch_item": "Sensitivity and optimization guarantees depend on architectural choices and graph characteristics, so robustness should be checked for the target network.",
       "hashtags": [
         "#ReinforcementLearning",
         "#GraphNeuralNetworks",
         "#NetworkControl",
         "#SystemicRisk",
-        "#Robustness"
+        "#OptimizationTheory"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -316,7 +263,7 @@
       "paper_title": "Reinforcement Learning for Global-Local Control of Dynamic Networks with Applications to Systemic Risk",
       "paper_date": "2026-10-21",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-10-24T16:26:17",
+      "generated_at": "2026-10-25T16:57:42",
       "generator": "openai"
     }
   },
@@ -347,17 +294,17 @@
         "url": "https://arxiv.org/pdf/2610.29145v1"
       }
     ],
-    "score": 75,
+    "score": 70,
     "infographic": {
       "key_insight": "ORSMT uses exact SMT checks to detect and repair semantic mismatches between LLM-generated optimization models and solver code, rather than relying on matching objective values.",
-      "engineering_relevance": "It provides a verification layer for automated optimization pipelines, checking whether mathematical models and executable implementations describe the same problem.",
+      "engineering_relevance": "It adds a verification layer to automated optimization workflows, checking that repairs preserve required feasible-region and objective relations.",
       "method": [
         "Align observable decisions through a typed semantic interface and project out auxiliary variables.",
-        "Prove or refute feasible-region and objective relations, localizing mismatches to constraints or variable domains.",
-        "Reconstruct artifacts and accept repairs only after required semantic relation checks pass."
+        "Prove or refute semantic relations with SMT queries, localizing failures to implicated constraints or domains.",
+        "Reconstruct artifacts and adopt candidates only after required relation checks pass."
       ],
-      "evidence_signal": "Across 3,034 problems and six generator sizes, protected selection raised model-code matching from 43.2% to 88.2%, while the share both correct and matched rose from 25.2% to 40.2%.",
-      "watch_item": "Model-code agreement does not guarantee source correctness: both artifacts can omit the same requirement.",
+      "evidence_signal": "Across 3,034 problems and six generator sizes, protected selection increased aggregate model-code matching from 43.2% to 88.2%, while correct-and-matched outputs rose from 25.2% to 40.2%.",
+      "watch_item": "Model-code agreement does not guarantee source correctness: both artifacts can omit the same requirement, so source-grounded validation remains necessary.",
       "hashtags": [
         "#Optimization",
         "#SMT",
@@ -371,7 +318,60 @@
       "paper_title": "ORSMT: Unleashing the Potential of Satisfiability Modulo Theories for Semantic Verification and Repair in LLM-Based Optimization",
       "paper_date": "2026-10-21",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-24T16:26:20",
+      "generated_at": "2026-10-25T16:57:44",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-21-arxiv-epic_rethinking_trust_regions_for_autoregressive_llm_policies_via_exact_kl_prefix_importan",
+    "arxiv_id": "2610.29999v1",
+    "date": "2026-10-21",
+    "title": "EPIC: Rethinking Trust Regions for Autoregressive LLM Policies via Exact-KL Prefix Importance-Ratio Clipping",
+    "authors": "Chengxi Li, Hanlin Wu, Zhicheng Cai, Huan-ang Gao, Wei-Ying Ma, Jingjing Liu",
+    "abstract": "Reinforcement learning (RL) based on PPO-style clipping has become an effective approach to improving the reasoning capabilities of large language models (LLMs). However, standard token-level clipping measures policy change only through the conditional probability of the current token, while the prefix conditioning context is itself generated by the policy. This mismatch becomes especially consequential in long-response and off-policy training. We reformulate autoregressive generation as a finite-horizon Markov decision process and derive its performance-difference identity under behavior-policy sampling. The resulting change of measure identifies the cumulative likelihood ratio of the generated prefix as the exact importance weight for each stepwise policy-improvement term. Starting from the monotonic-improvement principle of trust-region policy optimization, we then construct a prefix-level trust region using the exact reverse-KL coordinate $r-1-\\log r$, whose behavior-policy expectation equals the corresponding prefix-distribution KL divergence. This yields EPIC, a PPO-style sequence-clipping method that directly regulates prefix-level policy drift without relying on a local quadratic approximation or expert-routing replay. Experiments on off-policy reinforcement learning with a sparse mixture-of-experts language model show that EPIC consistently outperforms standard and sequence-level clipping baselines across mathematical-reasoning benchmarks, while remaining competitive with routing-replay-based alternatives. Code is available at https://github.com/LiChengxi666/EPIC.",
+    "category": "Mathematical Reasoning",
+    "source": "arXiv",
+    "published": "2026-10-21T16:37:09Z",
+    "updated": "2026-10-21T16:37:09Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.29999v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.29999v1"
+      }
+    ],
+    "score": 69,
+    "infographic": {
+      "key_insight": "EPIC regulates cumulative prefix-level policy drift rather than only current-token probabilities, addressing a trust-region mismatch in autoregressive LLM reinforcement learning.",
+      "engineering_relevance": "EPIC offers a PPO-style clipping approach for off-policy LLM training that does not require expert-routing replay.",
+      "method": [
+        "Model autoregressive generation as a finite-horizon MDP.",
+        "Derive cumulative prefix likelihood ratios as exact importance weights for stepwise policy improvement.",
+        "Construct a prefix-level trust region using r − 1 − log(r), whose behavior-policy expectation equals the corresponding prefix-distribution KL."
+      ],
+      "evidence_signal": "The abstract reports consistent gains over standard and sequence-level clipping baselines on mathematical-reasoning benchmarks in off-policy training of a sparse mixture-of-experts LLM, while remaining competitive with routing-replay alternatives.",
+      "watch_item": "The abstract provides no numerical gains or evaluation beyond the sparse mixture-of-experts setting, leaving effect size and broader generalization unclear.",
+      "hashtags": [
+        "#LLMReinforcementLearning",
+        "#MathematicalReasoning",
+        "#TrustRegions",
+        "#OffPolicyLearning",
+        "#MixtureOfExperts"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-10-21-arxiv-epic_rethinking_trust_regions_for_autoregressive_llm_policies_via_exact_kl_prefix_importan",
+      "paper_title": "EPIC: Rethinking Trust Regions for Autoregressive LLM Policies via Exact-KL Prefix Importance-Ratio Clipping",
+      "paper_date": "2026-10-21",
+      "paper_category": "Mathematical Reasoning",
+      "generated_at": "2026-10-25T16:57:47",
       "generator": "openai"
     }
   },
@@ -401,17 +401,17 @@
         "url": "https://arxiv.org/pdf/2610.28561v1"
       }
     ],
-    "score": 72,
+    "score": 67,
     "infographic": {
-      "key_insight": "For deep linear neural networks with regularized squared loss, SGD iterates remain almost surely bounded and converge almost surely to the set of critical points under mild conditions.",
-      "engineering_relevance": "The results strengthen the theoretical foundation for stochastic training in a tractable non-convex model, covering both deterministic and adaptive step-size choices.",
+      "key_insight": "For deep linear neural networks with regularized squared loss, SGD iterates remain almost surely bounded and converge to the set of critical points under mild conditions.",
+      "engineering_relevance": "The results strengthen theoretical foundations for stochastic training with deterministic or adaptive step sizes, though they do not directly establish guarantees for nonlinear networks.",
       "method": [
-        "Extend gradient-descent convergence analysis to SGD.",
-        "Establish almost sure boundedness of SGD iterates.",
+        "Extend gradient-descent convergence analysis to SGD in deep linear networks.",
+        "Establish almost sure boundedness of the iterates.",
         "Use asymptotic pseudotrajectories to prove convergence without relying on Lipschitz properties or whitened data."
       ],
-      "evidence_signal": "The abstract reports theoretical convergence guarantees, not dataset benchmarks or empirical evaluations.",
-      "watch_item": "The guarantees concern deep linear networks and convergence to critical points, not necessarily global minima or nonlinear-network training.",
+      "evidence_signal": "The abstract reports theoretical convergence guarantees but describes no datasets, experiments, or empirical benchmarks.",
+      "watch_item": "Convergence to the critical-point set does not by itself guarantee convergence to a global minimizer or provide a training-time rate.",
       "hashtags": [
         "#StochasticGradientDescent",
         "#DeepLinearNetworks",
@@ -425,7 +425,7 @@
       "paper_title": "Convergence of stochastic gradient descent for learning linear neural networks",
       "paper_date": "2026-10-20",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-24T16:26:23",
+      "generated_at": "2026-10-25T16:57:49",
       "generator": "openai"
     }
   },
@@ -454,17 +454,17 @@
         "url": "https://arxiv.org/pdf/2610.29532v1"
       }
     ],
-    "score": 69,
+    "score": 64,
     "infographic": {
-      "key_insight": "Imperfect physics improves regression convergence rates only below a modeling-error threshold; with exact physics, studied PDE classes yield rates corresponding to dimension d−1 rather than d.",
-      "engineering_relevance": "The results clarify when PDE constraints can improve statistical performance beyond smoothness alone and give conditions for near-linear estimator computation.",
+      "key_insight": "Imperfect physics improves regression rates only below a modeling-error threshold; with exact physics, studied PDE classes yield rates corresponding to dimension d−1 rather than d.",
+      "engineering_relevance": "The results help assess when PDE constraints can improve sample efficiency and provide conditions for near-linear computation and tuning without knowing the modeling error.",
       "method": [
-        "Benchmark physics-informed regression against optimal regression using only smoothness.",
-        "Derive modeling-error thresholds for all linear PDEs and certain nonlinear PDEs.",
-        "Establish rates for constant-coefficient elliptic and hyperbolic PDE classes and tune hyperparameters without knowing the modeling error."
+        "Benchmark physics-informed regression against learning with smoothness alone.",
+        "Derive modeling-error thresholds for every linear PDE and certain nonlinear PDEs.",
+        "Establish error-dependent rates for constant-coefficient elliptic and hyperbolic PDE classes."
       ],
-      "evidence_signal": "The abstract reports theoretical convergence guarantees and minimax optimality up to logarithmic factors, not empirical dataset evaluations.",
-      "watch_item": "The detailed rate improvements apply to specified PDE classes, and near-linear computation requires additional conditions.",
+      "evidence_signal": "The abstract reports theoretical convergence guarantees and minimax optimality up to logarithmic factors, but no empirical datasets or experiments.",
+      "watch_item": "Detailed rate improvements are established for specific constant-coefficient PDE classes and should not be assumed for arbitrary physical models.",
       "hashtags": [
         "#PhysicsInformedLearning",
         "#MinimaxRates",
@@ -478,7 +478,7 @@
       "paper_title": "Minimax Rates for imperfect Physics-Informed Regression",
       "paper_date": "2026-10-21",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-24T16:26:25",
+      "generated_at": "2026-10-25T16:57:51",
       "generator": "openai"
     }
   },
@@ -507,23 +507,23 @@
         "url": "https://arxiv.org/pdf/2610.31556v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
       "key_insight": "For arrangements of at most 16 complex projective lines, the intersection lattice determines the generic splitting type of the logarithmic bundle.",
-      "engineering_relevance": "For computational algebra systems, this makes finite incidence data sufficient to determine a geometric bundle invariant within the proven range.",
+      "engineering_relevance": "For symbolic geometry software, this identifies when combinatorial intersection data suffice to determine bundle splitting and freeness without relying on explicit line coordinates.",
       "method": [
-        "Reduce to critical arrangements with 2s+3 lines and minimal Jacobian syzygy degree s.",
-        "Bound the derivation’s zero scheme using inflection-polynomial factorization, Chern classes, and Riccati equations.",
-        "Combine multirestriction and computer-algebra checks with exhaustive candidate-lattice enumeration."
+        "Reduce to critical arrangements of 2s+3 lines with constrained intersection counts and minimal Jacobian syzygy degree s.",
+        "Bound the derivation’s zero scheme using inflection-polynomial factorization, Chern classes, Riccati equations, and Ziegler multirestriction.",
+        "Combine computer-algebra-verified local calculations with exhaustive candidate-lattice enumeration."
       ],
-      "evidence_signal": "The proof includes exhaustive enumeration of 26,265,318 candidate lattices satisfying Bojanowski’s inequality with zero-scheme length 2 or 3.",
-      "watch_item": "The full splitting-type result is limited to at most 16 lines; extensions to arbitrary line counts require additional hypotheses.",
+      "evidence_signal": "The proof includes exhaustive enumeration of 26,265,318 candidate lattices satisfying Bojanowski’s inequality in the remaining zero-scheme-length cases 2 and 3.",
+      "watch_item": "The general splitting-type result is limited to at most 16 lines; extensions to arbitrary sizes require the stated syzygy-degree or freeness hypotheses.",
       "hashtags": [
-        "#ComputationalAlgebra",
-        "#LineArrangements",
         "#AlgebraicGeometry",
-        "#TeraoConjecture",
-        "#ComputerAssistedProof"
+        "#LineArrangements",
+        "#ComputationalAlgebra",
+        "#LogarithmicBundles",
+        "#TeraoConjecture"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -531,7 +531,7 @@
       "paper_title": "The generic splitting type of the logarithmic bundle of an arrangement of at most sixteen lines is combinatorial",
       "paper_date": "2026-10-22",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-24T16:26:28",
+      "generated_at": "2026-10-25T16:57:56",
       "generator": "openai"
     }
   },
@@ -561,23 +561,23 @@
         "url": "https://arxiv.org/pdf/2610.30231v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "Correcting only teacher-disfavored tokens in incorrect student rollouts improves visual mathematical reasoning without requiring figure descriptions at inference.",
-      "engineering_relevance": "The approach addresses perceptual errors in smaller vision-language models without adding annotation or model calls at test time.",
+      "key_insight": "Correcting only teacher-disfavored tokens in failed student rollouts improves visual mathematical reasoning without full-response imitation or figure descriptions at test time.",
+      "engineering_relevance": "Training-time perceptual correction can improve smaller vision-language models without requiring additional annotations or model calls at inference.",
       "method": [
-        "Collect on-policy student rollouts and separate correct from incorrect solutions.",
-        "Use training-only reference descriptions and verified solutions to score incorrect rollouts under a minimal-edit objective; apply corrective loss only to teacher-disfavored tokens.",
-        "Train correct rollouts with task-reward reinforcement learning rather than full-response imitation."
+        "Collect on-policy student rollouts for visual math problems.",
+        "Use a teacher with reference figure descriptions and verified solutions to score incorrect rollouts under a minimal-edit objective; apply corrective loss only to teacher-disfavored tokens.",
+        "Train correct rollouts with task-reward reinforcement learning."
       ],
       "evidence_signal": "Across model scales, the method meets or exceeds description-assisted base models, improves low-level geometric perception, and transfers to external mathematics and perception benchmarks.",
-      "watch_item": "Training requires reference figure descriptions and verified solutions; a frozen same-size teacher remains effective but yields smaller gains than a larger teacher on most metrics.",
+      "watch_item": "Training requires reference figure descriptions and verified solutions; a frozen same-size teacher works but yields smaller gains than a larger teacher on most metrics.",
       "hashtags": [
+        "#VisualMath",
         "#MultimodalReasoning",
-        "#VisualMathematics",
-        "#OnPolicyDistillation",
-        "#VisionLanguageModels",
-        "#MinimalEditLearning"
+        "#KnowledgeDistillation",
+        "#OnPolicyLearning",
+        "#GeometricPerception"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -585,7 +585,7 @@
       "paper_title": "Edit, Don't Imitate: Minimal-Edit On-Policy Distillation for Multimodal Reasoning",
       "paper_date": "2026-10-21",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-24T16:26:30",
+      "generated_at": "2026-10-25T16:57:59",
       "generator": "openai"
     }
   },
@@ -618,23 +618,23 @@
         "url": "https://arxiv.org/pdf/2610.28562v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "OptScientist discovers compact symbolic optimization laws that explain observed behavior as the solution to an underlying optimization problem.",
-      "engineering_relevance": "The framework could help engineers infer interpretable objectives and constraints from data rather than only fit input-output relationships.",
+      "key_insight": "OptScientist discovers compact symbolic optimization laws from data, targeting the objectives behind observed behavior rather than only input–output equations.",
+      "engineering_relevance": "The framework could help engineers infer interpretable optimization principles from observed system behavior.",
       "method": [
-        "Learn an optimization-based representation of observed data.",
-        "Extract a compact symbolic optimization problem.",
-        "Use an LLM agent to integrate literature priors, interpret candidate laws, and suggest new data collection."
+        "Learn to represent observed data as an optimization problem.",
+        "Extract a compact symbolic form of the inferred optimization problem.",
+        "Use an LLM agent to integrate literature priors, interpret mechanisms, and suggest new data collection."
       ],
-      "evidence_signal": "On the 99-problem OptFeynman benchmark, OptScientist recovers over 80% of ground-truth laws; human risky-choice and monetary-policy evaluations show competitive held-out prediction with few parameters.",
-      "watch_item": "Predictive accuracy alone does not establish that a discovered objective or constraint is the true mechanism generating the data.",
+      "evidence_signal": "On OptFeynman's 99 physics-derived problems, OptScientist recovers over 80% of ground-truth laws; on risky choice and monetary policy, it achieves competitive held-out prediction with few parameters.",
+      "watch_item": "Predictive accuracy alone does not establish that an inferred objective is the true underlying mechanism.",
       "hashtags": [
-        "#ScientificDiscovery",
-        "#SymbolicOptimization",
-        "#InterpretableAI",
+        "#AutomatedDiscovery",
+        "#SymbolicComputation",
         "#Optimization",
-        "#AIForScience"
+        "#ScientificMachineLearning",
+        "#InterpretableAI"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -642,7 +642,7 @@
       "paper_title": "OptScientist: Automated Discovery of Optimization Laws",
       "paper_date": "2026-10-20",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-10-24T16:26:32",
+      "generated_at": "2026-10-25T16:58:01",
       "generator": "openai"
     }
   },
@@ -671,23 +671,23 @@
         "url": "https://arxiv.org/pdf/2610.30277v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "A human–AI discovery loop produced the five-parameter Generalized Boyd algorithm, overcoming degree-skipping in constructions of irreducible integer polynomials with small Mahler measure.",
-      "engineering_relevance": "The work illustrates how AI-assisted solver development, distributed numerical search, and exact symbolic verification can jointly advance computational mathematics.",
+      "key_insight": "A human–AI discovery loop produced a five-parameter Generalized Boyd construction that avoids degree-skipping while finding irreducible integer polynomials with Mahler measure below 1.255434.",
+      "engineering_relevance": "The work demonstrates how AI-guided prototyping, distributed numerical search, and exact symbolic verification can jointly advance computational mathematics.",
       "method": [
         "Prototype numerical and symbolic solvers through human–AI interaction.",
-        "Run parallel searches on distributed clusters.",
-        "Extract mathematical hypotheses and verify candidate polynomials exactly."
+        "Run parallel searches across distributed clusters.",
+        "Extract mathematical hypotheses and verify constructions exactly."
       ],
-      "evidence_signal": "Across all even degrees up to 2000, the approach constructs polynomials below Boyd’s limit point of approximately 1.255434, improves six published values, and holds 99.6% of best-known records.",
-      "watch_item": "The reported evaluation is bounded at degree 2000, and the construction does not resolve Lehmer’s underlying lower-bound problem.",
+      "evidence_signal": "Across all even degrees up to 2000, the approach improves six previously published values and holds 99.6% of best-known records, with a verified polynomial dataset released.",
+      "watch_item": "These record-setting constructions do not resolve Lehmer’s problem; numerical candidates still require exact irreducibility and measure verification.",
       "hashtags": [
         "#AIForMathematics",
-        "#ComputationalMathematics",
         "#HumanAICollaboration",
+        "#ComputationalMathematics",
         "#SymbolicComputation",
-        "#DistributedComputing"
+        "#LehmersProblem"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -695,7 +695,7 @@
       "paper_title": "Breaking the high-degree barrier in Lehmer's problem with a human-AI discovery loop",
       "paper_date": "2026-10-21",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-24T16:26:35",
+      "generated_at": "2026-10-25T16:58:03",
       "generator": "openai"
     }
   },
@@ -728,17 +728,17 @@
         "url": "https://arxiv.org/pdf/2610.31600v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "SympFormer derives accelerated attention blocks from inertial, damped Hamiltonian dynamics on spaces of probability measures.",
-      "engineering_relevance": "The framework motivates geometry-aware token and momentum updates that improve next-token prediction over momentum-only controls in the reported experiments.",
+      "key_insight": "SympFormer derives inertial attention blocks from damped Hamiltonian dynamics on probability-measure spaces, extending the gradient-flow view of attention.",
+      "engineering_relevance": "The resulting geometric corrections to token and momentum updates offer a principled way to improve attention blocks beyond momentum-only updates.",
       "method": [
-        "Develop local-mobility geometry for Otto-Wasserstein and softmax-Wasserstein settings, plus quotient Stein geometry for linear attention.",
-        "Establish domains for gradient-flow and Hamiltonian formulations, and characterize global existence versus moment blow-up for linear attention.",
-        "Link continuous moment blow-up to discrete token-norm threshold depth and introduce geometric update corrections."
+        "Develop local-mobility geometry for Otto- and softmax-Wasserstein settings and quotient Stein geometry for linear attention.",
+        "Characterize domains for softmax gradient flows and inertial Hamiltonian dynamics.",
+        "Analyze linear-attention existence and blow-up, linking continuous moment growth to discrete token-norm thresholds."
       ],
-      "evidence_signal": "Decoder-only, nanoGPT-style experiments on TinyStories and OpenWebText report lower validation negative log-likelihood with geometric corrections than with momentum-only controls.",
-      "watch_item": "The theory identifies domain restrictions and possible finite-time moment blow-up; the abstract does not establish benefits at large-model scale.",
+      "evidence_signal": "In decoder-only, nanoGPT-style experiments on TinyStories and OpenWebText, geometric corrections lower validation next-token negative log-likelihood relative to momentum-only controls.",
+      "watch_item": "The abstract reports no improvement magnitudes or computational overhead, and theoretical stability depends on explicit domain and existence conditions.",
       "hashtags": [
         "#SympFormer",
         "#AttentionMechanisms",
@@ -752,7 +752,7 @@
       "paper_title": "SympFormer: Inertial Attention Blocks from Damped Hamiltonian Dynamics on Spaces of Probability Measures",
       "paper_date": "2026-10-22",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-10-24T16:26:37",
+      "generated_at": "2026-10-25T16:58:05",
       "generator": "openai"
     }
   },
@@ -782,23 +782,23 @@
         "url": "https://arxiv.org/pdf/2610.31335v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
       "key_insight": "A submitted solution that closely resembles LLM output does not reliably reveal how much mathematical thinking a student offloaded.",
-      "engineering_relevance": "Educational AI tools should support process-level evaluation rather than infer student engagement solely from final-answer similarity.",
+      "engineering_relevance": "Educational AI systems should examine interaction processes rather than infer student engagement solely from final-answer similarity.",
       "method": [
-        "Followed 23 first-year linear algebra students using LLMs on three differently designed homework tasks.",
-        "Interpreted 429 prompts as traces of self-regulation and compared 59 chatlogs with submitted solutions.",
-        "Identified five prompt structures positioning the LLM mainly as solver, explainer, or validator."
+        "Followed first-year linear algebra students using LLMs on three differently designed homework tasks.",
+        "Interpreted prompts as traces of self-regulatory events and compared chatlogs with submitted solutions.",
+        "Identified five interaction structures casting the LLM mainly as solver, explainer, or validator."
       ],
-      "evidence_signal": "Ten of the 15 students completing all three tasks changed their dominant prompt structure, while most submissions stayed close to LLM output—even after exchanges involving students’ own explanations, conjectures, and checks.",
-      "watch_item": "The small, course-specific sample and reliance on chatlog traces limit generalization and may miss thinking outside the recorded exchanges.",
+      "evidence_signal": "Across 23 students, 429 prompts, and 59 chatlogs, 10 of the 15 students completing all three tasks changed their dominant interaction structure.",
+      "watch_item": "The small, course-specific sample limits generalization, and prompts provide traces rather than direct measurements of students' thinking.",
       "hashtags": [
         "#AIEducation",
         "#MathematicsEducation",
         "#CognitiveOffloading",
         "#SelfRegulatedLearning",
-        "#LLMs"
+        "#HumanAIInteraction"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -806,7 +806,7 @@
       "paper_title": "What the submission does not show: Complexifying cognitive offloading in students' mathematical work with LLMs",
       "paper_date": "2026-10-22",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-24T16:26:40",
+      "generated_at": "2026-10-25T16:58:07",
       "generator": "openai"
     }
   },
@@ -835,22 +835,22 @@
         "url": "https://arxiv.org/pdf/2610.29368v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "Reinforcement learning guides adaptive grid refinement for the Hamilton–Jacobi–Bellman equation, concentrating nodes where discretization error is large to support accurate optimal feedback control.",
-      "engineering_relevance": "Adaptive node placement could reduce computational demands for feedback-control design compared with fixed grids while better resolving difficult regions of state space.",
+      "key_insight": "Reinforcement learning guides adaptive grid refinement for the Hamilton–Jacobi–Bellman equation, targeting higher node density where discretization error is large.",
+      "engineering_relevance": "Error-focused refinement could make optimal feedback control computation more resource-efficient than fixed-grid approaches.",
       "method": [
-        "Solve the HJB PDE to obtain optimal feedback control.",
-        "Use an RL-based strategy to dynamically refine the computational grid.",
-        "Target fewer total nodes with higher density in high-error regions."
+        "Solve the HJB PDE on a state-space grid.",
+        "Use reinforcement learning to guide dynamic grid refinement.",
+        "Concentrate nodes in high-error regions while seeking to reduce total node count."
       ],
-      "evidence_signal": "The abstract describes the approach and its intended benefits but reports no benchmarks, numerical accuracy gains, or node-count reductions.",
-      "watch_item": "Scalability and net computational savings remain unestablished, especially when accounting for RL overhead in high-dimensional state spaces.",
+      "evidence_signal": "The abstract describes the approach and intended benefits but reports no benchmarks, quantitative accuracy gains, or node-count reductions.",
+      "watch_item": "Scalability to high-dimensional state spaces and the computational overhead of RL-guided refinement require validation.",
       "hashtags": [
         "#OptimalControl",
         "#AdaptiveMeshRefinement",
-        "#HamiltonJacobiBellman",
         "#ReinforcementLearning",
+        "#HamiltonJacobiBellman",
         "#ScientificComputing"
       ],
       "model": "gpt-6.1-sol",
@@ -859,7 +859,7 @@
       "paper_title": "Adaptive Grid Refinement for Optimal Feedback Control",
       "paper_date": "2026-10-21",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-24T16:26:42",
+      "generated_at": "2026-10-25T16:58:09",
       "generator": "openai"
     }
   },
@@ -889,17 +889,17 @@
         "url": "https://arxiv.org/pdf/2610.29261v1"
       }
     ],
-    "score": 64,
+    "score": 59,
     "infographic": {
-      "key_insight": "The paper establishes the first per-worker convergence guarantees for optimizing the original group distributionally robust objective over decentralized networks.",
-      "engineering_relevance": "Networked workers can collaboratively minimize worst-worker risk while obtaining guarantees for their own local models rather than an unavailable global average.",
+      "key_insight": "A new error decomposition enables direct optimization of the original group distributionally robust objective over decentralized networks, with convergence guarantees for each worker’s local model.",
+      "engineering_relevance": "The framework supports collaborative learning that minimizes worst-worker risk without requiring workers to access a globally averaged model.",
       "method": [
-        "Decompose semi-decentralized GDRO into decentralized online convex optimization and prediction with expert advice.",
-        "Decompose fully decentralized GDRO into two coupled decentralized online convex optimization problems.",
-        "Isolate consensus errors to support modular communication routines, including accelerated gossip and Choco-gossip."
+        "Separate local-decision discrepancies and consensus errors from optimization errors.",
+        "Reduce SemiDec to decentralized online convex optimization plus expert advice, and Dec to two coupled decentralized online convex optimization problems.",
+        "Instantiate modular consensus routines using accelerated gossip or Choco-gossip."
       ],
-      "evidence_signal": "The abstract reports an O(√(log m / T)) convergence rate over T update rounds and experimental improvements in worst-worker performance over baselines, without specifying datasets or effect sizes.",
-      "watch_item": "Practical performance depends on controlling disagreement among local models; communication costs and network sensitivity are not quantified in the abstract.",
+      "evidence_signal": "The abstract reports an O(√(log m / T)) convergence rate over T update rounds and improved worst-worker performance over baselines, but provides no dataset details or numerical results.",
+      "watch_item": "Practical communication costs and sensitivity to network connectivity require evaluation beyond the convergence rate.",
       "hashtags": [
         "#DistributionallyRobustOptimization",
         "#DecentralizedLearning",
@@ -913,7 +913,7 @@
       "paper_title": "Group Distributionally Robust Optimization over Decentralized Networks",
       "paper_date": "2026-10-21",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-24T16:26:45",
+      "generated_at": "2026-10-25T16:58:11",
       "generator": "openai"
     }
   },
@@ -943,23 +943,23 @@
         "url": "https://arxiv.org/pdf/2610.28915v1"
       }
     ],
-    "score": 64,
+    "score": 59,
     "infographic": {
-      "key_insight": "PhiBE-PI learns continuous-time policies from a fixed batch of discrete-time off-policy transitions using one state-action critic while preserving the action-ranking signal.",
-      "engineering_relevance": "The framework enables policy improvement for unknown stochastic dynamics without explicitly estimating drift or diffusion or collecting fresh data at each iteration.",
+      "key_insight": "PhiBE-PI learns continuous-time policies from a fixed batch of discrete-time off-policy transitions using one state-action critic while preserving the action-ranking signal at small sampling intervals.",
+      "engineering_relevance": "The framework supports policy learning for unknown stochastic dynamics without explicitly estimating drift or diffusion or collecting fresh data at every iteration.",
       "method": [
-        "Learn a single state-action critic directly from sampled increments.",
-        "Improve the policy iteratively while reusing the same off-policy batch.",
+        "Learn a critic directly from sampled state increments.",
+        "Improve the policy and reuse the same batch across iterations.",
         "Use linear function approximation with a local end-to-end suboptimality guarantee."
       ],
-      "evidence_signal": "The abstract reports theoretical bounds tracking discretization, approximation, and finite-sample errors through data-reusing policy iteration, but provides no empirical results.",
+      "evidence_signal": "The abstract reports theoretical error bounds covering time discretization, function approximation, and finite-sample evaluation, including dependence induced by batch reuse, but describes no empirical benchmarks.",
       "watch_item": "Smaller sampling intervals reduce discretization error but can increase statistical error at fixed sample size, so finer sampling need not improve policy performance.",
       "hashtags": [
         "#ContinuousTimeRL",
         "#OffPolicyLearning",
         "#PolicyIteration",
         "#StochasticDynamics",
-        "#TheoreticalGuarantees"
+        "#ErrorBounds"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -967,7 +967,7 @@
       "paper_title": "A Model-Free Continuous-Time RL Algorithm from Discrete-Time Off-Policy Data with End-to-End Guarantees",
       "paper_date": "2026-10-20",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-10-24T16:26:47",
+      "generated_at": "2026-10-25T16:58:14",
       "generator": "openai"
     }
   },
@@ -998,17 +998,17 @@
         "url": "https://arxiv.org/pdf/2610.29192v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
-      "key_insight": "Curvature-Scaled SAM controls gradient distortion under generalized smoothness, enabling convergence guarantees beyond standard smoothness assumptions.",
-      "engineering_relevance": "Scaling both perturbations and descent steps by curvature upper bounds offers a principled way to stabilize sharpness-aware training.",
+      "key_insight": "Curvature-Scaled SAM controls gradient distortion under generalized smoothness, enabling convergence guarantees where standard SAM can cycle and unnormalized SAM can diverge.",
+      "engineering_relevance": "Curvature-aware scaling offers a principled way to stabilize sharpness-aware training beyond conventional smoothness assumptions.",
       "method": [
-        "Quantify how SAM perturbations distort the original gradient.",
-        "Use curvature upper bounds to scale perturbations and descent steps.",
-        "Prove deterministic O(1/T) stationarity and convex-gap rates, plus linear convergence under the Polyak–Łojasiewicz condition."
+        "Measure how perturbations change the gradient using relative gradient distortion.",
+        "Scale both the gradient-aligned perturbation and descent step using curvature upper bounds.",
+        "Prove deterministic O(1/T) stationarity and convex function-gap rates, plus linear convergence under the Polyak–Łojasiewicz condition."
       ],
-      "evidence_signal": "In minibatch computer vision experiments, the (H0,H1) variant achieved the highest mean best-test accuracy in all four settings against tuned SAM and USAM using constant and cosine-annealing schedules.",
-      "watch_item": "The convergence guarantees are deterministic; practical minibatch performance also depends on selecting suitable curvature upper bounds.",
+      "evidence_signal": "Minibatch computer vision experiments show competitive performance, with the (H0,H1) variant attaining the highest mean best-test accuracy in all four tested settings against tuned SAM and USAM baselines.",
+      "watch_item": "The guarantees are deterministic and depend on suitable curvature upper bounds; practical minibatch training requires choosing or estimating these bounds.",
       "hashtags": [
         "#SharpnessAwareMinimization",
         "#NonconvexOptimization",
@@ -1022,7 +1022,7 @@
       "paper_title": "Curvature-Scaled Sharpness-Aware Minimization: Convergence Beyond Smoothness",
       "paper_date": "2026-10-21",
       "paper_category": "AI math",
-      "generated_at": "2026-10-24T16:26:49",
+      "generated_at": "2026-10-25T16:58:16",
       "generator": "openai"
     }
   },
@@ -1052,17 +1052,17 @@
         "url": "https://arxiv.org/pdf/2610.28580v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
-      "key_insight": "A continuous-time policy gradient framework learns from discrete observations, with exponential convergence for an entropy-regularized policy flow.",
-      "engineering_relevance": "The framework supports control learning under unknown stochastic dynamics while preserving the continuous-time structure of the problem.",
+      "key_insight": "A continuous-time policy gradient framework learns from discrete observations while providing exponential convergence for an entropy-regularized policy flow.",
+      "engineering_relevance": "The framework supports model-free control of stochastic dynamical systems without requiring known dynamics.",
       "method": [
         "Derive a performance difference lemma and policy gradients for randomized and parametrized policies.",
-        "Analyze policy-flow convergence and separate critic, policy-regression, and step-size contributions to discrete-update error.",
-        "Use PhiBE to construct a surrogate generator from discrete transitions for on-policy and off-policy actor-critic learning."
+        "Bound discrete-update error contributions from critic estimation, policy regression, and learning step size.",
+        "Use PhiBE to construct a surrogate continuous-time generator for on-policy and off-policy actor-critic learning."
       ],
-      "evidence_signal": "Experiments evaluate performance and stability on an entropy-regularized linear-quadratic regulator and a nonlinear wheeled robot, using known and data-driven dynamics.",
-      "watch_item": "Exponential convergence applies to the analyzed policy flow; practical discrete updates remain sensitive to critic error, policy-regression error, and step size.",
+      "evidence_signal": "Experiments on an entropy-regularized linear-quadratic regulator and a nonlinear wheeled robot evaluate performance and stability with known and data-driven dynamics.",
+      "watch_item": "Exponential convergence applies to the regularized policy flow; practical discrete updates remain sensitive to critic error, policy-regression error, and step size.",
       "hashtags": [
         "#ContinuousTimeRL",
         "#PolicyGradient",
@@ -1076,7 +1076,7 @@
       "paper_title": "Continuous-Time Policy Gradient from Discrete Data: Convergence Analysis and Model-Free Algorithms",
       "paper_date": "2026-10-20",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-10-24T16:26:51",
+      "generated_at": "2026-10-25T16:58:18",
       "generator": "openai"
     }
   }

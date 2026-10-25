@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-10-24
+Generated: 2026-10-25
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. GIFT: Gradient Informed Filtering for Distillation Augmented Reasoning RL
@@ -27,15 +27,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.30492v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-discovery_of_singularities_in_partial_differential_equations_using_adaptive_numerical_disc_infographic.json
 
-## 4. EPIC: Rethinking Trust Regions for Autoregressive LLM Policies via Exact-KL Prefix Importance-Ratio Clipping
-
-- Date: 2026-10-21
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.29999v1
-- PDF: https://arxiv.org/pdf/2610.29999v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-epic_rethinking_trust_regions_for_autoregressive_llm_policies_via_exact_kl_prefix_importan_infographic.json
-
-## 5. A Transformer-based Approach for Real-time Multi-agent Path Planning with Varying Initial/Final Conditions
+## 4. A Transformer-based Approach for Real-time Multi-agent Path Planning with Varying Initial/Final Conditions
 
 - Date: 2026-10-21
 - Category: Symbolic Computation
@@ -43,7 +35,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.30388v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-a_transformer_based_approach_for_real_time_multi_agent_path_planning_with_varying_initial_infographic.json
 
-## 6. Reinforcement Learning for Global-Local Control of Dynamic Networks with Applications to Systemic Risk
+## 5. Reinforcement Learning for Global-Local Control of Dynamic Networks with Applications to Systemic Risk
 
 - Date: 2026-10-21
 - Category: Geometry and Topology
@@ -51,13 +43,21 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.29906v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-reinforcement_learning_for_global_local_control_of_dynamic_networks_with_applications_to_s_infographic.json
 
-## 7. ORSMT: Unleashing the Potential of Satisfiability Modulo Theories for Semantic Verification and Repair in LLM-Based Optimization
+## 6. ORSMT: Unleashing the Potential of Satisfiability Modulo Theories for Semantic Verification and Repair in LLM-Based Optimization
 
 - Date: 2026-10-21
 - Category: Optimization and PDEs
 - arXiv: https://arxiv.org/abs/2610.29145v1
 - PDF: https://arxiv.org/pdf/2610.29145v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-orsmt_unleashing_the_potential_of_satisfiability_modulo_theories_for_semantic_verification_infographic.json
+
+## 7. EPIC: Rethinking Trust Regions for Autoregressive LLM Policies via Exact-KL Prefix Importance-Ratio Clipping
+
+- Date: 2026-10-21
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.29999v1
+- PDF: https://arxiv.org/pdf/2610.29999v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-epic_rethinking_trust_regions_for_autoregressive_llm_policies_via_exact_kl_prefix_importan_infographic.json
 
 ## 8. Convergence of stochastic gradient descent for learning linear neural networks
 
