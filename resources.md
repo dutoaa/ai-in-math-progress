@@ -1,49 +1,137 @@
 # AI math Progress Public Resources
 
-Generated: 2026-10-26
+Generated: 2026-10-27
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. GIFT: Gradient Informed Filtering for Distillation Augmented Reasoning RL
+## 1. Improving Reasoning with Rollout Agreement for Group-Based Policy Optimization
 
-- Date: 2026-10-22
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.30796v1
-- PDF: https://arxiv.org/pdf/2610.30796v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-22-arxiv-gift_gradient_informed_filtering_for_distillation_augmented_reasoning_rl_infographic.json
-
-## 2. RoleFlow: Self-Evolving Multi-Role Agentic Collaboration via Structural Adaptation
-
-- Date: 2026-10-21
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.30429v1
-- PDF: https://arxiv.org/pdf/2610.30429v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-roleflow_self_evolving_multi_role_agentic_collaboration_via_structural_adaptation_infographic.json
-
-## 3. Sharpness-aware Orthogonalized Momentum Algorithms
-
-- Date: 2026-10-23
+- Date: 2026-10-26
 - Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.32465v1
-- PDF: https://arxiv.org/pdf/2610.32465v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-23-arxiv-sharpness_aware_orthogonalized_momentum_algorithms_infographic.json
+- arXiv: https://arxiv.org/abs/2610.34951v1
+- PDF: https://arxiv.org/pdf/2610.34951v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-improving_reasoning_with_rollout_agreement_for_group_based_policy_optimization_infographic.json
 
-## 4. CoPiT: A conditional Position-induced Transformer for aerodynamic field prediction on unstructured meshes
+## 2. Unit: a type checker for dependent type theory
 
-- Date: 2026-10-23
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2610.32299v1
-- PDF: https://arxiv.org/pdf/2610.32299v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-23-arxiv-copit_a_conditional_position_induced_transformer_for_aerodynamic_field_prediction_on_unstr_infographic.json
+- Date: 2026-10-25
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2610.34264v1
+- PDF: https://arxiv.org/pdf/2610.34264v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-25-arxiv-unit_a_type_checker_for_dependent_type_theory_infographic.json
 
-## 5. Discovery of Singularities in Partial Differential Equations Using Adaptive Numerical Discretizations
+## 3. ADACT: PDE-Constrained Thermal Hardware/Software Co-Design Adjoint-Driven Optimal Control via Finite Difference Discretization
 
-- Date: 2026-10-21
+- Date: 2026-10-26
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.30492v1
-- PDF: https://arxiv.org/pdf/2610.30492v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-discovery_of_singularities_in_partial_differential_equations_using_adaptive_numerical_disc_infographic.json
+- arXiv: https://arxiv.org/abs/2610.35569v1
+- PDF: https://arxiv.org/pdf/2610.35569v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-adact_pde_constrained_thermal_hardware_software_co_design_adjoint_driven_optimal_control_v_infographic.json
 
-## 6. Accordion: Elastic-Depth Inference via Fixed-Prefix Layer Looping
+## 4. Sparse Sum-of-Squares Layers for Certified Learning
+
+- Date: 2026-10-25
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2610.34590v1
+- PDF: https://arxiv.org/pdf/2610.34590v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-25-arxiv-sparse_sum_of_squares_layers_for_certified_learning_infographic.json
+
+## 5. Intrinsic Gradient Barriers in Pushforward Deep Generative Models
+
+- Date: 2026-10-25
+- Category: AI math
+- arXiv: https://arxiv.org/abs/2610.34484v1
+- PDF: https://arxiv.org/pdf/2610.34484v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-25-arxiv-intrinsic_gradient_barriers_in_pushforward_deep_generative_models_infographic.json
+
+## 6. Constraint Learning by Optimizing over Trained Neural Networks: A Pragmatic Tutorial
+
+- Date: 2026-10-26
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2610.35505v1
+- PDF: https://arxiv.org/pdf/2610.35505v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-constraint_learning_by_optimizing_over_trained_neural_networks_a_pragmatic_tutorial_infographic.json
+
+## 7. Understanding Practical Optimization in Machine Learning
+
+- Date: 2026-10-26
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2610.35209v1
+- PDF: https://arxiv.org/pdf/2610.35209v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-understanding_practical_optimization_in_machine_learning_infographic.json
+
+## 8. Lie Symmetry-Guided Adaptive Sampling for Physics-Informed Neural Networks
+
+- Date: 2026-10-25
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2610.34345v1
+- PDF: https://arxiv.org/pdf/2610.34345v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-25-arxiv-lie_symmetry_guided_adaptive_sampling_for_physics_informed_neural_networks_infographic.json
+
+## 9. EnerGNN: Learning Optimization-Compatible Energy Functions for Exact Constrained Combinatorial Inference
+
+- Date: 2026-10-24
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2610.33930v1
+- PDF: https://arxiv.org/pdf/2610.33930v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-24-arxiv-energnn_learning_optimization_compatible_energy_functions_for_exact_constrained_combinator_infographic.json
+
+## 10. Affine-invariant Cubic Newton with Weak Learners
+
+- Date: 2026-10-24
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2610.33516v1
+- PDF: https://arxiv.org/pdf/2610.33516v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-24-arxiv-affine_invariant_cubic_newton_with_weak_learners_infographic.json
+
+## 11. Autonomous Structural Discovery Of Bioprocess Dynamics And Kinetics Via LLM-Driven Agents
+
+- Date: 2026-10-26
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2610.35391v1
+- PDF: https://arxiv.org/pdf/2610.35391v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-autonomous_structural_discovery_of_bioprocess_dynamics_and_kinetics_via_llm_driven_agents_infographic.json
+
+## 12. Convergence Analysis of Nesterov's Accelerated Gradient Descent under Relaxed Assumptions
+
+- Date: 2026-10-24
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2610.33761v1
+- PDF: https://arxiv.org/pdf/2610.33761v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-24-arxiv-convergence_analysis_of_nesterov_s_accelerated_gradient_descent_under_relaxed_assumptions_infographic.json
+
+## 13. From Stochastic Transport Models to High-Dimensional Bayesian Inference
+
+- Date: 2026-10-26
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2610.35352v1
+- PDF: https://arxiv.org/pdf/2610.35352v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-from_stochastic_transport_models_to_high_dimensional_bayesian_inference_infographic.json
+
+## 14. Learning When to Commit: Schedule Distillation for Fast Diffusion Language Models
+
+- Date: 2026-10-26
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.35804v1
+- PDF: https://arxiv.org/pdf/2610.35804v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-learning_when_to_commit_schedule_distillation_for_fast_diffusion_language_models_infographic.json
+
+## 15. Provably Efficient Q-learning for Robust Reinforcement Learning
+
+- Date: 2026-10-26
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2610.35656v1
+- PDF: https://arxiv.org/pdf/2610.35656v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-provably_efficient_q_learning_for_robust_reinforcement_learning_infographic.json
+
+## 16. Renewable model averaging for generalized linear models
+
+- Date: 2026-10-24
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2610.33665v1
+- PDF: https://arxiv.org/pdf/2610.33665v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-24-arxiv-renewable_model_averaging_for_generalized_linear_models_infographic.json
+
+## 17. Accordion: Elastic-Depth Inference via Fixed-Prefix Layer Looping
 
 - Date: 2026-10-23
 - Category: Number Theory and Algebra
@@ -51,114 +139,26 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.32492v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-23-arxiv-accordion_elastic_depth_inference_via_fixed_prefix_layer_looping_infographic.json
 
-## 7. A Transformer-based Approach for Real-time Multi-agent Path Planning with Varying Initial/Final Conditions
+## 18. DynaFlow: Learning Free-Form Multi-Agent Orchestration
 
-- Date: 2026-10-21
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2610.30388v1
-- PDF: https://arxiv.org/pdf/2610.30388v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-a_transformer_based_approach_for_real_time_multi_agent_path_planning_with_varying_initial_infographic.json
-
-## 8. Reinforcement Learning for Global-Local Control of Dynamic Networks with Applications to Systemic Risk
-
-- Date: 2026-10-21
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2610.29906v1
-- PDF: https://arxiv.org/pdf/2610.29906v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-reinforcement_learning_for_global_local_control_of_dynamic_networks_with_applications_to_s_infographic.json
-
-## 9. EPIC: Rethinking Trust Regions for Autoregressive LLM Policies via Exact-KL Prefix Importance-Ratio Clipping
-
-- Date: 2026-10-21
+- Date: 2026-10-25
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.29999v1
-- PDF: https://arxiv.org/pdf/2610.29999v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-epic_rethinking_trust_regions_for_autoregressive_llm_policies_via_exact_kl_prefix_importan_infographic.json
+- arXiv: https://arxiv.org/abs/2610.34467v1
+- PDF: https://arxiv.org/pdf/2610.34467v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-25-arxiv-dynaflow_learning_free_form_multi_agent_orchestration_infographic.json
 
-## 10. Contextual Decision Making: Predictive or Generative
+## 19. On the Error Analysis of Triangular Transport Maps for Conditional Generation via MMD-based Objectives
 
-- Date: 2026-10-23
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.32584v1
-- PDF: https://arxiv.org/pdf/2610.32584v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-23-arxiv-contextual_decision_making_predictive_or_generative_infographic.json
+- Date: 2026-10-24
+- Category: AI math
+- arXiv: https://arxiv.org/abs/2610.33610v1
+- PDF: https://arxiv.org/pdf/2610.33610v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-24-arxiv-on_the_error_analysis_of_triangular_transport_maps_for_conditional_generation_via_mmd_base_infographic.json
 
-## 11. Minimax Rates for imperfect Physics-Informed Regression
+## 20. Controlled Block Proximal Linearized Method for Nonconvex and Nonsmooth Optimization
 
-- Date: 2026-10-21
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.29532v1
-- PDF: https://arxiv.org/pdf/2610.29532v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-minimax_rates_for_imperfect_physics_informed_regression_infographic.json
-
-## 12. SemantEq: Faithful Bidirectional Equivalence of Formal Statements
-
-- Date: 2026-10-23
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2610.32919v1
-- PDF: https://arxiv.org/pdf/2610.32919v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-23-arxiv-semanteq_faithful_bidirectional_equivalence_of_formal_statements_infographic.json
-
-## 13. Covariance-Informed Ensemble Score Filtering: Embedding Localized Covariance Geometry into Score-Based Transport
-
-- Date: 2026-10-23
+- Date: 2026-10-25
 - Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2610.32148v1
-- PDF: https://arxiv.org/pdf/2610.32148v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-23-arxiv-covariance_informed_ensemble_score_filtering_embedding_localized_covariance_geometry_into_infographic.json
-
-## 14. Sensitivity-Guided Parameter Estimation of Bubbly Liquid via a Nonlinear Wave Equation and Physics-InformedNeuralNetworks
-
-- Date: 2026-10-23
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2610.32668v1
-- PDF: https://arxiv.org/pdf/2610.32668v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-23-arxiv-sensitivity_guided_parameter_estimation_of_bubbly_liquid_via_a_nonlinear_wave_equation_and_infographic.json
-
-## 15. Empirically Calibrated Differential Games for Simulating Driver Interactions
-
-- Date: 2026-10-23
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.32276v1
-- PDF: https://arxiv.org/pdf/2610.32276v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-23-arxiv-empirically_calibrated_differential_games_for_simulating_driver_interactions_infographic.json
-
-## 16. MS-TTRL: Breaking the Frequency Conflict in Multiple-Solution Test-Time Reinforcement Learning
-
-- Date: 2026-10-23
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.32234v1
-- PDF: https://arxiv.org/pdf/2610.32234v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-23-arxiv-ms_ttrl_breaking_the_frequency_conflict_in_multiple_solution_test_time_reinforcement_learn_infographic.json
-
-## 17. What the submission does not show: Complexifying cognitive offloading in students' mathematical work with LLMs
-
-- Date: 2026-10-22
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.31335v1
-- PDF: https://arxiv.org/pdf/2610.31335v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-22-arxiv-what_the_submission_does_not_show_complexifying_cognitive_offloading_in_students_mathemati_infographic.json
-
-## 18. Adaptive Grid Refinement for Optimal Feedback Control
-
-- Date: 2026-10-21
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.29368v1
-- PDF: https://arxiv.org/pdf/2610.29368v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-adaptive_grid_refinement_for_optimal_feedback_control_infographic.json
-
-## 19. Solving and Learning Navier-Stokes Dynamics with the Neural Basis Method
-
-- Date: 2026-10-23
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2610.32167v1
-- PDF: https://arxiv.org/pdf/2610.32167v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-23-arxiv-solving_and_learning_navier_stokes_dynamics_with_the_neural_basis_method_infographic.json
-
-## 20. Group Distributionally Robust Optimization over Decentralized Networks
-
-- Date: 2026-10-21
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.29261v1
-- PDF: https://arxiv.org/pdf/2610.29261v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-21-arxiv-group_distributionally_robust_optimization_over_decentralized_networks_infographic.json
+- arXiv: https://arxiv.org/abs/2610.34390v1
+- PDF: https://arxiv.org/pdf/2610.34390v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-25-arxiv-controlled_block_proximal_linearized_method_for_nonconvex_and_nonsmooth_optimization_infographic.json
