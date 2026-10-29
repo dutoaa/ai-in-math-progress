@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-10-28
+Generated: 2026-10-29
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. GTFormer: A Syntax-Free Graph Network Alternative to Transformers for 8192$\times$ Length Extrapolation in Linear Time

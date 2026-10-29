@@ -24,23 +24,23 @@
         "url": "https://arxiv.org/pdf/2610.37524v1"
       }
     ],
-    "score": 93,
+    "score": 88,
     "infographic": {
-      "key_insight": "GTFormer replaces dense self-attention with a syntax-free hierarchical graph, reporting 8192× length extrapolation with linear-time computation and linear memory.",
-      "engineering_relevance": "The architecture could enable long-context code, log, and retrieval workloads on a single commodity GPU without quadratic attention costs.",
+      "key_insight": "GTFormer replaces self-attention with a syntax-free hierarchical graph network, reporting 8192× length extrapolation with linear-time computation and linear memory.",
+      "engineering_relevance": "Bounded-degree graph processing could make very long code, log, and retrieval workloads practical without quadratic attention costs.",
       "method": [
-        "Organize raw tokens into a bounded-degree balanced binary tree of logarithmic depth.",
-        "Add horizontal boundary-bridging edges and random expander shortcuts.",
-        "Combine multi-channel convex highway gating with a top-down broadcast pass."
+        "Build a balanced binary token hierarchy with ⌈log₂ N⌉ depth.",
+        "Add boundary-bridging shift edges and random expander shortcuts.",
+        "Combine multi-channel convex highway gating with top-down broadcast."
       ],
-      "evidence_signal": "The abstract reports near-perfect accuracy across eight benchmarks when training only on sequences up to 512 tokens and evaluating zero-shot up to 4,194,304 tokens, while standard and RoPE Transformers degrade or exhaust memory.",
-      "watch_item": "The abstract does not specify benchmark details, GPU hardware, or measured runtime, limiting assessment of practical efficiency and generalization.",
+      "evidence_signal": "The abstract reports near-perfect accuracy across eight benchmarks when trained only on sequences of length ≤512 and evaluated zero-shot up to 4,194,304 tokens on a single commodity GPU.",
+      "watch_item": "The abstract does not specify GPU hardware, runtime measurements, or benchmark details needed to assess practical efficiency and generalization.",
       "hashtags": [
         "#GTFormer",
         "#GraphNeuralNetworks",
         "#LongContext",
         "#LengthExtrapolation",
-        "#EfficientAI"
+        "#LinearTime"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -48,7 +48,7 @@
       "paper_title": "GTFormer: A Syntax-Free Graph Network Alternative to Transformers for 8192$\\times$ Length Extrapolation in Linear Time",
       "paper_date": "2026-10-27",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-28T18:39:07",
+      "generated_at": "2026-10-29T18:47:32",
       "generator": "openai"
     }
   },
@@ -79,17 +79,17 @@
         "url": "https://arxiv.org/pdf/2610.36553v1"
       }
     ],
-    "score": 84,
+    "score": 79,
     "infographic": {
       "key_insight": "NextEval uses an LLM agent to coordinate numerical methods for derivative-free optimization, aiming to find better solutions with fewer costly objective evaluations.",
       "engineering_relevance": "The approach could reduce evaluation costs in simulation-based design and experiments where derivatives are unavailable or expensive.",
       "method": [
         "An LLM agent selects numerical tools, configures parameters, and allocates the evaluation budget.",
         "A numerical environment computes and evaluates candidate points while preserving shared history and method-specific state across switches.",
-        "NextEval Bench compares agent configurations using shared tasks, numerical tools, evaluation budgets, and information constraints."
+        "NextEval Bench compares agent configurations using shared tasks, identical numerical tools, and matched evaluation budgets and information constraints."
       ],
-      "evidence_signal": "The abstract reports better function-evaluation efficiency than state-of-the-art DFO baselines on low-dimensional problems, without providing quantitative gains.",
-      "watch_item": "Performance on higher-dimensional problems and the added computational cost of LLM orchestration remain unestablished by the abstract.",
+      "evidence_signal": "The abstract reports better function-evaluation efficiency than state-of-the-art DFO baselines on low-dimensional problems, without specifying effect sizes.",
+      "watch_item": "Performance beyond low-dimensional problems and the added cost of LLM orchestration remain unclear from the abstract.",
       "hashtags": [
         "#DerivativeFreeOptimization",
         "#LLMAgents",
@@ -103,7 +103,7 @@
       "paper_title": "NextEval: An Agent-Based Solver and Benchmark for Derivative-Free Optimization",
       "paper_date": "2026-10-27",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-28T18:39:09",
+      "generated_at": "2026-10-29T18:47:36",
       "generator": "openai"
     }
   },
@@ -133,23 +133,23 @@
         "url": "https://arxiv.org/pdf/2610.34951v1"
       }
     ],
-    "score": 83,
+    "score": 78,
     "infographic": {
-      "key_insight": "Correct answers can hide faulty reasoning; rewarding agreement among correct rollouts improved mathematical accuracy and reduced spurious reasoning in the reported evaluations.",
-      "engineering_relevance": "RoAR adds a reasoning-quality signal to GRPO using existing on-policy rollouts, without extra sampling, human-written rationales, or a separately trained process evaluator.",
+      "key_insight": "Agreement among correct-answer rollouts can help reward more reliable reasoning, since a correct final answer can still hide spurious steps.",
+      "engineering_relevance": "RoAR adds a reasoning-quality signal to GRPO using existing rollout groups, without extra sampling, human-written rationales, or a separately trained process evaluator.",
       "method": [
         "Blindly compare high- and low-agreement correct-answer traces for the same problem.",
-        "Compute reasoning-level agreement within existing rollout groups.",
-        "Add agreement-based rewards to verified-correct rollouts during GRPO training."
+        "Compute reasoning-level agreement within existing on-policy rollout groups.",
+        "Add agreement-based rewards for verified-correct rollouts during GRPO training."
       ],
-      "evidence_signal": "Across five math benchmarks, the 1.5B GRPO-RoAR model trained on 7K examples achieved 55.5% mean zero-shot pass@1 (+6.0 percentage points over GRPO); a separate 100-problem blind audit found 18% spurious reasoning versus GRPO’s 32%.",
-      "watch_item": "Agreement does not guarantee valid reasoning, and the audit covers only problems answered correctly by all four compared models.",
+      "evidence_signal": "Across five math benchmarks, the 1.5B RoAR model achieved 55.5% mean zero-shot pass@1 after training on 7K examples, beating GRPO by 6.0 percentage points; a separate 100-problem blind audit found 18% spurious reasoning versus GRPO's 32%.",
+      "watch_item": "Agreement does not guarantee validity, and the reasoning audit was limited to problems answered correctly by all four compared models.",
       "hashtags": [
         "#MathematicalReasoning",
         "#ReinforcementLearning",
         "#RLVR",
         "#GRPO",
-        "#RoAR"
+        "#ReasoningReliability"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -157,7 +157,7 @@
       "paper_title": "Improving Reasoning with Rollout Agreement for Group-Based Policy Optimization",
       "paper_date": "2026-10-26",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-28T18:39:12",
+      "generated_at": "2026-10-29T18:47:38",
       "generator": "openai"
     }
   },
@@ -187,23 +187,23 @@
         "url": "https://arxiv.org/pdf/2610.37041v1"
       }
     ],
-    "score": 82,
+    "score": 77,
     "infographic": {
-      "key_insight": "Guided-RLVR aims to counter narrow reasoning trajectories by injecting meaningful steering tokens that encourage exploration of alternative solution paths.",
-      "engineering_relevance": "A lightweight controller could improve exploration in verifiable-reward training for mathematical reasoning and code generation.",
+      "key_insight": "Guided-RLVR uses a lightweight controller to steer sampling toward diverse reasoning paths, countering the narrow exploration that can arise in reinforcement learning with verifiable rewards.",
+      "engineering_relevance": "The approach could improve mathematical reasoning and code generation by broadening exploration during reinforcement learning.",
       "method": [
         "Augment RLVR with a lightweight controller.",
         "Inject semantically meaningful steering tokens into the sampling distribution.",
-        "Encourage multiple reasoning perspectives and more diverse trajectories."
+        "Encourage multiple reasoning perspectives to expand exploration."
       ],
-      "evidence_signal": "The abstract reports consistent improvements over existing RLVR methods on mathematical reasoning and code generation benchmarks, alongside greater trajectory diversity, but provides no numerical results.",
-      "watch_item": "The abstract does not specify how steering tokens are selected or quantify the controller's computational overhead.",
+      "evidence_signal": "The abstract reports consistent improvements over existing RLVR methods on mathematical reasoning and code generation benchmarks, alongside more diverse reasoning trajectories, but provides no numerical results.",
+      "watch_item": "Controller overhead and sensitivity to steering-token selection are not quantified in the abstract.",
       "hashtags": [
         "#GuidedRLVR",
         "#ReinforcementLearning",
         "#MathematicalReasoning",
-        "#LLMExploration",
-        "#CodeGeneration"
+        "#CodeGeneration",
+        "#LLMExploration"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -211,7 +211,7 @@
       "paper_title": "Guided-RLVR: Guided Exploration in Reinforcement Learning with Verifiable Rewards",
       "paper_date": "2026-10-27",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-10-28T18:39:15",
+      "generated_at": "2026-10-29T18:47:40",
       "generator": "openai"
     }
   },
@@ -241,17 +241,17 @@
         "url": "https://arxiv.org/pdf/2610.36655v1"
       }
     ],
-    "score": 74,
+    "score": 69,
     "infographic": {
-      "key_insight": "A measure-theoretic log-derivative estimator enables unbiased Monte Carlo gradients for parametric Markov chains without constructing the global state space or solving linear systems.",
-      "engineering_relevance": "Engineers can optimize expected rewards and reachability probabilities using sampled trajectories, including in continuous-state systems.",
+      "key_insight": "A measure-theoretic log-derivative estimator yields unbiased Monte Carlo gradients for parametric Markov chains without constructing the global state space or solving large linear systems.",
+      "engineering_relevance": "This enables gradient-based optimization of expected rewards and reachability probabilities in large probabilistic systems, including continuous-state models.",
       "method": [
-        "Sample trajectories instead of materializing the global state space.",
-        "Use local transition probabilities or densities and their parameter derivatives.",
-        "Apply a generalized log-derivative trick to estimate gradients."
+        "Sample trajectories using local transition probabilities or densities and their derivatives.",
+        "Apply a generalized log-derivative trick to estimate objective gradients.",
+        "Establish unbiasedness under almost-sure termination and standard regularity conditions."
       ],
-      "evidence_signal": "The abstract reports evaluations on synthetic discrete chains and continuous-state case studies, with faster execution and scaling beyond existing solvers.",
-      "watch_item": "Unbiasedness requires almost-sure termination and regularity conditions; estimator variance and long trajectories may still affect practical efficiency.",
+      "evidence_signal": "The abstract reports evaluations on synthetic discrete chains and continuous-state cases, with lower execution times and scaling beyond existing solvers, but provides no numerical results.",
+      "watch_item": "Unbiasedness depends on termination and regularity assumptions; estimator variance and long trajectories may still affect practical efficiency.",
       "hashtags": [
         "#ParametricMarkovChains",
         "#MonteCarlo",
@@ -265,7 +265,7 @@
       "paper_title": "Log-Derivative Trick for Parametric Markov Chains",
       "paper_date": "2026-10-27",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-10-28T18:39:17",
+      "generated_at": "2026-10-29T18:47:42",
       "generator": "openai"
     }
   },
@@ -297,17 +297,17 @@
         "url": "https://arxiv.org/pdf/2610.35569v1"
       }
     ],
-    "score": 73,
+    "score": 68,
     "infographic": {
-      "key_insight": "ADACT jointly optimizes processor workload throttling and cooling through PDE-constrained control to balance thermal safety, throughput, and cooling energy.",
-      "engineering_relevance": "The approach offers a physics-informed framework for coordinating software power workloads and hardware cooling in thermally constrained AI and HPC processors.",
+      "key_insight": "ADACT jointly optimizes workload throttling and cooling using a physics-based thermal PDE to balance temperature risk, cooling energy, and processor throughput.",
+      "engineering_relevance": "The approach offers predictive thermal management for power-dense AI and HPC processors by coordinating software workloads with hardware cooling.",
       "method": [
-        "Model chip temperature with a 2D reaction-diffusion PDE, localized power sources, and variable convective cooling.",
-        "Solve thermal dynamics using second-order Crank–Nicolson finite differences and a five-point Laplacian.",
-        "Compute control gradients with a backward adjoint and optimize using L-BFGS."
+        "Model chip temperature with a 2D reaction–diffusion PDE, localized power sources, and variable cooling.",
+        "Discretize with second-order Crank–Nicolson time stepping and a five-point finite-difference Laplacian.",
+        "Use backward adjoint gradients and L-BFGS to optimize workload and cooling controls."
       ],
-      "evidence_signal": "The abstract reports manufactured-solution checks of second-order state and adjoint convergence, Taylor tests of gradient accuracy, and numerical experiments maintaining thermal thresholds while preserving throughput.",
-      "watch_item": "Evidence is numerical; real-device validation and runtime overhead for online control are not established in the abstract.",
+      "evidence_signal": "Manufactured-solution tests verify second-order state and adjoint convergence, Taylor tests validate gradients, and numerical experiments report thermal-threshold compliance while maintaining throughput.",
+      "watch_item": "The abstract reports numerical validation, not deployment on physical processors; real-world performance depends on thermal-model calibration and control-loop cost.",
       "hashtags": [
         "#PDEConstrainedOptimization",
         "#ThermalManagement",
@@ -321,7 +321,7 @@
       "paper_title": "ADACT: PDE-Constrained Thermal Hardware/Software Co-Design Adjoint-Driven Optimal Control via Finite Difference Discretization",
       "paper_date": "2026-10-26",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-28T18:39:19",
+      "generated_at": "2026-10-29T18:47:45",
       "generator": "openai"
     }
   },
@@ -351,17 +351,17 @@
         "url": "https://arxiv.org/pdf/2610.34590v1"
       }
     ],
-    "score": 73,
+    "score": 68,
     "infographic": {
-      "key_insight": "Sparse SOS Layers integrate polynomial certification into learning while preserving the forward solver’s sparse structure during backpropagation.",
-      "engineering_relevance": "Structure-aware differentiation can make certificate-based learning more practical for control, robotics, and constrained optimization.",
+      "key_insight": "Sparse SOS Layers integrate polynomial inequality certificates into learning while preserving the forward solver’s sparse structure during backpropagation.",
+      "engineering_relevance": "They make certificate-based learning more practical for control, robotics, and optimization by reducing repeated-solve time and memory use.",
       "method": [
-        "Certify polynomial inequalities over continuous domains using sum-of-squares semidefinite programs.",
-        "Reuse forward-solve local coordinates in differentiable value-layer backward passes.",
-        "Keep the template fixed while learning objective coefficients, avoiding dense certificate construction."
+        "Represent polynomial certification problems as differentiable SOS value layers.",
+        "Reuse the forward solve’s local sparse coordinates in the backward pass.",
+        "Keep the problem template fixed while learning objective coefficients, avoiding dense certificate construction."
       ],
-      "evidence_signal": "Across six application areas, experiments report up to 2.7× faster total warm calls and 1.7 versus 160 GiB memory for the tested dense parameterization; a design study reports zero certified violations on unseen instances and sizes with roughly 7× fewer solves than finite differences.",
-      "watch_item": "Efficiency relies on a fixed sparse template with learned objective coefficients; gains may differ when the certificate structure changes.",
+      "evidence_signal": "Across six application areas, tests report up to 2.7× faster total warm-call time and 1.7 versus 160 GiB memory for a tested dense parameterization; a design study reports zero certified violations on unseen instances and sizes with roughly 7× fewer solves than finite differences.",
+      "watch_item": "The approach assumes a fixed template with learned objective coefficients; reported gains may not extend to changing constraint structures or other parameterizations.",
       "hashtags": [
         "#SumOfSquares",
         "#CertifiedLearning",
@@ -375,7 +375,7 @@
       "paper_title": "Sparse Sum-of-Squares Layers for Certified Learning",
       "paper_date": "2026-10-25",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-28T18:39:22",
+      "generated_at": "2026-10-29T18:47:47",
       "generator": "openai"
     }
   },
@@ -404,22 +404,22 @@
         "url": "https://arxiv.org/pdf/2610.36601v1"
       }
     ],
-    "score": 72,
+    "score": 67,
     "infographic": {
-      "key_insight": "Axiomatic Learning Structures (ALS) and Axiomatic Probabilistic Structures (APS) connect learning and probabilistic models to the axioms governing mathematical objects and transformations.",
+      "key_insight": "Axiomatic Learning Structures (ALS) and Axiomatic Probabilistic Structures (APS) connect learning and probability methods to the axioms governing mathematical objects and transformations.",
       "engineering_relevance": "The framework could support structure-aware recovery from noisy mathematical data and task-specific selection of transformations.",
       "method": [
-        "Build loss functions around transformations and their defining axioms.",
+        "Relate loss functions and probabilistic models to the axioms of their underlying objects and transformations.",
         "Use Transformations-Axiomatic Based Learning (TABLe) to rank candidate transformations by task-specific scores.",
-        "Study integer-polynomial recovery using ordinary derivatives and arithmetic p-derivations, alongside noisy derivation equations."
+        "Explore integer-polynomial recovery using standard derivatives and arithmetic p-derivations, alongside noisy derivation equations."
       ],
-      "evidence_signal": "The abstract describes mathematical applications to polynomial recovery and noisy derivation equations, but reports no dataset sizes, quantitative benchmarks, or comparative performance.",
-      "watch_item": "Practical scalability and robustness of transformation ranking remain unestablished in the abstract.",
+      "evidence_signal": "The abstract describes mathematical applications to polynomial recovery and noisy derivation equations, but reports no dataset sizes, benchmark comparisons, or quantitative results.",
+      "watch_item": "Practical scalability and the reliability of transformation-ranking scores remain unestablished in the abstract.",
       "hashtags": [
         "#AxiomaticLearning",
         "#SymbolicComputation",
         "#ArithmeticMachineLearning",
-        "#ProbabilisticStructures",
+        "#ProbabilisticModeling",
         "#StructureRecovery"
       ],
       "model": "gpt-6.1-sol",
@@ -428,7 +428,7 @@
       "paper_title": "Axiomatic Learning and Probabilistic Structures with first applications to variants of Arithmetic Machine Learning and beyond",
       "paper_date": "2026-10-27",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-10-28T18:39:24",
+      "generated_at": "2026-10-29T18:47:49",
       "generator": "openai"
     }
   },
@@ -460,23 +460,23 @@
         "url": "https://arxiv.org/pdf/2610.36342v1"
       }
     ],
-    "score": 72,
+    "score": 67,
     "infographic": {
-      "key_insight": "BASOC reduces optimal-control problems by balancing state variability with value-function sensitivity along locally optimal trajectories.",
-      "engineering_relevance": "The framework targets reduced-order models and surrogate feedback controllers for high-dimensional nonlinear systems, including aerospace flow control.",
+      "key_insight": "BASOC reduces nonlinear optimal-control problems by balancing state variation along locally optimal trajectories with directions of high value-function sensitivity.",
+      "engineering_relevance": "The framework could support real-time feedback control of high-dimensional nonlinear systems by enabling reduced-order models and surrogate control laws.",
       "method": [
         "Use trajectory optimization and Pontryagin’s minimum principle to collect state and co-state data.",
         "Construct and balance state and value-gradient covariance matrices.",
-        "Form an oblique projection to approximate the value function and support reduced-order control."
+        "Use the resulting oblique projection to approximate the value function in reduced coordinates."
       ],
-      "evidence_signal": "The abstract reports demonstrations on a nonlinear three-dimensional system where POD and balanced truncation perform poorly, and on the nonlinear complex Ginzburg–Landau equation; it also establishes an equivalence to initial-condition balancing for linear-quadratic control.",
-      "watch_item": "Because the projection is learned from locally optimal trajectories, its reliability outside the sampled state regimes requires validation.",
+      "evidence_signal": "The abstract reports demonstrations on a nonlinear three-dimensional system and the nonlinear complex Ginzburg–Landau equation, plus equivalence to closed-loop initial-condition balancing in the linear-quadratic case.",
+      "watch_item": "Reliance on locally optimal trajectory data may limit accuracy outside the sampled state regions.",
       "hashtags": [
         "#OptimalControl",
         "#ModelReduction",
         "#ActiveSubspaces",
-        "#NonlinearDynamics",
-        "#ScientificComputing"
+        "#TrajectoryOptimization",
+        "#NonlinearDynamics"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -484,7 +484,7 @@
       "paper_title": "Balanced Active Subspaces for Optimal Control via Trajectory Optimization",
       "paper_date": "2026-10-26",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-10-28T18:39:26",
+      "generated_at": "2026-10-29T18:47:52",
       "generator": "openai"
     }
   },
@@ -514,23 +514,23 @@
         "url": "https://arxiv.org/pdf/2610.37370v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "A trained ReLU network defines a Data Information Matrix distribution that, after modification on a measure-zero set, induces a singular foliation of input space.",
-      "engineering_relevance": "This framework offers a theoretical lens for studying how trained networks organize input geometry, rather than a ready-to-use engineering method.",
+      "key_insight": "A trained ReLU network defines a non-smooth geometric distribution through its Data Information Matrix, and a modified version induces a singular foliation of input space.",
+      "engineering_relevance": "This framework could help engineers analyze how trained neural networks organize input space, without establishing practical performance gains.",
       "method": [
-        "Define an input-space distribution using the columns of the Data Information Matrix.",
-        "Prove that the ReLU-induced distribution is non-smooth.",
-        "Construct a smoothed distribution differing only on a measure-zero set and prove it induces a singular foliation."
+        "Form a distribution from the columns of the Data Information Matrix.",
+        "Prove its non-smoothness and introduce a smoothed version differing only on a measure-zero set.",
+        "Prove that the modified distribution induces a singular foliation."
       ],
-      "evidence_signal": "The abstract reports theoretical proofs, with no datasets, empirical benchmarks, or quantitative evaluations described.",
-      "watch_item": "The abstract does not establish how to compute or validate the resulting foliation efficiently for practical networks.",
+      "evidence_signal": "The abstract reports theoretical proofs, with no datasets, empirical evaluations, or quantitative benchmarks described.",
+      "watch_item": "Agreement outside a measure-zero set does not by itself establish numerical stability or practical computability near non-smooth boundaries.",
       "hashtags": [
         "#ManifoldLearning",
         "#DifferentialGeometry",
         "#SingularFoliations",
         "#DeepLearningTheory",
-        "#ReLU"
+        "#ReLUNetworks"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -538,7 +538,7 @@
       "paper_title": "The Geometry of Manifold Learning: Singular foliations via Deep Learning models",
       "paper_date": "2026-10-27",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-10-28T18:39:28",
+      "generated_at": "2026-10-29T18:47:54",
       "generator": "openai"
     }
   },
@@ -569,22 +569,22 @@
         "url": "https://arxiv.org/pdf/2610.36581v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
       "key_insight": "Wasserstein approximation by measures supported on orthogonal axes identifies a basis for sparse data representation, with near-parametric frame recovery under mild assumptions.",
-      "engineering_relevance": "The framework offers a principled way to select sparse-representation axes within a subspace, complementing PCA for unsupervised learning.",
+      "engineering_relevance": "The approach offers a principled way to select sparse coordinate systems within learned subspaces for unsupervised representation learning.",
       "method": [
-        "Approximate the data distribution using measures supported on the axes of an orthogonal frame.",
-        "Optimize a nonsmooth objective over the orthogonal group using empirical risk minimization or locally initialized stochastic gradients.",
-        "Use a coarsely Lipschitz gradient bound to handle the mismatch between smooth population and nonsmooth empirical objectives."
+        "Approximate the data distribution with measures supported on the axes of an orthogonal frame.",
+        "Optimize a nonsmooth objective over the orthogonal group O(d).",
+        "Use a coarsely Lipschitz bound to analyze empirical minimizers and locally initialized stochastic gradient optimization."
       ],
-      "evidence_signal": "The abstract reports recovery guarantees of Õ_d(n⁻¹ᐟ²) for both approaches and supporting numerical experiments, without specifying datasets or quantitative results.",
-      "watch_item": "The stochastic-gradient guarantee requires local initialization, and the stated rate hides dimension-dependent factors.",
+      "evidence_signal": "The abstract reports a recovery rate of Õ_d(n^−1/2) and numerical experiments supporting the theory, but provides no dataset or benchmark details.",
+      "watch_item": "The stochastic gradient guarantee requires local initialization, and the stated rate can hide dimension-dependent factors.",
       "hashtags": [
+        "#OptimalTransport",
         "#WassersteinDistance",
         "#SparseRepresentation",
-        "#OrthogonalFrames",
-        "#NonsmoothOptimization",
+        "#OrthogonalOptimization",
         "#StatisticalLearning"
       ],
       "model": "gpt-6.1-sol",
@@ -593,7 +593,7 @@
       "paper_title": "Wasserstein approximation of measures via orthogonal frames: statistical and computational complexities",
       "paper_date": "2026-10-27",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-28T18:39:30",
+      "generated_at": "2026-10-29T18:47:56",
       "generator": "openai"
     }
   },
@@ -623,23 +623,23 @@
         "url": "https://arxiv.org/pdf/2610.36795v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
       "key_insight": "The paper proposes an algebra for reasoning about transformers, treating functional decompositions as atomic actions.",
       "engineering_relevance": "This framework could support formal correctness verification of transformer-based applications.",
       "method": [
-        "Use functional decompositions as atomic actions.",
+        "Use transformer functional decompositions as atomic actions.",
         "Combine actions through sequential and parallel composition.",
         "Represent feedback with recursion and hidden layers with abstraction."
       ],
-      "evidence_signal": "The abstract describes a theoretical framework but reports no datasets, benchmarks, or empirical evaluation.",
-      "watch_item": "Practical verification depends on faithfully mapping transformer implementations to the algebra; the abstract does not establish this mapping.",
+      "evidence_signal": "The abstract describes a theoretical framework but reports no datasets, empirical evaluations, or verification case studies.",
+      "watch_item": "Practical verification depends on obtaining suitable functional decompositions; the abstract does not establish scalability to deployed transformers.",
       "hashtags": [
         "#TransformerTheory",
         "#AlgebraicMethods",
         "#FormalVerification",
-        "#FunctionalDecomposition",
-        "#AIEngineering"
+        "#CompositionalReasoning",
+        "#AITheory"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -647,7 +647,7 @@
       "paper_title": "An Algebra of Transformers",
       "paper_date": "2026-10-27",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-28T18:39:33",
+      "generated_at": "2026-10-29T18:47:58",
       "generator": "openai"
     }
   },
@@ -678,17 +678,17 @@
         "url": "https://arxiv.org/pdf/2610.34484v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "Transporting a log-concave source to heavy-tailed or well-separated multimodal targets intrinsically requires large gradients, regardless of neural architecture or training procedure.",
-      "engineering_relevance": "Pushforward generative models face expressivity–numerical stability trade-offs when representing heavy tails or separated modes.",
+      "key_insight": "Transporting a log-concave source to heavy-tailed or well-separated multimodal targets intrinsically requires large gradients, regardless of the generative model architecture.",
+      "engineering_relevance": "These gradient barriers expose an expressivity–numerical stability trade-off when designing pushforward deep generative models.",
       "method": [
-        "Derive quantitative lower bounds on transport gradients and Jacobians.",
+        "Derive quantitative gradient and Jacobian lower bounds for heavy-tailed and multimodal targets.",
         "Establish results under weaker regularity assumptions and target perturbations.",
-        "Propose bijective reparametrizations to reduce gradient demands for density approximation."
+        "Propose bijective reparametrizations to reduce gradient burdens in density approximation."
       ],
       "evidence_signal": "Numerical experiments support the theoretical analysis, but the abstract provides no datasets, benchmarks, or quantitative results.",
-      "watch_item": "The proposed mitigation concerns density approximation and should not be assumed to remove barriers in generative sampling.",
+      "watch_item": "The reparametrization mitigation applies to density approximation and should not be assumed to remove barriers in generative sampling.",
       "hashtags": [
         "#GenerativeModels",
         "#TransportMaps",
@@ -702,7 +702,7 @@
       "paper_title": "Intrinsic Gradient Barriers in Pushforward Deep Generative Models",
       "paper_date": "2026-10-25",
       "paper_category": "AI math",
-      "generated_at": "2026-10-28T18:39:35",
+      "generated_at": "2026-10-29T18:48:00",
       "generator": "openai"
     }
   },
@@ -732,23 +732,23 @@
         "url": "https://arxiv.org/pdf/2610.35505v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "Embedding trained neural networks into optimization models enables data-driven constraints and objective approximations, but smaller, sparser networks can make optimization more tractable.",
-      "engineering_relevance": "Engineers can incorporate learned relationships into optimization while balancing model fidelity against formulation size and solve time.",
+      "key_insight": "Embedding trained neural networks into optimization models enables data-driven constraints and objective approximations, but smaller, sparser networks can make these models more practical to solve.",
+      "engineering_relevance": "Engineers can incorporate empirically learned relationships into optimization while managing the computational cost of neural-network representations.",
       "method": [
-        "Train neural networks to represent empirical constraints or approximate nonlinear objectives.",
-        "Embed the trained networks into an optimization formulation.",
-        "Apply practical modeling considerations, including network size and sparsity, to improve tractability."
+        "Train neural networks to represent constraints or approximate nonlinear objectives.",
+        "Embed the trained networks into optimization models.",
+        "Consider network size and sparsity to improve computational tractability."
       ],
-      "evidence_signal": "A case study validates the tutorial’s practical guidance and highlights benefits of smaller, sparser networks; the abstract reports no quantitative results.",
-      "watch_item": "Embedded networks can produce optimization models that are too large or slow to solve.",
+      "evidence_signal": "The abstract reports a case study highlighting the benefit of smaller and sparser networks, without specifying datasets or quantitative results.",
+      "watch_item": "Embedded neural networks may make optimization models too large or slow to solve, so predictive fit must be weighed against computational tractability.",
       "hashtags": [
         "#ConstraintLearning",
         "#NeuralNetworks",
         "#MathematicalOptimization",
-        "#SparseNetworks",
-        "#DataDrivenOptimization"
+        "#DataDrivenModeling",
+        "#ComputationalEngineering"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -756,7 +756,7 @@
       "paper_title": "Constraint Learning by Optimizing over Trained Neural Networks: A Pragmatic Tutorial",
       "paper_date": "2026-10-26",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-28T18:39:37",
+      "generated_at": "2026-10-29T18:48:03",
       "generator": "openai"
     }
   },
@@ -786,23 +786,23 @@
         "url": "https://arxiv.org/pdf/2610.35209v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "Optimization theory better explains practical machine learning when it preserves the actual sketching, clipping, normalization, layer-wise updates, and approximation procedures.",
-      "engineering_relevance": "Training stability and convergence depend on matching objectives to sampling schemes and jointly tuning clipping schedules, orthogonalization precision, and learning rates.",
+      "key_insight": "Optimization theory better explains practical machine learning when it preserves algorithmic features such as sketching, clipping, normalization, and approximate orthogonalization.",
+      "engineering_relevance": "Training reliability depends on matching objectives, clipping schedules, and learning rates to the actual update rules and numerical approximations.",
       "method": [
-        "Analyze submodel training bias and incorporate the sketch distribution into the objective for unbiased gradients.",
-        "Study adaptive quantile clipping and combine smoothed normalization with error compensation for distributed private optimization.",
+        "Analyze submodel objectives to distinguish biased Independent Subnetwork Training from unbiased Model-Agnostic Sparsified Training.",
+        "Study quantile clipping schedules and combine smoothed normalization with error compensation for distributed private optimization.",
         "Develop layer-wise generalized smoothness and the Gluon framework for Muon- and Scion-style methods."
       ],
-      "evidence_signal": "The abstract reports convergence guarantees, validation of a layer-wise smoothness model, and an orthogonalization–stepsize tradeoff, but specifies no datasets or numerical results.",
-      "watch_item": "Fixed-quantile clipping retains bias, and less precise Muon orthogonalization requires smaller stepsizes.",
+      "evidence_signal": "The abstract reports convergence guarantees, near-optimal nonconvex rates under heavy-tailed noise, and validation of a layer-wise smoothness model, but gives no datasets or numerical results.",
+      "watch_item": "In Muon, less precise approximate orthogonalization requires smaller stepsizes, so precision and learning rate should be tuned together.",
       "hashtags": [
-        "#Optimization",
+        "#OptimizationTheory",
         "#MachineLearning",
         "#PrivateOptimization",
         "#DistributedTraining",
-        "#Muon"
+        "#MuonOptimizer"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -810,7 +810,7 @@
       "paper_title": "Understanding Practical Optimization in Machine Learning",
       "paper_date": "2026-10-26",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-28T18:39:40",
+      "generated_at": "2026-10-29T18:48:05",
       "generator": "openai"
     }
   },
@@ -839,17 +839,17 @@
         "url": "https://arxiv.org/pdf/2610.34345v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
       "key_insight": "Lie-AS-ISC uses PDE Lie symmetries to guide adaptive sampling and improve physics-informed neural network accuracy.",
-      "engineering_relevance": "The approach targets more accurate mesh-free PDE solvers for physics and engineering problems where uniform sampling misses complex solution features.",
+      "engineering_relevance": "The framework could improve mesh-free PDE solvers in engineering by targeting training points beyond conventional uniform sampling.",
       "method": [
         "Use Lie symmetry transformations to derive solution–variable relationships and construct basis points with exact solutions.",
-        "Adapt training-point sampling using both absolute error and invariant surface conditions.",
+        "Adapt sampling using both absolute error and invariant surface conditions.",
         "Introduce a dual-index loss to strengthen training constraints."
       ],
-      "evidence_signal": "The abstract reports consistently higher accuracy than existing methods in experiments, but provides no benchmark details or quantitative gains.",
-      "watch_item": "Applicability depends on usable PDE Lie symmetries and the ability to construct the required exact-solution basis points.",
+      "evidence_signal": "The abstract reports consistently higher accuracy than existing methods in experiments, but provides no benchmarks, numerical gains, or computational costs.",
+      "watch_item": "Applicability depends on identifying usable PDE Lie symmetries and constructing the required exact-solution basis points.",
       "hashtags": [
         "#PhysicsInformedNeuralNetworks",
         "#LieSymmetry",
@@ -863,7 +863,7 @@
       "paper_title": "Lie Symmetry-Guided Adaptive Sampling for Physics-Informed Neural Networks",
       "paper_date": "2026-10-25",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-28T18:39:42",
+      "generated_at": "2026-10-29T18:48:07",
       "generator": "openai"
     }
   },
@@ -893,23 +893,23 @@
         "url": "https://arxiv.org/pdf/2610.36396v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "Lean can automatically construct a derivative, a correctness certificate, and a domain on which that derivative is guaranteed valid.",
-      "engineering_relevance": "Certified differentiation offers a route to machine-checked derivative calculations for scientific computing and machine learning.",
+      "key_insight": "Lean can automatically construct a derivative, a correctness certificate, and a domain on which the derivative is guaranteed valid.",
+      "engineering_relevance": "Certified differentiation can support scientific computing and machine learning workflows that require formally verified derivative calculations.",
       "method": [
         "Reuse derivative theorems from Lean’s Mathlib library.",
-        "Use Lean metaprogramming to construct derivatives and certificates step by step.",
+        "Use Lean metaprogramming to construct derivatives and correctness certificates step by step.",
         "Index derivative theorems by the functions they differentiate to accelerate search."
       ],
-      "evidence_signal": "With indexing, all 500 randomly generated test functions were differentiated at a median of 0.18 seconds per function, 8.6× faster than without indexing.",
-      "watch_item": "Performance on randomly generated functions may not generalize to large real-world programs or functions lacking suitable Mathlib derivative theorems.",
+      "evidence_signal": "With theorem indexing, all 500 randomly generated test functions were differentiated, with a median time of 0.18 seconds per function—8.6× faster than without indexing.",
+      "watch_item": "Success on randomly generated functions does not establish coverage or performance for large, real-world computational models.",
       "hashtags": [
         "#AutomaticDifferentiation",
-        "#LeanProver",
+        "#Lean",
         "#FormalVerification",
-        "#ScientificComputing",
-        "#Mathlib"
+        "#TheoremProving",
+        "#ScientificComputing"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -917,7 +917,7 @@
       "paper_title": "Automatic Certified Differentiation in Lean",
       "paper_date": "2026-10-26",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-10-28T18:39:44",
+      "generated_at": "2026-10-29T18:48:09",
       "generator": "openai"
     }
   },
@@ -949,22 +949,22 @@
         "url": "https://arxiv.org/pdf/2610.36854v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "Boundary geometry can change the optimal shallow ReLU approximation exponent even when dimension, error norm, and coefficient-weighting rule are fixed.",
-      "engineering_relevance": "For finite ReLU targets, the bounds support compression using only existing neurons without increasing the weighted coefficient sum.",
+      "key_insight": "Boundary geometry can change the optimal shallow ReLU approximation exponent even when dimension, error norm, and coefficient-weighting rule remain fixed.",
+      "engineering_relevance": "For finite ReLU targets, the bounds yield compressed networks using only original neurons without increasing the weighted coefficient sum.",
       "method": [
-        "Analyze L^q approximation on convex bodies under geometry-aware weighted coefficient constraints.",
-        "Prove upper and lower bounds and characterize optimal exponents through small-boundary-cap growth.",
-        "Identify sharp weight thresholds that preserve the classical approximation exponent."
+        "Incorporate domain geometry into weighted variation-space constraints.",
+        "Prove approximation upper and lower bounds using boundary-cap growth.",
+        "Identify optimal exponents and sharp weight thresholds for specified convex domains."
       ],
-      "evidence_signal": "Theoretical guarantees establish optimal exponents for all planar convex bodies and their products with polytopes, plus specified smooth-body regimes; the abstract reports no empirical benchmarks.",
-      "watch_item": "Optimality guarantees depend on domain geometry and the range of q, so they should not be assumed for every convex body and norm.",
+      "evidence_signal": "The abstract reports theoretical bounds and optimality results for all planar convex bodies, their products with polytopes, and specified smooth convex bodies, rather than empirical benchmarks.",
+      "watch_item": "Optimality guarantees depend on domain regularity and the error-norm range; coverage of every finite q ≥ 2 requires positive principal curvatures in the smooth-body results.",
       "hashtags": [
-        "#ReLU",
+        "#ReLUNetworks",
         "#ApproximationTheory",
         "#ConvexGeometry",
-        "#NeuralNetworkCompression",
+        "#NetworkCompression",
         "#ScientificMachineLearning"
       ],
       "model": "gpt-6.1-sol",
@@ -973,7 +973,7 @@
       "paper_title": "Boundary Geometry Determines Optimal Shallow ReLU Approximation under Weighted Coefficient Constraints",
       "paper_date": "2026-10-27",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-10-28T18:39:46",
+      "generated_at": "2026-10-29T18:48:11",
       "generator": "openai"
     }
   },
@@ -1004,20 +1004,20 @@
         "url": "https://arxiv.org/pdf/2610.36557v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "QESChunker unifies overlapping and non-overlapping RAG chunking as supervised, budget-aware optimization of question–evidence utility.",
-      "engineering_relevance": "It builds document-specific static chunk indices from annotated or LLM-generated question–evidence pairs without access to held-out test queries.",
+      "key_insight": "QESChunker unifies overlapping and non-overlapping RAG chunking under a question–evidence utility objective for supervised, budget-aware index construction.",
+      "engineering_relevance": "It offers a principled alternative to heuristic chunking for improving complete-evidence retrieval with a fixed retriever.",
       "method": [
-        "Optimize a unified question–evidence utility objective to select chunks.",
-        "Without overlap, exploit chunk-wise decomposition for exact polynomial-time dynamic programming.",
-        "With overlap, use monotone submodularity for a greedy (1−1/√e)-approximation to the NP-hard problem."
+        "Build document-specific static indices using human-annotated or LLM-generated question–evidence pairs, without held-out test queries.",
+        "Optimize non-overlapping chunks exactly in polynomial time using dynamic programming.",
+        "Optimize overlapping chunks with a greedy algorithm offering a (1−1/√e) approximation guarantee for the monotone submodular objective."
       ],
-      "evidence_signal": "Across two self-constructed and three public datasets, both variants improve complete-evidence recall over existing chunkers in nearly all evaluated settings with matched overlap regimes and a fixed hybrid retriever.",
-      "watch_item": "Deployment requires document-specific question–evidence supervision; its creation cost and quality should be assessed.",
+      "evidence_signal": "Across two self-constructed and three public datasets, both variants outperform existing chunkers in complete-evidence recall in nearly all evaluated settings under matched overlap regimes and a fixed hybrid retriever.",
+      "watch_item": "Deployment requires question–evidence supervision; annotation cost and LLM-generated evidence quality warrant validation.",
       "hashtags": [
         "#RAG",
-        "#Chunking",
+        "#DocumentChunking",
         "#CombinatorialOptimization",
         "#SubmodularOptimization",
         "#EvidenceRetrieval"
@@ -1028,7 +1028,7 @@
       "paper_title": "QESChunker: A Single Objective Unifies Overlapping and Non-Overlapping Chunking for RAG",
       "paper_date": "2026-10-27",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-10-28T18:39:48",
+      "generated_at": "2026-10-29T18:48:13",
       "generator": "openai"
     }
   },
@@ -1057,17 +1057,17 @@
         "url": "https://arxiv.org/pdf/2610.36560v1"
       }
     ],
-    "score": 64,
+    "score": 59,
     "infographic": {
-      "key_insight": "Explicit sufficient conditions guarantee a unique, globally exponentially attractive periodic solution in impulsive and nonimpulsive Hopfield-type networks with advanced, retarded, or mixed piecewise constant arguments.",
-      "engineering_relevance": "The conditions let engineers assess periodic operation and convergence directly from network parameters without first computing the periodic solution.",
+      "key_insight": "Explicit, parameter-checkable sufficient conditions guarantee a unique periodic solution and global exponential attraction in impulsive and nonimpulsive Hopfield-type networks with generalized piecewise constant arguments.",
+      "engineering_relevance": "The results support analysis of periodic operating regimes in neural dynamical systems with discrete jumps and advanced, retarded, or mixed-type arguments.",
       "method": [
         "Represent periodic solutions using a Green function and apply a fixed-point argument.",
-        "Use a Gronwall-type estimate and period averages to establish global exponential attractivity.",
-        "Generalize argument sampling within each interval and correct earlier estimates."
+        "Combine a Gronwall-type estimate with period averages to establish global exponential attraction.",
+        "Extend earlier results to generalized argument placements and correct prior estimates."
       ],
-      "evidence_signal": "The abstract reports analytical guarantees and illustrative examples for different argument types, but no empirical benchmarks.",
-      "watch_item": "The conditions are sufficient, not necessary; advanced arguments also require care when interpreting the model as a causal real-time system.",
+      "evidence_signal": "The abstract reports mathematical guarantees and illustrative examples of different argument types, rather than empirical benchmark evaluations.",
+      "watch_item": "The guarantees are sufficient, not necessary, and advanced arguments may require special care in numerical simulation.",
       "hashtags": [
         "#HopfieldNetworks",
         "#DynamicalSystems",
@@ -1081,7 +1081,7 @@
       "paper_title": "Periodic Solutions and Exponential Attractivity in Hopfield-Type Neural Networks with Generalized Piecewise Constant Arguments: Impulsive and Nonimpulsive Cases",
       "paper_date": "2026-10-27",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-10-28T18:39:50",
+      "generated_at": "2026-10-29T18:48:15",
       "generator": "openai"
     }
   }

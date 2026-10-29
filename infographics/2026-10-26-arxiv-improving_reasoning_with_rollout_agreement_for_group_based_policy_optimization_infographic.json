@@ -1,19 +1,19 @@
 {
-  "key_insight": "Correct answers can hide faulty reasoning; rewarding agreement among correct rollouts improved mathematical accuracy and reduced spurious reasoning in the reported evaluations.",
-  "engineering_relevance": "RoAR adds a reasoning-quality signal to GRPO using existing on-policy rollouts, without extra sampling, human-written rationales, or a separately trained process evaluator.",
+  "key_insight": "Agreement among correct-answer rollouts can help reward more reliable reasoning, since a correct final answer can still hide spurious steps.",
+  "engineering_relevance": "RoAR adds a reasoning-quality signal to GRPO using existing rollout groups, without extra sampling, human-written rationales, or a separately trained process evaluator.",
   "method": [
     "Blindly compare high- and low-agreement correct-answer traces for the same problem.",
-    "Compute reasoning-level agreement within existing rollout groups.",
-    "Add agreement-based rewards to verified-correct rollouts during GRPO training."
+    "Compute reasoning-level agreement within existing on-policy rollout groups.",
+    "Add agreement-based rewards for verified-correct rollouts during GRPO training."
   ],
-  "evidence_signal": "Across five math benchmarks, the 1.5B GRPO-RoAR model trained on 7K examples achieved 55.5% mean zero-shot pass@1 (+6.0 percentage points over GRPO); a separate 100-problem blind audit found 18% spurious reasoning versus GRPO’s 32%.",
-  "watch_item": "Agreement does not guarantee valid reasoning, and the audit covers only problems answered correctly by all four compared models.",
+  "evidence_signal": "Across five math benchmarks, the 1.5B RoAR model achieved 55.5% mean zero-shot pass@1 after training on 7K examples, beating GRPO by 6.0 percentage points; a separate 100-problem blind audit found 18% spurious reasoning versus GRPO's 32%.",
+  "watch_item": "Agreement does not guarantee validity, and the reasoning audit was limited to problems answered correctly by all four compared models.",
   "hashtags": [
     "#MathematicalReasoning",
     "#ReinforcementLearning",
     "#RLVR",
     "#GRPO",
-    "#RoAR"
+    "#ReasoningReliability"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "Improving Reasoning with Rollout Agreement for Group-Based Policy Optimization",
   "paper_date": "2026-10-26",
   "paper_category": "Number Theory and Algebra",
-  "generated_at": "2026-10-28T18:39:12",
+  "generated_at": "2026-10-29T18:47:38",
   "generator": "openai"
 }
