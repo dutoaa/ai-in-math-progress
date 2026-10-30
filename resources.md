@@ -1,9 +1,33 @@
 # AI math Progress Public Resources
 
-Generated: 2026-10-29
+Generated: 2026-10-30
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. GTFormer: A Syntax-Free Graph Network Alternative to Transformers for 8192$\times$ Length Extrapolation in Linear Time
+## 1. Rennala NSGD: Asynchronous Stochastic Optimization Beyond Euclidean Geometry
+
+- Date: 2026-10-28
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2610.38773v1
+- PDF: https://arxiv.org/pdf/2610.38773v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-28-arxiv-rennala_nsgd_asynchronous_stochastic_optimization_beyond_euclidean_geometry_infographic.json
+
+## 2. Ramanujan Challenge Results: AI-Assisted Evaluation Pipeline for Multi-Format Proofs
+
+- Date: 2026-10-29
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2610.40551v1
+- PDF: https://arxiv.org/pdf/2610.40551v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-ramanujan_challenge_results_ai_assisted_evaluation_pipeline_for_multi_format_proofs_infographic.json
+
+## 3. An Adaptive Transferable Neural Network for Partial Differential Equations with Anisotropic or Sharp Solutions
+
+- Date: 2026-10-29
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2610.40201v1
+- PDF: https://arxiv.org/pdf/2610.40201v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-an_adaptive_transferable_neural_network_for_partial_differential_equations_with_anisotropi_infographic.json
+
+## 4. GTFormer: A Syntax-Free Graph Network Alternative to Transformers for 8192$\times$ Length Extrapolation in Linear Time
 
 - Date: 2026-10-27
 - Category: Theorem Proving
@@ -11,154 +35,130 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.37524v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-gtformer_a_syntax_free_graph_network_alternative_to_transformers_for_8192_times_length_ext_infographic.json
 
-## 2. NextEval: An Agent-Based Solver and Benchmark for Derivative-Free Optimization
+## 5. FARMS: A Verifiable Foundation for Automated Computational Science
 
-- Date: 2026-10-27
+- Date: 2026-10-29
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2610.40560v1
+- PDF: https://arxiv.org/pdf/2610.40560v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-farms_a_verifiable_foundation_for_automated_computational_science_infographic.json
+
+## 6. DecompGym: Benchmarking LLM Agents on Designing Decomposition Algorithms
+
+- Date: 2026-10-28
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2610.38175v1
+- PDF: https://arxiv.org/pdf/2610.38175v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-28-arxiv-decompgym_benchmarking_llm_agents_on_designing_decomposition_algorithms_infographic.json
+
+## 7. LLM-Assisted Optimization for Simulation-Based Redesign
+
+- Date: 2026-10-29
 - Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.36553v1
-- PDF: https://arxiv.org/pdf/2610.36553v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-nexteval_an_agent_based_solver_and_benchmark_for_derivative_free_optimization_infographic.json
+- arXiv: https://arxiv.org/abs/2610.39275v1
+- PDF: https://arxiv.org/pdf/2610.39275v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-llm_assisted_optimization_for_simulation_based_redesign_infographic.json
 
-## 3. Improving Reasoning with Rollout Agreement for Group-Based Policy Optimization
+## 8. Exploring AI Peer in Collaborative Mathematics Learning
 
-- Date: 2026-10-26
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.34951v1
-- PDF: https://arxiv.org/pdf/2610.34951v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-improving_reasoning_with_rollout_agreement_for_group_based_policy_optimization_infographic.json
-
-## 4. Guided-RLVR: Guided Exploration in Reinforcement Learning with Verifiable Rewards
-
-- Date: 2026-10-27
+- Date: 2026-10-28
 - Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2610.37041v1
-- PDF: https://arxiv.org/pdf/2610.37041v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-guided_rlvr_guided_exploration_in_reinforcement_learning_with_verifiable_rewards_infographic.json
+- arXiv: https://arxiv.org/abs/2610.38990v1
+- PDF: https://arxiv.org/pdf/2610.38990v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-28-arxiv-exploring_ai_peer_in_collaborative_mathematics_learning_infographic.json
 
-## 5. Log-Derivative Trick for Parametric Markov Chains
+## 9. H$^2$R: Hierarchical Hint-Based Reward for Mathematical Reasoning via Reinforcement Learning
+
+- Date: 2026-10-29
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.39934v1
+- PDF: https://arxiv.org/pdf/2610.39934v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-h_2_r_hierarchical_hint_based_reward_for_mathematical_reasoning_via_reinforcement_learning_infographic.json
+
+## 10. OpenFrontiers: A Collection of Open Research Problems and a Benchmark for Scientific Rediscovery
 
 - Date: 2026-10-27
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2610.36655v1
-- PDF: https://arxiv.org/pdf/2610.36655v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-log_derivative_trick_for_parametric_markov_chains_infographic.json
-
-## 6. ADACT: PDE-Constrained Thermal Hardware/Software Co-Design Adjoint-Driven Optimal Control via Finite Difference Discretization
-
-- Date: 2026-10-26
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.35569v1
-- PDF: https://arxiv.org/pdf/2610.35569v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-adact_pde_constrained_thermal_hardware_software_co_design_adjoint_driven_optimal_control_v_infographic.json
-
-## 7. Sparse Sum-of-Squares Layers for Certified Learning
-
-- Date: 2026-10-25
 - Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2610.34590v1
-- PDF: https://arxiv.org/pdf/2610.34590v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-25-arxiv-sparse_sum_of_squares_layers_for_certified_learning_infographic.json
+- arXiv: https://arxiv.org/abs/2610.37739v1
+- PDF: https://arxiv.org/pdf/2610.37739v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-openfrontiers_a_collection_of_open_research_problems_and_a_benchmark_for_scientific_redisc_infographic.json
 
-## 8. Axiomatic Learning and Probabilistic Structures with first applications to variants of Arithmetic Machine Learning and beyond
+## 11. Neural Network Approximation and Structural Complexity of Semilinear PDEs with Lower Bounds
 
-- Date: 2026-10-27
+- Date: 2026-10-29
 - Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2610.36601v1
-- PDF: https://arxiv.org/pdf/2610.36601v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-axiomatic_learning_and_probabilistic_structures_with_first_applications_to_variants_of_ari_infographic.json
+- arXiv: https://arxiv.org/abs/2610.40384v1
+- PDF: https://arxiv.org/pdf/2610.40384v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-neural_network_approximation_and_structural_complexity_of_semilinear_pdes_with_lower_bound_infographic.json
 
-## 9. Balanced Active Subspaces for Optimal Control via Trajectory Optimization
+## 12. Data-driven Random-feature Approximation of Koopman Generators of Nonlinear Continuous-time Systems
 
-- Date: 2026-10-26
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2610.36342v1
-- PDF: https://arxiv.org/pdf/2610.36342v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-balanced_active_subspaces_for_optimal_control_via_trajectory_optimization_infographic.json
-
-## 10. The Geometry of Manifold Learning: Singular foliations via Deep Learning models
-
-- Date: 2026-10-27
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2610.37370v1
-- PDF: https://arxiv.org/pdf/2610.37370v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-the_geometry_of_manifold_learning_singular_foliations_via_deep_learning_models_infographic.json
-
-## 11. Wasserstein approximation of measures via orthogonal frames: statistical and computational complexities
-
-- Date: 2026-10-27
+- Date: 2026-10-29
 - Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.36581v1
-- PDF: https://arxiv.org/pdf/2610.36581v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-wasserstein_approximation_of_measures_via_orthogonal_frames_statistical_and_computational_infographic.json
+- arXiv: https://arxiv.org/abs/2610.39897v1
+- PDF: https://arxiv.org/pdf/2610.39897v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-data_driven_random_feature_approximation_of_koopman_generators_of_nonlinear_continuous_tim_infographic.json
 
-## 12. An Algebra of Transformers
+## 13. Deciding two-variable logic with global and local Presburger quantification
 
-- Date: 2026-10-27
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.36795v1
-- PDF: https://arxiv.org/pdf/2610.36795v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-an_algebra_of_transformers_infographic.json
-
-## 13. Intrinsic Gradient Barriers in Pushforward Deep Generative Models
-
-- Date: 2026-10-25
-- Category: AI math
-- arXiv: https://arxiv.org/abs/2610.34484v1
-- PDF: https://arxiv.org/pdf/2610.34484v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-25-arxiv-intrinsic_gradient_barriers_in_pushforward_deep_generative_models_infographic.json
-
-## 14. Constraint Learning by Optimizing over Trained Neural Networks: A Pragmatic Tutorial
-
-- Date: 2026-10-26
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.35505v1
-- PDF: https://arxiv.org/pdf/2610.35505v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-constraint_learning_by_optimizing_over_trained_neural_networks_a_pragmatic_tutorial_infographic.json
-
-## 15. Understanding Practical Optimization in Machine Learning
-
-- Date: 2026-10-26
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.35209v1
-- PDF: https://arxiv.org/pdf/2610.35209v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-understanding_practical_optimization_in_machine_learning_infographic.json
-
-## 16. Lie Symmetry-Guided Adaptive Sampling for Physics-Informed Neural Networks
-
-- Date: 2026-10-25
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.34345v1
-- PDF: https://arxiv.org/pdf/2610.34345v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-25-arxiv-lie_symmetry_guided_adaptive_sampling_for_physics_informed_neural_networks_infographic.json
-
-## 17. Automatic Certified Differentiation in Lean
-
-- Date: 2026-10-26
+- Date: 2026-10-29
 - Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2610.36396v1
-- PDF: https://arxiv.org/pdf/2610.36396v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-26-arxiv-automatic_certified_differentiation_in_lean_infographic.json
+- arXiv: https://arxiv.org/abs/2610.39108v1
+- PDF: https://arxiv.org/pdf/2610.39108v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-deciding_two_variable_logic_with_global_and_local_presburger_quantification_infographic.json
 
-## 18. Boundary Geometry Determines Optimal Shallow ReLU Approximation under Weighted Coefficient Constraints
+## 14. Conic-Lifting for Learning-rate-free Convex Optimization
 
-- Date: 2026-10-27
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2610.36854v1
-- PDF: https://arxiv.org/pdf/2610.36854v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-boundary_geometry_determines_optimal_shallow_relu_approximation_under_weighted_coefficient_infographic.json
-
-## 19. QESChunker: A Single Objective Unifies Overlapping and Non-Overlapping Chunking for RAG
-
-- Date: 2026-10-27
+- Date: 2026-10-29
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2610.36557v1
-- PDF: https://arxiv.org/pdf/2610.36557v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-qeschunker_a_single_objective_unifies_overlapping_and_non_overlapping_chunking_for_rag_infographic.json
+- arXiv: https://arxiv.org/abs/2610.39531v1
+- PDF: https://arxiv.org/pdf/2610.39531v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-conic_lifting_for_learning_rate_free_convex_optimization_infographic.json
 
-## 20. Periodic Solutions and Exponential Attractivity in Hopfield-Type Neural Networks with Generalized Piecewise Constant Arguments: Impulsive and Nonimpulsive Cases
+## 15. Data-driven Regularization for Inverse Problems
 
-- Date: 2026-10-27
+- Date: 2026-10-29
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2610.40048v1
+- PDF: https://arxiv.org/pdf/2610.40048v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-data_driven_regularization_for_inverse_problems_infographic.json
+
+## 16. Optimization-based lane-changing trajectory planning in mixed traffic with embedded input convex neural networks
+
+- Date: 2026-10-28
 - Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2610.36560v1
-- PDF: https://arxiv.org/pdf/2610.36560v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-periodic_solutions_and_exponential_attractivity_in_hopfield_type_neural_networks_with_gene_infographic.json
+- arXiv: https://arxiv.org/abs/2610.38939v1
+- PDF: https://arxiv.org/pdf/2610.38939v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-28-arxiv-optimization_based_lane_changing_trajectory_planning_in_mixed_traffic_with_embedded_input_infographic.json
+
+## 17. Distributionally robust chance-constrained standard quadratic optimization with Wasserstein ambiguity
+
+- Date: 2026-10-29
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2610.39823v1
+- PDF: https://arxiv.org/pdf/2610.39823v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-distributionally_robust_chance_constrained_standard_quadratic_optimization_with_wasserstei_infographic.json
+
+## 18. Algebraic World Model: From Exploration to Proofs
+
+- Date: 2026-10-29
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2610.40503v1
+- PDF: https://arxiv.org/pdf/2610.40503v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-algebraic_world_model_from_exploration_to_proofs_infographic.json
+
+## 19. RetroChessBench: A Benchmark for Reconstructing and Proving Chess Histories
+
+- Date: 2026-10-29
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2610.39341v1
+- PDF: https://arxiv.org/pdf/2610.39341v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-retrochessbench_a_benchmark_for_reconstructing_and_proving_chess_histories_infographic.json
+
+## 20. A Physics-Informed Neural Network for Geodesic Computation and Visualization of Geodesic Spheres on Riemannian Manifolds
+
+- Date: 2026-10-28
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2610.38260v1
+- PDF: https://arxiv.org/pdf/2610.38260v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-28-arxiv-a_physics_informed_neural_network_for_geodesic_computation_and_visualization_of_geodesic_s_infographic.json
