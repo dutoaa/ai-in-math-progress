@@ -1,23 +1,23 @@
 # AI math Progress Public Resources
 
-Generated: 2026-10-30
+Generated: 2026-10-31
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. Rennala NSGD: Asynchronous Stochastic Optimization Beyond Euclidean Geometry
-
-- Date: 2026-10-28
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2610.38773v1
-- PDF: https://arxiv.org/pdf/2610.38773v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-28-arxiv-rennala_nsgd_asynchronous_stochastic_optimization_beyond_euclidean_geometry_infographic.json
-
-## 2. Ramanujan Challenge Results: AI-Assisted Evaluation Pipeline for Multi-Format Proofs
+## 1. Ramanujan Challenge Results: AI-Assisted Evaluation Pipeline for Multi-Format Proofs
 
 - Date: 2026-10-29
 - Category: Theorem Proving
 - arXiv: https://arxiv.org/abs/2610.40551v1
 - PDF: https://arxiv.org/pdf/2610.40551v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-ramanujan_challenge_results_ai_assisted_evaluation_pipeline_for_multi_format_proofs_infographic.json
+
+## 2. Rennala NSGD: Asynchronous Stochastic Optimization Beyond Euclidean Geometry
+
+- Date: 2026-10-28
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2610.38773v1
+- PDF: https://arxiv.org/pdf/2610.38773v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-28-arxiv-rennala_nsgd_asynchronous_stochastic_optimization_beyond_euclidean_geometry_infographic.json
 
 ## 3. An Adaptive Transferable Neural Network for Partial Differential Equations with Anisotropic or Sharp Solutions
 
@@ -27,21 +27,21 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.40201v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-an_adaptive_transferable_neural_network_for_partial_differential_equations_with_anisotropi_infographic.json
 
-## 4. GTFormer: A Syntax-Free Graph Network Alternative to Transformers for 8192$\times$ Length Extrapolation in Linear Time
-
-- Date: 2026-10-27
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2610.37524v1
-- PDF: https://arxiv.org/pdf/2610.37524v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-gtformer_a_syntax_free_graph_network_alternative_to_transformers_for_8192_times_length_ext_infographic.json
-
-## 5. FARMS: A Verifiable Foundation for Automated Computational Science
+## 4. FARMS: A Verifiable Foundation for Automated Computational Science
 
 - Date: 2026-10-29
 - Category: Theorem Proving
 - arXiv: https://arxiv.org/abs/2610.40560v1
 - PDF: https://arxiv.org/pdf/2610.40560v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-farms_a_verifiable_foundation_for_automated_computational_science_infographic.json
+
+## 5. GTFormer: A Syntax-Free Graph Network Alternative to Transformers for 8192$\times$ Length Extrapolation in Linear Time
+
+- Date: 2026-10-27
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2610.37524v1
+- PDF: https://arxiv.org/pdf/2610.37524v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-27-arxiv-gtformer_a_syntax_free_graph_network_alternative_to_transformers_for_8192_times_length_ext_infographic.json
 
 ## 6. DecompGym: Benchmarking LLM Agents on Designing Decomposition Algorithms
 
@@ -131,7 +131,15 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.38939v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-28-arxiv-optimization_based_lane_changing_trajectory_planning_in_mixed_traffic_with_embedded_input_infographic.json
 
-## 17. Distributionally robust chance-constrained standard quadratic optimization with Wasserstein ambiguity
+## 17. NEOPIC: A Neural Operator Framework for Particle-based Kinetic Plasma Simulations
+
+- Date: 2026-10-29
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2610.40528v1
+- PDF: https://arxiv.org/pdf/2610.40528v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-neopic_a_neural_operator_framework_for_particle_based_kinetic_plasma_simulations_infographic.json
+
+## 18. Distributionally robust chance-constrained standard quadratic optimization with Wasserstein ambiguity
 
 - Date: 2026-10-29
 - Category: Optimization and PDEs
@@ -139,7 +147,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.39823v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-distributionally_robust_chance_constrained_standard_quadratic_optimization_with_wasserstei_infographic.json
 
-## 18. Algebraic World Model: From Exploration to Proofs
+## 19. Algebraic World Model: From Exploration to Proofs
 
 - Date: 2026-10-29
 - Category: Theorem Proving
@@ -147,18 +155,10 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2610.40503v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-algebraic_world_model_from_exploration_to_proofs_infographic.json
 
-## 19. RetroChessBench: A Benchmark for Reconstructing and Proving Chess Histories
+## 20. RetroChessBench: A Benchmark for Reconstructing and Proving Chess Histories
 
 - Date: 2026-10-29
 - Category: Mathematical Reasoning
 - arXiv: https://arxiv.org/abs/2610.39341v1
 - PDF: https://arxiv.org/pdf/2610.39341v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-29-arxiv-retrochessbench_a_benchmark_for_reconstructing_and_proving_chess_histories_infographic.json
-
-## 20. A Physics-Informed Neural Network for Geodesic Computation and Visualization of Geodesic Spheres on Riemannian Manifolds
-
-- Date: 2026-10-28
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2610.38260v1
-- PDF: https://arxiv.org/pdf/2610.38260v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-10-28-arxiv-a_physics_informed_neural_network_for_geodesic_computation_and_visualization_of_geodesic_s_infographic.json
