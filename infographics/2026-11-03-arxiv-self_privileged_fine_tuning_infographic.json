@@ -1,18 +1,18 @@
 {
-  "key_insight": "Self-Privileged Fine-Tuning (SPFT) uses a frozen initial model with access to privileged information, such as ground-truth answers, to emphasize tokens informative about the correct outcome.",
-  "engineering_relevance": "SPFT offers a token-weighted fine-tuning approach for mathematical reasoning and code generation, with a stable weighting prior whose quality remains critical.",
+  "key_insight": "Self-Privileged Fine-Tuning (SPFT) weights training tokens using a frozen initial model given privileged information, emphasizing tokens that are more predictive of the correct outcome.",
+  "engineering_relevance": "SPFT offers a token-weighted supervised fine-tuning approach for improving mathematical reasoning and code generation.",
   "method": [
-    "Analyze the target distributions induced by dynamic and static token weighting.",
-    "Use a frozen initial model conditioned on privileged information to provide token-level training weights.",
-    "Interpret the weights through a Bayesian decomposition that favors outcome-predictive tokens."
+    "Analyze induced targets: dynamic weighting heavily sharpens distributions, while static weighting combines the data distribution with a frozen prior.",
+    "Use a frozen initial model conditioned on privileged information, such as ground-truth answers, to generate token-level weights.",
+    "Apply these weights during fine-tuning; a Bayesian decomposition links the weighting to tokens' predictive value for the outcome."
   ],
-  "evidence_signal": "The abstract reports improvements over standard SFT and other baselines in mathematical reasoning and code generation, but provides no benchmark names or numerical gains.",
-  "watch_item": "Effectiveness depends on the privileged prior's quality, and generating weights requires inference with a frozen model.",
+  "evidence_signal": "The abstract reports improvements over standard SFT and other baselines across the main mathematical reasoning and code generation settings, without specifying benchmarks or effect sizes.",
+  "watch_item": "Effectiveness depends on the quality of the privileged prior, and implementation requires generating token-level weights with a frozen model.",
   "hashtags": [
     "#SelfPrivilegedFineTuning",
     "#MathematicalReasoning",
+    "#SupervisedFineTuning",
     "#TokenWeighting",
-    "#LLMPostTraining",
     "#CodeGeneration"
   ],
   "model": "gpt-6.1-sol",
@@ -21,6 +21,6 @@
   "paper_title": "Self-Privileged Fine-Tuning",
   "paper_date": "2026-11-03",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-11-05T20:28:12",
+  "generated_at": "2026-11-06T19:50:59",
   "generator": "openai"
 }
