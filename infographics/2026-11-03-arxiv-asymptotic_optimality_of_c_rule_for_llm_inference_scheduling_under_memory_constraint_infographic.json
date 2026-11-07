@@ -1,19 +1,19 @@
 {
-  "key_insight": "A cμ priority rule that accounts for compute, memory bandwidth, and KV-cache capacity is optimal in the fluid model and asymptotically achievable in the finite system.",
-  "engineering_relevance": "Memory-aware request prioritization can reduce LLM inference latency while preserving high throughput under limited GPU KV-cache capacity.",
+  "key_insight": "A cμ priority rule using effective service rates that account for compute, memory bandwidth, and KV-cache capacity minimizes cumulative holding cost in a fluid model of LLM inference.",
+  "engineering_relevance": "Memory-aware request prioritization can reduce LLM serving latency while preserving high throughput under constrained GPU memory.",
   "method": [
-    "Reduce heterogeneous prefill and decode workloads to a multiclass fluid queue with effective service rates.",
-    "Prove cμ optimality for cumulative holding cost and, for finite workloads, completion time and full-run output-token throughput.",
-    "Construct a feasible finite-system policy whose scaled dynamics converge to the optimal fluid policy."
+    "Model stochastic, heterogeneous requests as a multiclass queue with prefill, decode, and finite KV-cache capacity.",
+    "Derive effective service rates and prove fluid-model optimality of the cμ rule.",
+    "Construct a feasible finite-system policy and prove convergence of its scaled dynamics to the optimal fluid policy."
   ],
-  "evidence_signal": "Experiments on a real LLM serving engine using an NVIDIA H800 report substantially lower average latency while maintaining high throughput relative to existing scheduling policies.",
-  "watch_item": "Optimality is fluid-model and asymptotic; finite-system performance depends on implementing priorities under actual compute, bandwidth, and KV-cache constraints.",
+  "evidence_signal": "Experiments on a real LLM serving engine using an NVIDIA H800 report substantially lower average latency with high throughput versus existing scheduling policies; the abstract gives no numerical results.",
+  "watch_item": "Optimality is established in the fluid limit, so finite-system performance and effective-rate estimation require validation for each deployment.",
   "hashtags": [
     "#LLMInference",
     "#Scheduling",
     "#QueueingTheory",
     "#KVCache",
-    "#AsymptoticOptimality"
+    "#GPUOptimization"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "Asymptotic Optimality of $cμ$-Rule for LLM Inference Scheduling under Memory Constraint",
   "paper_date": "2026-11-03",
   "paper_category": "Mathematical Reasoning",
-  "generated_at": "2026-11-06T19:51:12",
+  "generated_at": "2026-11-07T17:57:04",
   "generator": "openai"
 }
