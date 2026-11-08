@@ -1,13 +1,13 @@
 {
-  "key_insight": "LoRA factor gradients cannot detect task-relevant directions normal to the current low-rank manifold, while the normal spectrum reveals the local value of expanding rank.",
-  "engineering_relevance": "Geometry-aware rank expansion can improve fine-tuning accuracy while using fewer trainable parameters than capacity-allocation approaches.",
+  "key_insight": "Standard LoRA factor gradients cannot reveal task-relevant directions normal to the low-rank manifold, so optimizing current capacity alone cannot determine when more rank is needed.",
+  "engineering_relevance": "Geometry-guided rank expansion can improve fine-tuning performance while reducing trainable parameter budgets.",
   "method": [
     "Optimize existing degrees of freedom using tangent-space information.",
-    "Estimate the normal spectrum matrix-free and expand along leading singular directions.",
-    "Initialize new capacity using task-induced geometry."
+    "Estimate the normal spectrum matrix-free to identify valuable rank expansions.",
+    "Add leading normal singular directions with task-induced geometric initialization."
   ],
-  "evidence_signal": "The abstract reports best average performance across evaluated language and vision settings; on LLaMA3-8B, average commonsense score rises from 86.61 to 88.45 while trainable parameters fall from 42.0M to 14.4M.",
-  "watch_item": "Rank-expansion optimality assumes a local quadratic model; the abstract does not quantify normal-spectrum estimation overhead.",
+  "evidence_signal": "Across evaluated language and vision settings, GEAR reports the best average performance; on LLaMA3-8B, average commonsense score rises from 86.61 to 88.45 while trainable parameters fall from 42.0M to 14.4M.",
+  "watch_item": "Optimal rank expansion is justified under a local quadratic model; the abstract does not quantify the runtime overhead of normal-spectrum estimation.",
   "hashtags": [
     "#LoRA",
     "#ParameterEfficientFineTuning",
@@ -21,6 +21,6 @@
   "paper_title": "From What Is Used to What Is Missing: Rethinking Dynamic Rank in LoRA",
   "paper_date": "2026-11-05",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-11-07T17:57:13",
+  "generated_at": "2026-11-08T18:13:48",
   "generator": "openai"
 }

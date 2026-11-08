@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-11-07
+Generated: 2026-11-08
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization
@@ -131,15 +131,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.08468v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-05-arxiv-an_accelerated_proximal_gradient_method_for_bures_wasserstein_space_infographic.json
 
-## 17. De Rham cohomological architectures for PINNs and PDEs with topological holes
-
-- Date: 2026-11-03
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2611.05276v1
-- PDF: https://arxiv.org/pdf/2611.05276v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-03-arxiv-de_rham_cohomological_architectures_for_pinns_and_pdes_with_topological_holes_infographic.json
-
-## 18. Randomized and Oracle-Based Feasible Directions Methods for Nonsmooth Nonconvex Constrained Optimization
+## 17. Randomized and Oracle-Based Feasible Directions Methods for Nonsmooth Nonconvex Constrained Optimization
 
 - Date: 2026-11-05
 - Category: Optimization and PDEs
@@ -147,7 +139,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.07691v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-05-arxiv-randomized_and_oracle_based_feasible_directions_methods_for_nonsmooth_nonconvex_constraine_infographic.json
 
-## 19. From What Is Used to What Is Missing: Rethinking Dynamic Rank in LoRA
+## 18. From What Is Used to What Is Missing: Rethinking Dynamic Rank in LoRA
 
 - Date: 2026-11-05
 - Category: Geometry and Topology
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.07349v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-05-arxiv-from_what_is_used_to_what_is_missing_rethinking_dynamic_rank_in_lora_infographic.json
 
-## 20. Adaptive Multi Mode: Budget-Aware Routing of Optimizers By Online Landscape Probes
+## 19. Adaptive Multi Mode: Budget-Aware Routing of Optimizers By Online Landscape Probes
 
 - Date: 2026-11-04
 - Category: Optimization and PDEs
 - arXiv: https://arxiv.org/abs/2611.06879v1
 - PDF: https://arxiv.org/pdf/2611.06879v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-04-arxiv-adaptive_multi_mode_budget_aware_routing_of_optimizers_by_online_landscape_probes_infographic.json
+
+## 20. ToroFit: Fitting Wedge Sums of Tori to High-Dimensional Data
+
+- Date: 2026-11-04
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2611.06990v1
+- PDF: https://arxiv.org/pdf/2611.06990v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-04-arxiv-torofit_fitting_wedge_sums_of_tori_to_high_dimensional_data_infographic.json
