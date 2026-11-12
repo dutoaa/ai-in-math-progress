@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-11-11
+Generated: 2026-11-12
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Multifidelity Operator Inference for Non-intrusive Model Reduction under Data Scarcity

@@ -26,21 +26,21 @@
         "url": "https://arxiv.org/pdf/2611.13624v1"
       }
     ],
-    "score": 88,
+    "score": 83,
     "infographic": {
-      "key_insight": "Multifidelity Operator Inference combines scarce high-fidelity data with abundant coarse-model data to reduce variance in learned reduced-order models.",
-      "engineering_relevance": "More accurate, inexpensive PDE surrogates can support repeated simulations for uncertainty quantification and engineering design under limited training budgets.",
+      "key_insight": "Multifidelity Operator Inference combines scarce high-fidelity snapshots with abundant coarse-grid data to reduce surrogate-model variance and improve PDE predictions.",
+      "engineering_relevance": "More accurate surrogates under limited simulation budgets can make repeated evaluations for uncertainty quantification and engineering design optimization more practical.",
       "method": [
-        "Learn reduced operators non-intrusively from state snapshots and corresponding time derivatives.",
-        "Supplement high-fidelity snapshots with data from coarser discretizations of the same problem.",
-        "Estimate reduced operators using multifidelity linear regression."
+        "Collect state and time-derivative data from simulations at multiple discretization fidelities.",
+        "Use multifidelity linear regression to estimate reduced operators.",
+        "Build a non-intrusive reduced model without accessing the underlying simulation code."
       ],
       "evidence_signal": "Numerical experiments on model PDE problems show more accurate solution-field predictions than high-fidelity-only Operator Inference at the same computational budget.",
-      "watch_item": "Results are demonstrated on model PDEs; effectiveness for complex engineering systems and different coarse discretizations remains to be established.",
+      "watch_item": "The abstract reports model-PDE tests but does not establish how performance scales to complex engineering systems or large fidelity gaps.",
       "hashtags": [
-        "#OperatorInference",
         "#MultifidelityModeling",
-        "#ReducedOrderModeling",
+        "#OperatorInference",
+        "#ModelReduction",
         "#ScientificMachineLearning",
         "#PDEs"
       ],
@@ -50,7 +50,7 @@
       "paper_title": "Multifidelity Operator Inference for Non-intrusive Model Reduction under Data Scarcity",
       "paper_date": "2026-11-10",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-11-11T19:59:51",
+      "generated_at": "2026-11-12T20:38:52",
       "generator": "openai"
     }
   },
@@ -80,17 +80,17 @@
         "url": "https://arxiv.org/pdf/2611.13231v1"
       }
     ],
-    "score": 85,
+    "score": 80,
     "infographic": {
-      "key_insight": "Overlapping domain decomposition in FBPINNs creates block-sparse derivative structure that makes Gauss–Newton optimization more scalable.",
-      "engineering_relevance": "Exploiting this sparsity can reduce derivative computation and memory costs when training neural PDE solvers for multiscale engineering problems.",
+      "key_insight": "Overlapping domain decomposition makes FBPINN derivatives block-sparse, enabling efficient Gauss–Newton optimization through sparse automatic differentiation.",
+      "engineering_relevance": "The approach makes second-order training more practical for multiscale PDE models with many parameters and collocation points.",
       "method": [
-        "Identify block sparsity in the residual Jacobian and Gauss–Newton matrix from localized subnetworks.",
-        "Use graph-colored sparse automatic differentiation to compress derivative evaluations while retaining structurally nonzero entries.",
-        "Assemble block-sparse Gauss–Newton systems for sparse direct or preconditioned iterative solution."
+        "Identify block sparsity induced by localized subnetworks.",
+        "Use graph coloring to compress derivative evaluations while preserving structurally nonzero entries.",
+        "Assemble block-sparse Gauss–Newton systems for sparse direct or preconditioned iterative solvers."
       ],
-      "evidence_signal": "Multiscale PDE experiments report high accuracy and substantially faster optimization than first-order baselines, but the abstract provides no numerical speedups or problem sizes.",
-      "watch_item": "Practical scalability depends on subdomain overlap, coloring overhead, and sparse linear-solver performance.",
+      "evidence_signal": "The abstract reports high accuracy and substantial optimization speedups over first-order baselines on multiscale PDEs, but provides no numerical metrics.",
+      "watch_item": "Scalability depends on the overlap-induced sparsity pattern and the cost of coloring, sparse assembly, and linear solves.",
       "hashtags": [
         "#PhysicsInformedNeuralNetworks",
         "#GaussNewton",
@@ -104,7 +104,7 @@
       "paper_title": "Block-Sparse Gauss-Newton Optimization of Finite Basis Physics-Informed Neural Networks: Sparse Automatic Differentiation Approach",
       "paper_date": "2026-11-09",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-11-11T19:59:54",
+      "generated_at": "2026-11-12T20:38:54",
       "generator": "openai"
     }
   },
@@ -133,23 +133,23 @@
         "url": "https://arxiv.org/pdf/2611.13107v1"
       }
     ],
-    "score": 84,
+    "score": 79,
     "infographic": {
-      "key_insight": "Checking symbolic reasoning steps as they are generated lets LLMs correct errors before they propagate, without restarting or calling a verifier model.",
-      "engineering_relevance": "CPU-based deterministic checks can improve reliability in checkable mathematical workflows without consuming additional verifier GPU capacity.",
+      "key_insight": "Checking symbolic reasoning steps as they are generated lets an LLM correct errors before they propagate, without a verifier model or GPU use for verification.",
+      "engineering_relevance": "Deterministic checkers can add a lightweight verification layer to mathematical workflows while preserving the model’s progress instead of restarting from scratch.",
       "method": [
-        "Validate explicit symbolic expressions online with a computer algebra system.",
+        "Validate explicit symbolic expressions in real time using a computer algebra system.",
         "Flag failed checks immediately and let the LLM continue from the error location.",
-        "Use code-based verification rather than a separate verifier LLM."
+        "Run verification in code without additional model calls."
       ],
-      "evidence_signal": "On ASyMoB with three open-weights models, accuracy improved by 1.4–5.6 percentage points, with a 1.8–14.9% net reduction in incorrect answers and 6–7% more tokens.",
-      "watch_item": "Results are demonstrated for symbolic mathematics; broader applicability depends on which reasoning steps deterministic checkers can validate.",
+      "evidence_signal": "On ASyMoB with three open-weights models, online validation improved accuracy by 1.4–5.6 percentage points, reduced incorrect answers by a net 1.8–14.9%, and increased token usage by 6–7%.",
+      "watch_item": "Evidence is limited to symbolic mathematics; broader use requires reliable deterministic checkers for other types of reasoning steps.",
       "hashtags": [
         "#LLMReasoning",
         "#SymbolicComputation",
         "#ErrorCorrection",
         "#ComputerAlgebra",
-        "#AIForScience"
+        "#AIEngineering"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -157,7 +157,7 @@
       "paper_title": "Catch It Where It Happens: Real Time Error Correction During LLM Reasoning",
       "paper_date": "2026-11-09",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-11-11T19:59:56",
+      "generated_at": "2026-11-12T20:38:56",
       "generator": "openai"
     }
   },
@@ -189,22 +189,22 @@
         "url": "https://arxiv.org/pdf/2611.12156v1"
       }
     ],
-    "score": 79,
+    "score": 74,
     "infographic": {
-      "key_insight": "Low-rank biases in training dynamics can make dynamical systems-based generative models collapse or learn smaller modes too slowly to capture them within a fixed training budget.",
-      "engineering_relevance": "For flow- and diffusion-based generators, missing modes may reflect either stable collapse or slow feature learning, making the distinction important when diagnosing training.",
+      "key_insight": "Low-rank biases in learning dynamics can drive generative models toward collapse, either through stable collapsed solutions or slow learning of smaller modes.",
+      "engineering_relevance": "Training duration and learning dynamics can limit mode coverage, so apparent convergence need not imply that a generative model has learned all features.",
       "method": [
-        "Express gradient flow for a general class of stochastic differential equations as compositions of linear operators.",
-        "Relate these operators to low-rank biases in generative learning.",
+        "Express gradient-flow learning dynamics for a general class of stochastic differential equations as compositions of linear operators.",
+        "Use dynamical systems and operator theory to relate collapse to low-rank biases.",
         "Analyze collapse mechanisms in variational inference and flow-matching tasks."
       ],
-      "evidence_signal": "The abstract reports stable collapsed fixed points and sequential feature learning in variational inference and flow-matching settings, but provides no datasets or quantitative benchmarks.",
-      "watch_item": "The abstract does not establish how broadly these mechanisms apply to practical architectures or discrete-time training.",
+      "evidence_signal": "The abstract reports two collapse mechanisms in variational inference and flow matching, but provides no datasets, quantitative benchmarks, or effect sizes.",
+      "watch_item": "Longer training may address slow feature learning but need not resolve collapse when collapsed models are stable fixed points.",
       "hashtags": [
         "#GenerativeModels",
-        "#LearningDynamics",
-        "#ModeCollapse",
+        "#DynamicalSystems",
         "#OperatorTheory",
+        "#ModeCollapse",
         "#FlowMatching"
       ],
       "model": "gpt-6.1-sol",
@@ -213,7 +213,7 @@
       "paper_title": "The balance between feature learning and collapse in dynamical systems-based generative models",
       "paper_date": "2026-11-09",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-11-11T19:59:59",
+      "generated_at": "2026-11-12T20:38:58",
       "generator": "openai"
     }
   },
@@ -242,20 +242,20 @@
         "url": "https://arxiv.org/pdf/2611.13668v1"
       }
     ],
-    "score": 75,
+    "score": 70,
     "infographic": {
-      "key_insight": "Scalarization connects interval-valued optimization to scalar problems, enabling a proximal point algorithm with global convergence and convexity-dependent rates.",
-      "engineering_relevance": "The framework offers a mathematically grounded approach to interval-valued lasso regression for machine learning with uncertain data.",
+      "key_insight": "Scalarization connects interval-valued optimization to LU-nondominated solutions and supports a proximal point algorithm with convergence guarantees.",
+      "engineering_relevance": "The framework offers an approach to interval-valued lasso regression for machine learning with uncertain data.",
       "method": [
-        "Scalarize an unconstrained interval-valued objective and relate scalar optima to LU-nondominated solutions.",
-        "Apply a proximal point algorithm to the scalarized problem.",
-        "Establish sublinear convergence for convex problems and linear convergence for strongly convex problems."
+        "Scalarize an unconstrained interval-valued objective.",
+        "Relate scalarized optima to LU-nondominated solutions.",
+        "Apply proximal point iterations with sublinear convergence for convex cases and linear convergence for strongly convex cases."
       ],
-      "evidence_signal": "The abstract reports numerical experiments, comparison with an existing method, and an interval-valued lasso application, but provides no quantitative results.",
-      "watch_item": "Practical performance depends on scalarization choices and proximal subproblem costs, which are not detailed in the abstract.",
+      "evidence_signal": "The abstract reports numerical experiments, comparison with an existing method, and an interval-valued lasso application, but gives no quantitative results.",
+      "watch_item": "Check the precise convergence assumptions and cost of solving each proximal subproblem before deployment.",
       "hashtags": [
         "#IntervalOptimization",
-        "#ProximalPoint",
+        "#ProximalMethods",
         "#ConvexOptimization",
         "#LassoRegression",
         "#UncertaintyModeling"
@@ -266,7 +266,7 @@
       "paper_title": "Proximal point algorithm for interval valued optimization problems with application to lasso problem",
       "paper_date": "2026-11-10",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-11-11T20:00:02",
+      "generated_at": "2026-11-12T20:39:00",
       "generator": "openai"
     }
   },
@@ -295,23 +295,23 @@
         "url": "https://arxiv.org/pdf/2611.13795v1"
       }
     ],
-    "score": 74,
+    "score": 69,
     "infographic": {
-      "key_insight": "Backward quadrature learning (BQL) learns quadrature for Brownian increments within backward BSDE recursion to solve high-dimensional parametric semilinear parabolic PDEs.",
-      "engineering_relevance": "BQL can reduce amortized computation when repeatedly evaluating PDE solutions across parameter settings.",
+      "key_insight": "Backward quadrature learning (BQL) learns quadrature for Brownian increments within BSDE backward recursion to solve high-dimensional parametric semilinear parabolic PDEs.",
+      "engineering_relevance": "BQL can reduce amortized computational cost when PDE solutions are needed across multiple parameter queries.",
       "method": [
         "Learn Brownian-increment quadrature at each time level to approximate local conditional expectations.",
         "Transfer value-function information backward using a continuation surrogate, avoiding nested quadrature.",
         "Derive a global error decomposition and prove first-order mean-square convergence under suitable assumptions."
       ],
-      "evidence_signal": "On the HJB benchmark across tested dimensions, BQL reports competitive accuracy and approximately 40× and 4× computational cost reductions versus P²INN and FBSNN, respectively, for seven parameter queries.",
-      "watch_item": "Convergence depends on approximation and integrability assumptions; reported cost gains should not be generalized beyond the tested query workload and benchmarks.",
+      "evidence_signal": "On the HJB benchmark across tested dimensions, the abstract reports competitive accuracy and approximately 40× and 4× computational cost reductions versus P²INN and FBSNN, respectively, for seven parameter queries.",
+      "watch_item": "Convergence depends on approximation and integrability assumptions, and the reported cost advantages should not be assumed to generalize beyond the tested benchmarks and query counts.",
       "hashtags": [
         "#ScientificMachineLearning",
         "#ParametricPDEs",
-        "#BSDE",
+        "#BSDEs",
         "#LearnedQuadrature",
-        "#HighDimensionalComputing"
+        "#ComputationalEngineering"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -319,7 +319,7 @@
       "paper_title": "Learning the Brownian Motion in Machine Learning for Parametric Parabolic PDEs: A Backward Quadrature Approach",
       "paper_date": "2026-11-10",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-11-11T20:00:04",
+      "generated_at": "2026-11-12T20:39:02",
       "generator": "openai"
     }
   },
@@ -348,23 +348,23 @@
         "url": "https://arxiv.org/pdf/2611.13613v1"
       }
     ],
-    "score": 73,
+    "score": 68,
     "infographic": {
-      "key_insight": "Megrez coordinates a general coding agent with library knowledge, live proof feedback, and integration checks to formalize textbook mathematics in Rocq over MK set theory.",
-      "engineering_relevance": "The design addresses practical bottlenecks in growing formal libraries: finding relevant declarations, tracking proof states, and safely integrating verified results.",
+      "key_insight": "Megrez guides a coding agent through cumulative textbook formalization in MK set theory by combining library-aware retrieval, proof-state feedback, and integration checks.",
+      "engineering_relevance": "The system offers a workflow for extending low-resource Rocq libraries while keeping proof search and code integration aligned with verified results.",
       "method": [
-        "Rebuildable knowledge graph combines declarations, compiler references, and curated metadata for multilingual, dependency-aware retrieval.",
-        "Short bursts of 1–5 tactics use proof-state feedback, a goal-local branch ledger, and structured reflection at exponential intervals.",
-        "Statement-fidelity checks, axiom audits, and full builds gate acceptance, supported by multi-corpus providers and recoverable batch execution."
+        "Build a source-rebuildable knowledge graph linking declarations, compiler references, and metadata for multilingual, dependency-aware retrieval.",
+        "Run 1–5-tactic proof bursts with live feedback, a goal-local branch ledger, and structured reflection at exponential intervals.",
+        "Check statement fidelity, audit axioms, and run full builds, supported by multi-corpus access and recoverable batch execution."
       ],
-      "evidence_signal": "Deployment and evaluation on a point-set topology corpus report effective cross-chapter formalization and scalable premise retrieval, without quantitative results in the abstract.",
-      "watch_item": "Performance beyond the evaluated topology corpus remains unclear, and maintaining curated metadata may add implementation overhead.",
+      "evidence_signal": "Deployment and evaluation on a point-set topology corpus report effective cross-chapter formalization and scalable premise retrieval, but the abstract provides no quantitative metrics.",
+      "watch_item": "Generalization beyond the evaluated topology corpus remains unclear, and curated metadata may add library-maintenance work.",
       "hashtags": [
         "#FormalMathematics",
         "#TheoremProving",
         "#Rocq",
-        "#AIAgents",
-        "#KnowledgeGraphs"
+        "#KnowledgeGraphs",
+        "#AIAgents"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -372,7 +372,7 @@
       "paper_title": "Megrez: A Knowledge-Guided Agent for Formal Mathematics over MK Set Theory",
       "paper_date": "2026-11-10",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-11-11T20:00:07",
+      "generated_at": "2026-11-12T20:39:04",
       "generator": "openai"
     }
   },
@@ -404,23 +404,23 @@
         "url": "https://arxiv.org/pdf/2611.13042v1"
       }
     ],
-    "score": 73,
+    "score": 68,
     "infographic": {
-      "key_insight": "A passing automated check validates only the checked artefact, not necessarily the original research claim, so fidelity audits and human decisions remain essential.",
-      "engineering_relevance": "AI-assisted research pipelines should combine validated checking tools, explicit human review gates, and records attributing human and AI contributions.",
+      "key_insight": "A passing automated check validates the checked artefact, not necessarily the original research claim, so human oversight and fidelity audits remain essential.",
+      "engineering_relevance": "Engineering verification workflows should combine validated tools, checks of claim-to-model fidelity, human decision gates, and explicit attribution of human and AI contributions.",
       "method": [
-        "Use validated, agent-usable tools with different grounds of trust to check results.",
+        "Use validated, agent-accessible tools with different grounds of trust.",
         "Audit whether each check addresses the claim as stated, with human decisions at fixed points.",
-        "Produce a dialog report attributing work to humans and AI."
+        "Record human and AI contributions in a dialog report."
       ],
-      "evidence_signal": "The paper describes mathematics and statistics tool-layer implementations and tests the mathematics implementation on a two-claim example, splitting an ambiguous claim into one refuted reading and one proved reading.",
-      "watch_item": "Translation fidelity is undecidable in general, so automated proof checking cannot eliminate the need for human interpretation.",
+      "evidence_signal": "The abstract describes mathematics and statistics tool-layer implementations and a two-claim mathematics demonstration in which an ambiguous claim was split into one refuted reading and one proved reading.",
+      "watch_item": "The small demonstration does not establish scalability, and faithful translation into a formal statement cannot be decided automatically in general.",
       "hashtags": [
-        "#HumanInTheLoop",
         "#TheoremProving",
+        "#HumanInTheLoop",
         "#FormalVerification",
-        "#ResearchIntegrity",
-        "#AIResearch"
+        "#AIResearch",
+        "#ResearchIntegrity"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -428,7 +428,7 @@
       "paper_title": "Trust, but verify, audit and attribute: a human-in-the-loop framework for checking AI-produced research results",
       "paper_date": "2026-11-09",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-11-11T20:00:10",
+      "generated_at": "2026-11-12T20:39:06",
       "generator": "openai"
     }
   },
@@ -458,23 +458,23 @@
         "url": "https://arxiv.org/pdf/2611.14106v1"
       }
     ],
-    "score": 72,
+    "score": 67,
     "infographic": {
-      "key_insight": "ProofCoder improves automated Rocq proof synthesis by continuously reasoning over proof-assistant feedback rather than following a rigid tactic-generation loop.",
-      "engineering_relevance": "Feedback-guided proof construction and repair could reduce the effort and cost of formally verifying software.",
+      "key_insight": "ProofCoder improves automated Rocq proof synthesis by reasoning continuously and revising proofs using proof-assistant feedback rather than following a rigid tactic-generation loop.",
+      "engineering_relevance": "Agent-controlled inspection, repair, and backtracking could reduce the effort and cost of formally verifying software.",
       "method": [
-        "Treat theorem proving as an agentic coding task.",
-        "Use proof-assistant feedback to guide information gathering, proof-state inspection, revision, and backtracking.",
+        "Treat proof synthesis as a coding-agent task with continuous reasoning.",
+        "Use Rocq feedback to guide information gathering, proof-state inspection, revision, and backtracking.",
         "Construct and repair proofs at tactic-level or whole-proof granularity."
       ],
-      "evidence_signal": "On 280 AutoRocq Benchmark tasks, the best configurations increased proof success from 47% to 60% versus AutoRocq—a 27.7% relative improvement—at approximately half the cost.",
+      "evidence_signal": "On 280 AutoRocq Benchmark tasks, the best-performing configurations increased proof success from 47% to 60% versus AutoRocq—a 27.7% relative improvement—at approximately half the cost.",
       "watch_item": "Results are limited to the reported Rocq benchmark; generalization to other proof assistants and verification workloads remains unestablished.",
       "hashtags": [
         "#TheoremProving",
         "#FormalVerification",
         "#Rocq",
         "#AIAgents",
-        "#AutomatedReasoning"
+        "#ProofSynthesis"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -482,7 +482,7 @@
       "paper_title": "ProofCoder: Continuous Reasoning for Automated Software Verification",
       "paper_date": "2026-11-10",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-11-11T20:00:12",
+      "generated_at": "2026-11-12T20:39:08",
       "generator": "openai"
     }
   },
@@ -513,17 +513,17 @@
         "url": "https://arxiv.org/pdf/2611.13382v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "Discrete Model-Based Diffusion performs training-free combinatorial optimization directly over discrete variables using diffusion-guided sampling.",
-      "engineering_relevance": "The method targets fast multi-robot coalition formation and scheduling, with reported solution quality competitive with mixed-integer programming and reinforcement learning at lower computational cost.",
+      "key_insight": "Discrete Model-Based Diffusion enables training-free combinatorial optimization directly over discrete variables using denoising diffusion.",
+      "engineering_relevance": "It offers a promising route to lower-cost optimization for time-sensitive multi-robot task allocation, coalition formation, and scheduling.",
       "method": [
-        "Use denoising diffusion within sampling-based optimization over discrete variables.",
-        "Approximate categorical reverse transitions with Monte Carlo sampling.",
-        "Establish a finite-step lower bound on global-optimum discovery probability that approaches one as denoising steps increase."
+        "Integrates discrete denoising diffusion into sampling-based optimization.",
+        "Uses Monte Carlo sampling to approximate categorical reverse transition distributions.",
+        "Establishes a finite-step lower bound on global-optimum discovery probability that approaches one as denoising steps increase."
       ],
-      "evidence_signal": "Experiments on generic integer programs and heterogeneous multi-robot allocation problems outperform sampling-based optimization baselines in nearly all tested settings.",
-      "watch_item": "The asymptotic probability guarantee does not establish a practical runtime guarantee; Monte Carlo sampling and denoising budgets remain implementation concerns.",
+      "evidence_signal": "Experiments on generic integer programs and heterogeneous multi-robot coalition formation and scheduling outperform sampling-based baselines in nearly all tested settings, with solution quality competitive with mixed-integer programming and reinforcement learning at a fraction of their computational cost.",
+      "watch_item": "The asymptotic probability guarantee does not establish practical runtime; Monte Carlo sampling and denoising-step budgets must be assessed for deployment.",
       "hashtags": [
         "#DiscreteOptimization",
         "#DiffusionModels",
@@ -537,7 +537,7 @@
       "paper_title": "Discrete Model-Based Diffusion for Combinatorial Optimization in Multi-Robot Task Allocation",
       "paper_date": "2026-11-09",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-11-11T20:00:14",
+      "generated_at": "2026-11-12T20:39:10",
       "generator": "openai"
     }
   },
@@ -566,22 +566,22 @@
         "url": "https://arxiv.org/pdf/2611.11368v1"
       }
     ],
-    "score": 70,
+    "score": 65,
     "infographic": {
-      "key_insight": "BiVerify improves mathematical self-correction by requiring the same candidate solution to pass both backward constraint checks and forward reasoning checks.",
-      "engineering_relevance": "Bidirectional verification offers a structured way to improve LLM math reliability by combining complementary checks with shared tools for precise computation.",
+      "key_insight": "BiVerify improves mathematical self-correction by requiring the same candidate solution to pass both backward constraint checks and forward reasoning verification.",
+      "engineering_relevance": "Bidirectional verification offers a reusable workflow for checking both constraint satisfaction and reasoning completeness in AI-assisted mathematical problem solving.",
       "method": [
-        "Start with backward verification against the original problem constraints, then verify reasoning and objective completeness forward.",
-        "Dynamically switch direction, reset verification state, and revise candidates or verification flow when checks fail.",
+        "Start with backward verification against the original constraints, then check the reasoning forward.",
+        "Dynamically switch directions, reset verification state, and revise until the same candidate passes both checks.",
         "Use shared mathematical tools to separate logical reasoning from precise computation."
       ],
-      "evidence_signal": "Across five challenging math benchmarks and multiple DeepSeek, GPT, and Gemini models, BiVerify exceeds the strongest evaluated representative public baseline by 13.5 percentage points in average accuracy, with a 31.2-point margin on GPT.",
-      "watch_item": "Repeated verification and revision may increase latency and computation cost; the abstract does not quantify this overhead or guarantee correctness.",
+      "evidence_signal": "Across five challenging math benchmarks and multiple DeepSeek, GPT, and Gemini models, BiVerify reports a 13.5-percentage-point average accuracy gain over the strongest representative public baseline evaluated, reaching 31.2 points on GPT.",
+      "watch_item": "Iterative verification may add latency and computation cost; passing both checks is not a formal guarantee of correctness.",
       "hashtags": [
         "#MathematicalReasoning",
         "#LLMVerification",
         "#SelfCorrection",
-        "#AIReliability",
+        "#ToolAugmentedAI",
         "#BiVerify"
       ],
       "model": "gpt-6.1-sol",
@@ -590,7 +590,7 @@
       "paper_title": "BiVerify: Closing the Loop Between Backward and Forward Verification for Mathematical Self-Correction",
       "paper_date": "2026-11-08",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-11-11T20:00:17",
+      "generated_at": "2026-11-12T20:39:12",
       "generator": "openai"
     }
   },
@@ -621,17 +621,17 @@
         "url": "https://arxiv.org/pdf/2611.11387v1"
       }
     ],
-    "score": 69,
+    "score": 64,
     "infographic": {
-      "key_insight": "Orthogonalized updates paired with gradient-norm-based adaptive stepsizes stabilize coupled minimax optimization while avoiding problem-dependent tuning.",
-      "engineering_relevance": "The approach could reduce stepsize-tuning effort in machine-learning systems trained through coupled minimization and maximization.",
+      "key_insight": "Orthogonalized updates paired with gradient-norm-based adaptive stepsizes improve primal–dual coordination in nonconvex–strongly-concave minimax optimization without problem-dependent tuning.",
+      "engineering_relevance": "The framework targets unstable, stepsize-sensitive minimax training by automatically balancing coupled primal and dual updates.",
       "method": [
         "Orthogonalize update directions to reduce update anisotropy.",
-        "Use accumulated gradient norms to adapt and balance primal-dual stepsizes in AdaSGDA.",
-        "Add variance reduction in AdaSGDA-VR to improve the theoretical convergence rate."
+        "Use accumulated gradient norms to adapt AdaSGDA stepsizes, achieving an O(T^−1/4) convergence rate.",
+        "Add variance reduction in AdaSGDA-VR to achieve an O(T^−1/3) rate."
       ],
-      "evidence_signal": "For nonconvex–strongly-concave problems, the paper proves convergence rates of O(T^(-1/4)) for AdaSGDA and O(T^(-1/3)) for AdaSGDA-VR; the abstract reports competitive experimental performance without specifying benchmarks.",
-      "watch_item": "The stated guarantees rely on strong concavity in the maximization variable and do not establish performance for general nonconvex–nonconcave problems.",
+      "evidence_signal": "The abstract reports theoretical convergence guarantees and extensive experiments showing competitive performance, but does not specify benchmarks or numerical gains.",
+      "watch_item": "The guarantees assume nonconvex–strongly-concave objectives; orthogonalization and variance reduction may also add implementation overhead.",
       "hashtags": [
         "#MinimaxOptimization",
         "#AdaptiveOptimization",
@@ -645,7 +645,7 @@
       "paper_title": "Orthogonal Updates for the Win: Towards Accelerated Adaptive Minimax Optimization",
       "paper_date": "2026-11-08",
       "paper_category": "Geometry and Topology",
-      "generated_at": "2026-11-11T20:00:19",
+      "generated_at": "2026-11-12T20:39:14",
       "generator": "openai"
     }
   },
@@ -674,22 +674,22 @@
         "url": "https://arxiv.org/pdf/2611.14234v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "The paper reports sharper knot-ropelength lower bounds: L ≥ 2.0996C^(3/4) for crossing number C and L ≥ π(s−1) for stick number s.",
-      "engineering_relevance": "These bounds provide theoretical benchmarks for optimizing knotted filaments and assessing geometric packing constraints.",
+      "key_insight": "The paper reports stronger knot ropelength lower bounds: L ≥ 2.0996C^(3/4) in crossing number C and L ≥ π(s−1) in stick number s.",
+      "engineering_relevance": "These bounds provide geometric benchmarks for thickness-constrained knotted curves, potentially informing computational shape optimization.",
       "method": [
-        "Use LLM assistance to develop mathematical bounds.",
+        "Use LLM assistance to refine mathematical bounds.",
         "Separate local and global terms in an optimization integral.",
         "Relate ropelength to stick number and optimize a standard torus-knot parameterization."
       ],
-      "evidence_signal": "The abstract reports improving the universal coefficient from 1.105 to 2.0996 and obtaining stronger lower bounds for at least 41 torus knots and a specific pretzel-knot class.",
-      "watch_item": "LLM assistance did not yield improvements to the coefficients or scaling of known universal upper bounds.",
+      "evidence_signal": "The abstract reports an increase in the universal lower-bound coefficient from 1.105 to 2.0996 and stronger lower bounds for at least 41 torus knots and a class of pretzel knots.",
+      "watch_item": "The LLM did not help improve known universal upper-bound coefficients or scalings; the abstract alone does not establish proof validity.",
       "hashtags": [
         "#KnotTheory",
         "#Ropelength",
+        "#AIForMath",
         "#GeometricOptimization",
-        "#AIAssistedMath",
         "#ComputationalGeometry"
       ],
       "model": "gpt-6.1-sol",
@@ -698,7 +698,7 @@
       "paper_title": "LLM-Assisted Advances in the Ropelength Problem",
       "paper_date": "2026-11-10",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-11-11T20:00:22",
+      "generated_at": "2026-11-12T20:39:16",
       "generator": "openai"
     }
   },
@@ -728,22 +728,22 @@
         "url": "https://arxiv.org/pdf/2611.13952v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "Hidden-parameter coverage and separation govern the approximation accuracy, conditioning, and recovery stability of shallow ReLU^k networks on bounded domains.",
-      "engineering_relevance": "The results provide theoretical guidance for choosing hidden parameters and assessing coefficient stability in least-squares network fitting.",
+      "key_insight": "Hidden-parameter coverage and antipodal separation govern shallow ReLU^k networks’ approximation accuracy, spectral conditioning, and coefficient stability on bounded domains.",
+      "engineering_relevance": "Parameter geometry offers a principled guide for selecting network features and assessing stability in function approximation and discrete least-squares recovery.",
       "method": [
-        "Measure parameter geometry using fill distance h and antipodal separation distance h̲.",
-        "Use smooth localization and dyadic Fourier estimates to derive approximation bounds and spectral estimates.",
-        "Establish norm discretization, regularized recovery, and inverse approximation results."
+        "Quantify parameter geometry using fill distance h and antipodal separation.",
+        "Use smooth localization and dyadic Fourier estimates to derive approximation and saturation bounds.",
+        "Analyze Gram and stiffness spectra, norm discretization, and regularized recovery."
       ],
-      "evidence_signal": "The abstract reports theoretical bounds rather than empirical benchmarks, with approximation gains up to regularity (d+2k+1)/2 and saturation-type lower bounds for fixed smoother targets.",
-      "watch_item": "The upper approximation bound holds on an interior subdomain, while the lower bound concerns the larger domain; they are not directly matching error estimates.",
+      "evidence_signal": "The abstract reports theoretical bounds rather than empirical benchmarks, including an interior approximation rate h^r up to critical regularity (d+2k+1)/2 and an asymptotic lower bound for smoother fixed targets.",
+      "watch_item": "Upper and lower approximation bounds concern different spatial domains, so they should not be interpreted as directly matching global error estimates.",
       "hashtags": [
         "#ApproximationTheory",
         "#ReLUNetworks",
-        "#ParameterGeometry",
         "#NumericalStability",
+        "#ParameterGeometry",
         "#ScientificMachineLearning"
       ],
       "model": "gpt-6.1-sol",
@@ -752,7 +752,7 @@
       "paper_title": "Geometry-Dependent Approximation and Stability Properties of Shallow ReLU$^k$ Networks on Bounded Euclidean Domains",
       "paper_date": "2026-11-10",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-11-11T20:00:25",
+      "generated_at": "2026-11-12T20:39:18",
       "generator": "openai"
     }
   },
@@ -785,21 +785,21 @@
         "url": "https://arxiv.org/pdf/2611.11261v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "Chatter Attack induces short, doubt-triggering phrases that can steer LLMs into prolonged responses, amplifying inference resource consumption.",
-      "engineering_relevance": "The attack highlights availability and cost risks for LLM services, motivating output-token limits, generation timeouts, and resource monitoring.",
+      "key_insight": "Chatter Attack induces prolonged LLM responses by targeting short, doubt-inducing phrases rather than directly optimizing long output sequences.",
+      "engineering_relevance": "The attack exposes a resource-depletion risk for LLM inference services by increasing response length, latency, and operating costs.",
       "method": [
-        "Optimize adversarial prompts toward short doubt-inducing target phrases rather than entire long responses.",
-        "Use inference attention loss and global entropy loss to sustain self-doubt during generation.",
+        "Optimize adversarial prompts to elicit predefined short phrases that trigger self-doubt.",
+        "Use inference attention loss and global entropy loss to sustain the induced generation behavior.",
         "Extend to black-box settings with Bayesian Prompt Optimization using a discrete token kernel."
       ],
-      "evidence_signal": "The abstract reports experiments across multiple models and datasets, outperforming baselines with response-length increases of up to 31.5×.",
-      "watch_item": "The abstract does not specify black-box query costs or whether effectiveness persists under strict output-token and time limits.",
+      "evidence_signal": "Experiments across multiple models and datasets reportedly outperform baselines, with response-length increases reaching 31.5×.",
+      "watch_item": "The abstract reports a maximum increase, not typical impact; effectiveness under production token limits and other safeguards remains unspecified.",
       "hashtags": [
         "#LLMSecurity",
-        "#AdversarialPrompts",
         "#ResourceConsumption",
+        "#AdversarialPrompts",
         "#BayesianOptimization",
         "#InferenceEfficiency"
       ],
@@ -809,7 +809,7 @@
       "paper_title": "Chatter Attack: Resource Consumption Attack for Large Language Models",
       "paper_date": "2026-11-08",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-11-11T20:00:27",
+      "generated_at": "2026-11-12T20:39:20",
       "generator": "openai"
     }
   },
@@ -839,23 +839,23 @@
         "url": "https://arxiv.org/pdf/2611.12447v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "The paper establishes non-asymptotic total variation error bounds for Schrödinger–Föllmer samplers: O(h|ln h|) with exact drift and O(h|ln h| + 1/M) with Monte Carlo drift.",
-      "engineering_relevance": "These bounds guide time-step and Monte Carlo sample-budget choices for high-dimensional, multimodal sampling without relying on long-time ergodicity.",
+      "key_insight": "The paper establishes non-asymptotic total variation error bounds for Schrödinger-Föllmer samplers of O(h|ln h|) with exact drift and O(h|ln h| + 1/M) with Monte Carlo drift.",
+      "engineering_relevance": "These bounds guide time-step and Monte Carlo sample-budget choices for finite-horizon sampling from high-dimensional, multimodal distributions without relying on long-time ergodicity.",
       "method": [
-        "Derive Kolmogorov equation regularization estimates using the Bismut–Elworthy–Li formula.",
+        "Derive Kolmogorov equation regularization estimates using the Bismut-Elworthy-Li formula.",
         "Analyze total variation error through weak error estimates for non-smooth test functions.",
-        "Bound errors from time discretization and Monte Carlo drift approximation."
+        "Bound time-discretization and Monte Carlo drift-approximation errors."
       ],
-      "evidence_signal": "Numerical experiments illustrate convergence with respect to time-step size h and Monte Carlo sample size M, alongside sampler effectiveness.",
-      "watch_item": "The rates require drift regularity assumptions; the improved 1/M dependence is compared with an earlier 1/√M bound in a different metric, L²-Wasserstein distance.",
+      "evidence_signal": "Numerical experiments illustrate convergence as the time step h and Monte Carlo sample size M vary, alongside sampler effectiveness.",
+      "watch_item": "The bounds require drift regularity assumptions; the improved 1/M dependence is measured in total variation, unlike the prior 1/√M result in L²-Wasserstein distance.",
       "hashtags": [
         "#SchrodingerFollmer",
         "#Sampling",
         "#TotalVariation",
         "#MonteCarlo",
-        "#ErrorAnalysis"
+        "#NumericalAnalysis"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -863,7 +863,7 @@
       "paper_title": "Total variation error bounds for Schrödinger-Föllmer samplers",
       "paper_date": "2026-11-09",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-11-11T20:00:29",
+      "generated_at": "2026-11-12T20:39:21",
       "generator": "openai"
     }
   },
@@ -894,23 +894,23 @@
         "url": "https://arxiv.org/pdf/2611.11905v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "Adam achieves provable geometric loss decay for sufficiently wide two-layer networks, including Poisson-equation PINNs, under explicit parameter conditions.",
-      "engineering_relevance": "The results provide theoretical guidance on network width, Adam parameters, and minibatch-size effects when training PINN solvers.",
+      "key_insight": "Adam achieves provable geometric decay of empirical training loss for sufficiently wide two-layer networks, including physics-informed neural networks solving the Poisson equation, under explicit parameter conditions.",
+      "engineering_relevance": "The analysis clarifies how network width, Adam parameters, and minibatch size affect convergence guarantees for neural PDE solvers.",
       "method": [
-        "Construct a Lyapunov function to control momentum in full-batch Adam.",
-        "Analyze minibatch Adam using exact virtual iterates, conditional dependence analysis, and second-moment concentration bounds.",
-        "Extend the guarantees to Poisson PINNs with separately sampled interior and boundary points."
+        "Use a Lyapunov function to control momentum in full-batch Adam.",
+        "Analyze minibatch Adam through exact virtual iterates, gradient–preconditioner dependence, and second-moment concentration.",
+        "Extend the theory to Poisson PINNs with separately sampled interior and boundary points."
       ],
-      "evidence_signal": "The abstract reports theoretical convergence guarantees, not numerical benchmarks; minibatch loss decay holds in restricted expectation on a high-probability event.",
-      "watch_item": "Guarantees require sufficiently wide two-layer networks and explicit Adam parameter conditions, so they do not automatically extend to practical deep PINNs.",
+      "evidence_signal": "The abstract reports theoretical convergence guarantees, with minibatch loss decay established in restricted expectation on a high-probability event; it reports no numerical benchmarks.",
+      "watch_item": "The guarantees require sufficiently wide two-layer networks and explicit Adam parameter conditions; empirical loss convergence does not alone establish PDE solution accuracy.",
       "hashtags": [
-        "#PhysicsInformedNeuralNetworks",
         "#AdamOptimizer",
+        "#PhysicsInformedNeuralNetworks",
         "#ConvergenceTheory",
-        "#ScientificMachineLearning",
-        "#NeuralTangentKernel"
+        "#NeuralTangentKernel",
+        "#ScientificMachineLearning"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -918,7 +918,7 @@
       "paper_title": "On the Global Convergence of Stochastic Adam for Physics-Informed Neural Networks",
       "paper_date": "2026-11-09",
       "paper_category": "Symbolic Computation",
-      "generated_at": "2026-11-11T20:00:32",
+      "generated_at": "2026-11-12T20:39:24",
       "generator": "openai"
     }
   },
@@ -948,23 +948,23 @@
         "url": "https://arxiv.org/pdf/2611.14515v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "AutoScaffold turns reinforcement-learning experience into adaptive training guidance that improves language-model performance even after the guidance is removed.",
-      "engineering_relevance": "A frozen teacher automates training-support design across reasoning and engineering tasks, reducing reliance on manually crafted, domain-specific scaffolds.",
+      "key_insight": "AutoScaffold turns a language model’s training experience into adaptive AI-generated guidance that improves reinforcement learning while requiring no scaffolds at evaluation.",
+      "engineering_relevance": "The framework offers a reusable way to guide RL training across mathematical reasoning, interactive tasks, search-based QA, and GPU kernel generation.",
       "method": [
-        "Periodically inspect student training experience to diagnose learning bottlenecks.",
-        "Generate shared task-class strategies and hints for individual hard tasks.",
-        "Adapt support as the student improves, then remove all scaffolds at evaluation."
+        "A frozen teacher periodically reviews student training experience and diagnoses bottlenecks.",
+        "The teacher generates task-class strategies and hints for individual hard tasks, adapting support as the student improves.",
+        "Train the student with scaffolds, then remove them for evaluation."
       ],
-      "evidence_signal": "Across four domains, scaffold-free evaluation outperformed corresponding RL baselines; in math, the student surpassed QuestA’s reported accuracy using approximately one-third as many student training steps.",
-      "watch_item": "Fewer student training steps do not establish lower total compute cost; teacher inference and scaffold-generation overhead also need accounting.",
+      "evidence_signal": "The abstract reports gains over corresponding RL baselines across four domains; in math, the student surpasses QuestA’s reported accuracy using approximately one-third as many student training steps.",
+      "watch_item": "Teacher review adds inference overhead, so fewer student training steps do not necessarily imply lower total training cost.",
       "hashtags": [
-        "#AutoScaffold",
-        "#ReinforcementLearning",
         "#MathematicalReasoning",
+        "#ReinforcementLearning",
+        "#AutoScaffold",
         "#AIForAI",
-        "#LanguageModels"
+        "#AdaptiveLearning"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -972,7 +972,7 @@
       "paper_title": "AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models",
       "paper_date": "2026-11-10",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-11-11T20:00:34",
+      "generated_at": "2026-11-12T20:39:25",
       "generator": "openai"
     }
   },
@@ -1003,17 +1003,17 @@
         "url": "https://arxiv.org/pdf/2611.11526v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "AdamW’s fixed points match stationary points of a constrained, regularized objective, but its dynamics can destabilize them and produce persistent oscillations.",
-      "engineering_relevance": "The analysis links AdamW’s convergence behavior to curvature, weight decay, and momentum, informing optimizer design and hyperparameter choices.",
+      "key_insight": "AdamW’s fixed points match stationary points of an implicit constrained, regularized objective, but its dynamics can destabilize them and produce persistent oscillations.",
+      "engineering_relevance": "The analysis shows why reaching an AdamW equilibrium is not guaranteed and how curvature, weight decay, and momentum affect stability.",
       "method": [
         "Characterize AdamW’s implicit fixed-point objective.",
-        "Analyze equilibrium stability in one and higher dimensions.",
-        "Propose a convergent modification preserving AdamW’s fixed points."
+        "Analyze equilibrium stability and oscillations, including in one dimension.",
+        "Derive sufficient higher-dimensional continuous-time stability conditions and propose a convergent modification preserving fixed points."
       ],
-      "evidence_signal": "The abstract reports theoretical instability results even in one dimension and sufficient local stability conditions for higher-dimensional continuous-time dynamics, but no empirical benchmarks.",
-      "watch_item": "Continuous-time local stability conditions should not be assumed to guarantee convergence of discrete-time AdamW in practical training.",
+      "evidence_signal": "The abstract reports theoretical stability results and one-dimensional non-convergence behavior, but no empirical datasets or benchmark evaluations.",
+      "watch_item": "Continuous-time stability conditions alone do not establish convergence for practical discrete-time AdamW implementations.",
       "hashtags": [
         "#AdamW",
         "#Optimization",
@@ -1027,7 +1027,7 @@
       "paper_title": "A Stability Analysis of AdamW: Unstable Equilibria and Non-Convergence",
       "paper_date": "2026-11-08",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-11-11T20:00:37",
+      "generated_at": "2026-11-12T20:39:27",
       "generator": "openai"
     }
   },
@@ -1058,23 +1058,23 @@
         "url": "https://arxiv.org/pdf/2611.12769v1"
       }
     ],
-    "score": 64,
+    "score": 59,
     "infographic": {
-      "key_insight": "For a natural class of nonconvex functions, SGD with learning rate decay provably needs exponentially fewer gradient queries for global optimization than any fixed learning rate in the small-step-size regime.",
-      "engineering_relevance": "The result gives theoretical support for learning rate decay when seeking global optima on qualifying nonconvex objectives.",
+      "key_insight": "For a natural class of nonconvex objectives, SGD with learning rate decay provably needs exponentially fewer gradient queries for global optimization than any fixed learning rate in the small-step-size regime.",
+      "engineering_relevance": "The result gives theoretical support for decaying learning rates when using SGD to seek global optima in nonconvex engineering models.",
       "method": [
-        "Analyze a nonconvex function class that includes many popular benchmark functions.",
-        "Compare gradient-query complexity for decaying versus fixed learning rates.",
-        "Use weak Poincaré inequalities to prove polynomial-time annealing for the associated non-logconcave sampling task."
+        "Analyze a nonconvex function class containing many popular benchmark objectives.",
+        "Compare gradient-query complexity of decaying-rate SGD with fixed-rate SGD.",
+        "Use weak Poincaré inequalities to prove polynomial-time annealing for an associated non-logconcave sampling task."
       ],
-      "evidence_signal": "The abstract reports theoretical complexity guarantees, but no numerical experiments or empirical performance measurements.",
-      "watch_item": "The exponential advantage is established for a specific function class and small-step-size fixed-rate comparisons, not arbitrary nonconvex problems or practical training schedules.",
+      "evidence_signal": "The abstract reports theoretical complexity guarantees rather than numerical experiments or dataset evaluations.",
+      "watch_item": "The exponential separation applies to the analyzed function class and small-step-size fixed-rate baselines, not necessarily to arbitrary objectives or practical training settings.",
       "hashtags": [
-        "#StochasticGradientDescent",
-        "#LearningRateDecay",
         "#NonconvexOptimization",
-        "#GlobalOptimization",
-        "#Annealing"
+        "#SGD",
+        "#LearningRateDecay",
+        "#Annealing",
+        "#OptimizationTheory"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -1082,7 +1082,7 @@
       "paper_title": "Learning Rate Decay Can Exponentially Accelerate SGD for Global Optimization of Nonconvex Functions",
       "paper_date": "2026-11-09",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-11-11T20:00:39",
+      "generated_at": "2026-11-12T20:39:29",
       "generator": "openai"
     }
   }
