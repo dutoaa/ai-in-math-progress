@@ -1,9 +1,49 @@
 # AI math Progress Public Resources
 
-Generated: 2026-11-12
+Generated: 2026-11-13
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
-## 1. Multifidelity Operator Inference for Non-intrusive Model Reduction under Data Scarcity
+## 1. Auditing AI peer reviewers: a benchmark on real scientific papers
+
+- Date: 2026-11-12
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2611.17052v1
+- PDF: https://arxiv.org/pdf/2611.17052v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-12-arxiv-auditing_ai_peer_reviewers_a_benchmark_on_real_scientific_papers_infographic.json
+
+## 2. The Illusion of Diversity: Aligning LLM Exploration via Effective Entropy
+
+- Date: 2026-11-11
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2611.15493v1
+- PDF: https://arxiv.org/pdf/2611.15493v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-11-arxiv-the_illusion_of_diversity_aligning_llm_exploration_via_effective_entropy_infographic.json
+
+## 3. Entire sig-jump-diffusions, their expected signature and applications to score-based generative modeling
+
+- Date: 2026-11-12
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2611.16995v1
+- PDF: https://arxiv.org/pdf/2611.16995v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-12-arxiv-entire_sig_jump_diffusions_their_expected_signature_and_applications_to_score_based_genera_infographic.json
+
+## 4. Well-Balanced WE-PINNs for the Shallow Water Equations over Smooth and Discontinuous Bathymetries
+
+- Date: 2026-11-12
+- Category: Symbolic Computation
+- arXiv: https://arxiv.org/abs/2611.17289v1
+- PDF: https://arxiv.org/pdf/2611.17289v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-12-arxiv-well_balanced_we_pinns_for_the_shallow_water_equations_over_smooth_and_discontinuous_bathy_infographic.json
+
+## 5. LLM-Assisted Verification in Dafny
+
+- Date: 2026-11-12
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2611.16886v1
+- PDF: https://arxiv.org/pdf/2611.16886v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-12-arxiv-llm_assisted_verification_in_dafny_infographic.json
+
+## 6. Multifidelity Operator Inference for Non-intrusive Model Reduction under Data Scarcity
 
 - Date: 2026-11-10
 - Category: Optimization and PDEs
@@ -11,31 +51,103 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.13624v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-10-arxiv-multifidelity_operator_inference_for_non_intrusive_model_reduction_under_data_scarcity_infographic.json
 
-## 2. Block-Sparse Gauss-Newton Optimization of Finite Basis Physics-Informed Neural Networks: Sparse Automatic Differentiation Approach
+## 7. ControlHarbor: A Benchmark for Control Design by Coding Agents
 
-- Date: 2026-11-09
+- Date: 2026-11-12
+- Category: AI math
+- arXiv: https://arxiv.org/abs/2611.16867v1
+- PDF: https://arxiv.org/pdf/2611.16867v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-12-arxiv-controlharbor_a_benchmark_for_control_design_by_coding_agents_infographic.json
+
+## 8. Your Hypergradient is Skewed: Antithetic Neumann Estimation for Bilevel Optimization
+
+- Date: 2026-11-11
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2611.15895v1
+- PDF: https://arxiv.org/pdf/2611.15895v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-11-arxiv-your_hypergradient_is_skewed_antithetic_neumann_estimation_for_bilevel_optimization_infographic.json
+
+## 9. Learning Rate Transfer and Feature Learning Across Depth for Constrained Spectral Optimizers: Complete Scion
+
+- Date: 2026-11-11
 - Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2611.13231v1
-- PDF: https://arxiv.org/pdf/2611.13231v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-09-arxiv-block_sparse_gauss_newton_optimization_of_finite_basis_physics_informed_neural_networks_sp_infographic.json
+- arXiv: https://arxiv.org/abs/2611.15291v1
+- PDF: https://arxiv.org/pdf/2611.15291v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-11-arxiv-learning_rate_transfer_and_feature_learning_across_depth_for_constrained_spectral_optimize_infographic.json
 
-## 3. Catch It Where It Happens: Real Time Error Correction During LLM Reasoning
+## 10. Fit-LRP: Fitting Linear Relaxations to Polytopes for Neural Network Verification over Non-Convex Regions
 
-- Date: 2026-11-09
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2611.13107v1
-- PDF: https://arxiv.org/pdf/2611.13107v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-09-arxiv-catch_it_where_it_happens_real_time_error_correction_during_llm_reasoning_infographic.json
-
-## 4. The balance between feature learning and collapse in dynamical systems-based generative models
-
-- Date: 2026-11-09
+- Date: 2026-11-11
 - Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2611.12156v1
-- PDF: https://arxiv.org/pdf/2611.12156v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-09-arxiv-the_balance_between_feature_learning_and_collapse_in_dynamical_systems_based_generative_mo_infographic.json
+- arXiv: https://arxiv.org/abs/2611.16003v1
+- PDF: https://arxiv.org/pdf/2611.16003v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-11-arxiv-fit_lrp_fitting_linear_relaxations_to_polytopes_for_neural_network_verification_over_non_c_infographic.json
 
-## 5. Proximal point algorithm for interval valued optimization problems with application to lasso problem
+## 11. Optimal higher order convergence rates for the MUON optimizer
+
+- Date: 2026-11-11
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2611.15825v1
+- PDF: https://arxiv.org/pdf/2611.15825v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-11-arxiv-optimal_higher_order_convergence_rates_for_the_muon_optimizer_infographic.json
+
+## 12. Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration
+
+- Date: 2026-11-12
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2611.16143v1
+- PDF: https://arxiv.org/pdf/2611.16143v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-12-arxiv-does_a_self_learning_migration_agent_learn_an_audited_evaluation_of_evidence_graded_experi_infographic.json
+
+## 13. Typed Knowledge over Constructive Institutions: A Proof-Relevant Type Theory for Verified Science
+
+- Date: 2026-11-11
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2611.15108v1
+- PDF: https://arxiv.org/pdf/2611.15108v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-11-arxiv-typed_knowledge_over_constructive_institutions_a_proof_relevant_type_theory_for_verified_s_infographic.json
+
+## 14. Symmetry in Time: A Representation Theory of Linear Recurrent Memory
+
+- Date: 2026-11-12
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2611.17162v1
+- PDF: https://arxiv.org/pdf/2611.17162v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-12-arxiv-symmetry_in_time_a_representation_theory_of_linear_recurrent_memory_infographic.json
+
+## 15. Weighted STSAFT-Modulation Spaces and Approximation by Phase-Adapted Neural Networks
+
+- Date: 2026-11-12
+- Category: Theorem Proving
+- arXiv: https://arxiv.org/abs/2611.16448v1
+- PDF: https://arxiv.org/pdf/2611.16448v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-12-arxiv-weighted_stsaft_modulation_spaces_and_approximation_by_phase_adapted_neural_networks_infographic.json
+
+## 16. Agentic Computational Algebra
+
+- Date: 2026-11-11
+- Category: Mathematical Reasoning
+- arXiv: https://arxiv.org/abs/2611.16073v1
+- PDF: https://arxiv.org/pdf/2611.16073v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-11-arxiv-agentic_computational_algebra_infographic.json
+
+## 17. Riordan Arrays as Structured Operators for Artificial Intelligence
+
+- Date: 2026-11-11
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2611.15954v1
+- PDF: https://arxiv.org/pdf/2611.15954v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-11-arxiv-riordan_arrays_as_structured_operators_for_artificial_intelligence_infographic.json
+
+## 18. Sharp Covering-Number Bounds for Feedforward ReLU Networks via Parameter Symmetries
+
+- Date: 2026-11-11
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2611.15300v1
+- PDF: https://arxiv.org/pdf/2611.15300v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-11-arxiv-sharp_covering_number_bounds_for_feedforward_relu_networks_via_parameter_symmetries_infographic.json
+
+## 19. Proximal point algorithm for interval valued optimization problems with application to lasso problem
 
 - Date: 2026-11-10
 - Category: Optimization and PDEs
@@ -43,122 +155,10 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.13668v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-10-arxiv-proximal_point_algorithm_for_interval_valued_optimization_problems_with_application_to_las_infographic.json
 
-## 6. Learning the Brownian Motion in Machine Learning for Parametric Parabolic PDEs: A Backward Quadrature Approach
+## 20. A Convex-Analytic Reformulation for Poisoning Attacks on Logistic Regression
 
-- Date: 2026-11-10
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2611.13795v1
-- PDF: https://arxiv.org/pdf/2611.13795v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-10-arxiv-learning_the_brownian_motion_in_machine_learning_for_parametric_parabolic_pdes_a_backward_infographic.json
-
-## 7. Megrez: A Knowledge-Guided Agent for Formal Mathematics over MK Set Theory
-
-- Date: 2026-11-10
+- Date: 2026-11-12
 - Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2611.13613v1
-- PDF: https://arxiv.org/pdf/2611.13613v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-10-arxiv-megrez_a_knowledge_guided_agent_for_formal_mathematics_over_mk_set_theory_infographic.json
-
-## 8. Trust, but verify, audit and attribute: a human-in-the-loop framework for checking AI-produced research results
-
-- Date: 2026-11-09
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2611.13042v1
-- PDF: https://arxiv.org/pdf/2611.13042v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-09-arxiv-trust_but_verify_audit_and_attribute_a_human_in_the_loop_framework_for_checking_ai_produce_infographic.json
-
-## 9. ProofCoder: Continuous Reasoning for Automated Software Verification
-
-- Date: 2026-11-10
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2611.14106v1
-- PDF: https://arxiv.org/pdf/2611.14106v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-10-arxiv-proofcoder_continuous_reasoning_for_automated_software_verification_infographic.json
-
-## 10. Discrete Model-Based Diffusion for Combinatorial Optimization in Multi-Robot Task Allocation
-
-- Date: 2026-11-09
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2611.13382v1
-- PDF: https://arxiv.org/pdf/2611.13382v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-09-arxiv-discrete_model_based_diffusion_for_combinatorial_optimization_in_multi_robot_task_allocati_infographic.json
-
-## 11. BiVerify: Closing the Loop Between Backward and Forward Verification for Mathematical Self-Correction
-
-- Date: 2026-11-08
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2611.11368v1
-- PDF: https://arxiv.org/pdf/2611.11368v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-08-arxiv-biverify_closing_the_loop_between_backward_and_forward_verification_for_mathematical_self_infographic.json
-
-## 12. Orthogonal Updates for the Win: Towards Accelerated Adaptive Minimax Optimization
-
-- Date: 2026-11-08
-- Category: Geometry and Topology
-- arXiv: https://arxiv.org/abs/2611.11387v1
-- PDF: https://arxiv.org/pdf/2611.11387v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-08-arxiv-orthogonal_updates_for_the_win_towards_accelerated_adaptive_minimax_optimization_infographic.json
-
-## 13. LLM-Assisted Advances in the Ropelength Problem
-
-- Date: 2026-11-10
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2611.14234v1
-- PDF: https://arxiv.org/pdf/2611.14234v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-10-arxiv-llm_assisted_advances_in_the_ropelength_problem_infographic.json
-
-## 14. Geometry-Dependent Approximation and Stability Properties of Shallow ReLU$^k$ Networks on Bounded Euclidean Domains
-
-- Date: 2026-11-10
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2611.13952v1
-- PDF: https://arxiv.org/pdf/2611.13952v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-10-arxiv-geometry_dependent_approximation_and_stability_properties_of_shallow_relu_k_networks_on_bo_infographic.json
-
-## 15. Chatter Attack: Resource Consumption Attack for Large Language Models
-
-- Date: 2026-11-08
-- Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2611.11261v1
-- PDF: https://arxiv.org/pdf/2611.11261v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-08-arxiv-chatter_attack_resource_consumption_attack_for_large_language_models_infographic.json
-
-## 16. Total variation error bounds for Schrödinger-Föllmer samplers
-
-- Date: 2026-11-09
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2611.12447v1
-- PDF: https://arxiv.org/pdf/2611.12447v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-09-arxiv-total_variation_error_bounds_for_schr_dinger_f_llmer_samplers_infographic.json
-
-## 17. On the Global Convergence of Stochastic Adam for Physics-Informed Neural Networks
-
-- Date: 2026-11-09
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2611.11905v1
-- PDF: https://arxiv.org/pdf/2611.11905v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-09-arxiv-on_the_global_convergence_of_stochastic_adam_for_physics_informed_neural_networks_infographic.json
-
-## 18. AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models
-
-- Date: 2026-11-10
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2611.14515v1
-- PDF: https://arxiv.org/pdf/2611.14515v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-10-arxiv-autoscaffold_ai_guided_scaffolding_for_reinforcement_learning_of_language_models_infographic.json
-
-## 19. A Stability Analysis of AdamW: Unstable Equilibria and Non-Convergence
-
-- Date: 2026-11-08
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2611.11526v1
-- PDF: https://arxiv.org/pdf/2611.11526v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-08-arxiv-a_stability_analysis_of_adamw_unstable_equilibria_and_non_convergence_infographic.json
-
-## 20. Learning Rate Decay Can Exponentially Accelerate SGD for Global Optimization of Nonconvex Functions
-
-- Date: 2026-11-09
-- Category: Optimization and PDEs
-- arXiv: https://arxiv.org/abs/2611.12769v1
-- PDF: https://arxiv.org/pdf/2611.12769v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-09-arxiv-learning_rate_decay_can_exponentially_accelerate_sgd_for_global_optimization_of_nonconvex_infographic.json
+- arXiv: https://arxiv.org/abs/2611.17143v1
+- PDF: https://arxiv.org/pdf/2611.17143v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-12-arxiv-a_convex_analytic_reformulation_for_poisoning_attacks_on_logistic_regression_infographic.json
