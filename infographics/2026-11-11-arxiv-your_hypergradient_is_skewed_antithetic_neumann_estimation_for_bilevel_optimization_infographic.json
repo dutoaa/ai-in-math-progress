@@ -1,13 +1,13 @@
 {
-  "key_insight": "Stochastic Neumann inverse-Hessian estimates can amplify skewness, while antithetic pairing cancels all odd-order noise terms when the reference Hessian is exact.",
-  "engineering_relevance": "More reliable hypergradients can improve bilevel learning pipelines affected by corrupted labels, outliers, heterogeneous data, or class imbalance.",
+  "key_insight": "Stochastic Neumann inverse-Hessian estimates can amplify skewness, while antithetic pairing cancels odd-order noise terms when the reference Hessian is exact.",
+  "engineering_relevance": "More reliable hypergradients can improve bilevel learning pipelines exposed to corrupted labels, outliers, heterogeneous data, or class imbalance.",
   "method": [
-    "Pair each sampled Hessian with its mirror around a reference Hessian.",
-    "Average paired Neumann inverse-Hessian estimates to cancel odd-order perturbations.",
-    "Integrate the modified Hessian-vector step into ANE-SGD or recursively variance-reduced ANE-VR."
+    "Mirror each sampled Hessian around a reference Hessian and average the paired Neumann estimates.",
+    "Cancel odd-order perturbations with an exact reference; bound residual odd-order contributions linearly in reference error otherwise.",
+    "Modify the Hessian-vector step to build ANE-SGD and ANE-VR, with recursive variance reduction in ANE-VR."
   ],
-  "evidence_signal": "Across four tasks with 20 seeds each, ANE-based methods report 4–25% lower loss than the best baseline, including 25% lower test loss and 54% higher test R² on robust regression.",
-  "watch_item": "Exact odd-order cancellation requires an exact reference Hessian; with an approximate reference, residual odd-order contributions are bounded linearly in reference error.",
+  "evidence_signal": "Across four task families with 20 seeds each, ANE-based methods report 4–25% lower loss than the best baseline, including 25% lower test loss and 54% higher test R-squared in robust regression.",
+  "watch_item": "Practical gains depend on reference-Hessian accuracy; assess the cost of constructing the reference and computing paired estimates.",
   "hashtags": [
     "#BilevelOptimization",
     "#Hypergradients",
@@ -21,6 +21,6 @@
   "paper_title": "Your Hypergradient is Skewed: Antithetic Neumann Estimation for Bilevel Optimization",
   "paper_date": "2026-11-11",
   "paper_category": "Theorem Proving",
-  "generated_at": "2026-11-14T18:39:02",
+  "generated_at": "2026-11-15T19:14:25",
   "generator": "openai"
 }

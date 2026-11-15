@@ -27,22 +27,22 @@
         "url": "https://arxiv.org/pdf/2611.17052v1"
       }
     ],
-    "score": 83,
+    "score": 78,
     "infographic": {
-      "key_insight": "Model choice drives AI peer-review error detection most strongly, while verification tools offer gains that depend on the task and scientific domain.",
-      "engineering_relevance": "Evaluate reviewer models before adding scaffolding, then target citation retrieval, computer algebra, and code execution where they provide measurable value.",
+      "key_insight": "Model choice drives AI peer-review error detection most strongly, while verification tools provide task- and domain-specific gains.",
+      "engineering_relevance": "Build scientific review assistants around strong base models, adding citation retrieval, computer algebra, and code execution where they provide measurable benefits.",
       "method": [
-        "Inject localisable general, mathematical, numerical, and citation errors at three severity levels into real papers.",
+        "Inject localisable errors across four types and three severity levels into real papers.",
         "Measure detection by error type and severity, plus false positives on clean copies.",
-        "Test Skepthical, a multi-agent reviewer using citation retrieval, computer algebra, and executed code."
+        "Evaluate Skepthical, a multi-agent reviewer using citation retrieval, computer algebra, and executed code."
       ],
-      "evidence_signal": "Across 30 astrophysics and ML preprints with 357 injected errors, 12 reviewer systems were evaluated; three frontier models given the same prompt differed by about 50 percentage points in total detection on both corpora.",
-      "watch_item": "Tool gains may not generalise across domains: Skepthical’s citation-detection lead in astrophysics was not statistically distinguishable from the best single LLM in ML.",
+      "evidence_signal": "Across 30 astrophysics and ML preprints with 357 injected errors, 12 reviewer systems were evaluated; three frontier models using the same prompt differed by about 50 percentage points in total detection on both corpora.",
+      "watch_item": "Tool gains are domain-dependent: Skepthical’s citation-detection lead in astrophysics did not extend to ML, and mathematics flags were the main source of false positives.",
       "hashtags": [
         "#AIPeerReview",
+        "#ScientificAI",
         "#LLMEvaluation",
-        "#ScientificComputing",
-        "#VerificationTools",
+        "#ToolAugmentedAI",
         "#ResearchIntegrity"
       ],
       "model": "gpt-6.1-sol",
@@ -51,7 +51,7 @@
       "paper_title": "Auditing AI peer reviewers: a benchmark on real scientific papers",
       "paper_date": "2026-11-12",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-11-14T18:38:51",
+      "generated_at": "2026-11-15T19:14:09",
       "generator": "openai"
     }
   },
@@ -80,22 +80,22 @@
         "url": "https://arxiv.org/pdf/2611.15493v1"
       }
     ],
-    "score": 82,
+    "score": 77,
     "infographic": {
       "key_insight": "Effective Entropy measures diversity only among valid reasoning trajectories, separating useful exploration from incorrect-output noise.",
-      "engineering_relevance": "For verifiable math tasks, validity-aware exploration may improve RL training without rewarding diversity that comes from incorrect reasoning.",
+      "engineering_relevance": "VEPO offers a validity-aware exploration objective for training mathematical reasoning models with verifiable rewards.",
       "method": [
-        "Restrict the entropy measure to the valid trajectory subspace.",
-        "Incorporate Effective Entropy into Validity-aware Entropy Policy Optimization (VEPO) for RLVR training.",
-        "Increase the probability of under-explored valid trajectories through an adaptive attraction mechanism."
+        "Define entropy within the valid trajectory subspace.",
+        "Incorporate Effective Entropy into RLVR through Validity-aware Entropy Policy Optimization (VEPO).",
+        "Increase the probability of under-explored valid trajectories through an adaptive attraction dynamic."
       ],
-      "evidence_signal": "Across six math benchmarks with 1.5B and 7B DeepSeek-R1-Distill-Qwen models, VEPO reports aggregate accuracy gains over GRPO and competitive repeated-sampling success; matched-correct-count MATH500 evaluations find more distinct strategies, supported by paired tests and three-seed comparisons.",
-      "watch_item": "The approach depends on reliable validity verification; the abstract does not establish benefits beyond verifiable mathematical reasoning.",
+      "evidence_signal": "Across six math benchmarks with 1.5B and 7B DeepSeek-R1-Distill-Qwen models, VEPO improves aggregate accuracy over GRPO; matched-correct-count MATH500 evaluation finds more distinct strategies, supported by paired tests and three-seed comparisons.",
+      "watch_item": "The validity-aware objective depends on reliable reward verification, and the abstract establishes results only for mathematical reasoning.",
       "hashtags": [
+        "#MathematicalReasoning",
+        "#RLVR",
         "#EffectiveEntropy",
         "#VEPO",
-        "#RLVR",
-        "#MathematicalReasoning",
         "#LLMExploration"
       ],
       "model": "gpt-6.1-sol",
@@ -104,60 +104,7 @@
       "paper_title": "The Illusion of Diversity: Aligning LLM Exploration via Effective Entropy",
       "paper_date": "2026-11-11",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-11-14T18:38:53",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-11-12-arxiv-well_balanced_we_pinns_for_the_shallow_water_equations_over_smooth_and_discontinuous_bathy",
-    "arxiv_id": "2611.17289v1",
-    "date": "2026-11-12",
-    "title": "Well-Balanced WE-PINNs for the Shallow Water Equations over Smooth and Discontinuous Bathymetries",
-    "authors": "Ismail Oubarka, Imad Kissami, Mohamed Boubekeur, Imad Elmahi, Fayssal Benkhaldoun",
-    "abstract": "Physics-informed neural networks (PINNs) solve partial differential equations without a mesh, but they do not in general preserve the steady states that well-balanced schemes reproduce exactly. We present a well-balanced extension of the weak and entropy PINN (WE-PINN) framework to the shallow water equations over smooth and discontinuous bathymetry. The residual is a weak space--time control-volume identity enforced on randomly placed control volumes that may overlap, so no mesh is needed. In free-surface variables, the geometric source is integrated by parts onto the bed, so that the network is never differentiated, and a cell-local bed-slope correction makes the quadrature reproduce the exact bed increment. Bed discontinuities, located from the bathymetry alone, separate sub-domains carrying independent networks, coupled through conservation of discharge and total head. We prove that the fully discrete residual vanishes identically on the lake at rest for any control-volume family, quadrature order and nominal bed slope, so that the equilibrium is an exact global minimiser of the training objective; that the continuous residual characterises weak solutions; that the slope correction is consistent; and that no approximation with a continuous free surface can satisfy the head condition at a step with non-zero discharge, so that the decomposition is necessary. Numerically, the residual vanishes to round-off on four lake-at-rest configurations over smooth, discontinuous, compound and tabulated beds, and the trained network reaches the equilibrium to round-off under an extended training budget. On seven Riemann problems at a bottom step, covering sub-, super- and critical transitions, the network attains relative $L^1$ free-surface errors between $6.9\\times10^{-4}$ and $3.5\\times10^{-3}$, and reaches critical states without prescribing them.",
-    "category": "Symbolic Computation",
-    "source": "arXiv",
-    "published": "2026-11-12T18:52:50Z",
-    "updated": "2026-11-12T18:52:50Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2611.17289v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2611.17289v1"
-      }
-    ],
-    "score": 80,
-    "infographic": {
-      "key_insight": "A well-balanced WE-PINN formulation exactly preserves lake-at-rest equilibria in its discrete residual, even over discontinuous bathymetry.",
-      "engineering_relevance": "This mesh-free approach can model shallow-water flow over uneven beds without introducing residual imbalance at still-water equilibria.",
-      "method": [
-        "Enforce weak space–time conservation on randomly placed, potentially overlapping control volumes without differentiating the network.",
-        "Integrate the geometric source by parts and correct local bed slopes so quadrature reproduces exact bed increments.",
-        "Use independent networks across bed discontinuities, coupled by conservation of discharge and total head."
-      ],
-      "evidence_signal": "Four lake-at-rest tests achieved round-off residuals; seven bottom-step Riemann problems yielded relative L1 free-surface errors of 6.9×10⁻⁴–3.5×10⁻³ and recovered critical states without prescribing them.",
-      "watch_item": "Exact residual balance does not guarantee rapid training convergence: reaching equilibrium to round-off required an extended training budget.",
-      "hashtags": [
-        "#PhysicsInformedNeuralNetworks",
-        "#ShallowWaterEquations",
-        "#WellBalancedMethods",
-        "#ScientificMachineLearning",
-        "#ComputationalFluidDynamics"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-11-12-arxiv-well_balanced_we_pinns_for_the_shallow_water_equations_over_smooth_and_discontinuous_bathy",
-      "paper_title": "Well-Balanced WE-PINNs for the Shallow Water Equations over Smooth and Discontinuous Bathymetries",
-      "paper_date": "2026-11-12",
-      "paper_category": "Symbolic Computation",
-      "generated_at": "2026-11-14T18:38:56",
+      "generated_at": "2026-11-15T19:14:11",
       "generator": "openai"
     }
   },
@@ -187,23 +134,23 @@
         "url": "https://arxiv.org/pdf/2611.16995v1"
       }
     ],
-    "score": 78,
+    "score": 73,
     "infographic": {
-      "key_insight": "Entire sig-jump-diffusions make expected signatures computable through linear ODEs, enabling score-based generative modeling of time series and finite-dimensional data.",
+      "key_insight": "Entire sig-jump-diffusions make expected signatures computable through linear ODEs, enabling score-based generative modeling for time series and finite-dimensional data.",
       "engineering_relevance": "The framework reduces generalized score learning for jump diffusions to linear ODE solves and deterministic optimization.",
       "method": [
         "Define jump-diffusions whose characteristics are linear combinations of their own signature components.",
-        "Compute expected signatures via linear ODEs; polynomial jump-diffusions admit finite-dimensional systems.",
-        "Learn scores directly or, for finite-dimensional data, through inverse signature matching."
+        "Compute expected signatures via linear ODEs, with finite-dimensional systems for embedded polynomial jump-diffusions.",
+        "Learn scores through deterministic optimization or inverse signature matching."
       ],
-      "evidence_signal": "The abstract reports theoretical computability and embedding results, but provides no datasets, numerical benchmarks, or empirical performance metrics.",
-      "watch_item": "Beyond the polynomial case, implementation may require truncating infinite-dimensional signature systems and controlling approximation error.",
+      "evidence_signal": "The abstract reports theoretical computability and embedding results, but provides no datasets, empirical benchmarks, or quantitative generation metrics.",
+      "watch_item": "General models involve potentially infinite signature expansions, so practical implementations may require truncation and numerical error control.",
       "hashtags": [
-        "#ScoreBasedModels",
-        "#JumpDiffusions",
+        "#ScoreBasedGenerativeModels",
         "#PathSignatures",
-        "#GenerativeModeling",
-        "#ComputationalMathematics"
+        "#JumpDiffusions",
+        "#StochasticAnalysis",
+        "#ScientificMachineLearning"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -211,7 +158,60 @@
       "paper_title": "Entire sig-jump-diffusions, their expected signature and applications to score-based generative modeling",
       "paper_date": "2026-11-12",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-11-14T18:38:58",
+      "generated_at": "2026-11-15T19:14:14",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-12-arxiv-well_balanced_we_pinns_for_the_shallow_water_equations_over_smooth_and_discontinuous_bathy",
+    "arxiv_id": "2611.17289v1",
+    "date": "2026-11-12",
+    "title": "Well-Balanced WE-PINNs for the Shallow Water Equations over Smooth and Discontinuous Bathymetries",
+    "authors": "Ismail Oubarka, Imad Kissami, Mohamed Boubekeur, Imad Elmahi, Fayssal Benkhaldoun",
+    "abstract": "Physics-informed neural networks (PINNs) solve partial differential equations without a mesh, but they do not in general preserve the steady states that well-balanced schemes reproduce exactly. We present a well-balanced extension of the weak and entropy PINN (WE-PINN) framework to the shallow water equations over smooth and discontinuous bathymetry. The residual is a weak space--time control-volume identity enforced on randomly placed control volumes that may overlap, so no mesh is needed. In free-surface variables, the geometric source is integrated by parts onto the bed, so that the network is never differentiated, and a cell-local bed-slope correction makes the quadrature reproduce the exact bed increment. Bed discontinuities, located from the bathymetry alone, separate sub-domains carrying independent networks, coupled through conservation of discharge and total head. We prove that the fully discrete residual vanishes identically on the lake at rest for any control-volume family, quadrature order and nominal bed slope, so that the equilibrium is an exact global minimiser of the training objective; that the continuous residual characterises weak solutions; that the slope correction is consistent; and that no approximation with a continuous free surface can satisfy the head condition at a step with non-zero discharge, so that the decomposition is necessary. Numerically, the residual vanishes to round-off on four lake-at-rest configurations over smooth, discontinuous, compound and tabulated beds, and the trained network reaches the equilibrium to round-off under an extended training budget. On seven Riemann problems at a bottom step, covering sub-, super- and critical transitions, the network attains relative $L^1$ free-surface errors between $6.9\\times10^{-4}$ and $3.5\\times10^{-3}$, and reaches critical states without prescribing them.",
+    "category": "Symbolic Computation",
+    "source": "arXiv",
+    "published": "2026-11-12T18:52:50Z",
+    "updated": "2026-11-12T18:52:50Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.17289v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.17289v1"
+      }
+    ],
+    "score": 70,
+    "infographic": {
+      "key_insight": "A well-balanced WE-PINN formulation exactly preserves lake-at-rest equilibria in the shallow water equations over smooth and discontinuous beds.",
+      "engineering_relevance": "Exact equilibrium preservation helps prevent spurious flow in mesh-free shallow-water simulations over uneven terrain.",
+      "method": [
+        "Enforce weak space–time conservation on randomly placed, potentially overlapping control volumes without differentiating the network.",
+        "Integrate the geometric source by parts and correct local bed slopes so quadrature reproduces exact bed increments.",
+        "Use independent networks across bed discontinuities, coupled by conservation of discharge and total head."
+      ],
+      "evidence_signal": "Tests report round-off residuals on four lake-at-rest configurations and relative L1 free-surface errors of 6.9×10⁻⁴–3.5×10⁻³ on seven bottom-step Riemann problems.",
+      "watch_item": "Exact discrete equilibrium preservation does not guarantee rapid training convergence; reaching equilibrium to round-off required an extended training budget.",
+      "hashtags": [
+        "#PhysicsInformedNeuralNetworks",
+        "#ShallowWaterEquations",
+        "#WellBalancedMethods",
+        "#ScientificMachineLearning",
+        "#ComputationalFluidDynamics"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-12-arxiv-well_balanced_we_pinns_for_the_shallow_water_equations_over_smooth_and_discontinuous_bathy",
+      "paper_title": "Well-Balanced WE-PINNs for the Shallow Water Equations over Smooth and Discontinuous Bathymetries",
+      "paper_date": "2026-11-12",
+      "paper_category": "Symbolic Computation",
+      "generated_at": "2026-11-15T19:14:16",
       "generator": "openai"
     }
   },
@@ -242,23 +242,23 @@
         "url": "https://arxiv.org/pdf/2611.16886v1"
       }
     ],
-    "score": 73,
+    "score": 68,
     "infographic": {
-      "key_insight": "A structured, ten-step LLM-assisted workflow can support complete machine-checked verification of complex algorithms in Dafny while preserving human oversight.",
-      "engineering_relevance": "The approach could shift verification effort from detailed proof construction toward specification review, solver diagnosis, and strategic guidance.",
+      "key_insight": "A structured ten-step LLM-assisted workflow can support machine-checked verification of complex algorithms in Dafny while shifting human effort toward supervision and specification review.",
+      "engineering_relevance": "Combining LLM-generated proof work with testing, verifier feedback, and performance profiling offers a practical route to verifying sophisticated scientific software.",
       "method": [
         "Formalize algorithms and develop contracts and invariants.",
-        "Empirically test invariants and iteratively construct proofs using testing and verification feedback.",
-        "Profile verification bottlenecks and optimize proofs under resource constraints."
+        "Validate invariants empirically and iteratively construct proofs using Dafny feedback.",
+        "Profile verification bottlenecks and optimize proofs under human oversight."
       ],
-      "evidence_signal": "The authors evaluated the workflow on 37 graph-theory and labelled-transition-system algorithms, including the Hopcroft–Tarjan triconnectivity test, with many verifications completed within hours to a few days.",
-      "watch_item": "Human review remains essential: machine-checked proofs establish compliance with formal specifications, not whether those specifications capture the intended requirements.",
+      "evidence_signal": "The authors evaluated the workflow on 37 algorithms from graph theory and labelled transition systems, including the Hopcroft–Tarjan triconnectivity test, with many verifications completed within hours to a few days.",
+      "watch_item": "Human review remains essential: machine-checked proofs establish the specified properties, not whether the specifications capture every intended requirement.",
       "hashtags": [
         "#FormalVerification",
         "#Dafny",
         "#LLMAssistedVerification",
         "#TheoremProving",
-        "#VerifiedAlgorithms"
+        "#ScientificComputing"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -266,61 +266,7 @@
       "paper_title": "LLM-Assisted Verification in Dafny",
       "paper_date": "2026-11-12",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-11-14T18:39:00",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-11-11-arxiv-your_hypergradient_is_skewed_antithetic_neumann_estimation_for_bilevel_optimization",
-    "arxiv_id": "2611.15895v1",
-    "date": "2026-11-11",
-    "title": "Your Hypergradient is Skewed: Antithetic Neumann Estimation for Bilevel Optimization",
-    "authors": "Jason Bohne, Pawel Polak, Gary Kazantsev, David Rosenberg",
-    "abstract": "Bilevel optimization is a core tool in practical machine learning workflows, including hyperparameter tuning, data reweighting, robust learning, reinforcement learning, and imbalanced classification. Hypergradient computation requires the inverse of the inner Hessian, typically estimated via a truncated Neumann series. While existing analyses focus on bias and variance, we show that the product structure of the Neumann series introduces a third source of error: skewness. We identify that, unlike ordinary gradients, whose asymmetry is suppressed by mini-batch averaging, the Neumann estimator amplifies skewness across factors, with the third-moment error growing, under weak contraction, with truncation depth, inner condition number, and per-factor noise asymmetry. This arises in many practical settings such as corrupted labels, outliers, heterogeneous or class-imbalanced datasets. To address this, we introduce the Antithetic Neumann Estimator (ANE), which pairs each Hessian sample with a mirrored counterpart around a reference Hessian and averages the resulting inverse-Hessian estimates. With an exact reference, the antithetic product retains only even-order noise, eliminating all odd-order perturbation terms; with an approximate reference, the residual odd-order contribution is bounded linearly in the reference error. ANE requires only a modification of the Hessian vector step and combines with existing stochastic or variance-reduced bilevel methods. We instantiate ANE-SGD and ANE-VR, the latter adding recursive variance reduction. Across robust regression, data cleaning, offline reinforcement learning, and imbalanced classification, ANE-based methods improve on stochastic and variance-reduced baselines on every task (20 seeds each), lowering loss by 4 to 25% relative to the best baseline; the largest gains, on robust regression, are a 25% lower test loss and a 54% higher test r-squared.",
-    "category": "Theorem Proving",
-    "source": "arXiv",
-    "published": "2026-11-11T19:01:48Z",
-    "updated": "2026-11-11T19:01:48Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "math.OC"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2611.15895v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2611.15895v1"
-      }
-    ],
-    "score": 73,
-    "infographic": {
-      "key_insight": "Stochastic Neumann inverse-Hessian estimates can amplify skewness, while antithetic pairing cancels all odd-order noise terms when the reference Hessian is exact.",
-      "engineering_relevance": "More reliable hypergradients can improve bilevel learning pipelines affected by corrupted labels, outliers, heterogeneous data, or class imbalance.",
-      "method": [
-        "Pair each sampled Hessian with its mirror around a reference Hessian.",
-        "Average paired Neumann inverse-Hessian estimates to cancel odd-order perturbations.",
-        "Integrate the modified Hessian-vector step into ANE-SGD or recursively variance-reduced ANE-VR."
-      ],
-      "evidence_signal": "Across four tasks with 20 seeds each, ANE-based methods report 4–25% lower loss than the best baseline, including 25% lower test loss and 54% higher test R² on robust regression.",
-      "watch_item": "Exact odd-order cancellation requires an exact reference Hessian; with an approximate reference, residual odd-order contributions are bounded linearly in reference error.",
-      "hashtags": [
-        "#BilevelOptimization",
-        "#Hypergradients",
-        "#NeumannSeries",
-        "#AntitheticEstimation",
-        "#RobustMachineLearning"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-11-11-arxiv-your_hypergradient_is_skewed_antithetic_neumann_estimation_for_bilevel_optimization",
-      "paper_title": "Your Hypergradient is Skewed: Antithetic Neumann Estimation for Bilevel Optimization",
-      "paper_date": "2026-11-11",
-      "paper_category": "Theorem Proving",
-      "generated_at": "2026-11-14T18:39:02",
+      "generated_at": "2026-11-15T19:14:18",
       "generator": "openai"
     }
   },
@@ -351,20 +297,20 @@
         "url": "https://arxiv.org/pdf/2611.13624v1"
       }
     ],
-    "score": 73,
+    "score": 68,
     "infographic": {
-      "key_insight": "Multifidelity Operator Inference supplements scarce high-fidelity training data with abundant coarse-model data to reduce variance in learned reduced-order models.",
-      "engineering_relevance": "More accurate non-intrusive surrogates can make repeated PDE evaluations more affordable for uncertainty quantification and engineering design optimization.",
+      "key_insight": "Multifidelity Operator Inference improves reduced-order PDE predictions by combining scarce high-fidelity training data with abundant low-fidelity data.",
+      "engineering_relevance": "More accurate, lower-variance surrogates can make repeated PDE evaluations more practical for uncertainty quantification and engineering design optimization.",
       "method": [
-        "Collect scarce high-fidelity snapshots and abundant snapshots from coarser discretizations.",
-        "Fit reduced operators from state and time-derivative data using multifidelity linear regression.",
-        "Use the learned reduced model for inexpensive solution prediction."
+        "Fit reduced operators non-intrusively using state and time-derivative data.",
+        "Supplement scarce high-fidelity snapshots with data from coarser discretizations.",
+        "Combine fidelity levels through multifidelity linear regression."
       ],
-      "evidence_signal": "Experiments on model PDE problems show more accurate solution-field predictions than high-fidelity-only Operator Inference at the same computational budget.",
-      "watch_item": "The abstract does not establish how performance changes when coarse discretizations poorly capture high-fidelity dynamics.",
+      "evidence_signal": "Experiments on model PDE problems show higher solution-field accuracy than high-fidelity-only Operator Inference at the same computational budget.",
+      "watch_item": "The abstract does not establish performance on complex engineering systems; benefits may depend on how informative coarse-grid data are.",
       "hashtags": [
-        "#Multifidelity",
         "#OperatorInference",
+        "#Multifidelity",
         "#ModelReduction",
         "#ScientificMachineLearning",
         "#PDEs"
@@ -375,7 +321,7 @@
       "paper_title": "Multifidelity Operator Inference for Non-intrusive Model Reduction under Data Scarcity",
       "paper_date": "2026-11-10",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-11-14T18:39:04",
+      "generated_at": "2026-11-15T19:14:21",
       "generator": "openai"
     }
   },
@@ -404,17 +350,17 @@
         "url": "https://arxiv.org/pdf/2611.16867v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "Coding agents can design non-neural controllers that match reinforcement-learning returns, but success is inconsistent and return alone does not establish robustness.",
-      "engineering_relevance": "ControlHarbor evaluates executable controllers against ordered requirements, physical perturbations and structural certificates, helping distinguish high performance from specification compliance.",
+      "key_insight": "Coding agents can design non-neural controllers that match RL returns, but success is inconsistent and return alone does not establish robustness.",
+      "engineering_relevance": "ControlHarbor tests executable controllers against explicit performance, perturbation and structural requirements, aligning agent evaluation with control-engineering practice.",
       "method": [
-        "Formulate controller design as a chance-constrained feasibility problem.",
+        "Formulate controller design as chance-constrained feasibility.",
         "Submit a single Python file mapping measurements to actions, without neural networks.",
-        "Evaluate on held-out seeds using Harbor-packaged tasks shared with learning algorithms."
+        "Evaluate on held-out seeds against ordered requirements, physical perturbations and structural certificates."
       ],
       "evidence_signal": "Across 44 tasks over 13 plants, three frontier coding agents reached RL returns on every parity task, but only in a minority of sessions.",
-      "watch_item": "Robustness remains conditional: a structured design met the humanoid robustness specification at RL return, but no designed controller succeeded under large pushes where domain-randomised RL did.",
+      "watch_item": "Robustness remains scenario-dependent: structured design matched RL return under the humanoid robustness specification, but no designed controller succeeded under large pushes where domain-randomised RL did.",
       "hashtags": [
         "#ControlHarbor",
         "#ControlTheory",
@@ -428,60 +374,61 @@
       "paper_title": "ControlHarbor: A Benchmark for Control Design by Coding Agents",
       "paper_date": "2026-11-12",
       "paper_category": "AI math",
-      "generated_at": "2026-11-14T18:39:07",
+      "generated_at": "2026-11-15T19:14:23",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-11-11-arxiv-optimal_higher_order_convergence_rates_for_the_muon_optimizer",
-    "arxiv_id": "2611.15825v1",
+    "id": "2026-11-11-arxiv-your_hypergradient_is_skewed_antithetic_neumann_estimation_for_bilevel_optimization",
+    "arxiv_id": "2611.15895v1",
     "date": "2026-11-11",
-    "title": "Optimal higher order convergence rates for the MUON optimizer",
-    "authors": "Thomas Beretti, Thang Do, Steffen Dereich, Arnulf Jentzen",
-    "abstract": "Gradient descent optimization methods are the key tools to train deep neural networks in artificial intelligence systems. In practice, one typically employs suitable accelerated gradient descent optimization methods such as the momentum optimizer, the Adam optimizer, or the MUON optimizer proposed by Jordan et al. in 2024. In 1964 Polyak showed that, in a neighborhood of a local minimizer, the momentum optimizer converges with the rate $(\\sqrtχ+1)^{-1}(\\sqrtχ-1)$, which is strictly faster than the rate $(χ+1)^{-1}(χ-1)$ of the standard gradient descent optimizer, where $χ\\in(1,\\infty)$ is the condition number (the ratio of the largest to the smallest eigenvalue) of the Hessian of the objective function at the local minimizer. Recently, the same faster rate has been established for the Adam optimizer. In this work we show that the MUON optimizer achieves the same higher speed of convergence and we establish the optimality of the obtained convergence rates. More specifically, we propose a precise concept for measuring the speed of convergence of gradient descent optimization methods, and we establish optimal convergence rates for the standard gradient descent, the momentum, the RMSprop, the Adam, and the MUON optimizers.",
-    "category": "Number Theory and Algebra",
+    "title": "Your Hypergradient is Skewed: Antithetic Neumann Estimation for Bilevel Optimization",
+    "authors": "Jason Bohne, Pawel Polak, Gary Kazantsev, David Rosenberg",
+    "abstract": "Bilevel optimization is a core tool in practical machine learning workflows, including hyperparameter tuning, data reweighting, robust learning, reinforcement learning, and imbalanced classification. Hypergradient computation requires the inverse of the inner Hessian, typically estimated via a truncated Neumann series. While existing analyses focus on bias and variance, we show that the product structure of the Neumann series introduces a third source of error: skewness. We identify that, unlike ordinary gradients, whose asymmetry is suppressed by mini-batch averaging, the Neumann estimator amplifies skewness across factors, with the third-moment error growing, under weak contraction, with truncation depth, inner condition number, and per-factor noise asymmetry. This arises in many practical settings such as corrupted labels, outliers, heterogeneous or class-imbalanced datasets. To address this, we introduce the Antithetic Neumann Estimator (ANE), which pairs each Hessian sample with a mirrored counterpart around a reference Hessian and averages the resulting inverse-Hessian estimates. With an exact reference, the antithetic product retains only even-order noise, eliminating all odd-order perturbation terms; with an approximate reference, the residual odd-order contribution is bounded linearly in the reference error. ANE requires only a modification of the Hessian vector step and combines with existing stochastic or variance-reduced bilevel methods. We instantiate ANE-SGD and ANE-VR, the latter adding recursive variance reduction. Across robust regression, data cleaning, offline reinforcement learning, and imbalanced classification, ANE-based methods improve on stochastic and variance-reduced baselines on every task (20 seeds each), lowering loss by 4 to 25% relative to the best baseline; the largest gains, on robust regression, are a 25% lower test loss and a 54% higher test r-squared.",
+    "category": "Theorem Proving",
     "source": "arXiv",
-    "published": "2026-11-11T18:41:01Z",
-    "updated": "2026-11-11T18:41:01Z",
-    "primary_category": "math.OC",
+    "published": "2026-11-11T19:01:48Z",
+    "updated": "2026-11-11T19:01:48Z",
+    "primary_category": "cs.LG",
     "categories": [
+      "cs.LG",
       "math.OC"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2611.15825v1"
+        "url": "https://arxiv.org/abs/2611.15895v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2611.15825v1"
+        "url": "https://arxiv.org/pdf/2611.15895v1"
       }
     ],
-    "score": 71,
+    "score": 63,
     "infographic": {
-      "key_insight": "MUON achieves the optimal local convergence rate (√χ−1)/(√χ+1), matching momentum and Adam and improving on standard gradient descent’s rate (χ−1)/(χ+1), where χ is the local Hessian condition number.",
-      "engineering_relevance": "The result gives theoretical support for MUON’s accelerated convergence near a local minimizer, rather than guaranteeing faster end-to-end neural network training.",
+      "key_insight": "Stochastic Neumann inverse-Hessian estimates can amplify skewness, while antithetic pairing cancels odd-order noise terms when the reference Hessian is exact.",
+      "engineering_relevance": "More reliable hypergradients can improve bilevel learning pipelines exposed to corrupted labels, outliers, heterogeneous data, or class imbalance.",
       "method": [
-        "Define a precise measure of optimizer convergence speed.",
-        "Establish optimal rates for gradient descent, momentum, RMSprop, Adam, and MUON.",
-        "Relate local convergence rates to Hessian conditioning."
+        "Mirror each sampled Hessian around a reference Hessian and average the paired Neumann estimates.",
+        "Cancel odd-order perturbations with an exact reference; bound residual odd-order contributions linearly in reference error otherwise.",
+        "Modify the Hessian-vector step to build ANE-SGD and ANE-VR, with recursive variance reduction in ANE-VR."
       ],
-      "evidence_signal": "The abstract reports theoretical convergence and optimality results, but no datasets, empirical benchmarks, or runtime measurements.",
-      "watch_item": "The highlighted rates are local; the abstract does not specify the tuning requirements or assumptions needed to attain them in practical training.",
+      "evidence_signal": "Across four task families with 20 seeds each, ANE-based methods report 4–25% lower loss than the best baseline, including 25% lower test loss and 54% higher test R-squared in robust regression.",
+      "watch_item": "Practical gains depend on reference-Hessian accuracy; assess the cost of constructing the reference and computing paired estimates.",
       "hashtags": [
-        "#MUON",
-        "#OptimizationTheory",
-        "#ConvergenceRates",
-        "#DeepLearning",
-        "#NumericalOptimization"
+        "#BilevelOptimization",
+        "#Hypergradients",
+        "#NeumannSeries",
+        "#AntitheticEstimation",
+        "#RobustMachineLearning"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
-      "paper_id": "2026-11-11-arxiv-optimal_higher_order_convergence_rates_for_the_muon_optimizer",
-      "paper_title": "Optimal higher order convergence rates for the MUON optimizer",
+      "paper_id": "2026-11-11-arxiv-your_hypergradient_is_skewed_antithetic_neumann_estimation_for_bilevel_optimization",
+      "paper_title": "Your Hypergradient is Skewed: Antithetic Neumann Estimation for Bilevel Optimization",
       "paper_date": "2026-11-11",
-      "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-11-14T18:39:09",
+      "paper_category": "Theorem Proving",
+      "generated_at": "2026-11-15T19:14:25",
       "generator": "openai"
     }
   },
@@ -511,23 +458,23 @@
         "url": "https://arxiv.org/pdf/2611.15291v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "A 1/L residual scaling rule supports learning-rate transfer across depth for constrained spectral optimizers while preserving feature learning.",
-      "engineering_relevance": "For Scion, the derived scaling rules support reusing learning rates across model depth and width, potentially reducing hyperparameter tuning.",
+      "key_insight": "A 1/L residual scaling rule supports learning-rate transfer across depth for constrained spectral optimizers while preserving feature learning rather than entering the kernel regime.",
+      "engineering_relevance": "For Scion, these scaling rules support reusing learning rates across model depths and widths, potentially reducing hyperparameter tuning.",
       "method": [
-        "Analyze Frank–Wolfe and projected non-Euclidean normalized steepest descent with linear minimization oracles.",
+        "Analyze Frank–Wolfe and projected non-Euclidean normalized steepest descent using linear minimization oracles.",
         "Derive depth-scaling rules that recover 1/L residual scaling through arguments distinct from Adam-family analyses.",
-        "Establish conditions supporting feature learning rather than kernel-regime behavior."
+        "Establish learning-rate transfer conditions for Scion while retaining feature learning."
       ],
-      "evidence_signal": "Experiments report depth-wise learning-rate transfer and feature learning in nanoGPT on FineWeb, DeiT on ImageNet, and MLP-Mixer on CIFAR-10 with appropriate residual scaling.",
-      "watch_item": "Transfer depends on appropriate residual scaling; the abstract does not quantify tuning savings or establish universality across architectures.",
+      "evidence_signal": "Experiments report depth-wise learning-rate transfer and feature learning for nanoGPT on FineWeb, DeiT on ImageNet, and MLP-Mixer on CIFAR-10 with appropriately chosen residual scaling.",
+      "watch_item": "Transfer depends on appropriate residual scaling; the abstract does not quantify performance gains or robustness beyond the evaluated settings.",
       "hashtags": [
-        "#Scion",
         "#LearningRateTransfer",
+        "#Scion",
         "#SpectralOptimization",
         "#FeatureLearning",
-        "#DeepLearningTheory"
+        "#DeepLearning"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -535,7 +482,7 @@
       "paper_title": "Learning Rate Transfer and Feature Learning Across Depth for Constrained Spectral Optimizers: Complete Scion",
       "paper_date": "2026-11-11",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-11-14T18:39:11",
+      "generated_at": "2026-11-15T19:14:28",
       "generator": "openai"
     }
   },
@@ -567,20 +514,20 @@
         "url": "https://arxiv.org/pdf/2611.16003v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "Fit-LRP tightens neural network verification bounds by optimizing affine relaxations over exact unions of polytopes rather than loose axis-aligned bounding boxes.",
-      "engineering_relevance": "It supports verification over oblique and non-convex regions arising in reachability, obstacle avoidance, and neural Lyapunov certification.",
+      "key_insight": "Fit-LRP tightens neural network verification bounds by optimizing affine relaxations over exact unions of polytopes instead of enclosing axis-aligned boxes.",
+      "engineering_relevance": "This enables more efficient verification of cyber-physical systems with oblique or non-convex safety regions, including obstacle-avoidance and neural Lyapunov constraints.",
       "method": [
         "Represent non-convex verification domains as unions of polytopes.",
         "Optimize affine bounds over these domains using small, low-dimensional linear programs.",
-        "Integrate with the final bound-optimization step of LiRPA and α,β-CROWN branch-and-bound to enable earlier pruning."
+        "Integrate into LiRPA and α,β-CROWN branch-and-bound to enable earlier pruning."
       ],
-      "evidence_signal": "On ARCH-COMP and neural Lyapunov benchmarks, the abstract reports 47× less branching on the hardest region, 15× lower worst-case verification time, and—with region-wise partitioning—6.1× faster verification on one CPU than α,β-CROWN on a GPU.",
-      "watch_item": "Exact domain optimization does not make the neural network relaxation exact; scalability may depend on domain dimension and the number of polytopes.",
+      "evidence_signal": "On ARCH-COMP and neural Lyapunov benchmarks, the abstract reports 47× less branching on the hardest region, 15× lower worst-case verification time, and, with region-wise partitioning, verification on a single CPU 6.1× faster than α,β-CROWN on a GPU.",
+      "watch_item": "Exactness applies to optimizing the affine bounds, not the nonlinear network; scalability with polytope count and dimension remains an implementation concern.",
       "hashtags": [
         "#NeuralNetworkVerification",
-        "#LinearProgramming",
+        "#LinearRelaxations",
         "#PolyhedralOptimization",
         "#CyberPhysicalSystems",
         "#FormalMethods"
@@ -591,7 +538,7 @@
       "paper_title": "Fit-LRP: Fitting Linear Relaxations to Polytopes for Neural Network Verification over Non-Convex Regions",
       "paper_date": "2026-11-11",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-11-14T18:39:13",
+      "generated_at": "2026-11-15T19:14:30",
       "generator": "openai"
     }
   },
@@ -621,23 +568,23 @@
         "url": "https://arxiv.org/pdf/2611.15954v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "Riordan arrays could provide an algebraically structured inductive bias for AI through causal linear transformations A(z) → g(z)A(f(z)).",
-      "engineering_relevance": "The structure may enable parameter-efficient sequence layers, interpretable recurrent systems, and invertible architectures for hierarchical data.",
+      "key_insight": "Riordan arrays could provide an algebraic inductive bias for AI through structured, causal linear transformations of sequences.",
+      "engineering_relevance": "These operators may enable parameter-efficient sequence layers, interpretable recurrent systems, and invertible architectures for hierarchical data.",
       "method": [
         "Represent a data sequence by its generating function A(z).",
-        "Apply a Riordan operator (g(z), f(z)) to combine convolution, substitution, and multiscale mixing.",
-        "Explore neural architectures based on these structured operators."
+        "Apply the Riordan transformation A(z) → g(z)A(f(z)).",
+        "Use convolution, substitution, and multiscale mixing to design structured model layers."
       ],
-      "evidence_signal": "The abstract outlines possible architectures and an initial experimental program, but reports no datasets, benchmarks, or measured results.",
-      "watch_item": "Practical implementations must address finite truncation and numerical stability; the infinite-dimensional formulation alone does not establish effectiveness.",
+      "evidence_signal": "The abstract proposes architectures and an initial experimental program but reports no datasets, benchmarks, or empirical results.",
+      "watch_item": "Practical implementations must address finite truncation and numerical stability; infinite-dimensional structure alone does not establish model effectiveness.",
       "hashtags": [
         "#RiordanArrays",
         "#StructuredOperators",
-        "#EfficientAI",
         "#SequenceModeling",
-        "#AlgebraicMachineLearning"
+        "#EfficientAI",
+        "#AlgebraicMethods"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -645,7 +592,60 @@
       "paper_title": "Riordan Arrays as Structured Operators for Artificial Intelligence",
       "paper_date": "2026-11-11",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-11-14T18:39:15",
+      "generated_at": "2026-11-15T19:14:32",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-11-arxiv-optimal_higher_order_convergence_rates_for_the_muon_optimizer",
+    "arxiv_id": "2611.15825v1",
+    "date": "2026-11-11",
+    "title": "Optimal higher order convergence rates for the MUON optimizer",
+    "authors": "Thomas Beretti, Thang Do, Steffen Dereich, Arnulf Jentzen",
+    "abstract": "Gradient descent optimization methods are the key tools to train deep neural networks in artificial intelligence systems. In practice, one typically employs suitable accelerated gradient descent optimization methods such as the momentum optimizer, the Adam optimizer, or the MUON optimizer proposed by Jordan et al. in 2024. In 1964 Polyak showed that, in a neighborhood of a local minimizer, the momentum optimizer converges with the rate $(\\sqrtχ+1)^{-1}(\\sqrtχ-1)$, which is strictly faster than the rate $(χ+1)^{-1}(χ-1)$ of the standard gradient descent optimizer, where $χ\\in(1,\\infty)$ is the condition number (the ratio of the largest to the smallest eigenvalue) of the Hessian of the objective function at the local minimizer. Recently, the same faster rate has been established for the Adam optimizer. In this work we show that the MUON optimizer achieves the same higher speed of convergence and we establish the optimality of the obtained convergence rates. More specifically, we propose a precise concept for measuring the speed of convergence of gradient descent optimization methods, and we establish optimal convergence rates for the standard gradient descent, the momentum, the RMSprop, the Adam, and the MUON optimizers.",
+    "category": "Number Theory and Algebra",
+    "source": "arXiv",
+    "published": "2026-11-11T18:41:01Z",
+    "updated": "2026-11-11T18:41:01Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.15825v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.15825v1"
+      }
+    ],
+    "score": 61,
+    "infographic": {
+      "key_insight": "MUON achieves the optimal local convergence factor (√χ−1)/(√χ+1), matching momentum and Adam and improving on standard gradient descent’s (χ−1)/(χ+1), where χ is the local Hessian condition number.",
+      "engineering_relevance": "The result provides a theoretical basis for MUON’s accelerated convergence near a local minimizer, rather than a guarantee of faster end-to-end neural network training.",
+      "method": [
+        "Define a precise measure of optimizer convergence speed.",
+        "Establish optimal convergence rates for gradient descent, momentum, RMSprop, Adam, and MUON.",
+        "Characterize local convergence using the Hessian condition number."
+      ],
+      "evidence_signal": "The abstract reports theoretical convergence and optimality results, but no datasets, training benchmarks, or empirical speed measurements.",
+      "watch_item": "The stated acceleration is local; the abstract does not establish global convergence or practical wall-clock gains.",
+      "hashtags": [
+        "#MUON",
+        "#Optimization",
+        "#ConvergenceTheory",
+        "#DeepLearning",
+        "#NumericalAnalysis"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-11-arxiv-optimal_higher_order_convergence_rates_for_the_muon_optimizer",
+      "paper_title": "Optimal higher order convergence rates for the MUON optimizer",
+      "paper_date": "2026-11-11",
+      "paper_category": "Number Theory and Algebra",
+      "generated_at": "2026-11-15T19:14:34",
       "generator": "openai"
     }
   },
@@ -676,23 +676,23 @@
         "url": "https://arxiv.org/pdf/2611.16143v1"
       }
     ],
-    "score": 64,
+    "score": 59,
     "infographic": {
-      "key_insight": "Apparent learning gains in an Oracle-to-PostgreSQL migration agent largely disappeared after controlling for shared references, with no clear benefit from policy adaptation.",
-      "engineering_relevance": "Evaluate migration agents with reference-disjoint tests and behavioral checks, because retrieval success and PostgreSQL acceptance do not establish correct migration.",
+      "key_insight": "Apparent learning gains in an Oracle-to-PostgreSQL migration agent largely disappeared after controlling for shared references, with no statistically distinguishable benefit from memory or policy adaptation.",
+      "engineering_relevance": "Migration agents need leakage-resistant evaluation and behavioral validation against Oracle, not just PostgreSQL acceptance or reference similarity.",
       "method": [
-        "Compared persistent memory and policy adaptation against no-memory and nearest-target copy baselines.",
-        "Audited reference overlap and reran evaluation with reference-grouped splits.",
-        "Tested real PL/SQL behavior, human-gated fixes, and retrieval stability as memory grew."
+        "Compare persistent memory and policy adaptation with no-memory and model-free copying baselines.",
+        "Audit shared references and rerun evaluation with reference-grouped splits.",
+        "Test real PL/SQL behavior, human-gated fixes, and retrieval stability as memory grows."
       ],
-      "evidence_signal": "Across four studies, 72% of the initial held-out units shared training references; on 103 leak-free units, the memory effect on reference conformity was 0.002 with an interval spanning zero [-0.008, 0.011].",
-      "watch_item": "PostgreSQL acceptance is not semantic correctness: 10–22% of accepted units in the Oracle-grounded evaluation were behaviorally incorrect.",
+      "evidence_signal": "Across 1,833 documentation-derived pairs, 72% of held-out units shared training references; a grouped rerun found a memory effect of 0.005 [-0.003, 0.017], while 10–22% of PostgreSQL-accepted real PL/SQL units were behaviorally incorrect.",
+      "watch_item": "Scaling memory can weaken retrieval: the reported retrieval margin declined 54% as the knowledge base grew from 12 to 1,200 entries.",
       "hashtags": [
         "#LLMAgents",
         "#DatabaseMigration",
-        "#Evaluation",
+        "#AgentMemory",
         "#DataLeakage",
-        "#AgentMemory"
+        "#BehavioralValidation"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -700,7 +700,7 @@
       "paper_title": "Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration",
       "paper_date": "2026-11-12",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-11-14T18:39:17",
+      "generated_at": "2026-11-15T19:14:37",
       "generator": "openai"
     }
   },
@@ -731,23 +731,23 @@
         "url": "https://arxiv.org/pdf/2611.15108v1"
       }
     ],
-    "score": 64,
+    "score": 59,
     "infographic": {
-      "key_insight": "Eigenius separates computational equality from propositional proof irrelevance so verified scientific knowledge can retain distinct derivations and their provenance.",
-      "engineering_relevance": "Preserving derivation provenance can support evidence comparison and dependency-aware retraction when assays, reagents, or models are invalidated.",
+      "key_insight": "Eigenius preserves distinct proof derivations computationally while expressing proof irrelevance propositionally, enabling scientific knowledge stores to track evidence and retract dependent claims.",
+      "engineering_relevance": "The framework could support auditable scientific databases that connect external verification, typed knowledge graphs, and provenance-aware dependency tracking.",
       "method": [
-        "Define a dependent type kernel with rewrite-based equality and explicitly witnessed proof irrelevance.",
-        "Unify universe, function, and ontology subtyping through coercion-free subsumption.",
-        "Integrate external verifiers, explicit axiom policies, provenance tracking, and record-typed open-world knowledge graphs."
+        "Define a dependent type kernel with intensional equality and coercion-free subsumption.",
+        "Organize external verifiers through an institutional hierarchy with explicit axiom policies.",
+        "Combine justification logic, provenance semirings, and record types to represent scientific evidence."
       ],
       "evidence_signal": "The abstract reports consistency, subject reduction, typing soundness and completeness, and Lean 4 mechanization with zero sorry axioms, but no empirical benchmarks.",
-      "watch_item": "Scalability and practical integration with scientific data pipelines and external verifiers remain unestablished by the abstract.",
+      "watch_item": "Practical scalability and end-to-end counterfactual retraction on real scientific datasets remain unestablished by the abstract.",
       "hashtags": [
         "#TypeTheory",
         "#TheoremProving",
-        "#VerifiedScience",
-        "#KnowledgeProvenance",
-        "#FormalMethods"
+        "#ScientificProvenance",
+        "#KnowledgeGraphs",
+        "#FormalVerification"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -755,7 +755,7 @@
       "paper_title": "Typed Knowledge over Constructive Institutions: A Proof-Relevant Type Theory for Verified Science",
       "paper_date": "2026-11-11",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-11-14T18:39:20",
+      "generated_at": "2026-11-15T19:14:39",
       "generator": "openai"
     }
   },
@@ -786,21 +786,21 @@
         "url": "https://arxiv.org/pdf/2611.17162v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "Commuting diagonal transitions limit SSMs to tracking commutative groups; quaternion channels enable order-sensitive group tracking.",
-      "engineering_relevance": "HyperSSM preserves linear-time inference and parallel training while enabling compact, interpretable memory for structured sequential tasks.",
+      "key_insight": "Representation theory explains why diagonal SSM transitions cannot track noncommutative groups and motivates quaternion channels for order-sensitive memory.",
+      "engineering_relevance": "HyperSSM preserves linear-time inference and parallel training while enabling compact, interpretable state tracking for noncommutative dynamics.",
       "method": [
-        "Model sequence updates as a linear representation of the input-sequence monoid.",
-        "Characterize group tracking through transition-group quotients and real, complex, and quaternion blocks.",
-        "Add quaternion channels in HyperSSM to represent noncommuting transitions."
+        "Model recurrent transitions as a linear representation of the input-sequence monoid.",
+        "Characterize group tracking through quotients of the transition-generated group and real, complex, and quaternion blocks.",
+        "Add quaternion channels to build HyperSSM and interpret learned transition weights."
       ],
-      "evidence_signal": "The abstract reports exact benchmark group-task solutions using at most five state numbers, including S5 with 32 generators, and generalization to sequences 25× longer than training sequences.",
-      "watch_item": "The reported successes concern structured group-tracking tasks; broader language-modeling benefits remain unestablished by the abstract.",
+      "evidence_signal": "The abstract reports exact solutions to benchmark group tasks with at most five state numbers, including S5 with 32 generators, and generalization to sequences 25 times longer than training sequences.",
+      "watch_item": "The abstract establishes results on structured state-tracking tasks, not broad language-model performance or practical throughput gains.",
       "hashtags": [
         "#StateSpaceModels",
         "#RepresentationTheory",
-        "#Quaternion",
+        "#QuaternionMemory",
         "#SequenceModeling",
         "#InterpretableAI"
       ],
@@ -810,7 +810,7 @@
       "paper_title": "Symmetry in Time: A Representation Theory of Linear Recurrent Memory",
       "paper_date": "2026-11-12",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-11-14T18:39:23",
+      "generated_at": "2026-11-15T19:14:42",
       "generator": "openai"
     }
   },
@@ -839,22 +839,22 @@
         "url": "https://arxiv.org/pdf/2611.16448v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "Phase-adapted shallow neural dictionaries achieve N^(-1/2) Sobolev approximation bounds, while matching a chirped target’s phase reduces the phase-dependent growth of the stated upper bound.",
-      "engineering_relevance": "Encoding known oscillatory phase into neural features offers a principled approach to approximating chirped signals without changing the guaranteed N^(-1/2) rate.",
+      "key_insight": "Phase-adapted shallow neural dictionaries achieve an N^(-1/2) Sobolev approximation rate, while matching a chirp signal’s phase reduces the phase-dependent growth of the proven error upper bound.",
+      "engineering_relevance": "For oscillatory one-dimensional signals, incorporating known phase structure into neural features can yield sharper approximation guarantees than using mismatched features.",
       "method": [
-        "Define weighted STSAFT-modulation spaces and connect them to classical modulation spaces through chirp factorization.",
+        "Define weighted modulation spaces using the short-time special affine Fourier transform and relate them to classical spaces through chirp factorization.",
         "Construct a transform-adapted neural dictionary and prove bounded-domain and global N-term approximation estimates.",
-        "Analyze phase matching for fixed-scale chirp families to sharpen the phase-dependent upper bound."
+        "Analyze matched and mismatched dictionary phases for fixed-scale chirp families."
       ],
-      "evidence_signal": "Four numerical experiments examine model comparison, dictionary-size error decay, phase mismatch, and the obstruction caused by restricted translations.",
-      "watch_item": "Global guarantees require unrestricted translations; phase-mismatch comparisons concern upper bounds, not thresholds for optimal approximation error.",
+      "evidence_signal": "Four numerical experiments examine model comparison, dictionary-size error decay, phase mismatch, and restricted-translation obstruction; these diagnostics are distinct from the theoretical best-approximation estimates.",
+      "watch_item": "Global guarantees require unrestricted translations; phase-mismatch comparisons concern upper bounds, not optimal-error thresholds, and the sine branch loses rank at zero phase.",
       "hashtags": [
-        "#ApproximationTheory",
-        "#PhaseAdaptedNetworks",
+        "#NeuralApproximation",
+        "#PhaseAdaptation",
         "#TimeFrequencyAnalysis",
-        "#SobolevApproximation",
+        "#ApproximationTheory",
         "#ScientificMachineLearning"
       ],
       "model": "gpt-6.1-sol",
@@ -863,7 +863,7 @@
       "paper_title": "Weighted STSAFT-Modulation Spaces and Approximation by Phase-Adapted Neural Networks",
       "paper_date": "2026-11-12",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-11-14T18:39:25",
+      "generated_at": "2026-11-15T19:14:44",
       "generator": "openai"
     }
   },
@@ -894,23 +894,23 @@
         "url": "https://arxiv.org/pdf/2611.16073v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "AI agents can accelerate computational algebra by discovering and reusing problem structure, but their reasoning costs can offset the savings.",
-      "engineering_relevance": "Structured algebra benchmarks offer verifiable tests of whether agent-driven optimization reduces total computational cost.",
+      "key_insight": "AI agents can exploit algebraic structure to solve problems faster, but reasoning and reuse costs determine whether they deliver net savings.",
+      "engineering_relevance": "Computational algebra offers verifiable benchmarks for engineering agents that discover, retain, and reuse efficient computational strategies.",
       "method": [
-        "Construct system families with controlled shared structure and difficulty.",
+        "Construct benchmark systems with controlled shared structure.",
         "Evaluate independent solving and online solving with persistent memory.",
         "Compile reusable solvers for known problem families."
       ],
-      "evidence_signal": "Experiments show agents solve more systems within fixed budgets, memory can reduce repeated-solving costs, and compilation yields faster reusable solvers at substantial upfront cost.",
-      "watch_item": "Evaluate end-to-end cost: reasoning and compilation overhead can erase gains, while memory may retain suboptimal strategies.",
+      "evidence_signal": "Experiments show agents can expand the systems solvable within a fixed budget, memory can reduce repeated-solving costs, and compilation can produce faster reusable solvers.",
+      "watch_item": "Reasoning overhead and compilation costs can offset speedups, while persistent memory may retain suboptimal strategies.",
       "hashtags": [
+        "#AgenticAI",
         "#ComputationalAlgebra",
-        "#AIAgents",
         "#MathematicalReasoning",
         "#AlgorithmOptimization",
-        "#AgentEvaluation"
+        "#AIBenchmarks"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -918,7 +918,7 @@
       "paper_title": "Agentic Computational Algebra",
       "paper_date": "2026-11-11",
       "paper_category": "Mathematical Reasoning",
-      "generated_at": "2026-11-14T18:39:27",
+      "generated_at": "2026-11-15T19:14:46",
       "generator": "openai"
     }
   },
@@ -949,23 +949,23 @@
         "url": "https://arxiv.org/pdf/2611.15300v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "Quotienting out function-preserving channel scaling and permutations yields covering-number bounds with a sharp exponent S−H rather than S and a factorial divisor G.",
-      "engineering_relevance": "Symmetry-aware capacity measures can sharpen statistical risk guarantees and help explain weight rebalancing and flat optimization directions.",
+      "key_insight": "Accounting for function-preserving parameter symmetries yields covering-number bounds with exponent S−H rather than S and a factorial divisor G from channel permutations.",
+      "engineering_relevance": "These bounds sharpen capacity estimates and statistical risk guarantees while helping explain weight rebalancing and flat directions in neural-network optimization.",
       "method": [
-        "Characterize quasianalytic function-preserving parameter maps as compositions of positive channel scaling and permutation.",
-        "Derive symmetry-reduced covering bounds for fully connected, convolutional, and residual ReLU/Leaky ReLU networks.",
-        "Prove matching lower bounds and extend the analysis to general continuous piecewise-linear activations."
+        "Characterize quasianalytic function-preserving parameter maps as positive channel scalings and channel permutations.",
+        "Quotient out these symmetries across fully connected, convolutional, and residual ReLU/Leaky ReLU networks.",
+        "Prove covering-number upper and lower bounds and extend the analysis to general continuous piecewise-linear activations."
       ],
-      "evidence_signal": "The abstract reports theoretical proofs rather than empirical benchmarks: the exponent S−H is sharp in general, while the divisor G is attained for one-hidden-layer and generically identifiable networks.",
-      "watch_item": "The symmetry characterization assumes quasianalytic parameter maps, and tightness of the permutation divisor is established only for specified network classes.",
+      "evidence_signal": "The abstract reports theoretical proofs rather than empirical benchmarks: matching lower bounds establish exponent sharpness, with the permutation divisor attained for one-hidden-layer and generically identifiable networks.",
+      "watch_item": "The full permutation-factor improvement is established under specific architecture or identifiability conditions, so its tightness should not be assumed for every network.",
       "hashtags": [
-        "#NeuralNetworkTheory",
-        "#CoveringNumbers",
-        "#ParameterSymmetry",
+        "#LearningTheory",
         "#ReLUNetworks",
-        "#StatisticalLearning"
+        "#ParameterSymmetry",
+        "#CoveringNumbers",
+        "#GeneralizationBounds"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -973,7 +973,7 @@
       "paper_title": "Sharp Covering-Number Bounds for Feedforward ReLU Networks via Parameter Symmetries",
       "paper_date": "2026-11-11",
       "paper_category": "Number Theory and Algebra",
-      "generated_at": "2026-11-14T18:39:29",
+      "generated_at": "2026-11-15T19:14:49",
       "generator": "openai"
     }
   },
@@ -1002,23 +1002,23 @@
         "url": "https://arxiv.org/pdf/2611.13668v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "Scalarization connects interval-valued optimization to scalar problems, enabling a proximal point algorithm with global convergence and sublinear or linear rates under convexity or strong convexity, respectively.",
+      "key_insight": "Scalarization links interval-valued optimization to a proximal point algorithm with global convergence and sublinear or linear rates under convexity or strong convexity, respectively.",
       "engineering_relevance": "The framework offers a principled approach to interval-valued lasso regression for machine learning with uncertain data.",
       "method": [
-        "Formulate an associated scalar optimization problem using scalarization.",
-        "Establish relationships between scalar optima and interval-valued LU-nondominated solutions.",
-        "Develop a proximal point algorithm and analyze convergence rates."
+        "Formulate a scalarized version of the unconstrained interval-valued problem.",
+        "Relate scalarized optima to LU-nondominated interval solutions.",
+        "Apply a proximal point algorithm and establish convergence guarantees."
       ],
       "evidence_signal": "The abstract reports numerical experiments, comparison with an existing method, and an interval-valued lasso application, but provides no quantitative results.",
-      "watch_item": "Convergence rates depend on convexity assumptions; practical cost and sensitivity to scalarization choices are not detailed in the abstract.",
+      "watch_item": "Convergence-rate guarantees depend on convexity assumptions; the abstract does not specify proximal-subproblem costs or scalability.",
       "hashtags": [
         "#IntervalOptimization",
         "#ProximalPoint",
         "#ConvexOptimization",
         "#LassoRegression",
-        "#UncertaintyQuantification"
+        "#UncertaintyModeling"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -1026,7 +1026,7 @@
       "paper_title": "Proximal point algorithm for interval valued optimization problems with application to lasso problem",
       "paper_date": "2026-11-10",
       "paper_category": "Optimization and PDEs",
-      "generated_at": "2026-11-14T18:39:31",
+      "generated_at": "2026-11-15T19:14:51",
       "generator": "openai"
     }
   },
@@ -1056,17 +1056,17 @@
         "url": "https://arxiv.org/pdf/2611.17143v1"
       }
     ],
-    "score": 59,
+    "score": 54,
     "infographic": {
-      "key_insight": "Convex conjugacy yields an exact reformulation of logistic-regression poisoning attacks in which bounded bilinear equalities are the only nonconvex constraints.",
-      "engineering_relevance": "The reformulation supports solver-based analysis of poisoning vulnerability in ℓ₂-regularized logistic regression, with stronger reported dual bounds under a fixed compute budget.",
+      "key_insight": "Convex conjugacy reformulates logistic-regression poisoning exactly, making stationarity affine and isolating nonconvexity in bounded bilinear equalities.",
+      "engineering_relevance": "The reformulation enables solver-based analysis of poisoning attacks on ℓ₂-regularized logistic regression and strengthens reported optimization bounds.",
       "method": [
-        "Replace the strongly convex defender problem with its first-order optimality conditions.",
-        "Use softplus conjugacy to encode sigmoid relations through one convex optimality-gap inequality and express the attack objective as concave.",
-        "Transform stationarity into affine constraints and bound bilinear variables using global estimates and convex preprocessing."
+        "Use strong convexity to replace the defender’s optimization problem with first-order optimality conditions.",
+        "Replace sigmoid relations with a convex optimality-gap inequality via softplus conjugacy, and express the attack objective as concave.",
+        "Change variables to make stationarity affine, then bound bilinear variables using global estimates and convex preprocessing."
       ],
-      "evidence_signal": "Experiments on eight binary classification datasets found that locally optimized attacks degraded predictive performance on most datasets, while the convex-analytic formulation gave substantially stronger reported dual bounds in SCIP.",
-      "watch_item": "Bilinear equalities remain nonconvex, so an exact reformulation does not guarantee a globally optimal attack within the time limit.",
+      "evidence_signal": "Experiments on eight binary classification datasets found that locally optimized attacks degraded predictive performance on most datasets, while the convex-analytic formulation yielded substantially stronger reported dual bounds in SCIP within a fixed time limit.",
+      "watch_item": "Bilinear constraints remain nonconvex, so stronger dual bounds do not imply globally optimal attacks within the time limit.",
       "hashtags": [
         "#DataPoisoning",
         "#LogisticRegression",
@@ -1080,7 +1080,7 @@
       "paper_title": "A Convex-Analytic Reformulation for Poisoning Attacks on Logistic Regression",
       "paper_date": "2026-11-12",
       "paper_category": "Theorem Proving",
-      "generated_at": "2026-11-14T18:39:33",
+      "generated_at": "2026-11-15T19:14:53",
       "generator": "openai"
     }
   }
