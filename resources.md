@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-11-19
+Generated: 2026-11-20
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Atomic MathReasoner: Instance-Level Composition of Atomic Reasoning Skills for Mathematical LLMs
@@ -11,7 +11,23 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.24846v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-18-arxiv-atomic_mathreasoner_instance_level_composition_of_atomic_reasoning_skills_for_mathematical_infographic.json
 
-## 2. A Systematic Analysis of a Small Optimal Subspace for Physics-Informed Neural Networks: $n$-DAS $\subset \mathbb{R}^p$
+## 2. The Four-Element Theory of Structure-Driven Methodology: A Methodological Shift from the Perspective of Natural Science and Engineering Practice
+
+- Date: 2026-11-19
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2611.25370v1
+- PDF: https://arxiv.org/pdf/2611.25370v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-19-arxiv-the_four_element_theory_of_structure_driven_methodology_a_methodological_shift_from_the_pe_infographic.json
+
+## 3. The FrontierOR Challenge: Agentic Algorithm Design for Operations Research
+
+- Date: 2026-11-19
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2611.26171v1
+- PDF: https://arxiv.org/pdf/2611.26171v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-19-arxiv-the_frontieror_challenge_agentic_algorithm_design_for_operations_research_infographic.json
+
+## 4. A Systematic Analysis of a Small Optimal Subspace for Physics-Informed Neural Networks: $n$-DAS $\subset \mathbb{R}^p$
 
 - Date: 2026-11-18
 - Category: Optimization and PDEs
@@ -19,15 +35,31 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.23773v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-18-arxiv-a_systematic_analysis_of_a_small_optimal_subspace_for_physics_informed_neural_networks_n_d_infographic.json
 
-## 3. Structural functional identifiability of unknown differential equation observation maps
+## 5. PWLNet: A Framework for Linearized Neural Surrogates in Nonlinear Process Optimization
 
-- Date: 2026-11-17
+- Date: 2026-11-19
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2611.25969v1
+- PDF: https://arxiv.org/pdf/2611.25969v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-19-arxiv-pwlnet_a_framework_for_linearized_neural_surrogates_in_nonlinear_process_optimization_infographic.json
+
+## 6. X Hedging: towards an eXplainable artificial intelligence option Hedging framework
+
+- Date: 2026-11-19
 - Category: Number Theory and Algebra
-- arXiv: https://arxiv.org/abs/2611.22018v1
-- PDF: https://arxiv.org/pdf/2611.22018v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-17-arxiv-structural_functional_identifiability_of_unknown_differential_equation_observation_maps_infographic.json
+- arXiv: https://arxiv.org/abs/2611.25870v1
+- PDF: https://arxiv.org/pdf/2611.25870v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-19-arxiv-x_hedging_towards_an_explainable_artificial_intelligence_option_hedging_framework_infographic.json
 
-## 4. Stability of Parallel Transport Convolution under Riemannian Metric Perturbations
+## 7. When and why can integral constraints improve the accuracy of physics-informed neural networks?
+
+- Date: 2026-11-19
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2611.25515v1
+- PDF: https://arxiv.org/pdf/2611.25515v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-19-arxiv-when_and_why_can_integral_constraints_improve_the_accuracy_of_physics_informed_neural_netw_infographic.json
+
+## 8. Stability of Parallel Transport Convolution under Riemannian Metric Perturbations
 
 - Date: 2026-11-17
 - Category: Geometry and Topology
@@ -35,7 +67,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.23543v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-17-arxiv-stability_of_parallel_transport_convolution_under_riemannian_metric_perturbations_infographic.json
 
-## 5. Large-Scale Tensor Trace-Ratio Problem: Randomized Algorithm and Sparse Multilinear Discriminant Analysis via Closed-Form Solution
+## 9. Large-Scale Tensor Trace-Ratio Problem: Randomized Algorithm and Sparse Multilinear Discriminant Analysis via Closed-Form Solution
 
 - Date: 2026-11-18
 - Category: Optimization and PDEs
@@ -43,7 +75,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.24196v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-18-arxiv-large_scale_tensor_trace_ratio_problem_randomized_algorithm_and_sparse_multilinear_discrim_infographic.json
 
-## 6. Balancing Exploration and Exploitation in Constrained Combinatorial Optimization with U(1)-Symmetric Tensor Trains
+## 10. Balancing Exploration and Exploitation in Constrained Combinatorial Optimization with U(1)-Symmetric Tensor Trains
 
 - Date: 2026-11-17
 - Category: Geometry and Topology
@@ -51,15 +83,23 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.22557v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-17-arxiv-balancing_exploration_and_exploitation_in_constrained_combinatorial_optimization_with_u_1_infographic.json
 
-## 7. Turing Agent: Agentic Formal Verification for Mathematical Research
+## 11. Stochastic counterpart of Nesterov's method for sampling and provable non-acceleration of samplers with heavy-ball structure
 
-- Date: 2026-11-16
-- Category: Theorem Proving
-- arXiv: https://arxiv.org/abs/2611.21299v1
-- PDF: https://arxiv.org/pdf/2611.21299v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-16-arxiv-turing_agent_agentic_formal_verification_for_mathematical_research_infographic.json
+- Date: 2026-11-19
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2611.26575v1
+- PDF: https://arxiv.org/pdf/2611.26575v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-19-arxiv-stochastic_counterpart_of_nesterov_s_method_for_sampling_and_provable_non_acceleration_of_infographic.json
 
-## 8. CurvDelta: Low-Curvature Delta Modeling For Surgical Learning and Unlearning
+## 12. Differentially Private Score Estimation with Applications to Score-Based Generative Models
+
+- Date: 2026-11-19
+- Category: AI math
+- arXiv: https://arxiv.org/abs/2611.25536v1
+- PDF: https://arxiv.org/pdf/2611.25536v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-19-arxiv-differentially_private_score_estimation_with_applications_to_score_based_generative_models_infographic.json
+
+## 13. CurvDelta: Low-Curvature Delta Modeling For Surgical Learning and Unlearning
 
 - Date: 2026-11-18
 - Category: Mathematical Reasoning
@@ -67,7 +107,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.24654v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-18-arxiv-curvdelta_low_curvature_delta_modeling_for_surgical_learning_and_unlearning_infographic.json
 
-## 9. Infinity-Wasserstein Distributionally Robust Principal Component Analysis: Exact Reformulation, Finite-Sample Guarantee, and Efficient Algorithm
+## 14. Infinity-Wasserstein Distributionally Robust Principal Component Analysis: Exact Reformulation, Finite-Sample Guarantee, and Efficient Algorithm
 
 - Date: 2026-11-18
 - Category: Optimization and PDEs
@@ -75,7 +115,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.23877v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-18-arxiv-infinity_wasserstein_distributionally_robust_principal_component_analysis_exact_reformulat_infographic.json
 
-## 10. Stable admissible neural classes and convergent physics-informed neural networks
+## 15. Stable admissible neural classes and convergent physics-informed neural networks
 
 - Date: 2026-11-18
 - Category: Optimization and PDEs
@@ -83,7 +123,7 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.24355v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-18-arxiv-stable_admissible_neural_classes_and_convergent_physics_informed_neural_networks_infographic.json
 
-## 11. A Survey on the Use of Machine Learning within Computer Algebra
+## 16. A Survey on the Use of Machine Learning within Computer Algebra
 
 - Date: 2026-11-17
 - Category: Symbolic Computation
@@ -91,74 +131,34 @@ Public site: https://dutoaa.github.io/ai-in-math-progress/
 - PDF: https://arxiv.org/pdf/2611.23361v1
 - Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-17-arxiv-a_survey_on_the_use_of_machine_learning_within_computer_algebra_infographic.json
 
-## 12. Regularized Score Centering
+## 17. Safeguarded Learning-Assisted Nonlinear Conjugate Gradient Methods
 
-- Date: 2026-11-16
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2611.21791v1
-- PDF: https://arxiv.org/pdf/2611.21791v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-16-arxiv-regularized_score_centering_infographic.json
+- Date: 2026-11-19
+- Category: Optimization and PDEs
+- arXiv: https://arxiv.org/abs/2611.25707v1
+- PDF: https://arxiv.org/pdf/2611.25707v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-19-arxiv-safeguarded_learning_assisted_nonlinear_conjugate_gradient_methods_infographic.json
 
-## 13. Second scaling regime in high-dimensional function approximation and curse of dimensionality
+## 18. Compact MaxSAT Encodings for Balanced Waiting in B2B Meeting Scheduling
 
-- Date: 2026-11-16
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2611.21566v1
-- PDF: https://arxiv.org/pdf/2611.21566v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-16-arxiv-second_scaling_regime_in_high_dimensional_function_approximation_and_curse_of_dimensionali_infographic.json
+- Date: 2026-11-19
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2611.25533v1
+- PDF: https://arxiv.org/pdf/2611.25533v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-19-arxiv-compact_maxsat_encodings_for_balanced_waiting_in_b2b_meeting_scheduling_infographic.json
 
-## 14. Zonotopic Analysis of Quantization Error in Neural Networks
+## 19. Faithful Generative Modeling for Censored Time-to-Event Data: From Distributional Fidelity to Statistical Inference
 
-- Date: 2026-11-18
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2611.24648v1
-- PDF: https://arxiv.org/pdf/2611.24648v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-18-arxiv-zonotopic_analysis_of_quantization_error_in_neural_networks_infographic.json
+- Date: 2026-11-19
+- Category: Number Theory and Algebra
+- arXiv: https://arxiv.org/abs/2611.25464v1
+- PDF: https://arxiv.org/pdf/2611.25464v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-19-arxiv-faithful_generative_modeling_for_censored_time_to_event_data_from_distributional_fidelity_infographic.json
 
-## 15. LProp: Propagating Latent Uncertainty through Evidence-Conditioned Belief Revision in LLM Agents
+## 20. A new algorithmic approach for finding flat minima: critically damped Polyak stepsizes
 
-- Date: 2026-11-17
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2611.23564v1
-- PDF: https://arxiv.org/pdf/2611.23564v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-17-arxiv-lprop_propagating_latent_uncertainty_through_evidence_conditioned_belief_revision_in_llm_a_infographic.json
-
-## 16. Stochastic Representation-Inspired Physics-Informed Neural Networks for Incompressible Fluid Flows
-
-- Date: 2026-11-17
-- Category: Symbolic Computation
-- arXiv: https://arxiv.org/abs/2611.22624v1
-- PDF: https://arxiv.org/pdf/2611.22624v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-17-arxiv-stochastic_representation_inspired_physics_informed_neural_networks_for_incompressible_flu_infographic.json
-
-## 17. MCTS Is Counting the Wrong Thing: Learning Exploration Counts for LLM Reasoning
-
-- Date: 2026-11-17
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2611.22301v1
-- PDF: https://arxiv.org/pdf/2611.22301v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-17-arxiv-mcts_is_counting_the_wrong_thing_learning_exploration_counts_for_llm_reasoning_infographic.json
-
-## 18. Large Language Models as Nonlinear Dynamical Systems: The Three Clocks of Depth, Training, and Generation
-
-- Date: 2026-11-16
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2611.21983v1
-- PDF: https://arxiv.org/pdf/2611.21983v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-16-arxiv-large_language_models_as_nonlinear_dynamical_systems_the_three_clocks_of_depth_training_an_infographic.json
-
-## 19. Efficient Variance-Aware Reinforcement Learning in Time-Inhomogeneous Linear MDPs
-
-- Date: 2026-11-17
-- Category: AI math
-- arXiv: https://arxiv.org/abs/2611.23596v1
-- PDF: https://arxiv.org/pdf/2611.23596v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-17-arxiv-efficient_variance_aware_reinforcement_learning_in_time_inhomogeneous_linear_mdps_infographic.json
-
-## 20. Transferring an analysis of human brain organization to language models
-
-- Date: 2026-11-18
-- Category: Mathematical Reasoning
-- arXiv: https://arxiv.org/abs/2611.24626v1
-- PDF: https://arxiv.org/pdf/2611.24626v1
-- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-18-arxiv-transferring_an_analysis_of_human_brain_organization_to_language_models_infographic.json
+- Date: 2026-11-19
+- Category: Geometry and Topology
+- arXiv: https://arxiv.org/abs/2611.26475v1
+- PDF: https://arxiv.org/pdf/2611.26475v1
+- Infographic JSON: https://dutoaa.github.io/ai-in-math-progress/infographics/2026-11-19-arxiv-a_new_algorithmic_approach_for_finding_flat_minima_critically_damped_polyak_stepsizes_infographic.json
