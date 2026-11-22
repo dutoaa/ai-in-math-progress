@@ -1,18 +1,18 @@
 {
-  "key_insight": "PWLNet makes neural process surrogates easier to optimize by combining compact networks with exact or piecewise-linear formulations.",
-  "engineering_relevance": "Engineers can embed learned steady-state and dynamic process models in Pyomo optimization while balancing predictive accuracy, solve time, and constraint fidelity.",
+  "key_insight": "PWLNet makes neural process surrogates optimization-compatible through exact and piecewise-linear formulations, with pruning improving tractability.",
+  "engineering_relevance": "Compact neural surrogates can support steady-state operating-point optimization and dynamic reactor control while retaining strong predictive and economic performance.",
   "method": [
-    "Train baseline or physics-informed surrogates with optimization-aware pruning.",
-    "Embed ReLU, exact tanh, or PWL-tanh models using MILP, nonlinear optimization, or binary-free SOSX branch-and-LP.",
-    "Use PWL-native training to match training and embedding activations without extra linearization error."
+    "Train baseline or physics-informed networks, then apply optimization-aware pruning.",
+    "Embed ReLU, exact tanh, or PWL-tanh models in Pyomo, including binary-free SOSX branch-and-LP formulations.",
+    "Use PWL-native training to match training and embedded activations, avoiding extra linearization error."
   ],
-  "evidence_signal": "Across four benchmarks, reported results include a 6.5-fold MILP speedup after 15% pruning on Williams–Otto and a 4% true-plant economic gain over the best ramp-and-hold policy on Van de Vusse.",
-  "watch_item": "Constraint fidelity remains a concern: the hydroformylation exact-tanh controller reached 20.002 bar against a 20-bar limit, and longer horizons or physics-informed training did not consistently improve closed-loop results.",
+  "evidence_signal": "Across four benchmarks, reported results include 6.5× faster MILP solves after 15% pruning on Williams–Otto and 99.7% of direct-shooting reference performance for terminal-aware Van de Vusse prediction.",
+  "watch_item": "Constraint fidelity needs attention: hydroformylation control slightly exceeded the 20-bar pressure limit, and longer horizons or physics-informed training did not consistently improve closed-loop results.",
   "hashtags": [
     "#NeuralSurrogates",
     "#ProcessOptimization",
     "#MixedIntegerOptimization",
-    "#PiecewiseLinearModels",
+    "#PiecewiseLinear",
     "#ScientificMachineLearning"
   ],
   "model": "gpt-6.1-sol",
@@ -21,6 +21,6 @@
   "paper_title": "PWLNet: A Framework for Linearized Neural Surrogates in Nonlinear Process Optimization",
   "paper_date": "2026-11-19",
   "paper_category": "Optimization and PDEs",
-  "generated_at": "2026-11-21T19:55:59",
+  "generated_at": "2026-11-22T20:08:31",
   "generator": "openai"
 }

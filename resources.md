@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-11-21
+Generated: 2026-11-22
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. Atomic MathReasoner: Instance-Level Composition of Atomic Reasoning Skills for Mathematical LLMs

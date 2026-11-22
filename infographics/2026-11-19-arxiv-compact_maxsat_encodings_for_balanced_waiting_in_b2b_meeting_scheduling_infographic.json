@@ -1,19 +1,19 @@
 {
-  "key_insight": "Lexicographically minimizing idle range, maximum idle, then total idle can reduce waiting while preserving optimal balance in B2B meeting schedules.",
-  "engineering_relevance": "Compact MaxSAT encodings offer a lower-memory approach to balanced meeting scheduling, though fewer clauses do not consistently imply faster solving.",
+  "key_insight": "Lexicographically minimizing idle range, maximum idle, then total idle improves waiting times while preserving the best balance among participants.",
+  "engineering_relevance": "Compact MaxSAT encodings can reduce scheduling model size and memory demand while preserving feasible schedules, objective costs, and optimization priorities.",
   "method": [
     "Measure waiting as empty slots between each participant’s first and last meetings.",
-    "Optimize idle range, maximum idle, and total idle in strict priority order.",
-    "Compare Direct, Compact-Base, and Compact-Objective encodings with proven preservation of feasibility, costs, and priorities."
+    "Compare idle totals among participants requesting at least two meetings.",
+    "Use Compact-Base for feasibility encoding and Compact-Objective for additional objective-specific compression."
   ],
-  "evidence_signal": "Tests covered 226 variants of 20 base instances with three repetitions per configuration; among 84 instances optimal under all three quality objectives, selected lexicographic schedules preserved optimal range and reduced maximum idle on 11 and total idle on 56 versus selected range-only schedules.",
-  "watch_item": "Runtime rankings varied, so benchmark the encodings on target workloads rather than treating clause reductions as guaranteed speedups.",
+  "evidence_signal": "Across 226 variants of 20 base instances with three repetitions per configuration, Compact-Objective had the lowest median clause count in all nine objective–dataset comparisons; among 84 jointly optimal instances, selected lexicographic schedules reduced maximum idle on 11 and total idle on 56 versus selected range-only schedules.",
+  "watch_item": "Smaller encodings did not guarantee faster solving: runtime rankings varied even with the same solver build and computing environment.",
   "hashtags": [
     "#MaxSAT",
     "#Scheduling",
     "#LexicographicOptimization",
-    "#ConstraintSolving",
-    "#ComputationalOptimization"
+    "#ConstraintOptimization",
+    "#ComputationalEngineering"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "Compact MaxSAT Encodings for Balanced Waiting in B2B Meeting Scheduling",
   "paper_date": "2026-11-19",
   "paper_category": "Geometry and Topology",
-  "generated_at": "2026-11-21T19:56:23",
+  "generated_at": "2026-11-22T20:08:58",
   "generator": "openai"
 }
