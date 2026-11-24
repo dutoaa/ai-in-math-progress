@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI math Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-11-22. Ranked from recent arXiv AI math papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-11-24. Ranked from recent arXiv AI math papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -31,7 +31,26 @@
     </header>
     <section class="grid">
       <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>79</strong></div>
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>92</strong></div>
+        <p class="date">2026-11-20</p>
+        <h2>A Validation-Driven Bilevel Optimization Method for Mesh-Free PDE Solvers and Its Error Analysis</h2>
+        <p class="authors">Yongcun Song, Shangzhi Zeng, Jin Zhang, Lvgang Zhang</p>
+        <p class="abstract">Mesh-free partial differential equation (PDE) solvers construct discrete systems from residuals at sampled points. These solvers fit coefficients in a parameterized trial representation and select solver-design parameters governing the representation, training-residual weighting, and regularization. These parameters strongly affect solution accuracy, yet existing selection strategies are largely tailored to particular solver classes. To address this limitation, we formulate a unified validation-driven bilevel optimization framework applicable across different solver classes, in which the lower level fits coefficients using training collocation residuals, while the upper level selects solver-design parameters using held-out validation residuals. For nonlinear PDEs, however, solving the nonlinear lower-level problem to high accuracy is costly, while the adjoint system is typically ill-conditioned and indefinite. To address this issue, we propose an efficient implicit hypergradient method that approximates the lower-level response using finite, warm-started damped Gauss-Newton (GN) updates. For the adjoint solve, we use the damped GN matrix to compute an initial adjoint and to precondition a finite number of minimum residual iterations. To quantify the errors introduced by these approximations, we derive local hypergradient error bounds that separate the contributions of the finite lower-level solve, adjoint damping, and the final adjoint residual. Combining this analysis with validation sampling bounds and residual stability, we relate validation residuals to PDE solution accuracy and establish error bounds for the computed PDE solution. Numerical experiments on several nonlinear PDEs, including a high-dimensional problem, demonstrate the accuracy and efficiency of the proposed method across Kansa, random feature and extreme learning machine, and physics-informed neural network solvers.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.27347v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.27347v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Validation-driven bilevel optimization tunes mesh-free PDE solver designs, while error analysis connects approximate hypergradients and validation residuals to solution accuracy.</p>
+          <p><b>Engineering relevance:</b> The framework provides a unified way to tune representation, residual weighting, and regularization across multiple mesh-free solver classes.</p>
+          <ul><li>Fit trial coefficients on training collocation residuals; tune solver-design parameters on held-out validation residuals.</li><li>Approximate nonlinear lower-level solutions with finite, warm-started damped Gauss–Newton updates.</li><li>Use the damped Gauss–Newton matrix to initialize and precondition adjoint iterations, with bounds separating key approximation errors.</li></ul>
+          <p><b>Evidence signal:</b> Experiments on several nonlinear PDEs, including a high-dimensional problem, report accuracy and efficiency across Kansa, random-feature/extreme-learning-machine, and physics-informed neural network solvers; the abstract gives no numerical metrics.</p>
+          <p><b>Watch item:</b> Hypergradient bounds are local, and translating validation residuals into solution-error guarantees depends on sampling bounds and residual stability.</p>
+          <div class="tags"><span>#BilevelOptimization</span> <span>#MeshFreeMethods</span> <span>#PDESolvers</span> <span>#Hypergradients</span> <span>#ScientificComputing</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>74</strong></div>
         <p class="date">2026-11-18</p>
         <h2>Atomic MathReasoner: Instance-Level Composition of Atomic Reasoning Skills for Mathematical LLMs</h2>
         <p class="authors">Jiashu Li, Tianyu Gao, Qinglong Liu, Jinping Wang, Ye Wei, Zhiqiang Gao</p>
@@ -39,18 +58,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.24846v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.24846v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Atomic MathReasoner improves mathematical reasoning by selecting problem-specific compositions of specialized atomic-skill LoRA experts.</p>
-          <p><b>Engineering relevance:</b> A lightweight router enables adaptive expert composition at inference without costly online optimization.</p>
-          <ul><li>Train capability-specific LoRA experts and discover low-loss composition prototypes through gradient-free optimization.</li><li>Score prototypes using reference-solution token-level negative log-likelihood and filter ambiguous assignments with a confidence margin.</li><li>Distill prototype preferences into a lightweight router that selects a composition for each problem.</li></ul>
-          <p><b>Evidence signal:</b> On AtomicMath with Qwen2.5-Math-Instruct-7B, average field accuracy rises from 64.4% to 68.1% at Level 1 and 59.3% to 63.7% at Level 2; average logical reasoning performance improves from 39.4% to 46.8%.</p>
-          <p><b>Watch item:</b> Generalization beyond AtomicMath remains unestablished in the abstract, and deployment requires training experts, optimizing prototypes, and calibrating router assignments.</p>
-          <div class="tags"><span>#MathematicalReasoning</span> <span>#LargeLanguageModels</span> <span>#LoRA</span> <span>#ExpertComposition</span> <span>#AtomicMathReasoner</span></div>
+          <p><b>Key insight:</b> Atomic MathReasoner improves mathematical LLMs by selecting a problem-specific composition of specialized reasoning skills rather than treating reasoning as one monolithic capability.</p>
+          <p><b>Engineering relevance:</b> A lightweight router selects among precomputed LoRA expert compositions, enabling adaptive specialization without costly online optimization.</p>
+          <ul><li>Train capability-specific LoRA experts and discover low-loss composition prototypes through gradient-free optimization on held-out validation subsets.</li><li>Score prototypes using reference-solution token-level negative log-likelihood and filter ambiguous assignments with a confidence margin.</li><li>Distill the resulting pseudo-labels into a router that selects a composition prototype for each input problem.</li></ul>
+          <p><b>Evidence signal:</b> On AtomicMath with Qwen2.5-Math-Instruct-7B, AMR raises average field accuracy from 64.4% to 68.1% at Level 1 and 59.3% to 63.7% at Level 2, and average logical reasoning performance from 39.4% to 46.8%.</p>
+          <p><b>Watch item:</b> Generalization beyond AtomicMath remains unestablished in the abstract, and deployment requires offline expert training, prototype optimization, and router supervision.</p>
+          <div class="tags"><span>#MathematicalReasoning</span> <span>#LargeLanguageModels</span> <span>#LoRA</span> <span>#SkillComposition</span> <span>#AdaptiveRouting</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>75</strong></div>
+        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>70</strong></div>
+        <p class="date">2026-11-20</p>
+        <h2>Late-Time Dynamics of Flow Matching: Distance Geometry and Learning</h2>
+        <p class="authors">Umberto Biccari, Junqing Huang, Kang Liu, Enrique Zuazua</p>
+        <p class="abstract">Generative models transform simple random inputs into samples that resemble observed data. For a finite training set, a central question is how its geometry shapes the terminal dynamics and the probabilities assigned to individual samples. We address this question for flow matching with linear interpolation between independent Gaussian and empirical samples. The squared distance to the training set generates explicit paths contracting exponentially toward the nearest sample. We prove that exact trajectories restarted at prescribed late-time states approximate these paths uniformly over all elapsed times and compact sets of starting states away from Voronoi interfaces, with an error exponentially small in the inverse squared restart noise scale. The initial mass near interfaces controls the quadratic Wasserstein error between the exact and reference laws. For Gaussian and fixed Gaussian-tube restart laws, this gives a square-root rate in the restart noise scale, uniform over time, which a two-site example shows to be sharp in general. At ties, the Clarke subdifferential characterizes the graphical limit of the rescaled velocity field. This geometry motivates two learning methods: fitting the distance potential with value and gradient supervision, and fitting velocities along explicit contraction paths. A transport estimate separates initialization mismatch, velocity error, incomplete contraction, and endpoint allocation. MNIST experiments illustrate the distinct roles of support proximity, nearest-site retention, and feature fidelity. These results connect flow matching and score-based diffusion through a common limiting geometry and show how asymptotic analysis can inform the design and evaluation of generative models.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.27653v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.27653v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Near terminal time, flow matching follows the training set’s distance geometry, with trajectories approximating exponential contraction toward the nearest sample away from Voronoi boundaries.</p>
+          <p><b>Engineering relevance:</b> This geometry motivates distance-potential and path-based velocity learning, while separating initialization, velocity, contraction, and sample-allocation errors.</p>
+          <ul><li>Analyze Gaussian-to-empirical flow matching using explicit nearest-sample contraction paths.</li><li>Bound trajectory and distribution errors, with Clarke subdifferentials describing limiting velocities at ties.</li><li>Learn either a distance potential with value-and-gradient supervision or velocities along contraction paths.</li></ul>
+          <p><b>Evidence signal:</b> A two-site example establishes sharpness of the general square-root Wasserstein rate, while MNIST experiments distinguish support proximity, nearest-site retention, and feature fidelity.</p>
+          <p><b>Watch item:</b> Uniform trajectory guarantees exclude Voronoi interfaces, and proximity to training samples alone does not establish correct sample allocation or feature fidelity.</p>
+          <div class="tags"><span>#FlowMatching</span> <span>#GenerativeModels</span> <span>#DistanceGeometry</span> <span>#OptimalTransport</span> <span>#ScientificMachineLearning</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>70</strong></div>
         <p class="date">2026-11-19</p>
         <h2>The Four-Element Theory of Structure-Driven Methodology: A Methodological Shift from the Perspective of Natural Science and Engineering Practice</h2>
         <p class="authors">Shengchang Chen</p>
@@ -58,18 +96,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.25370v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.25370v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper proposes replacing objective-led trial and error with structure-driven solution construction whenever sufficient problem invariants are available.</p>
-          <p><b>Engineering relevance:</b> Invariant-based mappings could support more interpretable solvers for constrained nonlinear engineering problems, with optimization retained when structure is insufficient.</p>
-          <ul><li>Deconstruction: suspend prior assumptions and disentangle coupled components.</li><li>Structure and Construction: identify rigid invariants and build equivalent mappings anchored to them.</li><li>Solving: execute the mappings directly, then use metrics and experience for verification.</li></ul>
-          <p><b>Evidence signal:</b> The abstract cites demonstrations in number theory, Hamiltonian systems, deep learning, and seismic inversion, but reports no quantitative benchmarks or evaluation details.</p>
-          <p><b>Watch item:</b> Practical value depends on reliably identifying sufficient invariants and establishing mapping equivalence; improved generalization remains unquantified in the abstract.</p>
-          <div class="tags"><span>#StructureDriven</span> <span>#ScientificComputing</span> <span>#MathematicalInvariants</span> <span>#InterpretableAI</span> <span>#EngineeringMethods</span></div>
+          <p><b>Key insight:</b> The paper proposes replacing objective-driven trial-and-error with a structure-driven process that constructs solutions from a problem’s inherent invariants.</p>
+          <p><b>Engineering relevance:</b> When sufficient structure is identifiable, invariant-based mappings could reduce reliance on iterative fitting and make engineering solutions more interpretable.</p>
+          <ul><li>Deconstruct the problem by suspending prior assumptions and separating coupled units.</li><li>Extract rigid invariants and construct equivalent mappings anchored to them.</li><li>Execute the mappings to obtain solutions, using metrics and experience for posterior verification.</li></ul>
+          <p><b>Evidence signal:</b> The abstract cites demonstrations in number theory, Hamiltonian systems, deep learning, and seismic inversion, but reports no datasets, quantitative results, or benchmark comparisons.</p>
+          <p><b>Watch item:</b> Practical success depends on identifying sufficient invariants and valid mappings; the approach falls back to objective-driven methods when structure is insufficient.</p>
+          <div class="tags"><span>#StructureDriven</span> <span>#ScientificComputing</span> <span>#MathematicalInvariants</span> <span>#InterpretableAI</span> <span>#InverseProblems</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>73</strong></div>
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>68</strong></div>
         <p class="date">2026-11-19</p>
         <h2>The FrontierOR Challenge: Agentic Algorithm Design for Operations Research</h2>
         <p class="authors">Hai Wang, Bretislav Hajek, Chonghe Jiang, Minwei Kong, Ao Qu, Huatian Gong</p>
@@ -78,36 +116,55 @@
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
           <p><b>Key insight:</b> The FrontierOR Challenge tests whether LLM-agent workflows can design scalable optimization algorithms across diverse operations research problems.</p>
-          <p><b>Engineering relevance:</b> Reliable agent-designed algorithms could reduce weeks of specialist effort for routing, scheduling, and network design.</p>
-          <ul><li>Build agentic workflows that design, test, and improve optimization algorithms.</li><li>Stage 1 releases 60 audited problems in weekly batches of 15; Stage 2 adds new problems and unseen instances.</li><li>Evaluate separately in an isolated, open-source-only Main track and a timed Self-hosted track allowing any software.</li></ul>
-          <p><b>Evidence signal:</b> In FrontierOR&#x27;s one-shot evaluation, the strongest model matched Gurobi within 1% of its objective and ran no slower on only 39% of large instances.</p>
-          <p><b>Watch item:</b> The abstract reports a baseline and challenge protocol, not evidence that iterative agentic workflows overcome the scalability gap.</p>
-          <div class="tags"><span>#OperationsResearch</span> <span>#AgenticAI</span> <span>#Optimization</span> <span>#AlgorithmDesign</span> <span>#FrontierOR</span></div>
+          <p><b>Engineering relevance:</b> Automated algorithm design could reduce specialist effort for routing, scheduling, and network design, but reliable performance at realistic scale remains unproven.</p>
+          <ul><li>Build agentic workflows that design, test, and improve optimization algorithms.</li><li>Stage 1 releases 60 audited problems; Stage 2 adds new problems with unseen instances.</li><li>Evaluate separately in a network-isolated Main track and a timed Self-hosted track.</li></ul>
+          <p><b>Evidence signal:</b> In the benchmark’s one-shot evaluation, the strongest model achieved an objective within 1% of Gurobi’s with no slower runtime on only 39% of large instances; challenge scoring checks feasibility and averages objective-to-reference ratios over hidden instances.</p>
+          <p><b>Watch item:</b> The abstract reports a baseline and challenge protocol, not demonstrated gains from submitted agentic workflows.</p>
+          <div class="tags"><span>#OperationsResearch</span> <span>#AgenticAI</span> <span>#AlgorithmDesign</span> <span>#Optimization</span> <span>#Benchmarking</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>71</strong></div>
-        <p class="date">2026-11-18</p>
-        <h2>A Systematic Analysis of a Small Optimal Subspace for Physics-Informed Neural Networks: $n$-DAS $\subset \mathbb{R}^p$</h2>
-        <p class="authors">Ahmad AliAhmad, Khemraj Shukla</p>
-        <p class="abstract">The search for a low-dimensional subspace that governs neural network training has been a persistent goal in optimization. Yet subspaces defined by Hessian eigenvalue magnitude, such as the dominant/bulk decomposition underlying Dom-SGD and Bulk-SGD, have repeatedly failed to capture where optimization takes place, and adaptive Krylov-based alternatives built on energy-fraction thresholds show promise but still struggle at lower eigenmodes. We argue this failure is structural: the directions of highest curvature are not, in general, the directions along which training moves. We introduce the dominant aligned subspace (DAS), constructed from a full eigendecomposition of the Hessian but selected by gradient alignment rather than eigenvalue magnitude, as a tool for understanding optimization dynamics and a foundation for designing methods that exploit them. To expose this structure under the hardest conditions, we use physics-informed neural networks (PINNs) as a testbed: differential operators from the parabolic, elliptic, and hyperbolic classes induce severely ill-conditioned, anisotropic loss landscapes. Across Poisson, heat, wave, and viscous Burgers benchmarks DAS-restricted training with a line search matches full-space training even where the projected Hessian remains ill-conditioned, showing empirically that convergence does not require all Hessian eigendirections but only a low-dimensional, gradient-aligned subset. We extend the analysis to Gauss-Newton within the DAS and discuss what this structure implies for future subspace-aware optimizers.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.23773v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.23773v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>67</strong></div>
+        <p class="date">2026-11-19</p>
+        <h2>Self-verifiable LLM-driven science and why it needs human researchers</h2>
+        <p class="authors">Michael G. Medvedev, Nikolai V. Krivoshchapov, Stepan N. Ostarkov</p>
+        <p class="abstract">Language models are now used throughout all sciences - for reading literature, extracting numbers from tables and spectra, analyzing data, drafting conclusions - and their answers arrive in the same polished confident tone whether they are right or wrong, so a result has to be re-derived by a human researcher before it can be relied on. The cost of that re-checking, not the ability to generate results, is what currently limits AI-assisted research. In the field of mathematics, this problem is solved by proof assistants like Lean 4 and Coq that let any formal statement and its proof be written down and checked - a perfect match for LLMs, which are now actively used to search for proofs with every step automatically validated, rather than relying on a human to judge the result. In this paper, we propose an extension of this approach to non-mathematical sciences. We describe an AI agent harness that aims to make LLM&#x27;s scientific reasoning verifiable: the starting assumptions are proposed by LLM and reviewed by a human, and everything built on top of them is checked by a machine with Lean 4. We illustrate how this mechanism works in practice on several examples and our results show that scientific arguments in these tasks can be expressed as formal proofs from explicit assumptions, including experimental results, known theoretical statements, and additional assumptions, produced by the agent. We suggest that this approach could change how scientific research is conducted across all sciences.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.26754v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.26754v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> PINN training can match full-space optimization within a small Hessian-eigenvector subspace selected by gradient alignment rather than curvature magnitude.</p>
-          <p><b>Engineering relevance:</b> Gradient-aligned subspaces could guide more efficient optimizers for PDE-solving neural networks without requiring well-conditioned projected Hessians.</p>
-          <ul><li>Compute a full eigendecomposition of the loss Hessian.</li><li>Select the dominant aligned subspace (DAS) using gradient alignment, not eigenvalue magnitude.</li><li>Restrict training to DAS with line search and extend the analysis to Gauss–Newton.</li></ul>
-          <p><b>Evidence signal:</b> Across Poisson, heat, wave, and viscous Burgers benchmarks, DAS-restricted training empirically matches full-space training even when the projected Hessian remains ill-conditioned.</p>
-          <p><b>Watch item:</b> Full Hessian eigendecomposition is costly at scale, and the abstract does not establish net computational savings.</p>
-          <div class="tags"><span>#PhysicsInformedNeuralNetworks</span> <span>#SubspaceOptimization</span> <span>#GradientAlignment</span> <span>#NumericalPDEs</span> <span>#ScientificMachineLearning</span></div>
+          <p><b>Key insight:</b> Scientific arguments generated by LLMs can be formalized and machine-checked, while human researchers remain responsible for reviewing their starting assumptions.</p>
+          <p><b>Engineering relevance:</b> A Lean 4 verification layer could reduce manual checking of AI-generated scientific reasoning by separating explicit assumptions from formally validated deductions.</p>
+          <ul><li>An LLM agent proposes starting assumptions for human review.</li><li>The agent formalizes scientific arguments using experimental results, theoretical statements, and additional assumptions.</li><li>Lean 4 checks deductions against the stated assumptions.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports several examples demonstrating formal proofs of scientific arguments, but provides no quantitative evaluation or benchmark details.</p>
+          <p><b>Watch item:</b> Formal verification establishes correctness relative to assumptions, not the empirical truth of those assumptions or their adequacy for modeling reality.</p>
+          <div class="tags"><span>#FormalVerification</span> <span>#Lean4</span> <span>#AIForScience</span> <span>#HumanInTheLoop</span> <span>#ScientificReasoning</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>68</strong></div>
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>63</strong></div>
+        <p class="date">2026-11-19</p>
+        <h2>AI-Assisted Decision Support for Formula 1 Pit-Stop Strategy: Deep Reinforcement Learning and Mathematical Programming</h2>
+        <p class="authors">Felipe Méndez, Charles Thraves</p>
+        <p class="abstract">Pit-stop strategy in Formula 1 is a sequential decision problem under uncertainty, in which strategists decide at each lap whether to pit and which tire compound to fit. We develop a data-driven simulator, calibrated with historical race data, that captures tire degradation, drivers&#x27; recent performance, overtaking, yellow flag events, and rivals&#x27; pit-stop decisions. We train agents with five Deep Reinforcement Learning (DRL) algorithms and compare them with a Quadratic Mixed-Integer Programming (QMIP) formulation that is optimal in deterministic single-driver settings. Without uncertainty or competition, all DRL methods except TRPO achieve near-optimal performance. With a full grid of competitors and stochastic race events, the ranking of DRL methods depends on the evaluation setting: Proximal Policy Optimization (PPO) and its recurrent variant are the only methods that improve on the QMIP both in fully simulated races and when the actual 2024 races are replayed. Averaged over eight circuits, PPO improves on the QMIP by 0.33 and 0.49 positions in the two settings and Recurrent PPO by less, and in the replay PPO finishes 0.66 positions ahead of the drivers&#x27; actual strategies simulated in the same races. The QMIP performs similarly to the other methods, even though it cannot anticipate yellow flag events. Finally, we use the trained PPO policy as a look-ahead decision-support tool that shows the strategist the distribution of race outcomes under each candidate pit-stop action. Applied retrospectively to eight 2024 races, the look-ahead identifies the laps where the actual decision, the recommendation, or a third action was preferable.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.26909v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.26909v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> PPO-based pit-stop planning modestly outperformed mathematical optimization under race uncertainty and enabled action-by-action forecasts of finishing outcomes.</p>
+          <p><b>Engineering relevance:</b> Combining reinforcement learning with a calibrated simulator can support sequential operational decisions where uncertainty and competitors limit deterministic optimization.</p>
+          <ul><li>Calibrate a race simulator with historical data, including tire wear, overtaking, yellow flags, and rival pit stops.</li><li>Compare five deep reinforcement learning algorithms against a quadratic mixed-integer programming baseline.</li><li>Use trained PPO for look-ahead comparisons of outcome distributions under candidate pit-stop actions.</li></ul>
+          <p><b>Evidence signal:</b> Across eight circuits, PPO averaged 0.33 positions better than QMIP in simulated races and 0.49 in 2024 race replays; in replays, it also beat simulated actual driver strategies by 0.66 positions.</p>
+          <p><b>Watch item:</b> Results are simulation-based and retrospective; real-time deployment would require validation of simulator fidelity and robustness to unseen race conditions.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#MathematicalOptimization</span> <span>#DecisionSupport</span> <span>#Formula1</span> <span>#Simulation</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>63</strong></div>
         <p class="date">2026-11-19</p>
         <h2>PWLNet: A Framework for Linearized Neural Surrogates in Nonlinear Process Optimization</h2>
         <p class="authors">Sunoy Sanyal, Canberk Demir, Metin Türkay, Erdal Aydın</p>
@@ -115,107 +172,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.25969v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.25969v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> PWLNet makes neural process surrogates optimization-compatible through exact and piecewise-linear formulations, with pruning improving tractability.</p>
-          <p><b>Engineering relevance:</b> Compact neural surrogates can support steady-state operating-point optimization and dynamic reactor control while retaining strong predictive and economic performance.</p>
-          <ul><li>Train baseline or physics-informed networks, then apply optimization-aware pruning.</li><li>Embed ReLU, exact tanh, or PWL-tanh models in Pyomo, including binary-free SOSX branch-and-LP formulations.</li><li>Use PWL-native training to match training and embedded activations, avoiding extra linearization error.</li></ul>
-          <p><b>Evidence signal:</b> Across four benchmarks, reported results include 6.5× faster MILP solves after 15% pruning on Williams–Otto and 99.7% of direct-shooting reference performance for terminal-aware Van de Vusse prediction.</p>
-          <p><b>Watch item:</b> Constraint fidelity needs attention: hydroformylation control slightly exceeded the 20-bar pressure limit, and longer horizons or physics-informed training did not consistently improve closed-loop results.</p>
-          <div class="tags"><span>#NeuralSurrogates</span> <span>#ProcessOptimization</span> <span>#MixedIntegerOptimization</span> <span>#PiecewiseLinear</span> <span>#ScientificMachineLearning</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>67</strong></div>
-        <p class="date">2026-11-19</p>
-        <h2>X Hedging: towards an eXplainable artificial intelligence option Hedging framework</h2>
-        <p class="authors">Bjørn André Aaslund, Johannes Berge, Ayoub Haida, Ying Ni, Rita Pimentel</p>
-        <p class="abstract">We propose X Hedging, an alternative to the Deep Hedging framework that addresses computational and explainability limitations of neural-network-based hedging strategies. Deep Hedging leverages neural networks to learn flexible hedging policies but relies on opaque models and typically requires large training datasets, which can complicate interpretation and limit its effectiveness in data-constrained settings. X Hedging takes a step toward addressing these limitations by replacing neural networks with tree ensemble methods, specifically LightGBM, to estimate hedging strategies. This design provides a computationally efficient alternative while preserving strong hedging performance and moving toward more user-centered explainability. To integrate LightGBM into a reinforcement-learning-style hedging framework, we introduce an optimization approach that sequentially trains tree-ensemble models while introducing stochasticity through random training orders. In controlled experiments, X Hedging achieves performance comparable to Deep Hedging while offering greater user-centered explainability, improved computational efficiency, and substantially higher robustness when training data are limited. The numerical results demonstrate that tree-ensemble methods provide an effective computational alternative to neural networks for data-driven dynamic hedging.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.25870v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.25870v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> X Hedging replaces neural networks with LightGBM tree ensembles to deliver comparable option-hedging performance with greater computational efficiency and user-centered explainability.</p>
-          <p><b>Engineering relevance:</b> The framework offers an alternative for dynamic hedging systems where training resources, limited data, and model interpretability matter.</p>
-          <ul><li>Estimate dynamic hedging strategies using LightGBM tree ensembles.</li><li>Train ensembles sequentially within a reinforcement-learning-style framework.</li><li>Introduce stochasticity through randomized training orders.</li></ul>
-          <p><b>Evidence signal:</b> Controlled experiments report performance comparable to Deep Hedging, improved computational efficiency, and substantially greater robustness with limited training data.</p>
-          <p><b>Watch item:</b> The abstract does not establish whether these gains generalize to live markets or specify how user-centered explainability is evaluated.</p>
-          <div class="tags"><span>#XHedging</span> <span>#ExplainableAI</span> <span>#LightGBM</span> <span>#DynamicHedging</span> <span>#ComputationalFinance</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>66</strong></div>
-        <p class="date">2026-11-19</p>
-        <h2>When and why can integral constraints improve the accuracy of physics-informed neural networks?</h2>
-        <p class="authors">Myeong-Su Lee</p>
-        <p class="abstract">Adding constraints obtained by integrating governing equations to the loss has been reported to improve the accuracy of physics-informed neural networks (PINNs) in several applications, but mathematical understanding of these benefits remains limited. For several partial differential equations (PDEs), we derive stability estimates for losses with and without integral constraints. The comparison reveals that in certain parameter regimes, the standard loss has very weak control over specific error components, and that the integral constraints restore uniform control of these components. This explains when and why the constraints improve accuracy. Finally, numerical experiments support this interpretation. In parameter regimes where the standard loss is predicted to have weak control over those components, the two losses indeed show clear differences in accuracy. Conversely, in regimes where the standard loss retains sufficient control, both losses yield similar accuracy.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.25515v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.25515v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Integral constraints can improve PINN accuracy by restoring uniform control over error components that the standard loss controls weakly in certain PDE parameter regimes.</p>
-          <p><b>Engineering relevance:</b> Stability analysis can help identify when adding integrated governing-equation constraints is likely to improve a PINN solver’s accuracy.</p>
-          <ul><li>Derive PDE stability estimates with and without integral constraints.</li><li>Compare how the losses control specific error components across parameter regimes.</li><li>Test the predicted accuracy differences numerically.</li></ul>
-          <p><b>Evidence signal:</b> Numerical experiments show clear accuracy differences where standard-loss control is predicted to be weak, but similar accuracy where it remains sufficient.</p>
-          <p><b>Watch item:</b> Benefits are parameter-dependent; the abstract does not establish a universal accuracy improvement across PDEs.</p>
-          <div class="tags"><span>#PhysicsInformedNeuralNetworks</span> <span>#ScientificMachineLearning</span> <span>#PartialDifferentialEquations</span> <span>#StabilityAnalysis</span> <span>#IntegralConstraints</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>66</strong></div>
-        <p class="date">2026-11-17</p>
-        <h2>Stability of Parallel Transport Convolution under Riemannian Metric Perturbations</h2>
-        <p class="authors">Hongnian Huang, Andrew Stump</p>
-        <p class="abstract">Geometric convolutions on Riemannian manifolds depend on the geometry of the underlying domain, making stability under metric perturbations a fundamental question in geometric deep learning. This paper studies this question for parallel transport convolution through methods from differential geometry and analysis. On a fixed compact manifold, we establish that, for a continuous input signal and a continuous reference kernel supported in a sufficiently small normal neighborhood, the convolution output depends continuously in $L^2$ on the Riemannian metric in the $C^2$-topology, under the specified localization and transport-path conventions. The analysis develops perturbation estimates for geodesics, parallel transport, Jacobi fields, and exponential maps, and uses these estimates to compare the transported kernels. A central difficulty is the cut locus, which obstructs uniform comparison of the transport construction over the entire manifold. We address this difficulty by combining uniform estimates away from the cut locus with integral bounds on neighborhoods of arbitrarily small volume, while also controlling the change in the Riemannian volume measure. The resulting qualitative stability theorem connects perturbation theory for Riemannian geometric constructions with the analysis of spatial convolution operators in geometric deep learning.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.23543v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.23543v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> On a fixed compact manifold, parallel transport convolution is continuous in L² under C² perturbations of the Riemannian metric, subject to the stated localization and transport-path conventions.</p>
-          <p><b>Engineering relevance:</b> This provides a theoretical basis for robustness to small geometric changes in manifold-based convolution models, rather than an empirical performance guarantee.</p>
-          <ul><li>Derive perturbation estimates for geodesics, parallel transport, Jacobi fields, and exponential maps.</li><li>Compare transported kernels using uniform estimates away from the cut locus and integral bounds near it.</li><li>Control changes in the Riemannian volume measure.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports a qualitative stability theorem for continuous signals and continuous reference kernels with sufficiently small normal-neighborhood support, not numerical experiments or benchmarks.</p>
-          <p><b>Watch item:</b> The theorem gives no quantitative robustness rate, and implementations must respect the localization and transport-path assumptions.</p>
-          <div class="tags"><span>#GeometricDeepLearning</span> <span>#RiemannianGeometry</span> <span>#ParallelTransport</span> <span>#StabilityAnalysis</span> <span>#ManifoldConvolution</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>65</strong></div>
-        <p class="date">2026-11-18</p>
-        <h2>Large-Scale Tensor Trace-Ratio Problem: Randomized Algorithm and Sparse Multilinear Discriminant Analysis via Closed-Form Solution</h2>
-        <p class="authors">Yuhang Li, Gang Wu</p>
-        <p class="abstract">Trace-ratio optimization problems from high-dimensional tensor data appear across numerous research domains including machine learning, signal processing, as well as pattern recognition. Up to now, analytical closed-form expressions remain unavailable for tensor trace-ratio tasks; prevailing techniques mostly adopt inner-outer iterative schemes to tackle such optimization tasks. However, when dealing with high-dimensional tensor data sets, existing multilinear discriminant analysis methods often encounter limitations such as heavy computational costs, insufficient memory space, and interference from redundant features. This paper yields two core contributions.First, we present a closed-form solution under the full row rank condition, and construct a randomized solver targeting large-scale tensor trace-ratio optimization. In contrast to prior approaches, the devised algorithm achieves substantial computational speedup.Its core mechanism is to reformulate the original large-scale tensor trace-ratio optimization into a tensor least-squares formulation, instead of the much more complicated (generalized) tensor eigenproblems. We derive theoretical error-bound results which verify the reliability of the newly developed algorithm. Second, we build a sparse multilinear discriminant analysis model leveraging the above closed-form result combined with tensor \ell_{2,0}-norm regularization, and propose a sparse multilinear discriminant method for tensor feature selection. The sparse method can identify key discriminative features from high-dimensional data and suppress redundant information. Comprehensive numerical evaluations are conducted over multiple publicly available real-world benchmarks.The proposed methods demonstrate significant advantages in computational efficiency and scalability for large-scale problems, while achieving competitive classification accuracy on some datasets.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.24196v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.24196v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A closed-form solution under a full-row-rank condition enables randomized tensor trace-ratio optimization through tensor least squares rather than tensor eigenproblems.</p>
-          <p><b>Engineering relevance:</b> The approach targets computational and memory bottlenecks in high-dimensional tensor analysis while enabling discriminative feature selection.</p>
-          <ul><li>Derive a closed-form tensor trace-ratio solution under the full-row-rank condition.</li><li>Build a randomized tensor least-squares solver with theoretical error bounds.</li><li>Combine the solution with tensor ℓ₂,₀ regularization for sparse multilinear discriminant analysis.</li></ul>
-          <p><b>Evidence signal:</b> Evaluations on multiple public real-world benchmarks report efficiency and scalability gains, with competitive classification accuracy on some datasets; the abstract provides no numerical results.</p>
-          <p><b>Watch item:</b> Verify the full-row-rank condition before relying on the closed-form result; applicability outside that condition is not established in the abstract.</p>
-          <div class="tags"><span>#TensorOptimization</span> <span>#RandomizedAlgorithms</span> <span>#MultilinearDiscriminantAnalysis</span> <span>#FeatureSelection</span> <span>#ScientificComputing</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>64</strong></div>
-        <p class="date">2026-11-17</p>
-        <h2>Balancing Exploration and Exploitation in Constrained Combinatorial Optimization with U(1)-Symmetric Tensor Trains</h2>
-        <p class="authors">Sergei Iudin, Mikhail Podobrii, Dmitry Zheltkov, Stanislav Moiseev</p>
-        <p class="abstract">Tensor Train (TT) decomposition has emerged as a powerful tool for mitigating the curse of dimensionality in a variety of machine learning and combinatorial optimization tasks. Recent advances show that TT-based generative models can efficiently represent and explore high-dimensional discrete spaces, even when the cost function structure is unknown. However, incorporating hard linear constraints into TT-based optimization remains challenging, as existing interpolation and sampling approaches often fail when feasible points are rare. In this work, we develop a general TT-based framework for constrained combinatorial optimization built upon U(1)-symmetric tensor networks. Our method introduces an expressibility-enhancement mechanism for constructing sparse symmetric tensors and a graph-based diversity measure that guides sample selection during training. On assignment benchmarks, expressibility enhancement and diversity-aware selection improve mean solution quality over their respective baselines. The assignment-selected diversifying strategy also extends to nonpolynomial Set Partitioning, with larger relative gains observed in the higher-tensor-rank data families. Separate runtime benchmarks show substantial speedups over ConstrainTNet and PROTES on non-degenerate assignment workloads; comparisons with simulated annealing depend on constraint information and computational budget, but, overall, support the practicality of the current implementation.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.22557v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.22557v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> U(1)-symmetric tensor trains combine hard linear constraints with enhanced expressibility and diversity-aware sampling to balance exploration and exploitation in combinatorial optimization.</p>
-          <p><b>Engineering relevance:</b> The framework offers a practical way to search large discrete design spaces where feasible configurations are rare and objective-function structure is unknown.</p>
-          <ul><li>Represent constrained search spaces with U(1)-symmetric tensor networks.</li><li>Enhance expressibility when constructing sparse symmetric tensors.</li><li>Use a graph-based diversity measure to guide training-sample selection.</li></ul>
-          <p><b>Evidence signal:</b> Assignment benchmarks show improved mean solution quality over component baselines; Set Partitioning tests show larger relative gains in higher-rank data families, while separate runtime tests show substantial speedups over ConstrainTNet and PROTES on non-degenerate assignment workloads.</p>
-          <p><b>Watch item:</b> Performance relative to simulated annealing depends on available constraint information and computational budget, so benchmark speedups should not be assumed universal.</p>
-          <div class="tags"><span>#TensorTrains</span> <span>#ConstrainedOptimization</span> <span>#TensorNetworks</span> <span>#CombinatorialOptimization</span> <span>#ScientificMachineLearning</span></div>
+          <p><b>Key insight:</b> PWLNet makes neural process surrogates optimization-compatible through exact or piecewise-linear reformulations, with compact models enabling tractable optimization.</p>
+          <p><b>Engineering relevance:</b> Engineers can embed learned steady-state and dynamic process models in Pyomo to optimize operating conditions and control policies.</p>
+          <ul><li>Train baseline or physics-informed networks and prune hidden neurons for optimization efficiency.</li><li>Embed ReLU, exact-tanh, or PWL-tanh models using MILP, nonlinear, or binary-free SOSX formulations.</li><li>Use PWL-native training to match training and embedding activations, avoiding added linearization error.</li></ul>
+          <p><b>Evidence signal:</b> Across four benchmarks, reported results include 6.5× faster Williams–Otto MILP solves after 15% pruning and a 4% true-plant economic gain over the best ramp-and-hold policy for Van de Vusse.</p>
+          <p><b>Watch item:</b> Constraint fidelity remains a concern: hydroformylation exact-tanh control reached 20.002 bar against a 20-bar limit, and longer horizons or physics-informed training did not consistently improve closed-loop results.</p>
+          <div class="tags"><span>#NeuralSurrogates</span> <span>#ProcessOptimization</span> <span>#MixedIntegerOptimization</span> <span>#ModelPredictiveControl</span> <span>#ScientificMachineLearning</span></div>
         </section>
       </article>
     
@@ -223,24 +185,138 @@
       <article class="paper">
         <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>62</strong></div>
         <p class="date">2026-11-19</p>
+        <h2>X Hedging: towards an eXplainable artificial intelligence option Hedging framework</h2>
+        <p class="authors">Bjørn André Aaslund, Johannes Berge, Ayoub Haida, Ying Ni, Rita Pimentel</p>
+        <p class="abstract">We propose X Hedging, an alternative to the Deep Hedging framework that addresses computational and explainability limitations of neural-network-based hedging strategies. Deep Hedging leverages neural networks to learn flexible hedging policies but relies on opaque models and typically requires large training datasets, which can complicate interpretation and limit its effectiveness in data-constrained settings. X Hedging takes a step toward addressing these limitations by replacing neural networks with tree ensemble methods, specifically LightGBM, to estimate hedging strategies. This design provides a computationally efficient alternative while preserving strong hedging performance and moving toward more user-centered explainability. To integrate LightGBM into a reinforcement-learning-style hedging framework, we introduce an optimization approach that sequentially trains tree-ensemble models while introducing stochasticity through random training orders. In controlled experiments, X Hedging achieves performance comparable to Deep Hedging while offering greater user-centered explainability, improved computational efficiency, and substantially higher robustness when training data are limited. The numerical results demonstrate that tree-ensemble methods provide an effective computational alternative to neural networks for data-driven dynamic hedging.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.25870v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.25870v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> X Hedging replaces neural-network hedging policies with LightGBM tree ensembles, aiming to retain hedging performance while improving efficiency and explainability.</p>
+          <p><b>Engineering relevance:</b> Tree ensembles offer a practical alternative for dynamic option hedging when training data, compute resources, or model transparency are constraints.</p>
+          <ul><li>Use LightGBM tree ensembles to estimate hedging strategies.</li><li>Train models sequentially within a reinforcement-learning-style hedging framework.</li><li>Introduce stochasticity through randomized training orders.</li></ul>
+          <p><b>Evidence signal:</b> Controlled experiments report performance comparable to Deep Hedging, improved computational efficiency, greater user-centered explainability, and substantially higher robustness with limited training data.</p>
+          <p><b>Watch item:</b> The abstract provides no quantitative metrics or evaluation details, leaving the size and generalizability of the reported gains unclear.</p>
+          <div class="tags"><span>#XHedging</span> <span>#ExplainableAI</span> <span>#LightGBM</span> <span>#OptionHedging</span> <span>#ComputationalFinance</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>61</strong></div>
+        <p class="date">2026-11-19</p>
+        <h2>When and why can integral constraints improve the accuracy of physics-informed neural networks?</h2>
+        <p class="authors">Myeong-Su Lee</p>
+        <p class="abstract">Adding constraints obtained by integrating governing equations to the loss has been reported to improve the accuracy of physics-informed neural networks (PINNs) in several applications, but mathematical understanding of these benefits remains limited. For several partial differential equations (PDEs), we derive stability estimates for losses with and without integral constraints. The comparison reveals that in certain parameter regimes, the standard loss has very weak control over specific error components, and that the integral constraints restore uniform control of these components. This explains when and why the constraints improve accuracy. Finally, numerical experiments support this interpretation. In parameter regimes where the standard loss is predicted to have weak control over those components, the two losses indeed show clear differences in accuracy. Conversely, in regimes where the standard loss retains sufficient control, both losses yield similar accuracy.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.25515v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.25515v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Integral constraints can improve PINN accuracy by restoring uniform control over error components that standard losses constrain only weakly in certain PDE parameter regimes.</p>
+          <p><b>Engineering relevance:</b> Adding integral constraints is most useful when the governing PDE and its parameters leave important solution errors weakly controlled by the standard PINN loss.</p>
+          <ul><li>Add constraints obtained by integrating governing equations to the PINN loss.</li><li>Derive and compare stability estimates with and without integral constraints for several PDEs.</li><li>Test predicted accuracy differences through numerical experiments.</li></ul>
+          <p><b>Evidence signal:</b> Numerical experiments show clear accuracy differences in regimes predicted to have weak standard-loss control, but similar accuracy when that control remains sufficient.</p>
+          <p><b>Watch item:</b> Benefits are parameter-dependent; integral constraints should not be assumed to improve accuracy across all PDEs or regimes.</p>
+          <div class="tags"><span>#PhysicsInformedNeuralNetworks</span> <span>#ScientificMachineLearning</span> <span>#PartialDifferentialEquations</span> <span>#IntegralConstraints</span> <span>#StabilityAnalysis</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>60</strong></div>
+        <p class="date">2026-11-18</p>
+        <h2>Large-Scale Tensor Trace-Ratio Problem: Randomized Algorithm and Sparse Multilinear Discriminant Analysis via Closed-Form Solution</h2>
+        <p class="authors">Yuhang Li, Gang Wu</p>
+        <p class="abstract">Trace-ratio optimization problems from high-dimensional tensor data appear across numerous research domains including machine learning, signal processing, as well as pattern recognition. Up to now, analytical closed-form expressions remain unavailable for tensor trace-ratio tasks; prevailing techniques mostly adopt inner-outer iterative schemes to tackle such optimization tasks. However, when dealing with high-dimensional tensor data sets, existing multilinear discriminant analysis methods often encounter limitations such as heavy computational costs, insufficient memory space, and interference from redundant features. This paper yields two core contributions.First, we present a closed-form solution under the full row rank condition, and construct a randomized solver targeting large-scale tensor trace-ratio optimization. In contrast to prior approaches, the devised algorithm achieves substantial computational speedup.Its core mechanism is to reformulate the original large-scale tensor trace-ratio optimization into a tensor least-squares formulation, instead of the much more complicated (generalized) tensor eigenproblems. We derive theoretical error-bound results which verify the reliability of the newly developed algorithm. Second, we build a sparse multilinear discriminant analysis model leveraging the above closed-form result combined with tensor \ell_{2,0}-norm regularization, and propose a sparse multilinear discriminant method for tensor feature selection. The sparse method can identify key discriminative features from high-dimensional data and suppress redundant information. Comprehensive numerical evaluations are conducted over multiple publicly available real-world benchmarks.The proposed methods demonstrate significant advantages in computational efficiency and scalability for large-scale problems, while achieving competitive classification accuracy on some datasets.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.24196v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.24196v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Under a full row rank condition, tensor trace-ratio optimization admits a closed-form solution that enables a randomized large-scale solver and sparse discriminative feature selection.</p>
+          <p><b>Engineering relevance:</b> The approach targets computational cost, memory constraints, and redundant features when learning from high-dimensional tensor data.</p>
+          <ul><li>Reformulate tensor trace-ratio optimization as tensor least squares rather than tensor eigenproblems.</li><li>Construct a randomized solver with theoretical error bounds.</li><li>Combine the closed-form result with tensor ℓ₂,₀ regularization for sparse multilinear discriminant analysis.</li></ul>
+          <p><b>Evidence signal:</b> Evaluations on multiple public real-world benchmarks report efficiency and scalability advantages, with competitive classification accuracy on some datasets.</p>
+          <p><b>Watch item:</b> The closed-form guarantee requires full row rank; applicability should be checked for rank-deficient data.</p>
+          <div class="tags"><span>#TensorOptimization</span> <span>#RandomizedAlgorithms</span> <span>#MultilinearDiscriminantAnalysis</span> <span>#SparseFeatureSelection</span> <span>#ScientificComputing</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>57</strong></div>
+        <p class="date">2026-11-19</p>
         <h2>Stochastic counterpart of Nesterov&#x27;s method for sampling and provable non-acceleration of samplers with heavy-ball structure</h2>
         <p class="authors">A. Sharma</p>
         <p class="abstract">Polyak&#x27;s heavy-ball method and Nesterov&#x27;s method are two momentum-based methods that have inspired many optimization techniques used in applied fields, including machine learning. Momentum also provides a connection with sampling, and interestingly, many kinetic Langevin samplers reduce to the heavy-ball recurrence when velocity is eliminated and noise is removed. This observation motivates a natural question: what is the corresponding sampler for Nesterov&#x27;s method? We propose a sampler whose deterministic part is exactly Nesterov&#x27;s recurrence, driven by temporally correlated Gaussian noise and requires one new gradient evaluation per step. Noise correlation provides $\mathcal{O}(h^2)$ bias for smooth observables. We establish geometric ergodicity for possibly non-convex potentials. For strongly convex potentials with Lipschitz continuous gradients, we obtain contraction rates and show that, up to an additive constant, the energy decays at a rate of order $κ^{-1/2}$, where $κ$ is the condition number. For Gaussian targets, we show that relaxation has square-root dependence on $κ$. We further prove that any sampler based on heavy-ball dynamics with additive noise cannot achieve accelerated convergence uniformly over the class of strongly convex functions. Finally, we compare the proposed sampler with OBABO, BAOAB, HMC, MALA, BPS, and NUTS in numerical experiments and demonstrate the better performance of proposed sampler.</p>
         <div class="links"><a href="https://arxiv.org/abs/2611.26575v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.26575v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A sampler with Nesterov’s deterministic recurrence achieves square-root condition-number scaling in stated settings, while additive-noise heavy-ball samplers cannot accelerate uniformly over strongly convex functions.</p>
-          <p><b>Engineering relevance:</b> The method offers a momentum-based sampling approach for ill-conditioned targets using one new gradient evaluation per step.</p>
-          <ul><li>Combine Nesterov’s recurrence with temporally correlated Gaussian noise.</li><li>Obtain O(h²) bias for smooth observables through noise correlation.</li><li>Prove geometric ergodicity and analyze contraction under strong convexity.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports theoretical guarantees and numerical comparisons with OBABO, BAOAB, HMC, MALA, BPS, and NUTS, claiming better performance without specifying benchmarks or effect sizes.</p>
-          <p><b>Watch item:</b> The square-root scaling results concern energy decay up to an additive constant and Gaussian-target relaxation, not a universal accelerated mixing guarantee.</p>
-          <div class="tags"><span>#NesterovSampling</span> <span>#StochasticSampling</span> <span>#LangevinDynamics</span> <span>#MomentumMethods</span> <span>#ComputationalMathematics</span></div>
+          <p><b>Key insight:</b> A sampler with Nesterov’s deterministic recurrence and correlated Gaussian noise achieves square-root condition-number scaling in stated settings, while additive-noise heavy-ball samplers cannot accelerate uniformly over strongly convex functions.</p>
+          <p><b>Engineering relevance:</b> The method offers a momentum-based sampling approach for ill-conditioned distributions using one new gradient evaluation per step.</p>
+          <ul><li>Combine Nesterov’s recurrence with temporally correlated Gaussian noise.</li><li>Establish geometric ergodicity for possibly non-convex potentials and O(h²) bias for smooth observables.</li><li>Analyze strongly convex contraction and Gaussian relaxation, and prove a heavy-ball non-acceleration result.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports theoretical guarantees and numerical comparisons showing better performance than OBABO, BAOAB, HMC, MALA, BPS, and NUTS, without specifying benchmarks or effect sizes.</p>
+          <p><b>Watch item:</b> Square-root scaling is established under specific assumptions and should not be interpreted as uniform acceleration for general non-convex targets.</p>
+          <div class="tags"><span>#NesterovMethod</span> <span>#MonteCarlo</span> <span>#LangevinSampling</span> <span>#StochasticNumerics</span> <span>#AcceleratedSampling</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>AI math</span><span>arXiv</span><strong>60</strong></div>
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>56</strong></div>
+        <p class="date">2026-11-19</p>
+        <h2>Reinforcement Learning Unlearns Corrupted SFT Reasoning</h2>
+        <p class="authors">Anika Misra, Shreyas Vinod, Huteng Dai</p>
+        <p class="abstract">We show that reinforcement learning (RL) in reasoning tasks can succeed even when the supervised fine-tuning (SFT) data is severely corrupted. In a mathematical reasoning dataset (GSM8K), we systematically corrupt training trajectories across 361 configurations by injecting realistic error types, varying error locations, trace-answer consistency, and corruption ratios up to 100%. While aggregated SFT-only performance steadily deteriorates under corruption (dropping from 43.61% to 13.80%), Group Relative Policy Optimization (GRPO) post-training consistently restores model accuracy back to gold-baseline levels (approximately 60%). Crucially, initializing RL with as few as N = 8 minimal, incorrect, three-line &quot;form-only&quot; traces boosts post-RL performance to 69.30%, outperforming standard gold SFT initialization (60.71%) and GRPO without SFT (35.00%). Further, we show that SFT accuracy is largely uncorrelated with post-RL accuracy (r approximately 0), demonstrating a fundamental asymmetry in post-training: SFT primarily establishes structural layout (form), while RL independently discovers functional reasoning (function).</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.26756v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.26756v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> On GSM8K, RL recovered accuracy after severely corrupted supervised fine-tuning, suggesting that SFT can supply reasoning format while RL learns effective reasoning.</p>
+          <p><b>Engineering relevance:</b> Minimal, even incorrect, format-setting traces may provide a useful RL initialization without requiring extensive gold reasoning demonstrations.</p>
+          <ul><li>Tested 361 SFT corruption configurations varying error type, location, trace–answer consistency, and corruption ratio up to 100%.</li><li>Applied Group Relative Policy Optimization (GRPO) after SFT and compared mathematical reasoning accuracy.</li><li>Evaluated initialization with just eight incorrect, three-line “form-only” traces.</li></ul>
+          <p><b>Evidence signal:</b> SFT-only accuracy fell from 43.61% to 13.80% under corruption, while GRPO generally restored roughly 60%; eight form-only traces yielded 69.30%, versus 60.71% with gold SFT and 35.00% without SFT.</p>
+          <p><b>Watch item:</b> The reported evidence is from GSM8K; transfer to other tasks, model scales, and reward settings remains unestablished by the abstract.</p>
+          <div class="tags"><span>#ReinforcementLearning</span> <span>#MathematicalReasoning</span> <span>#SupervisedFineTuning</span> <span>#GRPO</span> <span>#DataQuality</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>AI math</span><span>arXiv</span><strong>55</strong></div>
+        <p class="date">2026-11-20</p>
+        <h2>Can pretrained Transformers deliver semiparametrically efficient inference?</h2>
+        <p class="authors">Han Yan, Jin Zhu, Chengchun Shi, Tengyao Wang</p>
+        <p class="abstract">Semiparametric models provide a broad framework for statistical inference, yet efficient estimation typically relies on influence function correction tailored to each estimand and on nuisance estimation repeated for every sample. We show that a single pretrained Transformer can deliver efficient estimation and valid inference for a family of estimands in one forward pass, without deriving efficient influence functions or estimating nuisance functions. Pretrained on simulated data with the true parameter as the only label, the Transformer learns the posterior mean and covariance of the queried estimand and hence returns an estimate and a Wald-type confidence region. Theoretically, we prove that, for locally flat pretraining priors of slowly growing complexity, the posterior mean is efficient for every queried estimand. The Transformer inherits this efficiency with asymptotically exact coverage, in probability over evaluation populations and queries, even under distribution shift. We also reveal that the guarantee places much higher demands on pretraining when the data-generating distribution is fixed, as in classical frequentist inference. Experiments on causal inference, partial linear regression, and survival analysis show that the pretrained model generally achieves the lowest estimation error among competing methods, with nearly nominal coverage, at a computational cost of only about 0.02 seconds per dataset.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.27666v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.27666v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A single pretrained Transformer can deliver semiparametrically efficient estimates and asymptotically valid confidence regions for multiple queried estimands in one forward pass, under stated theoretical conditions.</p>
+          <p><b>Engineering relevance:</b> The approach could replace repeated nuisance fitting and estimand-specific influence-function derivations with fast, reusable inference.</p>
+          <ul><li>Pretrain on simulated datasets using true parameters as the only labels.</li><li>Predict each queried estimand’s posterior mean and covariance to construct a Wald-type confidence region.</li><li>Establish efficiency under locally flat pretraining priors of slowly growing complexity.</li></ul>
+          <p><b>Evidence signal:</b> Experiments in causal inference, partial linear regression, and survival analysis generally achieved the lowest estimation error among competing methods, nearly nominal coverage, and about 0.02 seconds per dataset.</p>
+          <p><b>Watch item:</b> Guarantees hold in probability over evaluation populations and queries, including under distribution shift, but fixed-population frequentist guarantees require substantially more demanding pretraining.</p>
+          <div class="tags"><span>#SemiparametricInference</span> <span>#Transformers</span> <span>#StatisticalEfficiency</span> <span>#UncertaintyQuantification</span> <span>#SimulationBasedLearning</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>55</strong></div>
+        <p class="date">2026-11-19</p>
+        <h2>Budget-Aware Predict-and-Verify Theorem Proving with Heterogeneous LLM Solvers</h2>
+        <p class="authors">Wei Jiang, Ziran Liu, Wei Wang</p>
+        <p class="abstract">Large language model (LLM) theorem solvers differ in both proving capability and inference cost. Applying an expensive solver to every subgoal wastes computation when cheaper models are sufficient, while always starting from the cheapest solver wastes attempts on subgoals that require stronger models. We present BudgetPV, an agentic budget-aware predict-and-verify system that allocates computation across unresolved subgoals and heterogeneous LLM solvers. BudgetPV uses a cross-solver predictor to guide solver selection for each subgoal and revises the allocation as verification feedback becomes available. The allocation problem changes as proving progresses. Early decisions mainly determine which solver should handle an untried subgoal, while later decisions determine which previously attempted subgoals should receive additional computation. We train the predictor with two objectives for these two stages. Class-weighted cross-entropy improves assignment to less frequent stronger solvers during the initial stage, while plain cross-entropy provides better calibrated probabilities for later allocation among previously attempted subgoals. We evaluate BudgetPV on Lean Workbook, miniF2F, ProofNet, and PutnamBench using three progressively expanded solver settings: a strong but expensive solver alone, adding a medium-cost solver with intermediate solving capability, and further adding a cheap solver with lower solving capability. BudgetPV requires less LLM generation computation than uniform allocation to solve the same number of subgoals across the evaluated settings. The experiments further show the computation savings obtained as medium- and lower-cost solvers are added.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.26906v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.26906v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> BudgetPV reduces theorem-proving generation compute by predicting which solver each subgoal needs and updating allocations using verification feedback.</p>
+          <p><b>Engineering relevance:</b> Routing subgoals across heterogeneous LLMs can reserve expensive inference for harder proofs rather than applying one solver uniformly.</p>
+          <ul><li>Use a cross-solver predictor to select solvers for unresolved subgoals.</li><li>Revise computation allocations as verification feedback arrives.</li><li>Train with class-weighted cross-entropy for initial assignment and plain cross-entropy for later allocation.</li></ul>
+          <p><b>Evidence signal:</b> Across Lean Workbook, miniF2F, ProofNet, and PutnamBench, BudgetPV uses less LLM generation compute than uniform allocation to solve the same number of subgoals in the evaluated solver settings.</p>
+          <p><b>Watch item:</b> The abstract does not quantify savings or establish whether they outweigh predictor and verification overhead.</p>
+          <div class="tags"><span>#TheoremProving</span> <span>#FormalVerification</span> <span>#LLMRouting</span> <span>#ComputeEfficiency</span> <span>#Lean</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>AI math</span><span>arXiv</span><strong>55</strong></div>
         <p class="date">2026-11-19</p>
         <h2>Differentially Private Score Estimation with Applications to Score-Based Generative Models</h2>
         <p class="authors">Mengxiao Gao, Elly K. H. Hung, Yuchen Wu, Yi Yu</p>
@@ -248,18 +324,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.25536v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.25536v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Private score estimation achieves nearly matching upper and minimax lower error bounds, clarifying the privacy–accuracy trade-off and enabling near-optimal private diffusion modeling.</p>
-          <p><b>Engineering relevance:</b> The resulting diffusion model provides differential privacy independent of the number of denoising steps, avoiding step-dependent privacy accounting.</p>
-          <ul><li>Represent scores with quadratic B-splines and sample a private estimator using the exponential mechanism.</li><li>Implement sampling through projected Langevin Monte Carlo with runtime polynomial in sample size.</li><li>Use the private score estimator in a suitably discretized diffusion model.</li></ul>
-          <p><b>Evidence signal:</b> The paper establishes theoretical error guarantees and reports validation on synthetic and real-world datasets; the abstract gives no numerical experimental results.</p>
+          <p><b>Key insight:</b> Private score estimation achieves a nearly minimax-optimal privacy–accuracy trade-off and enables diffusion models whose privacy guarantee is independent of the number of denoising steps.</p>
+          <p><b>Engineering relevance:</b> The approach offers a theoretically grounded route to privacy-preserving generative modeling, with an implementation whose runtime is polynomial in sample size.</p>
+          <ul><li>Represent scores with quadratic B-splines and sample an estimator using the exponential mechanism.</li><li>Implement private estimation via projected Langevin Monte Carlo.</li><li>Use the private scores in a suitably discretized diffusion model.</li></ul>
+          <p><b>Evidence signal:</b> The paper establishes error upper bounds and a nearly matching private minimax lower bound, and reports experiments on synthetic and real-world datasets.</p>
           <p><b>Watch item:</b> Guarantees assume sub-Gaussian distributions with locally Hölder-continuous scores; polynomial runtime alone does not establish scalability in high dimensions.</p>
-          <div class="tags"><span>#DifferentialPrivacy</span> <span>#ScoreEstimation</span> <span>#DiffusionModels</span> <span>#MinimaxTheory</span> <span>#PrivateMachineLearning</span></div>
+          <div class="tags"><span>#DifferentialPrivacy</span> <span>#ScoreEstimation</span> <span>#DiffusionModels</span> <span>#MinimaxTheory</span> <span>#GenerativeAI</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>59</strong></div>
+        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>54</strong></div>
+        <p class="date">2026-11-20</p>
+        <h2>A 3D PINN-Based Framework for Patient-Specific Pulmonary Hemodynamics Using Windkessel Models</h2>
+        <p class="authors">Celia Taboada, Luis Nuñez, Angélica Casero, Pedro Navas</p>
+        <p class="abstract">Cardiovascular fluid dynamics modeling relies heavily on mesh-based numerical methods such as Computational Fluid Dynamics (CFD). While accurate, these methods entail significant computational costs and complex meshing workflows that limit their translation to clinical practice. Physics-Informed Neural Networks (PINNs) are a promising meshless alternative that embeds the governing equations directly into neural network training. In this work, we propose a PINN framework for pulsatile blood flow in patient-specific geometries with dynamic lumped-parameter Windkessel (RCR) outlet conditions representing distal vascular impedance. Coupling the Windkessel ODE to a 3D network raises two difficulties: the ODE alone does not fix the pressure level, and the local pressure variations that drive the flow are orders of magnitude smaller than the basal pressure imposed by the outlet. We address them by decomposing pressure into a time-dependent basal part and a spatially varying part, an initial condition and gauge for the Windkessel equation, a global mass-balance constraint, and a periodic Fourier embedding of time. Validated on 2D canonical channels (steady and pulsatile, with and without RCR outlet), the framework is then applied to a patient-specific right pulmonary artery, reproducing outlet flow, mean pressure, and the velocity and dynamic pressure fields with errors on the order of the data resolution. Finally, we solve the inverse problem of identifying the three Windkessel parameters of the outlet from synthetic data, recovering them with errors of about 0.3% from deliberately wrong initial values. Residual biases in the local pressure field and the need to test robustness to noisy clinical data remain open, but the results support PINNs as complementary tools for meshless hemodynamics and patient-specific digital twins.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.27351v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.27351v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A 3D physics-informed neural network couples patient-specific pulmonary blood flow with Windkessel outlet models by separating basal pressure from small spatial pressure variations.</p>
+          <p><b>Engineering relevance:</b> The framework offers a meshless complement to CFD for patient-specific hemodynamics and estimation of distal vascular parameters.</p>
+          <ul><li>Embed blood-flow equations and dynamic Windkessel RCR outlet conditions in PINN training.</li><li>Separate basal and spatial pressure, with a Windkessel initial condition, pressure gauge, and global mass-balance constraint.</li><li>Use periodic Fourier time embedding to represent pulsatile flow.</li></ul>
+          <p><b>Evidence signal:</b> Tests on 2D channels and a patient-specific right pulmonary artery reproduced flow and pressure at errors on the order of data resolution; inverse estimation recovered three Windkessel parameters from synthetic data with about 0.3% error.</p>
+          <p><b>Watch item:</b> Residual local-pressure biases remain, and robustness to noisy clinical data has not yet been established.</p>
+          <div class="tags"><span>#PhysicsInformedNeuralNetworks</span> <span>#PulmonaryHemodynamics</span> <span>#WindkesselModels</span> <span>#ScientificMachineLearning</span> <span>#PatientSpecificModeling</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Mathematical Reasoning</span><span>arXiv</span><strong>54</strong></div>
         <p class="date">2026-11-18</p>
         <h2>CurvDelta: Low-Curvature Delta Modeling For Surgical Learning and Unlearning</h2>
         <p class="authors">Zeguan Xiao, Zhuocheng Liang, Yun Chen, Yong Wang, Guanhua Chen, Pinyan Lu</p>
@@ -267,37 +362,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.24654v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.24654v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> CurvDelta restricts model updates to a low-curvature space where preservation loss remains nearly unchanged, aiming to learn or forget targeted capabilities without degrading others.</p>
-          <p><b>Engineering relevance:</b> It offers a geometry-aware approach to adapting LLMs when preserving existing capabilities is as important as achieving the new objective.</p>
-          <ul><li>Analyze local curvature around the pre-adaptation model to identify preservation-friendly update directions.</li><li>Use Kronecker-factored approximate curvature (K-FAC) and factorized projection to make the construction scalable.</li><li>Introduce CurvLoRA, a low-rank variant using the same preservation geometry.</li></ul>
-          <p><b>Evidence signal:</b> Across mathematical reasoning, code generation, and TOFU/MUSE knowledge unlearning, the abstract reports improved acquisition–retention or forgetting–retention trade-offs, with unlearning retention close to from-scratch retraining.</p>
-          <p><b>Watch item:</b> Preservation relies on a local, approximate curvature model; larger updates may leave the regime where preservation loss is nearly invariant.</p>
-          <div class="tags"><span>#CurvDelta</span> <span>#LLMAdaptation</span> <span>#CapabilityPreservation</span> <span>#MachineUnlearning</span> <span>#MathematicalReasoning</span></div>
+          <p><b>Key insight:</b> CurvDelta steers model updates into low-curvature directions of the preservation loss, enabling targeted learning or unlearning while limiting degradation of existing capabilities.</p>
+          <p><b>Engineering relevance:</b> The framework offers a geometry-aware way to adapt LLMs when acquiring or removing specific capabilities must not compromise general performance.</p>
+          <ul><li>Construct a low-curvature update space from the local geometry of the preservation loss around the original model.</li><li>Use Kronecker-factored approximate curvature (K-FAC) and factorized projection to make the construction scalable.</li><li>Apply CurvLoRA for low-rank adaptation within the same preservation geometry.</li></ul>
+          <p><b>Evidence signal:</b> Evaluations cover mathematical reasoning, code generation, and TOFU/MUSE knowledge unlearning, reporting improved acquisition–retention or forgetting–retention trade-offs, with unlearning retention close to from-scratch retraining.</p>
+          <p><b>Watch item:</b> Preservation relies on local, approximate curvature estimates; the abstract does not quantify computational overhead or robustness for large updates.</p>
+          <div class="tags"><span>#CurvDelta</span> <span>#MathematicalReasoning</span> <span>#MachineUnlearning</span> <span>#ParameterEfficientFineTuning</span> <span>#CapabilityPreservation</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>59</strong></div>
-        <p class="date">2026-11-18</p>
-        <h2>Infinity-Wasserstein Distributionally Robust Principal Component Analysis: Exact Reformulation, Finite-Sample Guarantee, and Efficient Algorithm</h2>
-        <p class="authors">Zhouxing Luo, Lei Wang, Xin Liu</p>
-        <p class="abstract">Principal component analysis (PCA) is a fundamental and ubiquitous technique for dimension reduction and representation learning, yet its empirical formulation remains vulnerable to distributional uncertainty. While distributionally robust optimization (DRO) offers a natural remedy, existing order-2 Wasserstein models of PCA either preserve the nominal PCA subspace or lack an exact reformulation. This paper demonstrates how the infinity-Wasserstein distance can reconcile these two desirable properties. For the resulting DRO model of PCA, we derive an exact finite-dimensional reformulation and explicitly identify a worst-case distribution attaining the inner maximum. Crucially, the reformulated objective retains samplewise residual information beyond the empirical covariance matrix, revealing a mechanism through which distributional robustness can reshape the learned principal subspace. Under the mild assumption that the true distribution has a finite fourth moment, we further establish a uniform finite-sample performance guarantee for the proposed model. An iteratively reweighted majorization-minimization algorithm is also developed to solve the resulting nonconvex and nonsmooth optimization problem, with a rigorous analysis of its convergence properties. Numerical experiments substantiate the computational efficiency of the proposed algorithm and the practical effectiveness of the infinity-Wasserstein model in downstream applications.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.23877v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.23877v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>Theorem Proving</span><span>arXiv</span><strong>52</strong></div>
+        <p class="date">2026-11-20</p>
+        <h2>Efficient Natural Language to Temporal Logic Translation for Real-Time Physical AI</h2>
+        <p class="authors">Oliver Schön, Adrien Banse, John Lygeros, Lars Lindemann</p>
+        <p class="abstract">Robots can be controlled to perform tasks with guaranteed correctness when the task instructions are stated in a formal language. Large language models (LLMs) have been widely used to allow users to provide such instructions in natural language (NL), by translating NL into formal language. When deploying such translators on a robot, however, we face limited computing and energy resources, while offloading computation or data to the cloud may be infeasible or undesirable. Yet an LLM is a general-purpose text generator, whereas a formula in a fixed formal language fragment follows a well-defined syntax. We therefore ask whether text generation is needed at all. For the formal language of linear temporal logic (LTL), we show that this translation can instead be broken down into answering a set of questions with pre-defined answers. We then construct a System-One model, a recent class of NL-based classifier, to provide such answers and enable us to translate a natural language instruction into an LTL instruction. On three benchmarks, our translator matches or exceeds the accuracy of the best local LLMs available, at up to one order of magnitude lower runtime and energy consumption. We show that it generalizes to unseen atomic propositions and temporal patterns.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.27489v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.27489v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Infinity-Wasserstein robust PCA admits an exact finite-dimensional reformulation while retaining samplewise residual information that can reshape the principal subspace.</p>
-          <p><b>Engineering relevance:</b> The method offers a principled way to make dimensionality reduction more resilient to distributional uncertainty rather than simply recovering nominal PCA.</p>
-          <ul><li>Derive an exact reformulation and an explicit worst-case distribution.</li><li>Establish a uniform finite-sample guarantee assuming a finite fourth moment.</li><li>Solve the nonconvex, nonsmooth problem using iteratively reweighted majorization-minimization with convergence analysis.</li></ul>
-          <p><b>Evidence signal:</b> Numerical experiments support computational efficiency and downstream effectiveness, but the abstract provides no datasets, baselines, or quantitative results.</p>
-          <p><b>Watch item:</b> The optimization remains nonconvex, so convergence analysis should not be interpreted as a guarantee of global optimality.</p>
-          <div class="tags"><span>#RobustPCA</span> <span>#DistributionallyRobustOptimization</span> <span>#WassersteinDistance</span> <span>#DimensionalityReduction</span> <span>#NonconvexOptimization</span></div>
+          <p><b>Key insight:</b> Natural-language instructions can be translated into linear temporal logic (LTL) by answering predefined questions instead of generating text.</p>
+          <p><b>Engineering relevance:</b> This approach supports on-device robot task translation with lower runtime and energy use, reducing reliance on cloud computation.</p>
+          <ul><li>Decompose translation within a fixed LTL fragment into questions with predefined answers.</li><li>Use a System-One natural-language classifier to answer those questions.</li><li>Construct the LTL instruction from the predicted answers.</li></ul>
+          <p><b>Evidence signal:</b> Across three benchmarks, the translator matches or exceeds the accuracy of the best local LLMs evaluated, with up to an order-of-magnitude reduction in runtime and energy consumption, and generalizes to unseen atomic propositions and temporal patterns.</p>
+          <p><b>Watch item:</b> Deployment should validate coverage of the supported LTL fragment and translation errors; formal task specifications alone do not guarantee that natural-language intent was captured correctly.</p>
+          <div class="tags"><span>#TemporalLogic</span> <span>#NaturalLanguageProcessing</span> <span>#FormalMethods</span> <span>#Robotics</span> <span>#EfficientAI</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>57</strong></div>
+        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>52</strong></div>
         <p class="date">2026-11-18</p>
         <h2>Stable admissible neural classes and convergent physics-informed neural networks</h2>
         <p class="authors">Leevan Ling, Shu Ma, Yizhong Sun</p>
@@ -305,107 +400,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.24355v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.24355v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> For linear elliptic Dirichlet problems, neural approximation power alone is insufficient: convergence also requires stable trial classes, adequate collocation sampling, and accurate admissible comparison networks.</p>
-          <p><b>Engineering relevance:</b> The framework guides PINN design by linking trial-class constraints, collocation-point requirements, and scale-dependent boundary weighting to solution-error control.</p>
-          <ul><li>Use elliptic regularity to bound solution error by continuous PDE and boundary residuals.</li><li>Identify admissible neural subclasses whose discrete residual loss controls continuous residuals with physics-balanced boundary weighting.</li><li>Construct admissible tanh-MLP comparison networks to prove constrained convergence and conditional unconstrained convergence.</li></ul>
+          <p><b>Key insight:</b> Neural approximation power alone does not ensure PINN convergence; discrete stability and accurate comparison networks within admissible trial classes are also needed.</p>
+          <p><b>Engineering relevance:</b> For linear elliptic Dirichlet PDEs, the framework guides collocation density and scale-dependent boundary weighting so discrete residual losses can control solution error.</p>
+          <ul><li>Extend kernel collocation theory using elliptic regularity, discrete stability, and consistency.</li><li>Identify stable admissible neural subclasses and quantify collocation requirements with physics-balanced boundary weights.</li><li>Construct admissible tanh-MLP comparison networks to prove constrained convergence and conditional unconstrained convergence.</li></ul>
           <p><b>Evidence signal:</b> The abstract reports theoretical convergence results for tanh-MLPs, not numerical benchmarks or empirical performance measurements.</p>
-          <p><b>Watch item:</b> Unconstrained PINN convergence is conditional and requires joint network and sampling refinement; approximation guarantees alone do not suffice.</p>
-          <div class="tags"><span>#PINNs</span> <span>#ScientificMachineLearning</span> <span>#EllipticPDEs</span> <span>#NumericalAnalysis</span> <span>#ConvergenceTheory</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Symbolic Computation</span><span>arXiv</span><strong>57</strong></div>
-        <p class="date">2026-11-17</p>
-        <h2>A Survey on the Use of Machine Learning within Computer Algebra</h2>
-        <p class="authors">Uzma Shafiq, Matthew England, Nayyar Zaidi</p>
-        <p class="abstract">This survey explores the use of Machine Learning (ML) in the field of Computer Algebra (CA), both to optimise existing CA algorithms, and to perform symbolic computation directly. Traditional symbolic methods, while mathematically rigorous, often are computationally expensive thus limiting their use in real-world applications. Recent advances have shown that data-driven techniques can address these limitations by guiding heuristic decisions, selecting optimal algorithms, predicting structural properties of algebraic objects, or even making direct symbolic computations. We take a systematic literature review approach and uncover work in CA applications including cylindrical algebraic decomposition, Gröbner basis computation, symbolic integration, and many more. The survey compares the different ML approaches that have been employed for these tasks, ranging from decision trees to transformers. Issues uncovered by the survey include the lack of benchmark datasets for CA, which hinders the comparison of methods and the generalizability of ML models. The survey identifies the potential for explainable AI tools to help develop trust in decisions, and to drive forward CA research itself.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.23361v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.23361v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Machine learning can accelerate computer algebra by guiding algorithmic choices and, in some cases, performing symbolic computation directly.</p>
-          <p><b>Engineering relevance:</b> ML-guided symbolic tools could reduce computational costs in engineering workflows that rely on algebraic computation.</p>
-          <ul><li>Systematically review ML applications in computer algebra.</li><li>Cover cylindrical algebraic decomposition, Gröbner bases, symbolic integration, and other tasks.</li><li>Compare approaches ranging from decision trees to transformers.</li></ul>
-          <p><b>Evidence signal:</b> The survey synthesizes prior work but identifies a shortage of benchmark datasets that limits method comparison and assessment of generalization.</p>
-          <p><b>Watch item:</b> ML-generated symbolic results should be mathematically verified rather than assumed to inherit the guarantees of traditional symbolic methods.</p>
-          <div class="tags"><span>#ComputerAlgebra</span> <span>#MachineLearning</span> <span>#SymbolicComputation</span> <span>#ScientificComputing</span> <span>#ExplainableAI</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Optimization and PDEs</span><span>arXiv</span><strong>56</strong></div>
-        <p class="date">2026-11-19</p>
-        <h2>Safeguarded Learning-Assisted Nonlinear Conjugate Gradient Methods</h2>
-        <p class="authors">Morteza Kimiaei, Saman Babaie--Kafaki</p>
-        <p class="abstract">A learning-assisted framework for Nonlinear Conjugate Gradient (NCG) methods is developed in which lightweight online prediction is used to support, rather than replace, the classical optimization process. The proposed approach retains the standard two-term NCG structure and introduces two independent online extreme learning machine models. The first model predicts an NCG coefficient during restart recovery or when persistent stagnation is detected, whereas the second model is used only after a line-search failure in finite precision arithmetic to propose a bounded correction to the deterministic fallback step size. Neural predictions are accepted only when they satisfy deterministic numerical safeguards, including descent, scale, and out-of-distribution requirements; otherwise, the corresponding deterministic recovery or fallback mechanism is retained. Both learning models are updated online using quantities already generated along the optimization trajectory and therefore require no additional function or gradient evaluations for training. These learning frameworks are applied to six well-known classical NCG methods, producing corresponding low-storage learning-assisted variants with deterministic safeguards. Numerical experiments on 480 CUTEst test problems show improved robustness for all six variants at broadly comparable evaluation costs. A PDE-constrained conductivity-identification example further illustrates the potential of the proposed approach to reduce evaluation costs and computational time for problems with expensive function and gradient evaluations. These findings suggest that restricted online learning can improve the robustness and computational performance of classical NCG methods while preserving their low-storage structure and deterministic optimization safeguards, and is particularly promising when function or gradient evaluations are expensive.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.25707v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.25707v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Safeguarded online learning can improve nonlinear conjugate gradient robustness while retaining classical search directions, low storage, and deterministic recovery mechanisms.</p>
-          <p><b>Engineering relevance:</b> The approach is promising for PDE-constrained optimization where expensive function and gradient evaluations make reliable progress especially valuable.</p>
-          <ul><li>Use one online extreme learning machine to predict NCG coefficients during restart recovery or persistent stagnation.</li><li>Use a second model only after line-search failure to propose a bounded correction to the fallback step size.</li><li>Accept predictions only under deterministic numerical safeguards; train online from existing trajectory data without extra function or gradient evaluations.</li></ul>
-          <p><b>Evidence signal:</b> Tests on 480 CUTEst problems showed improved robustness across six NCG variants at broadly comparable evaluation costs; a PDE conductivity-identification example illustrated potential cost and runtime savings.</p>
-          <p><b>Watch item:</b> Benefits depend on safeguard and out-of-distribution checks; the abstract does not quantify gains or establish broad PDE generalization.</p>
-          <div class="tags"><span>#NonlinearOptimization</span> <span>#ConjugateGradient</span> <span>#SafeguardedLearning</span> <span>#ScientificMachineLearning</span> <span>#PDEConstrainedOptimization</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>56</strong></div>
-        <p class="date">2026-11-19</p>
-        <h2>Compact MaxSAT Encodings for Balanced Waiting in B2B Meeting Scheduling</h2>
-        <p class="authors">Tuyen Van Kieu, Long Duc Nguyen, Minh Duc Dang Vu, Khanh Van To</p>
-        <p class="abstract">Business-to-business (B2B) meeting schedules can leave participants with long and uneven waits. Earlier break-based B2B models count interruptions without measuring their duration. Our earlier work minimizes the range of participant idle totals, but a minimum range can still leave long waits. We study lexicographic optimization of idle range, maximum idle, and total idle, in that order. Waiting is measured in empty slots between a participant&#x27;s first and last meetings. Balance compares idle totals among participants requesting at least two meetings. Using weighted maximum satisfiability (MaxSAT), we prove preservation of feasible schedules, objective costs, and priorities. Compact-Base retains our earlier feasibility encoding; Compact-Objective adds objective-specific representations. We compare both with Direct, an independent implementation based on the 2022 MaxSAT model. Encoding comparisons use three repetitions per encoding-objective-instance combination on 226 variants of 20 base instances. Schedule-quality comparisons use break, range, and lexicographic objectives with the same encoding and feasible set. Across nine objective-dataset comparisons, Compact-Objective had the lowest median clause count and lower median peak memory than Direct. Runtime rankings changed in comparisons with the same solver build and computing environment. On 84 instances solved optimally under all three quality objectives, selected lexicographic schedules preserved the optimal idle range. Compared with selected range-only schedules, maximum idle decreased on 11 instances and total idle on 56. On 68 instances also solved optimally under range-then-total optimization, the selected schedules matched the three-tier criterion values. Compact-Base supplied the larger clause reduction relative to Direct; Compact-Objective reduced clauses further.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.25533v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.25533v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Lexicographically minimizing idle range, maximum idle, then total idle improves waiting times while preserving the best balance among participants.</p>
-          <p><b>Engineering relevance:</b> Compact MaxSAT encodings can reduce scheduling model size and memory demand while preserving feasible schedules, objective costs, and optimization priorities.</p>
-          <ul><li>Measure waiting as empty slots between each participant’s first and last meetings.</li><li>Compare idle totals among participants requesting at least two meetings.</li><li>Use Compact-Base for feasibility encoding and Compact-Objective for additional objective-specific compression.</li></ul>
-          <p><b>Evidence signal:</b> Across 226 variants of 20 base instances with three repetitions per configuration, Compact-Objective had the lowest median clause count in all nine objective–dataset comparisons; among 84 jointly optimal instances, selected lexicographic schedules reduced maximum idle on 11 and total idle on 56 versus selected range-only schedules.</p>
-          <p><b>Watch item:</b> Smaller encodings did not guarantee faster solving: runtime rankings varied even with the same solver build and computing environment.</p>
-          <div class="tags"><span>#MaxSAT</span> <span>#Scheduling</span> <span>#LexicographicOptimization</span> <span>#ConstraintOptimization</span> <span>#ComputationalEngineering</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Number Theory and Algebra</span><span>arXiv</span><strong>55</strong></div>
-        <p class="date">2026-11-19</p>
-        <h2>Faithful Generative Modeling for Censored Time-to-Event Data: From Distributional Fidelity to Statistical Inference</h2>
-        <p class="authors">Yin Liu, Shanshan Zhao, Didong Li</p>
-        <p class="abstract">Synthetic data has emerged as a powerful tool for data sharing, clinical trial simulation, and digital twin development, with growing applications in biomedical research and drug development. However, limited attention has been devoted to synthetic time-to-event data, which are central to clinical trials and survival analysis. In particular, theoretical guarantees for the distributional fidelity of synthetic survival data remain largely unexplored. More importantly, even when a generator achieves distributional fidelity, it remains unclear whether the downstream statistical analysis is reliable. To address these gaps, we propose a general two-stage generative framework for survival data (TSGSurv) that jointly generates observed times and covariates conditional on event status, and establish its distributional convergence rate. Focusing on the widely used Cox proportional hazards model, we establish conditions under which generator fidelity guarantees consistency of model coefficient estimates. We further characterize the limitations of naive inference based on synthetic data, and develop a variance correction and a distribution calibration procedure to recover valid inference of original data. We demonstrate the effectiveness of the proposed generative and inferential framework with extensive simulations and two real data applications.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.25464v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.25464v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Faithful synthetic survival data can support consistent Cox model estimates, but valid statistical inference requires additional correction and calibration.</p>
-          <p><b>Engineering relevance:</b> TSGSurv supports synthetic time-to-event data generation for biomedical data sharing, clinical trial simulation, and digital twins.</p>
-          <ul><li>Use a two-stage framework to jointly generate observed times and covariates conditional on event status.</li><li>Establish distributional convergence rates and conditions for consistent Cox coefficient estimates.</li><li>Apply variance correction and distribution calibration to recover valid inference for the original data.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports extensive simulations and two real-data applications evaluating the generative and inferential framework.</p>
-          <p><b>Watch item:</b> Distributional fidelity alone does not ensure valid inference; theoretical conditions and inferential corrections must be checked.</p>
-          <div class="tags"><span>#SyntheticData</span> <span>#SurvivalAnalysis</span> <span>#GenerativeModeling</span> <span>#StatisticalInference</span> <span>#CoxModel</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Geometry and Topology</span><span>arXiv</span><strong>54</strong></div>
-        <p class="date">2026-11-19</p>
-        <h2>A new algorithmic approach for finding flat minima: critically damped Polyak stepsizes</h2>
-        <p class="authors">Francesco Caporali, Jason M. Altschuler, Boris Hanin</p>
-        <p class="abstract">We present a new adaptive stepsize rule that biases gradient descent toward flatter minima in both theory and practice, and establish the first uniform-in-time guarantees for both sharpness and loss reduction for a broad class of locally quadratic objectives. Our critically damped Polyak (CDP) stepsizes multiply the classical Polyak rule by $4$ and a mild damping factor. The factor $4$ is critical in that it produces equioscillations around the manifold of minimizers $\mathcal{M}$ to leading order. Damping provably drives convergence to $\mathcal{M}$. CDP thus operates at the edge of stability by adapting its stepsizes to local curvature. Once the loss is small, its projected iterates follow gradient descent on $\log{λ_1(\nabla^2 \mathcal{L})}$ along $\mathcal{M}$ to leading order, paralleling the flatness bias of normalized gradient descent (Arora et al., 2022). Unlike normalized gradient descent, CDP step lengths shrink with the distance to $\mathcal{M}$, enabling convergence to an interpolating solution that locally minimizes sharpness at finite learning rate. We establish our theory for a broad class of non-negative losses with locally quadratic Morse-Bott structure near $\mathcal{M}$, capturing regular interpolation regimes in smooth overparameterized neural networks. Empirically, CDP stepsizes produce a flattening effect similar to that of Sharpness-Aware Minimization (SAM, Foret et al., 2021), reducing sharpness even in settings beyond our theory, including nonlinear teacher-student networks and fine-tuning of pre-trained LLMs.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.26475v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.26475v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Critically damped Polyak (CDP) stepsizes steer gradient descent toward flatter minima while providing uniform-in-time guarantees on sharpness and loss reduction for locally quadratic objectives.</p>
-          <p><b>Engineering relevance:</b> CDP offers an adaptive stepsize rule for seeking low-loss, low-sharpness solutions, with empirical flattening effects observed in neural networks and LLM fine-tuning.</p>
-          <ul><li>Multiply the classical Polyak stepsize by 4 and a mild damping factor.</li><li>Use curvature-adaptive oscillations near the minimizer manifold, with damping driving convergence.</li><li>At small loss, projected iterates approximately descend log top-Hessian-eigenvalue along the minimizer manifold.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports theoretical guarantees for non-negative losses with locally quadratic Morse–Bott structure and empirical flattening similar to SAM in nonlinear teacher–student networks and pre-trained LLM fine-tuning.</p>
-          <p><b>Watch item:</b> The convergence and sharpness guarantees require local Morse–Bott structure; empirical results beyond this regime do not establish the same guarantees.</p>
-          <div class="tags"><span>#Optimization</span> <span>#FlatMinima</span> <span>#AdaptiveStepsizes</span> <span>#LossLandscape</span> <span>#DeepLearningTheory</span></div>
+          <p><b>Watch item:</b> Unconstrained PINN convergence remains conditional under joint network and sampling refinement; approximation estimates alone do not establish the required stability and consistency.</p>
+          <div class="tags"><span>#PhysicsInformedNeuralNetworks</span> <span>#ScientificMachineLearning</span> <span>#NumericalPDEs</span> <span>#ConvergenceTheory</span> <span>#MeshfreeMethods</span></div>
         </section>
       </article>
     </section>
