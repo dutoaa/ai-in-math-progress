@@ -1,6 +1,6 @@
 # AI math Progress Public Resources
 
-Generated: 2026-11-26
+Generated: 2026-11-27
 Public site: https://dutoaa.github.io/ai-in-math-progress/
 
 ## 1. PatternMiner: Automated Mathematical Discovery Through LLM-Guided Training and Interpretation of Small Models
